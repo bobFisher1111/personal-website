@@ -2,7 +2,7 @@
 // if have a footer or header here, they will appear with all the children
 //  for routing
 import { Outlet } from "react-router-dom"; 
-import Header from './Header';
+import Header from './header/Header';
 
 const Layout = () => {
   // header & footer in this file

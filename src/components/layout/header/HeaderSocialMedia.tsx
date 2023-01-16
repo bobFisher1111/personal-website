@@ -1,7 +1,7 @@
 import React from 'react';
-import TwitterLogo from '../../assets/icons/TwitterLogo.svg';
-import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
-import FacebookLogo from '../../assets/icons/FacebookLogo.png';
+import TwitterLogo from '../../../assets/icons/TwitterLogo.svg';
+import YoutTubeLogo from '../../../assets/icons/YoutTubeLogo.png';
+import FacebookLogo from '../../../assets/icons/FacebookLogo.png';
 import { Grid } from "@mui/material";
 
 const HeaderSocialMedia = () => {
@@ -11,17 +11,17 @@ const HeaderSocialMedia = () => {
   return (
     <>
       <Grid item>
-          <a href={facebookUrl}>
+          <a href={facebookUrl} target="_blank">
             <img src={FacebookLogo} height="20px" alt="Facebook logo" />
           </a>
         </Grid>
         <Grid item>
-          <a href={twitterUrl}>
+          <a href={twitterUrl} target="_blank">
             <img src={TwitterLogo} height="20px" alt="Twitter logo" />
           </a>
         </Grid>
         <Grid item>
-          <a href={youtubeUrl}>
+          <a href={youtubeUrl} target="_blank">
             <img src={YoutTubeLogo} height="20px" alt="YouTube logo" />
           </a>
         </Grid>

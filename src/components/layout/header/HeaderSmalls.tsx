@@ -20,7 +20,7 @@ const HeaderSmalls = () => {
           alignItems="center"
           sx={{
             display:{
-              xs: "flex",
+              xs: "none",
               sm: "flex",
               md: "none",
               lg: "none",
@@ -42,7 +42,7 @@ const HeaderSmalls = () => {
         alignItems="center"
         sx={{
           display:{
-            xs: "flex",
+            xs: "none",
             sm: "flex",
             md: "none",
             lg: "none",
@@ -69,28 +69,6 @@ const HeaderSmalls = () => {
           </Typography>
         </Link>
       </Grid>
-      {/*
-        <Grid
-        container
-        direction="row"
-        justifyContent="flex-end"
-        alignItems="center"
-        sx={{
-          position: 'block',
-          display:{
-            xs: "flex",
-            sm: "none",
-            md: "none",
-            lg: "none",
-            xl: "none",
-          },
-          marginRight: '3px',
-        }}
-      >
-        <AccountMenu />
-      </Grid>
-      */}
-      
   </Box>
   )}
 

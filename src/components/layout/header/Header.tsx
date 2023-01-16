@@ -3,6 +3,7 @@ import {
   AppBar,
   Box,
 } from "@mui/material";
+import HeaderXSmall from './HeaderXSmall';
 import HeaderSmalls from './HeaderSmalls';
 import HeaderMedium from './HeaderMedium';
 import HeaderLargeXLarge from './HeaderLargeXLarge';
@@ -28,6 +29,7 @@ const Header = () => {
         boxShadow: 'none'
         }}
       >
+        <HeaderXSmall />
         <HeaderSmalls />
         <HeaderMedium /> 
         <HeaderLargeXLarge />     

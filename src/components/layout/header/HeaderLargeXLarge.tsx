@@ -5,18 +5,10 @@ import {
   Box,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import TwitterLogo from '../../assets/icons/TwitterLogo.svg';
-import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
-import FacebookLogo from '../../assets/icons/FacebookLogo.png';
-// import AccountMenu from './HeaderMenu'; // implement later
+import HeaderSocialMedia from './HeaderSocialMedia';
 
 const HeaderLargeXLarge = () => {
-  const facebookUrl = 'https://www.facebook.com/';
-  const twitterUrl = 'https://twitter.com/';
-  const youtubeUrl = 'https://www.youtube.com/';
-
   return (
-
     <Box sx={{ 
       display: 'flex',
       maxWidth: "1024px",
@@ -73,21 +65,7 @@ const HeaderLargeXLarge = () => {
           }
         }}
       >
-        <Grid item>
-          <a href={facebookUrl}>
-            <img src={FacebookLogo} height="20px" alt="Facebook logo" />
-          </a>
-        </Grid>
-        <Grid item>
-          <a href={twitterUrl}>
-            <img src={TwitterLogo} height="20px" alt="Twitter logo" />
-          </a>
-        </Grid>
-        <Grid item>
-          <a href={youtubeUrl}>
-            <img src={YoutTubeLogo} height="20px" alt="YouTube logo" />
-          </a>
-        </Grid>
+        <HeaderSocialMedia />
       </Grid>
       <Grid
         container
@@ -177,24 +155,6 @@ const HeaderLargeXLarge = () => {
             </Typography>
           </Link>
         </Grid>
-
-        {/*
-          <Grid item
-            style={{position: 'relative'}}
-            sx={{
-              display:{
-                xs: "none",
-                sm: "none",
-                md: "none",
-                lg: "flex",
-                xl: "flex",
-              }
-            }}
-          >
-            <AccountMenu />
-          </Grid>
-        */}
-       
       </Grid>
   </Box>
 )}

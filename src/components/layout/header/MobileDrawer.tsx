@@ -13,9 +13,6 @@ import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import IconButton from '@mui/material/IconButton';
-import TwitterLogo from '../../assets/icons/TwitterLogo.svg';
-import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
-import FacebookLogo from '../../assets/icons/FacebookLogo.png';
 import HeaderSocialMedia from './HeaderSocialMedia';
 
 type Anchor = 'left';
@@ -53,7 +50,13 @@ const MobileDrawer = () => {
     const siteItem = Object.entries(sectionList).map((key, value) => {
       return (
         <div>
-          <ListItem key={value} disablePadding>
+          <ListItem
+            sx={{
+              color: 'white',
+            }}
+            key={value} 
+            disablePadding
+          >
             <ListItemButton href={key[1]}>
               <ListItemText primary={key[0]} />
             </ListItemButton>
@@ -63,12 +66,13 @@ const MobileDrawer = () => {
     })
     return siteItem;
   }
-  
+
   const list = (anchor: Anchor) => (
     <Box
       sx={{
         width: '100vw',
         height: '100vh',
+        backgroundColor: "#2F4C69",
       }}
     >
       <Grid
@@ -86,6 +90,15 @@ const MobileDrawer = () => {
           direction="row"
           justifyContent="flex-start"
           alignItems="center"
+          sx={{
+            display:{
+                xs: "flex",
+                sm: "flex",
+                md: "none",
+                lg: "none",
+                xl: "none",
+              },
+          }}
         >
           <Link
             to="/"
@@ -114,31 +127,22 @@ const MobileDrawer = () => {
           justifyContent="center"
           alignItems="center"
           spacing={2}
-          xs={4}
+          xs={6}
+          sm={4}
       >
-        <Grid item>
-          <a href={facebookUrl}>
-            <img src={FacebookLogo} height="20px" alt="Facebook logo" />
-          </a>
-        </Grid>
-        <Grid item>
-          <a href={twitterUrl}>
-            <img src={TwitterLogo} height="20px" alt="Twitter logo" />
-          </a>
-        </Grid>
-        <Grid item>
-          <a href={youtubeUrl}>
-            <img src={YoutTubeLogo} height="20px" alt="YouTube logo" />
-          </a>
-        </Grid>
+       <HeaderSocialMedia />
       </Grid>
         <Grid
           container
           item
-          xs={4}
+          xs={2}
+          sm={4}
           direction="row"
           justifyContent="flex-end"
           alignItems="center"
+          sx={{
+            maxHeight: '32px',
+          }}
         >
           <IconButton
             sx={{
@@ -149,12 +153,12 @@ const MobileDrawer = () => {
             <CloseIcon
               onClick={toggleDrawer(anchor, false)}
               onKeyDown={toggleDrawer(anchor, false)}
-              sx={{
-                
-              }}
             />
           </IconButton>
-        </Grid>    
+        </Grid>
+
+
+
       </Grid>
       <Divider />
       <List>
