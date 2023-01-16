@@ -6,6 +6,7 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import HeaderSocialMedia from './HeaderSocialMedia';
+import HeaderLinksToPages from './HeaderLinksToPages';
 
 const HeaderMedium = () => {
   return (
@@ -81,79 +82,7 @@ const HeaderMedium = () => {
           },
         }}
       >
-        <Grid item>
-          <Link to="/codingprojects" 
-            style={{textDecoration: "none"}}
-          >
-            <Typography
-               sx={{
-                fontSize: '14px',
-                color: "white",
-                cursor: "pointer",
-                "&:hover": {
-                    color: "black",
-                },
-            }}
-            >
-              Projects
-            </Typography>
-          </Link> 
-        </Grid>
-        <Grid item>
-          <Link to="/hobbies" 
-            style={{textDecoration: "none"}}
-          >
-            <Typography
-               sx={{
-                fontSize: '14px',
-                color: "white",
-                cursor: "pointer",
-                "&:hover": {
-                    color: "black",
-                },
-            }}
-            >
-              Hobbies
-            </Typography>
-          </Link> 
-        </Grid>
-        <Grid item>
-          <Link to="/about"
-            style={{textDecoration: "none"}}
-          >
-            <Typography
-               sx={{
-                fontSize: '14px',
-                color: "white",
-                cursor: "pointer",
-                "&:hover": {
-                    color: "black",
-                },
-            }}
-            >
-              About
-            </Typography>
-          </Link>
-        </Grid>
-        <Grid item>
-          <Link to="/contact"
-            style={{textDecoration: "none"}}
-          >
-            <Typography
-               sx={{
-                fontSize: '14px',
-                color: "white",
-                cursor: "pointer",
-                "&:hover": {
-                    color: "black",
-                },
-                margin: "0px 22px 0px 0px"
-            }}
-            >
-              Contact
-            </Typography>
-          </Link>
-        </Grid>
+        <HeaderLinksToPages />
       </Grid>
   </Box>
 )}

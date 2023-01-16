@@ -11,17 +11,29 @@ const HeaderSocialMedia = () => {
   return (
     <>
       <Grid item>
-          <a href={facebookUrl} target="_blank">
+          <a 
+            href={facebookUrl}
+            target="_blank"
+            rel="noreferrer"
+            >
             <img src={FacebookLogo} height="20px" alt="Facebook logo" />
           </a>
         </Grid>
         <Grid item>
-          <a href={twitterUrl} target="_blank">
+          <a 
+            href={twitterUrl}
+            target="_blank"
+            rel="noreferrer"
+            >
             <img src={TwitterLogo} height="20px" alt="Twitter logo" />
           </a>
         </Grid>
         <Grid item>
-          <a href={youtubeUrl} target="_blank">
+          <a 
+            href={youtubeUrl}
+            target="_blank"
+            rel="noreferrer"
+            >
             <img src={YoutTubeLogo} height="20px" alt="YouTube logo" />
           </a>
         </Grid>
