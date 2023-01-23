@@ -72,7 +72,7 @@ const MobileDrawer = () => {
       sx={{
         width: '100vw',
         height: '100vh',
-        backgroundColor: "#2F4C69",
+        backgroundColor: "#282c34",
       }}
     >
       <Grid

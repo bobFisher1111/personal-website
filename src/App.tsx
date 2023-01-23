@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import routes from './routes/Routes';
+import './App.css';
 
 const App: React.FC<Props> = ({ position }) => {
   return (

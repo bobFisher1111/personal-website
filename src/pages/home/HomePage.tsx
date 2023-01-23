@@ -6,7 +6,7 @@ const HomePage = () => {
     <>
       <header className="App-header">
         <Typography sx={{
-          color: 'blue' 
+          color: 'white' 
           }}
         >
           <h1>HomePage</h1>

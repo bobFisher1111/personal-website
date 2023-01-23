@@ -17,6 +17,7 @@ const Header = () => {
       - another blue: #154c79 // this one looks good
       - #5E6974
       - #2E5984
+      - #76468c // like this color
       - https://www.schemecolor.com/dance-of-shadows.php // most likely the color I like found here
   */
   return (
