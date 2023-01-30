@@ -8,13 +8,15 @@ import {
   styled,
   Checkbox,
 } from "@mui/material";
-import DarkTextField from "../../utilities/themes/DarkThemes";
+import DarkTextField from "../../themes/DarkThemes";
+
+// future updates. UI Changes example: https://nova.apple.com/business/
 
 // https://www.youtube.com/watch?v=sGQSz22U8VM 
 
 const Contact = () => {
 
-  const contactDescription = "Thank you for reaching out, we are looking forward to hearing from you. From the team at React2Python";
+  const contactDescription = "Thank you for reaching out, we are looking forward to hearing from you. From the team at React2Python.";
 
   // move this to themes later on
   const BlueCheckBox = styled(Checkbox) ({
@@ -87,7 +89,8 @@ const Contact = () => {
         justifyContent="flex-start"
       >
         <DarkTextField 
-          label="First Name" 
+          label="First Name"
+          size="small"
         />
       </Grid>
       <Grid
@@ -96,7 +99,8 @@ const Contact = () => {
         alignItems="center"
       >
         <DarkTextField 
-          label="Last Name" 
+          label="Last Name"
+          size="small"
         />
       </Grid>
       <Grid 
@@ -107,7 +111,7 @@ const Contact = () => {
       <DarkTextField
           fullWidth
           label="Email" 
-          type="search"
+          size="small"
         />
       </Grid>
       <Grid 
@@ -120,6 +124,7 @@ const Contact = () => {
           multiline
           rows={4}
           fullWidth
+          size="small"
         />
       </Grid>
       <Grid
