@@ -17,7 +17,7 @@ const DarkTextField = styled(TextField)({
   },
   '& .MuiOutlinedInput-root': {
     '& fieldset': {
-      borderColor: 'white',
+      borderColor: '#2F4C69',
       borderWidth: 'thin',
       fontColor: 'white',
     },
@@ -27,7 +27,7 @@ const DarkTextField = styled(TextField)({
       fontColor: 'white',
     },
     '&.Mui-focused fieldset': {
-      borderColor: 'white',
+      borderColor: '#2F4C69',
       borderWidth: 'thin',
       fontColor: 'white',
     },

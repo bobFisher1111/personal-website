@@ -28,8 +28,9 @@ const TeamCard: React.FC<Props> = ({
     <Card 
       sx={{ 
         display: 'flex',
-        backgroundColor: '#2F4C69',
+        backgroundColor: '#282c34',
         wordWrap: 'break-word',
+        border: '2px solid #2F4C69',
       }}
     >
     <Grid container xs={12}>
@@ -60,14 +61,14 @@ const TeamCard: React.FC<Props> = ({
             overflow: 'hidden',
         }}
       >
-        <CardContent>
-          <Typography component="div" variant="h5">
+        <CardContent sx={{fontColor: 'white'}}>
+          <Typography component="div" variant="h5" color="white">
             {firstName} {lastName}
           </Typography>
-          <Typography variant="subtitle1" color="text.secondary" component="div">
+          <Typography variant="subtitle1" color="white" component="div">
             {title}
           </Typography>
-          <Typography variant="subtitle1" color="text.secondary" component="div"
+          <Typography variant="subtitle1" color="white" component="div"
           >
             {teamInfo}
           </Typography>
