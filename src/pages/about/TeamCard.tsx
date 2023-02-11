@@ -41,6 +41,9 @@ const TeamCard: React.FC<Props> = ({
         md={6}
         lg={6}
         xl={6}
+        sx={{
+          padding: '16px'
+        }}
        >
         <CardMedia
           component="img"

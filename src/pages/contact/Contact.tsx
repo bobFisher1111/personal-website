@@ -32,7 +32,7 @@ const Contact = () => {
   return (
     <Box
       sx={{
-        background: '#282c34',
+        background: 'white', // '#282c34',
         minHeight: '100vh',
         padding: '32px 16px 32px 0px',
         display: 'flex'
@@ -60,7 +60,7 @@ const Contact = () => {
           variant="h6"
           style={{
             textAlign: 'center',
-            color: 'white',
+            color: '#2F4C69',
             padding: '75px 0px 12px 0px',
           }}
         >
@@ -77,7 +77,7 @@ const Contact = () => {
       >
         <Typography
         sx={{
-          color: 'white',
+          color: '#667A6E',
           textAlign: 'center'
         }}
       >
@@ -137,7 +137,7 @@ const Contact = () => {
       <Grid item>
           <Typography
             sx={{ 
-              color: 'white'
+              color: '#667A6E'
             }}
           >
             Opt in to receive future posts
@@ -149,7 +149,7 @@ const Contact = () => {
       >
       <Button
         sx={{
-          color: 'white',
+          color: 'black',
           borderColor: '#2F4C69',
         }}
           variant="outlined"

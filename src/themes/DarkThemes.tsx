@@ -8,38 +8,38 @@ import {
 
 const DarkTextField = styled(TextField)({
   '& label.Mui-focused': {
-    color: 'white',
-    fontColor: 'white',
+    color: 'black',
+    fontColor: 'black',
   },
   '& .MuiInput-underline:after': {
-    borderBottomColor: 'white',
-    fontColor: 'white',
+    borderBottomColor: 'black',
+    fontColor: '#667A6E',
   },
   '& .MuiOutlinedInput-root': {
     '& fieldset': {
       borderColor: '#2F4C69',
       borderWidth: 'thin',
-      fontColor: 'white',
+      fontColor: 'black',
     },
     '&:hover fieldset': {
       borderColor: '#2F4C69',
       borderWidth: 'thin',
-      fontColor: 'white',
+      fontColor: 'black',
     },
     '&.Mui-focused fieldset': {
       borderColor: '#2F4C69',
       borderWidth: 'thin',
-      fontColor: 'white',
+      fontColor: 'black',
     },
   },
   '& .MuiFormLabel-root': {
     '&.MuiInputLabel-root': {
-      color: 'white',
+      color: '#667A6E',
     }
   },
   '& .MuiInputBase-root': {
     '&.MuiOutlinedInput-root': {
-      color: 'white',
+      color: '#2F4C69',
     }
   },
 });

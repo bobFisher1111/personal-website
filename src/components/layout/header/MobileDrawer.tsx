@@ -45,9 +45,10 @@ const MobileDrawer = () => {
     'About': '/about',
     'Contact': '/contact',
   };
+  const uniqueID = Number(Date.now());
 
   const SectionItems = () => {
-    const siteItem = Object.entries(sectionList).map((key, value) => {
+    const siteItem = Object.entries(sectionList).map((key, value, index) => {
       return (
         <div>
           <ListItem
@@ -76,8 +77,7 @@ const MobileDrawer = () => {
       }}
     >
       <Grid
-        item
-        xs={12}
+        // xs={12}
         container
         sx={{
           backgroundColor: "#2F4C69",
@@ -87,13 +87,12 @@ const MobileDrawer = () => {
         <Grid
           item
           xs={4}
-          direction="row"
           justifyContent="flex-start"
           alignItems="center"
           sx={{
             display:{
-                xs: "flex",
-                sm: "flex",
+                // xs: "flex",
+                // sm: "flex",
                 md: "none",
                 lg: "none",
                 xl: "none",
@@ -127,16 +126,16 @@ const MobileDrawer = () => {
           justifyContent="center"
           alignItems="center"
           spacing={2}
-          xs={6}
-          sm={4}
+          // xs={6}
+          // sm={4}
       >
        <HeaderSocialMedia />
       </Grid>
         <Grid
           container
-          item
-          xs={2}
-          sm={4}
+          
+          // xs={2}
+          // sm={4}
           direction="row"
           justifyContent="flex-end"
           alignItems="center"
@@ -149,10 +148,10 @@ const MobileDrawer = () => {
               color: "white",
               padding: '0px'
             }}
+            onClick={toggleDrawer(anchor, false)}
+            onKeyDown={toggleDrawer(anchor, false)}
           >
             <CloseIcon
-              onClick={toggleDrawer(anchor, false)}
-              onKeyDown={toggleDrawer(anchor, false)}
             />
           </IconButton>
         </Grid>
@@ -160,9 +159,9 @@ const MobileDrawer = () => {
 
 
       </Grid>
-      <Divider />
+      <Divider id={`${uniqueID}`}/>
       <List>
-        {SectionItems()}
+        
         </List>
         </Box>
         );
@@ -184,8 +183,8 @@ const MobileDrawer = () => {
             onClose={toggleDrawer(anchor, false)}
             sx={{
               display:{
-                xs: "flex",
-                sm: "flex",
+                // xs: "flex",
+                // sm: "flex",
                 md: "none",
                 lg: "none",
                 xl: "none",

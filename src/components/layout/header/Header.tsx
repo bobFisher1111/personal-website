@@ -26,14 +26,15 @@ const Header = () => {
         position="fixed"
         component="nav"
         sx={{
-        backgroundColor: "#2F4C69",
-        boxShadow: 'none'
+          backgroundColor: "#2F4C69",
+          boxShadow: 'none',
+          borderBottom: 'solid #667A6E',
         }}
       >
         <HeaderXSmall />
         <HeaderSmalls />
         <HeaderMedium /> 
-        <HeaderLargeXLarge />     
+        <HeaderLargeXLarge />      
       </AppBar>
     </Box>
   )}

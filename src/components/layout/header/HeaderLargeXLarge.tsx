@@ -10,12 +10,14 @@ import HeaderLinksToPages from './HeaderLinksToPages';
 
 const HeaderLargeXLarge = () => {
   return (
-    <Box sx={{ 
-      display: 'flex',
-      maxWidth: "1024px",
-          minWidth: "980px",
-          margin: 'auto', 
-      }}>
+    <Box 
+      sx={{ 
+        display: 'flex',
+        maxWidth: "1024px",
+        minWidth: "980px",
+        margin: 'auto', 
+      }}
+    >
       <Grid 
         container
         direction="row"

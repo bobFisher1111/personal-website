@@ -13,7 +13,7 @@ const About = () => {
   return (
     <Box
     sx={{
-      background: '#282c34',
+      // background: '#282c34',
       minHeight: '100vh',
       padding: '32px 16px 32px 16px',
       display: 'flex'
@@ -42,7 +42,7 @@ const About = () => {
           variant="h5"
           style={{
             textAlign: 'center',
-            color: 'white',
+            color: '#2F4C69',
             padding: '75px 0px 12px 0px',
           }}
         >
@@ -62,7 +62,7 @@ const About = () => {
       >
         <Typography
         sx={{
-          color: 'white',
+          color: '#667A6E',
           textAlign: 'center'
         }}
       >
@@ -83,9 +83,9 @@ const About = () => {
         variant="h6"
         sx={{
           textAlign: 'fled-start',
-          color: 'white',
+          color: '#2F4C69',
           padding: '75px 0px 0x 0px',
-          textDecoration: 'underline',
+          // textDecoration: 'underline',
         }}
       >
         Our Team

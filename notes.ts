@@ -15,6 +15,11 @@
             - json-server: 
                 - start server, use npx instead of npm
                 - npx json-server -p 3500 -w data/db.json
+            - fontawesome:
+              - free version: 10 views per month
+              - install:
+                npm i @fortawesome/react-fontawesome
+                npm i @fortawesome/free-solid-svg-icons
 
         - Sprint:
 
