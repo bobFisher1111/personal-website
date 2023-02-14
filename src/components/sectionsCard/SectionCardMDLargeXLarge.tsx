@@ -23,11 +23,12 @@ const SectionCardMDLargeXLarge: React.FC<Props> = ({
           xs: "none",
           sm: "none",
           md: "none",
-          lg: "flex",
-          xl: "flex",
+          lg: "none",
+          xl: "none",
         },
         minWidth: "220px",
         maxWidth: "220px",
+        padding: '8px'
       }}
     >
     <Card 

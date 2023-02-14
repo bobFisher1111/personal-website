@@ -45,8 +45,8 @@ const SectionCardSmallMD: React.FC<Props> = ({
         padding: '0px 0px 16px 0px',
         display:{
           xs: "none",
-          sm: "flex",
-          md: "flex",
+          sm: "none",
+          md: "none",
           lg: "none",
           xl: "none",
           minWidth: "220px",
