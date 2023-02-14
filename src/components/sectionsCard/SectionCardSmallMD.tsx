@@ -21,7 +21,7 @@ const CardContentNoPadding = styled(CardContent)(`
   }
 `);
 
-const SectionCardXSmallSmall: React.FC<Props> = ({
+const SectionCardSmallMD: React.FC<Props> = ({
   imgCover,
   section,
   backGroundColor, 
@@ -40,12 +40,13 @@ const SectionCardXSmallSmall: React.FC<Props> = ({
     
     <Grid 
       container 
+      spacing={2}
       sx={{
         padding: '0px 0px 16px 0px',
         display:{
-          xs: "flex",
-          sm: "none",
-          md: "none",
+          xs: "none",
+          sm: "flex",
+          md: "flex",
           lg: "none",
           xl: "none",
           minWidth: "220px",
@@ -101,4 +102,4 @@ export type Props = {
   backGroundColor: string, 
 };
 
-export default SectionCardXSmallSmall;
+export default SectionCardSmallMD;

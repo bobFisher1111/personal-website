@@ -12,10 +12,11 @@ import yinYangFox from '../../assets/images/yinYangFox.jpeg';
 import LooksOneTwoToneIcon from '@mui/icons-material/LooksOneTwoTone';
 import TeamCard from '../about/TeamCard';
 import LatestCard from './LatestCard';
-import SectionCard from './SectionCard'
+import SectionCard from '../../components/sectionsCard/SectionCard';
 import xenob3 from '../../assets/images/xenob3.jpg';
 import PopularCard from "./PopularCard";
-import LatestArtCart from "./LatestArtCart";
+import LatestArticalCard from "../../components/articalCards/latestArticalCard/LatestArticalCard";
+import SectionCardSmallMD from "../../components/sectionsCard/SectionCardSmallMD";
 /*
 background: '#fff', // #282c34',
       minHeight: '100vh',
@@ -58,7 +59,6 @@ const HomePage = () => {
         borderBottom: '2px solid red',
       }}
     >
-      
       <Grid
         item
         xs={12}
@@ -103,14 +103,14 @@ const HomePage = () => {
           // padding: '0px 0px 20px 0px',
           // maxWidth: "1024px",
           margin: 'auto',
-          minWidth: "220px",
-          maxWidth: "220px",
+          // minWidth: "220px",
+          // maxWidth: "220px",
         }}
       >
         <SectionCard
           imgCover={xenob3}
           section={'React'}
-          backGroundColor={'#667A6E'}
+          backGroundColor={'#282c34'}
         />
       </Grid>
       <Grid
@@ -119,22 +119,22 @@ const HomePage = () => {
           // padding: '0px 0px 20px 0px',
           // maxWidth: "1024px",
           margin: 'auto',
-          minWidth: "220px",
-          maxWidth: "220px",
+          // minWidth: "220px",
+          // maxWidth: "220px",
         }}
       >
          <SectionCard
           imgCover={xenob3}
           section={'Python'}
-          backGroundColor={'#667A6E'}
+          backGroundColor={'#2F4C69'}
         />
       </Grid>
       <Grid
         item
         sx={{
           // padding: '0px 0px 20px 0px',
-          minWidth: "220px",
-          maxWidth: "220px",
+          // minWidth: "220px",
+          // maxWidth: "220px",
           margin: 'auto',
         }}
       >
@@ -147,15 +147,15 @@ const HomePage = () => {
       <Grid
         item
         sx={{
-          minWidth: "220px",
-          maxWidth: "220px",
+          // minWidth: "220px",
+          // maxWidth: "220px",
           margin: 'auto',
         }}
       >
          <SectionCard
           imgCover={xenob3}
           section={'Projects'}
-          backGroundColor={'#667A6E'}
+          backGroundColor={'#B784A7'}
         />
       </Grid>
       <Grid
@@ -227,8 +227,8 @@ const HomePage = () => {
           variant="outlined" 
           size="medium"
           sx={{
-              color: '#667A6E',
-              borderColor: '#667A6E',
+              color: '#282c34',
+              borderColor: '#282c34',
               pointerEvent: 'none'
             }}
         >
@@ -238,8 +238,8 @@ const HomePage = () => {
           variant="outlined" 
           size="medium"
           sx={{
-              color: '#667A6E',
-              borderColor: '#667A6E',
+              color: '#2F4C69',
+              borderColor: '#2F4C69',
             }}
         >
           Python
@@ -258,8 +258,8 @@ const HomePage = () => {
           variant="outlined" 
           size="medium"
           sx={{
-              color: '#667A6E',
-              borderColor: '#667A6E',
+              color: '#B784A7',
+              borderColor: '#B784A7',
             }}
         >
             Projects
@@ -310,7 +310,7 @@ const HomePage = () => {
             padding: '8px',
           }}
         >
-          <LatestArtCart 
+          <LatestArticalCard 
             title={'XenoBlade Chronicals 3 Review'}
             name={'Bob Fisher'}
             articalInfo={'.......................'}
@@ -437,7 +437,7 @@ const HomePage = () => {
         </Grid>
       </Grid>
       </Grid>
-    </Grid>
+    </Grid> 
   );
 }
 

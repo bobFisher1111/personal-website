@@ -21,7 +21,7 @@ const CardContentNoPadding = styled(CardContent)(`
   }
 `);
 
-const LatestArtCart: React.FC<Props> = ({
+const LatestArticalCard: React.FC<Props> = ({
     title,
     name,
     articalInfo,
@@ -150,15 +150,9 @@ const LatestArtCart: React.FC<Props> = ({
       >
         <CardMedia
           component="img"
+          sx={{ width: 400 }}
           image={articalImage}
           alt="artical picture"
-          sx={{ 
-            // minWidth: '30vw',
-            maxWidth: '400px',
-            aspectRatio: '16/9',
-            // overflow: 'hidden',
-            // position: 'relative',
-          }}
         />
       </Grid>
     </Grid>
@@ -176,4 +170,4 @@ export type Props = {
   articalId?: string;
 };
 
-export default LatestArtCart;
+export default LatestArticalCard;
