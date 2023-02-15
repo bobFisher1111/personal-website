@@ -1,7 +1,9 @@
 import React from 'react';
 import {
-  Typography, Button, CardActions, CardMedia, CardContent, Card,
+  Typography, Button, CardActions, CardMedia, CardContent, Card, Grid,
 } from '@mui/material/';
+import ThumbDownRoundedIcon from '@mui/icons-material/ThumbDownRounded';
+import ThumbUpRoundedIcon from '@mui/icons-material/ThumbUpRounded';
 
 const PopularArticals: React.FC<Props> = ({
     title,
@@ -16,92 +18,132 @@ const PopularArticals: React.FC<Props> = ({
     <Card sx={{ 
       maxWidth: 500,
       backgroundColor: '#282c34',
-      }}>
-        <div
-          style={{
-            position: 'relative',
+      }}
+    >
+      <div
+        style={{
+          position: 'relative',
+          textAlign: 'center',
+        }}
+      >
+        <CardMedia
+          component="img"
+          alt="green iguana"
+          height="200"
+          image={articalImage}
+        />
+        <Typography
+          variant='h5'
+          sx={{
+            position: 'absolute',
+            top: '8px',
+            left: '8px',
+            height: '25px',
+            width: '25px',
+            borderRadius: '50%',
+            border: '1px solid #667A6E',
             textAlign: 'center',
+            alignItems: 'center',
+            fontSize: '17px',
+            color: 'white',
+            backgroundColor: '#282c34',
           }}
         >
-          <CardMedia
-            component="img"
-            alt="green iguana"
-            height="200"
-            image={articalImage}
-          />
-          <Typography
-            variant='h5'
-            sx={{
-              position: 'absolute',
-              top: '8px',
-              left: '8px',
-              height: '25px',
-              width: '25px',
-              borderRadius: '50%',
-              border: '1px solid #667A6E',
-              textAlign: 'center',
-              alignItems: 'center',
-              fontSize: '17px',
-              color: 'white',
-              backgroundColor: '#282c34',
-            }}
-          >
-            1
-          </Typography>
-        </div>
-        <CardContent
+          1
+        </Typography>
+      </div>
+      <CardContent
+        sx={{
+          padding: '10px 16px 0px 16px',
+        }}
+      >
+        <Typography component="div" noWrap variant="h6" color="white">
+          {title}
+        </Typography>
+        <Typography variant="subtitle1" color="#667A6E" component="div">
+          by {name}
+        </Typography>
+        <Typography 
+          variant="body1"
+          color="white" 
+          sx={{ 
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            display: '-webkit-box',
+            WebkitLineClamp: '2',
+            WebkitBoxOrient: 'vertical',
+          }} 
+          component="div"
+        >
+          {articalInfo}
+        </Typography>
+      </CardContent>
+      <CardActions
+        sx={{
+          padding: '16px',
+        }}
+      >
+        <Grid 
+          container 
+          alignItems="center"
           sx={{
-            padding: '10px 16px 0px 16px',
+            whiteSpace: 'nowrap'
           }}
         >
-          <Typography component="div" noWrap variant="h6" color="white">
-            {title}
-          </Typography>
-          <Typography variant="subtitle1" color="#667A6E" component="div">
-            by {name}
-          </Typography>
-          <Typography 
-            variant="body1"
-            color="white" 
-            sx={{ 
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-              display: '-webkit-box',
-              WebkitLineClamp: '2',
-              WebkitBoxOrient: 'vertical',
-            }} 
-            component="div"
+          <Grid 
+            container
+            xs={10}
+            spacing={1}
           >
-            {articalInfo}
-          </Typography>
-        </CardContent>
-        <CardActions
-          sx={{
-            padding: '16px',
-          }}
-        >
-          <Button 
-            size="small"
-            variant="outlined"
-            sx={{
-              color: '#667A6E',
-              borderColor: '#667A6E',
-              pointerEvent: 'none'
-            }}
+            <Grid
+              item
+            >
+              <Button 
+                size="small"
+                variant="outlined"
+                sx={{
+                  color: '#667A6E',
+                  borderColor: '#667A6E',
+                  pointerEvent: 'none',
+                }}
+              >
+                Share
+              </Button>
+            </Grid>
+            <Grid
+              item
+            >
+              <Button
+                size="small"
+                variant="outlined"
+                sx={{
+                  color: '#667A6E',
+                  borderColor: '#667A6E',
+                  pointerEvent: 'none',
+                  paddingLeft: '8px'
+                }}
+              >
+                Learn More
+              </Button>
+            </Grid>
+          </Grid>
+          <Grid 
+            item
+            xs={2}
           >
-            Share
-          </Button>
-          <Button
-            size="small"
-            variant="outlined"
-            sx={{
-              color: '#667A6E',
-              borderColor: '#667A6E',
-              pointerEvent: 'none'
-            }}
-          >
-            Learn More
-          </Button>
+            <ThumbUpRoundedIcon
+              sx={{
+                color: '#FDDA0D',
+              }}
+            />
+            <ThumbDownRoundedIcon
+              sx={{
+                padding: '0px 0px 0px 8px',
+                color: '#FDDA0D'
+              }}
+            />
+          </Grid>
+        </Grid>
       </CardActions>
     </Card>
   );

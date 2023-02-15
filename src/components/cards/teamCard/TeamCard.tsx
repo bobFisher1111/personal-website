@@ -19,24 +19,24 @@ const TeamCard: React.FC<Props> = ({
         border: '2px solid #2F4C69',
       }}
     >
-        <Grid container xs={12}>
+      <Grid container xs={12}>
         <Grid
-        item
-            xs={6}
-            sm={6}
-            md={6}
-            lg={6}
-            xl={6}
-            sx={{
+          item
+          xs={6}
+          sm={6}
+          md={6}
+          lg={6}
+          xl={6}
+          sx={{
             padding: '16px'
-            }}
+          }}
         >
-            <CardMedia
+          <CardMedia
             component="img"
             sx={{ width: 200 }}
             image={avatarImage}
             alt="team member avatar"
-            />
+          />
         </Grid>
         <Grid
           item

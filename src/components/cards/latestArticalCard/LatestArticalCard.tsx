@@ -1,7 +1,9 @@
 import React from 'react';
 import {
-  Typography, Card, CardContent, CardMedia, CardActions, Button,
+  Typography, Card, CardContent, CardMedia, CardActions, Button, Grid,
 } from '@mui/material/';
+import ThumbDownRoundedIcon from '@mui/icons-material/ThumbDownRounded';
+import ThumbUpRoundedIcon from '@mui/icons-material/ThumbUpRounded';
 
 const LatestArticalCard: React.FC<Props> = ({
     title,
@@ -55,28 +57,71 @@ const LatestArticalCard: React.FC<Props> = ({
           padding: '16px',
         }}
       >
-        <Button 
-          size="small"
-          variant="outlined"
+        <Grid 
+          container 
+          alignItems="center"
           sx={{
-            color: '#ddb4f0',
-            borderColor: '#ddb4f0',
-            pointerEvent: 'none'
+            whiteSpace: 'nowrap'
           }}
         >
-          Share
-        </Button>
-        <Button
-          size="small"
-          variant="outlined"
-          sx={{
-            color: '#ddb4f0',
-            borderColor: '#ddb4f0',
-            pointerEvent: 'none'
-          }}
-        >
-          Learn More
-        </Button>
+          <Grid 
+            container
+            xs={10}
+            spacing={1}
+          >
+            <Grid
+              item
+            >
+              <Button 
+              size="small"
+              variant="outlined"
+              sx={{
+                color: '#ddb4f0',
+                borderColor: '#ddb4f0',
+                pointerEvent: 'none',
+              }}
+            >
+              Share
+            </Button>
+            </Grid>
+            <Grid
+              item
+            >
+              <Button
+                size="small"
+                variant="outlined"
+                sx={{
+                  color: '#ddb4f0',
+                  borderColor: '#ddb4f0',
+                  pointerEvent: 'none',
+                  paddingLeft: '8px'
+                }}
+              >
+                Learn More
+              </Button>
+            </Grid>
+            
+          </Grid>
+          <Grid 
+            item
+            xs={2}
+            sx={{
+              // justifyContent: "flex-end"
+            }}
+          >
+            <ThumbUpRoundedIcon
+              sx={{
+                color: '#FDDA0D',
+              }}
+            />
+            <ThumbDownRoundedIcon
+              sx={{
+                padding: '0px 0px 0px 8px',
+                color: '#FDDA0D'
+              }}
+            />
+          </Grid>
+        </Grid>
       </CardActions>
     </Card>
   );
