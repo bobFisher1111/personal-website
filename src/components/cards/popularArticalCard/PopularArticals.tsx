@@ -49,23 +49,22 @@ const PopularArticals: React.FC<Props> = ({
             1
           </Typography>
         </div>
-      <CardContent
-        sx={{
-          padding: '10px 16px 0px 16px',
-        }}
-      >
-      <Typography component="div" noWrap variant="h6" color="white">
+        <CardContent
+          sx={{
+            padding: '10px 16px 0px 16px',
+          }}
+        >
+          <Typography component="div" noWrap variant="h6" color="white">
             {title}
           </Typography>
           <Typography variant="subtitle1" color="#667A6E" component="div">
             by {name}
           </Typography>
-        <Typography 
+          <Typography 
             variant="body1"
             color="white" 
             sx={{ 
               overflow: 'hidden',
-              //height: '100px',
               textOverflow: 'ellipsis',
               display: '-webkit-box',
               WebkitLineClamp: '2',
@@ -73,36 +72,36 @@ const PopularArticals: React.FC<Props> = ({
             }} 
             component="div"
           >
-          {articalInfo}
-        </Typography>
-      </CardContent>
-      <CardActions
+            {articalInfo}
+          </Typography>
+        </CardContent>
+        <CardActions
+          sx={{
+            padding: '16px',
+          }}
+        >
+          <Button 
+            size="small"
+            variant="outlined"
             sx={{
-              padding: '16px',
+              color: '#667A6E',
+              borderColor: '#667A6E',
+              pointerEvent: 'none'
             }}
           >
-            <Button 
-              size="small"
-              variant="outlined"
-              sx={{
-                color: '#667A6E',
-                borderColor: '#667A6E',
-                pointerEvent: 'none'
-              }}
-            >
-              Share
-            </Button>
-            <Button
-              size="small"
-              variant="outlined"
-              sx={{
-                color: '#667A6E',
-                borderColor: '#667A6E',
-                pointerEvent: 'none'
-              }}
-            >
-              Learn More
-            </Button>
+            Share
+          </Button>
+          <Button
+            size="small"
+            variant="outlined"
+            sx={{
+              color: '#667A6E',
+              borderColor: '#667A6E',
+              pointerEvent: 'none'
+            }}
+          >
+            Learn More
+          </Button>
       </CardActions>
     </Card>
   );

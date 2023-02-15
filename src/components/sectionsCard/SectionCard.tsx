@@ -1,48 +1,67 @@
-import * as React from 'react';
+import React from 'react';
 import {
-  Box,
-} from "@mui/material";
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import SectionCardMDLargeXLarge from './SectionCardMDLargeXLarge';
-import SectionCardXSmallSmall from './SectionCardXSmallSmall';
-import SectionCardSmallMD from './SectionCardSmallMD';
+  Button, CardActions, CardMedia, Card, Grid, Box,
+} from '@mui/material/';
 
-const SectionCard: React.FC<Props> = ({
-    imgCover,
-    section,
-    backGroundColor,    
-  }) => {
-// <Card sx={{ maxWidth: 345 }}>
+const SectionCardXSmallSmall: React.FC<Props> = ({
+  imgCover,
+  section,
+  backGroundColor, 
+}) => {
   return (
-    <Box >
-      <SectionCardMDLargeXLarge 
-        imgCover={imgCover}
-        section={section}
-        backGroundColor={backGroundColor}
-      />
-      <SectionCardXSmallSmall
-        imgCover={imgCover}
-        section={section}
-        backGroundColor={backGroundColor}
-      />
-      <SectionCardSmallMD
-        imgCover={imgCover}
-        section={section}
-        backGroundColor={backGroundColor}
-      />
+    <Box
+    >
+      <Grid 
+        container 
+        sx={{
+          padding: '0px 0px 16px 0px',
+          display:{
+            xs: "flex",
+            sm: "flex",
+            md: "flex",
+            lg: "flex",
+            xl: "flex",
+            minWidth: "220px",
+            maxWidth: "220px",
+          },
+        }}
+      >
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={{
+              wordBreak: 'break-word',
+              overflow: 'hidden',
+              padding: 0,
+              lineHeight: '1'
+          }}
+        >
+          <Card>
+            <CardMedia
+              component="img"
+              alt="section image"
+              // width="280"
+              height="100" // 140
+              image={imgCover}
+            />
+            <CardActions sx={{ backgroundColor: backGroundColor, justifyContent: 'center' }}>
+              <Button size="small" sx={{ color: 'white' }}>{section}</Button>
+            </CardActions>
+          </Card>
+        </Grid>
+      </Grid>
     </Box>
   );
 }
 
 export type Props = {
-    imgCover: string;
-    section: string;
-    backGroundColor: string;
-  };
+  imgCover: string,
+  section: string,
+  backGroundColor: string, 
+};
 
-export default SectionCard;
+export default SectionCardXSmallSmall;
