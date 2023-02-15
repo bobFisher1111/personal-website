@@ -21,7 +21,7 @@ const CardContentNoPadding = styled(CardContent)(`
   }
 `);
 
-const LatestArticalCard: React.FC<Props> = ({
+const LatestArticalXSSmall: React.FC<Props> = ({
     title,
     name,
     articalInfo,
@@ -32,9 +32,90 @@ const LatestArticalCard: React.FC<Props> = ({
   articalInfo = "Xenoblade Chronicles 3 is an action role-playing game with a large open world to explore, being the sixth title in the Xenoblade series. Unlike previous Xenoblade series entries, the game allows for seven party members to participate in battles at once, including the main party and an additional 'Hero' character.";
   const theme = useTheme();
   const contactDescription = "";
-  // <CircleOutlinedIcon sx={{ fontSize: 20 }} />
   return (
-    <Card 
+    <Card sx={{ 
+      maxWidth: 500,
+      backgroundColor: '#2F4C69',
+      }}>
+      <CardMedia
+        component="img"
+        alt="green iguana"
+        height="200"
+        image={articalImage}
+      />
+      <CardContent
+        sx={{
+          padding: '10px 16px 0px 16px',
+        }}
+      >
+      <Typography component="div" noWrap variant="h6" color="white">
+            {title}
+          </Typography>
+          <Typography variant="subtitle1" color="#ddb4f0" component="div">
+            by {name}
+          </Typography>
+        <Typography 
+            variant="body1"
+            color="white" 
+            sx={{ 
+              overflow: 'hidden',
+              //height: '100px',
+              textOverflow: 'ellipsis',
+              display: '-webkit-box',
+              WebkitLineClamp: '2',
+              WebkitBoxOrient: 'vertical',
+            }} 
+            component="div"
+          >
+          {articalInfo}
+        </Typography>
+      </CardContent>
+      <CardActions
+            sx={{
+              padding: '16px',
+            }}
+          >
+            <Button 
+              size="small"
+              variant="outlined"
+              sx={{
+                color: '#ddb4f0',
+                borderColor: '#ddb4f0',
+                pointerEvent: 'none'
+              }}
+            >
+              Share
+            </Button>
+            <Button
+              size="small"
+              variant="outlined"
+              sx={{
+                color: '#ddb4f0',
+                borderColor: '#ddb4f0',
+                pointerEvent: 'none'
+              }}
+            >
+              Learn More
+            </Button>
+      </CardActions>
+    </Card>
+  );
+}
+
+export type Props = {
+  title?: string;
+  name?: string;
+  articalInfo?: string;
+  articalImage?: string;
+  section?: string;
+  date?: string;
+  articalId?: string;
+};
+
+export default LatestArticalXSSmall;
+
+/*
+<Card 
       sx={{ 
         display: 'flex',
         //backgroundColor: '#fff', // #282c34', #DBDBE9
@@ -55,7 +136,31 @@ const LatestArticalCard: React.FC<Props> = ({
         // padding: '0px 0px 16px 0px'
       }}
     >
-      
+       <Grid
+        item
+        xs={4}
+        sm={4}
+        md={4}
+        lg={4}
+        xl={4}
+        sx={{
+            // width:'auto',
+            maxWidth: '100%',
+            maxHeight: '100%',
+            // margin: 'auto',
+            //position: 'absolute',
+            // alignItems: 'center',
+            //padding: '8px',
+            //overflow: 'hidden',
+        }}
+      >
+        <CardMedia
+          component="img"
+          sx={{ width: 400 }}
+          image={articalImage}
+          alt="artical picture"
+        />
+      </Grid>
       <Grid
         item
         xs={7.5}
@@ -130,44 +235,7 @@ const LatestArticalCard: React.FC<Props> = ({
             </Button>
       </CardActions>
       </Grid>
-      <Grid
-        item
-        xs={4}
-        sm={4}
-        md={4}
-        lg={4}
-        xl={4}
-        sx={{
-            // width:'auto',
-            maxWidth: '100%',
-            maxHeight: '100%',
-            // margin: 'auto',
-            //position: 'absolute',
-            // alignItems: 'center',
-            //padding: '8px',
-            //overflow: 'hidden',
-        }}
-      >
-        <CardMedia
-          component="img"
-          sx={{ width: 400 }}
-          image={articalImage}
-          alt="artical picture"
-        />
-      </Grid>
     </Grid>
     </Card>
   );
-}
-
-export type Props = {
-  title?: string;
-  name?: string;
-  articalInfo?: string;
-  articalImage?: string;
-  section?: string;
-  date?: string;
-  articalId?: string;
-};
-
-export default LatestArticalCard;
+  */

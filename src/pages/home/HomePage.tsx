@@ -2,35 +2,15 @@ import React, { useState, useEffect } from 'react';
 import {
   Typography,
   Grid,
-  Box,
   Button,
   Divider,
 } from "@mui/material";
-import { useTheme, styled } from '@mui/material/styles';
-import foxGirl from '../../assets/images/foxGirl.png';
-import yinYangFox from '../../assets/images/yinYangFox.jpeg';
-import LooksOneTwoToneIcon from '@mui/icons-material/LooksOneTwoTone';
-import TeamCard from '../about/TeamCard';
-import LatestCard from './LatestCard';
+import { styled } from '@mui/material/styles';
 import SectionCard from '../../components/sectionsCard/SectionCard';
 import xenob3 from '../../assets/images/xenob3.jpg';
-import PopularCard from "./PopularCard";
-import LatestArticalCard from "../../components/articalCards/latestArticalCard/LatestArticalCard";
-import SectionCardSmallMD from "../../components/sectionsCard/SectionCardSmallMD";
-/*
-background: '#fff', // #282c34',
-      minHeight: '100vh',
-      padding: '32px 16px 32px 16px',
-      display: 'flex'
-*/
-// sx={{
-//   color: 'black',
-//   borderColor: '#2F4C69',
-// }}
-const SectionButton = styled(Button)(`
-  color: 'black';
-  borderColor: '#2F4C69';
-`);
+import LatestArticalXSSmall from "../../components/articalCards/latestArticalCard/LatestArticalCard";
+import PopularArticals from "../../components/articalCards/popularArticalCard/PopularArticals";
+
 const HomePage = () => {
   const contactDescription = "Mission Statement....";
   const testMessage1 = "Whats going on in the world today? all the little girls feeling up the world today when the good comes the bad and the bad becomes good Im livin life like i should";
@@ -266,7 +246,8 @@ const HomePage = () => {
         </Button>
       </Grid>
     </Grid>
-      <Grid container
+      <Grid 
+        container
         sx={{ 
           // boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);',
         }}
@@ -296,24 +277,78 @@ const HomePage = () => {
           // padding: '16px 0px 0px 0px',
         }}
       >
-        Lastest Articals
+        Lastest Articals  
       </Typography>
       </Grid>
       <Grid
           item
           xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
+          sm={6}
+          md={6}
+          lg={6}
+          xl={6}
           sx={{
             padding: '8px',
           }}
         >
-          <LatestArticalCard 
+          <LatestArticalXSSmall 
             title={'XenoBlade Chronicals 3 Review'}
-            name={'Bob Fisher'}
-            articalInfo={'.......................'}
+            name={'Small size'}
+            articalInfo={'...'}
+            articalImage={xenob3}
+          />
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={6}
+          lg={6}
+          xl={6}
+          sx={{
+            padding: '8px',
+          }}
+        >
+          <LatestArticalXSSmall 
+            title={'XenoBlade Chronicals 3 Review'}
+            name={'Small size'}
+            articalInfo={'...'}
+            articalImage={xenob3}
+          />
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={6}
+          lg={6}
+          xl={6}
+          sx={{
+            padding: '8px',
+          }}
+        >
+          <LatestArticalXSSmall 
+            title={'XenoBlade Chronicals 3 Review'}
+            name={'Small size'}
+            articalInfo={'...'}
+            articalImage={xenob3}
+          />
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={6}
+          lg={6}
+          xl={6}
+          sx={{
+            padding: '8px',
+          }}
+        >
+          <LatestArticalXSSmall 
+            title={'XenoBlade Chronicals 3 Review'}
+            name={'Small size'}
+            articalInfo={'...'}
             articalImage={xenob3}
           />
         </Grid>
@@ -348,15 +383,15 @@ const HomePage = () => {
         <Grid
           item
           xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
+          sm={6}
+          md={6}
+          lg={6}
+          xl={6}
           sx={{
             padding: '8px',
           }}
         >
-          <PopularCard 
+          <PopularArticals 
             title={'XenoBlade Chronicals 3 Review'}
             name={'Bob Fisher'}
             articalInfo={'.......................'}
@@ -366,15 +401,15 @@ const HomePage = () => {
         <Grid
           item
           xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
+          sm={6}
+          md={6}
+          lg={6}
+          xl={6}
           sx={{
             padding: '8px',
           }}
         >
-          <PopularCard 
+          <PopularArticals 
             title={'XenoBlade Chronicals 3 Review'}
             name={'Bob Fisher'}
             articalInfo={'.......................'}
@@ -384,15 +419,15 @@ const HomePage = () => {
         <Grid
           item
           xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
+          sm={6}
+          md={6}
+          lg={6}
+          xl={6}
           sx={{
             padding: '8px',
           }}
         >
-          <PopularCard 
+          <PopularArticals 
             title={'XenoBlade Chronicals 3 Review'}
             name={'Bob Fisher'}
             articalInfo={'.......................'}
@@ -402,15 +437,15 @@ const HomePage = () => {
         <Grid
           item
           xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
+          sm={6}
+          md={6}
+          lg={6}
+          xl={6}
           sx={{
             padding: '8px',
           }}
         >
-          <PopularCard 
+          <PopularArticals 
             title={'XenoBlade Chronicals 3 Review'}
             name={'Bob Fisher'}
             articalInfo={'.......................'}
@@ -420,15 +455,15 @@ const HomePage = () => {
         <Grid
           item
           xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
+          sm={6}
+          md={6}
+          lg={6}
+          xl={6}
           sx={{
             padding: '8px',
           }}
         >
-          <PopularCard 
+          <PopularArticals 
             title={'XenoBlade Chronicals 3 Review'}
             name={'Bob Fisher'}
             articalInfo={'.......................'}
