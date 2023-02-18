@@ -9,7 +9,7 @@ const HeaderLinksToPages = () => {
   return (
     <>
       <Grid item>
-        <Link to="/codingprojects" 
+        <Link to="/projects" 
           style={{textDecoration: "none"}}
         >
           <Typography
@@ -24,10 +24,10 @@ const HeaderLinksToPages = () => {
           >
             Projects
           </Typography>
-        </Link> 
+          </Link> 
         </Grid>
         <Grid item>
-          <Link to="/hobbies" 
+          <Link to="/coding" 
             style={{textDecoration: "none"}}
           >
             <Typography
@@ -40,7 +40,7 @@ const HeaderLinksToPages = () => {
                 },
             }}
             >
-              Hobbies
+              Coding
             </Typography>
           </Link> 
         </Grid>

@@ -45,7 +45,7 @@ const SectionCardXSmallSmall: React.FC<Props> = ({
               component="img"
               alt="section image"
               // width="280"
-              height="100" // 140
+              height="200"
               image={imgCover}
             />
             <CardActions sx={{ backgroundColor: backGroundColor, justifyContent: 'center' }}>

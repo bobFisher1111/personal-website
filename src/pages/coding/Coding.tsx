@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Hobbies = () => {
+const Coding = () => {
   return (
     <>
       <header className="App-header">
-        <h1>Hobbies</h1>
+        <h1>Coding landing page</h1>
       </header>
     </>
   );
 }
 
-export default Hobbies;
+export default Coding;

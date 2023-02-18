@@ -91,45 +91,44 @@ const PopularArticals: React.FC<Props> = ({
           }}
         >
           <Grid 
-            container
-            xs={10}
-            spacing={1}
+            item
+            xs={3}
           >
-            <Grid
-              item
+            <Button 
+              size="small"
+              variant="outlined"
+              sx={{
+                color: '#667A6E',
+                borderColor: '#667A6E',
+                pointerEvent: 'none',
+              }}
             >
-              <Button 
-                size="small"
-                variant="outlined"
-                sx={{
-                  color: '#667A6E',
-                  borderColor: '#667A6E',
-                  pointerEvent: 'none',
-                }}
-              >
-                Share
-              </Button>
-            </Grid>
-            <Grid
-              item
-            >
-              <Button
-                size="small"
-                variant="outlined"
-                sx={{
-                  color: '#667A6E',
-                  borderColor: '#667A6E',
-                  pointerEvent: 'none',
-                  paddingLeft: '8px'
-                }}
-              >
-                Learn More
-              </Button>
-            </Grid>
+              Share
+            </Button>
           </Grid>
           <Grid 
             item
-            xs={2}
+            xs={6}
+          >
+            <Button
+              size="small"
+              variant="outlined"
+              sx={{
+                color: '#667A6E',
+                borderColor: '#667A6E',
+                pointerEvent: 'none',
+                paddingLeft: '8px'
+              }}
+            >
+              Learn More
+            </Button>
+          </Grid>
+          <Grid 
+            item
+            xs={3}
+            sx={{
+              paddingLeft: '16px',
+            }}
           >
             <ThumbUpRoundedIcon
               sx={{

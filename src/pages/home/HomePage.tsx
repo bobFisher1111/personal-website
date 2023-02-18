@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Typography,
   Grid,
@@ -11,6 +11,23 @@ import LatestArticalCard from "../../components/cards/latestArticalCard/LatestAr
 import PopularArticals from "../../components/cards/popularArticalCard/PopularArticals";
 
 const HomePage = () => {
+  const widthRef = useRef<any>();
+  const [marginWidth, setMarginWidth] = useState<any>(widthRef);
+
+  useEffect(() => {
+    if (widthRef && widthRef.current) {
+      setMarginWidth(widthRef.current.offsetLeft);
+      window.addEventListener("resize", () => {
+        setMarginWidth(widthRef.current?.offsetLeft);
+      });
+    }
+    return () => {
+      if(widthRef && widthRef.current) {
+        window.removeEventListener("resize", () => {});
+      }
+    }
+  }, [marginWidth]);
+
   return (
     <Grid
       container
@@ -18,6 +35,7 @@ const HomePage = () => {
         background: '#fff',
         minHeight: '100vh',
         display: 'flex',
+        paddingBottom: '200px',
       }}
     >
       <Grid
@@ -54,12 +72,13 @@ const HomePage = () => {
         </Grid>
       </Grid>
       <Grid
+        ref={widthRef}
         container
         direction="row"
         justifyContent="flex-start"
         alignItems="center"
         sx={{
-          padding: '32px 16px 16px 16px',
+          padding: '32px 16px 0px 16px',
           maxWidth: "1024px",
           margin: 'auto',
         }}
@@ -72,7 +91,7 @@ const HomePage = () => {
         >
           <SectionCard
             imgCover={xenob3}
-            section={'React'}
+            section={'Coding'}
             backGroundColor={'#282c34'}
           />
         </Grid>
@@ -84,7 +103,7 @@ const HomePage = () => {
         >
           <SectionCard
             imgCover={xenob3}
-            section={'Python'}
+            section={'Data'}
             backGroundColor={'#2F4C69'}
           />
         </Grid>
@@ -128,7 +147,6 @@ const HomePage = () => {
           <Divider
             sx={{
               borderColor: '#282c34',
-              // borderBottomWidth: 1,
               padding: '16px 0px 0px 0px',
             }}
           />
@@ -137,7 +155,6 @@ const HomePage = () => {
           container
           direction="row"
           sx={{
-            // backgroundColor: "#A6A5C7",
             padding: '16px'
           }}
         >
@@ -159,7 +176,18 @@ const HomePage = () => {
                 pointerEvent: 'none'
               }}
             >
-              React
+              All
+            </Button>
+            <Button 
+              variant="outlined" 
+              size="medium"
+              sx={{
+                color: '#282c34',
+                borderColor: '#282c34',
+                pointerEvent: 'none'
+              }}
+            >
+              Coding
             </Button>
             <Button 
               variant="outlined" 
@@ -169,7 +197,7 @@ const HomePage = () => {
                 borderColor: '#2F4C69',
               }}
             >
-              Python
+              Data
             </Button>
             <Button 
               variant="outlined" 
@@ -193,7 +221,7 @@ const HomePage = () => {
             </Button>
           </Grid>
         </Grid>
-        <Grid 
+        <Grid
           container
         >
           <Grid
@@ -214,28 +242,183 @@ const HomePage = () => {
               sx={{
                 textAlign: 'fled-start',
                 color: '#2F4C69',
-                // padding: '75px 0px 75x 0px',
-                // textDecoration: 'underline',
-                // maxWidth: "1024px",
-                // borderBottom: '1px solid #282c34',
-                // padding: '16px 0px 0px 0px',
               }}
             >
               Lastest Articals  
             </Typography>
           </Grid>
+        </Grid>
+      </Grid>
+      <Grid
+        container
+        sx={{
+          display: 'flex',
+          overflowX: 'scroll',
+          flexWrap: 'nowrap',
+          paddingLeft: `calc(${marginWidth}px + 16px)`,
+          '&::-webkit-scrollbar': {display: 'none'}
+        }}
+      >
+        <Grid
+          item
+          sx={{
+            padding: '8px',
+            maxWidth: '360px',
+            minWidth: '360px',
+          }}
+        >
+          <LatestArticalCard 
+            title={'XenoBlade Chronicals 3 Review'}
+            name={'Small size'}
+            articalInfo={'...'}
+            articalImage={xenob3}
+          />
+        </Grid>
+        <Grid
+          item
+          sx={{
+            padding: '8px',
+            maxWidth: '360px',
+            minWidth: '360px',
+          }}
+        >
+          <LatestArticalCard 
+            title={'XenoBlade Chronicals 3 Review'}
+            name={'Small size'}
+            articalInfo={'...'}
+            articalImage={xenob3}
+          />
+        </Grid>
+        <Grid
+          item
+          sx={{
+            padding: '8px',
+            maxWidth: '360px',
+            minWidth: '360px',
+          }}
+        >
+          <LatestArticalCard 
+            title={'XenoBlade Chronicals 3 Review'}
+            name={'Small size'}
+            articalInfo={'...'}
+            articalImage={xenob3}
+          />
+        </Grid>
+        <Grid
+          item
+          sx={{
+            padding: '8px',
+            maxWidth: '360px',
+            minWidth: '360px',
+          }}
+        >
+          <LatestArticalCard 
+            title={'XenoBlade Chronicals 3 Review'}
+            name={'Small size'}
+            articalInfo={'...'}
+            articalImage={xenob3}
+          />
+        </Grid>
+        <Grid
+          item
+          sx={{
+            padding: '8px',
+            maxWidth: '360px',
+            minWidth: '360px',
+          }}
+        >
+          <LatestArticalCard 
+            title={'XenoBlade Chronicals 3 Review'}
+            name={'Small size'}
+            articalInfo={'...'}
+            articalImage={xenob3}
+          />
+        </Grid>
+        <Grid
+          item
+          sx={{
+            padding: '8px',
+            maxWidth: '360px',
+            minWidth: '360px',
+          }}
+        >
+          <LatestArticalCard 
+            title={'XenoBlade Chronicals 3 Review'}
+            name={'Small size'}
+            articalInfo={'...'}
+            articalImage={xenob3}
+          />
+        </Grid>
+        <Grid
+          item
+          sx={{
+            padding: '8px',
+            maxWidth: '360px',
+            minWidth: '360px',
+          }}
+        >
+          <LatestArticalCard 
+            title={'XenoBlade Chronicals 3 Review'}
+            name={'Small size'}
+            articalInfo={'...'}
+            articalImage={xenob3}
+          />
+        </Grid>
+      </Grid>
+      <Grid
+        container
+        direction="row"
+        justifyContent="flex-start"
+        alignItems="center"
+        sx={{
+          padding: '32px 16px 0px 16px',
+          maxWidth: "1024px",
+          margin: 'auto',
+        }}
+      >
+      <Grid
+        item
+        xs={12}
+        sm={12}
+        md={12}
+        lg={12}
+        xl={12}
+        sx={{
+          margin: 'auto',
+          padding: '0px 8px 0px 8px',
+        }}
+      >
+        <Typography
+          variant="h6"
+          sx={{
+            textAlign: 'fled-start',
+            color: '#2F4C69',
+          }}
+        >
+          Popular Articals  
+        </Typography>
+      </Grid>
+    </Grid>
+      
+      <Grid
+          container
+          sx={{
+            display: 'flex',
+            overflowX: 'scroll',
+            flexWrap: 'nowrap',
+            paddingLeft: `calc(${marginWidth}px + 16px)`,
+            '&::-webkit-scrollbar': {display: 'none'}
+          }}
+        >
           <Grid
             item
-            xs={12}
-            sm={6}
-            md={6}
-            lg={6}
-            xl={6}
             sx={{
               padding: '8px',
+              maxWidth: '360px',
+              minWidth: '360px',
             }}
           >
-            <LatestArticalCard 
+            <PopularArticals 
               title={'XenoBlade Chronicals 3 Review'}
               name={'Small size'}
               articalInfo={'...'}
@@ -244,16 +427,17 @@ const HomePage = () => {
           </Grid>
           <Grid
             item
-            xs={12}
-            sm={6}
-            md={6}
-            lg={6}
-            xl={6}
             sx={{
               padding: '8px',
+              // overflowX: 'scroll',
+              // height: '372.9px',
+              // maxWidth: '100%',
+              // maxHeight: '100%',
+              maxWidth: '360px',
+              minWidth: '360px',
             }}
           >
-            <LatestArticalCard 
+            <PopularArticals 
               title={'XenoBlade Chronicals 3 Review'}
               name={'Small size'}
               articalInfo={'...'}
@@ -262,16 +446,16 @@ const HomePage = () => {
           </Grid>
           <Grid
             item
-            xs={12}
-            sm={6}
-            md={6}
-            lg={6}
-            xl={6}
             sx={{
               padding: '8px',
+              // height: '372.9px',
+              // maxWidth: '100%',
+              // maxHeight: '100%',
+              maxWidth: '360px',
+              minWidth: '360px',
             }}
           >
-            <LatestArticalCard 
+            <PopularArticals 
               title={'XenoBlade Chronicals 3 Review'}
               name={'Small size'}
               articalInfo={'...'}
@@ -280,16 +464,16 @@ const HomePage = () => {
           </Grid>
           <Grid
             item
-            xs={12}
-            sm={6}
-            md={6}
-            lg={6}
-            xl={6}
             sx={{
               padding: '8px',
+              // height: '372.9px',
+              // maxWidth: '100%',
+              // maxHeight: '100%',
+              maxWidth: '360px',
+              minWidth: '360px',
             }}
           >
-            <LatestArticalCard 
+            <PopularArticals 
               title={'XenoBlade Chronicals 3 Review'}
               name={'Small size'}
               articalInfo={'...'}
@@ -298,122 +482,61 @@ const HomePage = () => {
           </Grid>
           <Grid
             item
-            xs={12}
-            sm={12}
-            md={12}
-            lg={12}
-            xl={12}
-            sx={{
-              maxWidth: "1024px",
-              margin: 'auto',
-              padding: '0px 8px 0px 8px',
-            }}
-          >
-            <Typography
-              variant="h6"
-              sx={{
-                textAlign: 'fled-start',
-                color: '#2F4C69',
-                padding: '16px 0px 0px 0px',
-              }}
-            >
-              Popular Articals
-            </Typography>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={6}
-            lg={6}
-            xl={6}
             sx={{
               padding: '8px',
+              // height: '372.9px',
+              // maxWidth: '100%',
+              // maxHeight: '100%',
+              maxWidth: '360px',
+              minWidth: '360px',
             }}
           >
             <PopularArticals 
               title={'XenoBlade Chronicals 3 Review'}
-              name={'Bob Fisher'}
-              articalInfo={'.......................'}
+              name={'Small size'}
+              articalInfo={'...'}
               articalImage={xenob3}
             />
           </Grid>
           <Grid
             item
-            xs={12}
-            sm={6}
-            md={6}
-            lg={6}
-            xl={6}
             sx={{
               padding: '8px',
+              // height: '372.9px',
+              // maxWidth: '100%',
+              // maxHeight: '100%',
+              maxWidth: '360px',
+              minWidth: '360px',
             }}
           >
             <PopularArticals 
               title={'XenoBlade Chronicals 3 Review'}
-              name={'Bob Fisher'}
-              articalInfo={'.......................'}
+              name={'Small size'}
+              articalInfo={'...'}
               articalImage={xenob3}
             />
           </Grid>
           <Grid
             item
-            xs={12}
-            sm={6}
-            md={6}
-            lg={6}
-            xl={6}
             sx={{
               padding: '8px',
+              // height: '372.9px',
+              // maxWidth: '100%',
+              // maxHeight: '100%',
+              maxWidth: '360px',
+              minWidth: '360px',
             }}
           >
             <PopularArticals 
               title={'XenoBlade Chronicals 3 Review'}
-              name={'Bob Fisher'}
-              articalInfo={'.......................'}
-              articalImage={xenob3}
-            />
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={6}
-            lg={6}
-            xl={6}
-            sx={{
-              padding: '8px',
-            }}
-          >
-            <PopularArticals 
-              title={'XenoBlade Chronicals 3 Review'}
-              name={'Bob Fisher'}
-              articalInfo={'.......................'}
-              articalImage={xenob3}
-            />
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            sm={6}
-            md={6}
-            lg={6}
-            xl={6}
-            sx={{
-              padding: '8px',
-            }}
-          >
-            <PopularArticals 
-              title={'XenoBlade Chronicals 3 Review'}
-              name={'Bob Fisher'}
-              articalInfo={'.......................'}
+              name={'Small size'}
+              articalInfo={'...'}
               articalImage={xenob3}
             />
           </Grid>
         </Grid>
-      </Grid>
-    </Grid> 
-  );
+      </Grid> 
+    );
 }
 
 export default HomePage;

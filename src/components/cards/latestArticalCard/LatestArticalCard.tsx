@@ -65,14 +65,10 @@ const LatestArticalCard: React.FC<Props> = ({
           }}
         >
           <Grid 
-            container
-            xs={10}
-            spacing={1}
+            item
+            xs={3}
           >
-            <Grid
-              item
-            >
-              <Button 
+            <Button 
               size="small"
               variant="outlined"
               sx={{
@@ -83,30 +79,29 @@ const LatestArticalCard: React.FC<Props> = ({
             >
               Share
             </Button>
-            </Grid>
-            <Grid
-              item
-            >
-              <Button
-                size="small"
-                variant="outlined"
-                sx={{
-                  color: '#ddb4f0',
-                  borderColor: '#ddb4f0',
-                  pointerEvent: 'none',
-                  paddingLeft: '8px'
-                }}
-              >
-                Learn More
-              </Button>
-            </Grid>
-            
           </Grid>
           <Grid 
             item
-            xs={2}
+            xs={6}
+          >
+            <Button
+              size="small"
+              variant="outlined"
+              sx={{
+                color: '#ddb4f0',
+                borderColor: '#ddb4f0',
+                pointerEvent: 'none',
+                paddingLeft: '8px'
+              }}
+            >
+              Learn More
+            </Button>
+          </Grid>
+          <Grid 
+            item
+            xs={3}
             sx={{
-              // justifyContent: "flex-end"
+              paddingLeft: '16px',
             }}
           >
             <ThumbUpRoundedIcon

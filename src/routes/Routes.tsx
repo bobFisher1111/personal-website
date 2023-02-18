@@ -1,6 +1,6 @@
 import HomePage from '../pages/home/HomePage';
 import About from '../pages/about/About';
-import VideoGames from '../pages/hobbies/VideoGames';
+import Coding from '../pages/coding/Coding';
 import Contact from '../pages/contact/Contact';
 import Logout from '../pages/logout/Logout';
 import DashboardAnalytics from '../pages/dashboardAnalytics/DashboardAnalytics';
@@ -26,8 +26,8 @@ const routes: Route[] = [
     element: DashboardAnalytics,
   },
   {
-    path: '/hobbies',
-    element: VideoGames,
+    path: '/coding',
+    element: Coding,
   },
   {
     path: '/',
