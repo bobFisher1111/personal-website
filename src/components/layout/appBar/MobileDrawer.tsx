@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import IconButton from '@mui/material/IconButton';
-import HeaderSocialMedia from './HeaderSocialMedia';
+import HeaderSocialMedia from '../../socialMediaComponent/SocialMediaComponent';
 
 type Anchor = 'left';
 

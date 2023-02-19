@@ -7,7 +7,7 @@ import {
 import { Link } from "react-router-dom";
 import MobileDrawer from './MobileDrawer';
 
-const HeaderSmalls = () => {
+const AppBarSmalls = () => {
   return (
     <Box sx={{ 
       display: 'flex',
@@ -72,4 +72,4 @@ const HeaderSmalls = () => {
   </Box>
   )}
 
-export default HeaderSmalls;
+export default AppBarSmalls;

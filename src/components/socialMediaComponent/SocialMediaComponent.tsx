@@ -1,10 +1,10 @@
 import React from 'react';
-import TwitterLogo from '../../../assets/icons/TwitterLogo.svg';
-import YoutTubeLogo from '../../../assets/icons/YoutTubeLogo.png';
-import FacebookLogo from '../../../assets/icons/FacebookLogo.png';
+import TwitterLogo from '../../assets/icons/TwitterLogo.svg';
+import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
+import FacebookLogo from '../../assets/icons/FacebookLogo.png';
 import { Grid } from "@mui/material";
 
-const HeaderSocialMedia = () => {
+const SocialMediaComponent = () => {
   const facebookUrl = 'https://www.facebook.com/';
   const twitterUrl = 'https://twitter.com/';
   const youtubeUrl = 'https://www.youtube.com/';
@@ -41,4 +41,4 @@ const HeaderSocialMedia = () => {
   );
 }
 
-export default HeaderSocialMedia;
+export default SocialMediaComponent;

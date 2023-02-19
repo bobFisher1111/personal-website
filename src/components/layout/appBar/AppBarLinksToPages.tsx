@@ -5,7 +5,7 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const HeaderLinksToPages = () => {
+const AppBarLinksToPages = () => {
   return (
     <>
       <Grid item>
@@ -85,4 +85,4 @@ const HeaderLinksToPages = () => {
   );
 }
 
-export default HeaderLinksToPages;
+export default AppBarLinksToPages;

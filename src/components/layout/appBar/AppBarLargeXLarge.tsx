@@ -5,10 +5,10 @@ import {
   Box,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import HeaderSocialMedia from './HeaderSocialMedia';
-import HeaderLinksToPages from './HeaderLinksToPages';
+import SocialMediaComponent from '../../socialMediaComponent/SocialMediaComponent';
+import AppBarLinksToPages from './AppBarLinksToPages';
 
-const HeaderLargeXLarge = () => {
+const AppBarLargeXLarge = () => {
   return (
     <Box 
       sx={{ 
@@ -68,7 +68,7 @@ const HeaderLargeXLarge = () => {
           }
         }}
       >
-        <HeaderSocialMedia />
+        <SocialMediaComponent />
       </Grid>
       <Grid
         container
@@ -86,9 +86,9 @@ const HeaderLargeXLarge = () => {
           }
         }}
       >
-        <HeaderLinksToPages />
+        <AppBarLinksToPages />
       </Grid>
   </Box>
 )}
 
-export default HeaderLargeXLarge;
+export default AppBarLargeXLarge;

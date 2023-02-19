@@ -2,13 +2,13 @@
 // if have a footer or header here, they will appear with all the children
 //  for routing
 import { Outlet } from "react-router-dom"; 
-import Header from './header/Header';
+import AppBarComponent from './appBar/AppBarComponent';
 
 const Layout = () => {
   // header & footer in this file
   return (
     <>
-      <Header />
+      <AppBarComponent />
       <main className="App">
         <Outlet />
       </main>

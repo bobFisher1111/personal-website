@@ -3,12 +3,12 @@ import {
   AppBar,
   Box,
 } from "@mui/material";
-import HeaderXSmall from './HeaderXSmall';
-import HeaderSmalls from './HeaderSmalls';
-import HeaderMedium from './HeaderMedium';
-import HeaderLargeXLarge from './HeaderLargeXLarge';
+import AppBarXSmall from './AppBarXSmall';
+import AppBarSmalls from './AppBarSmalls';
+import AppBarMedium from './AppBarMedium';
+import AppBarLargeXLarge from './AppBarLargeXLarge';
 
-const Header = () => {
+const AppBarComponent = () => {
   /*
     deside on color for appbar:
       - green: #667A6E
@@ -31,12 +31,12 @@ const Header = () => {
           borderBottom: 'solid #667A6E',
         }}
       >
-        <HeaderXSmall />
-        <HeaderSmalls />
-        <HeaderMedium /> 
-        <HeaderLargeXLarge />      
+        <AppBarXSmall />
+        <AppBarSmalls />
+        <AppBarMedium /> 
+        <AppBarLargeXLarge />      
       </AppBar>
     </Box>
   )}
 
-export default Header;
+export default AppBarComponent;

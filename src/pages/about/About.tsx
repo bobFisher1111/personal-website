@@ -13,7 +13,6 @@ const About = () => {
   return (
     <Box
       sx={{
-        // background: '#282c34',
         minHeight: '100vh',
         padding: '32px 16px 32px 16px',
         display: 'flex'
@@ -83,13 +82,13 @@ const About = () => {
               textAlign: 'fled-start',
               color: '#2F4C69',
               padding: '75px 0px 0x 0px',
-              // textDecoration: 'underline',
             }}
           >
             Our Team
           </Typography>
         </Grid>
         <Grid
+          item
           xs={12}
           sm={12}
           md={12}
@@ -106,6 +105,7 @@ const About = () => {
           />
         </Grid>
         <Grid
+          item
           xs={12}
           sm={12}
           md={12}
@@ -122,6 +122,7 @@ const About = () => {
           />
         </Grid>
         <Grid
+          item
           xs={12}
           sm={12}
           md={12}
@@ -138,6 +139,7 @@ const About = () => {
           />
         </Grid>
         <Grid
+          item
           xs={12}
           sm={12}
           md={12}

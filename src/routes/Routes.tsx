@@ -42,7 +42,7 @@ const routes: Route[] = [
     element: Profile,
   },
   {
-    path: '/codingprojects',
+    path: '/projects',
     element: Projects,
   },
 ];

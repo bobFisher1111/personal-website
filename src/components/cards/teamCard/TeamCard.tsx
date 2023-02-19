@@ -19,7 +19,9 @@ const TeamCard: React.FC<Props> = ({
         border: '2px solid #2F4C69',
       }}
     >
-      <Grid container xs={12}>
+      <Grid 
+        container
+      >
         <Grid
           item
           xs={6}

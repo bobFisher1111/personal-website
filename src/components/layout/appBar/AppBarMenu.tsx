@@ -12,7 +12,7 @@ import AnalyticsIcon from '@mui/icons-material/Analytics';
 import Logout from '@mui/icons-material/Logout';
 import { Link } from "react-router-dom";
 
-const AccountMenu = () => {
+const AppBarMenu = () => {
   // const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -100,4 +100,4 @@ const AccountMenu = () => {
   );
 }
 
-export default AccountMenu;
+export default AppBarMenu;
