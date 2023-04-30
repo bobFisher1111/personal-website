@@ -26,9 +26,9 @@ const AppBarComponent = () => {
         position="fixed"
         component="nav"
         sx={{
-          backgroundColor: "#2F4C69",
+          backgroundColor: "#667A6E", // "#2F4C69",
           boxShadow: 'none',
-          borderBottom: 'solid #667A6E',
+          borderBottom: 'solid #2F4C69 1px',
         }}
       >
         <AppBarXSmall />

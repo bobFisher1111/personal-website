@@ -3,27 +3,35 @@ import {
   Grid,
   Divider,
 } from "@mui/material";
+import moment from 'moment';
 import SectionPage from "../../components/sectionComponent/SectionComponent";
 import FilteringComponent from "../../components/filteringComponent/FilteringComponent";
 import HeaderComponent from "../../components/headerComponent/HeaderComponent";
 import SubTitlesComponent from "../../components/subTitlesComponent/SubTitlesComponent";
 import LatestArticalsComponent from "../../components/latestArticalComponent/LatestArticalsComponent";
 import PopularArticalsComponent from "../../components/popularArticalsComponent/PopularArticalsComponent";
+import AlignGrid from "../../themes/StyledGrids";
+import Card from '../../components/sections/Card';
+import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 
 const HomePage = () => {
   const widthRef = useRef<any>();
   const [marginWidth, setMarginWidth] = useState<any>(widthRef);
 
+  const ArticalDate = moment().format('ll');
+
+  const updatedLeftMargin = () => {
+    setMarginWidth(widthRef.current?.offsetLeft);
+  }
+
   useEffect(() => {
     if (widthRef && widthRef.current) {
       setMarginWidth(widthRef.current.offsetLeft);
-      window.addEventListener("resize", () => {
-        setMarginWidth(widthRef.current?.offsetLeft);
-      });
+      window.addEventListener("resize", updatedLeftMargin);
     }
     return () => {
       if(widthRef && widthRef.current) {
-        window.removeEventListener("resize", () => {});
+        window.removeEventListener("resize", updatedLeftMargin);
       }
     }
   }, [marginWidth]);
@@ -40,21 +48,15 @@ const HomePage = () => {
     >
       <HeaderComponent
         title='React2Python'
-        backgroundColor='#282c34'
+        backgroundColor='white' // #2F4C69 // 282c34
+        fontColor='#667A6E'
+        lineHeight={'40px'}
+        fontSize={'32px'}
       />
-      <Grid
+      <AlignGrid
         ref={widthRef}
         container
-        direction="row"
-        justifyContent="flex-start"
-        alignItems="center"
-        sx={{
-          padding: '32px 16px 0px 16px',
-          maxWidth: "1024px",
-          margin: 'auto',
-        }}
       >
-        <SectionPage />
         <Grid
           item
           xs={12}
@@ -75,34 +77,122 @@ const HomePage = () => {
             }}
           />
         </Grid>
-        <FilteringComponent />
+        <FilteringComponent
+            category={[]}
+            categoryColor={"#2F4C69"}
+        />
+       <SubTitlesComponent
+          subtitle={'Sections'}
+          fontColor='#2F4C69'
+        />
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={6}
+          lg={6}
+          xl={6}
+          
+        >
+          <Card
+            title={'final fantasy'}
+            backgroundColor={'white'}
+            fontColor={'#667A6E'}
+            img={finalfantasy7}
+            author={'Bob the Fisher'}
+            likes={'5'}
+            cardTextWidth={'250px'}
+            date={ArticalDate}
+            imageWidth={'200px'}
+            articalPage={false}
+          />
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={6}
+          lg={6}
+          xl={6}
+          
+        >
+          <Card
+            title='final fantasy'
+            backgroundColor='white'
+            fontColor='#667A6E'
+            img={finalfantasy7}
+            author='Bob the Fisher'
+            likes='5'
+            cardTextWidth={'250px'}
+            date={ArticalDate}
+            imageWidth={'200px'}
+            articalPage={false}
+          />
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={6}
+          lg={6}
+          xl={6}
+          
+        >
+          <Card
+            title={'final fantasy'}
+            backgroundColor={'white'}
+            fontColor={'#667A6E'}
+            img={finalfantasy7}
+            author={'Bob the Fisher'}
+            likes={'5'}
+            cardTextWidth={'250px'}
+            date={ArticalDate}
+            imageWidth={'200px'}
+            articalPage={false}
+          />
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={6}
+          lg={6}
+          xl={6}
+          
+        >
+          <Card
+            title='final fantasy'
+            backgroundColor='white'
+            fontColor='#667A6E'
+            img={finalfantasy7}
+            author='Bob the Fisher'
+            likes='5'
+            cardTextWidth={'250px'}
+            date={ArticalDate}
+            imageWidth={'200px'}
+            articalPage={false}
+          />
+        </Grid>
         <SubTitlesComponent
           subtitle='Latest Articals'
           fontColor='#2F4C69'
         />
-      </Grid>
+      </AlignGrid>
       <LatestArticalsComponent
         marginWidth={marginWidth}
       />
-      <Grid
+      <AlignGrid
         container
-        direction="row"
-        justifyContent="flex-start"
-        alignItems="center"
-        sx={{
-          padding: '32px 16px 0px 16px',
-          maxWidth: "1024px",
-          margin: 'auto',
-        }}
       >
-      <SubTitlesComponent
-        subtitle='Popular Articals '
-        fontColor='#2F4C69'
-      />
-    </Grid>
+        <SubTitlesComponent
+          subtitle='Popular Articals'
+          fontColor='#2F4C69'
+        />
+      </AlignGrid>
       <PopularArticalsComponent
         marginWidth={marginWidth}
       />
+      
     </Grid> 
   );
 }

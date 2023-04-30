@@ -63,7 +63,7 @@ const AppBarLinksToPages = () => {
           </Link>
         </Grid>
         <Grid item>
-          <Link to="/contact"
+          <Link to="/author"
             style={{textDecoration: "none"}}
           >
             <Typography
@@ -77,7 +77,7 @@ const AppBarLinksToPages = () => {
                 margin: "0px 22px 0px 0px"
             }}
             >
-              Contact
+              Author
             </Typography>
           </Link>
         </Grid>

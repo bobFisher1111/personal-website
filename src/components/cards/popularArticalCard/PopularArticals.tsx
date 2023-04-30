@@ -1,7 +1,8 @@
 import React from 'react';
 import {
-  Typography, Button, CardActions, CardMedia, CardContent, Card, Grid,
+  Typography, Button, CardActions, CardMedia, CardContent, Card, Grid, Box,
 } from '@mui/material/';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import ThumbDownRoundedIcon from '@mui/icons-material/ThumbDownRounded';
 import ThumbUpRoundedIcon from '@mui/icons-material/ThumbUpRounded';
 
@@ -16,20 +17,37 @@ const PopularArticals: React.FC<Props> = ({
   articalInfo = "Xenoblade Chronicles 3 is an action role-playing game with a large open world to explore, being the sixth title in the Xenoblade series. Unlike previous Xenoblade series entries, the game allows for seven party members to participate in battles at once, including the main party and an additional 'Hero' character.";
   return (
     <Card sx={{ 
-      maxWidth: 500,
-      backgroundColor: '#282c34',
+      maxWidth: 345,
+      transition: 'transform .5s',
+      '&::after': {
+        posisition: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        transition: 'opacity 2s cubic-bezier(.165, .84, .44, 1)',
+        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+        opacity: 0,
+        zIndex: -1,
+      },
+      '&:hover, &:focus': {
+        transform: 'scale3d(1.006, 1.006, 2)',
+        '&::after': {
+          opacity: 1,
+        }
+      }
       }}
     >
-      <div
-        style={{
+      <Box 
+        sx={{ 
           position: 'relative',
-          textAlign: 'center',
+          boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
         }}
       >
         <CardMedia
           component="img"
           alt="green iguana"
-          height="200"
+          height="400" // 400
           image={articalImage}
         />
         <Typography
@@ -51,99 +69,65 @@ const PopularArticals: React.FC<Props> = ({
         >
           1
         </Typography>
-      </div>
-      <CardContent
-        sx={{
-          padding: '10px 16px 0px 16px',
-        }}
-      >
-        <Typography component="div" noWrap variant="h6" color="white">
-          {title}
-        </Typography>
-        <Typography variant="subtitle1" color="#667A6E" component="div">
-          by {name}
-        </Typography>
         <Typography 
-          variant="body1"
-          color="white" 
-          sx={{ 
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            display: '-webkit-box',
-            WebkitLineClamp: '2',
-            WebkitBoxOrient: 'vertical',
-          }} 
-          component="div"
-        >
-          {articalInfo}
-        </Typography>
-      </CardContent>
-      <CardActions
-        sx={{
-          padding: '16px',
-        }}
-      >
-        <Grid 
-          container 
-          alignItems="center"
-          sx={{
-            whiteSpace: 'nowrap'
-          }}
-        >
-          <Grid 
-            item
-            xs={3}
-          >
-            <Button 
-              size="small"
-              variant="outlined"
-              sx={{
-                color: '#667A6E',
-                borderColor: '#667A6E',
-                pointerEvent: 'none',
-              }}
-            >
-              Share
-            </Button>
-          </Grid>
-          <Grid 
-            item
-            xs={6}
-          >
-            <Button
-              size="small"
-              variant="outlined"
-              sx={{
-                color: '#667A6E',
-                borderColor: '#667A6E',
-                pointerEvent: 'none',
-                paddingLeft: '8px'
-              }}
-            >
-              Learn More
-            </Button>
-          </Grid>
-          <Grid 
-            item
-            xs={3}
+            variant="h6" 
+            color="white"
             sx={{
-              paddingLeft: '16px',
+              position: 'absolute',
+            top: '8px',
+            left: '41px',
+            height: '25px',
+            width: '275px',
+            overflow: 'hidden',
+            whiteSpace: 'nowrap',
+            textOverflow: 'ellipsis',
+            textAlign: 'left',
+            alignItems: 'center',
+            color: 'white',
+            textShadow: 'black 2px 2px 2px',
+              '-webkit-font-smoothing': 'antialiased',
             }}
           >
-            <ThumbUpRoundedIcon
-              sx={{
-                color: '#FDDA0D',
-              }}
-            />
-            <ThumbDownRoundedIcon
-              sx={{
-                padding: '0px 0px 0px 8px',
-                color: '#FDDA0D'
-              }}
-            />
+            {title}
+         </Typography>
+         <Box
+          sx={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            width: '100%',
+            bgcolor: 'black', //#667A6E', //'rgba(0, 0, 0, 0.53)',
+            color: 'white',
+            padding: '16px',
+            opacity: 0.70,
+          }}
+        >
+          <Grid container>
+            <Grid item xs={10}>
+              <Typography 
+                variant="subtitle1" 
+                color="white"
+                sx={{ 
+                  overflow: 'hidden',
+                  whiteSpace: 'nowrap',
+                  textOverflow: 'ellipsis',
+                  display: '-webkit-box',
+                  '-webkit-font-smoothing': 'antialiased',
+                  WebkitLineClamp: '1',
+                  WebkitBoxOrient: 'vertical',
+                  // fontWeight: 'bold',
+                }} 
+              >
+                by {name}
+              </Typography>
+            </Grid>
+            <Grid item xs={2}>
+              <ContentCopyIcon />
+            </Grid>
           </Grid>
-        </Grid>
-      </CardActions>
+        </Box>
+
+      </Box>
     </Card>
   );
 }

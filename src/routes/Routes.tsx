@@ -6,6 +6,8 @@ import Logout from '../pages/logout/Logout';
 import DashboardAnalytics from '../pages/dashboardAnalytics/DashboardAnalytics';
 import Profile from '../pages/profile/Profile';
 import Projects from '../pages/projects/Projects';
+import ArticalPage from '../components/articalPage/ArticalPage';
+import AuthorPage from '../pages/author/AuthorPage';
 
 type Route = {
   path?: string;
@@ -43,7 +45,11 @@ const routes: Route[] = [
   },
   {
     path: '/projects',
-    element: Projects,
+    element: ArticalPage,
+  },
+  {
+    path: '/author',
+    element: AuthorPage,
   },
 ];
 

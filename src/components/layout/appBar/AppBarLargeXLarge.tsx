@@ -77,13 +77,13 @@ const AppBarLargeXLarge = () => {
         alignItems="center"
         spacing={2}
         sx={{
-          display:{
-            xs: "none",
-            sm: "none",
-            md: "none",
-            lg: "flex",
-            xl: "flex",
-          }
+          // display:{
+          //   xs: "none",
+          //   sm: "none",
+          //   md: "none",
+          //   lg: "flex",
+          //   xl: "flex",
+          // }
         }}
       >
         <AppBarLinksToPages />

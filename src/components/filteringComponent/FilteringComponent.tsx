@@ -3,7 +3,22 @@ import {
   Grid, Button 
 } from '@mui/material';
 
-const FilteringComponent = () => {
+const FilteringComponent:  React.FC<Props> = ({
+  category, 
+  categoryColor,
+}) => {
+  const categories = [
+    {
+      name: 'Latest Articals',
+    },
+    {
+      name: 'All Articals',
+    },
+    {
+      name: 'Popular Articals',
+    },
+  ];
+  
   return (
     <>
       <Grid 
@@ -22,62 +37,30 @@ const FilteringComponent = () => {
               padding: '4px',
             }}
           >
-            <Button 
-              variant="outlined" 
-              size="medium"
-              sx={{
-                color: '#282c34',
-                borderColor: '#282c34',
-                pointerEvent: 'none'
-              }}
-            >
-              All
-            </Button>
-            <Button 
-              variant="outlined" 
-              size="medium"
-              sx={{
-                color: '#282c34',
-                borderColor: '#282c34',
-                pointerEvent: 'none'
-              }}
-            >
-              Coding
-            </Button>
-            <Button 
-              variant="outlined" 
-              size="medium"
-              sx={{
-                color: '#2F4C69',
-                borderColor: '#2F4C69',
-              }}
-            >
-              Data
-            </Button>
-            <Button 
-              variant="outlined" 
-              size="medium"
-              sx={{
-                color: '#667A6E',
-                borderColor: '#667A6E',
-              }}
-            >
-              Game Dev
-            </Button>
-            <Button 
-              variant="outlined" 
-              size="medium"
-              sx={{
-                color: '#B784A7',
-                borderColor: '#B784A7',
-              }}
-            >
-              Projects
-            </Button>
+            { categories.map((item, index) => {
+              console.log('item', item);
+              return (
+               <Button 
+               size="medium"
+               sx={{
+                 color: categoryColor,
+                 borderColor: '#282c34',
+                 pointerEvent: 'none'
+               }}
+             >
+               {item.name}
+             </Button>
+            )})}
           </Grid>
         </Grid>
     </>
   );
 }
+
+export type Props = {
+  category: object,
+  categoryColor: string,
+  
+};
 
 export default FilteringComponent;

@@ -6,17 +6,26 @@ import {
 const HeaderComponent:  React.FC<Props> = ({
   title,
   backgroundColor,
+  fontColor,
+  lineHeight,
+  fontSize,
 }) => {
   return (
     <>
       <Grid
         container
         direction="row"
+        justifyContent="center"
+        alignItems="center"
         sx={{ 
-          display: 'flex',
-          margin: 'auto', 
+          // display: 'flex',
+          // margin: 'auto', 
           backgroundColor: backgroundColor,
-          borderBottom: '2px solid red',
+          // borderBottom: '2px solid red',
+          // backgroundImage: 'radial-gradient(green 20%, transparent 20%), radial-gradient(green 20%, transparent 20%)',
+          // backgroundPosition: '0 0, 10px 10px',
+          // backgroundSize: '20px 20px',
+          // marginLeft: '32px',
         }}
       >
         <Grid
@@ -34,8 +43,10 @@ const HeaderComponent:  React.FC<Props> = ({
             variant="h5"
             style={{
               textAlign: 'center',
-              color: 'white',
-              padding: '25px 0px 75px 0px',
+              color: fontColor, // '#667A6E', // white
+              padding: '25px 0px 25px 0px',
+              fontSize: fontSize,
+              lineHeight: lineHeight,
             }}
           >
             {title}
@@ -49,6 +60,9 @@ const HeaderComponent:  React.FC<Props> = ({
 export type Props = {
   title?: string;
   backgroundColor: string;
-  };
+  fontColor: string;
+  lineHeight: string;
+  fontSize: string;
+};
 
 export default HeaderComponent;

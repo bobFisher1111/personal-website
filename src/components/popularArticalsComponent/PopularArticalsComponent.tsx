@@ -30,7 +30,7 @@ const PopularArticalsComponent: React.FC<Props> = ({
         >
           <PopularArticals 
             title={'XenoBlade Chronicals 3 Review'}
-            name={'Small size'}
+            name={'Bob Fisher'}
             articalInfo={'...'}
             articalImage={xenob3}
           />
@@ -45,7 +45,7 @@ const PopularArticalsComponent: React.FC<Props> = ({
         >
           <PopularArticals 
             title={'XenoBlade Chronicals 3 Review'}
-            name={'Small size'}
+            name={'Bob Fisher'}
             articalInfo={'...'}
             articalImage={xenob3}
           />
@@ -60,7 +60,7 @@ const PopularArticalsComponent: React.FC<Props> = ({
         >
           <PopularArticals 
             title={'XenoBlade Chronicals 3 Review'}
-            name={'Small size'}
+            name={'Bob Fisher'}
             articalInfo={'...'}
             articalImage={xenob3}
           />
@@ -75,7 +75,7 @@ const PopularArticalsComponent: React.FC<Props> = ({
         >
           <PopularArticals 
             title={'XenoBlade Chronicals 3 Review'}
-            name={'Small size'}
+            name={'Bob Fisher'}
             articalInfo={'...'}
             articalImage={xenob3}
           />
@@ -90,7 +90,7 @@ const PopularArticalsComponent: React.FC<Props> = ({
         >
           <PopularArticals 
             title={'XenoBlade Chronicals 3 Review'}
-            name={'Small size'}
+            name={'Bob Fisher'}
             articalInfo={'...'}
             articalImage={xenob3}
           />
@@ -105,7 +105,7 @@ const PopularArticalsComponent: React.FC<Props> = ({
         >
           <PopularArticals 
             title={'XenoBlade Chronicals 3 Review'}
-            name={'Small size'}
+            name={'Bob Fisher'}
             articalInfo={'...'}
             articalImage={xenob3}
           />
@@ -120,7 +120,7 @@ const PopularArticalsComponent: React.FC<Props> = ({
         >
           <PopularArticals 
             title={'XenoBlade Chronicals 3 Review'}
-            name={'Small size'}
+            name={'Bob Fisher'}
             articalInfo={'...'}
             articalImage={xenob3}
           />
