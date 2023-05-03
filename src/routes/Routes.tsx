@@ -8,6 +8,7 @@ import Profile from '../pages/profile/Profile';
 import Projects from '../pages/projects/Projects';
 import ArticalPage from '../components/articalPage/ArticalPage';
 import AuthorPage from '../pages/author/AuthorPage';
+import WritersPage from '../pages/writers/WritersPage';
 
 type Route = {
   path?: string;
@@ -50,6 +51,10 @@ const routes: Route[] = [
   {
     path: '/author',
     element: AuthorPage,
+  },
+  {
+    path:'/writers',
+    element: WritersPage,
   },
 ];
 

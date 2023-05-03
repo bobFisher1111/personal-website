@@ -22,7 +22,7 @@ const AuthorComp: React.FC<Props> = ({
         paddingBottom: '200px',
         maxWidth: "1024px",
         margin: 'auto',
-        padding: '16px 24px 0px 24px',
+        padding: '16px 24px 100px 24px',
       }}
     >
       <Grid

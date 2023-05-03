@@ -45,10 +45,8 @@ const StyledCardContent = styled(CardContent)({
    const [fontSizes, setFontSizes] = useState<string>();
    const widthRef = useRef();
    const { width, height, ref } = useResizeDetector();
-   // console.log('what is ref', width);
 
    useEffect(() => {
-    console.log('fontSize', fontSizes);
     if(width && width === 800) {
         setFontSizes('16px');
     }
@@ -62,7 +60,6 @@ const StyledCardContent = styled(CardContent)({
    const temptitle = 'Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review  VII Review FinalFantasyiiii VII Review  VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review  VII Review Final Fantasyiiii VII Review  VII Review Final Fantasy VII Review';
 
    const articalInfo = () => {
-    console.log('what is the width', imageWidth);
     return (
         <>
           <Grid container direction="row" sx={{alignItems: 'center' }}>
@@ -154,7 +151,6 @@ const StyledCardContent = styled(CardContent)({
     )
    }
    const articalPageInfo = () => {
-    console.log('what is the width', imageWidth);
     return (
         <>
           <Grid container direction="row" sx={{alignItems: 'center' }}>

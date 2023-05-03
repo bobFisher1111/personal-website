@@ -9,6 +9,7 @@ const SocialMediaComponent: React.FC<Props> = ({
   widthPadding,
   turnOnStyle,
   turnOnEmail,
+  turnOnEmailStyle,
 }) => {
   const [emailIcon, setEmailIcon] = useState<string>('#667A6E');
   const facebookUrl = 'https://www.facebook.com/';
@@ -66,8 +67,7 @@ const SocialMediaComponent: React.FC<Props> = ({
         {turnOnEmail && <Grid
           item
           sx={{
-            // padding: turnOnStyle ? widthPadding : '',
-            padding: '10px 0px 16px 16px'
+            padding: turnOnEmailStyle ? '0px' : '10px 0px 16px 16px'
           }}
         >
           <EmailOutlinedIcon
@@ -87,6 +87,7 @@ export type Props = {
   widthPadding?: string,
   turnOnStyle?: boolean,
   turnOnEmail?: boolean,
+  turnOnEmailStyle?: boolean,
 };
 
 export default SocialMediaComponent;

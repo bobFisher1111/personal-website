@@ -45,7 +45,7 @@ const AppBarLinksToPages = () => {
           </Link> 
         </Grid>
         <Grid item>
-          <Link to="/about"
+          <Link to="/writers"
             style={{textDecoration: "none"}}
           >
             <Typography
@@ -58,7 +58,7 @@ const AppBarLinksToPages = () => {
                 },
             }}
             >
-              About
+              Writers
             </Typography>
           </Link>
         </Grid>

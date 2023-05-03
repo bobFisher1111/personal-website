@@ -22,8 +22,6 @@ const Works: React.FC<Props> = ({
   const [artaicalPageExtraInfo, setArticalPageExtraInfo] = useState<number>(0)
   const [extraInfo, setExtraInfo] = useState<string>('');
 
-  console.log('total Height', typeof artaicalPageExtraInfo)
-
   useEffect(() => {
     if (titleHeightRef && titleHeightRef?.current && titleHeightRef?.current.clientHeight) {
       const titleHeight: number = titleHeightRef && titleHeightRef?.current?.clientHeight;
@@ -38,7 +36,6 @@ const Works: React.FC<Props> = ({
   }, [extraInfo]);
 
   const articalPageBookExtrainfo = (bottomHeight: string) => {
-    console.log('bottom height', extraInfo);
     return (
         <Grid
           ref={articalExtraInfoRef}
@@ -68,10 +65,9 @@ const Works: React.FC<Props> = ({
                 fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",                
               }}
-              >
+            >
                 Buy
-              </Link>
-       
+            </Link>
           </Grid>
           <Grid
            item

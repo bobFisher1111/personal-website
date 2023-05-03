@@ -31,7 +31,7 @@ const AuthorComponent: React.FC<Props> = ({
           padding: '16px 0px 16px 16px'
         }}
       >
-         <Avatar 
+        <Avatar 
            alt="Remy Sharp"
            src={solidSnakePortrait2}
            sx={{
@@ -39,15 +39,14 @@ const AuthorComponent: React.FC<Props> = ({
             height: 56,
            }}
         />
-    </Grid>
-    <Grid
+      </Grid>
+      <Grid
         item
         sx={{
           alignItems: 'center',
           padding: '16px',
         }}
       >
-        
         <Typography
           variant="h5"
           sx={{
@@ -56,7 +55,7 @@ const AuthorComponent: React.FC<Props> = ({
             lineHeight: '2'
           }}
         >
-              {'Bob the fisher'}
+          {'Bob the fisher'}
         </Typography>
       </Grid>
       <Grid

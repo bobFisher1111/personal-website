@@ -38,7 +38,6 @@ const FilteringComponent:  React.FC<Props> = ({
             }}
           >
             { categories.map((item, index) => {
-              console.log('item', item);
               return (
                <Button 
                size="medium"

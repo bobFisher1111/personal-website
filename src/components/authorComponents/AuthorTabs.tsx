@@ -8,7 +8,9 @@ import {
 import moment from 'moment';
 import Works from '../works/Works';
 import Card from '../sections/Card';
-import FilteringComponent from "../../components/filteringComponent/FilteringComponent";
+import FilteringComponent from "../filteringComponent/FilteringComponent";
+import ProjectsComponent from "../projects/ProjectsComponent";
+import AboutComponent from "../about/AboutComponent";
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 import book2 from '../../assets/images/book2.png';
 
@@ -128,13 +130,18 @@ const AuthorTabs = () => {
           textColor="inherit"
         >
           <Tab label="Articals" {...a11yProps(0)} />
-          <Tab label="Books" {...a11yProps(1)} />
+          <Tab label="Projects" {...a11yProps(1)} />
+          <Tab label="Books" {...a11yProps(2)} />
+          <Tab label="About" {...a11yProps(3)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
         {ArticalsTab()}
       </TabPanel>
       <TabPanel value={value} index={1}>
+        <ProjectsComponent />
+      </TabPanel>
+      <TabPanel value={value} index={2}>
         <Works
           bookTitle="le Handbook of Regression Modeling in People le Handbook of Regression Modeling in People le Handbook of Regression Modeling in People le Handbook of Regression Modeling in People"
           bookPlot="le Handbook of Regression Modeling in People le Handbook of Regression Modeling in People le Handbook of Regression Modeling in People le Handbook of Regression Modeling in People"
@@ -144,6 +151,9 @@ const AuthorTabs = () => {
           authorsPage={true}
           bookCover={book2}
         />
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        <AboutComponent />
       </TabPanel>
     </Box>
   );
