@@ -3,12 +3,12 @@ import {
   Grid, Typography, Avatar,
 } from "@mui/material";
 import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
-import Card from "../sections/Card";
-import Works from "./Works";
+import Works from "../works/Works";
 import LatestArticalCard from "../cards/latestArticalCard/LatestArticalCard";
 import FilteringComponent from "../../components/filteringComponent/FilteringComponent";
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 import solidSnakePortrait2 from '../../assets/images/solidSnakePortrait2.jpeg';
+import book1 from '../../assets/images/book1.png';
 
 const AuthorComponent: React.FC<Props> = ({
 }) => {
@@ -21,9 +21,7 @@ const AuthorComponent: React.FC<Props> = ({
       direction="row"
       justifyContent="center"
       sx={{
-        // borderTop: '3px solid #667A6E',
         borderLeft: '1px solid #667A6E',
-        // borderRight: '3px solid #667A6E',
         margin: '184px 0px 0px 0px',
       }}
     >
@@ -44,11 +42,6 @@ const AuthorComponent: React.FC<Props> = ({
     </Grid>
     <Grid
         item
-        // xs={10}
-        // sm={10}
-        // md={10}
-        // lg={10}
-        // xl={10}
         sx={{
           alignItems: 'center',
           padding: '16px',
@@ -112,6 +105,8 @@ const AuthorComponent: React.FC<Props> = ({
        <Works
          bookTitle="Handbook of Regression Modeling in People"
          bookYear='2001'
+         bookCover={book1}
+         authorsPage={false}
        />
       </Grid>
     </Grid>
@@ -121,7 +116,6 @@ const AuthorComponent: React.FC<Props> = ({
         justifyContent="center"
         sx={{
           borderLeft: '1px solid #667A6E',
-        //   borderRight: '3px solid #667A6E',
         }}
       >
         <FilteringComponent
@@ -135,7 +129,6 @@ const AuthorComponent: React.FC<Props> = ({
         justifyContent="center"
         sx={{
           borderLeft: '1px solid #667A6E',
-        //   borderRight: '3px solid #667A6E',
         }}
     >
       <Grid
@@ -204,8 +197,6 @@ const AuthorComponent: React.FC<Props> = ({
         xl={12}
         sx={{
           padding: '0px 0px 36px 16px',
-          // borderBottom: '3px solid #667A6E',
-          // borderRight: '1px solid grey',
         }}
       ></Grid>
     </Grid>

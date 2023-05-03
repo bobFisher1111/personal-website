@@ -65,6 +65,7 @@ const Section: React.FC<Props> = ({
           fontColor={fontColor}
           lineHeight={'40px'}
           fontSize={'32px'}
+          authorAvatar={false}
         />
         <Divider
           sx={{

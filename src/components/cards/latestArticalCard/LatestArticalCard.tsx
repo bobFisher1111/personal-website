@@ -18,7 +18,7 @@ const LatestArticalCard: React.FC<Props> = ({
   articalInfo = "Xenoblade Chronicles 3 is an action role-playing game with a large open world to explore, being the sixth title in the Xenoblade series. Unlike previous Xenoblade series entries, the game allows for seven party members to participate in battles at once, including the main party and an additional 'Hero' character.";
   return (
     <Card sx={{
-      maxWidth: 345, // 345
+      maxWidth: 345,
       transition: 'transform .5s',
       '&::after': {
         posisition: 'absolute',
@@ -50,10 +50,8 @@ const LatestArticalCard: React.FC<Props> = ({
             top: 0,
             left: 0,
             width: '100%',
-            // bgcolor: '#2F4C69', //#667A6E', //'rgba(0, 0, 0, 0.53)',
             color: 'white',
             padding: '15px',
-            // opacity: 0.70
             
           }}
         >
@@ -61,9 +59,7 @@ const LatestArticalCard: React.FC<Props> = ({
             variant="h6" 
             color="white"
             sx={{
-              // fontWeight: 'bold',
               textShadow: 'black 2px 2px 2px',
-              '-webkit-font-smoothing': 'antialiased',
             }}
           >
             {title}
@@ -71,7 +67,7 @@ const LatestArticalCard: React.FC<Props> = ({
         </Box>
         <CardMedia
           component="img"
-          height="400" // 400
+          height="400"
           image={articalImage}
         />
         <Box
@@ -80,7 +76,7 @@ const LatestArticalCard: React.FC<Props> = ({
             bottom: 0,
             left: 0,
             width: '100%',
-            bgcolor: 'black', //#667A6E', //'rgba(0, 0, 0, 0.53)',
+            bgcolor: 'black',
             color: 'white',
             padding: '16px',
             opacity: 0.70,
@@ -95,10 +91,8 @@ const LatestArticalCard: React.FC<Props> = ({
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
                   display: '-webkit-box',
-                  '-webkit-font-smoothing': 'antialiased',
                   WebkitLineClamp: '1',
                   WebkitBoxOrient: 'vertical',
-                  // fontWeight: 'bold',
                 }} 
               >
                 by {name}
@@ -127,33 +121,3 @@ export type Props = {
 
 export default LatestArticalCard;
 
-/*
-<CardContent
-        sx={{
-          padding: '10px 16px 0px 16px',
-        }}
-      >
-        <Typography component="div" noWrap variant="h6" color="white">
-          {title}
-        </Typography>
-        <Typography variant="subtitle1" color="#ddb4f0" component="div">
-          by {name}
-        </Typography>
-        <Typography 
-          variant="body1"
-          color="white" 
-          sx={{ 
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            display: '-webkit-box',
-            WebkitLineClamp: '2',
-            WebkitBoxOrient: 'vertical',
-          }} 
-          component="div"
-        >
-          {articalInfo}
-        </Typography>
-      </CardContent>
-*/
-
-//

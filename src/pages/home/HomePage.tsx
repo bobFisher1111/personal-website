@@ -4,7 +4,6 @@ import {
   Divider,
 } from "@mui/material";
 import moment from 'moment';
-import SectionPage from "../../components/sectionComponent/SectionComponent";
 import FilteringComponent from "../../components/filteringComponent/FilteringComponent";
 import HeaderComponent from "../../components/headerComponent/HeaderComponent";
 import SubTitlesComponent from "../../components/subTitlesComponent/SubTitlesComponent";
@@ -52,6 +51,7 @@ const HomePage = () => {
         fontColor='#667A6E'
         lineHeight={'40px'}
         fontSize={'32px'}
+        authorAvatar={false}
       />
       <AlignGrid
         ref={widthRef}

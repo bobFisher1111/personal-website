@@ -3,16 +3,12 @@ import {
   Typography, Button, CardActions, CardMedia, CardContent, Card, Grid, Box,
 } from '@mui/material/';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import ThumbDownRoundedIcon from '@mui/icons-material/ThumbDownRounded';
-import ThumbUpRoundedIcon from '@mui/icons-material/ThumbUpRounded';
 
 const PopularArticals: React.FC<Props> = ({
     title,
     name,
     articalInfo,
     articalImage,
-    section,
-    date,
 }) => {
   articalInfo = "Xenoblade Chronicles 3 is an action role-playing game with a large open world to explore, being the sixth title in the Xenoblade series. Unlike previous Xenoblade series entries, the game allows for seven party members to participate in battles at once, including the main party and an additional 'Hero' character.";
   return (
@@ -74,18 +70,17 @@ const PopularArticals: React.FC<Props> = ({
             color="white"
             sx={{
               position: 'absolute',
-            top: '8px',
-            left: '41px',
-            height: '25px',
-            width: '275px',
-            overflow: 'hidden',
-            whiteSpace: 'nowrap',
-            textOverflow: 'ellipsis',
-            textAlign: 'left',
-            alignItems: 'center',
-            color: 'white',
-            textShadow: 'black 2px 2px 2px',
-              '-webkit-font-smoothing': 'antialiased',
+              top: '8px',
+              left: '41px',
+              height: '25px',
+              width: '275px',
+              overflow: 'hidden',
+              whiteSpace: 'nowrap',
+              textOverflow: 'ellipsis',
+              textAlign: 'left',
+              alignItems: 'center',
+              color: 'white',
+              textShadow: 'black 2px 2px 2px',
             }}
           >
             {title}
@@ -96,7 +91,7 @@ const PopularArticals: React.FC<Props> = ({
             bottom: 0,
             left: 0,
             width: '100%',
-            bgcolor: 'black', //#667A6E', //'rgba(0, 0, 0, 0.53)',
+            bgcolor: 'black',
             color: 'white',
             padding: '16px',
             opacity: 0.70,
@@ -112,10 +107,8 @@ const PopularArticals: React.FC<Props> = ({
                   whiteSpace: 'nowrap',
                   textOverflow: 'ellipsis',
                   display: '-webkit-box',
-                  '-webkit-font-smoothing': 'antialiased',
                   WebkitLineClamp: '1',
                   WebkitBoxOrient: 'vertical',
-                  // fontWeight: 'bold',
                 }} 
               >
                 by {name}

@@ -1,7 +1,10 @@
 import React from 'react';
 import {
-    Grid, Typography,
+  Grid,
+  Typography,
+  Avatar,
 } from "@mui/material";
+import solidSnakePortrait2 from '../../assets/images/solidSnakePortrait2.jpeg';
 
 const HeaderComponent:  React.FC<Props> = ({
   title,
@@ -9,7 +12,25 @@ const HeaderComponent:  React.FC<Props> = ({
   fontColor,
   lineHeight,
   fontSize,
+  authorAvatar,
 }) => {
+  const titleFunction = (item: any) => {
+    return (
+      <Typography
+            variant="h5"
+            style={{
+              textAlign: 'center',
+              color: fontColor,
+              padding: '25px 0px 25px 0px',
+              fontSize: fontSize,
+              lineHeight: lineHeight,
+            }}
+          >
+            {item}
+          </Typography>
+    )
+  };
+
   return (
     <>
       <Grid
@@ -18,16 +39,38 @@ const HeaderComponent:  React.FC<Props> = ({
         justifyContent="center"
         alignItems="center"
         sx={{ 
-          // display: 'flex',
-          // margin: 'auto', 
           backgroundColor: backgroundColor,
-          // borderBottom: '2px solid red',
-          // backgroundImage: 'radial-gradient(green 20%, transparent 20%), radial-gradient(green 20%, transparent 20%)',
-          // backgroundPosition: '0 0, 10px 10px',
-          // backgroundSize: '20px 20px',
-          // marginLeft: '32px',
+          padding: '50px 0px 0px 0px',
         }}
       >
+        {authorAvatar ? 
+        <>
+          <Grid
+          item
+          sx={{
+            padding: '16px 0px 16px 16px'
+          }}
+        >
+           <Avatar 
+             alt="Remy Sharp"
+             src={solidSnakePortrait2}
+             sx={{
+              width: 56,
+              height: 56,
+             }}
+          />
+      </Grid>
+      <Grid
+        item
+        sx={{
+          alignItems: 'center',
+          padding: '16px',
+        }}
+      >
+       {titleFunction(title)}
+     </Grid>
+     </>
+      :
         <Grid
           item
           xs={12}
@@ -39,19 +82,9 @@ const HeaderComponent:  React.FC<Props> = ({
             padding: '50px 0px 0px 0px'
           }}
         >
-          <Typography
-            variant="h5"
-            style={{
-              textAlign: 'center',
-              color: fontColor, // '#667A6E', // white
-              padding: '25px 0px 25px 0px',
-              fontSize: fontSize,
-              lineHeight: lineHeight,
-            }}
-          >
-            {title}
-          </Typography>
+         {titleFunction(title)}
         </Grid>
+      }
       </Grid>
     </>
   );
@@ -63,6 +96,7 @@ export type Props = {
   fontColor: string;
   lineHeight: string;
   fontSize: string;
+  authorAvatar: boolean;
 };
 
 export default HeaderComponent;

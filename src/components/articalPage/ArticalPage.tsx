@@ -239,6 +239,7 @@ const ArticalPage: React.FC<Props> = ({
           fontColor={'black'}
           lineHeight={'40px'}
           fontSize={'32px'}
+          authorAvatar={false}
         />
       <Card
           title={'First JRPG ever played, was given money for birthday and the cover art looked cool. Had no idea what to expect'}
