@@ -4,15 +4,49 @@ import {
   Grid,
   Divider,
 } from "@mui/material";
-import moment from 'moment';
 import HeaderComponent from '../headerComponent/HeaderComponent';
 import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
-import AuthorTabs from './AuthorTabs';
+import TabsComponent from '../tabsComponent/TabsComponent';
+import ProjectsComponent from "../projects/ProjectsComponent";
+import AuthorTab from "./AuthorTab";
+import Works from '../works/Works';
+import book2 from '../../assets/images/book2.png';
+import AboutComponent from "../about/AboutComponent";
 
 const AuthorComp: React.FC<Props> = ({
 }) => {
   const bioText1 = "when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centur. ";
   const bioText = bioText1 + bioText1;
+
+  const tabsPosistionOne =() => {
+    return (
+      <AuthorTab />
+    )
+  }
+  const tabsPosistionTwo = () => {
+    return (
+      <ProjectsComponent />
+    )
+  };
+  const tabsPosistionThree = () => {
+    return (
+      <Works
+          bookTitle="le Handbook of Regression Modeling in People le Handbook of Regression Modeling in People le Handbook of Regression Modeling in People le Handbook of Regression Modeling in People"
+          bookPlot="le Handbook of Regression Modeling in People le Handbook of Regression Modeling in People le Handbook of Regression Modeling in People le Handbook of Regression Modeling in People"
+          buyBookLink="https://www.ign.com"
+          bookGenere="Science"
+          bookYear='2001'
+          authorsPage={true}
+          bookCover={book2}
+        />
+    )
+  }
+  const tabsPosistionFour = () => {
+    return (
+      <AboutComponent />
+    )
+  }
+
   return (
     <Grid
       container
@@ -92,7 +126,17 @@ const AuthorComp: React.FC<Props> = ({
           turnOnStyle={true}
           turnOnEmail={true}
         />
-        <AuthorTabs />
+        <TabsComponent
+          extraTabs={true}
+          position1={tabsPosistionOne}
+          position2={tabsPosistionTwo}
+          position3={tabsPosistionThree}
+          position4={tabsPosistionFour}
+          position1Name={'Articals'}
+          position2Name={'Projects'}
+          position3Name={'Books'}
+          position4Name={'About'}
+        />
       </Grid>
    </Grid>
   )

@@ -1,7 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 import Section from '../../components/sections/Section';
-import foxGirl from '../../assets/images/foxGirl.png';
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 
 const Coding = () => {
@@ -10,7 +9,7 @@ const Coding = () => {
     <>
       <Section
         headerTitle='Coding'
-        backgroundColor='white' // #2F4C69 // 282c34
+        backgroundColor='white'
         fontColor='#667A6E'
         img={finalfantasy7}
         title="Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review"

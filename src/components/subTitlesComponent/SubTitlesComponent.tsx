@@ -5,7 +5,8 @@ import {
 
 const SubTitlesComponent: React.FC<Props> = ({
   subtitle,
-  fontColor
+  fontColor,
+  turnOnStyle,
 }) => {
   return (
     <Grid
@@ -29,6 +30,7 @@ const SubTitlesComponent: React.FC<Props> = ({
           sx={{
             textAlign: 'fled-start',
             color: fontColor,
+            padding: turnOnStyle ? '16px 0px 0px 0px' : '0px'
           }}
         >
           {subtitle} 
@@ -41,6 +43,7 @@ const SubTitlesComponent: React.FC<Props> = ({
 export type Props = {
   subtitle: string;
   fontColor: string;
+  turnOnStyle?: boolean
 };
 
 export default SubTitlesComponent;

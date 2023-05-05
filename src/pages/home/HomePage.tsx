@@ -9,6 +9,7 @@ import HeaderComponent from "../../components/headerComponent/HeaderComponent";
 import SubTitlesComponent from "../../components/subTitlesComponent/SubTitlesComponent";
 import LatestArticalsComponent from "../../components/latestArticalComponent/LatestArticalsComponent";
 import PopularArticalsComponent from "../../components/popularArticalsComponent/PopularArticalsComponent";
+import SectionCardXSmallSmall from "../../components/sectionsCard/SectionCard";
 import AlignGrid from "../../themes/StyledGrids";
 import Card from '../../components/sections/Card';
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
@@ -16,6 +17,7 @@ import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 const HomePage = () => {
   const widthRef = useRef<any>();
   const [marginWidth, setMarginWidth] = useState<any>(widthRef);
+  const tempText="when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centur. when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centur."
 
   const ArticalDate = moment().format('ll');
 
@@ -77,102 +79,84 @@ const HomePage = () => {
             }}
           />
         </Grid>
+        
+       <SubTitlesComponent
+          subtitle={'Sections'}
+          fontColor='#2F4C69'
+          turnOnStyle={true}
+        />
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={3}
+          lg={3}
+          xl={3}
+          sx={{
+            padding: '16px'
+          }}
+        >
+          <SectionCardXSmallSmall
+            backGroundColor='blue'
+            imgCover={finalfantasy7}
+            section='Coding'
+          />
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={3}
+          lg={3}
+          xl={3}
+          sx={{
+            padding: '16px'
+          }}
+        >
+          <SectionCardXSmallSmall
+            backGroundColor='blue'
+            imgCover={finalfantasy7}
+            section='video games'
+          />
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={3}
+          lg={3}
+          xl={3}
+          sx={{
+            padding: '16px'
+          }}
+        >
+          <SectionCardXSmallSmall
+            backGroundColor='blue'
+            imgCover={finalfantasy7}
+            section='Shows / Movies'
+          />
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={3}
+          lg={3}
+          xl={3}
+          sx={{
+            padding: '16px'
+          }}
+        >
+          <SectionCardXSmallSmall
+            backGroundColor='blue'
+            imgCover={finalfantasy7}
+            section='Hobbies'
+          />
+        </Grid>
         <FilteringComponent
             category={[]}
             categoryColor={"#2F4C69"}
         />
-       <SubTitlesComponent
-          subtitle={'Sections'}
-          fontColor='#2F4C69'
-        />
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={6}
-          lg={6}
-          xl={6}
-          
-        >
-          <Card
-            title={'final fantasy'}
-            backgroundColor={'white'}
-            fontColor={'#667A6E'}
-            img={finalfantasy7}
-            author={'Bob the Fisher'}
-            likes={'5'}
-            cardTextWidth={'250px'}
-            date={ArticalDate}
-            imageWidth={'200px'}
-            articalPage={false}
-          />
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={6}
-          lg={6}
-          xl={6}
-          
-        >
-          <Card
-            title='final fantasy'
-            backgroundColor='white'
-            fontColor='#667A6E'
-            img={finalfantasy7}
-            author='Bob the Fisher'
-            likes='5'
-            cardTextWidth={'250px'}
-            date={ArticalDate}
-            imageWidth={'200px'}
-            articalPage={false}
-          />
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={6}
-          lg={6}
-          xl={6}
-          
-        >
-          <Card
-            title={'final fantasy'}
-            backgroundColor={'white'}
-            fontColor={'#667A6E'}
-            img={finalfantasy7}
-            author={'Bob the Fisher'}
-            likes={'5'}
-            cardTextWidth={'250px'}
-            date={ArticalDate}
-            imageWidth={'200px'}
-            articalPage={false}
-          />
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={6}
-          lg={6}
-          xl={6}
-          
-        >
-          <Card
-            title='final fantasy'
-            backgroundColor='white'
-            fontColor='#667A6E'
-            img={finalfantasy7}
-            author='Bob the Fisher'
-            likes='5'
-            cardTextWidth={'250px'}
-            date={ArticalDate}
-            imageWidth={'200px'}
-            articalPage={false}
-          />
-        </Grid>
         <SubTitlesComponent
           subtitle='Latest Articals'
           fontColor='#2F4C69'

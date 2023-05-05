@@ -9,21 +9,19 @@ const SectionCardXSmallSmall: React.FC<Props> = ({
   backGroundColor, 
 }) => {
   return (
-    <Box
-    >
       <Grid 
         container 
         sx={{
           padding: '0px 0px 16px 0px',
-          display:{
-            xs: "flex",
-            sm: "flex",
-            md: "flex",
-            lg: "flex",
-            xl: "flex",
-            minWidth: "220px",
-            maxWidth: "220px",
-          },
+          // display:{
+          //   xs: "flex",
+          //   sm: "flex",
+          //   md: "flex",
+          //   lg: "flex",
+          //   xl: "flex",
+          //   // minWidth: "220px",
+          //   // maxWidth: "220px",
+          // },
         }}
       >
         <Grid
@@ -44,17 +42,20 @@ const SectionCardXSmallSmall: React.FC<Props> = ({
             <CardMedia
               component="img"
               alt="section image"
-              // width="280"
-              height="100"
+              width="200"
+              height="212.5"
               image={imgCover}
+              // sx={{
+              //   width: '200px',
+              //   height: '112.5px',
+              // }}
             />
-            <CardActions sx={{ backgroundColor: backGroundColor, justifyContent: 'center' }}>
-              <Button size="small" sx={{ color: 'white' }}>{section}</Button>
+            <CardActions sx={{ backgroundColor: '#282c34', justifyContent: 'center'}}>
+              <Button size="small" sx={{ color: 'white'}}>{section}</Button>
             </CardActions>
           </Card>
         </Grid>
       </Grid>
-    </Box>
   );
 }
 
