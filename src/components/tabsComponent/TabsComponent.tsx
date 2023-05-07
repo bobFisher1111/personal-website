@@ -3,6 +3,7 @@ import {
   Tabs,
   Box,
   Tab,
+  Grid,
 } from "@mui/material";
 
 interface TabPanelProps {
@@ -38,6 +39,7 @@ const tabProps = (index: number) => {
 }
 
 const TabsComponent: React.FC<Props> = ({
+  turnOnSectionTabsPadding,
   extraTabs,
   position1,
   position2,
@@ -69,7 +71,13 @@ const TabsComponent: React.FC<Props> = ({
         },
       }}
     >
-      <Box>
+      <Grid 
+        container 
+        justifyContent={extraTabs ? "flex-start" : "center"}
+        sx={{
+          padding: turnOnSectionTabsPadding ? '16px 0px 32px 0px' : '',
+        }}
+      >
         <Tabs
           value={value}
           onChange={handleChange} 
@@ -83,7 +91,7 @@ const TabsComponent: React.FC<Props> = ({
             <Tab label={position4Name} {...tabProps(3)} />
           }
         </Tabs>
-      </Box>
+      </Grid>
       <TabPanel value={value} index={0}>
         {position1()}
       </TabPanel>
@@ -103,15 +111,16 @@ const TabsComponent: React.FC<Props> = ({
 }
 
 export type Props = {
+  turnOnSectionTabsPadding: boolean;
   extraTabs?: boolean;
   position1: Function;
   position2: Function;
   position3: Function;
-  position4: Function;
+  position4?: any;
   position1Name: string;
   position2Name: string;
   position3Name: string;
-  position4Name: string;
+  position4Name?: any;
 };
 
 export default TabsComponent;

@@ -1,0 +1,62 @@
+- Sprint 1:
+  - Basic website:
+    - Need to replace filteringComponent with sectionTab
+      - HomePage // completed
+      - Project
+      - Author
+    - Add Youtube video or Image for HeaderComponent
+    - Author Page create:
+      - About Section 
+      - Project Section
+    - Update ArticalPAge Author Section with new sections
+    - Update Text throught website
+    - CSS fixes
+      - fontSize 
+      - fontColor
+      - other css
+- Sprint 2:
+  - Create a object Model
+  - Use the json-server
+  - Implement axios to get the data from json-server
+  - console.log data
+- Sprint 3:
+  - fetch the data into website and refactor entire website to recieve data from json-server
+- Sprint 4:
+  - Update CSS with new changes
+  - Add mobile view for entire website
+- Sprint 5:
+  - Create database
+- Sprint 6:
+  - Create backend to connect database with endpoint
+- Sprint 7:
+  - Connect front end to backend
+- Sprint 8:
+  - Update articals to database from postman
+- Sprint 9:
+  - DevOps
+    // use free until test code is done
+    - Azure pipelines
+    - AWS:
+      - Front end 
+      - Back end
+      - Database
+    - Security for all three
+      - research security for full stack
+      - Add erratocode and sonar scans for website
+- Sprint 10:
+  - Write test code & refactor website
+  - Make sure no console errors
+- Sprint 11:
+  - Write 5 Articals, maybe get Caleb & Trace to have articals as well
+- Sprint 12:
+  - Purchase Website Name
+  - Setup Youtube channel
+  - Facebook
+  - Twitter
+- Sprint 13:
+  - Release Website & pay fee 1 year 
+- Sprint 14:
+  - Implement add support to website
+- Sprint 15: Version 1.0 to 2.0
+  - Work on improving website 
+  - Working on articals

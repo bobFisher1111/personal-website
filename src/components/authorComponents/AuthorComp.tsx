@@ -8,7 +8,7 @@ import HeaderComponent from '../headerComponent/HeaderComponent';
 import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
 import TabsComponent from '../tabsComponent/TabsComponent';
 import ProjectsComponent from "../projects/ProjectsComponent";
-import AuthorTab from "./AuthorTab";
+import SectionTabComponent from "../sectionsTab/SectionTabComponent";
 import Works from '../works/Works';
 import book2 from '../../assets/images/book2.png';
 import AboutComponent from "../about/AboutComponent";
@@ -20,7 +20,10 @@ const AuthorComp: React.FC<Props> = ({
 
   const tabsPosistionOne =() => {
     return (
-      <AuthorTab />
+      <SectionTabComponent
+        cardTextWidth={'644px'}
+        turnOnSectionTabs={true}
+      />
     )
   }
   const tabsPosistionTwo = () => {
@@ -127,6 +130,7 @@ const AuthorComp: React.FC<Props> = ({
           turnOnEmail={true}
         />
         <TabsComponent
+          turnOnSectionTabsPadding={false}
           extraTabs={true}
           position1={tabsPosistionOne}
           position2={tabsPosistionTwo}

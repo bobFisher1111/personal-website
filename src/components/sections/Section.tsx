@@ -83,26 +83,50 @@ const Section: React.FC<Props> = ({
         />
         <Card
           title={title}
-          backgroundColor={backgroundColor}
-          fontColor={fontColor}
+          backgroundColor={"white"}
+          fontColor={"black"}
           img={img}
           author="Bob Fisher"
           likes='5'
-          cardTextWidth={cardTextWidth}
+          cardTextWidth={'644px'}
           date={date}
-          imageWidth={'200px'}
+          imageWidth={'300px'}
           articalPage={false}
         />
         <Card
           title={title}
-          backgroundColor={backgroundColor}
-          fontColor={fontColor}
+          backgroundColor={"white"}
+          fontColor={"black"}
           img={img}
           author="Bob Fisher"
           likes='5'
-          cardTextWidth={cardTextWidth}
+          cardTextWidth={'644px'}
           date={date}
-          imageWidth={'200px'}
+          imageWidth={'300px'}
+          articalPage={false}
+        />
+        <Card
+          title={title}
+          backgroundColor={"white"}
+          fontColor={"black"}
+          img={img}
+          author="Bob Fisher"
+          likes='5'
+          cardTextWidth={'644px'}
+          date={date}
+          imageWidth={'300px'}
+          articalPage={false}
+        />
+        <Card
+          title={title}
+          backgroundColor={"white"}
+          fontColor={"black"}
+          img={img}
+          author="Bob Fisher"
+          likes='5'
+          cardTextWidth={'644px'}
+          date={date}
+          imageWidth={'300px'}
           articalPage={false}
         />
       </Grid>

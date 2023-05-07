@@ -22,7 +22,7 @@ const AuthorComponent: React.FC<Props> = ({
       justifyContent="center"
       sx={{
         borderLeft: '1px solid #667A6E',
-        margin: '184px 0px 0px 0px',
+        margin: '234px 0px 0px 0px',
       }}
     >
       <Grid

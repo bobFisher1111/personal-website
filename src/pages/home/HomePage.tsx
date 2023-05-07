@@ -11,6 +11,8 @@ import LatestArticalsComponent from "../../components/latestArticalComponent/Lat
 import PopularArticalsComponent from "../../components/popularArticalsComponent/PopularArticalsComponent";
 import SectionCardXSmallSmall from "../../components/sectionsCard/SectionCard";
 import AlignGrid from "../../themes/StyledGrids";
+import TabsComponent from '../../components/tabsComponent/TabsComponent';
+import SectionTabComponent from '../../components/sectionsTab/SectionTabComponent';
 import Card from '../../components/sections/Card';
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 
@@ -36,6 +38,15 @@ const HomePage = () => {
       }
     }
   }, [marginWidth]);
+
+  const tabsPosistionOne = () => {
+    return (
+      <SectionTabComponent
+      cardTextWidth={'660px'}
+        turnOnSectionTabs={false}
+      />
+    );
+  }
 
   return (
     <Grid
@@ -153,9 +164,15 @@ const HomePage = () => {
             section='Hobbies'
           />
         </Grid>
-        <FilteringComponent
-            category={[]}
-            categoryColor={"#2F4C69"}
+        <TabsComponent
+          turnOnSectionTabsPadding={true}
+          extraTabs={false}
+          position1={tabsPosistionOne}
+          position2={tabsPosistionOne}
+          position3={tabsPosistionOne}
+          position1Name={'Latest Articals'}
+          position2Name={'All Articals'}
+          position3Name={'Popular Articals'}
         />
         <SubTitlesComponent
           subtitle='Latest Articals'

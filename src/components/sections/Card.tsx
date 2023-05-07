@@ -41,6 +41,7 @@ const StyledCardContent = styled(CardContent)({
     imageWidth,
     articalPage,
     articalSubTitle,
+    titleFontSize
   }) => {
    const [fontSizes, setFontSizes] = useState<string>();
    const widthRef = useRef();
@@ -363,7 +364,27 @@ const StyledCardContent = styled(CardContent)({
           variant="body1"
           color="#2F4C69" 
           sx={{ 
-            fontSize: '15px',
+            fontSize: '20px', // '15px',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            display: '-webkit-box',
+            WebkitLineClamp: '2',
+            WebkitBoxOrient: 'vertical',
+            fontFamily: 'sans-serif',
+            // padding: '0 !important',
+            // margin: '0 !important',
+            // // position: 'aboslute'
+            
+          }} 
+          component="div"
+        >
+          {title}
+        </Typography>
+        <Typography 
+          variant="body1"
+          color="grey" 
+          sx={{ 
+            fontSize: '16px', // '15px',
             overflow: 'hidden',
             textOverflow: 'ellipsis',
             display: '-webkit-box',
@@ -412,6 +433,7 @@ export type Props = {
   imageWidth: string,
   articalPage: boolean,
   articalSubTitle?: string,
+  titleFontSize?: string,
 };
   
 export default SectionCard;
