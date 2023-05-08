@@ -13,6 +13,8 @@ import yinYangFox from '../../assets/images/yinYangFox.jpeg';
 import { useResizeDetector } from 'react-resize-detector';
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 import AuthorComponent from './AuthorComponent';
+import AuthorComp from '../authorComponents/AuthorComp';
+import LatestArticalCard from "../cards/latestArticalCard/LatestArticalCard";
 
 /*
    - Todo:
@@ -237,6 +239,7 @@ const ArticalPage: React.FC<Props> = ({
           lineHeight={'40px'}
           fontSize={'32px'}
           authorAvatar={false}
+          headerTopPadding={true}
         />
       <Card
           title={'First JRPG ever played, was given money for birthday and the cover art looked cool. Had no idea what to expect'}
@@ -267,7 +270,9 @@ const ArticalPage: React.FC<Props> = ({
           padding: '32px', 
         }}
       >
-       <AuthorComponent />
+       <AuthorComp
+         turOnArticalPage={true}
+       />
       </Grid>
     </Grid>
   </>

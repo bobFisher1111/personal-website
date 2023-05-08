@@ -10,19 +10,27 @@ import TabsComponent from '../tabsComponent/TabsComponent';
 import ProjectsComponent from "../projects/ProjectsComponent";
 import SectionTabComponent from "../sectionsTab/SectionTabComponent";
 import Works from '../works/Works';
+import book1 from '../../assets/images/book1.png';
 import book2 from '../../assets/images/book2.png';
 import AboutComponent from "../about/AboutComponent";
+import Card from '../sections/Card';
+import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
+import moment from 'moment';
+import ArticalTabs from '../articalTabs/ArticalTabs';
+import LatestArticalCard from "../cards/latestArticalCard/LatestArticalCard";
 
 const AuthorComp: React.FC<Props> = ({
+  turOnArticalPage,
 }) => {
   const bioText1 = "when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centur. ";
   const bioText = bioText1 + bioText1;
+  const ArticalDate = moment().format('ll');
 
   const tabsPosistionOne =() => {
+
     return (
-      <SectionTabComponent
-        cardTextWidth={'644px'}
-        turnOnSectionTabs={true}
+      <ArticalTabs
+        turOnAuthorForArtical={turOnArticalPage}
       />
     )
   }
@@ -34,13 +42,13 @@ const AuthorComp: React.FC<Props> = ({
   const tabsPosistionThree = () => {
     return (
       <Works
-          bookTitle="le Handbook of Regression Modeling in People le Handbook of Regression Modeling in People le Handbook of Regression Modeling in People le Handbook of Regression Modeling in People"
-          bookPlot="le Handbook of Regression Modeling in People le Handbook of Regression Modeling in People le Handbook of Regression Modeling in People le Handbook of Regression Modeling in People"
+          bookTitle="Handbook of Regression Modeling in People"
+          bookPlot="Handbook of Regression Modeling in People"
           buyBookLink="https://www.ign.com"
           bookGenere="Science"
           bookYear='2001'
-          authorsPage={true}
-          bookCover={book2}
+          authorsPage={turOnArticalPage ? false : true}
+          bookCover={turOnArticalPage ? book1 : book2}
         />
     )
   }
@@ -60,6 +68,7 @@ const AuthorComp: React.FC<Props> = ({
         maxWidth: "1024px",
         margin: 'auto',
         padding: '16px 24px 100px 24px',
+        borderLeft: turOnArticalPage ?'1px solid #667A6E' : '',
       }}
     >
       <Grid
@@ -71,6 +80,7 @@ const AuthorComp: React.FC<Props> = ({
         xl={12}
         sx={{
           padding: '16px',
+          //borderLeft: '1px solid #667A6E',
         }}
       >
         <HeaderComponent
@@ -80,13 +90,16 @@ const AuthorComp: React.FC<Props> = ({
           lineHeight={'40px'}
           fontSize={'32px'}
           authorAvatar={true}
+          headerTopPadding={false}
         />
+        {!turOnArticalPage && 
         <Divider
           sx={{
             borderColor: '#282c34',
             padding: '16px 0px 16px 0px',
           }}
         />
+}
       </Grid>
       <Grid
         item
@@ -97,6 +110,7 @@ const AuthorComp: React.FC<Props> = ({
         xl={12}
         sx={{
           padding: '8px 16px 16px 16px',
+          // borderLeft: '1px solid #667A6E',
         }}
       >
         <Typography
@@ -123,6 +137,9 @@ const AuthorComp: React.FC<Props> = ({
       <Grid
         container
         justifyContent="center"
+        sx={{
+          // borderLeft: '1px solid #667A6E',
+        }}
       >
         <SocialMediaComponent
           widthPadding={'16px 0px 16px 16px'}
@@ -147,6 +164,7 @@ const AuthorComp: React.FC<Props> = ({
 }
 
 export type Props = {
+  turOnArticalPage: boolean;
 };
 
 export default AuthorComp;

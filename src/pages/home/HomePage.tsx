@@ -13,6 +13,7 @@ import SectionCardXSmallSmall from "../../components/sectionsCard/SectionCard";
 import AlignGrid from "../../themes/StyledGrids";
 import TabsComponent from '../../components/tabsComponent/TabsComponent';
 import SectionTabComponent from '../../components/sectionsTab/SectionTabComponent';
+import ArticalTabs from '../../components/articalTabs/ArticalTabs';
 import Card from '../../components/sections/Card';
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 
@@ -65,6 +66,7 @@ const HomePage = () => {
         lineHeight={'40px'}
         fontSize={'32px'}
         authorAvatar={false}
+        headerTopPadding={true}
       />
       <AlignGrid
         ref={widthRef}
@@ -164,36 +166,10 @@ const HomePage = () => {
             section='Hobbies'
           />
         </Grid>
-        <TabsComponent
-          turnOnSectionTabsPadding={true}
-          extraTabs={false}
-          position1={tabsPosistionOne}
-          position2={tabsPosistionOne}
-          position3={tabsPosistionOne}
-          position1Name={'Latest Articals'}
-          position2Name={'All Articals'}
-          position3Name={'Popular Articals'}
-        />
-        <SubTitlesComponent
-          subtitle='Latest Articals'
-          fontColor='#2F4C69'
+        <ArticalTabs
+          turOnAuthorForArtical={false}
         />
       </AlignGrid>
-      <LatestArticalsComponent
-        marginWidth={marginWidth}
-      />
-      <AlignGrid
-        container
-      >
-        <SubTitlesComponent
-          subtitle='Popular Articals'
-          fontColor='#2F4C69'
-        />
-      </AlignGrid>
-      <PopularArticalsComponent
-        marginWidth={marginWidth}
-      />
-      
     </Grid> 
   );
 }

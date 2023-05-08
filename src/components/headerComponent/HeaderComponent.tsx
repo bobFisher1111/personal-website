@@ -13,6 +13,7 @@ const HeaderComponent:  React.FC<Props> = ({
   lineHeight,
   fontSize,
   authorAvatar,
+  headerTopPadding,
 }) => {
   const titleFunction = (item: any) => {
     return (
@@ -40,7 +41,7 @@ const HeaderComponent:  React.FC<Props> = ({
         alignItems="center"
         sx={{ 
           backgroundColor: backgroundColor,
-          padding: '50px 0px 0px 0px',
+          padding: headerTopPadding ? '50px 0px 0px 0px' : '', // here is where I need to fix this, add a param for height
         }}
       >
         {authorAvatar ? 
@@ -97,6 +98,7 @@ export type Props = {
   lineHeight: string;
   fontSize: string;
   authorAvatar: boolean;
+  headerTopPadding: boolean;
 };
 
 export default HeaderComponent;

@@ -40,6 +40,7 @@ import {
             lineHeight={'40px'}
             fontSize={'32px'}
             authorAvatar={false}
+            headerTopPadding={true}
           />
           <Divider
             sx={{

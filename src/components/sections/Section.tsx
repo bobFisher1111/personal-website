@@ -14,6 +14,9 @@ import LatestArticalCardWide from "../../components/cards/additionalCards/Latest
 import Card from "./Card";
 import foxGirl from '../../assets/images/foxGirl.png';
 import yinYangFox from '../../assets/images/yinYangFox.jpeg';
+import TabsComponent from '../../components/tabsComponent/TabsComponent';
+import SectionTabComponent from '../../components/sectionsTab/SectionTabComponent';
+import ArticalTabs from '../../components/articalTabs/ArticalTabs';
 
   
 const Section: React.FC<Props> = ({
@@ -37,6 +40,14 @@ const Section: React.FC<Props> = ({
       setWidthClientRef(clientWidthRef);
     }
   }, [widthRef]);
+  const tabsPosistionOne = () => {
+    return (
+      <SectionTabComponent
+        cardTextWidth={'644px'}
+        turnOnSectionTabs={false}
+      />
+    );
+  }
   return (
     <Grid
       container
@@ -48,7 +59,7 @@ const Section: React.FC<Props> = ({
         paddingBottom: '200px',
         maxWidth: "1024px",
         margin: 'auto',
-        padding: '16px 24px 0px 24px',
+        padding: '16px 24px 100px 24px',
       }}
     >
       <Grid
@@ -66,6 +77,7 @@ const Section: React.FC<Props> = ({
           lineHeight={'40px'}
           fontSize={'32px'}
           authorAvatar={false}
+          headerTopPadding={true}
         />
         <Divider
           sx={{
@@ -73,61 +85,20 @@ const Section: React.FC<Props> = ({
             padding: '16px 0px 16px 0px',
           }}
         />
-          <FilteringComponent
-            category={[]}
-            categoryColor={categoryColor}
-          />
-          <SubTitlesComponent
-            subtitle={category}
-            fontColor='#2F4C69'
-        />
-        <Card
-          title={title}
-          backgroundColor={"white"}
-          fontColor={"black"}
-          img={img}
-          author="Bob Fisher"
-          likes='5'
-          cardTextWidth={'644px'}
-          date={date}
-          imageWidth={'300px'}
-          articalPage={false}
-        />
-        <Card
-          title={title}
-          backgroundColor={"white"}
-          fontColor={"black"}
-          img={img}
-          author="Bob Fisher"
-          likes='5'
-          cardTextWidth={'644px'}
-          date={date}
-          imageWidth={'300px'}
-          articalPage={false}
-        />
-        <Card
-          title={title}
-          backgroundColor={"white"}
-          fontColor={"black"}
-          img={img}
-          author="Bob Fisher"
-          likes='5'
-          cardTextWidth={'644px'}
-          date={date}
-          imageWidth={'300px'}
-          articalPage={false}
-        />
-        <Card
-          title={title}
-          backgroundColor={"white"}
-          fontColor={"black"}
-          img={img}
-          author="Bob Fisher"
-          likes='5'
-          cardTextWidth={'644px'}
-          date={date}
-          imageWidth={'300px'}
-          articalPage={false}
+      </Grid>
+      <Grid
+       item
+       xs={12}
+       sm={12}
+       md={12}
+       lg={12}
+       xl={12}
+       sx={{
+        padding: '16px 0px 16px 0px',
+       }}
+      >
+        <ArticalTabs
+          turOnAuthorForArtical={false}
         />
       </Grid>
     </Grid>

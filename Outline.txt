@@ -1,9 +1,11 @@
 - Sprint 1:
   - Basic website:
-    - Need to replace filteringComponent with sectionTab
-      - HomePage // completed
-      - Project
-      - Author
+    - Need to replace filteringComponent with sectionTab // completed
+      - HomePage // completed, go back and replace with new component ArticalTabs // completed
+      - Project // completed
+      - Author // completed
+      - Coding // completed, go back and replace with new component ArticalTabs // completed
+    - Refactor Homepage
     - Add Youtube video or Image for HeaderComponent
     - Author Page create:
       - About Section 
@@ -21,6 +23,8 @@
   - console.log data
 - Sprint 3:
   - fetch the data into website and refactor entire website to recieve data from json-server
+    - Includes routing
+    - Setup Redux
 - Sprint 4:
   - Update CSS with new changes
   - Add mobile view for entire website
@@ -57,6 +61,7 @@
   - Release Website & pay fee 1 year 
 - Sprint 14:
   - Implement add support to website
+  - Add google Analytics to website
 - Sprint 15: Version 1.0 to 2.0
   - Work on improving website 
   - Working on articals

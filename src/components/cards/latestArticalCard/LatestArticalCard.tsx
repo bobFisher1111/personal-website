@@ -18,7 +18,8 @@ const LatestArticalCard: React.FC<Props> = ({
   articalInfo = "Xenoblade Chronicles 3 is an action role-playing game with a large open world to explore, being the sixth title in the Xenoblade series. Unlike previous Xenoblade series entries, the game allows for seven party members to participate in battles at once, including the main party and an additional 'Hero' character.";
   return (
     <Card sx={{
-      maxWidth: 345,
+      minWidth: '345px',
+      maxWidth: '345px', // 345,
       transition: 'transform .5s',
       '&::after': {
         posisition: 'absolute',
@@ -51,7 +52,8 @@ const LatestArticalCard: React.FC<Props> = ({
             left: 0,
             width: '100%',
             color: 'white',
-            padding: '15px',
+            // padding: '15px',
+            // height: '24px',
             
           }}
         >
@@ -60,6 +62,7 @@ const LatestArticalCard: React.FC<Props> = ({
             color="white"
             sx={{
               textShadow: 'black 2px 2px 2px',
+              padding: '16px',
             }}
           >
             {title}
@@ -67,23 +70,31 @@ const LatestArticalCard: React.FC<Props> = ({
         </Box>
         <CardMedia
           component="img"
-          height="400"
+          height="400px"
           image={articalImage}
         />
         <Box
-          sx={{
+          sx={{ 
             position: 'absolute',
             bottom: 0,
             left: 0,
             width: '100%',
             bgcolor: 'black',
             color: 'white',
-            padding: '16px',
+            // padding: '16px',
             opacity: 0.70,
+            // height: '36px',
           }}
         >
           <Grid container>
-            <Grid item xs={10}>
+            <Grid 
+              item 
+              xs={10}
+              sm={10}
+              md={10}
+              lg={10}
+              xl={10}
+            >
               <Typography 
                 variant="subtitle1" 
                 color="white"
@@ -93,12 +104,19 @@ const LatestArticalCard: React.FC<Props> = ({
                   display: '-webkit-box',
                   WebkitLineClamp: '1',
                   WebkitBoxOrient: 'vertical',
+                  padding: '16px'
                 }} 
               >
                 by {name}
               </Typography>
             </Grid>
-            <Grid item xs={2}>
+            <Grid 
+              item 
+              xs={2}
+              sx={{
+                padding: '16px'
+              }}
+            >
               <ContentCopyIcon />
             </Grid>
           </Grid>

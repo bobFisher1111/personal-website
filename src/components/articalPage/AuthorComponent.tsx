@@ -9,11 +9,84 @@ import FilteringComponent from "../../components/filteringComponent/FilteringCom
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 import solidSnakePortrait2 from '../../assets/images/solidSnakePortrait2.jpeg';
 import book1 from '../../assets/images/book1.png';
+import TabsComponent from '../tabsComponent/TabsComponent';
 
 const AuthorComponent: React.FC<Props> = ({
 }) => {
   const bioText1 = "when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centur. ";
   const bioText = bioText1 + bioText1;
+
+  const ArticalFilters = () => {
+    return (
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        sx={{
+          borderLeft: '1px solid #667A6E',
+        }}
+    >
+      <Grid
+        item
+        xs={8}
+        sm={8}
+        md={8}
+        lg={8}
+        xl={8}
+        sx={{
+          padding: '16px 0px 16px 16px'
+        }}
+      >
+       <LatestArticalCard 
+            title={'XenoBlade Chronicals 3 Review'}
+            name={'Bob Fisher'}
+            articalInfo={'...'}
+            articalImage={finalfantasy7}
+            turnOnStyle={true}
+          />
+       </Grid>
+       <Grid
+        item
+        xs={8}
+        sm={8}
+        md={8}
+        lg={8}
+        xl={8}
+        sx={{
+          padding: '0px 0px 8px 16px',
+        }}
+      >
+       <LatestArticalCard 
+            title={'XenoBlade Chronicals 3 Review'}
+            name={'Bob Fisher'}
+            articalInfo={'...'}
+            articalImage={finalfantasy7}
+            turnOnStyle={true}
+          />
+       </Grid>
+       <Grid
+        item
+        xs={8}
+        sm={8}
+        md={8}
+        lg={8}
+        xl={8}
+        sx={{
+          padding: '0px 0px 8px 16px',
+        }}
+      >
+       <LatestArticalCard 
+            title={'XenoBlade Chronicals 3 Review'}
+            name={'Bob Fisher'}
+            articalInfo={'...'}
+            articalImage={finalfantasy7}
+            turnOnStyle={true}
+          />
+       </Grid>
+      </Grid>
+    )
+  }
+
   return (
     <>
     <Grid
@@ -117,76 +190,18 @@ const AuthorComponent: React.FC<Props> = ({
           borderLeft: '1px solid #667A6E',
         }}
       >
-        <FilteringComponent
-          category={[]}
-          categoryColor={"#2F4C69"}
+        <TabsComponent
+          turnOnSectionTabsPadding={true}
+          extraTabs={false}
+          position1={ArticalFilters}
+          position2={ArticalFilters}
+          position3={ArticalFilters}
+          position1Name={'Latest Articles'}
+          position2Name={'All Articles'}
+          position3Name={'Popular Articles'}
         />
       </Grid>
-      <Grid
-        container
-        direction="row"
-        justifyContent="center"
-        sx={{
-          borderLeft: '1px solid #667A6E',
-        }}
-    >
-      <Grid
-        item
-        xs={8}
-        sm={8}
-        md={8}
-        lg={8}
-        xl={8}
-        sx={{
-          padding: '16px 0px 16px 16px'
-        }}
-      >
-       <LatestArticalCard 
-            title={'XenoBlade Chronicals 3 Review'}
-            name={'Bob Fisher'}
-            articalInfo={'...'}
-            articalImage={finalfantasy7}
-            turnOnStyle={true}
-          />
-       </Grid>
-       <Grid
-        item
-        xs={8}
-        sm={8}
-        md={8}
-        lg={8}
-        xl={8}
-        sx={{
-          padding: '0px 0px 8px 16px',
-        }}
-      >
-       <LatestArticalCard 
-            title={'XenoBlade Chronicals 3 Review'}
-            name={'Bob Fisher'}
-            articalInfo={'...'}
-            articalImage={finalfantasy7}
-            turnOnStyle={true}
-          />
-       </Grid>
-       <Grid
-        item
-        xs={8}
-        sm={8}
-        md={8}
-        lg={8}
-        xl={8}
-        sx={{
-          padding: '0px 0px 8px 16px',
-        }}
-      >
-       <LatestArticalCard 
-            title={'XenoBlade Chronicals 3 Review'}
-            name={'Bob Fisher'}
-            articalInfo={'...'}
-            articalImage={finalfantasy7}
-            turnOnStyle={true}
-          />
-       </Grid>
+      
        <Grid
         item
         xs={12}
@@ -198,7 +213,6 @@ const AuthorComponent: React.FC<Props> = ({
           padding: '0px 0px 36px 16px',
         }}
       ></Grid>
-    </Grid>
     </>
   );
 }

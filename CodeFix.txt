@@ -1,10 +1,10 @@
 - homepage: 
-  - FilteringComponent should have have unique key prop
+  - FilteringComponent should have have unique key prop // completed
 - ArticalPage:
   - Each child in a list should have a unique "key" prop. ArticalPage.tsx:221
-  - FilteringComponent should have have unique key prop
+  - FilteringComponent should have have unique key prop // completed
 - AuthorPage:
-  - FilteringComponent should have have unique key prop
+  - FilteringComponent should have have unique key prop // completed
   - Warning: validateDOMNesting(...): <div> cannot appear as a descendant of <p>. // completed
   - Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>. // completed
   // books:

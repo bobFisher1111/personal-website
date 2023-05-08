@@ -3,7 +3,9 @@ import AuthorComp from '../../components/authorComponents/AuthorComp';
 const AuthorPage = () => {
   return (
     <>
-      <AuthorComp />
+      <AuthorComp
+        turOnArticalPage={false}
+      />
     </>
   );
 }
