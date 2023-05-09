@@ -5,8 +5,8 @@
       - Project // completed
       - Author // completed
       - Coding // completed, go back and replace with new component ArticalTabs // completed
-    - Refactor Homepage
-    - Add Youtube video or Image for HeaderComponent
+    - Refactor Homepage // completed
+    - Add Youtube video or Image for Card // completed
     - Author Page create:
       - About Section 
       - Project Section
@@ -65,3 +65,4 @@
 - Sprint 15: Version 1.0 to 2.0
   - Work on improving website 
   - Working on articals
+  - Add dark themed saved in localstorage or cookie

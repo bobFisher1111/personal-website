@@ -40,14 +40,7 @@ const Section: React.FC<Props> = ({
       setWidthClientRef(clientWidthRef);
     }
   }, [widthRef]);
-  const tabsPosistionOne = () => {
-    return (
-      <SectionTabComponent
-        cardTextWidth={'644px'}
-        turnOnSectionTabs={false}
-      />
-    );
-  }
+
   return (
     <Grid
       container
@@ -59,7 +52,7 @@ const Section: React.FC<Props> = ({
         paddingBottom: '200px',
         maxWidth: "1024px",
         margin: 'auto',
-        padding: '16px 24px 100px 24px',
+        padding: '16px 16px 100px 16px',
       }}
     >
       <Grid

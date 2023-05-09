@@ -253,6 +253,7 @@ const ArticalPage: React.FC<Props> = ({
           imageWidth={'1000px'}
           articalPage={true}
           articalSubTitle={subTitle}
+          useVideoInsteadOfImage={true}
       />
        
             {tempData  && tempData?.map((item: any) => (

@@ -39,6 +39,7 @@ const SectionTabComponent : React.FC<Props> = ({
           date={ArticalDate}
           imageWidth={'300px'}
           articalPage={false}
+          useVideoInsteadOfImage={false}
         />
       </Grid>
       <Grid
@@ -60,6 +61,7 @@ const SectionTabComponent : React.FC<Props> = ({
           date={ArticalDate}
           imageWidth={'300px'}
           articalPage={false}
+          useVideoInsteadOfImage={false}
         />
       </Grid>
       <Grid
@@ -81,6 +83,7 @@ const SectionTabComponent : React.FC<Props> = ({
           date={ArticalDate}
           imageWidth={'300px'}
           articalPage={false}
+          useVideoInsteadOfImage={false}
         />
       </Grid>
       <Grid
@@ -102,6 +105,7 @@ const SectionTabComponent : React.FC<Props> = ({
           date={ArticalDate}
           imageWidth={'300px'}
           articalPage={false}
+          useVideoInsteadOfImage={false}
         />
       </Grid>
     </Grid>

@@ -7,7 +7,8 @@ import {
     Card,
     CardContent,
     styled,
-    Chip
+    Chip,
+    CardMedia,
   } from "@mui/material";
 import HeaderComponent from "../headerComponent/HeaderComponent";
 import AlignGrid from "../../themes/StyledGrids";
@@ -28,7 +29,7 @@ const StyledCardContent = styled(CardContent)({
   padding: '4px 16px 0px 16px', // default from mui
 });
   
-  
+  // 
   const SectionCard: React.FC<Props> = ({
     title,
     backgroundColor,
@@ -41,7 +42,8 @@ const StyledCardContent = styled(CardContent)({
     imageWidth,
     articalPage,
     articalSubTitle,
-    titleFontSize
+    titleFontSize,
+    useVideoInsteadOfImage,
   }) => {
    const [fontSizes, setFontSizes] = useState<string>();
    const widthRef = useRef();
@@ -310,6 +312,7 @@ const StyledCardContent = styled(CardContent)({
               {articalSubText()}
             </Grid>
           }
+          {!useVideoInsteadOfImage ?
           <Box
             component="img"
             sx={{
@@ -333,7 +336,32 @@ const StyledCardContent = styled(CardContent)({
             }}
             alt="The house from the offer."
             src={img}
-          />
+          /> :
+            <CardMedia
+              component="iframe"
+              image={'https://www.youtube.com/embed/1zme8jkQZ1U'}
+              //autoPlay
+              allowFullScreen
+              // ng-show="showvideo"
+              // width= '100%' //"321" 
+              // height= 'auto' // "181"
+              // allow="autoplay"
+              style={{
+                // width: '100%', // '960px', // use media query to fix this
+                // height: '100%', //'576px', // use media query to fix this
+                // objectFit: 'cover',
+                // position: 'absolute',
+                // top: 0,
+                // left: 0,
+                width: articalPage ? '960px' : '321px',
+                height: articalPage ? '576px' : '181px',
+                // aspectRatio: 'auto 300 / 168.75',
+                border: '0px',
+                borderRadius: '7px',
+                // padding: '32px',
+              }}
+            />
+            }
           {articalPage && 
             <Grid
               container
@@ -434,6 +462,7 @@ export type Props = {
   articalPage: boolean,
   articalSubTitle?: string,
   titleFontSize?: string,
+  useVideoInsteadOfImage: boolean,
 };
   
 export default SectionCard;

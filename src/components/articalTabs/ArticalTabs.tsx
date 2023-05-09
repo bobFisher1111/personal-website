@@ -34,7 +34,7 @@ const ArticalTabs: React.FC<Props> = ({
            lg={12}
            xl={12}
            sx={{
-            padding: '0px 0px 16px 0px',
+            padding: '16px',
            }}
           ></Grid>
             <Card
@@ -44,10 +44,11 @@ const ArticalTabs: React.FC<Props> = ({
                 img={finalfantasy7}
                 author="Bob Fisher"
                 likes='5'
-                cardTextWidth={'644px'} // homepage 660px everywhere else so far 644px
+                cardTextWidth={'639px'} // homepage 660px everywhere else so far 644px // 639
                 date={ArticalDate}
-                imageWidth={'300px'}
+                imageWidth={'321px'}
                 articalPage={false}
+                useVideoInsteadOfImage={true}
               />
               <Card
                 title={"Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review"}
@@ -56,10 +57,11 @@ const ArticalTabs: React.FC<Props> = ({
                 img={finalfantasy7}
                 author="Bob Fisher"
                 likes='5'
-                cardTextWidth={'644px'} // homepage 660px everywhere else so far 644px
+                cardTextWidth={'639px'} // homepage 660px everywhere else so far 644px // 639
                 date={ArticalDate}
-                imageWidth={'300px'}
+                imageWidth={'321px'}
                 articalPage={false}
+                useVideoInsteadOfImage={false}
               />
               <Card
                 title={"Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review"}
@@ -68,10 +70,11 @@ const ArticalTabs: React.FC<Props> = ({
                 img={finalfantasy7}
                 author="Bob Fisher"
                 likes='5'
-                cardTextWidth={'644px'} // homepage 660px everywhere else so far 644px
+                cardTextWidth={'639px'} // homepage 660px everywhere else so far 644px // 639
                 date={ArticalDate}
-                imageWidth={'300px'}
+                imageWidth={'321px'}
                 articalPage={false}
+                useVideoInsteadOfImage={false}
               />
               <Card
                 title={"Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review"}
@@ -80,10 +83,11 @@ const ArticalTabs: React.FC<Props> = ({
                 img={finalfantasy7}
                 author="Bob Fisher"
                 likes='5'
-                cardTextWidth={'644px'} // homepage 660px everywhere else so far 644px
+                cardTextWidth={'639px'} // homepage 660px everywhere else so far 644px // 639
                 date={ArticalDate}
-                imageWidth={'300px'}
+                imageWidth={'321px'}
                 articalPage={false}
+                useVideoInsteadOfImage={false}
               />
               </>
             }

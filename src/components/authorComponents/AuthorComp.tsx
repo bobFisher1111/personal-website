@@ -67,7 +67,7 @@ const AuthorComp: React.FC<Props> = ({
         paddingBottom: '200px',
         maxWidth: "1024px",
         margin: 'auto',
-        padding: '16px 24px 100px 24px',
+        padding: '16px 16px 100px 16px',
         borderLeft: turOnArticalPage ?'1px solid #667A6E' : '',
       }}
     >
