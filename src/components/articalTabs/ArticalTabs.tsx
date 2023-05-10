@@ -11,7 +11,6 @@ import ProjectsComponent from "../projects/ProjectsComponent";
 import SectionTabComponent from "../sectionsTab/SectionTabComponent";
 import Works from '../works/Works';
 import book2 from '../../assets/images/book2.png';
-import AboutComponent from "../about/AboutComponent";
 import Card from '../sections/Card';
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 import moment from 'moment';

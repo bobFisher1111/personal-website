@@ -12,11 +12,11 @@ import SectionTabComponent from "../sectionsTab/SectionTabComponent";
 import Works from '../works/Works';
 import book1 from '../../assets/images/book1.png';
 import book2 from '../../assets/images/book2.png';
-import AboutComponent from "../about/AboutComponent";
 import Card from '../sections/Card';
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 import moment from 'moment';
 import ArticalTabs from '../articalTabs/ArticalTabs';
+import AuthorAbout from './AuthorAbout';
 import LatestArticalCard from "../cards/latestArticalCard/LatestArticalCard";
 
 const AuthorComp: React.FC<Props> = ({
@@ -54,7 +54,7 @@ const AuthorComp: React.FC<Props> = ({
   }
   const tabsPosistionFour = () => {
     return (
-      <AboutComponent />
+      <AuthorAbout />
     )
   }
 

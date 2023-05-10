@@ -8,9 +8,9 @@
     - Refactor Homepage // completed
     - Add Youtube video or Image for Card // completed
     - Author Page create:
-      - About Section 
-      - Project Section
-    - Update ArticalPAge Author Section with new sections
+      - About Section // Completed
+      - Project Section 
+    - Update ArticalPAge Author Section with new sections // completed
     - Update Text throught website
     - CSS fixes
       - fontSize 
