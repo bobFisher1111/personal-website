@@ -34,12 +34,12 @@ const AuthorComp: React.FC<Props> = ({
       />
     )
   }
+  // const tabsPosistionTwo = () => {
+  //   return (
+  //     <ProjectsComponent />
+  //   )
+  // };
   const tabsPosistionTwo = () => {
-    return (
-      <ProjectsComponent />
-    )
-  };
-  const tabsPosistionThree = () => {
     return (
       <Works
           bookTitle="Handbook of Regression Modeling in People"
@@ -52,7 +52,7 @@ const AuthorComp: React.FC<Props> = ({
         />
     )
   }
-  const tabsPosistionFour = () => {
+  const tabsPosistionThree = () => {
     return (
       <AuthorAbout />
     )
@@ -148,15 +148,13 @@ const AuthorComp: React.FC<Props> = ({
         />
         <TabsComponent
           turnOnSectionTabsPadding={false}
-          extraTabs={true}
+          extraTabs={false}
           position1={tabsPosistionOne}
           position2={tabsPosistionTwo}
           position3={tabsPosistionThree}
-          position4={tabsPosistionFour}
           position1Name={'Articals'}
-          position2Name={'Projects'}
-          position3Name={'Books'}
-          position4Name={'About'}
+          position2Name={'Books'}
+          position3Name={'About'}
         />
       </Grid>
    </Grid>

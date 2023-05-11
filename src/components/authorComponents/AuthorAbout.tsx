@@ -2,7 +2,10 @@ import React from 'react';
 import 
   { Typography, 
     Grid,
+    Link,
+    Tooltip,
 } from '@mui/material/';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
 /*
   - Questionaire:
@@ -18,6 +21,13 @@ import
     - favorite card game
     - favorite board game
 */
+
+const questionaire2 =  {
+  "favorVideoGameConsole": {
+    "link": 'https://en.wikipedia.org/wiki/PlayStation_(console)',
+    "name": "PS One",
+  },
+};
 
 const AuthorAbout: React.FC<Props> = ({
 }) => {
@@ -51,13 +61,21 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Video Game Console:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'PS One'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/PlayStation_(console)'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',  
+                paddingRight: '4px',         
+              }}
+            >
+              {'PS One'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -79,13 +97,21 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Video Game:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'Metal Gear Solid Tatical Explosion'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/Metal_Gear_Solid_(1998_video_game)'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+              {'Metal Gear Solid'}
+            </Link>
+            
       </Grid>
       <Grid
         item
@@ -107,13 +133,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Video Game Series:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'Yakuza / Like A Dragon'} 
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/Yakuza_(franchise)'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+              {'Yakuza / Like A Dragon'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -135,13 +168,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Video Game Genere:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'JRPG'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/History_of_Eastern_role-playing_video_games#Japanese_role-playing_games'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+               {'JRPG'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -163,13 +203,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite JRPG:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'Final Fantasy VIII'} 
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/Final_Fantasy_VIII'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+              {'Final Fantasy VIII'} 
+            </Link>
       </Grid>
       <Grid
         item
@@ -191,13 +238,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite RPG:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'The Elder Scrolls IV: Oblivion'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/The_Elder_Scrolls_IV:_Oblivion'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+              {'The Elder Scrolls IV: Oblivion'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -223,14 +277,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Action Game:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-            // max 36 characters
-          }}
-        >
-          {'The Legend of Zelda: Ocarina of Time'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+              {'The Legend of Zelda: Ocarina of Time'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -252,13 +312,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Platformer:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'Crash Bandicoot 1-3'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/Sonic_Adventure'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+              {'Sonic Adventure'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -280,13 +347,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Horror:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'Resident Evil 2'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/Resident_Evil_2'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+             {'Resident Evil 2'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -308,13 +382,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Beat 'em up:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'Yakuza 0'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/Yakuza_0'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+              {'Yakuza 0'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -336,13 +417,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Stealth Game:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'The Last of Us Part II'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/The_Last_of_Us_Part_II'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+              {'The Last of Us Part II'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -364,13 +452,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Life Simulation Game:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'Shenmue'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/Shenmue'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+              {'Shenmue'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -392,13 +487,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite RTS:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'13 Sentinels: Aegis Rim'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/13_Sentinels:_Aegis_Rim'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+              {'13 Sentinels: Aegis Rim'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -420,13 +522,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite MMO:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'Final Fantasy XIV'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/Final_Fantasy_XIV'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+             {'Final Fantasy XIV'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -448,13 +557,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Shooter:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'Golden Eye 007'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/GoldenEye_007_(1997_video_game)'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+             {'Golden Eye 007'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -476,13 +592,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Fighting Game:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'Tekken 2'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/Tekken_2'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+             {'Tekken 2'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -504,13 +627,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Racing Game:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'Mario Kart 64'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/Mario_Kart_64'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+              {'Mario Kart 64'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -532,13 +662,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Sports Game:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'Virtual Tennis'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/Virtua_Tennis'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+              {'Virtua Tennis'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -560,13 +697,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Waifu:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'Rinoa Heartilly, from Final Fantasy VIII'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/Rinoa_Heartilly'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+              {'Rinoa Heartilly, from Final Fantasy VIII'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -588,13 +732,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Anime:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'Code Geass'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/Code_Geass'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+              {'Code Geass'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -616,13 +767,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Movie:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'Brave Heart'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/Braveheart'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+              {'Braveheart'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -644,13 +802,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Food:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'Sushi'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/Sushi'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+              {'Sushi'}
+            </Link>
       </Grid>
       <Grid
         item
@@ -672,13 +837,21 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Card Game:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'Magic The Gathering'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/Magic:_The_Gathering'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+              {'Magic: The Gathering'}
+            </Link>
+          
       </Grid>
       <Grid
         item
@@ -700,13 +873,20 @@ const AuthorAbout: React.FC<Props> = ({
         >
           Favorite Board Game:
         </Typography>
-        <Typography
-          sx={{
-            color: 'grey',
-          }}
-        >
-          {'Monopoly'}
-        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/Monopoly_(game)'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',           
+              }}
+            >
+              {'Monopoly'}
+            </Link>
       </Grid>
     </Grid>
   );

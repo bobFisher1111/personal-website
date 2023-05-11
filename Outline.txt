@@ -9,7 +9,6 @@
     - Add Youtube video or Image for Card // completed
     - Author Page create:
       - About Section // Completed
-      - Project Section 
     - Update ArticalPAge Author Section with new sections // completed
     - Update Text throught website
     - CSS fixes
@@ -66,3 +65,4 @@
   - Work on improving website 
   - Working on articals
   - Add dark themed saved in localstorage or cookie
+  - Add Project Section to author
