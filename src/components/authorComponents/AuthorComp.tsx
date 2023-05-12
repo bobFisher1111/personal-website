@@ -68,7 +68,7 @@ const AuthorComp: React.FC<Props> = ({
         maxWidth: "1024px",
         margin: 'auto',
         padding: '16px 16px 100px 16px',
-        borderLeft: turOnArticalPage ?'1px solid #667A6E' : '',
+        borderLeft: turOnArticalPage ? '1px solid #667A6E' : '',
       }}
     >
       <Grid
@@ -90,13 +90,13 @@ const AuthorComp: React.FC<Props> = ({
           lineHeight={'40px'}
           fontSize={'32px'}
           authorAvatar={true}
-          headerTopPadding={false}
+          headerTopPadding={true}
         />
         {!turOnArticalPage && 
         <Divider
           sx={{
             borderColor: '#282c34',
-            padding: '16px 0px 16px 0px',
+            padding: '0px 0px 16px 0px',
           }}
         />
 }

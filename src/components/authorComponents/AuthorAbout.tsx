@@ -7,21 +7,6 @@ import
 } from '@mui/material/';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
-/*
-  - Questionaire:
-    - favorite movie
-    - favorite anime
-    - favorite series
-    - favorite video game
-    - favorite video game series
-    - favorite food
-    - favorite video game console
-    - favorite resturant
-    - favorite waifu
-    - favorite card game
-    - favorite board game
-*/
-
 const questionaire2 =  {
   "favorVideoGameConsole": {
     "link": 'https://en.wikipedia.org/wiki/PlayStation_(console)',
@@ -71,7 +56,11 @@ const AuthorAbout: React.FC<Props> = ({
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',  
-                paddingRight: '4px',         
+                paddingRight: '4px',
+                color: '#551A8B',
+                "&:hover": {
+                    color: "#667A6E",
+                },     
               }}
             >
               {'PS One'}
@@ -106,7 +95,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                    color: "#667A6E",
+                },       
               }}
             >
               {'Metal Gear Solid'}
@@ -142,7 +135,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                    color: "#667A6E",
+                },      
               }}
             >
               {'Yakuza / Like A Dragon'}
@@ -177,7 +174,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                    color: "#667A6E",
+                },           
               }}
             >
                {'JRPG'}
@@ -212,7 +213,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },          
               }}
             >
               {'Final Fantasy VIII'} 
@@ -247,7 +252,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },           
               }}
             >
               {'The Elder Scrolls IV: Oblivion'}
@@ -286,7 +295,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },           
               }}
             >
               {'The Legend of Zelda: Ocarina of Time'}
@@ -321,7 +334,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },           
               }}
             >
               {'Sonic Adventure'}
@@ -356,7 +373,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },          
               }}
             >
              {'Resident Evil 2'}
@@ -391,7 +412,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },          
               }}
             >
               {'Yakuza 0'}
@@ -426,7 +451,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },           
               }}
             >
               {'The Last of Us Part II'}
@@ -461,7 +490,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },           
               }}
             >
               {'Shenmue'}
@@ -496,7 +529,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },          
               }}
             >
               {'13 Sentinels: Aegis Rim'}
@@ -531,7 +568,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },           
               }}
             >
              {'Final Fantasy XIV'}
@@ -566,7 +607,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },           
               }}
             >
              {'Golden Eye 007'}
@@ -601,7 +646,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },          
               }}
             >
              {'Tekken 2'}
@@ -636,7 +685,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },           
               }}
             >
               {'Mario Kart 64'}
@@ -671,7 +724,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },           
               }}
             >
               {'Virtua Tennis'}
@@ -706,7 +763,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },           
               }}
             >
               {'Rinoa Heartilly, from Final Fantasy VIII'}
@@ -741,7 +802,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },           
               }}
             >
               {'Code Geass'}
@@ -776,7 +841,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },           
               }}
             >
               {'Braveheart'}
@@ -811,7 +880,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },           
               }}
             >
               {'Sushi'}
@@ -846,7 +919,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },           
               }}
             >
               {'Magic: The Gathering'}
@@ -882,7 +959,11 @@ const AuthorAbout: React.FC<Props> = ({
                 // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
-                lineHeight: '1.5',           
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },           
               }}
             >
               {'Monopoly'}

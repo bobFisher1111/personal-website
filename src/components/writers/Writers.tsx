@@ -36,7 +36,7 @@ import {
           <HeaderComponent
             title='Writers'
             backgroundColor='white'
-            fontColor='#667A6E'
+            fontColor='#2F4C69'
             lineHeight={'40px'}
             fontSize={'32px'}
             authorAvatar={false}
@@ -62,6 +62,9 @@ import {
       >
         <Typography
           variant="h6"
+          sx={{
+            color: '#667A6E',
+          }}
         >
           Current Writers
         </Typography>

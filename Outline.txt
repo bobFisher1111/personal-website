@@ -10,7 +10,6 @@
     - Author Page create:
       - About Section // Completed
     - Update ArticalPAge Author Section with new sections // completed
-    - Update Text throught website
     - CSS fixes
       - fontSize 
       - fontColor
@@ -23,6 +22,7 @@
 - Sprint 3:
   - fetch the data into website and refactor entire website to recieve data from json-server
     - Includes routing
+      - Update Text throught website
     - Setup Redux
 - Sprint 4:
   - Update CSS with new changes

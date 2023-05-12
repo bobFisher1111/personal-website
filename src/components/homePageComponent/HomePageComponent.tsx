@@ -5,10 +5,15 @@ import {
 } from "@mui/material";
 import HeaderComponent from "../../components/headerComponent/HeaderComponent";
 import SubTitlesComponent from "../../components/subTitlesComponent/SubTitlesComponent";
-import SectionCardXSmallSmall from "../../components/sectionsCard/SectionCard";
+import SectionCard from "../../components/sectionsCard/SectionCard";
 import AlignGrid from "../../themes/StyledGrids";
 import ArticalTabs from '../../components/articalTabs/ArticalTabs';
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
+import goldenboy2 from '../../assets/images/goldenboy2.png';
+import codingpicture from '../../assets/images/codingpicture.png';
+import megalgearsolid1 from '../../assets/images/megalgearsolid1.jpg';
+import legendOfZelda from '../../assets/images/legendOfZelda.jpg';
+import suzuka from '../../assets/images/suzuka.jpeg';
 
 const HomePageComponent: React.FC<Props> = ({
 }) => {
@@ -43,7 +48,7 @@ const HomePageComponent: React.FC<Props> = ({
       <HeaderComponent
         title='React2Python'
         backgroundColor='white'
-        fontColor='#667A6E'
+        fontColor='#2F4C69'
         lineHeight={'40px'}
         fontSize={'32px'}
         authorAvatar={false}
@@ -69,16 +74,10 @@ const HomePageComponent: React.FC<Props> = ({
           <Divider
             sx={{
               borderColor: '#282c34',
-              padding: '16px 0px 0px 0px',
+              padding: '16px 0px px 0px',
             }}
           />
         </Grid>
-        
-       <SubTitlesComponent
-          subtitle={'Sections'}
-          fontColor='#2F4C69'
-          turnOnStyle={true}
-        />
         <Grid
           item
           xs={12}
@@ -90,9 +89,9 @@ const HomePageComponent: React.FC<Props> = ({
             padding: '16px'
           }}
         >
-          <SectionCardXSmallSmall
+          <SectionCard
             backGroundColor='blue'
-            imgCover={finalfantasy7}
+            imgCover={codingpicture}
             section='Coding'
           />
         </Grid>
@@ -107,10 +106,10 @@ const HomePageComponent: React.FC<Props> = ({
             padding: '16px'
           }}
         >
-          <SectionCardXSmallSmall
+          <SectionCard
             backGroundColor='blue'
-            imgCover={finalfantasy7}
-            section='video games'
+            imgCover={legendOfZelda}
+            section='Video Games'
           />
         </Grid>
         <Grid
@@ -124,9 +123,9 @@ const HomePageComponent: React.FC<Props> = ({
             padding: '16px'
           }}
         >
-          <SectionCardXSmallSmall
+          <SectionCard
             backGroundColor='blue'
-            imgCover={finalfantasy7}
+            imgCover={goldenboy2}
             section='Shows / Movies'
           />
         </Grid>
@@ -141,9 +140,9 @@ const HomePageComponent: React.FC<Props> = ({
             padding: '16px'
           }}
         >
-          <SectionCardXSmallSmall
+          <SectionCard
             backGroundColor='blue'
-            imgCover={finalfantasy7}
+            imgCover={suzuka}
             section='Hobbies'
           />
         </Grid>

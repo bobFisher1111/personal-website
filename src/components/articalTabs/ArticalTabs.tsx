@@ -16,6 +16,7 @@ import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 import moment from 'moment';
 import LatestArticalCard from "../cards/latestArticalCard/LatestArticalCard";
 
+//
 const ArticalTabs: React.FC<Props> = ({
   turOnAuthorForArtical,
 }) => {

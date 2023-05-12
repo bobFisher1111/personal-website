@@ -54,6 +54,7 @@ const WritersCard: React.FC<Props> = ({
             display: '-webkit-box',
             WebkitLineClamp: '2',
             WebkitBoxOrient: 'vertical',
+            color: '#2F4C69',
           }}
         >
           {'Bob The Fisher'}
@@ -80,10 +81,10 @@ const WritersCard: React.FC<Props> = ({
             <Typography
                sx={{
                 fontSize: '16px',
-                color: "black",
+                // color: "black",
                 cursor: "pointer",
                 "&:hover": {
-                    color: "black",
+                  color: "#667A6E",
                 },
                 margin: "0px 22px 0px 0px"
             }}

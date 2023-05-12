@@ -191,7 +191,7 @@ const AuthorComponent: React.FC<Props> = ({
         }}
       >
         <TabsComponent
-          turnOnSectionTabsPadding={true}
+          turnOnSectionTabsPadding={false}
           extraTabs={false}
           position1={ArticalFilters}
           position2={ArticalFilters}

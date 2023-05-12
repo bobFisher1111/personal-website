@@ -63,7 +63,11 @@ const Works: React.FC<Props> = ({
               rel="noopener"
               sx={{
                 fontsize: '16px',
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",                
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },          
               }}
             >
                 Buy

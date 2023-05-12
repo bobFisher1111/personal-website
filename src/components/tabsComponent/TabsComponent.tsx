@@ -68,6 +68,7 @@ const TabsComponent: React.FC<Props> = ({
         },
         '& .MuiTabs-indicator': {
           backgroundColor: '#667A6E',
+          border: '1px',
         },
       }}
     >
@@ -84,11 +85,39 @@ const TabsComponent: React.FC<Props> = ({
           aria-label="basic tabs example"
           textColor="inherit"
         >
-          <Tab label={position1Name} {...tabProps(0)} />
-          <Tab label={position2Name} {...tabProps(1)} />
-          <Tab label={position3Name} {...tabProps(2)} />
+          <Tab 
+            label={position1Name}
+            sx={{
+              textTransform: 'initial',
+              fontSize: '18px',
+            }}
+            {...tabProps(0)} 
+          />
+          <Tab
+            label={position2Name}
+            sx={{
+              textTransform: 'initial',
+              fontSize: '18px',
+            }}
+            {...tabProps(1)}
+          />
+          <Tab 
+            label={position3Name}
+            sx={{
+              textTransform: 'initial',
+              fontSize: '18px',
+            }}
+            {...tabProps(2)} 
+          />
           {extraTabs &&
-            <Tab label={position4Name} {...tabProps(3)} />
+            <Tab 
+              label={position4Name}
+              sx={{
+                textTransform: 'initial',
+                fontSize: '18px',
+              }}
+              {...tabProps(3)}
+            />
           }
         </Tabs>
       </Grid>

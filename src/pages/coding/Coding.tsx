@@ -10,7 +10,7 @@ const Coding = () => {
       <Section
         headerTitle='Coding'
         backgroundColor='white'
-        fontColor='#667A6E'
+        fontColor='#2F4C69'
         img={finalfantasy7}
         title="Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review"
         category={"Category"}

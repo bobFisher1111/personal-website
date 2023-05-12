@@ -3,7 +3,7 @@ import {
   Button, CardActions, CardMedia, Card, Grid, Box,
 } from '@mui/material/';
 
-const SectionCardXSmallSmall: React.FC<Props> = ({
+const SectionCard: React.FC<Props> = ({
   imgCover,
   section,
   backGroundColor, 
@@ -12,7 +12,7 @@ const SectionCardXSmallSmall: React.FC<Props> = ({
       <Grid 
         container 
         sx={{
-          padding: '0px 0px 16px 0px',
+          padding: '16px 0px 16px 0px', // may have to add some condition in for other places
           // display:{
           //   xs: "flex",
           //   sm: "flex",
@@ -51,7 +51,16 @@ const SectionCardXSmallSmall: React.FC<Props> = ({
               // }}
             />
             <CardActions sx={{ backgroundColor: '#282c34', justifyContent: 'center'}}>
-              <Button size="small" sx={{ color: 'white'}}>{section}</Button>
+              <Button 
+                size="small"
+                sx={{
+                  color: 'white',
+                  textTransform: 'initial',
+                  fontSize: '16px',
+                }}
+              >
+                {section}
+              </Button>
             </CardActions>
           </Card>
         </Grid>
@@ -65,4 +74,4 @@ export type Props = {
   backGroundColor: string, 
 };
 
-export default SectionCardXSmallSmall;
+export default SectionCard;
