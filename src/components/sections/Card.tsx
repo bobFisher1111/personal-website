@@ -64,27 +64,28 @@ const StyledCardContent = styled(CardContent)({
 
    const articalInfo = () => {
     return (
-        <>
           <Grid container direction="row" sx={{alignItems: 'center' }}>
             <div 
               className={"material-symbols-outlined"}
                 style={{
                   // alignItems: 'center',
                   fontSize: '16px',
-                  color: 'black',
+                  color: '#2F4C69',
                   // marginTop: '8px',
                   marginRight: '4px',
+                  lineHeight: '24px'
                 }}
               >
                 account_circle
               </div>
             <Typography
               // variant="body1"
-              color="#26282c34162e"
+              color="#2F4C69"
               sx={{
                 // lineHeight: '16.8px',
                 fontSize: '12px',
-                paddingRight: '16px'
+                paddingRight: '16px',
+                lineHeight: '24px',
               }}
             >
               {author}
@@ -95,6 +96,7 @@ const StyledCardContent = styled(CardContent)({
               sx={{
                 // lineHeight: '16.8px',
                 fontSize: '12px',
+                lineHeight: '24px',
               }}
             >
               {likes}
@@ -105,6 +107,8 @@ const StyledCardContent = styled(CardContent)({
                 fontSize: '16px',
                 color: 'pink',
                 paddingRight: '16px',
+                paddingLeft: '2px',
+                lineHeight: '24px'
               }}
             >
               favorite
@@ -119,12 +123,10 @@ const StyledCardContent = styled(CardContent)({
               }}
             />
           </Grid>
-        </>
     )
    }
    const articalSubText = () => {
     return (
-    <>
           <Grid 
             container
             justifyContent={'center'}
@@ -134,9 +136,8 @@ const StyledCardContent = styled(CardContent)({
           >
           <Typography 
           variant="body1"
-          color="grey" 
+          color="#667A6E" 
           sx={{
-            // width: '1000px',
             overflow: 'hidden',
             textOverflow: 'ellipsis',
             display: '-webkit-box',
@@ -150,7 +151,6 @@ const StyledCardContent = styled(CardContent)({
           {articalSubTitle}
         </Typography>
           </Grid>
-          </>
     )
    }
    const articalPageInfo = () => {
@@ -162,7 +162,7 @@ const StyledCardContent = styled(CardContent)({
                 style={{
                   // alignItems: 'center',
                   fontSize: '16px',
-                  color: 'black',
+                  color: '#2F4C69',
                   // marginTop: '8px',
                   marginRight: '4px',
                 }}
@@ -171,7 +171,7 @@ const StyledCardContent = styled(CardContent)({
               </div>
             <Typography
               // variant="body1"
-              color="#26282c34162e"
+              color="#2F4C69"
               sx={{
                 // lineHeight: '16.8px',
                 fontSize: '16px',
@@ -182,7 +182,7 @@ const StyledCardContent = styled(CardContent)({
             </Typography>
             <Typography
               // variant="body1"
-              color="#26282c34162e"
+              color="black"
               sx={{
                 // lineHeight: '16.8px',
                 fontSize: '16px',
@@ -204,7 +204,7 @@ const StyledCardContent = styled(CardContent)({
             </Typography>
             <Typography
               // variant="body1"
-              color="#26282c34162e"
+              color="black"
               sx={{
                 // lineHeight: '16.8px',
                 fontSize: '16px',
@@ -215,7 +215,7 @@ const StyledCardContent = styled(CardContent)({
             </Typography>
             <Typography
               // variant="body1"
-              color="black"
+              color="#2F4C69"
               sx={{
                 // lineHeight: '16.8px',
                 fontSize: '16px',
@@ -229,6 +229,7 @@ const StyledCardContent = styled(CardContent)({
                 fontSize: '16px',
                 color: 'pink',
                 paddingRight: '16px',
+                paddingLeft: '8px',
               }}
             >
               favorite
@@ -410,7 +411,7 @@ const StyledCardContent = styled(CardContent)({
         </Typography>
         <Typography 
           variant="body1"
-          color="grey" 
+          color="#667A6E" 
           sx={{ 
             fontSize: '16px', // '15px',
             overflow: 'hidden',
@@ -431,7 +432,7 @@ const StyledCardContent = styled(CardContent)({
         {!articalPage &&
           <Typography
             variant="subtitle1"
-            color="#667A6E"
+            color="#76468c"
             component="div"
             sx={{
               fontSize: '14px',

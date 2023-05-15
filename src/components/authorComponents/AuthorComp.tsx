@@ -133,9 +133,10 @@ const AuthorComp: React.FC<Props> = ({
           {"Biography"}
         </Typography>
         <Typography
+          color="#2F4C69"
           sx={{
             textAlign: 'fled-start',
-            color: 'grey',
+            // color: 'grey',
             fontSize: '16px',
             textIndent: '15px',
           }}

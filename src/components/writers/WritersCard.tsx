@@ -67,7 +67,7 @@ const WritersCard: React.FC<Props> = ({
             display: '-webkit-box',
             WebkitLineClamp: '2',
             WebkitBoxOrient: 'vertical',
-            color: 'grey',
+            color: '#667A6E',
           }}
         >
           {'Software Engineer, Writer, Game Dev'}

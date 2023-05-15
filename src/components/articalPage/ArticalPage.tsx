@@ -67,6 +67,8 @@ const ArticalPage: React.FC<Props> = ({
                     margin: 'auto',
                     padding: '8px',
                     justifyContent: 'center',
+                    border: '0px',
+                    borderRadius: '16px',
                 }}
             />
           </Grid>
@@ -85,6 +87,8 @@ const ArticalPage: React.FC<Props> = ({
               style={{
                 width: '960px', // use media query to fix this
                 height: '576px', // use media query to fix this
+                border: '0px',
+                borderRadius: '7px',
               }}
             />
             </Grid>
@@ -98,6 +102,7 @@ const ArticalPage: React.FC<Props> = ({
                   >
                     <Typography
                       id="articalText"
+                      color="#2F4C69"
                       sx={{
                         borderColor: 'black',
                         padding: '16px 0px 0px 0px',
@@ -105,6 +110,7 @@ const ArticalPage: React.FC<Props> = ({
                         fontSize: '26px',
                         fontFamily: "source-serif-pro, Georgia, Cambria, 'Times New Roman', Times, serif",
                         maxWidth: '1000px',
+                        // color: '2F4C69',
                       }}
                     >
                       { <strong>{item.slice(1)}</strong> }   
@@ -120,6 +126,7 @@ const ArticalPage: React.FC<Props> = ({
                           >
                             <Typography
                               id="articalText"
+                              color="#76468c"
                               sx={{
                                 padding: '16px 0px 0px 0px',
                                 textIndent: '40px',
@@ -135,26 +142,31 @@ const ArticalPage: React.FC<Props> = ({
                             </Grid>
                         )
                       };
-              if (item.match('.jpg')) {
-        return (
-          <Grid
-            container
-            justifyContent="center"
-          >
-            <img 
-                src={item}
-                style={{
-                    alignItems: 'center',
-                    minWidth: "500px",
-                    maxWidth: "814px",
-                    margin: 'auto',
-                    padding: '8px',
-                    justifyContent: 'center',
-                }}
-            />
-          </Grid>
-        )
-    }
+    //           if (item.match('.jpg')) {
+    //     return (
+    //       <Grid
+    //         container
+    //         justifyContent="center"
+    //         // sx={{
+    //         //   borderRadius: '7px',
+    //         // }}
+    //       >
+    //         <img 
+    //             src={item}
+    //             style={{
+    //                 alignItems: 'center',
+    //                 minWidth: "500px",
+    //                 maxWidth: "814px",
+    //                 margin: 'auto',
+    //                 padding: '8px',
+    //                 justifyContent: 'center',
+    //                 // border: '0px',
+    //                 // borderRadius: '7px',
+    //             }}
+    //         />
+    //       </Grid>
+    //     )
+    // }
               if (item.startsWith('(')) {
                 return (
                             <Grid
@@ -163,7 +175,7 @@ const ArticalPage: React.FC<Props> = ({
                           >
                             <Typography
                               id="articalText"
-                              color="grey"
+                              color="#667A6E"
                               sx={{
                                 borderColor: 'black',
                                 padding: '16px 0px 0px 0px',
@@ -235,7 +247,7 @@ const ArticalPage: React.FC<Props> = ({
        <HeaderComponent
           title={'Final Fantasy VII Review'}
           backgroundColor={'white'}
-          fontColor={'black'}
+          fontColor='#2F4C69'
           lineHeight={'40px'}
           fontSize={'32px'}
           authorAvatar={false}
