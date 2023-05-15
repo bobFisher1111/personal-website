@@ -15,6 +15,7 @@ const questionaire2 =  {
 };
 
 const AuthorAbout: React.FC<Props> = ({
+    turnPaddingOn,
 }) => {
   return (
     <Grid 
@@ -23,7 +24,7 @@ const AuthorAbout: React.FC<Props> = ({
     justifyContent="flex-start"
     alignItems="center"
       sx={{
-        padding: '32px'
+        padding: turnPaddingOn ? '16px' : '32px',
       }}
     >
       <Grid
@@ -974,6 +975,7 @@ const AuthorAbout: React.FC<Props> = ({
 }
 
 export type Props = {
+  turnPaddingOn: boolean,
 };
 
 export default AuthorAbout;

@@ -62,7 +62,9 @@ const AuthorComp: React.FC<Props> = ({
   }
   const tabsPosistionThree = () => {
     return (
-      <AuthorAbout />
+      <AuthorAbout
+        turnPaddingOn={turOnArticalPage}
+      />
     )
   }
 
