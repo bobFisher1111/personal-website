@@ -65,6 +65,7 @@ import {
           variant="h6"
           sx={{
             color: '#667A6E',
+            padding: '16px 0px',
           }}
         >
           Current Writers

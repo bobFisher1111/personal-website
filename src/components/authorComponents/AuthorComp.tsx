@@ -122,11 +122,12 @@ const AuthorComp: React.FC<Props> = ({
         }}
       >
         <Typography
+          variant="h6"
           sx={{
             textAlign: 'fled-start',
-            color: 'black',
-            fontSize: '18px',
-            padding: '0px 0px 8px 0px',
+            color: '#667A6E',
+            // fontSize: '18px',
+            padding: '16px 0px 16px 0px',
           }}
         >
           {"Biography"}

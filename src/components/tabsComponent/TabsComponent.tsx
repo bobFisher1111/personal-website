@@ -70,6 +70,9 @@ const TabsComponent: React.FC<Props> = ({
           backgroundColor: '#667A6E',
           border: '1px',
         },
+        "& button[aria-selected='true']": {
+          borderBottom: "3px solid #667A6E"
+        },
       }}
     >
       <Grid 
