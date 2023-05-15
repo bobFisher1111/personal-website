@@ -33,7 +33,6 @@ const HeaderComponent:  React.FC<Props> = ({
   };
 
   return (
-    <>
       <Grid
         container
         direction="row"
@@ -49,7 +48,7 @@ const HeaderComponent:  React.FC<Props> = ({
           <Grid
           item
           sx={{
-            padding: '16px 0px 16px 16px'
+            padding: '0px 0px 0px 16px'
           }}
         >
            <Avatar 
@@ -65,7 +64,7 @@ const HeaderComponent:  React.FC<Props> = ({
         item
         sx={{
           alignItems: 'center',
-          padding: '16px',
+          padding: '25px 16px 25px 16px',
         }}
       >
        {titleFunction(title)}
@@ -80,14 +79,13 @@ const HeaderComponent:  React.FC<Props> = ({
           lg={12}
           xl={12}
           sx={{
-            padding: '50px 0px 0px 0px'
+            padding: '25px 0px 25px 0px'
           }}
         >
          {titleFunction(title)}
         </Grid>
       }
       </Grid>
-    </>
   );
 }
 

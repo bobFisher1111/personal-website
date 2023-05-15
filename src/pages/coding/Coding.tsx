@@ -6,7 +6,6 @@ import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 const Coding = () => {
   const ArticalDate = moment().format('ll');
   return (
-    <>
       <Section
         headerTitle='Coding'
         backgroundColor='white'
@@ -18,7 +17,6 @@ const Coding = () => {
         cardTextWidth={'703px'}
         date={ArticalDate}
       />
-    </>
   );
 }
 

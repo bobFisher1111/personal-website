@@ -76,7 +76,7 @@ const TabsComponent: React.FC<Props> = ({
         container 
         justifyContent={extraTabs ? "flex-start" : "center"}
         sx={{
-          padding: turnOnSectionTabsPadding ? '16px 0px 32px 0px' : '',
+          padding: turnOnSectionTabsPadding ? '16px 0px 16px 0px' : '0px 0px 16px 0px',
         }}
       >
         <Tabs

@@ -207,7 +207,7 @@ const ArticalTabs: React.FC<Props> = ({
       }
     return (
           <TabsComponent
-            turnOnSectionTabsPadding={true}
+            turnOnSectionTabsPadding={false}
             extraTabs={false}
             position1={Articals}
             position2={Articals}

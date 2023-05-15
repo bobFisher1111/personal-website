@@ -5,6 +5,7 @@ const AuthorPage = () => {
     <>
       <AuthorComp
         turOnArticalPage={false}
+        turnOnSectionTabsPadding={false}
       />
     </>
   );

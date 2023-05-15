@@ -12,6 +12,7 @@ import book1 from '../../assets/images/book1.png';
 import TabsComponent from '../tabsComponent/TabsComponent';
 
 const AuthorComponent: React.FC<Props> = ({
+  turnOnSectionTabsPadding,
 }) => {
   const bioText1 = "when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centur. ";
   const bioText = bioText1 + bioText1;
@@ -218,7 +219,7 @@ const AuthorComponent: React.FC<Props> = ({
 }
 
 export type Props = {
-
+  turnOnSectionTabsPadding?: boolean;
 };
 
 export default AuthorComponent;

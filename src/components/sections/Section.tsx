@@ -49,10 +49,10 @@ const Section: React.FC<Props> = ({
         background: '#fff',
         minHeight: '100vh',
         display: 'flex',
-        paddingBottom: '200px',
+        // paddingBottom: '200px',
         maxWidth: "1024px",
         margin: 'auto',
-        padding: '16px 16px 100px 16px',
+        padding: '40px 16px 100px 16px',
       }}
     >
       <Grid

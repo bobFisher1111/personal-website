@@ -228,7 +228,7 @@ const ArticalPage: React.FC<Props> = ({
         xl={8}
         sx={{
             alignItems: 'center',
-            padding: '32px',
+            // padding: '32px',
             
           }}
       >
@@ -273,6 +273,7 @@ const ArticalPage: React.FC<Props> = ({
       >
        <AuthorComp
          turOnArticalPage={true}
+         turnOnSectionTabsPadding={true}
        />
       </Grid>
     </Grid>

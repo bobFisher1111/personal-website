@@ -40,9 +40,12 @@ const HomePageComponent: React.FC<Props> = ({
       container
       sx={{
         background: '#fff',
-        minHeight: '100vh',
+        // minHeight: '100vh',
         display: 'flex',
         paddingBottom: '200px',
+        margin: 'auto',
+        padding: '36px 24px 0px 24px',
+        // maxWidth: "1024px",
       }}
     >
       <HeaderComponent

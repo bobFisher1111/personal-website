@@ -21,6 +21,7 @@ import LatestArticalCard from "../cards/latestArticalCard/LatestArticalCard";
 
 const AuthorComp: React.FC<Props> = ({
   turOnArticalPage,
+  turnOnSectionTabsPadding,
 }) => {
   const bioText1 = "when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centur. ";
   const bioText = bioText1 + bioText1;
@@ -41,7 +42,13 @@ const AuthorComp: React.FC<Props> = ({
   // };
   const tabsPosistionTwo = () => {
     return (
-      <Works
+      // <Grid
+      //   item
+      //   sx={{
+      //     padding: '32px',
+      //   }}
+      // >
+        <Works
           bookTitle="Handbook of Regression Modeling in People"
           bookPlot="Handbook of Regression Modeling in People"
           buyBookLink="https://www.ign.com"
@@ -50,6 +57,7 @@ const AuthorComp: React.FC<Props> = ({
           authorsPage={turOnArticalPage ? false : true}
           bookCover={turOnArticalPage ? book1 : book2}
         />
+      // </Grid>
     )
   }
   const tabsPosistionThree = () => {
@@ -67,7 +75,7 @@ const AuthorComp: React.FC<Props> = ({
         paddingBottom: '200px',
         maxWidth: "1024px",
         margin: 'auto',
-        padding: '16px 16px 100px 16px',
+        padding: '40px 16px 100px 16px',
         borderLeft: turOnArticalPage ? '1px solid #667A6E' : '',
       }}
     >
@@ -79,14 +87,14 @@ const AuthorComp: React.FC<Props> = ({
         lg={12}
         xl={12}
         sx={{
-          padding: '16px',
+          //padding: '16px',
           //borderLeft: '1px solid #667A6E',
         }}
       >
         <HeaderComponent
           title='Bob The Fisher'
           backgroundColor='white'
-          fontColor='#667A6E'
+          fontColor='#2F4C69'
           lineHeight={'40px'}
           fontSize={'32px'}
           authorAvatar={true}
@@ -139,6 +147,7 @@ const AuthorComp: React.FC<Props> = ({
         justifyContent="center"
         sx={{
           // borderLeft: '1px solid #667A6E',
+          // padding: '32px',
         }}
       >
         <SocialMediaComponent
@@ -147,7 +156,7 @@ const AuthorComp: React.FC<Props> = ({
           turnOnEmail={true}
         />
         <TabsComponent
-          turnOnSectionTabsPadding={false}
+          turnOnSectionTabsPadding={turnOnSectionTabsPadding}
           extraTabs={false}
           position1={tabsPosistionOne}
           position2={tabsPosistionTwo}
@@ -163,6 +172,7 @@ const AuthorComp: React.FC<Props> = ({
 
 export type Props = {
   turOnArticalPage: boolean;
+  turnOnSectionTabsPadding: boolean;
 };
 
 export default AuthorComp;

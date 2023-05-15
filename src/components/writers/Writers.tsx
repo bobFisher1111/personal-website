@@ -19,7 +19,7 @@ import {
           paddingBottom: '200px',
           maxWidth: "1024px",
           margin: 'auto',
-          padding: '16px 24px 0px 24px',
+          padding: '40px 24px 0px 24px',
         }}
       >
         <Grid
@@ -30,7 +30,7 @@ import {
           lg={12}
           xl={12}
           sx={{
-            padding: '16px',
+            // padding: '16px',
           }}
         >
           <HeaderComponent
@@ -45,7 +45,8 @@ import {
           <Divider
             sx={{
               borderColor: '#282c34',
-              padding: '16px 0px 16px 0px',
+              // padding: '16px 0px 16px 0px',
+              padding: '0px 0px 16px 0px',
             }}
           />
         </Grid>
