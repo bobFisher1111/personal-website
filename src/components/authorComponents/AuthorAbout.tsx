@@ -35,14 +35,38 @@ const AuthorAbout: React.FC<Props> = ({
         lg={12}
         xl={12}
         sx={{
+          // padding: '2px 16px 2px 16px',
+          display: 'flex',
+        }}
+      >
+        <Typography
+          variant="h6"
+          sx={{
+            color: '#667A6E',
+            paddingRight: '8px',
+            // fontWeight: 'bold',
+          }}
+        >
+          Questionnaire:
+        </Typography>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        sm={12}
+        md={12}
+        lg={12}
+        xl={12}
+        sx={{
           padding: '2px 16px 2px 16px',
           display: 'flex',
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Video Game Console:
@@ -80,9 +104,10 @@ const AuthorAbout: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Video Game:
@@ -120,9 +145,10 @@ const AuthorAbout: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Video Game Series:
@@ -154,14 +180,15 @@ const AuthorAbout: React.FC<Props> = ({
         lg={12}
         xl={12}
         sx={{
-            padding: '2px 16px 2px 16px',
+          padding: '2px 16px 2px 16px',
           display: 'flex',
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Video Game Genere:
@@ -198,9 +225,10 @@ const AuthorAbout: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite JRPG:
@@ -232,14 +260,15 @@ const AuthorAbout: React.FC<Props> = ({
         lg={12}
         xl={12}
         sx={{
-            padding: '2px 16px 2px 16px',
+          padding: '2px 16px 2px 16px',
           display: 'flex',
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite RPG:
@@ -280,9 +309,10 @@ const AuthorAbout: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Action Game:
@@ -319,9 +349,10 @@ const AuthorAbout: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Platformer:
@@ -358,9 +389,10 @@ const AuthorAbout: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Horror:
@@ -397,9 +429,10 @@ const AuthorAbout: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Beat 'em up:
@@ -436,9 +469,10 @@ const AuthorAbout: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Stealth Game:
@@ -475,9 +509,10 @@ const AuthorAbout: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Life Simulation Game:
@@ -514,12 +549,13 @@ const AuthorAbout: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
-          Favorite RTS:
+          Favorite Visual Novel:
         </Typography>
         <Link 
               href={'https://en.wikipedia.org/wiki/13_Sentinels:_Aegis_Rim'}
@@ -553,9 +589,50 @@ const AuthorAbout: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
+          }}
+        >
+          Favorite RTS:
+        </Typography>
+        <Link 
+              href={'https://en.wikipedia.org/wiki/Warcraft_II:_Tides_of_Darkness'}
+              underline="none"
+              target="_blank"
+              rel="noopener"
+              sx={{
+                // fontsize: '16px',
+                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+                fontSize: '1rem',
+                lineHeight: '1.5',
+                color: '#551A8B',
+                "&:hover": {
+                  color: "#667A6E",
+                },          
+              }}
+            >
+              {'Warcraft II: Tides of Darkness'}
+            </Link>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        sm={12}
+        md={12}
+        lg={12}
+        xl={12}
+        sx={{
+          padding: '2px 16px 2px 16px',
+          display: 'flex',
+        }}
+      >
+        <Typography
+          color="#2F4C69"
+          sx={{
+            paddingRight: '8px',
+            // fontWeight: 'bold',
           }}
         >
           Favorite MMO:
@@ -592,9 +669,10 @@ const AuthorAbout: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Shooter:
@@ -631,9 +709,10 @@ const AuthorAbout: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Fighting Game:
@@ -670,9 +749,10 @@ const AuthorAbout: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Racing Game:
@@ -709,9 +789,10 @@ const AuthorAbout: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Sports Game:
@@ -748,9 +829,10 @@ const AuthorAbout: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Waifu:
@@ -787,9 +869,10 @@ const AuthorAbout: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Anime:
@@ -821,14 +904,15 @@ const AuthorAbout: React.FC<Props> = ({
         lg={12}
         xl={12}
         sx={{
-            padding: '2px 16px 2px 16px',
+          padding: '2px 16px 2px 16px',
           display: 'flex',
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Movie:
@@ -860,14 +944,15 @@ const AuthorAbout: React.FC<Props> = ({
         lg={12}
         xl={12}
         sx={{
-            padding: '2px 16px 2px 16px',
+          padding: '2px 16px 2px 16px',
           display: 'flex',
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Food:
@@ -904,9 +989,10 @@ const AuthorAbout: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Card Game:
@@ -944,9 +1030,10 @@ const AuthorAbout: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            fontWeight: 'bold',
+            // fontWeight: 'bold',
           }}
         >
           Favorite Board Game:

@@ -4,7 +4,6 @@ import {
 } from '@mui/material';
 
 const ProjectsComponent:  React.FC<Props> = ({
-    turtle,
 }) => {
   
   return (
@@ -15,7 +14,6 @@ const ProjectsComponent:  React.FC<Props> = ({
 }
 
 export type Props = {
-  turtle?: string;
 };
 
 export default ProjectsComponent;

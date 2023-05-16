@@ -1,5 +1,5 @@
 - Sprint 1:
-  - Basic website:
+  - Basic website: // completed
     - Need to replace filteringComponent with sectionTab // completed
       - HomePage // completed, go back and replace with new component ArticalTabs // completed
       - Project // completed
@@ -10,15 +10,18 @@
     - Author Page create:
       - About Section // Completed
     - Update ArticalPAge Author Section with new sections // completed
-    - CSS fixes
-      - fontSize 
-      - fontColor
-      - other css
-- Sprint 2:
+    - Artical Page: // completed
+        - CSS fixes
+        - fontSize 
+        - fontColor
+        - other css
+
+- Sprint 2: // starting
   - Create a object Model
   - Use the json-server
   - Implement axios to get the data from json-server
   - console.log data
+
 - Sprint 3:
   - fetch the data into website and refactor entire website to recieve data from json-server
     - Includes routing

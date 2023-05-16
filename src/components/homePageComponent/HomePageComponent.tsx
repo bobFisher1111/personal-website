@@ -14,6 +14,7 @@ import codingpicture from '../../assets/images/codingpicture.png';
 import megalgearsolid1 from '../../assets/images/megalgearsolid1.jpg';
 import legendOfZelda from '../../assets/images/legendOfZelda.jpg';
 import suzuka from '../../assets/images/suzuka.jpeg';
+import { DataModel } from '../../data/DataModel'; 
 
 const HomePageComponent: React.FC<Props> = ({
 }) => {
@@ -22,6 +23,8 @@ const HomePageComponent: React.FC<Props> = ({
   const updatedLeftMargin = () => {
     setMarginWidth(widthRef.current?.offsetLeft);
   }
+  
+  console.log('what is data model', DataModel);
 
   useEffect(() => {
     if (widthRef && widthRef.current) {
@@ -40,9 +43,9 @@ const HomePageComponent: React.FC<Props> = ({
       container
       sx={{
         background: '#fff',
-        // minHeight: '100vh',
+        minHeight: '100vh',
         display: 'flex',
-        paddingBottom: '200px',
+        // paddingBottom: '200px',
         margin: 'auto',
         padding: '36px 24px 0px 24px',
         // maxWidth: "1024px",
@@ -60,6 +63,9 @@ const HomePageComponent: React.FC<Props> = ({
       <AlignGrid
         ref={widthRef}
         container
+        sx={{
+          padding: '0px 0px 200px 0px',
+        }}
       >
         <Grid
           item
