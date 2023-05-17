@@ -68,7 +68,6 @@ const SectionCard: React.FC<Props> = ({
                   fontSize: '16px',
                   "&:hover": {
                     color: "#667A6E",
-                    backgroundColor: 'white'
                   },
                 }}
               >
