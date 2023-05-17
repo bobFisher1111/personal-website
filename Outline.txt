@@ -26,6 +26,7 @@
   - fetch the data into website and refactor entire website to recieve data from json-server
     - Includes routing
       - Update Text throught website
+      - Update header with sections dropdown where Coding is with [sections (oppsidedown)^]
     - Setup Redux
 - Sprint 4:
   - Update CSS with new changes

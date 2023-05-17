@@ -81,7 +81,9 @@ const Works: React.FC<Props> = ({
            lg={12}
            xl={12}
           >
-            <Typography>
+            <Typography
+              color="#667A6E"
+            >
               {bookGenere}
             </Typography>
           </Grid>
@@ -93,7 +95,9 @@ const Works: React.FC<Props> = ({
            lg={12}
            xl={12}
           >
-            <Typography>
+            <Typography
+              color="#2F4C69"
+            >
               {bookYear}
             </Typography>
           </Grid>
@@ -119,6 +123,7 @@ const Works: React.FC<Props> = ({
         xl={12}
       >
         <Typography
+          color="#2F4C69"
           variant="h6"
         >
           Author Book's
@@ -164,6 +169,7 @@ const Works: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#667A6E"
           variant="h6"
           sx={{
             overflow: 'hidden',
@@ -177,6 +183,7 @@ const Works: React.FC<Props> = ({
         </Typography>
         {authorsPage &&
           <Typography
+            color="#2F4C69"
             variant="subtitle1"
             sx={{
               overflow: 'hidden',
@@ -184,7 +191,6 @@ const Works: React.FC<Props> = ({
               display: '-webkit-box',
               WebkitLineClamp: '2',
               WebkitBoxOrient: 'vertical',
-              color: 'grey',
             }}
           >
             {bookPlot}
@@ -193,7 +199,9 @@ const Works: React.FC<Props> = ({
         {authorsPage ?
             articalPageBookExtrainfo(extraInfo)
          :
-         <Typography>
+         <Typography
+           color="#2F4C69"
+         >
           {bookYear}
         </Typography>
         }
@@ -233,6 +241,7 @@ const Works: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="#667A6E"
           ref={titleHeightRef}
           variant="h6"
           sx={{
@@ -247,6 +256,7 @@ const Works: React.FC<Props> = ({
         </Typography>
         {authorsPage &&
           <Typography
+          color="#2F4C69"
           ref={bookPlotHeightRef}
           variant="subtitle1"
           sx={{
@@ -255,7 +265,6 @@ const Works: React.FC<Props> = ({
             display: '-webkit-box',
             WebkitLineClamp: '2',
             WebkitBoxOrient: 'vertical',
-            color: 'grey',
           }}
         >
           {bookPlot}
@@ -264,7 +273,9 @@ const Works: React.FC<Props> = ({
         {authorsPage ?
             articalPageBookExtrainfo(extraInfo)
          :
-         <Typography>
+         <Typography
+           color="#2F4C69"
+         >
           {bookYear}
         </Typography>
         }

@@ -32,6 +32,11 @@ const AuthorComp: React.FC<Props> = ({
     return (
       <ArticalTabs
         turOnAuthorForArtical={turOnArticalPage}
+        oneLayerExtraTab={false}
+        nameOne={'Latest Articals'}
+        nameTwo={'All Articals'}
+        nameThree={'Popular Articals'}
+        nameFour={'Series'}
       />
     )
   }

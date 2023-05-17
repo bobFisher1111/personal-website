@@ -9,6 +9,9 @@ import Projects from '../pages/projects/Projects';
 import ArticalPage from '../components/articalPage/ArticalPage';
 import AuthorPage from '../pages/author/AuthorPage';
 import WritersPage from '../pages/writers/WritersPage';
+import StoriesPage from '../pages/stories/StoriesPage';
+import ShowsMoviesPage from '../pages/showsMovies/ShowsMoviesPage';
+import VideoGamesPage from '../pages/videoGames/VideoGamesPage';
 
 type Route = {
   path?: string;
@@ -56,6 +59,18 @@ const routes: Route[] = [
     path:'/writers',
     element: WritersPage,
   },
+  {
+    path:'/stories',
+    element: StoriesPage,
+  }, 
+  {
+    path:'/showsMovies',
+    element: ShowsMoviesPage,
+  },
+  {
+    path:'/videoGames',
+    element: VideoGamesPage,
+  }
 ];
 
 export default routes;

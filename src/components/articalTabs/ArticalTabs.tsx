@@ -19,6 +19,11 @@ import LatestArticalCard from "../cards/latestArticalCard/LatestArticalCard";
 //
 const ArticalTabs: React.FC<Props> = ({
   turOnAuthorForArtical,
+  oneLayerExtraTab,
+  nameOne,
+  nameTwo,
+  nameThree,
+  nameFour,
 }) => {
     const ArticalDate = moment().format('ll'); //
     const Articals = () => {
@@ -206,6 +211,21 @@ const ArticalTabs: React.FC<Props> = ({
         )
       }
     return (
+      <>
+        {oneLayerExtraTab ?
+          <TabsComponent
+            turnOnSectionTabsPadding={false}
+            extraTabs={true}
+            position1={Articals}
+            position2={Articals}
+            position3={Articals}
+            position4={Articals}
+            position1Name={nameOne}
+            position2Name={nameTwo}
+            position3Name={nameThree}
+            position4Name={nameFour}
+          />
+          :
           <TabsComponent
             turnOnSectionTabsPadding={false}
             extraTabs={false}
@@ -216,12 +236,18 @@ const ArticalTabs: React.FC<Props> = ({
             position2Name={'All Articals'}
             position3Name={'Popular Articals'}
           />
-
-      )
+      }
+      </>
+    )
   }
 
 export type Props = {
   turOnAuthorForArtical: boolean;
+  oneLayerExtraTab: boolean;
+  nameOne: string;
+  nameTwo: string;
+  nameThree: string;
+  nameFour: string;
 };
 
 export default ArticalTabs;

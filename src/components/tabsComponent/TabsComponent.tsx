@@ -77,7 +77,7 @@ const TabsComponent: React.FC<Props> = ({
     >
       <Grid 
         container 
-        justifyContent={extraTabs ? "flex-start" : "center"}
+        justifyContent={"center"}
         sx={{
           padding: turnOnSectionTabsPadding ? '16px 0px 16px 0px' : '0px 0px 16px 0px',
         }}
@@ -145,6 +145,7 @@ const TabsComponent: React.FC<Props> = ({
 export type Props = {
   turnOnSectionTabsPadding: boolean;
   extraTabs?: boolean;
+  extraTabs2?: boolean;
   position1: Function;
   position2: Function;
   position3: Function;

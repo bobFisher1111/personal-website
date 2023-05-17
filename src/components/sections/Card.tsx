@@ -274,7 +274,7 @@ const StyledCardContent = styled(CardContent)({
           background: '#fff',
           // minHeight: '100vh',
           display: 'flex',
-          margin: '0px 0px 8px 0px', // not sure if this should be padding instead
+          margin: '0px 0px 16px 0px', // not sure if this should be padding instead
           // paddingBottom: '200px',
         //   height: '200px',
           // gridTemplateColumns: '200px auto'

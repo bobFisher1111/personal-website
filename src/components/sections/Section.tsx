@@ -29,6 +29,12 @@ const Section: React.FC<Props> = ({
   categoryColor,
   cardTextWidth,
   date,
+  turnOnExtraTab,
+  tabNameOne,
+  tabNameTwo,
+  tabNameThree,
+  tabNameFour,
+  oneLayerOfTabs,
 }) => {
   const [widthClientRef, setWidthClientRef] = useState<number>(1024);
   const widthRef = useRef<any>();
@@ -40,6 +46,21 @@ const Section: React.FC<Props> = ({
       setWidthClientRef(clientWidthRef);
     }
   }, [widthRef]);
+
+
+  const tabsPosistionOne =() => {
+
+    return (
+      <ArticalTabs
+        turOnAuthorForArtical={false}
+        oneLayerExtraTab={false}
+        nameOne={'Latest Articals'}
+        nameTwo={'All Articals'}
+        nameThree={'Popular Articals'}
+        nameFour={'Series'}
+      />
+    )
+  }
 
   return (
     <Grid
@@ -90,9 +111,40 @@ const Section: React.FC<Props> = ({
         padding: '16px 0px 16px 0px',
        }}
       >
+      {oneLayerOfTabs &&
         <ArticalTabs
-          turOnAuthorForArtical={false}
+        turOnAuthorForArtical={false}
+        oneLayerExtraTab={true}
+        nameOne={tabNameOne}
+        nameTwo={tabNameTwo}
+        nameThree={tabNameThree}
+        nameFour={tabNameFour}
         />
+      }
+      {!oneLayerOfTabs && turnOnExtraTab ?
+        <TabsComponent
+          turnOnSectionTabsPadding={false}
+          extraTabs={true}
+          position1={tabsPosistionOne}
+          position2={tabsPosistionOne}
+          position3={tabsPosistionOne}
+          position4={tabsPosistionOne}
+          position1Name={tabNameOne}
+          position2Name={tabNameTwo}
+          position3Name={tabNameThree}
+          position4Name={tabNameFour}
+        /> :
+        !oneLayerOfTabs && <TabsComponent
+          turnOnSectionTabsPadding={false}
+          extraTabs={false}
+          position1={tabsPosistionOne}
+          position2={tabsPosistionOne}
+          position3={tabsPosistionOne}
+          position1Name={tabNameOne}
+          position2Name={tabNameTwo}
+          position3Name={tabNameThree}
+        />
+      }
       </Grid>
     </Grid>
     );
@@ -108,6 +160,12 @@ export type Props = {
   categoryColor: string,
   cardTextWidth: string,
   date: string,
+  turnOnExtraTab: boolean,
+  tabNameOne: string,
+  tabNameTwo: string,
+  tabNameThree: string,
+  tabNameFour: string,
+  oneLayerOfTabs: boolean,
 };
   
 export default Section;

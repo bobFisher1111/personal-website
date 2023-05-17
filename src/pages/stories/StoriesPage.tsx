@@ -3,11 +3,11 @@ import moment from 'moment';
 import Section from '../../components/sections/Section';
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 
-const Coding = () => {
+const StoriesPage = () => {
   const ArticalDate = moment().format('ll');
   return (
       <Section
-        headerTitle='Coding'
+        headerTitle='Stories'
         backgroundColor='white'
         fontColor='#2F4C69'
         img={finalfantasy7}
@@ -17,13 +17,13 @@ const Coding = () => {
         cardTextWidth={'703px'}
         date={ArticalDate}
         turnOnExtraTab={true}
-        tabNameOne={'Articals'}
-        tabNameTwo={'Front End'}
-        tabNameThree={'Back End'}
-        tabNameFour={'Data'}
-        oneLayerOfTabs={false}
+        tabNameOne={'Latest Stories'}
+        tabNameTwo={'All Stories'}
+        tabNameThree={'Popular Stories'}
+        tabNameFour={'Series'}
+        oneLayerOfTabs={true}
       />
   );
 }
 
-export default Coding;
+export default StoriesPage;

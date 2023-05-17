@@ -102,6 +102,7 @@ const HomePageComponent: React.FC<Props> = ({
             backGroundColor='blue'
             imgCover={codingpicture}
             section='Coding'
+            linkTo='coding'
           />
         </Grid>
         <Grid
@@ -119,6 +120,7 @@ const HomePageComponent: React.FC<Props> = ({
             backGroundColor='blue'
             imgCover={legendOfZelda}
             section='Video Games'
+            linkTo='videoGames'
           />
         </Grid>
         <Grid
@@ -136,6 +138,7 @@ const HomePageComponent: React.FC<Props> = ({
             backGroundColor='blue'
             imgCover={goldenboy2}
             section='Shows / Movies'
+            linkTo='showsMovies'
           />
         </Grid>
         <Grid
@@ -152,11 +155,17 @@ const HomePageComponent: React.FC<Props> = ({
           <SectionCard
             backGroundColor='blue'
             imgCover={suzuka}
-            section='Hobbies'
+            section='Stories'
+            linkTo='stories'
           />
         </Grid>
         <ArticalTabs
           turOnAuthorForArtical={false}
+          oneLayerExtraTab={true}
+          nameOne={'Latest Articals'}
+          nameTwo={'All Articals'}
+          nameThree={'Popular Articals'}
+          nameFour={'Series'}
         />
       </AlignGrid>
     </Grid> 

@@ -2,11 +2,13 @@ import React from 'react';
 import {
   Button, CardActions, CardMedia, Card, Grid, Box,
 } from '@mui/material/';
+import { Link } from "react-router-dom";
 
 const SectionCard: React.FC<Props> = ({
   imgCover,
   section,
-  backGroundColor, 
+  backGroundColor,
+  linkTo
 }) => {
   return (
       <Grid 
@@ -50,13 +52,24 @@ const SectionCard: React.FC<Props> = ({
               //   height: '112.5px',
               // }}
             />
-            <CardActions sx={{ backgroundColor: '#282c34', justifyContent: 'center'}}>
+            <CardActions 
+              sx={{ 
+                backgroundColor: '#282c34', 
+                justifyContent: 'center',
+              }}
+            >
               <Button 
                 size="small"
+                component={Link}
+                to={`/${linkTo}`}
                 sx={{
                   color: 'white',
                   textTransform: 'initial',
                   fontSize: '16px',
+                  "&:hover": {
+                    color: "#667A6E",
+                    backgroundColor: 'white'
+                  },
                 }}
               >
                 {section}
@@ -71,7 +84,8 @@ const SectionCard: React.FC<Props> = ({
 export type Props = {
   imgCover: string,
   section: string,
-  backGroundColor: string, 
+  backGroundColor: string,
+  linkTo: string,
 };
 
 export default SectionCard;

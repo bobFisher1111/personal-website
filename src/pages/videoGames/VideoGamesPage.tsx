@@ -3,11 +3,11 @@ import moment from 'moment';
 import Section from '../../components/sections/Section';
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 
-const Coding = () => {
+const VideoGamesPage = () => {
   const ArticalDate = moment().format('ll');
   return (
       <Section
-        headerTitle='Coding'
+        headerTitle='Video Games'
         backgroundColor='white'
         fontColor='#2F4C69'
         img={finalfantasy7}
@@ -16,14 +16,14 @@ const Coding = () => {
         categoryColor={"#2F4C69"}
         cardTextWidth={'703px'}
         date={ArticalDate}
-        turnOnExtraTab={true}
+        turnOnExtraTab={false}
         tabNameOne={'Articals'}
-        tabNameTwo={'Front End'}
-        tabNameThree={'Back End'}
-        tabNameFour={'Data'}
+        tabNameTwo={'Retro'}
+        tabNameThree={'Modern'}
+        tabNameFour={'Series'}
         oneLayerOfTabs={false}
       />
   );
 }
 
-export default Coding;
+export default VideoGamesPage;
