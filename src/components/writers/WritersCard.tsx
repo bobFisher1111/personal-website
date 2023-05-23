@@ -6,9 +6,15 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
+import { useSelector } from 'react-redux';
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
+import { StringLiteral } from 'typescript';
 
 const WritersCard: React.FC<Props> = ({
+  authorImage,
+  authorName,
+  authorsTitle,
+  authorId,
 }) => {
   return (
     <Grid
@@ -27,7 +33,7 @@ const WritersCard: React.FC<Props> = ({
       >
         <CardMedia
             component="img"
-            image={finalfantasy7}
+            image={authorImage}
             sx={{
             width: "120px",
             height: "120px",
@@ -57,7 +63,7 @@ const WritersCard: React.FC<Props> = ({
             color: '#2F4C69',
           }}
         >
-          {'Bob The Fisher'}
+          {authorName}
         </Typography>
         <Typography
           variant="subtitle1"
@@ -70,10 +76,10 @@ const WritersCard: React.FC<Props> = ({
             color: '#667A6E',
           }}
         >
-          {'Software Engineer, Writer, Game Dev'}
+          {authorsTitle}
         </Typography>
         <Link 
-          to="/author"
+          to={`/author/${authorId}`}
           style={{
             textDecoration: "none"
           }}
@@ -108,6 +114,10 @@ const WritersCard: React.FC<Props> = ({
 }
 
 export type Props = {
+  authorImage: string;
+  authorName: string;
+  authorsTitle: string;
+  authorId: string;
 };
 
 export default WritersCard;

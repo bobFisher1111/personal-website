@@ -1,10 +1,14 @@
 import React from 'react';
 import moment from 'moment';
+import { useSelector } from 'react-redux';
 import Section from '../../components/sections/Section';
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 
 const StoriesPage = () => {
   const ArticalDate = moment().format('ll');
+  const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
+  const articalData = getWebsiteData && getWebsiteData
+
   return (
       <Section
         headerTitle='Stories'
@@ -22,6 +26,7 @@ const StoriesPage = () => {
         tabNameThree={'Popular Stories'}
         tabNameFour={'Series'}
         oneLayerOfTabs={true}
+        websiteData={articalData}
       />
   );
 }

@@ -266,6 +266,9 @@ const ArticalPage: React.FC<Props> = ({
           articalPage={true}
           articalSubTitle={subTitle}
           useVideoInsteadOfImage={true}
+          articalData={''}
+          authorsId={''}
+          articalId={'item.articalId'}
       />
        
             {tempData  && tempData?.map((item: any) => (

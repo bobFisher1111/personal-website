@@ -1,12 +1,20 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import {
   Routes, Route, BrowserRouter, Link,
 } from 'react-router-dom';
+import { AppDispatch } from './app/store';
+import { useDispatch, useSelector } from 'react-redux';
+import GetWebsiteData from './features/webSiteData/GetWebsiteData';
 import Layout from './components/layout/Layout';
 import routes from './routes/Routes';
 import './App.css';
 
 const App: React.FC<Props> = ({ position }) => {
+  const dispatch = useDispatch<AppDispatch>();
+  useEffect(() => {
+    dispatch(GetWebsiteData())
+  }, []);
+  
   return (
     <BrowserRouter>
       <Suspense fallback={<div>Loading...</div>}>

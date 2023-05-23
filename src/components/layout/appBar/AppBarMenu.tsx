@@ -17,7 +17,6 @@ const AppBarMenu = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    console.log('value', event.currentTarget);
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {

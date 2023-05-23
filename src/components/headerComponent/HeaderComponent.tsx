@@ -14,6 +14,7 @@ const HeaderComponent:  React.FC<Props> = ({
   fontSize,
   authorAvatar,
   headerTopPadding,
+  avatarImage,
 }) => {
   const titleFunction = (item: any) => {
     return (
@@ -53,7 +54,7 @@ const HeaderComponent:  React.FC<Props> = ({
         >
            <Avatar 
              alt="Remy Sharp"
-             src={solidSnakePortrait2}
+             src={avatarImage}
              sx={{
               width: 56,
               height: 56,
@@ -97,6 +98,7 @@ export type Props = {
   fontSize: string;
   authorAvatar: boolean;
   headerTopPadding: boolean;
+  avatarImage?: string;
 };
 
 export default HeaderComponent;

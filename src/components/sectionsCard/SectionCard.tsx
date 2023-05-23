@@ -8,7 +8,7 @@ const SectionCard: React.FC<Props> = ({
   imgCover,
   section,
   backGroundColor,
-  linkTo
+  linkTo,
 }) => {
   return (
       <Grid 

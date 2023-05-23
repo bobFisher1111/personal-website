@@ -16,18 +16,18 @@
         - fontColor
         - other css
 
-- Sprint 2: // starting
+- Sprint 2: // completed
   - Create a object Model
   - Use the json-server
   - Implement axios to get the data from json-server
   - console.log data
 
 - Sprint 3:
-  - fetch the data into website and refactor entire website to recieve data from json-server
+  - fetch the data into website and refactor entire website to recieve data from json-server // working on
     - Includes routing
       - Update Text throught website
       - Update header with sections dropdown where Coding is with [sections (oppsidedown)^]
-    - Setup Redux
+    - Setup Redux // completed
 - Sprint 4:
   - Update CSS with new changes
   - Add mobile view for entire website

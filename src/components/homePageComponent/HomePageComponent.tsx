@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import {
   Grid,
   Divider,
@@ -14,30 +14,19 @@ import codingpicture from '../../assets/images/codingpicture.png';
 import megalgearsolid1 from '../../assets/images/megalgearsolid1.jpg';
 import legendOfZelda from '../../assets/images/legendOfZelda.jpg';
 import suzuka from '../../assets/images/suzuka.jpeg';
-import { DataModel } from '../../data/DataModel'; 
+import { DataModel } from '../../data/DataModel';
+import useWebsiteData from '../../services/useDataServices';
+import { useDispatch, useSelector } from 'react-redux';
+import GetWebsiteData from '../../features/webSiteData/GetWebsiteData';
+import { AppDispatch } from '../../app/store';
 
 const HomePageComponent: React.FC<Props> = ({
 }) => {
+  const dispatch = useDispatch<AppDispatch>();
   const widthRef = useRef<any>();
-  const [marginWidth, setMarginWidth] = useState<any>(widthRef);
-  const updatedLeftMargin = () => {
-    setMarginWidth(widthRef.current?.offsetLeft);
-  }
-  
-  console.log('what is data model', DataModel);
-
-  useEffect(() => {
-    if (widthRef && widthRef.current) {
-      setMarginWidth(widthRef.current.offsetLeft);
-      window.addEventListener("resize", updatedLeftMargin);
-    }
-    return () => {
-      if(widthRef && widthRef.current) {
-        window.removeEventListener("resize", updatedLeftMargin);
-      }
-    }
-  }, [marginWidth]);
-
+  const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
+  const articalData = getWebsiteData && getWebsiteData.articals;
+  // articalSubTitle
   return (
     <Grid
       container
@@ -166,6 +155,7 @@ const HomePageComponent: React.FC<Props> = ({
           nameTwo={'All Articals'}
           nameThree={'Popular Articals'}
           nameFour={'Series'}
+          websiteData={articalData}
         />
       </AlignGrid>
     </Grid> 

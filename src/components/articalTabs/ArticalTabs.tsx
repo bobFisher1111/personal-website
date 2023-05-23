@@ -8,13 +8,14 @@ import HeaderComponent from '../headerComponent/HeaderComponent';
 import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
 import TabsComponent from '../tabsComponent/TabsComponent';
 import ProjectsComponent from "../projects/ProjectsComponent";
-import SectionTabComponent from "../sectionsTab/SectionTabComponent";
+// import SectionTabComponent from "../sectionsTab/SectionTabComponent";
 import Works from '../works/Works';
 import book2 from '../../assets/images/book2.png';
 import Card from '../sections/Card';
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 import moment from 'moment';
 import LatestArticalCard from "../cards/latestArticalCard/LatestArticalCard";
+import { WebsiteData } from "../../types/websiteData";
 
 //
 const ArticalTabs: React.FC<Props> = ({
@@ -24,76 +25,48 @@ const ArticalTabs: React.FC<Props> = ({
   nameTwo,
   nameThree,
   nameFour,
+  websiteData,
 }) => {
-    const ArticalDate = moment().format('ll'); //
+    const articalsData = websiteData;
+    const ArticalDate = moment().format('ll');
+    console.log('artical data', articalsData);
     const Articals = () => {
         return (
             <>
-            {!turOnAuthorForArtical &&
-            <>
-            <Grid
-           item
-           xs={12}
-           sm={12}
-           md={12}
-           lg={12}
-           xl={12}
-           sx={{
-            padding: '16px',
-           }}
-          ></Grid>
-            <Card
-                title={"Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review"}
-                backgroundColor={"white"}
-                fontColor={"black"}
-                img={finalfantasy7}
-                author="Bob Fisher"
-                likes='5'
-                cardTextWidth={'639px'} // homepage 660px everywhere else so far 644px // 639
-                date={ArticalDate}
-                imageWidth={'321px'}
-                articalPage={false}
-                useVideoInsteadOfImage={true}
-              />
-              <Card
-                title={"Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review"}
-                backgroundColor={"white"}
-                fontColor={"black"}
-                img={finalfantasy7}
-                author="Bob Fisher"
-                likes='5'
-                cardTextWidth={'639px'} // homepage 660px everywhere else so far 644px // 639
-                date={ArticalDate}
-                imageWidth={'321px'}
-                articalPage={false}
-                useVideoInsteadOfImage={false}
-              />
-              <Card
-                title={"Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review"}
-                backgroundColor={"white"}
-                fontColor={"black"}
-                img={finalfantasy7}
-                author="Bob Fisher"
-                likes='5'
-                cardTextWidth={'639px'} // homepage 660px everywhere else so far 644px // 639
-                date={ArticalDate}
-                imageWidth={'321px'}
-                articalPage={false}
-                useVideoInsteadOfImage={false}
-              />
-              <Card
-                title={"Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review"}
-                backgroundColor={"white"}
-                fontColor={"black"}
-                img={finalfantasy7}
-                author="Bob Fisher"
-                likes='5'
-                cardTextWidth={'639px'} // homepage 660px everywhere else so far 644px // 639
-                date={ArticalDate}
-                imageWidth={'321px'}
-                articalPage={false}
-                useVideoInsteadOfImage={false}
-              />
+              {!turOnAuthorForArtical &&
+                <>
+                 <Grid
+                  item
+                  xs={12}
+                  sm={12}
+                  md={12}
+                  lg={12}
+                  xl={12}
+                  sx={{
+                    padding: '16px',
+                  }}
+                 ></Grid>
+                 { articalsData?.map((item: any, index: any) => (
+                  <Card
+                    key={index}
+                    title={item.articalTitle}
+                    articalSubTitle={item.articalSubTitle}
+                    backgroundColor={"white"}
+                    fontColor={"black"}
+                    img={'https://www.nme.com/wp-content/uploads/2020/04/040120-Square-Enix-Final-Fantasy-7-VII-Remake-Cloud-Press-Image.jpg'}
+                    author={item.author}
+                    likes={item.numberOfFavorites}
+                    cardTextWidth={'639px'} // homepage 660px everywhere else so far 644px // 639
+                    date={item.publishedDate}
+                    imageWidth={'321px'}
+                    articalPage={false}
+                    useVideoInsteadOfImage={item.useVideoInsteadOfImage}
+                    section={item.section}
+                    articalData={websiteData}
+                    authorsId={item.authorId}
+                    articalId={item.articalId}
+                 />
+                 ))}
               </>
             }
             {turOnAuthorForArtical &&
@@ -248,6 +221,7 @@ export type Props = {
   nameTwo: string;
   nameThree: string;
   nameFour: string;
+  websiteData?: any;
 };
 
 export default ArticalTabs;

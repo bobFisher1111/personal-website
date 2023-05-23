@@ -1,14 +1,36 @@
+import React, { useEffect, useState } from 'react';
 import {
     Typography,
     Grid,
     Divider,
   } from "@mui/material";
+  import { useDispatch, useSelector } from 'react-redux';
+  import { AppDispatch } from '../../app/store';
   import HeaderComponent from '../headerComponent/HeaderComponent';
   import WritersCard from './WritersCard';
-  
+  import { WebsiteData } from "../../types/websiteData";
+  import GetWebsiteData from '../../features/webSiteData/GetWebsiteData';
+  import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
+import { isTemplateExpression } from 'typescript';
+import { iteratorSymbol } from 'immer/dist/internal';
+
+
+
   const Writers = () => {
-    const contactDescription = "Mission Statement....";
-  
+    const dispatch = useDispatch<AppDispatch>();
+    const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
+    const [webData, setWebData] = useState<any>(getWebsiteData.authors);
+    useEffect(() => {
+      dispatch(GetWebsiteData())
+    }, []);
+    const authorsData = getWebsiteData.authors;
+
+    // getWebsiteData.authors.map((item: any, index: any) => {
+    //   console.log('item', item);
+    // })
+
+    console.log('avatar image', authorsData);
+
     return (
         <>
         <Grid
@@ -41,6 +63,7 @@ import {
             fontSize={'32px'}
             authorAvatar={false}
             headerTopPadding={true}
+            avatarImage={authorsData.avatarImage}
           />
           <Divider
             sx={{
@@ -83,36 +106,23 @@ import {
           padding: '16px 24px 0px 24px',
         }}
         >
-        <Grid
-          item
-          xs={6}
-          sm={6}
-          md={6}
-          lg={6}
-          xl={6}
-        >
-         <WritersCard />
-        </Grid>
-        <Grid
-          item
-          xs={6}
-          sm={6}
-          md={6}
-          lg={6}
-          xl={6}
-        >
-          <WritersCard />
-        </Grid>
-        <Grid
-          item
-          xs={6}
-          sm={6}
-          md={6}
-          lg={6}
-          xl={6}
-        >
-          <WritersCard />
-        </Grid>
+        {authorsData && authorsData?.map((item: any, index: any) => (
+          <Grid
+            item
+            xs={6}
+            sm={6}
+            md={6}
+            lg={6}
+            xl={6}
+          >
+            <WritersCard
+              authorImage={item.avatarImage}
+              authorName={item.name}
+              authorsTitle={item.titles}
+              authorId={item.authorId}
+            />
+          </Grid>
+        ))}
       </Grid>
      </>
        

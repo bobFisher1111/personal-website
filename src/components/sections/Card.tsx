@@ -15,7 +15,10 @@ import AlignGrid from "../../themes/StyledGrids";
 import LatestArticalCardWide from "../../components/cards/additionalCards/LatestArticalCardWide"
 import foxGirl from '../../assets/images/foxGirl.png';
 import yinYangFox from '../../assets/images/yinYangFox.jpeg';
+import { useDispatch, useSelector } from 'react-redux';
 import { useResizeDetector } from 'react-resize-detector';
+import { Link } from "react-router-dom";
+import { Authors } from '../../types/authors';
 // import MaterialIcon, {colorPalette} from 'material-icons-react';
 
 const StyledCardContent = styled(CardContent)({
@@ -44,10 +47,23 @@ const StyledCardContent = styled(CardContent)({
     articalSubTitle,
     titleFontSize,
     useVideoInsteadOfImage,
+    section,
+    articalData,
+    authorsId,
+    articalId,
   }) => {
-   const [fontSizes, setFontSizes] = useState<string>();
-   const widthRef = useRef();
-   const { width, height, ref } = useResizeDetector();
+    const [fontSizes, setFontSizes] = useState<string>();
+    const widthRef = useRef();
+    const { width, height, ref } = useResizeDetector();
+    const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
+    const getAuthorData = getWebsiteData?.authors?.filter((item: any) => {
+      return item.authorId === authorsId; //articalData.authorId;
+    });
+
+    // console.log('_website data', getAuthorData[0]?.name);
+    const authorsName = getAuthorData && getAuthorData[0]?.name;
+
+    console.log('....', date);
 
    useEffect(() => {
     if(width && width === 800) {
@@ -64,7 +80,35 @@ const StyledCardContent = styled(CardContent)({
 
    const articalInfo = () => {
     return (
-          <Grid container direction="row" sx={{alignItems: 'center' }}>
+      <>
+        <Link 
+            to={`/artical/${articalId}`}
+            style={{
+              textDecoration: "none"
+            }}
+          >
+            <Typography
+            sx={{
+              fontSize: '16px',
+              // color: "black",
+              cursor: "pointer",
+              "&:hover": {
+                color: "#667A6E",
+              },
+              margin: "0px 22px 0px 0px"
+            }}
+            >
+              More from the Artical
+            </Typography>
+          </Link> 
+          <Grid 
+            container
+            direction="row"
+            sx={{
+              alignItems: 'center',
+              padding: '8px 0px 0px 0px'
+            }}
+          >
             <div 
               className={"material-symbols-outlined"}
                 style={{
@@ -88,7 +132,7 @@ const StyledCardContent = styled(CardContent)({
                 lineHeight: '24px',
               }}
             >
-              {author}
+              {getAuthorData[0]?.name}
             </Typography>
             <Typography
               // variant="body1"
@@ -115,7 +159,7 @@ const StyledCardContent = styled(CardContent)({
             </div>
             <Chip
               color="primary"
-              label="VideoGames"
+              label={section}
               variant="outlined"
               size="small"
               sx={{
@@ -123,6 +167,7 @@ const StyledCardContent = styled(CardContent)({
               }}
             />
           </Grid>
+      </>
     )
    }
    const articalSubText = () => {
@@ -165,6 +210,7 @@ const StyledCardContent = styled(CardContent)({
                   color: '#2F4C69',
                   // marginTop: '8px',
                   marginRight: '4px',
+                  // padding: '16px 0px 16px 0px',
                 }}
               >
                 account_circle
@@ -178,7 +224,7 @@ const StyledCardContent = styled(CardContent)({
                 paddingRight: '16px'
               }}
             >
-              {author} 
+              {getAuthorData[0]?.name} 
             </Typography>
             <Typography
               // variant="body1"
@@ -249,7 +295,7 @@ const StyledCardContent = styled(CardContent)({
             </Typography>
             <Chip
               color="primary"
-              label="VideoGames"
+              label={section}
               variant="outlined"
               size="small"
               sx={{
@@ -427,7 +473,7 @@ const StyledCardContent = styled(CardContent)({
           }} 
           component="div"
         >
-          {title}
+          {articalSubTitle}
         </Typography>
         {!articalPage &&
           <Typography
@@ -464,6 +510,10 @@ export type Props = {
   articalSubTitle?: string,
   titleFontSize?: string,
   useVideoInsteadOfImage: boolean,
+  section?: string,
+  articalData: any,
+  authorsId: string,
+  articalId: string,
 };
   
 export default SectionCard;

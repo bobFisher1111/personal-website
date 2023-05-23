@@ -17,6 +17,7 @@ import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 import moment from 'moment';
 import ArticalTabs from '../articalTabs/ArticalTabs';
 import AuthorAbout from './AuthorAbout';
+import { useSelector } from 'react-redux';
 import LatestArticalCard from "../cards/latestArticalCard/LatestArticalCard";
 
 const AuthorComp: React.FC<Props> = ({
@@ -26,8 +27,27 @@ const AuthorComp: React.FC<Props> = ({
   const bioText1 = "when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centur. ";
   const bioText = bioText1 + bioText1;
   const ArticalDate = moment().format('ll');
+  const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
+  const authorsData = getWebsiteData && getWebsiteData
 
-  const tabsPosistionOne =() => {
+
+  const getIdFromUrl = () => {
+    const currentLocation = window.location.href;
+    const getIdFromCurrentLocation = currentLocation.split("/").reverse()[0];
+    return (getIdFromCurrentLocation);
+
+  }
+
+  const getAuthor = authorsData?.authors?.filter((item: any) => {
+    return item.authorId === getIdFromUrl();
+  });
+  const getArticals = authorsData?.articals?.filter((item: any) => {
+    return item.authorId === getIdFromUrl();
+  });
+  const authorData = getAuthor && getAuthor[0];
+  console.log('what is id', authorData);
+
+  const tabsPosistionOne = () => {
 
     return (
       <ArticalTabs
@@ -37,6 +57,7 @@ const AuthorComp: React.FC<Props> = ({
         nameTwo={'All Articals'}
         nameThree={'Popular Articals'}
         nameFour={'Series'}
+        websiteData={getArticals}
       />
     )
   }
@@ -99,13 +120,14 @@ const AuthorComp: React.FC<Props> = ({
         }}
       >
         <HeaderComponent
-          title='Bob The Fisher'
+          title={ authorData?.name}
           backgroundColor='white'
           fontColor='#2F4C69'
           lineHeight={'40px'}
           fontSize={'32px'}
           authorAvatar={true}
           headerTopPadding={true}
+          avatarImage={authorData?.avatarImage}
         />
         {!turOnArticalPage && 
         <Divider
@@ -148,7 +170,7 @@ const AuthorComp: React.FC<Props> = ({
             textIndent: '15px',
           }}
         >
-          {bioText}
+          {authorData?.biography}
         </Typography>
       </Grid>
       <Grid

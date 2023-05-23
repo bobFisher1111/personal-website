@@ -3,6 +3,8 @@
 
         - Libraries:
             - redux toolkit
+              - good tutorial:
+                - https://www.youtube.com/watch?v=Oc14xbizA2o
             - mui
                 npm install @mui/material @emotion/react @emotion/styled
                 npm install @mui/material @mui/styled-engine-sc styled-components

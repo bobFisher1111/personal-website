@@ -1,10 +1,14 @@
 import React from 'react';
 import moment from 'moment';
+import { useSelector } from 'react-redux';
 import Section from '../../components/sections/Section';
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 
 const VideoGamesPage = () => {
   const ArticalDate = moment().format('ll');
+  const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
+  const articalData = getWebsiteData && getWebsiteData;
+
   return (
       <Section
         headerTitle='Video Games'
@@ -22,6 +26,7 @@ const VideoGamesPage = () => {
         tabNameThree={'Modern'}
         tabNameFour={'Series'}
         oneLayerOfTabs={false}
+        websiteData={articalData}
       />
   );
 }

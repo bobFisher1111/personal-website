@@ -17,6 +17,8 @@ import yinYangFox from '../../assets/images/yinYangFox.jpeg';
 import TabsComponent from '../../components/tabsComponent/TabsComponent';
 import SectionTabComponent from '../../components/sectionsTab/SectionTabComponent';
 import ArticalTabs from '../../components/articalTabs/ArticalTabs';
+import { useDispatch, useSelector } from 'react-redux';
+import { WebsiteData } from "../../types/websiteData";
 
   
 const Section: React.FC<Props> = ({
@@ -35,8 +37,10 @@ const Section: React.FC<Props> = ({
   tabNameThree,
   tabNameFour,
   oneLayerOfTabs,
+  websiteData,
 }) => {
   const [widthClientRef, setWidthClientRef] = useState<number>(1024);
+  const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const widthRef = useRef<any>();
   const temptitle = 'Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review  VII Review FinalFantasyiiii VII Review  VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review  VII Review Final Fantasyiiii VII Review  VII Review Final Fantasy VII Review';
   useEffect(() => {
@@ -47,6 +51,11 @@ const Section: React.FC<Props> = ({
     }
   }, [widthRef]);
 
+  const articalSectionFilter = websiteData?.articals?.filter((item: any) => {
+    return item.section === headerTitle;
+  });
+
+  console.log('what is websitedata', websiteData);
 
   const tabsPosistionOne =() => {
 
@@ -58,6 +67,7 @@ const Section: React.FC<Props> = ({
         nameTwo={'All Articals'}
         nameThree={'Popular Articals'}
         nameFour={'Series'}
+        websiteData={articalSectionFilter}
       />
     )
   }
@@ -113,12 +123,13 @@ const Section: React.FC<Props> = ({
       >
       {oneLayerOfTabs &&
         <ArticalTabs
-        turOnAuthorForArtical={false}
-        oneLayerExtraTab={true}
-        nameOne={tabNameOne}
-        nameTwo={tabNameTwo}
-        nameThree={tabNameThree}
-        nameFour={tabNameFour}
+          turOnAuthorForArtical={false}
+          oneLayerExtraTab={true}
+          nameOne={tabNameOne}
+          nameTwo={tabNameTwo}
+          nameThree={tabNameThree}
+          nameFour={tabNameFour}
+          websiteData={articalSectionFilter}
         />
       }
       {!oneLayerOfTabs && turnOnExtraTab ?
@@ -166,6 +177,7 @@ export type Props = {
   tabNameThree: string,
   tabNameFour: string,
   oneLayerOfTabs: boolean,
+  websiteData: WebsiteData,
 };
   
 export default Section;

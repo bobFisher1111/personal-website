@@ -52,7 +52,11 @@ const routes: Route[] = [
     element: ArticalPage,
   },
   {
-    path: '/author',
+    path: '/artical/:id',
+    element: ArticalPage,
+  },
+  {
+    path: `/author/:id`,
     element: AuthorPage,
   },
   {
