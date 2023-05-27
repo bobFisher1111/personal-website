@@ -23,11 +23,21 @@
   - console.log data
 
 - Sprint 3:
-  - fetch the data into website and refactor entire website to recieve data from json-server // working on
+  - fetch the data into website and refactor entire website to recieve data from json-server // completed
     - Includes routing
       - Update Text throught website
       - Update header with sections dropdown where Coding is with [sections (oppsidedown)^]
+    - Bring back for header Contact and update it
+    - Update LinkTabs
+    - Update Artical Cards where you click it will bring up artical page
     - Setup Redux // completed
+  - Extra:
+    - Create new section for Series
+      - Update db
+    - Refactor website
+    - Write test classes
+    - Implement npm run check:all
+    - Implement build
 - Sprint 4:
   - Update CSS with new changes
   - Add mobile view for entire website

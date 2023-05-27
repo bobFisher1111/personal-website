@@ -10,5 +10,6 @@ export type Articles = {
   useVideoInsteadOfImage: boolean,
   headerImageOrVideo: string;
   artical: string[];
+  sectionLink: string;
 }
   
