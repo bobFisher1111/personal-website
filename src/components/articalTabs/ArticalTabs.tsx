@@ -26,10 +26,10 @@ const ArticalTabs: React.FC<Props> = ({
   nameThree,
   nameFour,
   websiteData,
+  articalPageData,
+  authorName,
 }) => {
     const articalsData = websiteData;
-    const ArticalDate = moment().format('ll');
-    console.log('artical data', articalsData);
     const Articals = () => {
         return (
             <>
@@ -53,7 +53,6 @@ const ArticalTabs: React.FC<Props> = ({
                     articalSubTitle={item.articalSubTitle}
                     backgroundColor={"white"}
                     fontColor={"black"}
-                    img={'https://www.nme.com/wp-content/uploads/2020/04/040120-Square-Enix-Final-Fantasy-7-VII-Remake-Cloud-Press-Image.jpg'}
                     author={item.author}
                     likes={item.numberOfFavorites}
                     cardTextWidth={'639px'} // homepage 660px everywhere else so far 644px // 639
@@ -65,6 +64,8 @@ const ArticalTabs: React.FC<Props> = ({
                     articalData={websiteData}
                     authorsId={item.authorId}
                     articalId={item.articalId}
+                    videoOrImageCover={item.coverImageOrVideo}
+                    sectionLink={item.sectionLink}
                  />
                  ))}
               </>
@@ -93,89 +94,16 @@ const ArticalTabs: React.FC<Props> = ({
                  margin: '16px 0px 16px 16px'
                }}
              >
-                <LatestArticalCard 
-                  title={'XenoBlade Chronicals 3 Review'}
-                  name={'Bob Fisher'}
+              { articalPageData?.map((item: any, index: any) => (
+                <LatestArticalCard
+                  key={index}
+                  title={item.articalTitle}
+                  name={authorName}
                   articalInfo={'...'}
                   articalImage={finalfantasy7}
                   turnOnStyle={true}
                 />
-             </Grid>
-             <Grid
-               item
-               xs={8}
-               sm={8}
-               md={8}
-               lg={8}
-               xl={8}
-               sx={{
-                 margin: '16px 0px 16px 16px'
-               }}
-             >
-                <LatestArticalCard 
-                  title={'XenoBlade Chronicals 3 Review'}
-                  name={'Bob Fisher'}
-                  articalInfo={'...'}
-                  articalImage={finalfantasy7}
-                  turnOnStyle={true}
-                />
-             </Grid>
-             <Grid
-               item
-               xs={8}
-               sm={8}
-               md={8}
-               lg={8}
-               xl={8}
-               sx={{
-                 margin: '16px 0px 16px 16px'
-               }}
-             >
-                <LatestArticalCard 
-                  title={'XenoBlade Chronicals 3 Review'}
-                  name={'Bob Fisher'}
-                  articalInfo={'...'}
-                  articalImage={finalfantasy7}
-                  turnOnStyle={true}
-                />
-             </Grid>
-             <Grid
-               item
-               xs={8}
-               sm={8}
-               md={8}
-               lg={8}
-               xl={8}
-               sx={{
-                 margin: '16px 0px 16px 16px'
-               }}
-             >
-                <LatestArticalCard 
-                  title={'XenoBlade Chronicals 3 Review'}
-                  name={'Bob Fisher'}
-                  articalInfo={'...'}
-                  articalImage={finalfantasy7}
-                  turnOnStyle={true}
-                />
-             </Grid>
-             <Grid
-               item
-               xs={8}
-               sm={8}
-               md={8}
-               lg={8}
-               xl={8}
-               sx={{
-                 margin: '16px 0px 16px 16px'
-               }}
-             >
-                <LatestArticalCard 
-                  title={'XenoBlade Chronicals 3 Review'}
-                  name={'Bob Fisher'}
-                  articalInfo={'...'}
-                  articalImage={finalfantasy7}
-                  turnOnStyle={true}
-                />
+              ))}
              </Grid>
            </Grid>
            </>
@@ -222,6 +150,8 @@ export type Props = {
   nameThree: string;
   nameFour: string;
   websiteData?: any;
+  articalPageData?: any;
+  authorName?: string;
 };
 
 export default ArticalTabs;

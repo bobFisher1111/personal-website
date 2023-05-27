@@ -1,35 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import {
-    Typography,
-    Grid,
-    Divider,
-  } from "@mui/material";
-  import { useDispatch, useSelector } from 'react-redux';
-  import { AppDispatch } from '../../app/store';
-  import HeaderComponent from '../headerComponent/HeaderComponent';
-  import WritersCard from './WritersCard';
-  import { WebsiteData } from "../../types/websiteData";
-  import GetWebsiteData from '../../features/webSiteData/GetWebsiteData';
-  import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
+  Typography,
+  Grid,
+  Divider,
+} from "@mui/material";
+import { useDispatch, useSelector } from 'react-redux';
+// import { AppDispatch } from '../../app/store';
+import HeaderComponent from '../headerComponent/HeaderComponent';
+import WritersCard from './WritersCard';
+import { WebsiteData } from "../../types/websiteData";
+import GetWebsiteData from '../../features/webSiteData/GetWebsiteData';
+import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 import { isTemplateExpression } from 'typescript';
 import { iteratorSymbol } from 'immer/dist/internal';
 
 
 
   const Writers = () => {
-    const dispatch = useDispatch<AppDispatch>();
+    // const dispatch = useDispatch<AppDispatch>();
     const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
     const [webData, setWebData] = useState<any>(getWebsiteData.authors);
-    useEffect(() => {
-      dispatch(GetWebsiteData())
-    }, []);
+    // useEffect(() => {
+    //   dispatch(GetWebsiteData())
+    // }, []);
     const authorsData = getWebsiteData.authors;
 
     // getWebsiteData.authors.map((item: any, index: any) => {
     //   console.log('item', item);
     // })
 
-    console.log('avatar image', authorsData);
+    // console.log('avatar image', authorsData);
 
     return (
         <>
@@ -63,7 +63,7 @@ import { iteratorSymbol } from 'immer/dist/internal';
             fontSize={'32px'}
             authorAvatar={false}
             headerTopPadding={true}
-            avatarImage={authorsData.avatarImage}
+            avatarImage={authorsData?.avatarImage}
           />
           <Divider
             sx={{

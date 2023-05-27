@@ -37,7 +37,6 @@ const StyledCardContent = styled(CardContent)({
     title,
     backgroundColor,
     fontColor,
-    img,
     author,
     likes,
     cardTextWidth,
@@ -51,20 +50,45 @@ const StyledCardContent = styled(CardContent)({
     articalData,
     authorsId,
     articalId,
+    videoOrImageCover,
+    sectionLink,
   }) => {
     const [fontSizes, setFontSizes] = useState<string>();
+    const [authorPage, setAuthorPage] = useState<boolean>();
+    const [sectionPage, setSectionPage] = useState<boolean>();
     const widthRef = useRef();
     const { width, height, ref } = useResizeDetector();
     const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
     const getAuthorData = getWebsiteData?.authors?.filter((item: any) => {
-      return item.authorId === authorsId; //articalData.authorId;
+      return item.authorId === authorsId;
     });
+  
+    const getArticalsData = getWebsiteData?.articals?.filter((item: any) => {
+      return item.authorId === authorsId;
+    });
+    
+    const getIdFromUrl = () => {
+      const currentLocation = window.location.href;
+      const getIdFromCurrentLocation = currentLocation.split("/");
+      const checkIfIncludesAuthor = getIdFromCurrentLocation.includes('authord');
+      return (checkIfIncludesAuthor);
+    };
+   
+   useEffect(() => {
+     const currentLocation = window.location.href;
+     const getIdFromCurrentLocation = currentLocation.split("/");
+     const checkIfIncludesAuthor = getIdFromCurrentLocation.includes('author');
+     setAuthorPage(checkIfIncludesAuthor);
+   }, []);
 
-    // console.log('_website data', getAuthorData[0]?.name);
-    const authorsName = getAuthorData && getAuthorData[0]?.name;
-
-    console.log('....', date);
-
+   useEffect(() => {
+      const currentLocation = window.location.href;
+    const getIdFromCurrentLocation = currentLocation.split("/");
+    const checkIfIncludesAuthor = getIdFromCurrentLocation.includes(sectionLink);
+    setSectionPage(checkIfIncludesAuthor);
+  }, []);
+  
+   console.log('checking url', sectionPage)
    useEffect(() => {
     if(width && width === 800) {
         setFontSizes('16px');
@@ -74,15 +98,13 @@ const StyledCardContent = styled(CardContent)({
     }
    }, [width, ref]);
 
-   // const testingboolean = false;
-
    const temptitle = 'Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review  VII Review FinalFantasyiiii VII Review  VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review  VII Review Final Fantasyiiii VII Review  VII Review Final Fantasy VII Review';
-
+   console.log('section', section);
    const articalInfo = () => {
     return (
       <>
         <Link 
-            to={`/artical/${articalId}`}
+            to={`/artical/${authorsId}/${articalId}`}
             style={{
               textDecoration: "none"
             }}
@@ -109,11 +131,18 @@ const StyledCardContent = styled(CardContent)({
               padding: '8px 0px 0px 0px'
             }}
           >
+           {!authorPage ? 
+              <Link 
+                to={`/author/${authorsId}`}
+                style={{
+                  textDecoration: "none"
+                }}
+              >
             <div 
               className={"material-symbols-outlined"}
                 style={{
                   // alignItems: 'center',
-                  fontSize: '16px',
+                  fontSize: '20px',
                   color: '#2F4C69',
                   // marginTop: '8px',
                   marginRight: '4px',
@@ -122,19 +151,57 @@ const StyledCardContent = styled(CardContent)({
               >
                 account_circle
               </div>
+              </Link>
+              :
+              <div 
+              className={"material-symbols-outlined"}
+                style={{
+                  // alignItems: 'center',
+                  fontSize: '20px',
+                  color: '#2F4C69',
+                  // marginTop: '8px',
+                  marginRight: '4px',
+                  lineHeight: '24px'
+                }}
+              >
+                account_circle
+              </div>
+              }
+              {!authorPage ? 
+              <Link 
+                to={`/author/${authorsId}`}
+                style={{
+                  textDecoration: "none"
+                }}
+              >
             <Typography
               // variant="body1"
               color="#2F4C69"
               sx={{
                 // lineHeight: '16.8px',
-                fontSize: '12px',
+                fontSize: '16px',
                 paddingRight: '16px',
                 lineHeight: '24px',
               }}
             >
               {getAuthorData[0]?.name}
-            </Typography>
+            </Typography> 
+            </Link>
+            :
             <Typography
+              // variant="body1"
+              color="#2F4C69"
+              sx={{
+                // lineHeight: '16.8px',
+                fontSize: '16px',
+                paddingRight: '16px',
+                lineHeight: '24px',
+              }}
+            >
+              {getAuthorData[0]?.name}
+            </Typography> 
+            }
+            {/* <Typography
               // variant="body1"
               color="black"
               sx={{
@@ -156,7 +223,26 @@ const StyledCardContent = styled(CardContent)({
               }}
             >
               favorite
-            </div>
+            </div> */}
+            {!sectionPage ?
+             <Link 
+            to={`/${sectionLink}`}
+            style={{
+              textDecoration: "none"
+            }}
+          >
+            <Chip
+              color="primary"
+              label={section}
+              variant="outlined"
+              size="small"
+              sx={{
+                color: 'black',
+                cursor: 'pointer',
+              }}
+            />
+            </Link>
+            :
             <Chip
               color="primary"
               label={section}
@@ -166,6 +252,7 @@ const StyledCardContent = styled(CardContent)({
                 color: 'black'
               }}
             />
+          }
           </Grid>
       </>
     )
@@ -201,12 +288,25 @@ const StyledCardContent = styled(CardContent)({
    const articalPageInfo = () => {
     return (
         <>
-          <Grid container direction="row" sx={{alignItems: 'center' }}>
+          <Grid 
+            container 
+            direction="row" 
+            sx={{
+              alignItems: 'center',
+              padding: '4px 0px 0px 0px',
+            }}
+          >
+          <Link 
+            to={`/author/${authorsId}`}
+            style={{
+              textDecoration: "none"
+            }}
+          >
             <div 
               className={"material-symbols-outlined"}
                 style={{
                   // alignItems: 'center',
-                  fontSize: '16px',
+                  fontSize: '20px',
                   color: '#2F4C69',
                   // marginTop: '8px',
                   marginRight: '4px',
@@ -215,6 +315,13 @@ const StyledCardContent = styled(CardContent)({
               >
                 account_circle
               </div>
+            </Link>
+            <Link 
+            to={`/author/${authorsId}`}
+            style={{
+              textDecoration: "none"
+            }}
+          >
             <Typography
               // variant="body1"
               color="#2F4C69"
@@ -224,8 +331,9 @@ const StyledCardContent = styled(CardContent)({
                 paddingRight: '16px'
               }}
             >
-              {getAuthorData[0]?.name} 
+              {author} 
             </Typography>
+            </Link>
             <Typography
               // variant="body1"
               color="black"
@@ -248,7 +356,7 @@ const StyledCardContent = styled(CardContent)({
             >
               {date}
             </Typography>
-            <Typography
+            {/* <Typography
               // variant="body1"
               color="black"
               sx={{
@@ -279,9 +387,7 @@ const StyledCardContent = styled(CardContent)({
               }}
             >
               favorite
-            </div>
-            {!articalPage && 
-            <>
+            </div> */}
             <Typography
               // variant="body1"
               color="#26282c34162e"
@@ -293,17 +399,23 @@ const StyledCardContent = styled(CardContent)({
             >
               |
             </Typography>
+            <Link 
+            to={`/${sectionLink}`}
+            style={{
+              textDecoration: "none"
+            }}
+          >
             <Chip
               color="primary"
               label={section}
               variant="outlined"
               size="small"
               sx={{
-                color: 'black'
+                color: 'black',
+                cursor: 'pointer',
               }}
             />
-             </>
-            }
+            </Link>
           </Grid>
         </>
     )
@@ -382,11 +494,11 @@ const StyledCardContent = styled(CardContent)({
                 // objectFit: 'scale-down'
             }}
             alt="The house from the offer."
-            src={img}
+            src={videoOrImageCover}
           /> :
             <CardMedia
               component="iframe"
-              image={'https://www.youtube.com/embed/1zme8jkQZ1U'}
+              image={videoOrImageCover}
               //autoPlay
               allowFullScreen
               // ng-show="showvideo"
@@ -500,7 +612,6 @@ export type Props = {
   title: string,
   backgroundColor: string,
   fontColor: string,
-  img: string,
   author: string,
   likes: string,
   cardTextWidth: string,
@@ -510,10 +621,12 @@ export type Props = {
   articalSubTitle?: string,
   titleFontSize?: string,
   useVideoInsteadOfImage: boolean,
-  section?: string,
+  section: string,
   articalData: any,
   authorsId: string,
   articalId: string,
+  videoOrImageCover: string,
+  sectionLink: string,
 };
   
 export default SectionCard;

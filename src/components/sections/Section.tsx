@@ -15,7 +15,7 @@ import Card from "./Card";
 import foxGirl from '../../assets/images/foxGirl.png';
 import yinYangFox from '../../assets/images/yinYangFox.jpeg';
 import TabsComponent from '../../components/tabsComponent/TabsComponent';
-import SectionTabComponent from '../../components/sectionsTab/SectionTabComponent';
+// import SectionTabComponent from '../../components/sectionsTab/SectionTabComponent';
 import ArticalTabs from '../../components/articalTabs/ArticalTabs';
 import { useDispatch, useSelector } from 'react-redux';
 import { WebsiteData } from "../../types/websiteData";
@@ -25,12 +25,10 @@ const Section: React.FC<Props> = ({
   title,
   backgroundColor,
   fontColor,
-  img,
   headerTitle,
   category,
   categoryColor,
   cardTextWidth,
-  date,
   turnOnExtraTab,
   tabNameOne,
   tabNameTwo,
@@ -165,12 +163,10 @@ export type Props = {
   title: string,
   backgroundColor: string,
   fontColor: string,
-  img: string,
   headerTitle?: string,
   category: string,
   categoryColor: string,
   cardTextWidth: string,
-  date: string,
   turnOnExtraTab: boolean,
   tabNameOne: string,
   tabNameTwo: string,

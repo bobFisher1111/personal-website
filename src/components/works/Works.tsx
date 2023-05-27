@@ -4,6 +4,7 @@ import {
   CardMedia,  
   Grid,
   Link,
+  Button,
 } from '@mui/material/';
 
 const Works: React.FC<Props> = ({
@@ -14,13 +15,17 @@ const Works: React.FC<Props> = ({
   buyBookLink,
   bookGenere,
   bookPlot,
+  bookData,
+  bookDataFromArtical,
 }) => {
   const bookImageHeightRef = useRef<any>();
   const titleHeightRef = useRef<any>();
   const bookPlotHeightRef = useRef<any>();
   const articalExtraInfoRef = useRef<any>();
   const [artaicalPageExtraInfo, setArticalPageExtraInfo] = useState<number>(0)
-  const [extraInfo, setExtraInfo] = useState<string>('');
+  const [infoHeight, setInfoHeight] = useState<string>('');
+
+  console.log('book data_',  bookDataFromArtical);
 
   useEffect(() => {
     if (titleHeightRef && titleHeightRef?.current && titleHeightRef?.current.clientHeight) {
@@ -30,12 +35,15 @@ const Works: React.FC<Props> = ({
       const articalExtraInfo: number = articalExtraInfoRef && articalExtraInfoRef?.current?.clientHeight;
       setArticalPageExtraInfo(bookHeight - titleHeight - plotHieght - articalExtraInfo)
       const bottomHeight = artaicalPageExtraInfo.toString();
+      console.log('artaicalPageExtraInfo', articalExtraInfo);
       const bottomHPixel = bottomHeight + 'px';
-      setExtraInfo(bottomHPixel);
+      setInfoHeight(bottomHPixel);
     }
-  }, [extraInfo]);
+  }, [infoHeight]);
 
-  const articalPageBookExtrainfo = (bottomHeight: string) => {
+  console.log('extraInfo', infoHeight);
+
+  const articalPageBookExtrainfo = (item: any, bottomHeight: string) => {
     return (
         <Grid
           ref={articalExtraInfoRef}
@@ -46,7 +54,6 @@ const Works: React.FC<Props> = ({
           sx={{
             padding: `${bottomHeight} 0px 0px 0px`, // get the height form useRef
           }}
-          
         >
           <Grid
            item
@@ -57,7 +64,7 @@ const Works: React.FC<Props> = ({
            xl={12}
           >
             <Link 
-              href={buyBookLink}
+              href={item.buy}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -84,7 +91,7 @@ const Works: React.FC<Props> = ({
             <Typography
               color="#667A6E"
             >
-              {bookGenere}
+              {item.genre}
             </Typography>
           </Grid>
           <Grid
@@ -98,7 +105,7 @@ const Works: React.FC<Props> = ({
             <Typography
               color="#2F4C69"
             >
-              {bookYear}
+              {item.year}
             </Typography>
           </Grid>
         </Grid>
@@ -125,15 +132,19 @@ const Works: React.FC<Props> = ({
         <Typography
           color="#2F4C69"
           variant="h6"
+          sx={{
+            padding: authorsPage ? '' : '16px',
+          }}
         >
           Author Book's
         </Typography>
       </Grid>
     </Grid>
+    { (bookDataFromArtical || bookData)?.map((item: any) => (
     <Grid 
       container
       sx={{
-        padding: authorsPage ? '0px 24px' : '0px',
+        padding: authorsPage ? '0px 24px' : '0px 0px 8px 24px',
       }}
     >
       <Grid
@@ -145,89 +156,22 @@ const Works: React.FC<Props> = ({
         xl={1}
         sx={{
             padding: authorsPage ? '0px 160px 36px 0px' : '0px 65px 8px 0px',
-            width:'55px'
+            width: '100px'// '55px'
         }}
       >
-        <CardMedia
-          component="img"
-          image={bookCover}
-          sx={{
-            width: authorsPage ? "148px" : "55px",
-            height: authorsPage ? "235px" : "85px",
-          }}
-        />
-      </Grid>
-      <Grid
-        item
-        xs={8}
-        sm={8}
-        md={8}
-        lg={8}
-        xl={8}
-        sx={{
-          padding: '0px 0px 0px 0px',
-        }}
-      >
-        <Typography
-          color="#667A6E"
-          variant="h6"
-          sx={{
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            display: '-webkit-box',
-            WebkitLineClamp: '2',
-            WebkitBoxOrient: 'vertical',
-          }}
+        <Button
+          href={item.buy}
         >
-          {bookTitle}
-        </Typography>
-        {authorsPage &&
-          <Typography
-            color="#2F4C69"
-            variant="subtitle1"
+          <CardMedia
+            ref={bookImageHeightRef}
+            component="img"
+            image={item.bookCoverSmall}
             sx={{
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-              display: '-webkit-box',
-              WebkitLineClamp: '2',
-              WebkitBoxOrient: 'vertical',
+              width: authorsPage ? "148px" : "55px",
+              height: authorsPage ? "235px" : "85px",
             }}
-          >
-            {bookPlot}
-          </Typography>
-        }
-        {authorsPage ?
-            articalPageBookExtrainfo(extraInfo)
-         :
-         <Typography
-           color="#2F4C69"
-         >
-          {bookYear}
-        </Typography>
-        }
-      </Grid>
-      <Grid container>
-      <Grid
-        item
-        xs={1}
-        sm={1}
-        md={1}
-        lg={1}
-        xl={1}
-        sx={{
-            padding: authorsPage ? '0px 160px 16px 0px' : '0px 65px 8px 0px',
-            width:'55px'
-          }}
-      >
-        <CardMedia
-          ref={bookImageHeightRef}
-          component="img"
-          image={bookCover}
-          sx={{
-            width: authorsPage ? "148px" : "55px",
-            height: authorsPage ? "235px" : "85px",
-          }}
-        />
+          />
+        </Button>
       </Grid>
       <Grid
         item
@@ -248,40 +192,44 @@ const Works: React.FC<Props> = ({
             overflow: 'hidden',
             textOverflow: 'ellipsis',
             display: '-webkit-box',
-            WebkitLineClamp: '2',
+            WebkitLineClamp: '1',
             WebkitBoxOrient: 'vertical',
           }}
         >
-          {bookTitle}
+          {item.bookTitle}
         </Typography>
+      
         {authorsPage &&
           <Typography
-          color="#2F4C69"
-          ref={bookPlotHeightRef}
-          variant="subtitle1"
-          sx={{
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            display: '-webkit-box',
-            WebkitLineClamp: '2',
-            WebkitBoxOrient: 'vertical',
-          }}
-        >
-          {bookPlot}
-        </Typography>
+            color="#2F4C69"
+            ref={bookPlotHeightRef}
+            variant="subtitle1"
+            sx={{
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              display: '-webkit-box',
+              WebkitLineClamp: '2',
+              WebkitBoxOrient: 'vertical',
+            }}
+          >
+            {item.bookSubtitle}
+          </Typography>
         }
         {authorsPage ?
-            articalPageBookExtrainfo(extraInfo)
+            articalPageBookExtrainfo(item, infoHeight)
          :
          <Typography
            color="#2F4C69"
+           sx={{
+            padding: authorsPage ? '0px' : '22px 0px 0px 0px',
+          }}
          >
-          {bookYear}
+          {item.year}
         </Typography>
         }
       </Grid>
     </Grid>
-    </Grid>
+    ))}
   </>
   );
 }
@@ -294,6 +242,8 @@ export type Props = {
   bookPlot?: string;
   buyBookLink?: string;
   bookGenere?: string;
+  bookData?: any;
+  bookDataFromArtical?: any;
 };
 
 export default Works;

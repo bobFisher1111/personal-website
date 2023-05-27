@@ -8,7 +8,7 @@ import HeaderComponent from '../headerComponent/HeaderComponent';
 import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
 import TabsComponent from '../tabsComponent/TabsComponent';
 import ProjectsComponent from "../projects/ProjectsComponent";
-import SectionTabComponent from "../sectionsTab/SectionTabComponent";
+// import SectionTabComponent from "../sectionsTab/SectionTabComponent";
 import Works from '../works/Works';
 import book1 from '../../assets/images/book1.png';
 import book2 from '../../assets/images/book2.png';
@@ -23,32 +23,36 @@ import LatestArticalCard from "../cards/latestArticalCard/LatestArticalCard";
 const AuthorComp: React.FC<Props> = ({
   turOnArticalPage,
   turnOnSectionTabsPadding,
+  articalAuthorData,
+  articalData,
+  authorName,
+  bookData,
+  authorsData,
 }) => {
-  const bioText1 = "when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centur. ";
-  const bioText = bioText1 + bioText1;
-  const ArticalDate = moment().format('ll');
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const authorsData = getWebsiteData && getWebsiteData
-
-
+  const webData = getWebsiteData && getWebsiteData
   const getIdFromUrl = () => {
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = currentLocation.split("/").reverse()[0];
     return (getIdFromCurrentLocation);
-
   }
 
-  const getAuthor = authorsData?.authors?.filter((item: any) => {
+  const getAuthor = webData?.authors?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
   });
-  const getArticals = authorsData?.articals?.filter((item: any) => {
+  const getArticals = webData?.articals?.filter((item: any) => {
+    return item.authorId === getIdFromUrl();
+  });
+  const getBooks = webData?.books?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
   });
   const authorData = getAuthor && getAuthor[0];
-  console.log('what is id', authorData);
+
+  const books = bookData;
+  console.log('tiger 2', books);
+
 
   const tabsPosistionOne = () => {
-
     return (
       <ArticalTabs
         turOnAuthorForArtical={turOnArticalPage}
@@ -58,38 +62,31 @@ const AuthorComp: React.FC<Props> = ({
         nameThree={'Popular Articals'}
         nameFour={'Series'}
         websiteData={getArticals}
+        articalPageData={articalData}
+        authorName={authorName}
       />
     )
   }
-  // const tabsPosistionTwo = () => {
-  //   return (
-  //     <ProjectsComponent />
-  //   )
-  // };
   const tabsPosistionTwo = () => {
     return (
-      // <Grid
-      //   item
-      //   sx={{
-      //     padding: '32px',
-      //   }}
-      // >
         <Works
           bookTitle="Handbook of Regression Modeling in People"
           bookPlot="Handbook of Regression Modeling in People"
           buyBookLink="https://www.ign.com"
           bookGenere="Science"
-          bookYear='2001'
+          bookYear={'2001'}
           authorsPage={turOnArticalPage ? false : true}
           bookCover={turOnArticalPage ? book1 : book2}
+          bookData={getBooks}
+          bookDataFromArtical={bookData}
         />
-      // </Grid>
     )
   }
   const tabsPosistionThree = () => {
     return (
       <AuthorAbout
         turnPaddingOn={turOnArticalPage}
+        aboutData={authorData || authorsData}
       />
     )
   }
@@ -97,6 +94,7 @@ const AuthorComp: React.FC<Props> = ({
   return (
     <Grid
       container
+      justifyContent="center"
       sx={{
         background: '#fff',
         display: 'flex',
@@ -114,20 +112,16 @@ const AuthorComp: React.FC<Props> = ({
         md={12}
         lg={12}
         xl={12}
-        sx={{
-          //padding: '16px',
-          //borderLeft: '1px solid #667A6E',
-        }}
       >
         <HeaderComponent
-          title={ authorData?.name}
+          title={ authorData?.name || articalAuthorData?.name}
           backgroundColor='white'
           fontColor='#2F4C69'
           lineHeight={'40px'}
           fontSize={'32px'}
           authorAvatar={true}
           headerTopPadding={true}
-          avatarImage={authorData?.avatarImage}
+          avatarImage={authorData?.avatarImage || articalAuthorData?.avatarImage}
         />
         {!turOnArticalPage && 
         <Divider
@@ -170,7 +164,7 @@ const AuthorComp: React.FC<Props> = ({
             textIndent: '15px',
           }}
         >
-          {authorData?.biography}
+          {authorData?.biography || articalAuthorData?.biography}
         </Typography>
       </Grid>
       <Grid
@@ -204,6 +198,11 @@ const AuthorComp: React.FC<Props> = ({
 export type Props = {
   turOnArticalPage: boolean;
   turnOnSectionTabsPadding: boolean;
+  articalAuthorData?: any;
+  articalData?: any;
+  authorName?: string;
+  bookData?: any;
+  authorsData?: any;
 };
 
 export default AuthorComp;

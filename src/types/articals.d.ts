@@ -7,7 +7,8 @@ export type Articles = {
   publishedDate: string;
   numberOfFavorites: number;
   series: boolean;
-  coverImage: string;
+  useVideoInsteadOfImage: boolean,
+  headerImageOrVideo: string;
   artical: string[];
 }
   

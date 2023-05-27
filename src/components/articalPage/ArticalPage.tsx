@@ -1,232 +1,63 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
-    Typography,
-    Grid,
-  } from "@mui/material";
-  import moment from 'moment';
+  Typography,
+  Grid,
+} from "@mui/material";
 import HeaderComponent from "../headerComponent/HeaderComponent";
 import Card from "../sections/Card";
-import AlignGrid from "../../themes/StyledGrids";
-import LatestArticalCardWide from "../../components/cards/additionalCards/LatestArticalCardWide"
-import foxGirl from '../../assets/images/foxGirl.png';
-import yinYangFox from '../../assets/images/yinYangFox.jpeg';
-import { useResizeDetector } from 'react-resize-detector';
-import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
-import AuthorComponent from './AuthorComponent';
 import AuthorComp from '../authorComponents/AuthorComp';
-import LatestArticalCard from "../cards/latestArticalCard/LatestArticalCard";
+import { useSelector } from 'react-redux';
+import createArtical from '../../utilities/createArtical';
 
-/*
-   - Todo:
-     3. Build component for author, include short bio, links and previous articals
-*/
-  
+
 const ArticalPage: React.FC<Props> = ({
-    subTitle,
 }) => {
-  const [artT, setArtT] = useState<String>('');
-  const ArticalDate = moment().format('ll'); 
-  const boldText = "$Turtle was here";
-  const tempText = "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
-  const tempTextLong = tempText + tempText + tempText + tempText + tempText + tempText + tempText + tempText + tempText + tempText + tempText + tempText;   
-  const parentheses = "(My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade";
+  const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
+  const webData = getWebsiteData && getWebsiteData
+  const getIdFromUrl = () => {
+    const currentLocation = window.location.href;
+    const getIdFromCurrentLocation = currentLocation.split("/").reverse()[1];
+    return (getIdFromCurrentLocation);
 
-  const tempData: any = [
-    boldText,
-    tempText,
-    boldText,
-    finalfantasy7,
-    boldText,
-    tempTextLong,
-    parentheses,
-    boldText,
-    'https://www.youtube.com/embed/Tai2xRz-5Lw',
-    boldText,
-    tempText,
-    '[1. turtle went to the park',
-    finalfantasy7,
-    '[2. turtle went to the park',
-    '[3. turtle went to the park',
-  ];
-  // this will be added to data model
-  subTitle = "My first JRPG, back when I was in fifth grade.";
+  }
+  const getArticalNameFromUrl = () => {
+    const currentLocation = window.location.href;
+    const getIdFromCurrentLocation = currentLocation.split("/").reverse()[0];
+    return (getIdFromCurrentLocation);
 
-  const displayArtical = (item: string) => {
-    if (item.match('.jpg')) {
-        return (
-          <Grid
-            container
-            justifyContent="center"
-          >
-            <img 
-                src={item}
-                style={{
-                    alignItems: 'center',
-                    minWidth: "500px",
-                    maxWidth: "814px",
-                    margin: 'auto',
-                    padding: '8px',
-                    justifyContent: 'center',
-                    border: '0px',
-                    borderRadius: '16px',
-                }}
-            />
-          </Grid>
-        )
-    }
-    if (item.match('youtube.com')) {
-        return (
-            <Grid
-            container
-            justifyContent="center"
-          >
-            <iframe
-              src={item} 
-              allowFullScreen 
-              ng-show="showvideo"
-              style={{
-                width: '960px', // use media query to fix this
-                height: '576px', // use media query to fix this
-                border: '0px',
-                borderRadius: '7px',
-              }}
-            />
-            </Grid>
-        )
-    }
-    if (item.startsWith('$')) {
-        return (
-                    <Grid
-                    container
-                    justifyContent="center"
-                  >
-                    <Typography
-                      id="articalText"
-                      color="#2F4C69"
-                      sx={{
-                        borderColor: 'black',
-                        padding: '16px 0px 0px 0px',
-                        lineHeight: '32px',
-                        fontSize: '26px',
-                        fontFamily: "source-serif-pro, Georgia, Cambria, 'Times New Roman', Times, serif",
-                        maxWidth: '1000px',
-                        // color: '2F4C69',
-                      }}
-                    >
-                      { <strong>{item.slice(1)}</strong> }   
-                    </Typography>
-                    </Grid>
-                )
-              };
-              if (item.startsWith('[')) {
-                return (
-                            <Grid
-                            container
-                            justifyContent="center"
-                          >
-                            <Typography
-                              id="articalText"
-                              color="#76468c"
-                              sx={{
-                                padding: '16px 0px 0px 0px',
-                                textIndent: '40px',
-                                lineHeight: '32px',
-                                fontSize: '20px',
-                                fontFamily: "source-serif-pro, Georgia, Cambria, 'Times New Roman', Times, serif",
-                                width: '1000px', // '840px',
-                                // alignItems: 'center',
-                              }}
-                            >
-                            {item.slice(1)} 
-                            </Typography>
-                            </Grid>
-                        )
-                      };
-    //           if (item.match('.jpg')) {
-    //     return (
-    //       <Grid
-    //         container
-    //         justifyContent="center"
-    //         // sx={{
-    //         //   borderRadius: '7px',
-    //         // }}
-    //       >
-    //         <img 
-    //             src={item}
-    //             style={{
-    //                 alignItems: 'center',
-    //                 minWidth: "500px",
-    //                 maxWidth: "814px",
-    //                 margin: 'auto',
-    //                 padding: '8px',
-    //                 justifyContent: 'center',
-    //                 // border: '0px',
-    //                 // borderRadius: '7px',
-    //             }}
-    //         />
-    //       </Grid>
-    //     )
-    // }
-              if (item.startsWith('(')) {
-                return (
-                            <Grid
-                            container
-                            justifyContent="center"
-                          >
-                            <Typography
-                              id="articalText"
-                              color="#667A6E"
-                              sx={{
-                                borderColor: 'black',
-                                padding: '16px 0px 0px 0px',
-                                lineHeight: '32px',
-                                fontSize: '26px',
-                                fontFamily: "source-serif-pro, Georgia, Cambria, 'Times New Roman', Times, serif",
-                                maxWidth: '1000px',
-                                fontStyle: 'itallic',
-                              }}
-                            >
-                              {<i>"{item.slice(1)}"</i>} 
-                            </Typography>
-                            </Grid>
-                        )
-                      };
-    
-    return (
-        <Grid
-        container
-        justifyContent="center"
-      >
-        <Typography
-          id="articalText"
-          color="#2F4C69"
-          sx={{
-            padding: '16px 0px 0px 0px',
-            textIndent: '40px',
-            lineHeight: '32px',
-            fontSize: '20px',
-            fontFamily: "source-serif-pro, Georgia, Cambria, 'Times New Roman', Times, serif",
-            width: '1000px',
-            alignItems: 'center',
-            ':: first-letter': {
-                fontWeight: 'bold',
-            }
-          }}
-        >
-          { item }
-        </Typography>
-        </Grid>
-    )
-  };
+  }
+  const getAuthor = webData?.authors?.filter((item: any) => {
+    return item.authorId === getIdFromUrl();
+  });
+  const getArticals = webData?.articals?.filter((item: any) => {
+    return item.authorId === getIdFromUrl();
+  });
+  const currentArtical = getArticals?.filter((item: any) => {
+    return item.articalId === getArticalNameFromUrl();
+  });
+  const getBook = webData?.books?.filter((item: any) => {
+    return item.authorId === getIdFromUrl();
+  });
+  // const listOfArticals = getArticals();
+  const authorData = getAuthor && getAuthor[0]
+  const articalData = currentArtical && currentArtical[0];
+  const bookData = getBook && getBook;
+  console.log('tiger', articalData?.sectionLink);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
     <Grid
       container
+      justifyContent='flex-end'
+      alignContent='center'
       sx={{
         background: '#fff',
         paddingBottom: '200px',
-        maxWidth: "2000px",
+        maxWidth: "3000px",
         margin: 'auto',
         top: '30px',
       }}
@@ -236,16 +67,14 @@ const ArticalPage: React.FC<Props> = ({
         xs={12}
         sm={12}
         md={12}
-        lg={8}
-        xl={8}
+        lg={9}
+        xl={9}
         sx={{
             alignItems: 'center',
-            // padding: '32px',
-            
           }}
       >
        <HeaderComponent
-          title={'Final Fantasy VII Review'}
+          title={articalData?.articalTitle}
           backgroundColor={'white'}
           fontColor='#2F4C69'
           lineHeight={'40px'}
@@ -257,22 +86,23 @@ const ArticalPage: React.FC<Props> = ({
           title={'First JRPG ever played, was given money for birthday and the cover art looked cool. Had no idea what to expect'}
           backgroundColor={'white'}
           fontColor={'black'}
-          img={finalfantasy7}
-          author="Bob Fisher"
+          author={authorData?.name}
           likes='5'
           cardTextWidth={'1000px'}
-          date={ArticalDate}
+          date={articalData?.publishedDate}
           imageWidth={'1000px'}
           articalPage={true}
-          articalSubTitle={subTitle}
-          useVideoInsteadOfImage={true}
-          articalData={''}
-          authorsId={''}
-          articalId={'item.articalId'}
+          articalSubTitle={articalData?.articalSubTitle}
+          useVideoInsteadOfImage={articalData?.useVideoInsteadOfImage}
+          articalData={articalData}
+          authorsId={articalData?.authorId}
+          articalId={articalData?.articalId}
+          videoOrImageCover={articalData?.coverImageOrVideo}
+          sectionLink={articalData?.sectionLink}
+          section={articalData?.section}
       />
-       
-            {tempData  && tempData?.map((item: any) => (
-                displayArtical(item)
+        {articalData  && articalData.artical?.map((item: any) => (
+          createArtical(item)
         ))}
     </Grid>
         <Grid
@@ -280,16 +110,18 @@ const ArticalPage: React.FC<Props> = ({
         xs={0}
         sm={0}
         md={0}
-        lg={4}
-        xl={4}
-        sx={{
-          padding: '32px', 
-        }}
+        lg={3}
+        xl={3}
       >
-       <AuthorComp
-         turOnArticalPage={true}
-         turnOnSectionTabsPadding={true}
-       />
+        <AuthorComp
+          turOnArticalPage={true}
+          turnOnSectionTabsPadding={true}
+          articalAuthorData={authorData}
+          articalData={getArticals}
+          authorName={authorData?.name}
+          bookData={bookData}
+          authorsData={authorData}
+        />
       </Grid>
     </Grid>
   </>
@@ -297,7 +129,6 @@ const ArticalPage: React.FC<Props> = ({
 }
 
 export type Props = {
- subTitle: string;
 };
 
 export default ArticalPage;

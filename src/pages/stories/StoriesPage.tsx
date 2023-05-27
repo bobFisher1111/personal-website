@@ -14,12 +14,10 @@ const StoriesPage = () => {
         headerTitle='Stories'
         backgroundColor='white'
         fontColor='#2F4C69'
-        img={finalfantasy7}
         title="Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review"
         category={"Category"}
         categoryColor={"#2F4C69"}
         cardTextWidth={'703px'}
-        date={ArticalDate}
         turnOnExtraTab={true}
         tabNameOne={'Latest Stories'}
         tabNameTwo={'All Stories'}

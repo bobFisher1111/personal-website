@@ -9,17 +9,17 @@ const Coding = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const articalData = getWebsiteData && getWebsiteData;
 
+  console.log('....articalData', articalData);
+
   return (
       <Section
         headerTitle='Coding'
         backgroundColor='white'
         fontColor='#2F4C69'
-        img={finalfantasy7}
         title="Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review"
         category={"Category"}
         categoryColor={"#2F4C69"}
         cardTextWidth={'703px'}
-        date={ArticalDate}
         turnOnExtraTab={true}
         tabNameOne={'Articals'}
         tabNameTwo={'Front End'}

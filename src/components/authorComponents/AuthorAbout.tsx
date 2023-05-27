@@ -16,7 +16,10 @@ const questionaire2 =  {
 
 const AuthorAbout: React.FC<Props> = ({
     turnPaddingOn,
+    aboutData,
 }) => {
+  const questionaireData = aboutData.about[0].questionaire[0];
+  console.log('questionaire data', questionaireData);
   return (
     <Grid 
     container
@@ -72,7 +75,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Video Game Console:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/PlayStation_(console)'}
+              href={questionaireData.FavoriteVideoGameConsole.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -88,7 +91,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },     
               }}
             >
-              {'PS One'}
+              {questionaireData.FavoriteVideoGameConsole.name}
             </Link>
       </Grid>
       <Grid
@@ -113,7 +116,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Video Game:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/Metal_Gear_Solid_(1998_video_game)'}
+              href={questionaireData.FavoriteVideoGame.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -128,7 +131,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },       
               }}
             >
-              {'Metal Gear Solid'}
+              {questionaireData.FavoriteVideoGame.name}
             </Link>
             
       </Grid>
@@ -154,7 +157,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Video Game Series:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/Yakuza_(franchise)'}
+              href={questionaireData.FavoriteVideoGameSeries.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -169,7 +172,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },      
               }}
             >
-              {'Yakuza / Like A Dragon'}
+              {questionaireData.FavoriteVideoGameSeries.name}
             </Link>
       </Grid>
       <Grid
@@ -194,7 +197,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Video Game Genere:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/History_of_Eastern_role-playing_video_games#Japanese_role-playing_games'}
+              href={questionaireData.FavoriteVideoGameGenere.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -209,7 +212,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-               {'JRPG'}
+               {questionaireData.FavoriteVideoGameGenere.name}
             </Link>
       </Grid>
       <Grid
@@ -234,7 +237,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite JRPG:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/Final_Fantasy_VIII'}
+              href={questionaireData.FavoriteJRPG.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -249,7 +252,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },          
               }}
             >
-              {'Final Fantasy VIII'} 
+              {questionaireData.FavoriteJRPG.name} 
             </Link>
       </Grid>
       <Grid
@@ -274,7 +277,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite RPG:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/The_Elder_Scrolls_IV:_Oblivion'}
+              href={questionaireData.FavoriteRPG.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -289,7 +292,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {'The Elder Scrolls IV: Oblivion'}
+              {questionaireData.FavoriteRPG.name}
             </Link>
       </Grid>
       <Grid
@@ -318,7 +321,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Action Game:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Ocarina_of_Time'}
+              href={questionaireData.FavoriteActionGame.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -333,7 +336,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {'The Legend of Zelda: Ocarina of Time'}
+              {questionaireData.FavoriteActionGame.name}
             </Link>
       </Grid>
       <Grid
@@ -358,7 +361,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Platformer:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/Sonic_Adventure'}
+              href={questionaireData.FavoritePlatformer.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -373,7 +376,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {'Sonic Adventure'}
+              {questionaireData.FavoritePlatformer.name}
             </Link>
       </Grid>
       <Grid
@@ -398,7 +401,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Horror:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/Resident_Evil_2'}
+              href={questionaireData.FavoriteHorror.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -413,7 +416,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },          
               }}
             >
-             {'Resident Evil 2'}
+             {questionaireData.FavoriteHorror.name}
             </Link>
       </Grid>
       <Grid
@@ -438,7 +441,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Beat 'em up:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/Yakuza_0'}
+              href={questionaireData.FavoriteBeatEmUp.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -453,7 +456,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },          
               }}
             >
-              {'Yakuza 0'}
+              {questionaireData.FavoriteBeatEmUp.name}
             </Link>
       </Grid>
       <Grid
@@ -478,7 +481,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Stealth Game:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/The_Last_of_Us_Part_II'}
+              href={questionaireData.FavoriteStealthGame.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -493,7 +496,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {'The Last of Us Part II'}
+              {questionaireData.FavoriteStealthGame.name}
             </Link>
       </Grid>
       <Grid
@@ -518,7 +521,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Life Simulation Game:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/Shenmue'}
+              href={questionaireData.FavoriteLifeSimulationGame.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -533,7 +536,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {'Shenmue'}
+              {questionaireData.FavoriteLifeSimulationGame.name}
             </Link>
       </Grid>
       <Grid
@@ -558,7 +561,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Visual Novel:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/13_Sentinels:_Aegis_Rim'}
+              href={questionaireData.FavoriteVisualNovel.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -573,7 +576,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },          
               }}
             >
-              {'13 Sentinels: Aegis Rim'}
+              {questionaireData.FavoriteVisualNovel.name}
             </Link>
       </Grid>
       <Grid
@@ -598,7 +601,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite RTS:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/Warcraft_II:_Tides_of_Darkness'}
+              href={questionaireData.FavoriteRTS.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -613,7 +616,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },          
               }}
             >
-              {'Warcraft II: Tides of Darkness'}
+              {questionaireData.FavoriteRTS.name}
             </Link>
       </Grid>
       <Grid
@@ -638,7 +641,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite MMO:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/Final_Fantasy_XIV'}
+              href={questionaireData.FavoriteMMO.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -653,7 +656,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-             {'Final Fantasy XIV'}
+             {questionaireData.FavoriteMMO.name}
             </Link>
       </Grid>
       <Grid
@@ -678,7 +681,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Shooter:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/GoldenEye_007_(1997_video_game)'}
+              href={questionaireData.FavoriteShooter.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -693,7 +696,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-             {'Golden Eye 007'}
+             {questionaireData.FavoriteShooter.name}
             </Link>
       </Grid>
       <Grid
@@ -718,7 +721,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Fighting Game:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/Tekken_2'}
+              href={questionaireData.FavoriteFightingGame.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -733,7 +736,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },          
               }}
             >
-             {'Tekken 2'}
+             {questionaireData.FavoriteFightingGame.name}
             </Link>
       </Grid>
       <Grid
@@ -758,7 +761,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Racing Game:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/Mario_Kart_64'}
+              href={questionaireData.FavoriteRacingGame.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -773,7 +776,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {'Mario Kart 64'}
+              {questionaireData.FavoriteRacingGame.name}
             </Link>
       </Grid>
       <Grid
@@ -798,7 +801,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Sports Game:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/Virtua_Tennis'}
+              href={questionaireData.FavoriteSportsGame.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -813,7 +816,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {'Virtua Tennis'}
+              {questionaireData.FavoriteSportsGame.name}
             </Link>
       </Grid>
       <Grid
@@ -838,7 +841,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Waifu:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/Rinoa_Heartilly'}
+              href={questionaireData.FavoriteWaifu.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -853,7 +856,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {'Rinoa Heartilly, from Final Fantasy VIII'}
+              {questionaireData.FavoriteWaifu.name}
             </Link>
       </Grid>
       <Grid
@@ -878,7 +881,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Anime:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/Code_Geass'}
+              href={questionaireData.FavoriteAnime.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -893,7 +896,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {'Code Geass'}
+              {questionaireData.FavoriteAnime.name}
             </Link>
       </Grid>
       <Grid
@@ -918,7 +921,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Movie:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/Braveheart'}
+              href={questionaireData.FavoriteMovie.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -933,7 +936,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {'Braveheart'}
+              {questionaireData.FavoriteMovie.name}
             </Link>
       </Grid>
       <Grid
@@ -958,7 +961,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Food:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/Sushi'}
+              href={questionaireData.FavoriteFood.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -973,7 +976,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {'Sushi'}
+              {questionaireData.FavoriteFood.name}
             </Link>
       </Grid>
       <Grid
@@ -998,7 +1001,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Card Game:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/Magic:_The_Gathering'}
+              href={questionaireData.FavoriteCardGame.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -1013,7 +1016,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {'Magic: The Gathering'}
+              {questionaireData.FavoriteCardGame.name}
             </Link>
           
       </Grid>
@@ -1039,7 +1042,7 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Board Game:
         </Typography>
         <Link 
-              href={'https://en.wikipedia.org/wiki/Monopoly_(game)'}
+              href={questionaireData.FavoriteBoardGame.link}
               underline="none"
               target="_blank"
               rel="noopener"
@@ -1054,7 +1057,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {'Monopoly'}
+              {questionaireData.FavoriteBoardGame.name}
             </Link>
       </Grid>
     </Grid>
@@ -1063,6 +1066,7 @@ const AuthorAbout: React.FC<Props> = ({
 
 export type Props = {
   turnPaddingOn: boolean,
+  aboutData: any;
 };
 
 export default AuthorAbout;

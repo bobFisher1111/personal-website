@@ -8,8 +8,8 @@
       "buy": "https://www.ign.com/",
       "genre": "Fiction",
       "year": "2016",
-      "bookCoverLarge": "../../assets/images/book2.png",
-      "bookCoverSmall": "../../assets/images/book1.png",
+      "bookCoverLarge": "https://edit.org/images/cat/book-covers-big-2019101610.jpg",
+      "bookCoverSmall": "https://edit.org/images/cat/book-covers-big-2019101610.jpg",
       "authorId": "Bob_The_Fisher"
     },
     {
@@ -19,8 +19,8 @@
       "buy": "https://www.ign.com/",
       "genre": "Mystery",
       "year": "2018",
-      "bookCoverLarge": "../../assets/images/book2.png",
-      "bookCoverSmall": "../../assets/images/book1.png",
+      "bookCoverLarge": "https://edit.org/images/cat/book-covers-big-2019101610.jpg",
+      "bookCoverSmall": "https://edit.org/images/cat/book-covers-big-2019101610.jpg",
       "authorId": "Bob_The_Fisher"
     },
     {
@@ -30,8 +30,8 @@
       "buy": "https://www.ign.com/",
       "genre": "Fantasy",
       "year": "2021",
-      "bookCoverLarge": "../../assets/images/book2.png",
-      "bookCoverSmall": "../../assets/images/book1.png",
+      "bookCoverLarge": "https://edit.org/images/cat/book-covers-big-2019101610.jpg",
+      "bookCoverSmall": "https://edit.org/images/cat/book-covers-big-2019101610.jpg",
       "authorId": "Hawaiian_Warrior"
     },
     {
@@ -41,8 +41,8 @@
       "buy": "https://www.ign.com/",
       "genre": "Non-fiction",
       "year": "2019",
-      "bookCoverLarge": "../../assets/images/book2.png",
-      "bookCoverSmall": "../../assets/images/book1.png",
+      "bookCoverLarge": "https://edit.org/images/cat/book-covers-big-2019101610.jpg",
+      "bookCoverSmall": "https://edit.org/images/cat/book-covers-big-2019101610.jpg",
       "authorId": "Hawaiian_Warrior"
     },
     {
@@ -52,8 +52,8 @@
       "buy": "https://www.ign.com/",
       "genre": "Romance",
       "year": "2021",
-      "bookCoverLarge": "../../assets/images/book2.png",
-      "bookCoverSmall": "../../assets/images/book1.png",
+      "bookCoverLarge": "https://edit.org/images/cat/book-covers-big-2019101610.jpg",
+      "bookCoverSmall": "https://edit.org/images/cat/book-covers-big-2019101610.jpg",
       "authorId": "El_Taco"
     },
     {
@@ -63,8 +63,8 @@
       "buy": "https://www.ign.com/",
       "genre": "Young adult fiction",
       "year": "2023",
-      "bookCoverLarge": "../../assets/images/book2.png",
-      "bookCoverSmall": "../../assets/images/book1.png",
+      "bookCoverLarge": "https://edit.org/images/cat/book-covers-big-2019101610.jpg",
+      "bookCoverSmall": "https://edit.org/images/cat/book-covers-big-2019101610.jpg",
       "authorId": "El_Taco"
     }
   ],
@@ -72,19 +72,20 @@
       {
         "articalId": "Final_Fantasy_VIII_01",
         "section":  "Coding",
+        "sectionLink": "coding",
         "authorId": "Bob_The_Fisher",
         "articalTitle": "Final Fantasy VIII",
         "articalSubTitle": "My favorite JRPG, Final Fantasy VII was my first and it hyped me for this game",
-        "publishedDate": "May 12, 2023",
+        "publishedDate": "May 1, 2023",
         "numberOfFavorites": 5,
         "series": false,
-        "useVideoInsteadOfImage": false,
-        "coverImage": "https://www.nme.com/wp-content/uploads/2020/04/040120-Square-Enix-Final-Fantasy-7-VII-Remake-Cloud-Press-Image.jpg",
+        "useVideoInsteadOfImage": true,
+        "coverImageOrVideo": "https://www.youtube.com/embed/1zme8jkQZ1U",
         "artical": [
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "$Turtle was here",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "(My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade",
@@ -95,7 +96,7 @@
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
           "[1. turtle went to the park",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "[2. turtle went to the park",
           "[3. turtle went to the park"
         ]
@@ -103,19 +104,20 @@
       {
         "articalId": "Final_Fantasy_VIII_02",
         "section":  "Video Games",
+        "sectionLink": "videoGames",
         "authorId": "Bob_The_Fisher",
         "articalTitle": "Final Fantasy VIII",
         "articalSubTitle": "My favorite JRPG, Final Fantasy VII was my first and it hyped me for this game",
-        "publishedDate": "May 12, 2023",
+        "publishedDate": "May 2, 2023",
         "numberOfFavorites": 5,
         "useVideoInsteadOfImage": false,
-        "coverImage": "https://www.nme.com/wp-content/uploads/2020/04/040120-Square-Enix-Final-Fantasy-7-VII-Remake-Cloud-Press-Image.jpg",
+        "coverImageOrVideo": "https://c4.wallpaperflare.com/wallpaper/716/41/312/final-fantasy-final-fantasy-vii-remake-cloud-strife-final-fantasy-vii-jessie-final-fantasy-hd-wallpaper-preview.jpg",
         "series": false,
         "artical": [
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "$Turtle was here",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "(My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade",
@@ -126,7 +128,7 @@
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
           "[1. turtle went to the park",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "[2. turtle went to the park",
           "[3. turtle went to the park"
         ]
@@ -134,19 +136,20 @@
       {
         "articalId": "Final_Fantasy_VIII_03",
         "section":  "Shows & Movies",
+        "sectionLink": "showsMovies",
         "authorId": "Bob_The_Fisher",
         "articalTitle": "Final Fantasy VIII",
         "articalSubTitle": "My favorite JRPG, Final Fantasy VII was my first and it hyped me for this game",
-        "publishedDate": "May 12, 2023",
+        "publishedDate": "May 3, 2023",
         "numberOfFavorites": 5,
         "useVideoInsteadOfImage": false,
-        "coverImage": "https://www.nme.com/wp-content/uploads/2020/04/040120-Square-Enix-Final-Fantasy-7-VII-Remake-Cloud-Press-Image.jpg",
+        "coverImageOrVideo": "https://c4.wallpaperflare.com/wallpaper/716/41/312/final-fantasy-final-fantasy-vii-remake-cloud-strife-final-fantasy-vii-jessie-final-fantasy-hd-wallpaper-preview.jpg",
         "series": false,
         "artical": [
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "$Turtle was here",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "(My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade",
@@ -157,7 +160,7 @@
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
           "[1. turtle went to the park",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "[2. turtle went to the park",
           "[3. turtle went to the park"
         ]
@@ -165,19 +168,20 @@
       {
         "articalId": "Final_Fantasy_VIII_04",
         "section":  "Stories",
+        "sectionLink": "stories",
         "authorId": "Bob_The_Fisher",
         "articalTitle": "Final Fantasy VIII",
         "articalSubTitle": "My favorite JRPG, Final Fantasy VII was my first and it hyped me for this game",
-        "publishedDate": "May 12, 2023",
+        "publishedDate": "May 4, 2023",
         "numberOfFavorites": 5,
         "useVideoInsteadOfImage": false,
-        "coverImage": "https://www.nme.com/wp-content/uploads/2020/04/040120-Square-Enix-Final-Fantasy-7-VII-Remake-Cloud-Press-Image.jpg",
+        "coverImageOrVideo": "https://c4.wallpaperflare.com/wallpaper/716/41/312/final-fantasy-final-fantasy-vii-remake-cloud-strife-final-fantasy-vii-jessie-final-fantasy-hd-wallpaper-preview.jpg",
         "series": false,
         "artical": [
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "$Turtle was here",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "(My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade",
@@ -188,7 +192,7 @@
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
           "[1. turtle went to the park",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "[2. turtle went to the park",
           "[3. turtle went to the park"
         ]
@@ -196,19 +200,20 @@
       {
         "articalId": "Final_Fantasy_VIII_05",
         "section":  "Coding",
+        "sectionLink": "coding",
         "authorId": "Hawaiian_Warrior",
         "articalTitle": "Final Fantasy VIII",
         "articalSubTitle": "My favorite JRPG, Final Fantasy VII was my first and it hyped me for this game",
-        "publishedDate": "May 12, 2023",
+        "publishedDate": "May 5, 2023",
         "numberOfFavorites": 5,
         "useVideoInsteadOfImage": false,
-        "coverImage": "https://www.nme.com/wp-content/uploads/2020/04/040120-Square-Enix-Final-Fantasy-7-VII-Remake-Cloud-Press-Image.jpg",
+        "coverImageOrVideo": "https://c4.wallpaperflare.com/wallpaper/716/41/312/final-fantasy-final-fantasy-vii-remake-cloud-strife-final-fantasy-vii-jessie-final-fantasy-hd-wallpaper-preview.jpg",
         "series": false,
         "artical": [
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "$Turtle was here",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "(My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade",
@@ -219,7 +224,7 @@
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
           "[1. turtle went to the park",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "[2. turtle went to the park",
           "[3. turtle went to the park"
         ]
@@ -227,19 +232,20 @@
       {
         "articalId": "Final_Fantasy_VIII_06",
         "section":  "Video Games",
+        "sectionLink": "videoGames",
         "authorId": "Hawaiian_Warrior",
         "articalTitle": "Final Fantasy VIII",
         "articalSubTitle": "My favorite JRPG, Final Fantasy VII was my first and it hyped me for this game",
-        "publishedDate": "May 12, 2023",
+        "publishedDate": "May 6, 2023",
         "numberOfFavorites": 5,
         "useVideoInsteadOfImage": false,
-        "coverImage": "https://www.nme.com/wp-content/uploads/2020/04/040120-Square-Enix-Final-Fantasy-7-VII-Remake-Cloud-Press-Image.jpg",
+        "coverImageOrVideo": "https://c4.wallpaperflare.com/wallpaper/716/41/312/final-fantasy-final-fantasy-vii-remake-cloud-strife-final-fantasy-vii-jessie-final-fantasy-hd-wallpaper-preview.jpg",
         "series": false,
         "artical": [
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "$Turtle was here",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "(My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade",
@@ -250,7 +256,7 @@
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
           "[1. turtle went to the park",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "[2. turtle went to the park",
           "[3. turtle went to the park"
         ]
@@ -258,19 +264,20 @@
       {
         "articalId": "Final_Fantasy_VIII_07",
         "section":  "Shows & Movies",
+        "sectionLink": "showsMovies",
         "authorId": "Hawaiian_Warrior",
         "articalTitle": "Final Fantasy VIII",
         "articalSubTitle": "My favorite JRPG, Final Fantasy VII was my first and it hyped me for this game",
-        "publishedDate": "May 12, 2023",
+        "publishedDate": "May 7, 2023",
         "numberOfFavorites": 5,
         "useVideoInsteadOfImage": false,
-        "coverImage": "https://www.nme.com/wp-content/uploads/2020/04/040120-Square-Enix-Final-Fantasy-7-VII-Remake-Cloud-Press-Image.jpg",
+        "coverImageOrVideo": "https://c4.wallpaperflare.com/wallpaper/716/41/312/final-fantasy-final-fantasy-vii-remake-cloud-strife-final-fantasy-vii-jessie-final-fantasy-hd-wallpaper-preview.jpg",
         "series": false,
         "artical": [
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "$Turtle was here",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "(My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade",
@@ -281,7 +288,7 @@
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
           "[1. turtle went to the park",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "[2. turtle went to the park",
           "[3. turtle went to the park"
         ]
@@ -289,19 +296,20 @@
       {
         "articalId": "Final_Fantasy_VIII_08",
         "section":  "Stories",
+        "sectionLink": "stories",
         "authorId": "Hawaiian_Warrior",
         "articalTitle": "Final Fantasy VIII",
         "articalSubTitle": "My favorite JRPG, Final Fantasy VII was my first and it hyped me for this game",
-        "publishedDate": "May 12, 2023",
+        "publishedDate": "May 8, 2023",
         "numberOfFavorites": 5,
         "useVideoInsteadOfImage": false,
-        "coverImage": "https://www.nme.com/wp-content/uploads/2020/04/040120-Square-Enix-Final-Fantasy-7-VII-Remake-Cloud-Press-Image.jpg",
+        "coverImageOrVideo": "https://c4.wallpaperflare.com/wallpaper/716/41/312/final-fantasy-final-fantasy-vii-remake-cloud-strife-final-fantasy-vii-jessie-final-fantasy-hd-wallpaper-preview.jpg",
         "series": true,
         "artical": [
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "$Turtle was here",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "(My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade",
@@ -312,7 +320,7 @@
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
           "[1. turtle went to the park",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "[2. turtle went to the park",
           "[3. turtle went to the park"
         ]
@@ -320,19 +328,20 @@
       {
         "articalId": "Final_Fantasy_VIII_09",
         "section":  "Coding",
+        "sectionLink": "coding",
         "authorId": "El_Taco",
         "articalTitle": "Final Fantasy VIII",
         "articalSubTitle": "My favorite JRPG, Final Fantasy VII was my first and it hyped me for this game",
-        "publishedDate": "May 12, 2023",
+        "publishedDate": "May 9, 2023",
         "numberOfFavorites": 5,
         "useVideoInsteadOfImage": false,
-        "coverImage": "https://www.nme.com/wp-content/uploads/2020/04/040120-Square-Enix-Final-Fantasy-7-VII-Remake-Cloud-Press-Image.jpg",
+        "coverImageOrVideo": "https://c4.wallpaperflare.com/wallpaper/716/41/312/final-fantasy-final-fantasy-vii-remake-cloud-strife-final-fantasy-vii-jessie-final-fantasy-hd-wallpaper-preview.jpg",
         "series": true,
         "artical": [
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "$Turtle was here",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "(My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade",
@@ -343,7 +352,7 @@
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
           "[1. turtle went to the park",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "[2. turtle went to the park",
           "[3. turtle went to the park"
         ]
@@ -351,19 +360,20 @@
       {
         "articalId": "Final_Fantasy_VIII_10",
         "section":  "Video Games",
+        "sectionLink": "videoGames",
         "authorId": "El_Taco",
         "articalTitle": "Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review",
         "articalSubTitle": "My favorite JRPG, Final Fantasy VII was my first and it hyped me for this game",
-        "publishedDate": "May 12, 2023",
+        "publishedDate": "May 10, 2023",
         "numberOfFavorites": 5,
         "useVideoInsteadOfImage": false,
-        "coverImage": "https://www.nme.com/wp-content/uploads/2020/04/040120-Square-Enix-Final-Fantasy-7-VII-Remake-Cloud-Press-Image.jpg",
+        "coverImageOrVideo": "https://c4.wallpaperflare.com/wallpaper/716/41/312/final-fantasy-final-fantasy-vii-remake-cloud-strife-final-fantasy-vii-jessie-final-fantasy-hd-wallpaper-preview.jpg",
         "series": false,
         "artical": [
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "$Turtle was here",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "(My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade",
@@ -374,7 +384,7 @@
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
           "[1. turtle went to the park",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "[2. turtle went to the park",
           "[3. turtle went to the park"
         ]
@@ -382,19 +392,20 @@
       {
         "articalId": "Final_Fantasy_VIII_11",
         "section":  "Shows & Movies",
+        "sectionLink": "showsMovies",
         "authorId": "El_Taco",
         "articalTitle": "Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review",
         "articalSubTitle": "My favorite JRPG, Final Fantasy VII was my first and it hyped me for this game",
-        "publishedDate": "May 12, 2023",
+        "publishedDate": "May 11, 2023",
         "numberOfFavorites": 5,
         "useVideoInsteadOfImage": false,
-        "coverImage": "https://www.nme.com/wp-content/uploads/2020/04/040120-Square-Enix-Final-Fantasy-7-VII-Remake-Cloud-Press-Image.jpg",
+        "coverImageOrVideo": "https://c4.wallpaperflare.com/wallpaper/716/41/312/final-fantasy-final-fantasy-vii-remake-cloud-strife-final-fantasy-vii-jessie-final-fantasy-hd-wallpaper-preview.jpg",
         "series": false,
         "artical": [
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "$Turtle was here",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "(My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade",
@@ -405,7 +416,7 @@
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
           "[1. turtle went to the park",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "[2. turtle went to the park",
           "[3. turtle went to the park"
         ]
@@ -413,19 +424,20 @@
       {
         "articalId": "Final_Fantasy_VIII_12",
         "section":  "Stories",
+        "sectionLink": "stories",
         "authorId": "El_Taco",
         "articalTitle": "Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review",
         "articalSubTitle": "My favorite JRPG, Final Fantasy VII was my first and it hyped me for this game",
         "publishedDate": "May 12, 2023",
         "numberOfFavorites": 5,
         "useVideoInsteadOfImage": false,
-        "coverImage": "https://www.nme.com/wp-content/uploads/2020/04/040120-Square-Enix-Final-Fantasy-7-VII-Remake-Cloud-Press-Image.jpg",
+        "coverImageOrVideo": "https://c4.wallpaperflare.com/wallpaper/716/41/312/final-fantasy-final-fantasy-vii-remake-cloud-strife-final-fantasy-vii-jessie-final-fantasy-hd-wallpaper-preview.jpg",
         "series": false,
         "artical": [
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "$Turtle was here",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
           "(My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade My first JRPG, back when I was in fifth grade",
@@ -436,7 +448,7 @@
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
           "[1. turtle went to the park",
-          "../../assets/images/finalfantasy7.jpg",
+          "https://img5.goodfon.com/wallpaper/nbig/4/c2/aerith-gainsborough-final-fantasy-vii-remake-tifa-lockhart-d.jpg",
           "[2. turtle went to the park",
           "[3. turtle went to the park"
         ]
@@ -673,21 +685,7 @@
                 "link": "https://en.wikipedia.org/wiki/Monopoly_(game)"
               }
             }]
-        }],
-        "articals": [
-          {
-            "articalId": 5
-          },
-          {
-            "articalId": 6
-          },
-          {
-            "articalId": 7
-          },
-          {
-            "articalId": 8
-          }
-        ]
+        }]
       },
       {
         "authorId": "El_Taco",
@@ -803,21 +801,7 @@
                 "link": "https://en.wikipedia.org/wiki/Monopoly_(game)"
               }
             }]
-        }],
-        "articals": [
-          {
-            "articalId": 9
-          },
-          {
-            "articalId": 10
-          },
-          {
-            "articalId": 11
-          },
-          {
-            "articalId": 12
-          }
-        ]
+        }]
       }
     ]
 }}
