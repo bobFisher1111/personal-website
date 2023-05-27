@@ -9,6 +9,10 @@ import SocialMediaComponent from '../../socialMediaComponent/SocialMediaComponen
 import AppBarLinksToPages from './AppBarLinksToPages';
 
 const AppBarLargeXLarge = () => {
+  const facebook = "https://www.facebook.com/";
+  const twitter = "https://twitter.com/";
+  const youtube = "https://www.youtube.com/channel/UC8GJo4nTgJlfhWdpsdT5rHQ";
+
   return (
     <Box 
       sx={{ 
@@ -68,7 +72,11 @@ const AppBarLargeXLarge = () => {
           }
         }}
       >
-        <SocialMediaComponent />
+        <SocialMediaComponent
+          facebook={facebook}
+          twitter={twitter}
+          youtube={youtube}
+        />
       </Grid>
       <Grid
         container

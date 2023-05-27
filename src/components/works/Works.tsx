@@ -25,8 +25,6 @@ const Works: React.FC<Props> = ({
   const [artaicalPageExtraInfo, setArticalPageExtraInfo] = useState<number>(0)
   const [infoHeight, setInfoHeight] = useState<string>('');
 
-  console.log('book data_',  bookDataFromArtical);
-
   useEffect(() => {
     if (titleHeightRef && titleHeightRef?.current && titleHeightRef?.current.clientHeight) {
       const titleHeight: number = titleHeightRef && titleHeightRef?.current?.clientHeight;
@@ -35,13 +33,10 @@ const Works: React.FC<Props> = ({
       const articalExtraInfo: number = articalExtraInfoRef && articalExtraInfoRef?.current?.clientHeight;
       setArticalPageExtraInfo(bookHeight - titleHeight - plotHieght - articalExtraInfo)
       const bottomHeight = artaicalPageExtraInfo.toString();
-      console.log('artaicalPageExtraInfo', articalExtraInfo);
       const bottomHPixel = bottomHeight + 'px';
       setInfoHeight(bottomHPixel);
     }
   }, [infoHeight]);
-
-  console.log('extraInfo', infoHeight);
 
   const articalPageBookExtrainfo = (item: any, bottomHeight: string) => {
     return (
@@ -161,6 +156,8 @@ const Works: React.FC<Props> = ({
       >
         <Button
           href={item.buy}
+          target="_blank"
+          rel="noreferrer"
         >
           <CardMedia
             ref={bookImageHeightRef}

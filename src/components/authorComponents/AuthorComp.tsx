@@ -48,10 +48,6 @@ const AuthorComp: React.FC<Props> = ({
   });
   const authorData = getAuthor && getAuthor[0];
 
-  const books = bookData;
-  console.log('tiger 2', books);
-
-
   const tabsPosistionOne = () => {
     return (
       <ArticalTabs
@@ -130,7 +126,7 @@ const AuthorComp: React.FC<Props> = ({
             padding: '0px 0px 16px 0px',
           }}
         />
-}
+        }
       </Grid>
       <Grid
         item
@@ -179,6 +175,10 @@ const AuthorComp: React.FC<Props> = ({
           widthPadding={'16px 0px 16px 16px'}
           turnOnStyle={true}
           turnOnEmail={true}
+          email={authorData?.email || articalAuthorData?.email}
+          facebook={authorData?.facebook || articalAuthorData?.facebook}
+          twitter={authorData?.twitter || articalAuthorData?.twitter}
+          youtube={authorData?.youtube || articalAuthorData?.youtube}
         />
         <TabsComponent
           turnOnSectionTabsPadding={turnOnSectionTabsPadding}

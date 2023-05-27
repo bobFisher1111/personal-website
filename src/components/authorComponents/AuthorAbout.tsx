@@ -19,7 +19,7 @@ const AuthorAbout: React.FC<Props> = ({
     aboutData,
 }) => {
   const questionaireData = aboutData.about[0].questionaire[0];
-  console.log('questionaire data', questionaireData);
+
   return (
     <Grid 
     container

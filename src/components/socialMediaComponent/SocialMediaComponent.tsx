@@ -4,22 +4,20 @@ import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
 import FacebookLogo from '../../assets/icons/FacebookLogo.png';
 import { Grid } from "@mui/material";
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import copyLink from '../../utilities/copyLink';
 
 const SocialMediaComponent: React.FC<Props> = ({
   widthPadding,
   turnOnStyle,
   turnOnEmail,
   turnOnEmailStyle,
+  email,
+  facebook,
+  twitter,
+  youtube,
 }) => {
   const [emailIcon, setEmailIcon] = useState<string>('#667A6E');
-  const facebookUrl = 'https://www.facebook.com/';
-  const twitterUrl = 'https://twitter.com/';
-  const youtubeUrl = 'https://www.youtube.com/';
-  const copyEmail = () => {
-    const copy = navigator.clipboard.writeText('bobthefisher@gmail.com');
-    setEmailIcon('#2F4C69');
-    return copy;
-  }
+
   return (
     <>
       <Grid
@@ -29,7 +27,7 @@ const SocialMediaComponent: React.FC<Props> = ({
         }}
       >
           <a 
-            href={facebookUrl}
+            href={facebook}
             target="_blank"
             rel="noreferrer"
             >
@@ -43,7 +41,7 @@ const SocialMediaComponent: React.FC<Props> = ({
           }}
         >
           <a 
-            href={twitterUrl}
+            href={twitter}
             target="_blank"
             rel="noreferrer"
             >
@@ -57,7 +55,7 @@ const SocialMediaComponent: React.FC<Props> = ({
           }}
         >
           <a 
-            href={youtubeUrl}
+            href={youtube}
             target="_blank"
             rel="noreferrer"
             >
@@ -76,7 +74,7 @@ const SocialMediaComponent: React.FC<Props> = ({
             sx={{
               color: emailIcon,
             }}
-            onClick={copyEmail}
+            onClick={() => copyLink(setEmailIcon, email)}
           />
         </Grid>}
     </>
@@ -88,6 +86,10 @@ export type Props = {
   turnOnStyle?: boolean,
   turnOnEmail?: boolean,
   turnOnEmailStyle?: boolean,
+  email?: string;
+  facebook?: string;
+  twitter?: string;
+  youtube?: string;
 };
 
 export default SocialMediaComponent;

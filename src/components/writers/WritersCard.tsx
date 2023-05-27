@@ -15,6 +15,10 @@ const WritersCard: React.FC<Props> = ({
   authorName,
   authorsTitle,
   authorId,
+  facebook,
+  twitter,
+  youtube,
+  email,
 }) => {
   return (
     <Grid
@@ -106,6 +110,10 @@ const WritersCard: React.FC<Props> = ({
           turnOnStyle={true}
           turnOnEmail={true}
           turnOnEmailStyle={true}
+          facebook={facebook}
+          twitter={twitter}
+          youtube={youtube}
+          email={email}
         />
         </Grid>
       </Grid>
@@ -118,6 +126,10 @@ export type Props = {
   authorName: string;
   authorsTitle: string;
   authorId: string;
+  facebook: string;
+  twitter: string;
+  youtube: string;
+  email: string;
 };
 
 export default WritersCard;

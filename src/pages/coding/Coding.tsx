@@ -1,15 +1,9 @@
-import React from 'react';
-import moment from 'moment';
 import Section from '../../components/sections/Section';
-import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 import { useSelector } from 'react-redux';
 
 const Coding = () => {
-  const ArticalDate = moment().format('ll');
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const articalData = getWebsiteData && getWebsiteData;
-
-  console.log('....articalData', articalData);
 
   return (
       <Section

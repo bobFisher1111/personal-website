@@ -53,8 +53,6 @@ const Section: React.FC<Props> = ({
     return item.section === headerTitle;
   });
 
-  console.log('what is websitedata', websiteData);
-
   const tabsPosistionOne =() => {
 
     return (

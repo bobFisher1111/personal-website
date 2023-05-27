@@ -88,7 +88,6 @@ const StyledCardContent = styled(CardContent)({
     setSectionPage(checkIfIncludesAuthor);
   }, []);
   
-   console.log('checking url', sectionPage)
    useEffect(() => {
     if(width && width === 800) {
         setFontSizes('16px');
@@ -98,8 +97,6 @@ const StyledCardContent = styled(CardContent)({
     }
    }, [width, ref]);
 
-   const temptitle = 'Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review  VII Review FinalFantasyiiii VII Review  VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review Final Fantasy VII Review  VII Review Final Fantasyiiii VII Review  VII Review Final Fantasy VII Review';
-   console.log('section', section);
    const articalInfo = () => {
     return (
       <>

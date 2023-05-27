@@ -4,7 +4,6 @@ import { getWebsiteData } from './getdata-services';
 
 export const useWebsiteData = () => {
   const [webSiteData, setWebsiteData] = useState<any>([]);
-  const dbData:any = [];
 
   useEffect(() => {
     if (webSiteData) {

@@ -1,23 +1,12 @@
 import React from 'react';
 import {
-  Typography,
   Grid,
-  Divider,
 } from "@mui/material";
-import HeaderComponent from '../headerComponent/HeaderComponent';
-import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
 import TabsComponent from '../tabsComponent/TabsComponent';
-import ProjectsComponent from "../projects/ProjectsComponent";
-// import SectionTabComponent from "../sectionsTab/SectionTabComponent";
-import Works from '../works/Works';
-import book2 from '../../assets/images/book2.png';
 import Card from '../sections/Card';
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
-import moment from 'moment';
 import LatestArticalCard from "../cards/latestArticalCard/LatestArticalCard";
-import { WebsiteData } from "../../types/websiteData";
 
-//
 const ArticalTabs: React.FC<Props> = ({
   turOnAuthorForArtical,
   oneLayerExtraTab,
@@ -31,6 +20,7 @@ const ArticalTabs: React.FC<Props> = ({
 }) => {
     const articalsData = websiteData;
     const Articals = () => {
+      
         return (
             <>
               {!turOnAuthorForArtical &&

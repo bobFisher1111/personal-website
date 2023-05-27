@@ -1,35 +1,15 @@
-import React, { useEffect, useState } from 'react';
 import {
   Typography,
   Grid,
   Divider,
 } from "@mui/material";
-import { useDispatch, useSelector } from 'react-redux';
-// import { AppDispatch } from '../../app/store';
+import { useSelector } from 'react-redux';
 import HeaderComponent from '../headerComponent/HeaderComponent';
 import WritersCard from './WritersCard';
-import { WebsiteData } from "../../types/websiteData";
-import GetWebsiteData from '../../features/webSiteData/GetWebsiteData';
-import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
-import { isTemplateExpression } from 'typescript';
-import { iteratorSymbol } from 'immer/dist/internal';
 
-
-
-  const Writers = () => {
-    // const dispatch = useDispatch<AppDispatch>();
-    const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-    const [webData, setWebData] = useState<any>(getWebsiteData.authors);
-    // useEffect(() => {
-    //   dispatch(GetWebsiteData())
-    // }, []);
-    const authorsData = getWebsiteData.authors;
-
-    // getWebsiteData.authors.map((item: any, index: any) => {
-    //   console.log('item', item);
-    // })
-
-    // console.log('avatar image', authorsData);
+const Writers = () => {
+  const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
+  const authorsData = getWebsiteData.authors;
 
     return (
         <>
@@ -120,6 +100,10 @@ import { iteratorSymbol } from 'immer/dist/internal';
               authorName={item.name}
               authorsTitle={item.titles}
               authorId={item.authorId}
+              facebook={item.facebook}
+              twitter={item.twitter}
+              youtube={item.youtube}
+              email={item.email}
             />
           </Grid>
         ))}
