@@ -7,18 +7,12 @@ import {
 import HeaderComponent from '../headerComponent/HeaderComponent';
 import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
 import TabsComponent from '../tabsComponent/TabsComponent';
-import ProjectsComponent from "../projects/ProjectsComponent";
-// import SectionTabComponent from "../sectionsTab/SectionTabComponent";
 import Works from '../works/Works';
 import book1 from '../../assets/images/book1.png';
 import book2 from '../../assets/images/book2.png';
-import Card from '../sections/Card';
-import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
-import moment from 'moment';
 import ArticalTabs from '../articalTabs/ArticalTabs';
 import AuthorAbout from './AuthorAbout';
 import { useSelector } from 'react-redux';
-import LatestArticalCard from "../cards/latestArticalCard/LatestArticalCard";
 
 const AuthorComp: React.FC<Props> = ({
   turOnArticalPage,
@@ -166,10 +160,6 @@ const AuthorComp: React.FC<Props> = ({
       <Grid
         container
         justifyContent="center"
-        sx={{
-          // borderLeft: '1px solid #667A6E',
-          // padding: '32px',
-        }}
       >
         <SocialMediaComponent
           widthPadding={'16px 0px 16px 16px'}

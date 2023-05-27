@@ -4,8 +4,7 @@ import {
 } from "@mui/material";
 import TabsComponent from '../tabsComponent/TabsComponent';
 import Card from '../sections/Card';
-import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
-import LatestArticalCard from "../cards/latestArticalCard/LatestArticalCard";
+import FullArticalCard from "../cards/fullArticalCard/FullArticalCard";
 
 const ArticalTabs: React.FC<Props> = ({
   turOnAuthorForArtical,
@@ -20,7 +19,7 @@ const ArticalTabs: React.FC<Props> = ({
 }) => {
     const articalsData = websiteData;
     const Articals = () => {
-      
+
         return (
             <>
               {!turOnAuthorForArtical &&
@@ -63,16 +62,14 @@ const ArticalTabs: React.FC<Props> = ({
             {turOnAuthorForArtical &&
             <>
             <Grid
-            container
-            direction="row"
-            justifyContent="center"
-            alignItems="center"
-            sx={{
-            //   borderLeft: '1px solid #667A6E',
-            paddingTop:'10px',
-            
-            }}
-        >
+              container
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+              sx={{
+                paddingTop:'10px',
+              }}
+            >
             <Grid
                item
                xs={8}
@@ -85,13 +82,10 @@ const ArticalTabs: React.FC<Props> = ({
                }}
              >
               { articalPageData?.map((item: any, index: any) => (
-                <LatestArticalCard
+                <FullArticalCard
                   key={index}
-                  title={item.articalTitle}
                   name={authorName}
-                  articalInfo={'...'}
-                  articalImage={finalfantasy7}
-                  turnOnStyle={true}
+                  articalData={item}
                 />
               ))}
              </Grid>

@@ -2,7 +2,7 @@ import React from 'react';
 import {
     Grid,
 } from "@mui/material";
-import LatestArticalCard from "../cards/latestArticalCard/LatestArticalCard";
+import LatestArticalCard from "../cards/fullArticalCard/FullArticalCard";
 import xenob3 from '../../assets/images/xenob3.jpg';
 import mgs5 from '../../assets/images/mgs5.jpg';
 import xenob2 from '../../assets/images/xenob2.jpg';
@@ -13,7 +13,7 @@ const LatestArticalsComponent: React.FC<Props> = ({
 }) => {
   return (
     <>
-      <Grid
+      {/* <Grid
         container
         sx={{
           display: 'flex',
@@ -128,7 +128,7 @@ const LatestArticalsComponent: React.FC<Props> = ({
             articalImage={xenob3}
           />
         </Grid>
-      </Grid>
+      </Grid> */}
     </>
   );
 }
