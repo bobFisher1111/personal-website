@@ -3,7 +3,7 @@ import {
   Grid,
   Box,
 } from "@mui/material";
-import TeamCard from '../../components/cards/additionalCards/teamCard/TeamCard';
+import TeamCard from '../../components/cards/teamCard/TeamCard';
 import foxGirl from '../../assets/images/foxGirl.png';
 import yinYangFox from '../../assets/images/yinYangFox.jpeg';
 

@@ -7,10 +7,10 @@ import {
     styled,
   } from "@mui/material";
 import HeaderComponent from "../headerComponent/HeaderComponent";
-import FilteringComponent from "../../components/filteringComponent/FilteringComponent";
+import FilteringComponent from "../unUsedComponents/filteringComponent/FilteringComponent";
 import SubTitlesComponent from "../../components/subTitlesComponent/SubTitlesComponent";
 import AlignGrid from "../../themes/StyledGrids";
-import LatestArticalCardWide from "../../components/cards/additionalCards/LatestArticalCardWide"
+import LatestArticalCardWide from "../unUsedComponents/additionalCards/LatestArticalCardWide"
 // import Card from "./HorizontalArticalCard";
 import foxGirl from '../../assets/images/foxGirl.png';
 import yinYangFox from '../../assets/images/yinYangFox.jpeg';

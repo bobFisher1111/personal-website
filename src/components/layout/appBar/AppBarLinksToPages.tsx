@@ -9,7 +9,7 @@ const AppBarLinksToPages = () => {
   return (
     <>
       <Grid item>
-        <Link to="/projects" 
+        <Link to="/" 
           style={{textDecoration: "none"}}
         >
           <Typography
@@ -22,26 +22,8 @@ const AppBarLinksToPages = () => {
               },
             }}
           >
-            Projects
+            Sections
           </Typography>
-          </Link> 
-        </Grid>
-        <Grid item>
-          <Link to="/coding" 
-            style={{textDecoration: "none"}}
-          >
-            <Typography
-               sx={{
-                fontSize: '14px',
-                color: "white",
-                cursor: "pointer",
-                "&:hover": {
-                    color: "black",
-                },
-            }}
-            >
-              Coding
-            </Typography>
           </Link> 
         </Grid>
         <Grid item>
@@ -63,7 +45,7 @@ const AppBarLinksToPages = () => {
           </Link>
         </Grid>
         <Grid item>
-          <Link to="/author"
+          <Link to="/contact"
             style={{textDecoration: "none"}}
           >
             <Typography
@@ -77,7 +59,7 @@ const AppBarLinksToPages = () => {
                 margin: "0px 22px 0px 0px"
             }}
             >
-              Author
+              Contact
             </Typography>
           </Link>
         </Grid>

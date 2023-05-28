@@ -4,7 +4,7 @@ import {
 } from "@mui/material";
 import moment from 'moment';
 // import Card from '../sections/HorizontalArticalCard';
-import FilteringComponent from "../filteringComponent/FilteringComponent";
+import FilteringComponent from "../unUsedComponents/filteringComponent/FilteringComponent";
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 
 const SectionTabComponent : React.FC<Props> = ({

@@ -2,7 +2,7 @@ import React from 'react';
 import {
     Grid,
 } from "@mui/material";
-import PopularArticals from "../cards/additionalCards/popularArticalCard/PopularArticals";
+import PopularArticals from "../unUsedComponents/additionalCards/popularArticalCard/PopularArticals";
 import xenob3 from '../../assets/images/xenob3.jpg';
 
 const PopularArticalsComponent: React.FC<Props> = ({
