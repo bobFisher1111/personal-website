@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Typography,
   Card,
@@ -8,14 +8,25 @@ import {
   Link,
 } from '@mui/material/';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import copyLink from '../../../utilities/copyLink';
+import copyLink from '../../../../utilities/copyLink';
 
-const FullArticalCard: React.FC<Props> = ({
+const VerticalArticalCardComponent: React.FC<Props> = ({
   name,
   articalData,
 }) => {
   const [copyIconColor, setCopyIconColor] = useState<string>('#ffffff');
+  const [articalPage, setArticalPage] = useState<boolean>();
   const articalUrl = `http://localhost:3000/artical/${articalData?.authorId}/${articalData?.articalId}` // add first part to configFile
+
+  console.log('articalData', articalData?.articalId);
+
+  useEffect(() => {
+    const currentLocation = window.location.href;
+    const getIdFromCurrentLocation = currentLocation.split("/");
+    const checkIfIncludesCurrentArtical = getIdFromCurrentLocation.includes(articalData?.articalId);
+    setArticalPage(checkIfIncludesCurrentArtical);
+  }, []);
+
   return (
     <div
       style={{
@@ -100,7 +111,7 @@ const FullArticalCard: React.FC<Props> = ({
                 />
               </Grid>
             </Link>
-          :
+            :
             <Link 
                 href={articalUrl}
                 target="_blank"
@@ -112,68 +123,95 @@ const FullArticalCard: React.FC<Props> = ({
                 image={articalData?.coverImageOrVideo}
               />
               </Link>
-        }
-        <Box
-          sx={{ 
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-            width: '100%',
-            bgcolor: 'black',
-            color: 'white',
-            opacity: 0.70,
-          }}
-        >
-          <Grid 
-            container
+          }
+          <Box
+            sx={{ 
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              width: '100%',
+              bgcolor: 'black',
+              color: 'white',
+              opacity: 0.70,
+            }}
           >
             <Grid 
-              item 
-              xs={10}
-              sm={10}
-              md={10}
-              lg={10}
-              xl={10}
+              container
             >
-              <Typography 
-                variant="subtitle1" 
-                color="white"
-                sx={{ 
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  display: '-webkit-box',
-                  WebkitLineClamp: '1',
-                  WebkitBoxOrient: 'vertical',
-                  padding: '16px'
-                }} 
+              <Grid 
+                item 
+                xs={10}
+                sm={10}
+                md={10}
+                lg={10}
+                xl={10}
               >
-                by {name}
-              </Typography>
-            </Grid>
-            <Grid 
-              item 
-              xs={2}
-              sx={{
-                padding: '16px'
-              }}
-            >
-              <ContentCopyIcon
-                onClick={() => copyLink(setCopyIconColor, articalUrl)}
+                {!articalPage ?
+                  <Link 
+                    href={articalUrl}
+                    rel="noreferrer"
+                    sx={{
+                      textDecoration: "none",
+                    }}
+                  >
+                    <Typography 
+                      variant="subtitle1" 
+                      color="white"
+                      sx={{ 
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        display: '-webkit-box',
+                        WebkitLineClamp: '1',
+                        WebkitBoxOrient: 'vertical',
+                        padding: '16px'
+                      }} 
+                    >
+                      by {name}
+                    </Typography>
+                  </Link>
+                :
+                  <Typography 
+                    variant="subtitle1" 
+                    color="white"
+                    sx={{ 
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      display: '-webkit-box',
+                      WebkitLineClamp: '1',
+                      WebkitBoxOrient: 'vertical',
+                      padding: '16px'
+                    }} 
+                  >
+                    by {name}
+                  </Typography>
+                }           
+              </Grid>
+              <Grid 
+                item 
+                xs={2}
                 sx={{
-                  color: copyIconColor,
+                  padding: '16px'
                 }}
-              />
+              >
+                <ContentCopyIcon
+                  onClick={() => copyLink(setCopyIconColor, articalUrl)}
+                  sx={{
+                    cursor: 'pointer',
+                    color: copyIconColor,
+                  }}
+                />
+              </Grid>
             </Grid>
-          </Grid>
+          </Box>
         </Box>
-      </Box>
-    </Card>
-  </div>
-);}
+      </Card>
+    </div>
+  )
+};
 
 export type Props = {
   name: string | undefined;
   articalData: any;
 };
 
-export default FullArticalCard;
+export default VerticalArticalCardComponent;

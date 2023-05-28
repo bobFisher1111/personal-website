@@ -4,7 +4,7 @@ import {
   Grid,
 } from "@mui/material";
 import HeaderComponent from "../headerComponent/HeaderComponent";
-import Card from "../sections/Card";
+import HorizontalArticalCardComponent from "../cards/articalCards/horizontalCard/HorizontalArticalCardComponent";
 import AuthorComp from '../authorComponents/AuthorComp';
 import { useSelector } from 'react-redux';
 import createArtical from '../../utilities/createArtical';
@@ -81,7 +81,7 @@ const ArticalPage: React.FC<Props> = ({
           authorAvatar={false}
           headerTopPadding={true}
         />
-      <Card
+      <HorizontalArticalCardComponent
           title={'First JRPG ever played, was given money for birthday and the cover art looked cool. Had no idea what to expect'}
           backgroundColor={'white'}
           fontColor={'black'}

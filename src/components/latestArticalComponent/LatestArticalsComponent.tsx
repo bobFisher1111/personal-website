@@ -2,7 +2,7 @@ import React from 'react';
 import {
     Grid,
 } from "@mui/material";
-import LatestArticalCard from "../cards/fullArticalCard/FullArticalCard";
+import LatestArticalCard from "../cards/articalCards/verticalCard/VerticalArticalCardComponent";
 import xenob3 from '../../assets/images/xenob3.jpg';
 import mgs5 from '../../assets/images/mgs5.jpg';
 import xenob2 from '../../assets/images/xenob2.jpg';

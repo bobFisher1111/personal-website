@@ -3,8 +3,8 @@ import {
   Grid,
 } from "@mui/material";
 import TabsComponent from '../tabsComponent/TabsComponent';
-import Card from '../sections/Card';
-import FullArticalCard from "../cards/fullArticalCard/FullArticalCard";
+import HorizontalArticalCardComponent from '../cards/articalCards/horizontalCard/HorizontalArticalCardComponent';
+import VerticalArticalCardComponent from "../cards/articalCards/verticalCard/VerticalArticalCardComponent";
 
 const ArticalTabs: React.FC<Props> = ({
   turOnAuthorForArtical,
@@ -36,7 +36,7 @@ const ArticalTabs: React.FC<Props> = ({
                   }}
                  ></Grid>
                  { articalsData?.map((item: any, index: any) => (
-                  <Card
+                  <HorizontalArticalCardComponent
                     key={index}
                     title={item.articalTitle}
                     articalSubTitle={item.articalSubTitle}
@@ -82,7 +82,7 @@ const ArticalTabs: React.FC<Props> = ({
                }}
              >
               { articalPageData?.map((item: any, index: any) => (
-                <FullArticalCard
+                <VerticalArticalCardComponent
                   key={index}
                   name={authorName}
                   articalData={item}

@@ -11,7 +11,7 @@ import FilteringComponent from "../../components/filteringComponent/FilteringCom
 import SubTitlesComponent from "../../components/subTitlesComponent/SubTitlesComponent";
 import AlignGrid from "../../themes/StyledGrids";
 import LatestArticalCardWide from "../../components/cards/additionalCards/LatestArticalCardWide"
-import Card from "./Card";
+// import Card from "./HorizontalArticalCard";
 import foxGirl from '../../assets/images/foxGirl.png';
 import yinYangFox from '../../assets/images/yinYangFox.jpeg';
 import TabsComponent from '../../components/tabsComponent/TabsComponent';
