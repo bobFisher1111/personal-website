@@ -163,7 +163,10 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
                         display: '-webkit-box',
                         WebkitLineClamp: '1',
                         WebkitBoxOrient: 'vertical',
-                        padding: '16px'
+                        padding: '16px',
+                        "&:hover": {
+                          color: "#667A6E",
+                        },
                       }} 
                     >
                       by {name}
@@ -198,6 +201,9 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
                   sx={{
                     cursor: 'pointer',
                     color: copyIconColor,
+                    "&:hover": {
+                      color: "#667A6E",
+                    },
                   }}
                 />
               </Grid>
