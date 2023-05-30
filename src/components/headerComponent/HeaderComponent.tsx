@@ -4,7 +4,6 @@ import {
   Typography,
   Avatar,
 } from "@mui/material";
-import solidSnakePortrait2 from '../../assets/images/solidSnakePortrait2.jpeg';
 
 const HeaderComponent:  React.FC<Props> = ({
   title,

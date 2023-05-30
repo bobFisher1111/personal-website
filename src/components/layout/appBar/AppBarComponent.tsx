@@ -29,6 +29,7 @@ const AppBarComponent = () => {
           backgroundColor: "#667A6E", // "#2F4C69",
           boxShadow: 'none',
           borderBottom: 'solid #2F4C69 1px',
+          zIndex: (theme) => theme.zIndex.drawer + 1,
         }}
       >
         <AppBarXSmall />

@@ -4,27 +4,30 @@ import {
   Grid,
 } from "@mui/material";
 import { Link } from "react-router-dom";
+import SectionsDropDown from './AppBarSectionsDropDown';
 
 const AppBarLinksToPages = () => {
   return (
     <>
-      <Grid item>
-        <Link to="/" 
-          style={{textDecoration: "none"}}
-        >
-          <Typography
-            sx={{
-              fontSize: '14px',
-              color: "white",
-              cursor: "pointer",
-              "&:hover": {
-                color: "black",
-              },
-            }}
+        <Grid item>
+          <Link to="/contact"
+            style={{textDecoration: "none"}}
           >
-            Sections
-          </Typography>
-          </Link> 
+            <Typography
+               sx={{
+                // fontSize: '14px',
+                color: "white",
+                cursor: "pointer",
+                "&:hover": {
+                    color: "black",
+                    // make sure to change component contact to about
+                },
+                //margin: "0px 22px 0px 0px"
+            }}
+            >
+              About
+            </Typography>
+          </Link>
         </Grid>
         <Grid item>
           <Link to="/writers"
@@ -32,7 +35,7 @@ const AppBarLinksToPages = () => {
           >
             <Typography
                sx={{
-                fontSize: '14px',
+                // fontSize: '14px',
                 color: "white",
                 cursor: "pointer",
                 "&:hover": {
@@ -44,24 +47,14 @@ const AppBarLinksToPages = () => {
             </Typography>
           </Link>
         </Grid>
-        <Grid item>
-          <Link to="/contact"
-            style={{textDecoration: "none"}}
-          >
-            <Typography
-               sx={{
-                fontSize: '14px',
-                color: "white",
-                cursor: "pointer",
-                "&:hover": {
-                    color: "black",
-                },
-                margin: "0px 22px 0px 0px"
-            }}
-            >
-              Contact
-            </Typography>
-          </Link>
+        <Grid
+          item
+          sx={{
+            display: 'flex',
+            cursor: "pointer",
+          }}
+        >
+          <SectionsDropDown />
         </Grid>
     </>
   );

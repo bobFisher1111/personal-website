@@ -1,67 +1,117 @@
 import React from 'react';
 import {
-    Grid,
+  Grid,
 } from "@mui/material";
-import SectionCard from '../sectionsCard/SectionCard';
-import xenob3 from '../../assets/images/xenob3.jpg';
-// look into, most likely not being used
-const SectionPage = () => {
+import SectionCard from "../sectionsCard/SectionCard";
+import codingpicture from '../../assets/images/codingpicture.png';
+import legendOfZelda from '../../assets/images/legendOfZelda.jpg';
+import suzuka from '../../assets/images/suzuka.jpeg';
+import goldenboy2 from '../../assets/images/goldenboy2.png';
+
+const SectionComponent: React.FC<Props> = ({
+  homePage
+}) => {
+
   return (
     <>
-      <Grid
-        item
-        sx={{
-            margin: 'auto',
-        }}
-      >
-        <SectionCard
-          imgCover={xenob3}
-          section={'Coding'}
-          backGroundColor={'#282c34'}
-          linkTo=''
-        />
-      </Grid>
-      <Grid
-        item
-        sx={{
-          margin: 'auto',
-        }}
-       >
-         <SectionCard
-           imgCover={xenob3}
-           section={'Data'}
-           backGroundColor={'#2F4C69'}
-           linkTo=''
-         />
-       </Grid>
        <Grid
-         item
-         sx={{
-           margin: 'auto',
+          item
+          xs={12}
+          sm={12}
+          md={3}
+          lg={3}
+          xl={3}
+          sx={{
+            padding: '16px',
+            '&.MuiGrid-root': {
+              '&.MuiGrid-item': {
+                paddingTop: homePage ? '16px' : '32px',
+              }
+            },
           }}
-       >
-         <SectionCard
-           imgCover={xenob3}
-           section={'Game Dev'}
-           backGroundColor={'#667A6E'}
-           linkTo=''
-         />
-       </Grid>
-       <Grid
-         item
-         sx={{
-           margin: 'auto',
-         }}
-       >
-         <SectionCard
-          imgCover={xenob3}
-          section={'Projects'}
-          backGroundColor={'#B784A7'}
-          linkTo=''
-        />
-       </Grid>
+        >
+          <SectionCard
+            backGroundColor='blue'
+            imgCover={codingpicture}
+            section='Coding'
+            linkTo='coding'
+          />
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={3}
+          lg={3}
+          xl={3}
+          sx={{
+            padding: '16px',
+            '&.MuiGrid-root': {
+                '&.MuiGrid-item': {
+                  paddingTop: homePage ? '16px' : '32px',
+                }
+              },
+          }}
+        >
+          <SectionCard
+            backGroundColor='blue'
+            imgCover={legendOfZelda}
+            section='Video Games'
+            linkTo='videoGames'
+          />
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={3}
+          lg={3}
+          xl={3}
+          sx={{
+            padding: '16px',
+            '&.MuiGrid-root': {
+              '&.MuiGrid-item': {
+                paddingTop: homePage ? '16px' : '32px',
+              }
+            },
+          }}
+        >
+          <SectionCard
+            backGroundColor='blue'
+            imgCover={goldenboy2}
+            section='Shows / Movies'
+            linkTo='showsMovies'
+          />
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={3}
+          lg={3}
+          xl={3}
+          sx={{
+            padding: '16px',
+            '&.MuiGrid-root': {
+                '&.MuiGrid-item': {
+                  paddingTop: homePage ? '16px' : '32px',
+                }
+              },
+          }}
+        >
+          <SectionCard
+            backGroundColor='blue'
+            imgCover={suzuka}
+            section='Stories'
+            linkTo='stories'
+          />
+      </Grid>
     </>
   );
 }
 
-export default SectionPage;
+export type Props = {
+  homePage: boolean;
+};
+export default SectionComponent;
+  

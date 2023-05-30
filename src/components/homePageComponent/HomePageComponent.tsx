@@ -19,6 +19,7 @@ import useWebsiteData from '../../services/useDataServices';
 import { useDispatch, useSelector } from 'react-redux';
 import GetWebsiteData from '../../features/webSiteData/GetWebsiteData';
 import { AppDispatch } from '../../app/store';
+import SectionComponent from '../sectionComponent/SectionComponent';
 
 const HomePageComponent: React.FC<Props> = ({
 }) => {
@@ -76,7 +77,7 @@ const HomePageComponent: React.FC<Props> = ({
             }}
           />
         </Grid>
-        <Grid
+        {/* <Grid
           item
           xs={12}
           sm={12}
@@ -147,7 +148,10 @@ const HomePageComponent: React.FC<Props> = ({
             section='Stories'
             linkTo='stories'
           />
-        </Grid>
+        </Grid> */}
+        <SectionComponent
+          homePage={true}
+        />
         <ArticalTabs
           turOnAuthorForArtical={false}
           oneLayerExtraTab={true}
