@@ -13,7 +13,12 @@ const SectionComponent: React.FC<Props> = ({
 }) => {
 
   return (
-    <>
+    <Grid
+      container
+      sx={{
+        maxWidth: '1600px'
+      }}
+    >
        <Grid
           item
           xs={12}
@@ -106,7 +111,7 @@ const SectionComponent: React.FC<Props> = ({
             linkTo='stories'
           />
       </Grid>
-    </>
+    </Grid>
   );
 }
 
