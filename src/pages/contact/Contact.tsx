@@ -8,9 +8,11 @@ import {
   Checkbox,
 } from "@mui/material";
 import DarkTextField from "../../themes/DarkThemes";
+import HeaderComponent from "../../components/headerComponent/HeaderComponent";
 
 // future updates. UI Changes example: https://nova.apple.com/business/
 // https://www.youtube.com/watch?v=sGQSz22U8VM 
+// https://stackoverflow.com/questions/7381150/how-to-send-an-email-from-javascript // look at this
 
 const Contact = () => {
 
@@ -28,14 +30,35 @@ const Contact = () => {
   });
 
   return (
-    <Box
+    <Grid
+      container
+      sx={{
+        background: '#fff',
+        minHeight: '100vh',
+        display: 'flex',
+        // paddingBottom: '200px',
+        margin: 'auto',
+        padding: '36px 24px 0px 24px',
+        // maxWidth: "1024px",
+      }}
+    >
+      <HeaderComponent
+        title='React2Python'
+        backgroundColor='white'
+        fontColor='#2F4C69'
+        lineHeight={'40px'}
+        fontSize={'32px'}
+        authorAvatar={false}
+        headerTopPadding={true}
+      />
+    {/* <Box
       sx={{
         background: 'white',
         minHeight: '100vh',
         padding: '32px 16px 32px 0px',
         display: 'flex'
       }}
-    >
+    > */}
       <Grid
         container
         direction="row"
@@ -45,6 +68,7 @@ const Contact = () => {
           maxWidth: "1024px",
           margin: 'auto', 
           paddingTop: '30px',
+          paddingBottom: '200px',
         }}
       >
         <Grid
@@ -155,7 +179,8 @@ const Contact = () => {
           </Button>
         </Grid>
       </Grid>
-    </Box>
+    {/* </Box> */}
+    </Grid>
   );
 }
 
