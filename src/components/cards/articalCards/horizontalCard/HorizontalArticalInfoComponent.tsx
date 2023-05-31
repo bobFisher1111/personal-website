@@ -4,6 +4,7 @@ import {
   Grid,
   Chip,
 } from "@mui/material";
+import CopyLinkComponent from '../../../copyLinkComponent/CopyLinkComponent';
 import { Link } from "react-router-dom";
 
 const HorizontalArticalInfoComponent: React.FC<Props> = ({
@@ -105,7 +106,7 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
               }}
             >
               {aughtorsName}
-            </Typography> 
+            </Typography>
           }
           {!sectionPage ?
             <Link 
@@ -136,6 +137,13 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
               }}
             />
           }
+          <CopyLinkComponent
+            authorsId={authorsId}
+            articalId={articalId}
+            defaultColor={'#667A6E'}
+            padding={'0px 0px 0px 16px'}
+            email={false}
+          />
         </Grid>
       </>
     )

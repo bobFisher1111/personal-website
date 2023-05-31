@@ -8,7 +8,6 @@ import {
     CardMedia,
   } from "@mui/material";
 import { useSelector } from 'react-redux';
-import { useResizeDetector } from 'react-resize-detector';
 import { Link } from "react-router-dom";
 import HorizontalArticalInfoComponent from './HorizontalArticalInfoComponent';
 import HorizontalArticalSubTextComponent from './HorizontalArticalSubTextComponent';
@@ -123,6 +122,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
                 date={date}
                 sectionLink={sectionLink}
                 section={section}
+                articalID={articalId}
               />
             </Grid>
           }
@@ -199,6 +199,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
                   date={date}
                   sectionLink={sectionLink}
                   section={section}
+                  articalID={articalId}
                 />
               }
               {!articalPage &&

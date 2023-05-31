@@ -7,16 +7,14 @@ import {
   Box,
   Link,
 } from '@mui/material/';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import copyLink from '../../../../utilities/copyLink';
+import CopyLinkComponent from '../../../copyLinkComponent/CopyLinkComponent';
 
 const VerticalArticalCardComponent: React.FC<Props> = ({
   name,
   articalData,
 }) => {
-  const [copyIconColor, setCopyIconColor] = useState<string>('#ffffff');
   const [articalPage, setArticalPage] = useState<boolean>();
-  const articalUrl = `http://localhost:3000/artical/${articalData?.authorId}/${articalData?.articalId}` // add first part to configFile
+  const articalUrl = `http://localhost:3000/artical/${articalData?.authorId}/${articalData?.articalId}`; // add first part to configFile
 
   console.log('articalData', articalData?.articalId);
 
@@ -196,15 +194,12 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
                   padding: '16px'
                 }}
               >
-                <ContentCopyIcon
-                  onClick={() => copyLink(setCopyIconColor, articalUrl)}
-                  sx={{
-                    cursor: 'pointer',
-                    color: copyIconColor,
-                    "&:hover": {
-                      color: "#667A6E",
-                    },
-                  }}
+                <CopyLinkComponent
+                  authorsId={articalData?.authorId}
+                  articalId={articalData?.articalId}
+                  defaultColor={'#ffffff'}
+                  padding={'0px 0px 0px 0px'}
+                  email={false}
                 />
               </Grid>
             </Grid>

@@ -5,6 +5,7 @@ import {
     SwipeableDrawer,
 } from "@mui/material";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import SectionComponent from '../../sectionComponent/SectionComponent';
 
 const SectionsDropDown = () => {
@@ -35,7 +36,7 @@ const SectionsDropDown = () => {
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
-      sx={{ 
+      sx={{
        background: 'white',
        borderBottom: '3px solid #667A6E',
        padding: '37px',
@@ -56,9 +57,9 @@ const SectionsDropDown = () => {
         container
         onClick={toggleDrawer(true)}
         sx={{
-            "&:hover": {
-                color: "black",
-            },
+          "&:hover": {
+            color: "black",
+          },
         }}
       >
             <Typography
@@ -71,7 +72,7 @@ const SectionsDropDown = () => {
           >
             Sections
           </Typography>
-          <KeyboardArrowDownIcon />
+          {state ?  <KeyboardArrowUpIcon/> : <KeyboardArrowDownIcon />}
         </Grid>
         <SwipeableDrawer
             anchor={'top'}

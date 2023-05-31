@@ -3,8 +3,7 @@ import TwitterLogo from '../../assets/icons/TwitterLogo.svg';
 import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
 import FacebookLogo from '../../assets/icons/FacebookLogo.png';
 import { Grid } from "@mui/material";
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import copyLink from '../../utilities/copyLink';
+import CopyLinkComponent from '../copyLinkComponent/CopyLinkComponent';
 
 const SocialMediaComponent: React.FC<Props> = ({
   widthPadding,
@@ -16,8 +15,6 @@ const SocialMediaComponent: React.FC<Props> = ({
   twitter,
   youtube,
 }) => {
-  const [emailIcon, setEmailIcon] = useState<string>('#667A6E');
-
   return (
     <>
       <Grid
@@ -62,21 +59,20 @@ const SocialMediaComponent: React.FC<Props> = ({
             <img src={YoutTubeLogo} height="20px" alt="YouTube logo" />
           </a>
         </Grid>
-        {turnOnEmail && <Grid
-          item
-          sx={{
-            padding: turnOnEmailStyle ? '0px' : '10px 0px 16px 16px'
-          }}
-        >
-          <EmailOutlinedIcon
-            id="copyEmail"
-            fontSize="large"
+        {turnOnEmail && 
+          <Grid
+            item
             sx={{
-              color: emailIcon,
+              padding: turnOnEmailStyle ? '0px' : '10px 0px 16px 16px'
             }}
-            onClick={() => copyLink(setEmailIcon, email)}
-          />
-        </Grid>}
+          >
+            <CopyLinkComponent
+              defaultColor={'#667A6E'}
+              email={true}
+              authorsEmail={email}
+            />
+          </Grid>
+        }
     </>
   );
 }
