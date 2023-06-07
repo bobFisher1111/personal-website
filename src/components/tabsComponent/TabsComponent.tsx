@@ -31,31 +31,20 @@ const TabPanel = (props: TabPanelProps) => {
   );
 }
 
-const tabProps = (index: number) => {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
-
 const TabsComponent: React.FC<Props> = ({
   turnOnSectionTabsPadding,
-  extraTabs,
-  position1,
-  position2,
-  position3,
-  position4,
-  position1Name,
-  position2Name,
-  position3Name,
-  position4Name,
+  tabsData,
 }) => {
   const [value, setValue] = useState(0);
-
+  const tabProps = (index: number) => {
+    return {
+      id: `simple-tab-${index}`,
+      'aria-controls': `simple-tabpanel-${index}`,
+    };
+  }
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
-
   return (
     <Box
       sx={{
@@ -88,72 +77,31 @@ const TabsComponent: React.FC<Props> = ({
           aria-label="basic tabs example"
           textColor="inherit"
         >
-          <Tab 
-            label={position1Name}
-            sx={{
-              textTransform: 'initial',
-              fontSize: '18px',
-            }}
-            {...tabProps(0)} 
-          />
-          <Tab
-            label={position2Name}
-            sx={{
-              textTransform: 'initial',
-              fontSize: '18px',
-            }}
-            {...tabProps(1)}
-          />
-          <Tab 
-            label={position3Name}
-            sx={{
-              textTransform: 'initial',
-              fontSize: '18px',
-            }}
-            {...tabProps(2)} 
-          />
-          {extraTabs &&
-            <Tab 
-              label={position4Name}
+          {tabsData?.map((item: any, index: any) => (
+            <Tab
+              onClick={() => setValue(index)}
+              label={item.name}
               sx={{
                 textTransform: 'initial',
                 fontSize: '18px',
               }}
-              {...tabProps(3)}
+              {...tabProps(index)} 
             />
-          }
+          ))} 
         </Tabs>
       </Grid>
-      <TabPanel value={value} index={0}>
-        {position1()}
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        {position2()}
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        {position3()}
-      </TabPanel>
-      {extraTabs &&
-        <TabPanel value={value} index={3}>
-          {position4()}
+      {tabsData?.map((item: any, index: number) => (
+        <TabPanel value={value} index={index}>
+          {tabsData[index].data}
         </TabPanel>
-      }
+      ))}
     </Box>
   );
 }
 
 export type Props = {
   turnOnSectionTabsPadding: boolean;
-  extraTabs?: boolean;
-  extraTabs2?: boolean;
-  position1: Function;
-  position2: Function;
-  position3: Function;
-  position4?: any;
-  position1Name: string;
-  position2Name: string;
-  position3Name: string;
-  position4Name?: any;
+  tabsData?: any;
 };
 
 export default TabsComponent;

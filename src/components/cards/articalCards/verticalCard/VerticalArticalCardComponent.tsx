@@ -16,8 +16,8 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
   const [articalPage, setArticalPage] = useState<boolean>();
   const articalUrl = `http://localhost:3000/artical/${articalData?.authorId}/${articalData?.articalId}`; // add first part to configFile
 
-  console.log('articalData', articalData?.articalId);
-
+  // console.log('articalData', articalData?.articalId);
+  console.log('what is name', name);
   useEffect(() => {
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = currentLocation.split("/");

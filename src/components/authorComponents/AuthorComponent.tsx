@@ -7,21 +7,16 @@ import {
 import HeaderComponent from '../headerComponent/HeaderComponent';
 import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
 import TabsComponent from '../tabsComponent/TabsComponent';
-import Works from '../works/Works';
-import book1 from '../../assets/images/book1.png';
-import book2 from '../../assets/images/book2.png';
-import ArticalTabs from '../articalTabs/ArticalTabs';
-import AuthorAbout from './AuthorAbout';
 import { useSelector } from 'react-redux';
+import AuthorComponetTabData from './AuthorComponetTabData';
 
-const AuthorComp: React.FC<Props> = ({
+const AuthorComponent: React.FC<Props> = ({
   turOnArticalPage,
-  turnOnSectionTabsPadding,
   articalAuthorData,
   articalData,
-  authorName,
   bookData,
   authorsData,
+  authorName
 }) => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const webData = getWebsiteData && getWebsiteData
@@ -41,45 +36,6 @@ const AuthorComp: React.FC<Props> = ({
     return item.authorId === getIdFromUrl();
   });
   const authorData = getAuthor && getAuthor[0];
-
-  const tabsPosistionOne = () => {
-    return (
-      <ArticalTabs
-        turOnAuthorForArtical={turOnArticalPage}
-        oneLayerExtraTab={false}
-        nameOne={'Latest Articals'}
-        nameTwo={'All Articals'}
-        nameThree={'Popular Articals'}
-        nameFour={'Series'}
-        websiteData={getArticals}
-        articalPageData={articalData}
-        authorName={authorName}
-      />
-    )
-  }
-  const tabsPosistionTwo = () => {
-    return (
-        <Works
-          bookTitle="Handbook of Regression Modeling in People"
-          bookPlot="Handbook of Regression Modeling in People"
-          buyBookLink="https://www.ign.com"
-          bookGenere="Science"
-          bookYear={'2001'}
-          authorsPage={turOnArticalPage ? false : true}
-          bookCover={turOnArticalPage ? book1 : book2}
-          bookData={getBooks}
-          bookDataFromArtical={bookData}
-        />
-    )
-  }
-  const tabsPosistionThree = () => {
-    return (
-      <AuthorAbout
-        turnPaddingOn={turOnArticalPage}
-        aboutData={authorData || authorsData}
-      />
-    )
-  }
 
   return (
     <Grid
@@ -131,7 +87,6 @@ const AuthorComp: React.FC<Props> = ({
         xl={12}
         sx={{
           padding: '8px 16px 16px 16px',
-          // borderLeft: '1px solid #667A6E',
         }}
       >
         <Typography
@@ -139,7 +94,6 @@ const AuthorComp: React.FC<Props> = ({
           sx={{
             textAlign: 'fled-start',
             color: '#667A6E',
-            // fontSize: '18px',
             padding: '16px 0px 16px 0px',
           }}
         >
@@ -170,16 +124,37 @@ const AuthorComp: React.FC<Props> = ({
           twitter={authorData?.twitter || articalAuthorData?.twitter}
           youtube={authorData?.youtube || articalAuthorData?.youtube}
         />
+        {turOnArticalPage ?
         <TabsComponent
-          turnOnSectionTabsPadding={turnOnSectionTabsPadding}
-          extraTabs={false}
-          position1={tabsPosistionOne}
-          position2={tabsPosistionTwo}
-          position3={tabsPosistionThree}
-          position1Name={'Articals'}
-          position2Name={'Books'}
-          position3Name={'About'}
+          turnOnSectionTabsPadding={false}
+          tabsData={
+            AuthorComponetTabData(
+              true, 
+              articalData,
+              authorName,
+              true,
+              false,
+              bookData,
+              authorsData,
+            )
+          }
         />
+        :
+        <TabsComponent
+          turnOnSectionTabsPadding={false}
+          tabsData={
+            AuthorComponetTabData(
+              false, 
+              getArticals,
+              authorName,
+              false,
+              true,
+              getBooks,
+              authorData,
+            )
+          }
+        />
+        }
       </Grid>
    </Grid>
   )
@@ -187,12 +162,11 @@ const AuthorComp: React.FC<Props> = ({
 
 export type Props = {
   turOnArticalPage: boolean;
-  turnOnSectionTabsPadding: boolean;
   articalAuthorData?: any;
   articalData?: any;
-  authorName?: string;
   bookData?: any;
   authorsData?: any;
+  authorName?: string;
 };
 
-export default AuthorComp;
+export default AuthorComponent;

@@ -8,15 +8,8 @@ import {
 } from '@mui/material/';
 
 const Works: React.FC<Props> = ({
-  bookTitle,
-  bookYear,
   authorsPage,
-  bookCover,
-  buyBookLink,
-  bookGenere,
-  bookPlot,
   bookData,
-  bookDataFromArtical,
 }) => {
   const bookImageHeightRef = useRef<any>();
   const titleHeightRef = useRef<any>();
@@ -47,7 +40,7 @@ const Works: React.FC<Props> = ({
           justifyContent="flex-start"
           alignItems="flex-end"
           sx={{
-            padding: `${bottomHeight} 0px 0px 0px`, // get the height form useRef
+            padding: `${bottomHeight} 0px 0px 0px`,
           }}
         >
           <Grid
@@ -135,7 +128,7 @@ const Works: React.FC<Props> = ({
         </Typography>
       </Grid>
     </Grid>
-    { (bookDataFromArtical || bookData)?.map((item: any) => (
+    { bookData?.map((item: any) => (
     <Grid 
       container
       sx={{
@@ -151,7 +144,7 @@ const Works: React.FC<Props> = ({
         xl={1}
         sx={{
             padding: authorsPage ? '0px 160px 36px 0px' : '0px 65px 8px 0px',
-            width: '100px'// '55px'
+            width: '100px'
         }}
       >
         <Button
@@ -232,15 +225,8 @@ const Works: React.FC<Props> = ({
 }
 
 export type Props = {
-  bookTitle: string;
-  bookYear: string;
   authorsPage?: boolean;
-  bookCover?: string;
-  bookPlot?: string;
-  buyBookLink?: string;
-  bookGenere?: string;
   bookData?: any;
-  bookDataFromArtical?: any;
 };
 
 export default Works;

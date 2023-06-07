@@ -222,11 +222,8 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
 }
 
 export type Props = {
-  title: string;
-  backgroundColor: string;
-  fontColor: string;
+  title?: string;
   author: string;
-  likes: string;
   cardTextWidth: string;
   date: string;
   imageWidth: string;

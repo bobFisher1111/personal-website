@@ -1,11 +1,10 @@
 import HomePage from '../pages/home/HomePage';
 import About from '../pages/about/About';
-import Coding from '../pages/coding/Coding';
+import CodingPage from '../pages/coding/CodingPage';
 import Contact from '../pages/contact/Contact';
 import Logout from '../pages/logout/Logout';
 import DashboardAnalytics from '../pages/dashboardAnalytics/DashboardAnalytics';
 import Profile from '../pages/profile/Profile';
-import Projects from '../pages/projects/Projects';
 import ArticalPage from '../components/articalPage/ArticalPage';
 import AuthorPage from '../pages/author/AuthorPage';
 import WritersPage from '../pages/writers/WritersPage';
@@ -33,7 +32,7 @@ const routes: Route[] = [
   },
   {
     path: '/coding',
-    element: Coding,
+    element: CodingPage,
   },
   {
     path: '/',

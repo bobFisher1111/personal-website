@@ -1,12 +1,9 @@
-import AuthorComp from '../../components/authorComponents/AuthorComp';
+import AuthorPageComponent from '../../components/authorPageComponent/AuthorPageComponent';
 
 const AuthorPage = () => {
   return (
     <>
-      <AuthorComp
-        turOnArticalPage={false}
-        turnOnSectionTabsPadding={false}
-      />
+      <AuthorPageComponent />
     </>
   );
 }

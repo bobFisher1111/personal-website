@@ -3,23 +3,13 @@ import
   { Typography, 
     Grid,
     Link,
-    Tooltip,
 } from '@mui/material/';
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-
-const questionaire2 =  {
-  "favorVideoGameConsole": {
-    "link": 'https://en.wikipedia.org/wiki/PlayStation_(console)',
-    "name": "PS One",
-  },
-};
 
 const AuthorAbout: React.FC<Props> = ({
-    turnPaddingOn,
-    aboutData,
+  turnPaddingOn,
+  aboutData,
 }) => {
-  const questionaireData = aboutData.about[0].questionaire[0];
-
+  const questionaireData = aboutData?.about[0]?.questionaire[0];
   return (
     <Grid 
     container
@@ -38,7 +28,6 @@ const AuthorAbout: React.FC<Props> = ({
         lg={12}
         xl={12}
         sx={{
-          // padding: '2px 16px 2px 16px',
           display: 'flex',
         }}
       >
@@ -47,7 +36,6 @@ const AuthorAbout: React.FC<Props> = ({
           sx={{
             color: '#667A6E',
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Questionnaire:
@@ -69,30 +57,28 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Video Game Console:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteVideoGameConsole.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                // fontsize: '16px',
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',  
-                paddingRight: '4px',
-                color: '#551A8B',
-                "&:hover": {
-                    color: "#667A6E",
-                },     
-              }}
-            >
-              {questionaireData.FavoriteVideoGameConsole.name}
-            </Link>
+          href={questionaireData?.FavoriteVideoGameConsole?.link}
+          underline="none"
+          target="_blank"
+          rel="noopener"
+          sx={{
+            fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+            fontSize: '1rem',
+            lineHeight: '1.5',  
+            paddingRight: '4px',
+            color: '#551A8B',
+            "&:hover": {
+              color: "#667A6E",
+            },     
+          }}
+        >
+          {questionaireData?.FavoriteVideoGameConsole?.name}
+        </Link>
       </Grid>
       <Grid
         item
@@ -110,30 +96,27 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Video Game:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteVideoGame.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                // fontsize: '16px',
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                    color: "#667A6E",
-                },       
-              }}
-            >
-              {questionaireData.FavoriteVideoGame.name}
-            </Link>
-            
+          href={questionaireData?.FavoriteVideoGame?.link}
+          underline="none"
+          target="_blank"
+          rel="noopener"
+          sx={{
+            fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+            fontSize: '1rem',
+            lineHeight: '1.5',
+            color: '#551A8B',
+            "&:hover": {
+              color: "#667A6E",
+            },       
+          }}
+        >
+          {questionaireData?.FavoriteVideoGame?.name}
+        </Link>     
       </Grid>
       <Grid
         item
@@ -151,18 +134,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Video Game Series:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteVideoGameSeries.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                // fontsize: '16px',
+          href={questionaireData?.FavoriteVideoGameSeries?.link}
+          underline="none"
+          target="_blank"
+          rel="noopener"
+          sx={{
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -172,7 +153,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },      
               }}
             >
-              {questionaireData.FavoriteVideoGameSeries.name}
+              {questionaireData?.FavoriteVideoGameSeries?.name}
             </Link>
       </Grid>
       <Grid
@@ -191,18 +172,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Video Game Genere:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteVideoGameGenere.link}
+              href={questionaireData?.FavoriteVideoGameGenere?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -212,7 +191,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-               {questionaireData.FavoriteVideoGameGenere.name}
+               {questionaireData?.FavoriteVideoGameGenere?.name}
             </Link>
       </Grid>
       <Grid
@@ -231,18 +210,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite JRPG:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteJRPG.link}
+              href={questionaireData?.FavoriteJRPG?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -252,7 +229,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },          
               }}
             >
-              {questionaireData.FavoriteJRPG.name} 
+              {questionaireData?.FavoriteJRPG?.name} 
             </Link>
       </Grid>
       <Grid
@@ -271,18 +248,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite RPG:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteRPG.link}
+              href={questionaireData?.FavoriteRPG?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -292,41 +267,30 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {questionaireData.FavoriteRPG.name}
+              {questionaireData?.FavoriteRPG?.name}
             </Link>
       </Grid>
       <Grid
         item
-        // xs={12}
-        // sm={12}
-        // md={12}
-        // lg={12}
-        // xl={12}
         sx={{
           padding: '2px 16px 2px 16px',
-        //   overflow: 'hidden',
-        //     // textOverflow: 'ellipsis',
         display: 'flex',
-        //     WebkitLineClamp: '1',
-        //     WebkitBoxOrient: 'vertical',
         }}
       >
         <Typography
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Action Game:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteActionGame.link}
+              href={questionaireData?.FavoriteActionGame?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -336,7 +300,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {questionaireData.FavoriteActionGame.name}
+              {questionaireData?.FavoriteActionGame?.name}
             </Link>
       </Grid>
       <Grid
@@ -355,18 +319,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Platformer:
         </Typography>
         <Link 
-              href={questionaireData.FavoritePlatformer.link}
+              href={questionaireData?.FavoritePlatformer?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -376,7 +338,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {questionaireData.FavoritePlatformer.name}
+              {questionaireData?.FavoritePlatformer?.name}
             </Link>
       </Grid>
       <Grid
@@ -395,18 +357,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Horror:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteHorror.link}
+              href={questionaireData?.FavoriteHorror?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -416,7 +376,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },          
               }}
             >
-             {questionaireData.FavoriteHorror.name}
+             {questionaireData?.FavoriteHorror?.name}
             </Link>
       </Grid>
       <Grid
@@ -435,18 +395,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Beat 'em up:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteBeatEmUp.link}
+              href={questionaireData?.FavoriteBeatEmUp?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -456,7 +414,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },          
               }}
             >
-              {questionaireData.FavoriteBeatEmUp.name}
+              {questionaireData?.FavoriteBeatEmUp?.name}
             </Link>
       </Grid>
       <Grid
@@ -475,18 +433,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Stealth Game:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteStealthGame.link}
+              href={questionaireData?.FavoriteStealthGame?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -496,7 +452,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {questionaireData.FavoriteStealthGame.name}
+              {questionaireData?.FavoriteStealthGame?.name}
             </Link>
       </Grid>
       <Grid
@@ -515,18 +471,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Life Simulation Game:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteLifeSimulationGame.link}
+              href={questionaireData?.FavoriteLifeSimulationGame?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -536,7 +490,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {questionaireData.FavoriteLifeSimulationGame.name}
+              {questionaireData?.FavoriteLifeSimulationGame?.name}
             </Link>
       </Grid>
       <Grid
@@ -555,18 +509,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Visual Novel:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteVisualNovel.link}
+              href={questionaireData?.FavoriteVisualNovel?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -576,7 +528,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },          
               }}
             >
-              {questionaireData.FavoriteVisualNovel.name}
+              {questionaireData?.FavoriteVisualNovel?.name}
             </Link>
       </Grid>
       <Grid
@@ -595,18 +547,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite RTS:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteRTS.link}
+              href={questionaireData?.FavoriteRTS?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -616,7 +566,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },          
               }}
             >
-              {questionaireData.FavoriteRTS.name}
+              {questionaireData?.FavoriteRTS?.name}
             </Link>
       </Grid>
       <Grid
@@ -635,18 +585,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite MMO:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteMMO.link}
+              href={questionaireData?.FavoriteMMO?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -656,7 +604,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-             {questionaireData.FavoriteMMO.name}
+             {questionaireData?.FavoriteMMO?.name}
             </Link>
       </Grid>
       <Grid
@@ -675,18 +623,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Shooter:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteShooter.link}
+              href={questionaireData?.FavoriteShooter?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -696,7 +642,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-             {questionaireData.FavoriteShooter.name}
+             {questionaireData?.FavoriteShooter?.name}
             </Link>
       </Grid>
       <Grid
@@ -715,18 +661,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Fighting Game:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteFightingGame.link}
+              href={questionaireData?.FavoriteFightingGame?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -736,7 +680,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },          
               }}
             >
-             {questionaireData.FavoriteFightingGame.name}
+             {questionaireData?.FavoriteFightingGame?.name}
             </Link>
       </Grid>
       <Grid
@@ -761,12 +705,11 @@ const AuthorAbout: React.FC<Props> = ({
           Favorite Racing Game:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteRacingGame.link}
+              href={questionaireData?.FavoriteRacingGame?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -776,7 +719,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {questionaireData.FavoriteRacingGame.name}
+              {questionaireData?.FavoriteRacingGame?.name}
             </Link>
       </Grid>
       <Grid
@@ -795,18 +738,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Sports Game:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteSportsGame.link}
+              href={questionaireData?.FavoriteSportsGame?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -816,7 +757,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {questionaireData.FavoriteSportsGame.name}
+              {questionaireData?.FavoriteSportsGame?.name}
             </Link>
       </Grid>
       <Grid
@@ -835,18 +776,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Waifu:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteWaifu.link}
+              href={questionaireData?.FavoriteWaifu?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -856,7 +795,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {questionaireData.FavoriteWaifu.name}
+              {questionaireData?.FavoriteWaifu?.name}
             </Link>
       </Grid>
       <Grid
@@ -875,18 +814,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Anime:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteAnime.link}
+              href={questionaireData?.FavoriteAnime?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -896,7 +833,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {questionaireData.FavoriteAnime.name}
+              {questionaireData?.FavoriteAnime?.name}
             </Link>
       </Grid>
       <Grid
@@ -915,18 +852,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Movie:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteMovie.link}
+              href={questionaireData?.FavoriteMovie?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -936,7 +871,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {questionaireData.FavoriteMovie.name}
+              {questionaireData?.FavoriteMovie?.name}
             </Link>
       </Grid>
       <Grid
@@ -955,18 +890,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Food:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteFood.link}
+              href={questionaireData?.FavoriteFood?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -976,7 +909,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {questionaireData.FavoriteFood.name}
+              {questionaireData?.FavoriteFood?.name}
             </Link>
       </Grid>
       <Grid
@@ -995,18 +928,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Card Game:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteCardGame.link}
+              href={questionaireData?.FavoriteCardGame?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -1016,7 +947,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {questionaireData.FavoriteCardGame.name}
+              {questionaireData?.FavoriteCardGame?.name}
             </Link>
           
       </Grid>
@@ -1036,18 +967,16 @@ const AuthorAbout: React.FC<Props> = ({
           color="#2F4C69"
           sx={{
             paddingRight: '8px',
-            // fontWeight: 'bold',
           }}
         >
           Favorite Board Game:
         </Typography>
         <Link 
-              href={questionaireData.FavoriteBoardGame.link}
+              href={questionaireData?.FavoriteBoardGame?.link}
               underline="none"
               target="_blank"
               rel="noopener"
               sx={{
-                // fontsize: '16px',
                 fontFamily: "Roboto, Helvetica, Arial, sans-serif",
                 fontSize: '1rem',
                 lineHeight: '1.5',
@@ -1057,7 +986,7 @@ const AuthorAbout: React.FC<Props> = ({
                 },           
               }}
             >
-              {questionaireData.FavoriteBoardGame.name}
+              {questionaireData?.FavoriteBoardGame?.name}
             </Link>
       </Grid>
     </Grid>

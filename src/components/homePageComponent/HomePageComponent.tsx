@@ -1,33 +1,20 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useRef } from 'react';
 import {
   Grid,
   Divider,
 } from "@mui/material";
 import HeaderComponent from "../../components/headerComponent/HeaderComponent";
-import SubTitlesComponent from "../../components/subTitlesComponent/SubTitlesComponent";
-import SectionCard from "../../components/sectionsCard/SectionCard";
 import AlignGrid from "../../themes/StyledGrids";
-import ArticalTabs from '../../components/articalTabs/ArticalTabs';
-import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
-import goldenboy2 from '../../assets/images/goldenboy2.png';
-import codingpicture from '../../assets/images/codingpicture.png';
-import megalgearsolid1 from '../../assets/images/megalgearsolid1.jpg';
-import legendOfZelda from '../../assets/images/legendOfZelda.jpg';
-import suzuka from '../../assets/images/suzuka.jpeg';
-import { DataModel } from '../../data/DataModel';
-import useWebsiteData from '../../services/useDataServices';
-import { useDispatch, useSelector } from 'react-redux';
-import GetWebsiteData from '../../features/webSiteData/GetWebsiteData';
-import { AppDispatch } from '../../app/store';
+import { useSelector } from 'react-redux';
 import SectionComponent from '../sectionComponent/SectionComponent';
+import HomePageComponentTabData from './HomePageComponentTabData';
+import TabsComponent from '../tabsComponent/TabsComponent';
 
-const HomePageComponent: React.FC<Props> = ({
-}) => {
-  const dispatch = useDispatch<AppDispatch>();
+const HomePageComponent = () => {
   const widthRef = useRef<any>();
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const articalData = getWebsiteData && getWebsiteData.articals;
-  // articalSubTitle
+
   return (
     <Grid
       container
@@ -35,10 +22,8 @@ const HomePageComponent: React.FC<Props> = ({
         background: '#fff',
         minHeight: '100vh',
         display: 'flex',
-        // paddingBottom: '200px',
         margin: 'auto',
         padding: '36px 24px 0px 24px',
-        // maxWidth: "1024px",
       }}
     >
       <HeaderComponent
@@ -77,96 +62,16 @@ const HomePageComponent: React.FC<Props> = ({
             }}
           />
         </Grid>
-        {/* <Grid
-          item
-          xs={12}
-          sm={12}
-          md={3}
-          lg={3}
-          xl={3}
-          sx={{
-            padding: '16px'
-          }}
-        >
-          <SectionCard
-            backGroundColor='blue'
-            imgCover={codingpicture}
-            section='Coding'
-            linkTo='coding'
-          />
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={3}
-          lg={3}
-          xl={3}
-          sx={{
-            padding: '16px'
-          }}
-        >
-          <SectionCard
-            backGroundColor='blue'
-            imgCover={legendOfZelda}
-            section='Video Games'
-            linkTo='videoGames'
-          />
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={3}
-          lg={3}
-          xl={3}
-          sx={{
-            padding: '16px'
-          }}
-        >
-          <SectionCard
-            backGroundColor='blue'
-            imgCover={goldenboy2}
-            section='Shows / Movies'
-            linkTo='showsMovies'
-          />
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={3}
-          lg={3}
-          xl={3}
-          sx={{
-            padding: '16px'
-          }}
-        >
-          <SectionCard
-            backGroundColor='blue'
-            imgCover={suzuka}
-            section='Stories'
-            linkTo='stories'
-          />
-        </Grid> */}
         <SectionComponent
           homePage={true}
         />
-        <ArticalTabs
-          turOnAuthorForArtical={false}
-          oneLayerExtraTab={true}
-          nameOne={'Latest Articals'}
-          nameTwo={'All Articals'}
-          nameThree={'Popular Articals'}
-          nameFour={'Series'}
-          websiteData={articalData}
-        />
+          <TabsComponent
+            turnOnSectionTabsPadding={false}
+            tabsData={HomePageComponentTabData(false, articalData)}
+          />
       </AlignGrid>
     </Grid> 
   );
 }
-
-export type Props = {
-};
 
 export default HomePageComponent;

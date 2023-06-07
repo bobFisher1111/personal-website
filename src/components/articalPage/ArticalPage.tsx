@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import {
-  Typography,
   Grid,
 } from "@mui/material";
 import HeaderComponent from "../headerComponent/HeaderComponent";
 import HorizontalArticalCardComponent from "../cards/articalCards/horizontalCard/HorizontalArticalCardComponent";
-import AuthorComp from '../authorComponents/AuthorComp';
+import AuthorComponent from '../authorComponents/AuthorComponent';
 import { useSelector } from 'react-redux';
 import createArtical from '../../utilities/createArtical';
+import getNameFromUrl from '../../utilities/getNameFromUrl';
 
 
 const ArticalPage: React.FC<Props> = ({
@@ -20,12 +20,6 @@ const ArticalPage: React.FC<Props> = ({
     return (getIdFromCurrentLocation);
 
   }
-  const getArticalNameFromUrl = () => {
-    const currentLocation = window.location.href;
-    const getIdFromCurrentLocation = currentLocation.split("/").reverse()[0];
-    return (getIdFromCurrentLocation);
-
-  }
   const getAuthor = webData?.authors?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
   });
@@ -33,15 +27,13 @@ const ArticalPage: React.FC<Props> = ({
     return item.authorId === getIdFromUrl();
   });
   const currentArtical = getArticals?.filter((item: any) => {
-    return item.articalId === getArticalNameFromUrl();
+    return item.articalId === getNameFromUrl();
   });
   const getBook = webData?.books?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
   });
-  // const listOfArticals = getArticals();
   const authorData = getAuthor && getAuthor[0]
   const articalData = currentArtical && currentArtical[0];
-  const bookData = getBook && getBook;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -82,11 +74,7 @@ const ArticalPage: React.FC<Props> = ({
           headerTopPadding={true}
         />
       <HorizontalArticalCardComponent
-          title={'First JRPG ever played, was given money for birthday and the cover art looked cool. Had no idea what to expect'}
-          backgroundColor={'white'}
-          fontColor={'black'}
           author={authorData?.name}
-          likes='5'
           cardTextWidth={'1000px'}
           date={articalData?.publishedDate}
           imageWidth={'1000px'}
@@ -112,13 +100,12 @@ const ArticalPage: React.FC<Props> = ({
         lg={3}
         xl={3}
       >
-        <AuthorComp
+        <AuthorComponent
           turOnArticalPage={true}
-          turnOnSectionTabsPadding={true}
           articalAuthorData={authorData}
           articalData={getArticals}
           authorName={authorData?.name}
-          bookData={bookData}
+          bookData={getBook}
           authorsData={authorData}
         />
       </Grid>

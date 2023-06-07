@@ -62,7 +62,7 @@ const SectionsDropDown = () => {
           },
         }}
       >
-            <Typography
+        <Typography
             sx={{
               color: "white",
               "&:hover": {
@@ -70,9 +70,13 @@ const SectionsDropDown = () => {
               },
             }}
           >
-            Sections
+            <Grid
+              container
+            >
+              Sections
+              {state ?  <KeyboardArrowUpIcon/> : <KeyboardArrowDownIcon />}
+            </Grid>
           </Typography>
-          {state ?  <KeyboardArrowUpIcon/> : <KeyboardArrowDownIcon />}
         </Grid>
         <SwipeableDrawer
             anchor={'top'}
