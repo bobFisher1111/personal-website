@@ -12,12 +12,12 @@ import CopyLinkComponent from '../../../copyLinkComponent/CopyLinkComponent';
 const VerticalArticalCardComponent: React.FC<Props> = ({
   name,
   articalData,
+  seriesCopyLink,
+  series,
 }) => {
   const [articalPage, setArticalPage] = useState<boolean>();
   const articalUrl = `http://localhost:3000/artical/${articalData?.authorId}/${articalData?.articalId}`; // add first part to configFile
 
-  // console.log('articalData', articalData?.articalId);
-  console.log('what is name', name);
   useEffect(() => {
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = currentLocation.split("/");
@@ -100,7 +100,7 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
               >
                 <CardMedia
                   component="iframe"
-                  image={articalData?.coverImageOrVideo}
+                  image={articalData?.coverImageOrVideo || articalData?.seriesCoverImageOrVideo}
                   allowFullScreen
                   style={{
                     border: '0px',
@@ -118,7 +118,7 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
               <CardMedia
                 component="img"
                 height="400px"
-                image={articalData?.coverImageOrVideo}
+                image={articalData?.coverImageOrVideo || articalData?.seriesCoverImageOrVideo}
               />
               </Link>
           }
@@ -146,7 +146,7 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
               >
                 {!articalPage ?
                   <Link 
-                    href={articalUrl}
+                    href={series? seriesCopyLink : articalUrl}
                     rel="noreferrer"
                     sx={{
                       textDecoration: "none",
@@ -200,6 +200,8 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
                   defaultColor={'#ffffff'}
                   padding={'0px 0px 0px 0px'}
                   email={false}
+                  seriesId={articalData?.seriesId}
+                  turnOnSeries={true}
                 />
               </Grid>
             </Grid>
@@ -213,6 +215,8 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
 export type Props = {
   name: string | undefined;
   articalData: any;
+  seriesCopyLink?: string,
+  series?: boolean,
 };
 
 export default VerticalArticalCardComponent;

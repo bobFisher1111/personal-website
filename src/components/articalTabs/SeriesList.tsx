@@ -46,7 +46,7 @@ import {
           }
           {turOnAuthorForArtical &&
             <>
-              <h1>turtle2</h1>
+              <h1>turtle3</h1>
               <Grid
                 container
                 direction="row"
