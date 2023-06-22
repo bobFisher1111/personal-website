@@ -11,6 +11,7 @@ import WritersPage from '../pages/writers/WritersPage';
 import StoriesPage from '../pages/stories/StoriesPage';
 import ShowsMoviesPage from '../pages/showsMovies/ShowsMoviesPage';
 import VideoGamesPage from '../pages/videoGames/VideoGamesPage';
+import SeriesPage from '../pages/series/SeriesPage';
 
 type Route = {
   path?: string;
@@ -73,7 +74,11 @@ const routes: Route[] = [
   {
     path:'/videoGames',
     element: VideoGamesPage,
-  }
+  },
+  {
+    path: `/series/:id`,
+    element: SeriesPage,
+  },
 ];
 
 export default routes;

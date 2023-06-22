@@ -34,6 +34,7 @@ const ArticalPage: React.FC<Props> = ({
   });
   const authorData = getAuthor && getAuthor[0]
   const articalData = currentArtical && currentArtical[0];
+  console.log('cat, articalData', articalData?.sectionLink);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -87,6 +88,7 @@ const ArticalPage: React.FC<Props> = ({
           videoOrImageCover={articalData?.coverImageOrVideo}
           sectionLink={articalData?.sectionLink}
           section={articalData?.section}
+          turnOnSubTitle={true}
       />
         {articalData  && articalData.artical?.map((item: any) => (
           createArtical(item)

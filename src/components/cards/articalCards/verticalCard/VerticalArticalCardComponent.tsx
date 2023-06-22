@@ -17,6 +17,9 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
 }) => {
   const [articalPage, setArticalPage] = useState<boolean>();
   const articalUrl = `http://localhost:3000/artical/${articalData?.authorId}/${articalData?.articalId}`; // add first part to configFile
+  const serieslUrl = `http://localhost:3000/series/${articalData?.seriesId}`; // add first part to configFile
+  const authorUrl = `http://localhost:3000/author/${articalData?.authorId}`;
+  console.log('articalData', authorUrl)
 
   useEffect(() => {
     const currentLocation = window.location.href;
@@ -83,8 +86,8 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
           </Box>
           {articalData?.useVideoInsteadOfImage ?
             <Link 
-              href={articalUrl}
-              target="_blank"
+              href={series ? serieslUrl : articalUrl}
+              // target="_blank"
               rel="noreferrer"
             >
               <Grid
@@ -111,8 +114,8 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
             </Link>
             :
             <Link 
-                href={articalUrl}
-                target="_blank"
+                href={series ? serieslUrl : articalUrl}
+                // target="_blank"
                 rel="noreferrer"
               >
               <CardMedia
@@ -146,7 +149,7 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
               >
                 {!articalPage ?
                   <Link 
-                    href={series? seriesCopyLink : articalUrl}
+                    href={series? authorUrl : articalUrl}
                     rel="noreferrer"
                     sx={{
                       textDecoration: "none",

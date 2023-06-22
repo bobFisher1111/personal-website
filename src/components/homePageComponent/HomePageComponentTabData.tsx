@@ -1,12 +1,12 @@
 import ArticalsList from "../articalTabs/ArticalsList";
-import Series from "../series/Series";
+import Series from "../seriesComponent/Series";
 
 const HomePageComponentTabData = (turOnAuthorForArtical: boolean, data: any) => {
   return (
     [
       { 
         name: 'Articals',
-        data: ArticalsList(turOnAuthorForArtical, data)
+        data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={data} />
       },
       { 
         name: 'Series',

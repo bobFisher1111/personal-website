@@ -18,7 +18,7 @@ const SectionsComponent: React.FC<Props> = ({
       container
       sx={{
         background: '#fff',
-        minHeight: '100vh',
+        // minHeight: '100vh',
         display: 'flex',
         maxWidth: "1024px",
         margin: 'auto',
@@ -61,7 +61,7 @@ const SectionsComponent: React.FC<Props> = ({
        }}
       >
         <TabsComponent
-          turnOnSectionTabsPadding={false}
+          turnOnSectionTabsPadding={true}
           tabsData={sectionTabData}
         />
       </Grid>

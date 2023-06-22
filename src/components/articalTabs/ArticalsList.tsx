@@ -1,20 +1,19 @@
+import React from 'react';
 import {
   Grid,
 } from "@mui/material";
 import HorizontalArticalCardComponent from '../cards/articalCards/horizontalCard/HorizontalArticalCardComponent';
 import VerticalArticalCardComponent from "../cards/articalCards/verticalCard/VerticalArticalCardComponent";
 
-export const ArticalsList = (
-  turOnAuthorForArtical: boolean, 
-  data: any, 
-  name?: string,
-) => {  
-    console.log('what is name', data);
+export const ArticalsList: React.FC<Props> = ({
+  turOnAuthorForArtical, 
+  data, 
+  name,
+}) => {
     return (
       <>
         {!turOnAuthorForArtical &&
           <>
-            <h1>turtle1</h1>
             <Grid
               item
               xs={12}
@@ -43,13 +42,13 @@ export const ArticalsList = (
                 articalId={item.articalId}
                 videoOrImageCover={item.coverImageOrVideo}
                 sectionLink={item.sectionLink}
+                turnOnSubTitle={false}
               />
             ))}
           </>
         }
         {turOnAuthorForArtical &&
           <>
-            <h1>turtle2</h1>
             <Grid
               container
               direction="row"
@@ -84,5 +83,11 @@ export const ArticalsList = (
       </>
     )
 }
+
+export type Props = {
+  turOnAuthorForArtical: boolean, 
+  data: any, 
+  name?: string,
+};
 
 export default ArticalsList;

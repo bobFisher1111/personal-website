@@ -8,7 +8,11 @@
       "seriesAuthors": "Hawaiian Warrior",
       "useVideoInsteadOfImage": false,
       "seriesType": "Chapters",
-      "seriesTypeTitle": "Book"
+      "seriesTypeTitle": "Book",
+      "seriesStartDate": "May 1, 2023",
+      "section": "Video Games",
+      "authorId": "Hawaiian_Warrior",
+      "sectionLink": "stories"
     },
     {
       "seriesId": "series_Final_Fantasy_VIII_02",
@@ -17,7 +21,11 @@
       "seriesAuthors": "Bob The Fisher",
       "useVideoInsteadOfImage": true,
       "seriesType": "Series",
-      "seriesTypeTitle": "Video Game Series"
+      "seriesTypeTitle": "Video Game Series",
+      "seriesStartDate": "May 1, 2023",
+      "section": "Video Games",
+      "authorId": "Bob_The_Fisher",
+      "sectionLink": "coding"
     },
     {
       "seriesId": "series_Final_Fantasy_VIII_03",
@@ -26,7 +34,11 @@
       "seriesAuthors": "El Taco",
       "useVideoInsteadOfImage": true,
       "seriesType": "Tutorials",
-      "seriesTypeTitle": "Coding Tutorials"
+      "seriesTypeTitle": "Coding Tutorials",
+      "seriesStartDate": "May 1, 2023",
+      "section": "Video Games",
+      "authorId": "El_Taco",
+      "sectionLink": "videoGames"
     }
   ],
   "books": [
@@ -110,7 +122,7 @@
         "numberOfFavorites": 5,
         "series": true,
         "seriesChapter": 4,
-        "seriesType": "Chapters",
+        "seriesType": "Chapter",
         "useVideoInsteadOfImage": true,
         "coverImageOrVideo": "https://www.youtube.com/embed/1zme8jkQZ1U",
         "artical": [
@@ -147,7 +159,7 @@
         "coverImageOrVideo": "https://c4.wallpaperflare.com/wallpaper/716/41/312/final-fantasy-final-fantasy-vii-remake-cloud-strife-final-fantasy-vii-jessie-final-fantasy-hd-wallpaper-preview.jpg",
         "series": true,
         "seriesChapter": 2,
-        "seriesType": "Chapters",
+        "seriesType": "Chapter",
         "artical": [
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
@@ -182,7 +194,7 @@
         "coverImageOrVideo": "https://c4.wallpaperflare.com/wallpaper/716/41/312/final-fantasy-final-fantasy-vii-remake-cloud-strife-final-fantasy-vii-jessie-final-fantasy-hd-wallpaper-preview.jpg",
         "series": true,
         "seriesChapter": 3,
-        "seriesType": "Chapters",
+        "seriesType": "Chapter",
         "artical": [
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
@@ -217,7 +229,7 @@
         "coverImageOrVideo": "https://c4.wallpaperflare.com/wallpaper/716/41/312/final-fantasy-final-fantasy-vii-remake-cloud-strife-final-fantasy-vii-jessie-final-fantasy-hd-wallpaper-preview.jpg",
         "series": true,
         "seriesChapter": 4,
-        "seriesType": "Chapters",
+        "seriesType": "Chapter",
         "artical": [
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
@@ -240,7 +252,7 @@
       },
       {
         "articalId": "Final_Fantasy_VIII_05",
-        "seriesId": "series_Final_Fantasy_VIII_02",
+        "seriesId": "series_Final_Fantasy_VIII_01",
         "section":  "Coding",
         "sectionLink": "coding",
         "authorId": "Hawaiian_Warrior",
@@ -251,7 +263,7 @@
         "useVideoInsteadOfImage": false,
         "coverImageOrVideo": "https://c4.wallpaperflare.com/wallpaper/716/41/312/final-fantasy-final-fantasy-vii-remake-cloud-strife-final-fantasy-vii-jessie-final-fantasy-hd-wallpaper-preview.jpg",
         "series": true,
-        "seriesType": "Tutorials",
+        "seriesType": "Chapter",
         "artical": [
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
@@ -285,7 +297,7 @@
         "useVideoInsteadOfImage": false,
         "coverImageOrVideo": "https://c4.wallpaperflare.com/wallpaper/716/41/312/final-fantasy-final-fantasy-vii-remake-cloud-strife-final-fantasy-vii-jessie-final-fantasy-hd-wallpaper-preview.jpg",
         "series": true,
-        "seriesType": "Tutorials",
+        "seriesType": "Tutorial",
         "artical": [
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",
@@ -308,7 +320,7 @@
       },
       {
         "articalId": "Final_Fantasy_VIII_07",
-        "seriesId": "series_Final_Fantasy_VIII_01",
+        "seriesId": "series_Final_Fantasy_VIII_02",
         "section":  "Shows & Movies",
         "sectionLink": "showsMovies",
         "authorId": "Hawaiian_Warrior",
@@ -319,7 +331,7 @@
         "useVideoInsteadOfImage": false,
         "coverImageOrVideo": "https://c4.wallpaperflare.com/wallpaper/716/41/312/final-fantasy-final-fantasy-vii-remake-cloud-strife-final-fantasy-vii-jessie-final-fantasy-hd-wallpaper-preview.jpg",
         "series": true,
-        "seriesType": "Chapters",
+        "seriesType": "Chapter",
         "artical": [
           "$Turtle was here",
           "Lorem Ipsum is simply {dummy text} of the printing and typesetting industry. Lorem Ipsum has been the industry's",

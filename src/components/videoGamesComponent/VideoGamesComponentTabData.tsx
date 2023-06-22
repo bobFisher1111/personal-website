@@ -1,24 +1,24 @@
 import ArticalsList from "../articalTabs/ArticalsList";
-import SeriesList from "../articalTabs/SeriesList";
+import Series from "../seriesComponent/Series";
 
 const VideoGamesComponentTabData = (turOnAuthorForArtical: boolean, data: any) => {
   return (
     [
       { 
         name: 'All Articals',
-        data: ArticalsList(turOnAuthorForArtical, data)
+        data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={data} />
       },
       { 
         name: 'Modern',
-        data: ArticalsList(turOnAuthorForArtical, data)
+        data:<ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={data} />
       },
       { 
         name: 'Retro',
-        data: SeriesList(turOnAuthorForArtical, data)
+        data:<ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={data} />
       },
       { 
         name: 'Series',
-        data: SeriesList(turOnAuthorForArtical, data)
+        data: <Series data={data} />
       },
     ]
   )

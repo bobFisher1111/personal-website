@@ -27,6 +27,8 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
   articalId,
   videoOrImageCover,
   sectionLink,
+  turnOnSubTitle,
+  series,
 }) => {
   const [authorPage, setAuthorPage] = useState<boolean>();
   const [sectionPage, setSectionPage] = useState<boolean>();
@@ -34,7 +36,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
   const getAuthorData = getWebsiteData?.authors?.filter((item: any) => {
     return item.authorId === authorsId;
   });
-     
+  console.log('here3 sectionLink', sectionLink);
   useEffect(() => {
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = currentLocation.split("/");
@@ -48,6 +50,8 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
     const checkIfIncludesSection = getIdFromCurrentLocation.includes(sectionLink);
     setSectionPage(checkIfIncludesSection);
   }, []);
+
+  console.log('here 2', sectionLink);
 
   return (
     <div>
@@ -67,7 +71,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
             maxWidth: imageWidth,
           }}
         >
-          {articalPage && 
+          {turnOnSubTitle && 
             <Grid
               container
               justifyContent="center"
@@ -123,6 +127,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
                 sectionLink={sectionLink}
                 section={section}
                 articalID={articalId}
+                series={series}
               />
             </Grid>
           }
@@ -200,6 +205,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
                   sectionLink={sectionLink}
                   section={section}
                   articalID={articalId}
+                  series={series}
                 />
               }
               {!articalPage &&
@@ -237,6 +243,8 @@ export type Props = {
   articalId: string;
   videoOrImageCover: string;
   sectionLink: string;
+  turnOnSubTitle: boolean;
+  series?: boolean;
 };
   
 export default HorizontalArticalCardComponent;

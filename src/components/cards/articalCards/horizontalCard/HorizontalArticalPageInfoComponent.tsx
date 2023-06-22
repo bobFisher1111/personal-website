@@ -14,7 +14,15 @@ const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
   sectionLink,
   section,
   articalID,
+  series,
 }) => {
+  console.log('5 series page', series);
+  const getSeriesIdFromUrl = () => {
+    const currentLocation = window.location.href;
+    const seriesId = currentLocation.split("/").reverse()[0];
+    return (seriesId);
+  }
+  console.log('........', sectionLink);
   return (
     <>
       <Grid 
@@ -113,13 +121,23 @@ const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
         >
           |
         </Typography>
-        <CopyLinkComponent
-          authorsId={authorsId}
-          articalId={articalID}
-          defaultColor={'#667A6E'}
-          padding={'0px 0px 0px 16px'}
-          email={false}
+        {series ? 
+          <CopyLinkComponent
+            seriesId={getSeriesIdFromUrl()}
+            defaultColor={'#667A6E'}
+            padding={'0px 0px 0px 16px'}
+            email={false}
+            turnOnSeries={true}
         />
+        :
+          <CopyLinkComponent
+            authorsId={authorsId}
+            articalId={articalID}
+            defaultColor={'#667A6E'}
+            padding={'0px 0px 0px 16px'}
+            email={false}
+          />
+        }
       </Grid>
     </>
   )
@@ -132,6 +150,7 @@ export type Props = {
   sectionLink: string;
   section: string;
   articalID: string;
+  series: boolean | undefined;
 };
 
 export default HorizontalArticalPageInfoComponent;

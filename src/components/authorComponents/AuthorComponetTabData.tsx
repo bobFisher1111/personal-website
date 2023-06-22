@@ -1,5 +1,5 @@
 import ArticalsList from "../articalTabs/ArticalsList";
-import SeriesList from "../articalTabs/SeriesList";
+import Series from "../seriesComponent/Series";
 import Works from '../works/Works';
 import AuthorAbout from './AuthorAbout';
 
@@ -16,11 +16,11 @@ const AuthorComponetTabData = (
     [
       { 
         name: 'Writings',
-        data: ArticalsList(turOnAuthorForArtical, data, authorName)
+        data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={data} />
       },
       { 
         name: 'Series',
-        data: SeriesList(turOnAuthorForArtical, data, authorName)
+        data: <Series data={data} />
       },
       { 
         name: 'Books',

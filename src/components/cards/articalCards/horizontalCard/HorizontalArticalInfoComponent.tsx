@@ -16,10 +16,11 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
   sectionLink,
   sectionPage,
 }) => {
+    const articalUrl = `/artical/${authorsId}/${articalId}`;
     return (
       <>
         <Link 
-            to={`/artical/${authorsId}/${articalId}`}
+            to={articalUrl}
             style={{
               textDecoration: "none"
             }}

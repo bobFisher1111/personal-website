@@ -177,12 +177,12 @@ export const Series: React.FC<Props> = ({
                     margin: '0px 0px 0px 16px'
                   }}
                 >
-                    
                     <VerticalArticalCardComponent
                       key={index}
                       name={item.seriesAuthors}
                       articalData={item}
-                      seriesCopyLink={'http://localhost:3000/artical/Bob_The_Fisher/Final_Fantasy_VIII_01'}
+                      seriesCopyLink={`http://localhost:3000//series/${item.seriesId}`}
+                      series={true}
                     />
                 </Grid>
                 <Grid
@@ -210,7 +210,7 @@ export const Series: React.FC<Props> = ({
                       color: 'black',
                     }}
                   >
-                    <Link to={`/writers`}
+                    <Link to={`/series/${item.seriesId}`}
                         style={{
                           textDecoration: "none"
                         }}

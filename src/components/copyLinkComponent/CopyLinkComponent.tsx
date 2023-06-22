@@ -18,7 +18,7 @@ const CopyLinkComponent: React.FC<Props> = ({
   const [emailIcon, setEmailIcon] = useState<string>(defaultColor);
   const articalUrl = `http://localhost:3000/artical/${authorsId}/${articalId}`; // need to move this to .env file
   const seriesUrl = `http://localhost:3000/series/${seriesId}`;
-  const copyUrls = turnOnSeries ? seriesUrl : articalUrl;
+  const copyUrls = turnOnSeries ? seriesUrl : articalUrl; //
   return (
     <>
       {email ?

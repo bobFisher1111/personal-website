@@ -66,7 +66,7 @@ const HomePageComponent = () => {
           homePage={true}
         />
           <TabsComponent
-            turnOnSectionTabsPadding={false}
+            turnOnSectionTabsPadding={true}
             tabsData={HomePageComponentTabData(false, articalData)}
           />
       </AlignGrid>
