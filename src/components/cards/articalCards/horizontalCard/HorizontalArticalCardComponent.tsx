@@ -1,10 +1,9 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     Typography,
     Grid,
     Box,
     Card,
-    CardContent,
     CardMedia,
   } from "@mui/material";
 import { useSelector } from 'react-redux';
@@ -29,6 +28,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
   sectionLink,
   turnOnSubTitle,
   series,
+  articalPageList,
 }) => {
   const [authorPage, setAuthorPage] = useState<boolean>();
   const [sectionPage, setSectionPage] = useState<boolean>();
@@ -58,7 +58,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
       <Grid
         container
         direction="row"
-        justifyContent={!articalPage ? 'left' : 'center'}
+        justifyContent={!articalPage || articalPageList ? 'left' : 'center'}
         sx={{
           width: '100%',
           background: '#fff',
@@ -138,20 +138,16 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
               maxWidth: '740px',
               backgroundColor: 'white',
               boxShadow: "none",
+              padding: !articalPageList ? '4px 0px 0px 24px' : '',
             }}
           >
-            <CardContent
-              sx={{
-                maxWidth: `${cardTextWidth} !important`,
-                padding: '4px 16px 0px 16px',
-              }}
-            >
               <Link 
                 to={`/artical/${authorsId}/${articalId}`}
                 style={{
                   textDecoration: "none"
                 }}
               >
+                {!articalPageList &&
                 <Typography 
                   variant="body1"
                   color="#2F4C69" 
@@ -163,11 +159,13 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
                     WebkitLineClamp: '2',
                     WebkitBoxOrient: 'vertical',
                     fontFamily: 'sans-serif',
+                    maxWidth: `${cardTextWidth} !important`,
                   }} 
                   component="div"
                 >
                   {title}
                 </Typography>
+                }
                 <Typography 
                   variant="body1"
                   color="#667A6E" 
@@ -179,6 +177,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
                     WebkitLineClamp: '2',
                     WebkitBoxOrient: 'vertical',
                     fontFamily: 'sans-serif',
+                    maxWidth: articalPageList ? '321px' : `${cardTextWidth} !important`,
                   }} 
                   component="div"
                 >
@@ -197,18 +196,6 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
                   </Typography>
                 }
               </Link>
-              {articalPage && 
-                <HorizontalArticalPageInfoComponent
-                  authorsId={authorsId}
-                  author={author}
-                  date={date}
-                  sectionLink={sectionLink}
-                  section={section}
-                  articalID={articalId}
-                  series={series}
-                />
-              }
-              {!articalPage &&
                 <HorizontalArticalInfoComponent
                   section={section}
                   authorsId={authorsId}
@@ -218,8 +205,6 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
                   sectionLink={sectionLink}
                   sectionPage={sectionPage}
                 />
-              }
-            </CardContent>
           </Card>
         }
       </Grid>
@@ -245,6 +230,7 @@ export type Props = {
   sectionLink: string;
   turnOnSubTitle: boolean;
   series?: boolean;
+  articalPageList?: boolean;
 };
   
 export default HorizontalArticalCardComponent;

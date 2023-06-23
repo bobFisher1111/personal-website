@@ -6,9 +6,6 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
-import { useSelector } from 'react-redux';
-import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
-import { StringLiteral } from 'typescript';
 
 const WritersCard: React.FC<Props> = ({
   authorImage,
@@ -35,6 +32,12 @@ const WritersCard: React.FC<Props> = ({
         lg={4}
         xl={4}
       >
+        <Link 
+          to={`/author/${authorId}`}
+          style={{
+            textDecoration: "none"
+          }}
+        >
         <CardMedia
             component="img"
             image={authorImage}
@@ -44,6 +47,7 @@ const WritersCard: React.FC<Props> = ({
             borderRadius: '50%',
             }}
         />
+        </Link>
       </Grid>
         <Grid
           item
@@ -54,6 +58,12 @@ const WritersCard: React.FC<Props> = ({
           xl={8}
           sx={{
             paddingTop: '4px'
+          }}
+        >
+         <Link 
+          to={`/author/${authorId}`}
+          style={{
+            textDecoration: "none"
           }}
         >
         <Typography
@@ -69,6 +79,13 @@ const WritersCard: React.FC<Props> = ({
         >
           {authorName}
         </Typography>
+        </Link>
+        <Link 
+          to={`/author/${authorId}`}
+          style={{
+            textDecoration: "none"
+          }}
+        >
         <Typography
           variant="subtitle1"
           sx={{
@@ -82,26 +99,7 @@ const WritersCard: React.FC<Props> = ({
         >
           {authorsTitle}
         </Typography>
-        <Link 
-          to={`/author/${authorId}`}
-          style={{
-            textDecoration: "none"
-          }}
-        >
-            <Typography
-               sx={{
-                fontSize: '16px',
-                // color: "black",
-                cursor: "pointer",
-                "&:hover": {
-                  color: "#667A6E",
-                },
-                margin: "0px 22px 0px 0px"
-            }}
-            >
-              Learn more from the Author
-            </Typography>
-          </Link> 
+        </Link>
         <Grid
           container
         >

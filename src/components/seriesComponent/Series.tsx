@@ -11,12 +11,12 @@ import VerticalArticalCardComponent from "../cards/articalCards/verticalCard/Ver
 export const Series: React.FC<Props> = ({
     data, 
     name,
+    articalPage,
   }) => {
     const seriesTitleRef = useRef<any>();
     const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
     const series = getWebsiteData && getWebsiteData;
     const seriesData = data?.filter((series: any) => series.series === true);
-
     const createSeriesList = series?.series?.map((x: any) => {
       const seriesList = seriesData?.filter((item: any) => {
           let sL: any = [];
@@ -133,6 +133,7 @@ export const Series: React.FC<Props> = ({
                   paddingTop:'10px',
                 }}
               >
+                {!articalPage && 
                 <Grid
                   container
                 >
@@ -164,9 +165,42 @@ export const Series: React.FC<Props> = ({
                         {`${item?.seriesTypeTitle}: ${item?.seriesTitle}`}
                     </Typography>
                   </Grid>
-
                 </Grid>
+                }
+                { articalPage ?
+                <>
                 <Grid
+                  container
+                  direction="row"
+                  justifyContent="center"
+                  alignItems="center"
+                  sx={{
+                    paddingTop:'10px',
+                  }}
+                >
+                  <Grid
+                    item
+                    xs={8}
+                    sm={8}
+                    md={8}
+                    lg={8}
+                    xl={8}
+                    sx={{
+                      margin: '16px 0px 16px 16px'
+                    }}
+                  >
+                      <VerticalArticalCardComponent
+                        key={index}
+                        name={item.seriesAuthors}
+                        articalData={item}
+                        series={true}
+                      />
+                  </Grid>
+                </Grid>
+              </>
+                :
+                <>
+                 <Grid
                   item
                   xs={4}
                   sm={4}
@@ -221,6 +255,8 @@ export const Series: React.FC<Props> = ({
                     </Grid>
                   }
                 </Grid>
+                </>
+                }
               </Grid>
             ))}
          </>
@@ -230,6 +266,7 @@ export const Series: React.FC<Props> = ({
   export type Props = {
     data: any, 
     name?: string,
+    articalPage?: boolean,
   };
 
   export default Series;

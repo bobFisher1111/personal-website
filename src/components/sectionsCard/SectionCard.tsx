@@ -14,16 +14,7 @@ const SectionCard: React.FC<Props> = ({
       <Grid 
         container 
         sx={{
-          padding: '16px 0px 16px 0px', // may have to add some condition in for other places
-          // display:{
-          //   xs: "flex",
-          //   sm: "flex",
-          //   md: "flex",
-          //   lg: "flex",
-          //   xl: "flex",
-          //   // minWidth: "220px",
-          //   // maxWidth: "220px",
-          // },
+          padding: '16px 0px 16px 0px',
         }}
       >
         <Grid
@@ -41,17 +32,20 @@ const SectionCard: React.FC<Props> = ({
           }}
         >
           <Card>
+          <Link 
+              to={`/${linkTo}`}
+              style={{
+                textDecoration: "none"
+              }}
+            >
             <CardMedia
               component="img"
               alt="section image"
               width="200"
               height="212.5"
               image={imgCover}
-              // sx={{
-              //   width: '200px',
-              //   height: '112.5px',
-              // }}
             />
+          </Link>
             <CardActions 
               sx={{ 
                 backgroundColor: '#282c34', 

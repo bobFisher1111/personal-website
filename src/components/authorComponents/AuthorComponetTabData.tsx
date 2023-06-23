@@ -11,6 +11,7 @@ const AuthorComponetTabData = (
   turOnArticalPage: boolean,
   getBooks?: any,
   authorData?: any,
+  seriesForArticalPage?: boolean,
 ) => {
   return (
     [
@@ -20,7 +21,7 @@ const AuthorComponetTabData = (
       },
       { 
         name: 'Series',
-        data: <Series data={data} />
+        data: <Series data={data} articalPage={seriesForArticalPage}/>
       },
       { 
         name: 'Books',

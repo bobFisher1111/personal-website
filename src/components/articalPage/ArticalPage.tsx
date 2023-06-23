@@ -109,6 +109,7 @@ const ArticalPage: React.FC<Props> = ({
           authorName={authorData?.name}
           bookData={getBook}
           authorsData={authorData}
+          seriesForArticalPage={true}
         />
       </Grid>
     </Grid>

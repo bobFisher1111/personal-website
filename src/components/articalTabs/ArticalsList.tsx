@@ -1,14 +1,13 @@
 import React from 'react';
 import {
   Grid,
+  Typography,
 } from "@mui/material";
 import HorizontalArticalCardComponent from '../cards/articalCards/horizontalCard/HorizontalArticalCardComponent';
-import VerticalArticalCardComponent from "../cards/articalCards/verticalCard/VerticalArticalCardComponent";
 
 export const ArticalsList: React.FC<Props> = ({
   turOnAuthorForArtical, 
   data, 
-  name,
 }) => {
     return (
       <>
@@ -70,11 +69,43 @@ export const ArticalsList: React.FC<Props> = ({
                 }}
               >
                 { data?.map((item: any, index: any) => (
-                  <VerticalArticalCardComponent
-                    key={index}
-                    name={name}
-                    articalData={item}
-                  />
+                  <>
+                    <Typography 
+                      variant="body1"
+                      color="#2F4C69" 
+                      sx={{ 
+                        fontSize: '24px', // check to see if this is correct size
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        display: '-webkit-box',
+                        WebkitLineClamp: '2',
+                        WebkitBoxOrient: 'vertical',
+                        fontFamily: 'sans-serif',
+                      }} 
+                      component="div"
+                    >
+                      {item.articalTitle}
+                    </Typography>
+                    <HorizontalArticalCardComponent
+                      key={index}
+                      title={item.articalTitle}
+                      articalSubTitle={item.articalSubTitle}
+                      author={item.author}
+                      cardTextWidth={'639px'}
+                      date={item.publishedDate}
+                      imageWidth={'321px'}
+                      articalPage={false}
+                      useVideoInsteadOfImage={item.useVideoInsteadOfImage}
+                      section={item.section}
+                      articalData={data}
+                      authorsId={item.authorId}
+                      articalId={item.articalId}
+                      videoOrImageCover={item.coverImageOrVideo}
+                      sectionLink={item.sectionLink}
+                      turnOnSubTitle={false}
+                      articalPageList={true}
+                    />
+                  </>
                 ))}
               </Grid>
             </Grid>
@@ -87,7 +118,6 @@ export const ArticalsList: React.FC<Props> = ({
 export type Props = {
   turOnAuthorForArtical: boolean, 
   data: any, 
-  name?: string,
 };
 
 export default ArticalsList;

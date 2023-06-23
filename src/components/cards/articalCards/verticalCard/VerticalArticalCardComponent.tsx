@@ -38,24 +38,6 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
         sx={{
           minWidth: '345px',
           maxWidth: '345px',
-          transition: 'transform .5s',
-          '&::after': {
-            posisition: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            transition: 'opacity 2s cubic-bezier(.165, .84, .44, 1)',
-            boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
-            opacity: 0,
-            zIndex: -1,
-          },
-          '&:hover, &:focus': {
-            transform: 'scale3d(1.006, 1.006, 2)',
-            '&::after': {
-              opacity: 1,
-            }
-          },
         }}
       >
         <Box 
@@ -81,13 +63,12 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
                 padding: '16px',
               }}
             >
-              {articalData?.articalTitle}
+              {articalData?.articalTitle || articalData?.seriesTitle}
             </Typography>
           </Box>
           {articalData?.useVideoInsteadOfImage ?
             <Link 
               href={series ? serieslUrl : articalUrl}
-              // target="_blank"
               rel="noreferrer"
             >
               <Grid

@@ -16,7 +16,8 @@ const AuthorComponent: React.FC<Props> = ({
   articalData,
   bookData,
   authorsData,
-  authorName
+  authorName,
+  seriesForArticalPage,
 }) => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const webData = getWebsiteData && getWebsiteData
@@ -136,6 +137,7 @@ const AuthorComponent: React.FC<Props> = ({
               false,
               bookData,
               authorsData,
+              seriesForArticalPage,
             )
           }
         />
@@ -167,6 +169,7 @@ export type Props = {
   bookData?: any;
   authorsData?: any;
   authorName?: string;
+  seriesForArticalPage?: boolean;
 };
 
 export default AuthorComponent;

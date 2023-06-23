@@ -18,26 +18,6 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
 }) => {
     const articalUrl = `/artical/${authorsId}/${articalId}`;
     return (
-      <>
-        <Link 
-            to={articalUrl}
-            style={{
-              textDecoration: "none"
-            }}
-          >
-            <Typography
-              sx={{
-                fontSize: '16px',
-                cursor: "pointer",
-                "&:hover": {
-                  color: "#667A6E",
-                },
-                margin: "0px 22px 0px 0px"
-              }}
-            >
-              More from the Artical
-            </Typography>
-        </Link> 
         <Grid 
           container
           direction="row"
@@ -146,7 +126,6 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
             email={false}
           />
         </Grid>
-      </>
     )
 }
 
