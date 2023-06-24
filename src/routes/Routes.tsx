@@ -1,7 +1,6 @@
 import HomePage from '../pages/home/HomePage';
 import About from '../pages/about/About';
 import CodingPage from '../pages/coding/CodingPage';
-import Contact from '../pages/contact/Contact';
 import Logout from '../pages/logout/Logout';
 import DashboardAnalytics from '../pages/dashboardAnalytics/DashboardAnalytics';
 import Profile from '../pages/profile/Profile';
@@ -22,10 +21,6 @@ const routes: Route[] = [
   {
     path: '/about',
     element: About,
-  },
-  {
-    path: '/contact',
-    element: Contact,
   },
   {
     path: '/dashboard',

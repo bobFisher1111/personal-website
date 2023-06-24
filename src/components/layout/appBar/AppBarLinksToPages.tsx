@@ -10,7 +10,7 @@ const AppBarLinksToPages = () => {
   return (
     <>
         <Grid item>
-          <Link to="/contact"
+          <Link to="/about"
             style={{textDecoration: "none"}}
           >
             <Typography

@@ -91,10 +91,11 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
               <Box
                 component="img"
                 sx={{
-                  maxWidth: '100%',
-                  height: 'auto',
+                  // maxWidth: '100%',
+                  height: articalPage ? '576px' : '181px',
                   borderRadius: '7px',
                   aspectRatio: '16/9',
+                  width: articalPage ? '960px' : '321px',
                 }}
                 alt="Artical Cover Image"
                 src={videoOrImageCover}
@@ -159,7 +160,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
                     WebkitLineClamp: '2',
                     WebkitBoxOrient: 'vertical',
                     fontFamily: 'sans-serif',
-                    maxWidth: `${cardTextWidth} !important`,
+                    maxWidth: articalPage ? '960px' : '321px',
                   }} 
                   component="div"
                 >
