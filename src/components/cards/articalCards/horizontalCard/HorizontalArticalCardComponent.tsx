@@ -36,7 +36,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
   const getAuthorData = getWebsiteData?.authors?.filter((item: any) => {
     return item.authorId === authorsId;
   });
-  console.log('here3 sectionLink', sectionLink);
+
   useEffect(() => {
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = currentLocation.split("/");
@@ -50,8 +50,6 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
     const checkIfIncludesSection = getIdFromCurrentLocation.includes(sectionLink);
     setSectionPage(checkIfIncludesSection);
   }, []);
-
-  console.log('here 2', sectionLink);
 
   return (
     <div>
@@ -85,6 +83,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
           {!useVideoInsteadOfImage ?
             <Link 
               to={`/artical/${authorsId}/${articalId}`}
+              reloadDocument={true}
               style={{
                 textDecoration: "none"
               }}
@@ -141,8 +140,9 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
               padding: !articalPageList ? '4px 0px 0px 24px' : '',
             }}
           >
-              <Link 
+            <Link 
                 to={`/artical/${authorsId}/${articalId}`}
+                reloadDocument={true}
                 style={{
                   textDecoration: "none"
                 }}

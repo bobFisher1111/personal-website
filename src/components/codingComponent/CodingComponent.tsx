@@ -10,8 +10,6 @@ const CodingComponent = () => {
     return item.section === 'Coding';
   });
 
-  console.log('.........', articalSectionFilter);
-
   return (
       <SectionsComponent
         headerTitle='Coding'

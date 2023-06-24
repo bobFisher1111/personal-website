@@ -26,7 +26,6 @@ const AuthorComponent: React.FC<Props> = ({
     const getIdFromCurrentLocation = currentLocation.split("/").reverse()[0];
     return (getIdFromCurrentLocation);
   }
-  console.log('here', getIdFromUrl());
   const getAuthor = webData?.authors?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
   });

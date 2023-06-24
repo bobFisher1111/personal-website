@@ -16,13 +16,12 @@ const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
   articalID,
   series,
 }) => {
-  console.log('5 series page', series);
   const getSeriesIdFromUrl = () => {
     const currentLocation = window.location.href;
     const seriesId = currentLocation.split("/").reverse()[0];
     return (seriesId);
   }
-  console.log('........', sectionLink);
+
   return (
     <>
       <Grid 

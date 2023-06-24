@@ -15,8 +15,6 @@ const SeriesComponent = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const seriesData = getWebsiteData && getWebsiteData;
 
-  console.log('what is websitedata', seriesData);
-
   const getSeriesIdFromUrl = () => {
     const currentLocation = window.location.href;
     const seriesId = currentLocation.split("/").reverse()[0];
@@ -29,13 +27,9 @@ const SeriesComponent = () => {
 
   const getSeriesArticals = seriesData?.articals?.filter((item: any) => {
     return item.seriesId === getSeriesIdFromUrl();
-  });  
-
-  console.log('.............', getSeriesFromId);
+  });
 
   const seriesInfo = getSeriesFromId && getSeriesFromId[0];
-
-  console.log('what is getSeriesArticals', getSeriesArticals);
 
   return (
     <>
@@ -108,24 +102,6 @@ const SeriesComponent = () => {
           padding: '32px 0px 16px 0px',
         }}
       >
-       {/* <HorizontalArticalCardComponent
-                key={index}
-                title={item.articalTitle}
-                articalSubTitle={item.articalSubTitle}
-                author={item.author}
-                cardTextWidth={'639px'}
-                date={item.publishedDate}
-                imageWidth={'321px'}
-                articalPage={false}
-                useVideoInsteadOfImage={item.useVideoInsteadOfImage}
-                section={item.section}
-                articalData={item.publishedDate}
-                authorsId={item.authorId}
-                articalId={item.articalId}
-                videoOrImageCover={item.coverImageOrVideo}
-                sectionLink={item.sectionLink}
-                turnOnSubTitle={false}
-              /> */}
         <Link to={`/artical/${item?.authorId}/${item?.articalId}`}
           style={{
             textDecoration: "none"

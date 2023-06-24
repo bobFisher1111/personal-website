@@ -19,7 +19,6 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
   const articalUrl = `http://localhost:3000/artical/${articalData?.authorId}/${articalData?.articalId}`; // add first part to configFile
   const serieslUrl = `http://localhost:3000/series/${articalData?.seriesId}`; // add first part to configFile
   const authorUrl = `http://localhost:3000/author/${articalData?.authorId}`;
-  console.log('articalData', authorUrl)
 
   useEffect(() => {
     const currentLocation = window.location.href;

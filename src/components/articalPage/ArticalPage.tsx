@@ -34,7 +34,6 @@ const ArticalPage: React.FC<Props> = ({
   });
   const authorData = getAuthor && getAuthor[0]
   const articalData = currentArtical && currentArtical[0];
-  console.log('cat, articalData', articalData?.sectionLink);
 
   useEffect(() => {
     window.scrollTo(0, 0);
