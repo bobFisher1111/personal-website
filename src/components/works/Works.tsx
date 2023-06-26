@@ -10,6 +10,8 @@ import {
 const Works: React.FC<Props> = ({
   authorsPage,
   bookData,
+  aboutWorks,
+  articalPage,
 }) => {
   const bookImageHeightRef = useRef<any>();
   const titleHeightRef = useRef<any>();
@@ -30,6 +32,8 @@ const Works: React.FC<Props> = ({
       setInfoHeight(bottomHPixel);
     }
   }, [infoHeight]);
+  
+  console.log('aboutWorks', authorsPage);
 
   const articalPageBookExtrainfo = (item: any, bottomHeight: string) => {
     return (
@@ -118,13 +122,13 @@ const Works: React.FC<Props> = ({
         xl={12}
       >
         <Typography
-          color="#2F4C69"
+          color={aboutWorks ? "#667A6E" : "#2F4C69"}
           variant="h6"
           sx={{
             padding: authorsPage ? '' : '16px',
           }}
         >
-          Author Book's
+          {aboutWorks ? 'Favorite books' : "Author Book's"}
         </Typography>
       </Grid>
     </Grid>
@@ -165,20 +169,21 @@ const Works: React.FC<Props> = ({
       </Grid>
       <Grid
         item
-        xs={8}
-        sm={8}
-        md={8}
-        lg={8}
-        xl={8}
+        xs={articalPage ? 6 : 8}
+        sm={articalPage ? 6 : 8}
+        md={articalPage ? 6 : 8}
+        lg={articalPage ? 6 : 8}
+        xl={articalPage ? 6 : 8}
         sx={{
-          padding: '0px 0px 0px 0px',
+          padding: '0px 0px 0px 8px',
         }}
       >
         <Typography
-          color="#667A6E"
+          color={aboutWorks ? "#2F4C69" : "#667A6E"}
           ref={titleHeightRef}
-          variant="h6"
+          // variant="h6"
           sx={{
+            fontSize: aboutWorks ? "20px" : "20px",
             overflow: 'hidden',
             textOverflow: 'ellipsis',
             display: '-webkit-box',
@@ -191,7 +196,7 @@ const Works: React.FC<Props> = ({
       
         {authorsPage &&
           <Typography
-            color="#2F4C69"
+            color={aboutWorks ? "#667A6E" : "#2F4C69"}
             ref={bookPlotHeightRef}
             variant="subtitle1"
             sx={{
@@ -227,6 +232,8 @@ const Works: React.FC<Props> = ({
 export type Props = {
   authorsPage?: boolean;
   bookData?: any;
+  aboutWorks?: boolean;
+  articalPage?: boolean;
 };
 
 export default Works;

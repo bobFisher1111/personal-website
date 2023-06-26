@@ -12,6 +12,7 @@ const AuthorComponetTabData = (
   getBooks?: any,
   authorData?: any,
   seriesForArticalPage?: boolean,
+  // articalPage?: boolean,
 ) => {
   return (
     [
@@ -29,6 +30,7 @@ const AuthorComponetTabData = (
           <Works
             authorsPage={turOnArticalPage}
             bookData={getBooks}
+            articalPage={true}
           />
       },
       { 
@@ -37,6 +39,7 @@ const AuthorComponetTabData = (
           <AuthorAbout
             turnPaddingOn={authorsPage}
             aboutData={authorData}
+            bookData={getBooks}
         />
       },
     ]

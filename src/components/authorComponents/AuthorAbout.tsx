@@ -4,13 +4,29 @@ import
     Grid,
     Link,
 } from '@mui/material/';
+import Works from '../works/Works';
 
 const AuthorAbout: React.FC<Props> = ({
   turnPaddingOn,
   aboutData,
+  bookData,
 }) => {
   const questionaireData = aboutData?.about[0]?.questionaire[0];
   return (
+    <>
+    <Grid 
+    container
+    direction="row"
+    justifyContent="flex-start"
+    alignItems="center"
+    >
+      <Works
+        authorsPage={true}
+        bookData={bookData}
+        aboutWorks={true}
+        articalPage={true}
+      />
+    </Grid>
     <Grid 
     container
     direction="row"
@@ -990,12 +1006,14 @@ const AuthorAbout: React.FC<Props> = ({
             </Link>
       </Grid>
     </Grid>
+    </>
   );
 }
 
 export type Props = {
   turnPaddingOn: boolean,
   aboutData: any;
+  bookData: any;
 };
 
 export default AuthorAbout;
