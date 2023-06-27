@@ -10,12 +10,30 @@ const CodingComponent = () => {
     return item.section === 'Coding';
   });
 
+  const articalFrontEndFilter = articalData?.articals?.filter((item: any) => {
+    return item.sectionType === 'Front End';
+  });
+
+  const articalBackEndFilter = articalData?.articals?.filter((item: any) => {
+    return item.sectionType === 'Back End';
+  });
+
+  const articalDataFilter = articalData?.articals?.filter((item: any) => {
+    return item.sectionType === 'Data';
+  });
+
   return (
       <SectionsComponent
         headerTitle='Coding'
         backgroundColor='white'
         fontColor='#2F4C69'
-        sectionTabData={CodingComponentTabData(false, articalSectionFilter)}
+        sectionTabData={CodingComponentTabData(
+          false,
+          articalSectionFilter,
+          articalFrontEndFilter,
+          articalBackEndFilter,
+          articalDataFilter,
+        )}
       />
   );
 }

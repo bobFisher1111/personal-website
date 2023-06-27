@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 import {
@@ -12,7 +12,9 @@ export const Series: React.FC<Props> = ({
     data, 
     name,
     articalPage,
+    section,
   }) => {
+    const [filterSeries, setFilterSeries] = useState<any>([]);
     const seriesTitleRef = useRef<any>();
     const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
     const series = getWebsiteData && getWebsiteData;
@@ -27,6 +29,18 @@ export const Series: React.FC<Props> = ({
       )
       return seriesList
     });
+    
+    const seriesFilter = series?.series?.filter((item: any) => {
+      return item.section === section;
+    });
+
+    useEffect(() => {
+      if (section !== undefined) {
+        setFilterSeries(seriesFilter)
+      } else {
+        setFilterSeries(series?.series)
+      }
+    }, [])
 
     const textLoop = (item: any, index: number) => {
         return createSeriesList[index].slice(0, 4).filter((n: any, ip: number) => {
@@ -120,10 +134,10 @@ export const Series: React.FC<Props> = ({
           }
         })
     }
-    
+
     return (
         <>
-        { series.series?.map((item: any, index: any) => (
+        {filterSeries.map((item: any, index: any) => (
               <Grid
                 container
                 direction="row"
@@ -267,6 +281,7 @@ export const Series: React.FC<Props> = ({
     data: any, 
     name?: string,
     articalPage?: boolean,
+    section?: string,
   };
 
   export default Series;
