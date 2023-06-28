@@ -6,6 +6,7 @@ import {
   Typography,
   Button,
 } from "@mui/material";
+import ComingSoon from "../../utilities/ComingSoon";
 import VerticalArticalCardComponent from "../cards/articalCards/verticalCard/VerticalArticalCardComponent";
 
 export const Series: React.FC<Props> = ({
@@ -13,6 +14,9 @@ export const Series: React.FC<Props> = ({
     name,
     articalPage,
     section,
+    authorPage,
+    homePage,
+    seriesForAuthorsPage,
   }) => {
     const [filterSeries, setFilterSeries] = useState<any>([]);
     const seriesTitleRef = useRef<any>();
@@ -30,25 +34,40 @@ export const Series: React.FC<Props> = ({
       return seriesList
     });
     
+    const filteredSeriesList = createSeriesList.filter((value: any) => Object.keys(value).length !== 0);
+  
     const seriesFilter = series?.series?.filter((item: any) => {
       return item.section === section;
     });
 
+    const seriesAhtorFilter = series?.series?.filter((item: any) => {
+      return item.authorId === name;
+    });
+
     useEffect(() => {
       if (section !== undefined) {
-        setFilterSeries(seriesFilter)
-      } else {
-        setFilterSeries(series?.series)
+        setFilterSeries(seriesFilter);
+      } 
+      if (articalPage) {
+        setFilterSeries(series?.series);
+      }
+      if (seriesForAuthorsPage) {
+        setFilterSeries(seriesAhtorFilter);
+      }
+      if (homePage) {
+        setFilterSeries(series?.series);
       }
     }, [])
-
+  
+    const noSeries = filteredSeriesList.length === 0;
+    
     const textLoop = (item: any, index: number) => {
-        return createSeriesList[index].slice(0, 4).filter((n: any, ip: number) => {
+        return filteredSeriesList[index]?.slice(0, 4).filter((n: any, ip: number) => {
           return item.seriesId === item.seriesId;
         })
         .map((a: any, i: number) => {
               if(item.seriesId === a.seriesId) {
-              const seriesTitle = `${a.seriesType} ${i + 1}: ${a?.articalId}`;
+              const seriesTitle = `${a.seriesType} ${i + 1}: ${a?.articalTitle}`;
               return (
                   <Grid
                       container
@@ -137,6 +156,9 @@ export const Series: React.FC<Props> = ({
 
     return (
         <>
+        {noSeries && 
+          <ComingSoon />
+        }
         {filterSeries.map((item: any, index: any) => (
               <Grid
                 container
@@ -278,10 +300,13 @@ export const Series: React.FC<Props> = ({
   }
   
   export type Props = {
-    data: any, 
-    name?: string,
-    articalPage?: boolean,
-    section?: string,
+    data: any;
+    name?: string;
+    articalPage?: boolean;
+    section?: string;
+    authorPage?: boolean;
+    homePage?: boolean;
+    seriesForAuthorsPage?: boolean;
   };
 
   export default Series;

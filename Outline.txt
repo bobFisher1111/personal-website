@@ -32,16 +32,21 @@
     - Update Artical Cards where you click it will bring up artical page // completed
     - Setup Redux // completed
   - Extra:
-    - Create new section for Series
-      - Update db
+    - Create new section for Series // completed
+      - Update db // completed
+    - filtering by sections: working on // completed
+    - if artical or series has nothing, have a message for each section, like comming soon // completed
+    - filter articals and series by newest date
+    - Artical Page, author picture + name links to authors page
+    - Add additonal chips for series & section of section like retro
     - Refactor website
     - Write test classes // maybe for later
     - Implement npm run check:all
     - Implement build
 - Sprint 4:
-  - Update CSS with new changes
   - Add mobile view for entire website
 - Sprint 5:
+  - Correct types and temp db
   - Create database
 - Sprint 6:
   - Create backend to connect database with endpoint

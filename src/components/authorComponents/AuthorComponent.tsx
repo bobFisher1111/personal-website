@@ -127,7 +127,7 @@ const AuthorComponent: React.FC<Props> = ({
         {turOnArticalPage ?
         <TabsComponent
           turnOnSectionTabsPadding={false}
-          tabsData={ //
+          tabsData={
             AuthorComponetTabData(
               true, 
               articalData,
@@ -137,6 +137,7 @@ const AuthorComponent: React.FC<Props> = ({
               bookData,
               authorsData,
               seriesForArticalPage,
+              false
             )
           }
         />
@@ -147,11 +148,13 @@ const AuthorComponent: React.FC<Props> = ({
             AuthorComponetTabData(
               false, 
               getArticals,
-              authorName,
+              getIdFromUrl(),
               false,
               true,
               getBooks,
               authorData,
+              false,
+              true
             )
           }
         />

@@ -10,12 +10,25 @@ const VideoGamesComponent = () => {
     return item.section === 'Video Games';
   });
 
+  const articalModernFilter = articalData?.articals?.filter((item: any) => {
+    return item.sectionType === 'Modern';
+  });
+
+  const articalRetroFilter = articalData?.articals?.filter((item: any) => {
+    return item.sectionType === 'Retro';
+  });
+  
   return (
       <SectionsComponent
         headerTitle='Video Games'
         backgroundColor='white'
         fontColor='#2F4C69'
-        sectionTabData={VideoGamesComponentTabData(false, articalSectionFilter)}
+        sectionTabData={VideoGamesComponentTabData(
+          false,
+          articalSectionFilter,
+          articalModernFilter,
+          articalRetroFilter,
+        )}
       />
   );
 }

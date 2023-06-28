@@ -32,8 +32,6 @@ const Works: React.FC<Props> = ({
       setInfoHeight(bottomHPixel);
     }
   }, [infoHeight]);
-  
-  console.log('aboutWorks', authorsPage);
 
   const articalPageBookExtrainfo = (item: any, bottomHeight: string) => {
     return (

@@ -14,7 +14,10 @@ const StoriesComponent = () => {
         headerTitle='Stories'
         backgroundColor='white'
         fontColor='#2F4C69'
-        sectionTabData={StoriesComponentTabData(false, articalSectionFilter)}
+        sectionTabData={StoriesComponentTabData(
+          false,
+          articalSectionFilter,
+        )}
       />
   );
 }

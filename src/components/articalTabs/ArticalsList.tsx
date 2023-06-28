@@ -3,14 +3,19 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
+import ComingSoon from "../../utilities/ComingSoon";
 import HorizontalArticalCardComponent from '../cards/articalCards/horizontalCard/HorizontalArticalCardComponent';
 
 export const ArticalsList: React.FC<Props> = ({
   turOnAuthorForArtical, 
   data, 
 }) => {
+    const noArticals = data?.length === 0;
     return (
       <>
+        {noArticals && 
+          <ComingSoon />
+        }
         {!turOnAuthorForArtical &&
           <>
             <Grid

@@ -12,8 +12,9 @@ const AuthorComponetTabData = (
   getBooks?: any,
   authorData?: any,
   seriesForArticalPage?: boolean,
-  // articalPage?: boolean,
+  seriesForAuthorsPage?: boolean,
 ) => {
+
   return (
     [
       { 
@@ -22,7 +23,14 @@ const AuthorComponetTabData = (
       },
       { 
         name: 'Series',
-        data: <Series data={data} articalPage={seriesForArticalPage}/>
+        data: 
+          <Series 
+            data={data}
+            articalPage={seriesForArticalPage}
+            authorPage={authorsPage}
+            name={authorName}
+            seriesForAuthorsPage={seriesForAuthorsPage}
+          />
       },
       { 
         name: 'Books',

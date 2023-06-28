@@ -1,7 +1,10 @@
 import ArticalsList from "../articalTabs/ArticalsList";
 import Series from "../seriesComponent/Series";
 
-const HomePageComponentTabData = (turOnAuthorForArtical: boolean, data: any) => {
+const HomePageComponentTabData = (
+  turOnAuthorForArtical: boolean,
+  data: any
+) => {
   return (
     [
       { 
@@ -10,7 +13,7 @@ const HomePageComponentTabData = (turOnAuthorForArtical: boolean, data: any) => 
       },
       { 
         name: 'Series',
-        data: <Series data={data} />
+        data: <Series data={data} homePage={true}/>
       },
     ]
   )

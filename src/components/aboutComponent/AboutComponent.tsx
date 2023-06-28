@@ -203,10 +203,18 @@ const AboutComponent: React.FC<Props> = () => {
             style={{
               textAlign: 'center',
               color: '#667A6E',
-              // padding: '0px 0px 12px 0px',
             }}
           >
-            dark theme
+            Overhaul to Artical Page
+          </Typography>
+          <Typography
+            variant="h6"
+            style={{
+              textAlign: 'center',
+              color: '#667A6E',
+            }}
+          >
+            Dark Theme
           </Typography>
         </Grid>
         <Grid
