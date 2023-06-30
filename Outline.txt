@@ -36,10 +36,11 @@
       - Update db // completed
     - filtering by sections: working on // completed
     - if artical or series has nothing, have a message for each section, like comming soon // completed
-    - filter articals and series by newest date
+    - filter articals and series by newest date // completed, left series articals first created in that order
     - Artical Page, author picture + name links to authors page
     - Add additonal chips for series & section of section like retro
     - Refactor website
+      - move getURL function to utilties
     - Write test classes // maybe for later
     - Implement npm run check:all
     - Implement build

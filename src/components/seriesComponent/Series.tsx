@@ -22,8 +22,23 @@ export const Series: React.FC<Props> = ({
     const seriesTitleRef = useRef<any>();
     const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
     const series = getWebsiteData && getWebsiteData;
+
+
+    const getIdFromUrl = () => {
+      const currentLocation = window.location.href;
+      const getIdFromCurrentLocation = currentLocation.split("/").reverse()[1];
+      return (getIdFromCurrentLocation);
+    }
+
+    const newNonImmutableArray = series?.series?.map((item: any) => item);
+    const sortByDate = newNonImmutableArray?.sort((a: any, b: any)=> {
+      const date1: any = new Date(a.seriesStartDate);
+      const date2: any = new Date(b.seriesStartDate);
+      return date2 - date1;
+    });
+
     const seriesData = data?.filter((series: any) => series.series === true);
-    const createSeriesList = series?.series?.map((x: any) => {
+    const createSeriesList = sortByDate?.map((x: any) => {
       const seriesList = seriesData?.filter((item: any) => {
           let sL: any = [];
           if (item?.seriesId ===  x?.seriesId) {
@@ -33,14 +48,18 @@ export const Series: React.FC<Props> = ({
       )
       return seriesList
     });
-    
+
     const filteredSeriesList = createSeriesList.filter((value: any) => Object.keys(value).length !== 0);
   
-    const seriesFilter = series?.series?.filter((item: any) => {
+    const seriesFilter = sortByDate?.filter((item: any) => {
       return item.section === section;
     });
 
-    const seriesAhtorFilter = series?.series?.filter((item: any) => {
+    const seriesAuhtorFilterArticalPage = sortByDate?.filter((item: any) => {
+      return item.authorId === getIdFromUrl();
+    });
+
+    const seriesAuhtorFilterAuthorPage = sortByDate?.filter((item: any) => {
       return item.authorId === name;
     });
 
@@ -49,13 +68,13 @@ export const Series: React.FC<Props> = ({
         setFilterSeries(seriesFilter);
       } 
       if (articalPage) {
-        setFilterSeries(series?.series);
+        setFilterSeries(seriesAuhtorFilterArticalPage);
       }
       if (seriesForAuthorsPage) {
-        setFilterSeries(seriesAhtorFilter);
+        setFilterSeries(seriesAuhtorFilterAuthorPage);
       }
       if (homePage) {
-        setFilterSeries(series?.series);
+        setFilterSeries(sortByDate);
       }
     }, [])
   
@@ -267,7 +286,7 @@ export const Series: React.FC<Props> = ({
                   }}
                 >
                   {textLoop(item, index)}
-                  { (createSeriesList[index].length / 4) >= 1 && 
+                  { (filteredSeriesList[index].length / 4) >= 1 && 
                   <Grid
                     container
                     sx={{
