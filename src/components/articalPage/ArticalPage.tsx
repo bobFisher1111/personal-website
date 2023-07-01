@@ -18,7 +18,6 @@ const ArticalPage: React.FC<Props> = ({
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = currentLocation.split("/").reverse()[1];
     return (getIdFromCurrentLocation);
-
   }
   const getAuthor = webData?.authors?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
@@ -73,7 +72,7 @@ const ArticalPage: React.FC<Props> = ({
           authorAvatar={false}
           headerTopPadding={true}
         />
-      <HorizontalArticalCardComponent
+        <HorizontalArticalCardComponent
           author={authorData?.name}
           cardTextWidth={'1000px'}
           date={articalData?.publishedDate}
@@ -88,11 +87,11 @@ const ArticalPage: React.FC<Props> = ({
           sectionLink={articalData?.sectionLink}
           section={articalData?.section}
           turnOnSubTitle={true}
-      />
-        {articalData  && articalData.artical?.map((item: any) => (
-          createArtical(item)
-        ))}
-    </Grid>
+        />
+          {articalData  && articalData.artical?.map((item: any) => (
+            createArtical(item)
+          ))}
+       </Grid>
         <Grid
         item
         xs={0}

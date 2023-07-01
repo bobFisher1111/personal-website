@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import {
   Grid,
   Typography,
@@ -14,6 +15,8 @@ const HeaderComponent:  React.FC<Props> = ({
   authorAvatar,
   headerTopPadding,
   avatarImage,
+  authorId,
+  articalPage
 }) => {
   const titleFunction = (item: any) => {
     return (
@@ -51,15 +54,34 @@ const HeaderComponent:  React.FC<Props> = ({
             padding: '0px 0px 0px 16px'
           }}
         >
+          {articalPage ? 
+          <Link 
+              to={`/author/${authorId}`}
+              style={{
+                textDecoration: "none"
+              }}
+            >
            <Avatar 
-             alt="Remy Sharp"
+             alt="Authors Avatar"
              src={avatarImage}
              sx={{
               width: 56,
               height: 56,
              }}
           />
-      </Grid>
+          </Link>
+   
+          :
+          <Avatar 
+             alt="Authors Avatar"
+             src={avatarImage}
+             sx={{
+              width: 56,
+              height: 56,
+             }}
+          />
+          }
+        </Grid>
       <Grid
         item
         sx={{
@@ -67,7 +89,20 @@ const HeaderComponent:  React.FC<Props> = ({
           padding: '25px 16px 25px 16px',
         }}
       >
-       {titleFunction(title)}
+        {articalPage ?
+        <Link 
+          to={`/author/${authorId}`}
+          style={{
+            textDecoration: "none"
+          }}
+        >
+          {titleFunction(title)}
+        </Link>
+        :
+        <>
+        {titleFunction(title)}
+        </>
+        }     
      </Grid>
      </>
       :
@@ -98,6 +133,8 @@ export type Props = {
   authorAvatar: boolean;
   headerTopPadding: boolean;
   avatarImage?: string;
+  authorId?: string;
+  articalPage?: boolean;
 };
 
 export default HeaderComponent;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import {
   Typography,
   Grid,
@@ -68,6 +69,8 @@ const AuthorComponent: React.FC<Props> = ({
           authorAvatar={true}
           headerTopPadding={true}
           avatarImage={authorData?.avatarImage || articalAuthorData?.avatarImage}
+          authorId={articalAuthorData?.authorId}
+          articalPage={turOnArticalPage}
         />
         {!turOnArticalPage && 
         <Divider
