@@ -15,6 +15,8 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
   aughtorsName,
   sectionLink,
   sectionPage,
+  series,
+  seriesId,
 }) => {
     const articalUrl = `/artical/${authorsId}/${articalId}`;
     return (
@@ -118,6 +120,31 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
               }}
             />
           }
+          {series &&
+           <div
+            style={{
+              padding: '0px 0px 0px 16px',
+            }}
+          >
+           <Link 
+              to={`/series/${seriesId}`}
+              style={{
+                textDecoration: "none"
+              }}
+            >
+              <Chip
+                color="secondary"
+                label={'Series'}
+                variant="outlined"
+                size="small"
+                sx={{
+                  color: 'black',
+                  cursor: 'pointer',
+                }}
+              />
+            </Link>
+            </div>
+          }
           <CopyLinkComponent
             authorsId={authorsId}
             articalId={articalId}
@@ -137,6 +164,8 @@ export type Props = {
   aughtorsName: string;
   sectionLink: string;
   sectionPage: boolean | undefined;
+  series?: boolean | undefined;
+  seriesId?: string;
 };
     
 export default HorizontalArticalInfoComponent;

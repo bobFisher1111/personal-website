@@ -29,6 +29,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
   turnOnSubTitle,
   series,
   articalPageList,
+  seriesId,
 }) => {
   const [authorPage, setAuthorPage] = useState<boolean>();
   const [sectionPage, setSectionPage] = useState<boolean>();
@@ -205,6 +206,8 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
                   aughtorsName={getAuthorData[0]?.name}
                   sectionLink={sectionLink}
                   sectionPage={sectionPage}
+                  series={series}
+                  seriesId={seriesId}
                 />
           </Card>
         }
@@ -232,6 +235,7 @@ export type Props = {
   turnOnSubTitle: boolean;
   series?: boolean;
   articalPageList?: boolean;
+  seriesId?: string;
 };
   
 export default HorizontalArticalCardComponent;

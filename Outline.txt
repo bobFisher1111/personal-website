@@ -22,7 +22,7 @@
   - Implement axios to get the data from json-server
   - console.log data
 
-- Sprint 3:
+- Sprint 3: // completed
   - fetch the data into website and refactor entire website to recieve data from json-server // completed
     - Includes routing // completed
       - Update Text throught website
@@ -37,15 +37,15 @@
     - filtering by sections: working on // completed
     - if artical or series has nothing, have a message for each section, like comming soon // completed
     - filter articals and series by newest date // completed, left series articals first created in that order
-    - Artical Page, author picture + name links to authors page
-    - Add additonal chips for series & section of section like retro
-    - Refactor website
-      - move getURL function to utilties
-    - Write test classes // maybe for later
-    - Implement npm run check:all
-    - Implement build
+    - Artical Page, author picture + name links to authors page // completed
+    - Add additonal chips for series & section of section like retro // completed, left retro out. not enough room
 - Sprint 4:
   - Add mobile view for entire website
+- Sprint 4.5:
+  - Refactor website
+    - move getURL function to utilties
+  - Implement npm run check:all
+  - Implement build
 - Sprint 5:
   - Correct types and temp db
   - Create database
@@ -78,10 +78,9 @@
   - Twitter
 - Sprint 13:
   - Release Website & pay fee 1 year 
-- Sprint 14:
+- Sprint 14: Version 1.0 to 2.0
   - Implement add support to website
   - Add google Analytics to website
-- Sprint 15: Version 1.0 to 2.0
   - Work on improving website 
   - Working on articals
   - Add dark themed saved in localstorage or cookie

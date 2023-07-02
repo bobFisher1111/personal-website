@@ -53,6 +53,8 @@ export const ArticalsList: React.FC<Props> = ({
                 videoOrImageCover={item.coverImageOrVideo}
                 sectionLink={item.sectionLink}
                 turnOnSubTitle={false}
+                series={item.series}
+                seriesId={item.seriesId}
               />
             ))}
           </>
@@ -115,6 +117,8 @@ export const ArticalsList: React.FC<Props> = ({
                       sectionLink={item.sectionLink}
                       turnOnSubTitle={false}
                       articalPageList={true}
+                      series={item.series}
+                      seriesId={item.seriesId}
                     />
                   </>
                 ))}

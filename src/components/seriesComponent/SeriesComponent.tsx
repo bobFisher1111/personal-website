@@ -86,7 +86,6 @@ const SeriesComponent = () => {
         <Divider
           sx={{
             borderColor: '#282c34',
-            padding: '0px 0px 16px 0px',
           }}
         />
       </Grid>
