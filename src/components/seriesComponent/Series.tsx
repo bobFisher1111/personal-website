@@ -79,6 +79,8 @@ export const Series: React.FC<Props> = ({
     }, [])
   
     const noSeries = filteredSeriesList.length === 0;
+
+    console.log('filterSeries', filterSeries);
     
     const textLoop = (item: any, index: number) => {
         return filteredSeriesList[index]?.slice(0, 4).filter((n: any, ip: number) => {
@@ -217,7 +219,7 @@ export const Series: React.FC<Props> = ({
                         WebkitBoxOrient: 'vertical',
                         }}
                       >
-                        {`${item?.seriesTypeTitle}: ${item?.seriesTitle}`}
+                        {`${item?.section}: ${item?.seriesTitle}`}
                     </Typography>
                   </Grid>
                 </Grid>
