@@ -3,7 +3,7 @@ import {
   Grid,
 } from "@mui/material";
 import SectionCard from "../sectionsCard/SectionCard";
-import codingpicture from '../../assets/images/codingpicture.png';
+import Persona5Hacker from '../../assets/images/Persona5Hacker.jpg';
 import legendOfZelda from '../../assets/images/legendOfZelda.jpg';
 import suzuka from '../../assets/images/suzuka.jpeg';
 import goldenboy2 from '../../assets/images/goldenboy2.png';
@@ -37,7 +37,7 @@ const SectionComponent: React.FC<Props> = ({
         >
           <SectionCard
             backGroundColor='blue'
-            imgCover={codingpicture}
+            imgCover={Persona5Hacker}
             section='Coding'
             linkTo='coding'
           />
