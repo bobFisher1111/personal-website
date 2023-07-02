@@ -216,6 +216,33 @@ const AboutComponent: React.FC<Props> = () => {
           >
             Dark Theme
           </Typography>
+          <Typography
+            variant="h6"
+            style={{
+              textAlign: 'center',
+              color: '#667A6E',
+            }}
+          >
+            Mobile version 2.0
+          </Typography>
+          <Typography
+            variant="h6"
+            style={{
+              textAlign: 'center',
+              color: '#667A6E',
+            }}
+          >
+            Desktop version 2.0
+          </Typography>
+          <Typography
+            variant="h6"
+            style={{
+              textAlign: 'center',
+              color: '#667A6E',
+            }}
+          >
+            Interactive yearly magazine
+          </Typography>
         </Grid>
         <Grid
           item
