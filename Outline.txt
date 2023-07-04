@@ -41,6 +41,14 @@
     - Add additonal chips for series & section of section like retro // completed, left retro out. not enough room
 - Sprint 4:
   - Add mobile view for entire website
+    - AppBar:
+    - HomePage:
+      - Remove header
+    - About:
+    - Writers
+    - Section Page
+    - Artical Page
+    - Series Page
 - Sprint 4.5:
   - Refactor website
     - move getURL function to utilties

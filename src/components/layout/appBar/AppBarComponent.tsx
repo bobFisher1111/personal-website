@@ -6,7 +6,7 @@ import {
 import AppBarXSmall from './AppBarXSmall';
 import AppBarSmalls from './AppBarSmalls';
 import AppBarMedium from './AppBarMedium';
-import AppBarLargeXLarge from './AppBarLargeXLarge';
+import WebSiteAppBar from './WebSiteAppBar';
 
 const AppBarComponent = () => {
   /*
@@ -32,10 +32,7 @@ const AppBarComponent = () => {
           zIndex: (theme) => theme.zIndex.drawer + 1,
         }}
       >
-        <AppBarXSmall />
-        <AppBarSmalls />
-        <AppBarMedium /> 
-        <AppBarLargeXLarge />      
+        <WebSiteAppBar />      
       </AppBar>
     </Box>
   )}
