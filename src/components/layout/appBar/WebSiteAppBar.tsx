@@ -24,11 +24,12 @@ const WebSiteAppBar = () => {
         '@media only screen and (max-width: 1023px)': {
           maxWidth: "1023px",
           minWidth: "820px",
+          margin: 0,
         },
         // apple air
         '@media only screen and (max-width:820px)': {
           maxWidth: "820px",
-          minWidth: "820px",
+          minWidth: "520px",
         },
         // note ultra 20+
         '@media only screen and (max-width:414px)': {
@@ -167,7 +168,7 @@ const WebSiteAppBar = () => {
               },
           }}
           >
-            React2Python
+            React2Pytho1
           </Typography>
         </Link>
         </Grid>
@@ -205,11 +206,10 @@ const WebSiteAppBar = () => {
               },
           }}
           >
-            React2Python
+            React2Pytho2
           </Typography>
         </Link>
         </Grid>
-        
       </Grid>
     </Grid>
   </Box>
