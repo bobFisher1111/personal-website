@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Typography,
   Grid,
@@ -7,6 +6,7 @@ import {
 import { Link } from "react-router-dom";
 import SocialMediaComponent from '../../socialMediaComponent/SocialMediaComponent';
 import AppBarLinksToPages from './AppBarLinksToPages';
+import MobileDrawer from './MobileDrawer';
 
 const WebSiteAppBar = () => {
   const facebook = "https://www.facebook.com/";
@@ -67,27 +67,26 @@ const WebSiteAppBar = () => {
             },
           }}
         >
-        
-        <Link to="/" 
-          style={{
-            textDecoration: "none"
-          }}
-          >
-          <Typography variant="h6"
-            sx={{
-              fontSize: '20px',
-              color: "white",
-              cursor: "pointer",
-              "&:hover": {
-                  color: "black",
-              },
-          }}
-          >
-            React2Python
-          </Typography>
-        </Link>
-      </Grid>
-       <Grid
+          <Link to="/" 
+            style={{
+              textDecoration: "none"
+            }}
+            >
+            <Typography variant="h6"
+              sx={{
+                fontSize: '20px',
+                color: "white",
+                cursor: "pointer",
+                "&:hover": {
+                    color: "black",
+                },
+            }}
+            >
+              React2Python
+            </Typography>
+          </Link>
+        </Grid>
+        <Grid
           item 
           xs={0}
           sm={0}
@@ -112,8 +111,8 @@ const WebSiteAppBar = () => {
               youtube={youtube}
             />
           </Grid>
-      </Grid>
-       <Grid
+        </Grid>
+        <Grid
           item 
           xs={0}
           sm={0}
@@ -134,85 +133,68 @@ const WebSiteAppBar = () => {
           >
             <AppBarLinksToPages />
           </Grid>
-      </Grid>
-      <Grid
-         item 
-         xs={6}
-         sm={6}
-         md={6}
-         lg={0}
-         xl={0}
-         sx={{
-          padding: '0px 16px 0px 16px',
-          '@media (min-width: 1023px)': {
-            display: 'none',
-          },
-         }}
-      >
+        </Grid>
         <Grid
-          container
-          justifyContent="flex-start"
+          item 
+          xs={6}
+          sm={6}
+          md={6}
+          lg={0}
+          xl={0}
+          sx={{
+            padding: '0px 16px 0px 16px',
+            '@media (min-width: 1023px)': {
+              display: 'none',
+            },
+          }}
         >
-          <Link to="/" 
-          style={{
-            textDecoration: "none"
-          }}
+          <Grid
+            container
+            justifyContent="flex-start"
           >
-          <Typography variant="h6"
-            sx={{
-              fontSize: '20px',
-              color: "white",
-              cursor: "pointer",
-              "&:hover": {
-                  color: "black",
-              },
+            <MobileDrawer />
+          </Grid>
+        </Grid>
+        <Grid
+          item 
+          xs={6}
+          sm={6}
+          md={6}
+          lg={0}
+          xl={0}
+          sx={{
+            padding: '0px 16px 0px 16px',
+            '@media (min-width: 1023px)': {
+              display: 'none',
+            },
           }}
+        >
+          <Grid
+            container
+            justifyContent="flex-end"
           >
-            React2Pytho1
-          </Typography>
-        </Link>
+            <Link to="/" 
+              style={{
+                textDecoration: "none"
+              }}
+            >
+              <Typography variant="h6"
+                sx={{
+                  fontSize: '16px',
+                  color: "white",
+                  cursor: "pointer",
+                  "&:hover": {
+                      color: "black",
+                  },
+                }}
+              >
+                React2Python
+              </Typography>
+            </Link>
+          </Grid>
         </Grid>
       </Grid>
-      <Grid
-         item 
-         xs={6}
-         sm={6}
-         md={6}
-         lg={0}
-         xl={0}
-         sx={{
-          padding: '0px 16px 0px 16px',
-          '@media (min-width: 1023px)': {
-            display: 'none',
-          },
-         }}
-      >
-        <Grid
-          container
-          justifyContent="flex-end"
-        >
-          <Link to="/" 
-          style={{
-            textDecoration: "none"
-          }}
-          >
-          <Typography variant="h6"
-            sx={{
-              fontSize: '20px',
-              color: "white",
-              cursor: "pointer",
-              "&:hover": {
-                  color: "black",
-              },
-          }}
-          >
-            React2Pytho2
-          </Typography>
-        </Link>
-        </Grid>
-      </Grid>
-    </Grid>
-  </Box>
+    </Box>
 )}
 
 export default WebSiteAppBar;

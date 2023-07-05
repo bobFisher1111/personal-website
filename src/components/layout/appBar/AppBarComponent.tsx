@@ -3,9 +3,6 @@ import {
   AppBar,
   Box,
 } from "@mui/material";
-import AppBarXSmall from './AppBarXSmall';
-import AppBarSmalls from './AppBarSmalls';
-import AppBarMedium from './AppBarMedium';
 import WebSiteAppBar from './WebSiteAppBar';
 
 const AppBarComponent = () => {
@@ -26,10 +23,9 @@ const AppBarComponent = () => {
         position="fixed"
         component="nav"
         sx={{
-          backgroundColor: "#667A6E", // "#2F4C69",
+          backgroundColor: "#667A6E",
           boxShadow: 'none',
           borderBottom: 'solid #2F4C69 1px',
-          zIndex: (theme) => theme.zIndex.drawer + 1,
         }}
       >
         <WebSiteAppBar />      

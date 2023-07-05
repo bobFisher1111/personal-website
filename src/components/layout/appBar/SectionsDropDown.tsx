@@ -63,29 +63,29 @@ const SectionsDropDown = () => {
         }}
       >
         <Typography
-            sx={{
-              color: "white",
-              "&:hover": {
-                color: "black",
-              },
-            }}
+          sx={{
+            color: "white",
+            "&:hover": {
+              color: "black",
+            },
+          }}
+        >
+          <Grid
+            container
           >
-            <Grid
-              container
-            >
-              Sections
-              {state ?  <KeyboardArrowUpIcon/> : <KeyboardArrowDownIcon />}
-            </Grid>
-          </Typography>
-        </Grid>
-        <SwipeableDrawer
-            anchor={'top'}
-            open={state}
-            onClose={toggleDrawer(false)}
-            onOpen={toggleDrawer(true)}
-          >
-            {sectionList()}
-          </SwipeableDrawer>
+            Sections
+            {state ?  <KeyboardArrowUpIcon/> : <KeyboardArrowDownIcon />}
+          </Grid>
+        </Typography>
+      </Grid>
+      <SwipeableDrawer
+        anchor={'top'}
+        open={state}
+        onClose={toggleDrawer(false)}
+        onOpen={toggleDrawer(true)}
+      >
+        {sectionList()}
+      </SwipeableDrawer>
     </div>
   );
 }
