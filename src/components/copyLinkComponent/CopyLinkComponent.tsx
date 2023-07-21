@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { appBaseURL } from '../../config';
 import copyLink from '../../utilities/copyLink';
 import { ContentCopyIconStyle, EmailOutlinedIconStyles } from '../../styles/IconStyles';
 
@@ -14,8 +15,8 @@ const CopyLinkComponent: React.FC<Props> = ({
 }) => {
   const [copyIconColor, setCopyIconColor] = useState<string>(defaultColor);
   const [emailIcon, setEmailIcon] = useState<string>(defaultColor);
-  const articalUrl = `http://localhost:3000/artical/${authorsId}/${articalId}`; // need to move this to .env file
-  const seriesUrl = `http://localhost:3000/series/${seriesId}`;
+  const articalUrl = `${appBaseURL}/artical/${authorsId}/${articalId}`;
+  const seriesUrl = `${appBaseURL}/series/${seriesId}`;
   const copyUrls = turnOnSeries ? seriesUrl : articalUrl;
   return (
     <>

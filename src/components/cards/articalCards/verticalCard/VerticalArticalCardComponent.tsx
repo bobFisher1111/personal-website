@@ -4,6 +4,7 @@ import {
   Grid,
   Link,
 } from '@mui/material/';
+import { appBaseURL } from '../../../../config';
 import CopyLinkComponent from '../../../copyLinkComponent/CopyLinkComponent';
 import { DivVerticalArticalRoot } from '../../../../styles/DivStyles';
 import { CardVerticalCard } from '../../../../styles/CardStyles';
@@ -27,9 +28,9 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
   series,
 }) => {
   const [articalPage, setArticalPage] = useState<boolean>();
-  const articalUrl = `http://localhost:3000/artical/${articalData?.authorId}/${articalData?.articalId}`; // add first part to configFile
-  const serieslUrl = `http://localhost:3000/series/${articalData?.seriesId}`; // add first part to configFile
-  const authorUrl = `http://localhost:3000/author/${articalData?.authorId}`;
+  const articalUrl = `${appBaseURL}/artical/${articalData?.authorId}/${articalData?.articalId}`;
+  const serieslUrl = `${appBaseURL}/series/${articalData?.seriesId}`;
+  const authorUrl = `${appBaseURL}/author/${articalData?.authorId}`;
 
   useEffect(() => {
     const currentLocation = window.location.href;
@@ -46,6 +47,7 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
       >
         <BoxVerticalCardRoot>
           <BoxVerticalCardTitle>
+            <h1>turtle</h1>
             <TypographyVerticalCardTitleStyle 
               color="white"
             >

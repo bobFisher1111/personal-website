@@ -12,9 +12,10 @@ import { LinkStyles } from "../../../styles/LinkStyles";
 import AppConfig from '../../../config';
 
 const WebSiteAppBar = () => {
-  const facebook = AppConfig?.facebookURL;
-  const twitter = "https://twitter.com/";
-  const youtube = "https://www.youtube.com/channel/UC8GJo4nTgJlfhWdpsdT5rHQ";
+  const facebook = AppConfig.facebookURL;
+  const twitter = AppConfig.twitterURL;
+  const youtube = AppConfig.youtubeURL;
+
   return (
     <BoxAppBar>
       <Grid 
@@ -52,9 +53,9 @@ const WebSiteAppBar = () => {
             justifyContent="center"
           >
             <SocialMediaComponent
-              facebook={AppConfig?.facebookURL}
+              facebook={facebook}
               twitter={twitter}
-              youtube={AppConfig?.youtubeURL}
+              youtube={youtube}
             />
           </Grid>
         </GridDesktopAppBar>
