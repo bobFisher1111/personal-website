@@ -1,18 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Typography,
-  Card,
   CardMedia,
   Grid,
-  Box,
   Link,
 } from '@mui/material/';
 import CopyLinkComponent from '../../../copyLinkComponent/CopyLinkComponent';
+import { DivVerticalArticalRoot } from '../../../../styles/DivStyles';
+import { CardVerticalCard } from '../../../../styles/CardStyles';
+import { 
+  BoxVerticalCardRoot,
+  BoxVerticalCardTitle,
+  BoxVerticalCardFooter,
+} from '../../../../styles/BoxStyles';
+import {
+  TypographyVerticalCardTitleStyle,
+  TypographyVerticalCardNameStyleHover,
+  TypographyVerticalCardNameStyle,
+} from '../../../../styles/TypographyStyles';
+import { GridVeriticalCardVideo, GridPadding } from '../../../../styles/GridStyles';
+import { CardMediaVerticalCardVideo, CardMediaVerticalCardImage } from '../../../../styles/CardMediaStyles';
+import { LinkStyles } from '../../../../styles/LinkStyles';
 
 const VerticalArticalCardComponent: React.FC<Props> = ({
   name,
   articalData,
-  seriesCopyLink,
   series,
 }) => {
   const [articalPage, setArticalPage] = useState<boolean>();
@@ -28,92 +39,53 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
   }, []);
 
   return (
-    <div
-      style={{
-        padding: '0px 0px 16px 0px',
-      }}
+    <div  
+      style={DivVerticalArticalRoot()}
     >
-      <Card 
-        sx={{
-          minWidth: '345px',
-          maxWidth: '345px',
-        }}
+      <CardVerticalCard 
       >
-        <Box 
-          sx={{ 
-            position: 'relative',
-            boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
-          }}
-        >
-          <Box
-            sx={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              color: 'white',
-            }}
-          >
-            <Typography 
-              variant="h6" 
+        <BoxVerticalCardRoot>
+          <BoxVerticalCardTitle>
+            <TypographyVerticalCardTitleStyle 
               color="white"
-              sx={{
-                textShadow: 'black 2px 2px 2px',
-                padding: '16px',
-              }}
             >
               {articalData?.articalTitle || articalData?.seriesTitle}
-            </Typography>
-          </Box>
+            </TypographyVerticalCardTitleStyle>
+          </BoxVerticalCardTitle>
           {articalData?.useVideoInsteadOfImage ?
             <Link 
               href={series ? serieslUrl : articalUrl}
               rel="noreferrer"
             >
-              <Grid
+              <GridVeriticalCardVideo
                 container
                 direction="row"
                 justifyContent="center"
                 alignItems="center"
-                sx={{
-                  width: '345px',
-                  height: '400px',
-                  background: '#2F4C69'
-                }}
               >
                 <CardMedia
                   component="iframe"
                   image={articalData?.coverImageOrVideo || articalData?.seriesCoverImageOrVideo}
                   allowFullScreen
-                  style={{
-                    border: '0px',
-                    borderRadius: '7px',
-                  }}
+                  sx={CardMediaVerticalCardVideo}
                 />
-              </Grid>
+              </GridVeriticalCardVideo>
             </Link>
             :
             <Link 
                 href={series ? serieslUrl : articalUrl}
-                // target="_blank"
                 rel="noreferrer"
               >
               <CardMedia
                 component="img"
-                height="400px"
                 image={articalData?.coverImageOrVideo || articalData?.seriesCoverImageOrVideo}
+                sx={CardMediaVerticalCardImage}
               />
               </Link>
           }
-          <Box
+          <BoxVerticalCardFooter
             sx={{ 
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              width: '100%',
               bgcolor: 'black',
-              color: 'white',
-              opacity: 0.70,
             }}
           >
             <Grid 
@@ -131,51 +103,25 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
                   <Link 
                     href={series? authorUrl : articalUrl}
                     rel="noreferrer"
-                    sx={{
-                      textDecoration: "none",
-                    }}
+                    sx={LinkStyles}
                   >
-                    <Typography 
-                      variant="subtitle1" 
+                    <TypographyVerticalCardNameStyleHover 
                       color="white"
-                      sx={{ 
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                        display: '-webkit-box',
-                        WebkitLineClamp: '1',
-                        WebkitBoxOrient: 'vertical',
-                        padding: '16px',
-                        "&:hover": {
-                          color: "#667A6E",
-                        },
-                      }} 
                     >
                       by {name}
-                    </Typography>
+                    </TypographyVerticalCardNameStyleHover>
                   </Link>
                 :
-                  <Typography 
-                    variant="subtitle1" 
+                  <TypographyVerticalCardNameStyle 
                     color="white"
-                    sx={{ 
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      display: '-webkit-box',
-                      WebkitLineClamp: '1',
-                      WebkitBoxOrient: 'vertical',
-                      padding: '16px'
-                    }} 
                   >
                     by {name}
-                  </Typography>
+                  </TypographyVerticalCardNameStyle>
                 }           
               </Grid>
-              <Grid 
+              <GridPadding 
                 item 
                 xs={2}
-                sx={{
-                  padding: '16px'
-                }}
               >
                 <CopyLinkComponent
                   authorsId={articalData?.authorId}
@@ -186,11 +132,11 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
                   seriesId={articalData?.seriesId}
                   turnOnSeries={true}
                 />
-              </Grid>
+              </GridPadding>
             </Grid>
-          </Box>
-        </Box>
-      </Card>
+          </BoxVerticalCardFooter>
+        </BoxVerticalCardRoot>
+      </CardVerticalCard>
     </div>
   )
 };
@@ -198,7 +144,6 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
 export type Props = {
   name: string | undefined;
   articalData: any;
-  seriesCopyLink?: string,
   series?: boolean,
 };
 

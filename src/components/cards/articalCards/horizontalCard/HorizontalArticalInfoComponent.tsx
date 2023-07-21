@@ -1,11 +1,13 @@
 import React from 'react';
 import {
-  Typography,
   Grid,
-  Chip,
 } from "@mui/material";
 import CopyLinkComponent from '../../../copyLinkComponent/CopyLinkComponent';
 import { Link } from "react-router-dom";
+import { LinkStyles } from '../../../../styles/LinkStyles';
+import { DivMaterialSymbolsOutlined, DivSeriesLeftPadding } from '../../../../styles/DivStyles';
+import { TypographyHorizontalInfoText } from '../../../../styles/TypographyStyles';
+import { ChipStyle, ChipNoPointer } from '../../../../styles/ChipStyles';
 
 const HorizontalArticalInfoComponent: React.FC<Props> = ({
   section,
@@ -18,31 +20,19 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
   series,
   seriesId,
 }) => {
-    const articalUrl = `/artical/${authorsId}/${articalId}`;
     return (
         <Grid 
           container
           direction="row"
-          sx={{
-            alignItems: 'center',
-            padding: '8px 0px 0px 0px'
-          }}
         >
-          {!authorPage ? 
+          {!authorPage ?
             <Link 
               to={`/author/${authorsId}`}
-              style={{
-                textDecoration: "none"
-              }}
+              style={LinkStyles()}
             >
               <div 
                 className={"material-symbols-outlined"}
-                style={{
-                  fontSize: '20px',
-                  color: '#2F4C69',
-                  marginRight: '4px',
-                  lineHeight: '24px'
-                }}
+                style={DivMaterialSymbolsOutlined()}
               >
                 account_circle
               </div>
@@ -50,12 +40,7 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
           :
             <div 
               className={"material-symbols-outlined"}
-              style={{
-                fontSize: '20px',
-                color: '#2F4C69',
-                marginRight: '4px',
-                lineHeight: '24px'
-              }}
+              style={DivMaterialSymbolsOutlined()}
             >
               account_circle
             </div>
@@ -63,84 +48,54 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
           {!authorPage ? 
             <Link 
               to={`/author/${authorsId}`}
-              style={{
-                textDecoration: "none"
-              }}
+              style={LinkStyles()}
             >
-              <Typography
+              <TypographyHorizontalInfoText
                 color="#2F4C69"
-                sx={{
-                  // lineHeight: '16.8px',
-                  fontSize: '16px',
-                  paddingRight: '16px',
-                  lineHeight: '24px',
-                }}
               >
                 {aughtorsName}
-              </Typography> 
+              </TypographyHorizontalInfoText> 
             </Link>
           :
-            <Typography
+            <TypographyHorizontalInfoText
               color="#2F4C69"
-              sx={{
-                fontSize: '16px',
-                paddingRight: '16px',
-                lineHeight: '24px',
-              }}
             >
               {aughtorsName}
-            </Typography>
+            </TypographyHorizontalInfoText>
           }
           {!sectionPage ?
-            <Link 
-              to={`/${sectionLink}`}
-              style={{
-                textDecoration: "none"
-              }}
-            >
-              <Chip
+              <Link 
+                to={`/${sectionLink}`}
+                style={LinkStyles()}
+              >
+              <ChipStyle
                 color="primary"
                 label={section}
                 variant="outlined"
                 size="small"
-                sx={{
-                  color: 'black',
-                  cursor: 'pointer',
-                }}
               />
             </Link>
           :
-            <Chip
+            <ChipNoPointer
               color="primary"
               label={section}
               variant="outlined"
               size="small"
-              sx={{
-                color: 'black'
-              }}
             />
           }
           {series &&
            <div
-            style={{
-              padding: '0px 0px 0px 16px',
-            }}
+            style={DivSeriesLeftPadding()}
           >
            <Link 
               to={`/series/${seriesId}`}
-              style={{
-                textDecoration: "none"
-              }}
+              style={LinkStyles()}
             >
-              <Chip
+              <ChipStyle
                 color="secondary"
                 label={'Series'}
                 variant="outlined"
                 size="small"
-                sx={{
-                  color: 'black',
-                  cursor: 'pointer',
-                }}
               />
             </Link>
             </div>

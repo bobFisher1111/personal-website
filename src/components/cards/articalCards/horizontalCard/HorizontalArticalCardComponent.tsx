@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import {
-    Typography,
     Grid,
-    Box,
-    Card,
     CardMedia,
   } from "@mui/material";
 import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 import HorizontalArticalInfoComponent from './HorizontalArticalInfoComponent';
-import HorizontalArticalSubTextComponent from './HorizontalArticalSubTextComponent';
 import HorizontalArticalPageInfoComponent from './HorizontalArticalPageInfoComponent';
+import { GridHorizontalArticalContainer, GridHorizontalArticalMaxWidth } from '../../../../styles/GridStyles';
+import { ImageHorizonatalArticals } from '../../../../styles/ImageStyles';
+import { CardMedaiArticalVideo } from '../../../../styles/CardMediaStyles';
+import { CardHorizontalArticalInfo } from '../../../../styles/CardStyles';
+import {
+  TypographyHorizontalArticalTitle,
+  TypographyHorizontalArticalSubTitle,
+  TypographyHorizontalArticalDate,
+} from '../../../../styles/TypographyStyles';
 
 const HorizontalArticalCardComponent: React.FC<Props> = ({
   title,
@@ -26,7 +31,6 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
   articalId,
   videoOrImageCover,
   sectionLink,
-  turnOnSubTitle,
   series,
   articalPageList,
   seriesId,
@@ -54,33 +58,14 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
 
   return (
     <div>
-      <Grid
+      <GridHorizontalArticalContainer
         container
         direction="row"
         justifyContent={!articalPage || articalPageList ? 'left' : 'center'}
-        sx={{
-          width: '100%',
-          background: '#fff',
-          display: 'flex',
-          margin: '0px 0px 16px 0px',
-        }}
       >
-        <Grid
-          sx={{
-            maxWidth: imageWidth,
-          }}
+        <GridHorizontalArticalMaxWidth
+          imageWidth={imageWidth}
         >
-          {turnOnSubTitle && 
-            <Grid
-              container
-              justifyContent="center"
-              alignItems="center"
-            >
-              <HorizontalArticalSubTextComponent
-                articalSubTitle={articalSubTitle}
-              />
-            </Grid>
-          }
           {!useVideoInsteadOfImage ?
             <Link 
               to={`/artical/${authorsId}/${articalId}`}
@@ -89,17 +74,10 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
                 textDecoration: "none"
               }}
             >
-              <Box
-                component="img"
-                sx={{
-                  // maxWidth: '100%',
-                  height: articalPage ? '576px' : '181px',
-                  borderRadius: '7px',
-                  aspectRatio: '16/9',
-                  width: articalPage ? '960px' : '321px',
-                }}
+              <img
                 alt="Artical Cover Image"
                 src={videoOrImageCover}
+                style={ImageHorizonatalArticals(articalPage)}
               />
             </Link>
           :
@@ -107,12 +85,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
               component="iframe"
               image={videoOrImageCover}
               allowFullScreen
-              style={{
-                width: articalPage ? '960px' : '321px',
-                height: articalPage ? '576px' : '181px',
-                border: '0px',
-                borderRadius: '7px',
-              }}
+              sx={CardMedaiArticalVideo(articalPage)}
             />
           }
           {articalPage && 
@@ -132,15 +105,10 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
               />
             </Grid>
           }
-        </Grid>
+        </GridHorizontalArticalMaxWidth>
         {!articalPage && 
-          <Card
-            sx={{ 
-              maxWidth: '740px',
-              backgroundColor: 'white',
-              boxShadow: "none",
-              padding: !articalPageList ? '4px 0px 0px 24px' : '',
-            }}
+          <CardHorizontalArticalInfo
+            articalpagelist={articalPageList}
           >
             <Link 
                 to={`/artical/${authorsId}/${articalId}`}
@@ -150,52 +118,26 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
                 }}
               >
                 {!articalPageList &&
-                <Typography 
-                  variant="body1"
+                <TypographyHorizontalArticalTitle 
+                  articalpage={articalPage}
                   color="#2F4C69" 
-                  sx={{ 
-                    fontSize: '20px',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    display: '-webkit-box',
-                    WebkitLineClamp: '2',
-                    WebkitBoxOrient: 'vertical',
-                    fontFamily: 'sans-serif',
-                    maxWidth: articalPage ? '960px' : '321px',
-                  }} 
-                  component="div"
                 >
                   {title}
-                </Typography>
+                </TypographyHorizontalArticalTitle>
                 }
-                <Typography 
-                  variant="body1"
+                <TypographyHorizontalArticalSubTitle 
+                  articalpage={articalPageList}
+                  cardtextwidth={cardTextWidth}
                   color="#667A6E" 
-                  sx={{ 
-                    fontSize: '16px',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    display: '-webkit-box',
-                    WebkitLineClamp: '2',
-                    WebkitBoxOrient: 'vertical',
-                    fontFamily: 'sans-serif',
-                    maxWidth: articalPageList ? '321px' : `${cardTextWidth} !important`,
-                  }} 
-                  component="div"
                 >
                   {articalSubTitle}
-                </Typography>
+                </TypographyHorizontalArticalSubTitle>
                 {!articalPage &&
-                  <Typography
-                    variant="subtitle1"
+                  <TypographyHorizontalArticalDate
                     color="#76468c"
-                    component="div"
-                    sx={{
-                      fontSize: '14px',
-                    }}
                   >
                     {date}
-                  </Typography>
+                  </TypographyHorizontalArticalDate>
                 }
               </Link>
                 <HorizontalArticalInfoComponent
@@ -209,9 +151,9 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
                   series={series}
                   seriesId={seriesId}
                 />
-          </Card>
+          </CardHorizontalArticalInfo>
         }
-      </Grid>
+      </GridHorizontalArticalContainer>
     </div>
   );
 }
@@ -232,9 +174,8 @@ export type Props = {
   articalId: string;
   videoOrImageCover: string;
   sectionLink: string;
-  turnOnSubTitle: boolean;
   series?: boolean;
-  articalPageList?: boolean;
+  articalPageList?: any;
   seriesId?: string;
 };
   

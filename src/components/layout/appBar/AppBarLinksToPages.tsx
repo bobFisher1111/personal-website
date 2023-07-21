@@ -4,6 +4,9 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import SectionsDropDown from './SectionsDropDown';
+import { TypographyLinkTwoPage } from '../../../styles/TypographyStyles';
+import { GridPointer } from '../../../styles/GridStyles';
+import { LinkStyles } from "../../../styles/LinkStyles";
 
 const AppBarLinksToPages = () => {
   return (
@@ -12,49 +15,29 @@ const AppBarLinksToPages = () => {
         item
       >
         <Link to="/about"
-          style={{textDecoration: "none"}}
+          style={LinkStyles()}
         >
-          <Typography
-            sx={{
-              color: "white",
-              cursor: "pointer",
-              "&:hover": {
-                color: "black",
-              },
-            }}
-          >
+          <TypographyLinkTwoPage>
             About
-          </Typography>
+          </TypographyLinkTwoPage>
         </Link>
       </Grid>
       <Grid
         item
       >
         <Link to="/writers"
-          style={{textDecoration: "none"}}
+          style={LinkStyles()}
         >
-          <Typography
-            sx={{
-              color: "white",
-              cursor: "pointer",
-              "&:hover": {
-                color: "black",
-              },
-            }}
-          >
+          <TypographyLinkTwoPage>
             Writers
-          </Typography>
+          </TypographyLinkTwoPage>
         </Link>
       </Grid>
-      <Grid
+      <GridPointer
         item
-        sx={{
-          display: 'flex',
-          cursor: "pointer",
-        }}
       >
         <SectionsDropDown />
-      </Grid>
+      </GridPointer>
     </>
   );
 }

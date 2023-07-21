@@ -1,10 +1,10 @@
 import React, { useState, SyntheticEvent } from 'react';
 import {
   Tabs,
-  Box,
-  Tab,
-  Grid,
 } from "@mui/material";
+import { BoxTabPanel, BoxTabsChange } from '../../styles/BoxStyles';
+import { GridTabsComponent } from '../../styles/GridStyles';
+import { TabComponentText } from '../../styles/TabStyles';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -23,16 +23,16 @@ const TabPanel = (props: TabPanelProps) => {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3}}>
+        <BoxTabPanel>
           {children}
-        </Box>
+        </BoxTabPanel>
       )}
     </div>
   );
 }
 
 const TabsComponent: React.FC<Props> = ({
-  turnOnSectionTabsPadding,
+  turnonsectiontabspadding,
   tabsData,
 }) => {
   const [value, setValue] = useState(0);
@@ -46,30 +46,11 @@ const TabsComponent: React.FC<Props> = ({
     setValue(newValue);
   };
   return (
-    <Box
-      sx={{
-        width: '100%',
-        '& .MuiBox-root': {
-          padding: '0px 0px 0px 0px',
-        },
-        '& .MuiTabs-flexContainer': {
-          padding: '0px 0px 0px 8px',
-        },
-        '& .MuiTabs-indicator': {
-          backgroundColor: '#667A6E',
-          border: '1px',
-        },
-        "& button[aria-selected='true']": {
-          borderBottom: "3px solid #667A6E"
-        },
-      }}
-    >
-      <Grid 
+    <BoxTabsChange>
+      <GridTabsComponent
+        turnonsectiontabspadding={turnonsectiontabspadding.toString()}
         container 
         justifyContent={"center"}
-        sx={{
-          padding: turnOnSectionTabsPadding ? '16px 0px 16px 0px' : '0px 0px 16px 0px',
-        }}
       >
         <Tabs
           value={value}
@@ -78,29 +59,25 @@ const TabsComponent: React.FC<Props> = ({
           textColor="inherit"
         >
           {tabsData?.map((item: any, index: any) => (
-            <Tab
+            <TabComponentText
               onClick={() => setValue(index)}
               label={item.name}
-              sx={{
-                textTransform: 'initial',
-                fontSize: '18px',
-              }}
               {...tabProps(index)} 
             />
           ))} 
         </Tabs>
-      </Grid>
+      </GridTabsComponent>
       {tabsData?.map((item: any, index: number) => (
         <TabPanel value={value} index={index}>
           {tabsData[index].data}
         </TabPanel>
       ))}
-    </Box>
+    </BoxTabsChange>
   );
 }
 
 export type Props = {
-  turnOnSectionTabsPadding: boolean;
+  turnonsectiontabspadding: boolean;
   tabsData?: any;
 };
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import {
   Grid,
-  Typography,
 } from "@mui/material";
 import ComingSoon from "../../utilities/ComingSoon";
 import HorizontalArticalCardComponent from '../cards/articalCards/horizontalCard/HorizontalArticalCardComponent';
+import { GridPadding, GridPaddingTop } from '../../styles/GridStyles';
+import { TypographyArticalPageArticals } from '../../styles/TypographyStyles';
 
 export const ArticalsList: React.FC<Props> = ({
   turOnAuthorForArtical, 
@@ -24,17 +25,14 @@ export const ArticalsList: React.FC<Props> = ({
         }
         {!turOnAuthorForArtical &&
           <>
-            <Grid
+            <GridPadding
               item
               xs={12}
               sm={12}
               md={12}
               lg={12}
               xl={12}
-              sx={{
-                padding: '16px',
-              }}
-            ></Grid>
+            />
             { sortByDate?.map((item: any, index: any) => (
               <HorizontalArticalCardComponent
                 key={index}
@@ -52,7 +50,6 @@ export const ArticalsList: React.FC<Props> = ({
                 articalId={item.articalId}
                 videoOrImageCover={item.coverImageOrVideo}
                 sectionLink={item.sectionLink}
-                turnOnSubTitle={false}
                 series={item.series}
                 seriesId={item.seriesId}
               />
@@ -61,14 +58,11 @@ export const ArticalsList: React.FC<Props> = ({
         }
         {turOnAuthorForArtical &&
           <>
-            <Grid
+            <GridPaddingTop
               container
               direction="row"
               justifyContent="center"
               alignItems="center"
-              sx={{
-                paddingTop:'10px',
-              }}
             >
               <Grid
                 item
@@ -77,28 +71,15 @@ export const ArticalsList: React.FC<Props> = ({
                 md={8}
                 lg={8}
                 xl={8}
-                sx={{
-                  margin: '16px 0px 16px 16px'
-                }}
               >
                 { sortByDate?.map((item: any, index: any) => (
                   <>
-                    <Typography 
+                    <TypographyArticalPageArticals 
                       variant="body1"
                       color="#2F4C69" 
-                      sx={{ 
-                        fontSize: '24px', // check to see if this is correct size
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                        display: '-webkit-box',
-                        WebkitLineClamp: '2',
-                        WebkitBoxOrient: 'vertical',
-                        fontFamily: 'sans-serif',
-                      }} 
-                      component="div"
                     >
                       {item.articalTitle}
-                    </Typography>
+                    </TypographyArticalPageArticals>
                     <HorizontalArticalCardComponent
                       key={index}
                       title={item.articalTitle}
@@ -115,7 +96,6 @@ export const ArticalsList: React.FC<Props> = ({
                       articalId={item.articalId}
                       videoOrImageCover={item.coverImageOrVideo}
                       sectionLink={item.sectionLink}
-                      turnOnSubTitle={false}
                       articalPageList={true}
                       series={item.series}
                       seriesId={item.seriesId}
@@ -123,7 +103,7 @@ export const ArticalsList: React.FC<Props> = ({
                   </>
                 ))}
               </Grid>
-            </Grid>
+            </GridPaddingTop>
           </>
         }
       </>

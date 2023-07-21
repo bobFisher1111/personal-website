@@ -2,6 +2,7 @@ import React from 'react';
 import 
   { Typography, CardMedia, CardContent, Card, Grid,
 } from '@mui/material/';
+import { GridOverflowHeader } from '../../../styles/GridStyles';
 
 const TeamCard: React.FC<Props> = ({
   firstName,
@@ -40,17 +41,13 @@ const TeamCard: React.FC<Props> = ({
             alt="team member avatar"
           />
         </Grid>
-        <Grid
+        <GridOverflowHeader
           item
           xs={6}
           sm={6}
           md={6}
           lg={6}
           xl={6}
-          sx={{
-            wordBreak: 'break-word',
-            overflow: 'hidden',
-          }}
         >
           <CardContent sx={{fontColor: 'white'}}>
             <Typography component="div" variant="h5" color="white">
@@ -63,7 +60,7 @@ const TeamCard: React.FC<Props> = ({
               {teamInfo}
             </Typography>
           </CardContent>
-        </Grid>
+        </GridOverflowHeader>
       </Grid>
     </Card>
   );

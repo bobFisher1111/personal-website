@@ -1,13 +1,18 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import { Link } from "react-router-dom";
-import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import SocialMediaComponent from '../../socialMediaComponent/SocialMediaComponent';
+import { 
+  TypographyMobileDrawer,
+  TypograohyMobileDrawerWebistieName,
+} from '../../../styles/TypographyStyles';
+import { GridMobileDrawerAppBar, GridCenterItems } from '../../../styles/GridStyles';
+import { BoxMobileDrawer } from '../../../styles/BoxStyles';
+import { LinkStyles } from '../../../styles/LinkStyles';
 
 type Anchor = 'left';
 
@@ -36,67 +41,39 @@ const MobileDrawer = () => {
   const uniqueID = Number(Date.now());
 
   const list = (anchor: Anchor) => (
-    <Box
-      sx={{
-        width:  '75vw',
-        height: '100vh',
-        backgroundColor: "white",
-      }}
-    >
-      <Grid
+    <BoxMobileDrawer>
+      <GridMobileDrawerAppBar
         container
         justifyContent="flex-start"
-        sx={{
-          backgroundColor: "#667A6E",
-          maxHeight: '36px',
-          padding: '0px 0px 0px 8px',
-          borderBottom: 'solid #2F4C69 1px',
-        }}
       >
         <Grid
           item
-          justifyContent="flex-start"
-          alignItems="center"
         >
           <Link
             to="/"
-            style={{
-              textDecoration: "none"
-            }}
+            style={LinkStyles()}
           >
-            <Typography variant="h6"
-              sx={{
-                color: "white",
-                cursor: "pointer",
-                "&:hover": {
-                    color: "black",
-                },
-                fontSize: '20px',
-              }}
-            >
+            <TypograohyMobileDrawerWebistieName>
               React2Python
-            </Typography>
+            </TypograohyMobileDrawerWebistieName>
           </Link>
         </Grid>
-        <Grid
+        <GridCenterItems
           item
           xs={12}
           sm={12}
           md={12}
           lg={12}
           xl={12}
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            padding: '16px 0px 16px 0px',
-          }}
         >
           <SocialMediaComponent
+            turnOnStyle={true}
+            widthPadding={'0px 0px 0px 8px'}
             facebook={facebookUrl}
             twitter={twitterUrl}
             youtube={youtubeUrl}
           />
-        </Grid>
+        </GridCenterItems>
         <Grid
           item
           xs={12}
@@ -107,21 +84,13 @@ const MobileDrawer = () => {
         >
           <Link
             to="/"
-            style={{textDecoration: "none"}}
+            style={LinkStyles()}
           >
-            <Typography variant="h6"
+            <TypographyMobileDrawer 
               onClick={toggleDrawer(anchor, false)}
-              sx={{
-                color: "#2F4C69",
-                cursor: "pointer",
-                "&:hover": {
-                  color: "black",
-                },
-                fontSize: '20px',
-              }}
             >
               Home
-            </Typography>
+            </TypographyMobileDrawer>
           </Link>
         </Grid>
         <Grid
@@ -134,21 +103,13 @@ const MobileDrawer = () => {
         >
           <Link
             to="/coding"
-            style={{textDecoration: "none"}}
+            style={LinkStyles()}
           >
-            <Typography variant="h6"
+            <TypographyMobileDrawer 
               onClick={toggleDrawer(anchor, false)}
-                sx={{
-                  color: "#2F4C69",
-                  cursor: "pointer",
-                  "&:hover": {
-                      color: "black",
-                  },
-                  fontSize: '20px',
-              }}
             >
               Coding
-            </Typography>
+            </TypographyMobileDrawer>
           </Link>
         </Grid>
         <Grid
@@ -160,21 +121,13 @@ const MobileDrawer = () => {
           xl={12}
         >
           <Link to="/videoGames"
-            style={{textDecoration: "none"}}
+            style={LinkStyles()}
           >
-            <Typography variant="h6"
+            <TypographyMobileDrawer 
               onClick={toggleDrawer(anchor, false)}
-                sx={{
-                  color: "#2F4C69",
-                  cursor: "pointer",
-                  "&:hover": {
-                      color: "black",
-                  },
-                  fontSize: '20px',
-              }}
             >
               Video Games
-            </Typography>
+            </TypographyMobileDrawer>
           </Link>
         </Grid>
         <Grid
@@ -186,21 +139,13 @@ const MobileDrawer = () => {
           xl={12}
         >
           <Link to="/showsMovies"
-            style={{textDecoration: "none"}}
+            style={LinkStyles()}
           >
-            <Typography variant="h6"
+            <TypographyMobileDrawer 
               onClick={toggleDrawer(anchor, false)}
-                sx={{
-                  color: "#2F4C69",
-                  cursor: "pointer",
-                  "&:hover": {
-                      color: "black",
-                  },
-                  fontSize: '20px',
-              }}
             >
               Shows/Movies
-            </Typography>
+            </TypographyMobileDrawer>
           </Link>
         </Grid>
         <Grid
@@ -212,21 +157,13 @@ const MobileDrawer = () => {
           xl={12}
         >
           <Link to="/stories"
-            style={{textDecoration: "none"}}
+            style={LinkStyles()}
           >
-            <Typography variant="h6"
+           <TypographyMobileDrawer 
               onClick={toggleDrawer(anchor, false)}
-                sx={{
-                  color: "#2F4C69",
-                  cursor: "pointer",
-                  "&:hover": {
-                      color: "black",
-                  },
-                  fontSize: '20px',
-              }}
             >
               Stories
-            </Typography>
+            </TypographyMobileDrawer>
           </Link>
         </Grid>
         <Grid
@@ -238,21 +175,13 @@ const MobileDrawer = () => {
           xl={12}
         >
           <Link to="/writers"
-            style={{textDecoration: "none"}}
+            style={LinkStyles()}
           >
-            <Typography variant="h6"
+            <TypographyMobileDrawer 
               onClick={toggleDrawer(anchor, false)}
-                sx={{
-                  color: "#2F4C69",
-                  cursor: "pointer",
-                  "&:hover": {
-                      color: "black",
-                  },
-                  fontSize: '20px',
-              }}
             >
               Writers
-            </Typography>
+            </TypographyMobileDrawer>
           </Link>
         </Grid>
         <Grid
@@ -264,26 +193,18 @@ const MobileDrawer = () => {
           xl={12}
         >
           <Link to="/about"
-            style={{textDecoration: "none"}}
+            style={LinkStyles()}
           >
-            <Typography variant="h6"
+            <TypographyMobileDrawer 
               onClick={toggleDrawer(anchor, false)}
-                sx={{
-                  color: "#2F4C69",
-                  cursor: "pointer",
-                  "&:hover": {
-                      color: "black",
-                  },
-                  fontSize: '20px',
-              }}
             >
               About
-            </Typography>
+            </TypographyMobileDrawer>
           </Link>
         </Grid>
-      </Grid>
+      </GridMobileDrawerAppBar>
       <Divider id={`${uniqueID}`}/>
-    </Box>
+    </BoxMobileDrawer>
   );
 
   return (

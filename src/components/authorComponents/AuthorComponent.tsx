@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import {
   Typography,
   Grid,
@@ -62,12 +61,7 @@ const AuthorComponent: React.FC<Props> = ({
       >
         <HeaderComponent
           title={ authorData?.name || articalAuthorData?.name}
-          backgroundColor='white'
-          fontColor='#2F4C69'
-          lineHeight={'40px'}
-          fontSize={'32px'}
           authorAvatar={true}
-          headerTopPadding={true}
           avatarImage={authorData?.avatarImage || articalAuthorData?.avatarImage}
           authorId={articalAuthorData?.authorId}
           articalPage={turOnArticalPage}
@@ -129,7 +123,7 @@ const AuthorComponent: React.FC<Props> = ({
         />
         {turOnArticalPage ?
         <TabsComponent
-          turnOnSectionTabsPadding={false}
+        turnonsectiontabspadding={false}
           tabsData={
             AuthorComponetTabData(
               true, 
@@ -146,7 +140,7 @@ const AuthorComponent: React.FC<Props> = ({
         />
         :
         <TabsComponent
-          turnOnSectionTabsPadding={false}
+        turnonsectiontabspadding={false}
           tabsData={
             AuthorComponetTabData(
               false, 

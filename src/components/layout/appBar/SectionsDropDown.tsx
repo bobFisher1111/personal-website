@@ -1,12 +1,13 @@
 import React from 'react';
 import {
-    Typography,
     Grid,
     SwipeableDrawer,
 } from "@mui/material";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import SectionComponent from '../../sectionComponent/SectionComponent';
+import { GridSectionList, GridHoverBlack } from '../../../styles/GridStyles';
+import { TypographyHoverBlack } from '../../../styles/TypographyStyles';
 
 const SectionsDropDown = () => {
   const [state, setState] = React.useState(false);
@@ -27,7 +28,7 @@ const SectionsDropDown = () => {
     };
 
   const sectionList = () => (
-    <Grid
+    <GridSectionList
       container
       justifyContent="center"
       alignItems="center"
@@ -36,48 +37,28 @@ const SectionsDropDown = () => {
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
-      sx={{
-       background: 'white',
-       borderBottom: '3px solid #667A6E',
-       padding: '37px',
-       '&.MuiGrid-root': {
-        marginTop: '0px'
-      },
-     }}
     >
       <SectionComponent
         homePage={false}
       />
-    </Grid>
+    </GridSectionList>
   );
 
   return (
     <div>
-      <Grid
+      <GridHoverBlack
         container
         onClick={toggleDrawer(true)}
-        sx={{
-          "&:hover": {
-            color: "black",
-          },
-        }}
       >
-        <Typography
-          sx={{
-            color: "white",
-            "&:hover": {
-              color: "black",
-            },
-          }}
-        >
+        <TypographyHoverBlack>
           <Grid
             container
           >
             Sections
             {state ?  <KeyboardArrowUpIcon/> : <KeyboardArrowDownIcon />}
           </Grid>
-        </Typography>
-      </Grid>
+        </TypographyHoverBlack>
+      </GridHoverBlack>
       <SwipeableDrawer
         anchor={'top'}
         open={state}

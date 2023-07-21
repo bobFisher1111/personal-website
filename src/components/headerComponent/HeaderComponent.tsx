@@ -1,59 +1,41 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { TypographyHeaderTitle } from '../../styles/TypographyStyles';
 import {
-  Grid,
-  Typography,
-  Avatar,
-} from "@mui/material";
+  GridHeader, 
+  GridPaddingRight, 
+  GridAvatarPadding, 
+  GridHeaderTitle,
+} from '../../styles/GridStyles';
+import { AvatarProfile } from '../../styles/AvatarStyles';
 
 const HeaderComponent:  React.FC<Props> = ({
   title,
-  backgroundColor,
-  fontColor,
-  lineHeight,
-  fontSize,
   authorAvatar,
-  headerTopPadding,
   avatarImage,
   authorId,
   articalPage
 }) => {
   const titleFunction = (item: any) => {
     return (
-      <Typography
-            variant="h5"
-            style={{
-              textAlign: 'center',
-              color: fontColor,
-              padding: '25px 0px 25px 0px',
-              fontSize: fontSize,
-              lineHeight: lineHeight,
-            }}
-          >
-            {item}
-          </Typography>
+      <TypographyHeaderTitle>
+        {item}
+      </TypographyHeaderTitle>
     )
   };
 
   return (
-      <Grid
+      <GridHeader
         container
         direction="row"
         justifyContent="center"
         alignItems="center"
-        sx={{ 
-          backgroundColor: backgroundColor,
-          padding: headerTopPadding ? '50px 0px 0px 0px' : '', // here is where I need to fix this, add a param for height
-        }}
       >
         {authorAvatar ? 
         <>
-          <Grid
-          item
-          sx={{
-            padding: '0px 0px 0px 16px'
-          }}
-        >
+          <GridPaddingRight
+            item
+          >
           {articalPage ? 
           <Link 
               to={`/author/${authorId}`}
@@ -61,33 +43,21 @@ const HeaderComponent:  React.FC<Props> = ({
                 textDecoration: "none"
               }}
             >
-           <Avatar 
+           <AvatarProfile 
              alt="Authors Avatar"
              src={avatarImage}
-             sx={{
-              width: 56,
-              height: 56,
-             }}
           />
           </Link>
    
           :
-          <Avatar 
+          <AvatarProfile 
              alt="Authors Avatar"
              src={avatarImage}
-             sx={{
-              width: 56,
-              height: 56,
-             }}
           />
           }
-        </Grid>
-      <Grid
+        </GridPaddingRight>
+      <GridAvatarPadding
         item
-        sx={{
-          alignItems: 'center',
-          padding: '25px 16px 25px 16px',
-        }}
       >
         {articalPage ?
         <Link 
@@ -103,35 +73,27 @@ const HeaderComponent:  React.FC<Props> = ({
         {titleFunction(title)}
         </>
         }     
-     </Grid>
+     </GridAvatarPadding>
      </>
       :
-        <Grid
+        <GridHeaderTitle
           item
           xs={12}
           sm={12}
           md={12}
           lg={12}
           xl={12}
-          sx={{
-            padding: '25px 0px 25px 0px'
-          }}
         >
          {titleFunction(title)}
-        </Grid>
+        </GridHeaderTitle>
       }
-      </Grid>
+      </GridHeader>
   );
 }
 
 export type Props = {
   title?: string;
-  backgroundColor: string;
-  fontColor: string;
-  lineHeight: string;
-  fontSize: string;
   authorAvatar: boolean;
-  headerTopPadding: boolean;
   avatarImage?: string;
   authorId?: string;
   articalPage?: boolean;

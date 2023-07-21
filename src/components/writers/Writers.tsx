@@ -37,12 +37,7 @@ const Writers = () => {
         >
           <HeaderComponent
             title='Writers'
-            backgroundColor='white'
-            fontColor='#2F4C69'
-            lineHeight={'40px'}
-            fontSize={'32px'}
             authorAvatar={false}
-            headerTopPadding={true}
             avatarImage={authorsData?.avatarImage}
           />
           <Divider

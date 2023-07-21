@@ -21,8 +21,6 @@ const VideoGamesComponent = () => {
   return (
       <SectionsComponent
         headerTitle='Video Games'
-        backgroundColor='white'
-        fontColor='#2F4C69'
         sectionTabData={VideoGamesComponentTabData(
           false,
           articalSectionFilter,

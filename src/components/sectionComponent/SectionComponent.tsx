@@ -1,117 +1,80 @@
 import React from 'react';
-import {
-  Grid,
-} from "@mui/material";
 import SectionCard from "../sectionsCard/SectionCard";
 import Persona5Hacker from '../../assets/images/Persona5Hacker.jpg';
 import legendOfZelda from '../../assets/images/legendOfZelda.jpg';
 import suzuka from '../../assets/images/suzuka.jpeg';
 import goldenboy2 from '../../assets/images/goldenboy2.png';
+import { GridSections, GridMaxWidth } from '../../styles/GridStyles';
 
 const SectionComponent: React.FC<Props> = ({
   homePage
 }) => {
 
   return (
-    <Grid
+    <GridMaxWidth
       container
-      sx={{
-        maxWidth: '1600px'
-      }}
     >
-       <Grid
+       <GridSections 
+          homepage={homePage.toString()}
           item
           xs={12}
           sm={12}
           md={3}
           lg={3}
           xl={3}
-          sx={{
-            padding: '16px',
-            '&.MuiGrid-root': {
-              '&.MuiGrid-item': {
-                paddingTop: homePage ? '16px' : '32px',
-              }
-            },
-          }}
         >
           <SectionCard
-            backGroundColor='blue'
             imgCover={Persona5Hacker}
             section='Coding'
             linkTo='coding'
           />
-        </Grid>
-        <Grid
+        </GridSections>
+        <GridSections
+          homepage={homePage.toString()}
           item
           xs={12}
           sm={12}
           md={3}
           lg={3}
           xl={3}
-          sx={{
-            padding: '16px',
-            '&.MuiGrid-root': {
-                '&.MuiGrid-item': {
-                  paddingTop: homePage ? '16px' : '32px',
-                }
-              },
-          }}
         >
           <SectionCard
-            backGroundColor='blue'
             imgCover={legendOfZelda}
             section='Video Games'
             linkTo='videoGames'
           />
-        </Grid>
-        <Grid
+        </GridSections>
+        <GridSections
+          homepage={homePage.toString()}
           item
           xs={12}
           sm={12}
           md={3}
           lg={3}
           xl={3}
-          sx={{
-            padding: '16px',
-            '&.MuiGrid-root': {
-              '&.MuiGrid-item': {
-                paddingTop: homePage ? '16px' : '32px',
-              }
-            },
-          }}
         >
           <SectionCard
-            backGroundColor='blue'
             imgCover={goldenboy2}
             section='Shows / Movies'
             linkTo='showsMovies'
           />
-        </Grid>
-        <Grid
+        </GridSections>
+        <GridSections
+          homepage={homePage.toString()}
           item
           xs={12}
           sm={12}
           md={3}
           lg={3}
           xl={3}
-          sx={{
-            padding: '16px',
-            '&.MuiGrid-root': {
-                '&.MuiGrid-item': {
-                  paddingTop: homePage ? '16px' : '32px',
-                }
-              },
-          }}
         >
           <SectionCard
-            backGroundColor='blue'
             imgCover={suzuka}
             section='Stories'
             linkTo='stories'
           />
-      </Grid>
-    </Grid>
+      </GridSections>
+    </GridMaxWidth>
   );
 }
 

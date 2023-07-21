@@ -41,7 +41,7 @@
     - Add additonal chips for series & section of section like retro // completed, left retro out. not enough room
 - Sprint 4:
   - Add mobile view for entire website
-    - AppBar:
+    - AppBar: // completed
     - HomePage:
       - Remove header
     - About:

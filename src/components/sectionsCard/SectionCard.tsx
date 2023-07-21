@@ -1,42 +1,34 @@
 import React from 'react';
 import {
-  Button, CardActions, CardMedia, Card, Grid, Box,
+  CardMedia, Card,
 } from '@mui/material/';
 import { Link } from "react-router-dom";
+import { GridTopAndBottom, GridOverflowHeader } from '../../styles/GridStyles';
+import { CardActionsSectionName } from '../../styles/CardActionsStyles';
+import { ButtonSectionTtile } from '../../styles/ButtonStyles';
+import { LinkStyles } from '../../styles/LinkStyles';
 
 const SectionCard: React.FC<Props> = ({
   imgCover,
   section,
-  backGroundColor,
   linkTo,
 }) => {
   return (
-      <Grid 
-        container 
-        sx={{
-          padding: '16px 0px 16px 0px',
-        }}
-      >
-        <Grid
+    <GridTopAndBottom 
+      container 
+    >
+      <GridOverflowHeader
           item
           xs={12}
           sm={12}
           md={12}
           lg={12}
           xl={12}
-          sx={{
-              wordBreak: 'break-word',
-              overflow: 'hidden',
-              padding: 0,
-              lineHeight: '1'
-          }}
         >
           <Card>
           <Link 
               to={`/${linkTo}`}
-              style={{
-                textDecoration: "none"
-              }}
+              style={LinkStyles()}
             >
             <CardMedia
               component="img"
@@ -46,38 +38,29 @@ const SectionCard: React.FC<Props> = ({
               image={imgCover}
             />
           </Link>
-            <CardActions 
-              sx={{ 
-                backgroundColor: '#282c34', 
-                justifyContent: 'center',
+            <CardActionsSectionName>
+            <Link 
+              to={`/${linkTo}`}
+              style={{
+                textDecoration: "none"
               }}
             >
-              <Button 
+              <ButtonSectionTtile 
                 size="small"
-                component={Link}
-                to={`/${linkTo}`}
-                sx={{
-                  color: 'white',
-                  textTransform: 'initial',
-                  fontSize: '16px',
-                  "&:hover": {
-                    color: "#667A6E",
-                  },
-                }}
               >
                 {section}
-              </Button>
-            </CardActions>
+              </ButtonSectionTtile>
+            </Link>
+            </CardActionsSectionName>
           </Card>
-        </Grid>
-      </Grid>
+        </GridOverflowHeader>
+      </GridTopAndBottom>
   );
 }
 
 export type Props = {
   imgCover: string,
   section: string,
-  backGroundColor: string,
   linkTo: string,
 };
 

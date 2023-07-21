@@ -25,8 +25,6 @@ const CodingComponent = () => {
   return (
       <SectionsComponent
         headerTitle='Coding'
-        backgroundColor='white'
-        fontColor='#2F4C69'
         sectionTabData={CodingComponentTabData(
           false,
           articalSectionFilter,

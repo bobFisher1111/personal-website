@@ -45,11 +45,7 @@ const ArticalPage: React.FC<Props> = ({
       justifyContent='flex-end'
       alignContent='center'
       sx={{
-        background: '#fff',
         paddingBottom: '200px',
-        maxWidth: "3000px",
-        margin: 'auto',
-        top: '30px',
       }}
     >
       <Grid
@@ -65,12 +61,7 @@ const ArticalPage: React.FC<Props> = ({
       >
        <HeaderComponent
           title={articalData?.articalTitle}
-          backgroundColor={'white'}
-          fontColor='#2F4C69'
-          lineHeight={'40px'}
-          fontSize={'32px'}
           authorAvatar={false}
-          headerTopPadding={true}
         />
         <HorizontalArticalCardComponent
           author={authorData?.name}
@@ -86,7 +77,6 @@ const ArticalPage: React.FC<Props> = ({
           videoOrImageCover={articalData?.coverImageOrVideo}
           sectionLink={articalData?.sectionLink}
           section={articalData?.section}
-          turnOnSubTitle={true}
         />
           {articalData  && articalData.artical?.map((item: any) => (
             createArtical(item)

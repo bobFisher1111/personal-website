@@ -1,11 +1,11 @@
 import React from 'react';
-import {
-  Typography,
-  Grid,
-  Chip,
-} from "@mui/material";
 import { Link } from "react-router-dom";
 import CopyLinkComponent from '../../../copyLinkComponent/CopyLinkComponent';
+import { GridArticalInfoComponent } from '../../../../styles/GridStyles';
+import { LinkStyles } from '../../../../styles/LinkStyles';
+import { DivMaterialSymbolsOutlined } from '../../../../styles/DivStyles';
+import { TypographyArticalInfoRight, TypographyArticalInfoLeft } from '../../../../styles/TypographyStyles';
+import { ChipStyle } from '../../../../styles/ChipStyles';
 
 const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
   authorsId,
@@ -24,102 +24,65 @@ const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
 
   return (
     <>
-      <Grid 
+      <GridArticalInfoComponent 
         container 
-        direction="row" 
-        sx={{
-          alignItems: 'center',
-          padding: '4px 0px 0px 0px',
-        }}
+        direction="row"
+        justifyContent="center"
       >
         <Link 
           to={`/author/${authorsId}`}
-          style={{
-            textDecoration: "none"
-          }}
+          style={LinkStyles()}
         >
           <div 
             className={"material-symbols-outlined"}
-            style={{
-              fontSize: '20px',
-              color: '#2F4C69',
-              marginRight: '4px',
-            }}
+            style={DivMaterialSymbolsOutlined()}
           >
             account_circle
           </div>
         </Link>
         <Link 
           to={`/author/${authorsId}`}
-          style={{
-           textDecoration: "none"
-          }}
+          style={LinkStyles()}
         >
-          <Typography
+          <TypographyArticalInfoRight
             color="#2F4C69"
-            sx={{
-              fontSize: '16px',
-              paddingRight: '16px'
-            }}
           >
             {author} 
-          </Typography>
+          </TypographyArticalInfoRight>
         </Link>
-        <Typography
+        <TypographyArticalInfoRight
           color="black"
-          sx={{
-            fontSize: '16px',
-            paddingRight: '16px'
-          }}
         >
           |
-        </Typography>
-        <Typography
-          variant="subtitle1"
+        </TypographyArticalInfoRight>
+        <TypographyArticalInfoRight
           color="#667A6E"
-          component="div"
-          sx={{
-            fontSize: '16px',
-            paddingRight: '16px',
-          }}
         >
           {date}
-        </Typography>
-        <Typography
+        </TypographyArticalInfoRight>
+        <TypographyArticalInfoRight
           color="#26282c34162e"
-          sx={{
-            fontSize: '16px',
-            paddingRight: '16px'
-          }}
         >
           |
-        </Typography>
+        </TypographyArticalInfoRight>
         <Link 
           to={`/${sectionLink}`}
           style={{
             textDecoration: "none"
           }}
         >
-          <Chip
+          <ChipStyle
             color="primary"
             label={section}
             variant="outlined"
             size="small"
-            sx={{
-              color: 'black',
-              cursor: 'pointer',
-            }}
           />
         </Link>
-        <Typography
+        <TypographyArticalInfoLeft
           color="#26282c34162e"
-          sx={{
-            fontSize: '16px',
-            paddingLeft: '16px'
-          }}
         >
           |
-        </Typography>
+        </TypographyArticalInfoLeft>
         {series ? 
           <CopyLinkComponent
             seriesId={getSeriesIdFromUrl()}
@@ -137,7 +100,7 @@ const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
             email={false}
           />
         }
-      </Grid>
+      </GridArticalInfoComponent>
     </>
   )
 };

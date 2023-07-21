@@ -1,104 +1,50 @@
 import {
-  Typography,
   Grid,
-  Box,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import SocialMediaComponent from '../../socialMediaComponent/SocialMediaComponent';
 import AppBarLinksToPages from './AppBarLinksToPages';
 import MobileDrawer from './MobileDrawer';
+import { BoxAppBar } from '../../../styles/BoxStyles';
+import { GridDesktopAppBar, GridMobileAppBar } from '../../../styles/GridStyles';
+import { TypographyMobileTitle, TypographyDesktopTitle } from '../../../styles/TypographyStyles';
+import { LinkStyles } from "../../../styles/LinkStyles";
+import AppConfig from '../../../config';
 
 const WebSiteAppBar = () => {
-  const facebook = "https://www.facebook.com/";
+  const facebook = AppConfig?.facebookURL;
   const twitter = "https://twitter.com/";
   const youtube = "https://www.youtube.com/channel/UC8GJo4nTgJlfhWdpsdT5rHQ";
-
   return (
-    <Box 
-      sx={{ 
-        display: 'flex',
-        maxWidth: "1024px",
-        minWidth: "1024px",
-        margin: 'auto',
-        // desktop less than normal max width
-        '@media only screen and (max-width: 1023px)': {
-          maxWidth: "1023px",
-          minWidth: "820px",
-          margin: 0,
-        },
-        // apple air
-        '@media only screen and (max-width:820px)': {
-          maxWidth: "820px",
-          minWidth: "520px",
-        },
-        // note ultra 20+
-        '@media only screen and (max-width:414px)': {
-          maxWidth: "414px",
-          minWidth: "412px",
-        },
-        // pixel 5 & iphone pro plus 12
-        '@media only screen and (max-width:393px)': {
-          maxWidth: "393px",
-          minWidth: "390px",
-        },
-        // Galaxy S8+
-        '@media only screen and (max-width:360px)': {
-          maxWidth: "360px",
-          minWidth: "360px",
-        },
-      }}
-    >
+    <BoxAppBar>
       <Grid 
         container
         direction="row"
         alignItems="center"
       >
-        <Grid
+        <GridDesktopAppBar
           item 
           xs={0}
           sm={0}
           md={4}
           lg={4}
           xl={4}
-          sx={{
-            padding: '0px 16px 0px 16px',
-            '@media (max-width: 1023px)': {
-              display: 'none',
-            },
-          }}
         >
           <Link to="/" 
-            style={{
-              textDecoration: "none"
-            }}
+            style={LinkStyles()}
             >
-            <Typography variant="h6"
-              sx={{
-                fontSize: '20px',
-                color: "white",
-                cursor: "pointer",
-                "&:hover": {
-                    color: "black",
-                },
-            }}
-            >
+            <TypographyDesktopTitle>
               React2Python
-            </Typography>
+            </TypographyDesktopTitle>
           </Link>
-        </Grid>
-        <Grid
+        </GridDesktopAppBar>
+        <GridDesktopAppBar
           item 
           xs={0}
           sm={0}
           md={4}
           lg={4}
           xl={4}
-          sx={{
-            padding: '0px 16px 0px 16px',
-            '@media (max-width: 1023px)': {
-              display: 'none',
-            },
-          }}
         >
           <Grid 
             container
@@ -106,25 +52,19 @@ const WebSiteAppBar = () => {
             justifyContent="center"
           >
             <SocialMediaComponent
-              facebook={facebook}
+              facebook={AppConfig?.facebookURL}
               twitter={twitter}
-              youtube={youtube}
+              youtube={AppConfig?.youtubeURL}
             />
           </Grid>
-        </Grid>
-        <Grid
+        </GridDesktopAppBar>
+        <GridDesktopAppBar
           item 
           xs={0}
           sm={0}
           md={4}
           lg={4}
           xl={4}
-          sx={{
-            padding: '0px 16px 0px 16px',
-            '@media (max-width: 1023px)': {
-              display: 'none',
-            },
-          }}
         >
           <Grid 
             container
@@ -133,20 +73,14 @@ const WebSiteAppBar = () => {
           >
             <AppBarLinksToPages />
           </Grid>
-        </Grid>
-        <Grid
+        </GridDesktopAppBar>
+        <GridMobileAppBar
           item 
           xs={6}
           sm={6}
           md={6}
           lg={0}
           xl={0}
-          sx={{
-            padding: '0px 16px 0px 16px',
-            '@media (min-width: 1023px)': {
-              display: 'none',
-            },
-          }}
         >
           <Grid
             container
@@ -154,20 +88,14 @@ const WebSiteAppBar = () => {
           >
             <MobileDrawer />
           </Grid>
-        </Grid>
-        <Grid
+        </GridMobileAppBar>
+        <GridMobileAppBar
           item 
           xs={6}
           sm={6}
           md={6}
           lg={0}
           xl={0}
-          sx={{
-            padding: '0px 16px 0px 16px',
-            '@media (min-width: 1023px)': {
-              display: 'none',
-            },
-          }}
         >
           <Grid
             container
@@ -178,23 +106,14 @@ const WebSiteAppBar = () => {
                 textDecoration: "none"
               }}
             >
-              <Typography variant="h6"
-                sx={{
-                  fontSize: '16px',
-                  color: "white",
-                  cursor: "pointer",
-                  "&:hover": {
-                      color: "black",
-                  },
-                }}
-              >
+              <TypographyMobileTitle>
                 React2Python
-              </Typography>
+              </TypographyMobileTitle>
             </Link>
           </Grid>
-        </Grid>
+        </GridMobileAppBar>
       </Grid>
-    </Box>
+    </BoxAppBar>
 )}
 
 export default WebSiteAppBar;

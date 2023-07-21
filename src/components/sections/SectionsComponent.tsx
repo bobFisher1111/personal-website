@@ -1,14 +1,13 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React from 'react';
 import {
     Grid,
     Divider,
   } from "@mui/material";
 import HeaderComponent from "../headerComponent/HeaderComponent";
 import TabsComponent from '../tabsComponent/TabsComponent';
+import { GridTopAndBottom } from '../../styles/GridStyles';
 
 const SectionsComponent: React.FC<Props> = ({
-  backgroundColor,
-  fontColor,
   headerTitle,
   sectionTabData,
 }) => {
@@ -18,7 +17,6 @@ const SectionsComponent: React.FC<Props> = ({
       container
       sx={{
         background: '#fff',
-        // minHeight: '100vh',
         display: 'flex',
         maxWidth: "1024px",
         margin: 'auto',
@@ -35,12 +33,7 @@ const SectionsComponent: React.FC<Props> = ({
       >
         <HeaderComponent
           title={headerTitle}
-          backgroundColor={backgroundColor}
-          fontColor={fontColor}
-          lineHeight={'40px'}
-          fontSize={'32px'}
           authorAvatar={false}
-          headerTopPadding={true}
         />
         <Divider
           sx={{
@@ -49,29 +42,24 @@ const SectionsComponent: React.FC<Props> = ({
           }}
         />
       </Grid>
-      <Grid
+      <GridTopAndBottom
        item
        xs={12}
        sm={12}
        md={12}
        lg={12}
        xl={12}
-       sx={{
-        padding: '16px 0px 16px 0px',
-       }}
       >
         <TabsComponent
-          turnOnSectionTabsPadding={true}
+          turnonsectiontabspadding={true}
           tabsData={sectionTabData}
         />
-      </Grid>
+      </GridTopAndBottom>
     </Grid>
     );
   }
 
 export type Props = {
-  backgroundColor: string,
-  fontColor: string,
   headerTitle?: string,
   sectionTabData?: any,
 };

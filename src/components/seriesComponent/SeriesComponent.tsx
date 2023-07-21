@@ -5,11 +5,9 @@ import {
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import SectionsComponent from '../sections/SectionsComponent';
 import { useSelector } from 'react-redux';
 import HeaderComponent from "../headerComponent/HeaderComponent";
 import HorizontalArticalCardComponent from "../cards/articalCards/horizontalCard/HorizontalArticalCardComponent";
-import ArticalsList from "../articalTabs/ArticalsList";
 
 const SeriesComponent = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
@@ -59,12 +57,7 @@ const SeriesComponent = () => {
       >
         <HeaderComponent
           title={seriesInfo?.seriesTitle}
-          backgroundColor={'white'}
-          fontColor='#2F4C69'
-          lineHeight={'40px'}
-          fontSize={'32px'}
           authorAvatar={false}
-          headerTopPadding={true}
         />
         <HorizontalArticalCardComponent
           author={seriesInfo?.seriesAuthors}
@@ -80,7 +73,6 @@ const SeriesComponent = () => {
           videoOrImageCover={seriesInfo?.seriesCoverImageOrVideo}
           sectionLink={seriesInfo?.sectionLink}
           section={seriesInfo?.section}
-          turnOnSubTitle={false}
           series={true}
         />
         <Divider

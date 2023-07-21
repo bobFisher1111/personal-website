@@ -27,7 +27,6 @@ const AuthorComponetTabData = (
           <Series 
             data={data}
             articalPage={seriesForArticalPage}
-            authorPage={authorsPage}
             name={authorName}
             seriesForAuthorsPage={seriesForAuthorsPage}
           />

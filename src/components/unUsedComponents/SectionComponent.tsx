@@ -4,7 +4,7 @@ import {
 } from "@mui/material";
 import SectionCard from '../sectionsCard/SectionCard';
 import xenob3 from '../../assets/images/xenob3.jpg';
-// look into, most likely not being used
+
 const SectionPage = () => {
   return (
     <>
@@ -17,7 +17,6 @@ const SectionPage = () => {
         <SectionCard
           imgCover={xenob3}
           section={'Coding'}
-          backGroundColor={'#282c34'}
           linkTo=''
         />
       </Grid>
@@ -30,7 +29,6 @@ const SectionPage = () => {
          <SectionCard
            imgCover={xenob3}
            section={'Data'}
-           backGroundColor={'#2F4C69'}
            linkTo=''
          />
        </Grid>
@@ -43,7 +41,6 @@ const SectionPage = () => {
          <SectionCard
            imgCover={xenob3}
            section={'Game Dev'}
-           backGroundColor={'#667A6E'}
            linkTo=''
          />
        </Grid>
@@ -56,7 +53,6 @@ const SectionPage = () => {
          <SectionCard
           imgCover={xenob3}
           section={'Projects'}
-          backGroundColor={'#B784A7'}
           linkTo=''
         />
        </Grid>

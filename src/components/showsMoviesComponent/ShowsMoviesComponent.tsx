@@ -25,8 +25,6 @@ const ShowsMoviesComponent = () => {
   return (
       <SectionsComponent
         headerTitle='Shows & Movies'
-        backgroundColor='white'
-        fontColor='#2F4C69'
         sectionTabData={ShowsMoviesComponentTabData(
           false,
           articalSectionFilter,

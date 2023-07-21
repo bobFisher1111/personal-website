@@ -27,7 +27,6 @@ const HorizontalArticalSubTextComponent: React.FC<Props> = ({
             lineHeight: '28px',
             fontSize: '22px',
           }} 
-          component="div"
         >
           {articalSubTitle}
         </Typography>

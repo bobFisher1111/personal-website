@@ -1,25 +1,34 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 import {
   Grid,
-  Typography,
   Button,
 } from "@mui/material";
 import ComingSoon from "../../utilities/ComingSoon";
 import VerticalArticalCardComponent from "../cards/articalCards/verticalCard/VerticalArticalCardComponent";
+import { LinkStyles } from '../../styles/LinkStyles';
+import { 
+  GridSeriesArticalList,
+  GridSeriesRoot,
+  GridMarginLeft,
+} from '../../styles/GridStyles';
+import {
+  TypographySeriesArticalTitle,
+  TypographySeriesArticalSubTitle,
+  TypographySeriesArticalDate,
+  TypographySeriesTitle,
+} from '../../styles/TypographyStyles';
 
 export const Series: React.FC<Props> = ({
     data, 
     name,
     articalPage,
     section,
-    authorPage,
     homePage,
     seriesForAuthorsPage,
   }) => {
     const [filterSeries, setFilterSeries] = useState<any>([]);
-    const seriesTitleRef = useRef<any>();
     const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
     const series = getWebsiteData && getWebsiteData;
 
@@ -80,8 +89,6 @@ export const Series: React.FC<Props> = ({
   
     const noSeries = filteredSeriesList.length === 0;
 
-    console.log('filterSeries', filterSeries);
-    
     const textLoop = (item: any, index: number) => {
         return filteredSeriesList[index]?.slice(0, 4).filter((n: any, ip: number) => {
           return item.seriesId === item.seriesId;
@@ -90,16 +97,11 @@ export const Series: React.FC<Props> = ({
               if(item.seriesId === a.seriesId) {
               const seriesTitle = `${a.seriesType} ${i + 1}: ${a?.articalTitle}`;
               return (
-                  <Grid
+                  <GridSeriesArticalList
                       container
-                      sx={{
-                        padding: '0px 0px 16px 0px',
-                      }}
                     >
                       <Link to={`/artical/${a?.authorId}/${a?.articalId}`}
-                        style={{
-                          textDecoration: "none"
-                        }}
+                        style={LinkStyles()}
                       >
                       <Grid
                         item
@@ -109,21 +111,9 @@ export const Series: React.FC<Props> = ({
                         lg={12}
                         xl={12}
                       >
-                        <Typography
-                          sx={{
-                            textAlign: 'fled-start',
-                            color: '#2F4C69',
-                            padding: '0px 0px 0px 16px',
-                            fontSize:'20px',
-                            overflow: 'hidden',
-                            textOverflow: 'ellipsis',
-                            display: '-webkit-box',
-                            WebkitLineClamp: '1',
-                            WebkitBoxOrient: 'vertical',
-                          }}
-                        >
+                        <TypographySeriesArticalTitle>
                           {seriesTitle}
-                        </Typography>
+                        </TypographySeriesArticalTitle>
                     </Grid>
                     <Grid
                         item
@@ -133,21 +123,9 @@ export const Series: React.FC<Props> = ({
                         lg={12}
                         xl={12}
                       >
-                    <Typography
-                      sx={{
-                        textAlign: 'fled-start',
-                        color: '#667A6E',
-                        padding: '0px 0px 0px 16px',
-                        fontSize:'16px',
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                        display: '-webkit-box',
-                        WebkitLineClamp: '1',
-                        WebkitBoxOrient: 'vertical',
-                      }}
-                    >
+                    <TypographySeriesArticalSubTitle>
                       { a.articalSubTitle}
-                    </Typography>
+                    </TypographySeriesArticalSubTitle>
                    </Grid>
                     <Grid
                         item
@@ -157,19 +135,12 @@ export const Series: React.FC<Props> = ({
                         lg={12}
                         xl={12}
                       >
-                    <Typography
-                      sx={{
-                        textAlign: 'fled-start',
-                        color: '#76468c',
-                        padding: '0px 0px 0px 16px',
-                        fontSize:'14px'
-                      }}
-                    >
+                    <TypographySeriesArticalDate>
                       { a.publishedDate}
-                    </Typography>
+                    </TypographySeriesArticalDate>
                   </Grid>
                   </Link>
-                </Grid>
+                </GridSeriesArticalList>
               )
           }
         })
@@ -181,47 +152,28 @@ export const Series: React.FC<Props> = ({
           <ComingSoon />
         }
         {filterSeries.map((item: any, index: any) => (
-              <Grid
+              <GridSeriesRoot
                 container
                 direction="row"
                 justifyContent="flex-start"
                 alignItems="flex-start"
-                sx={{
-                  paddingTop:'10px',
-                }}
               >
                 {!articalPage && 
                 <Grid
                   container
                 >
-                  <Grid
+                  <GridMarginLeft
                     item
                     xs={12}
                     sm={12}
                     md={12}
                     lg={12}
                     xl={12}
-                    sx={{
-                      margin: '0px 0px 0px 16px'
-                    }}
                   >
-                  <Typography
-                        ref={seriesTitleRef}
-                        sx={{
-                          textAlign: 'fled-start',
-                          color: '#2F4C69',
-                          padding: '16px 0px 16px 0px',
-                          fontSize: '24px',
-                          overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                        display: '-webkit-box',
-                        WebkitLineClamp: '2',
-                        WebkitBoxOrient: 'vertical',
-                        }}
-                      >
-                        {`${item?.section}: ${item?.seriesTitle}`}
-                    </Typography>
-                  </Grid>
+                    <TypographySeriesTitle>
+                      {`${item?.section}: ${item?.seriesTitle}`}
+                    </TypographySeriesTitle>
+                  </GridMarginLeft>
                 </Grid>
                 }
                 { articalPage ?
@@ -231,9 +183,6 @@ export const Series: React.FC<Props> = ({
                   direction="row"
                   justifyContent="center"
                   alignItems="center"
-                  sx={{
-                    paddingTop:'10px',
-                  }}
                 >
                   <Grid
                     item
@@ -242,79 +191,64 @@ export const Series: React.FC<Props> = ({
                     md={8}
                     lg={8}
                     xl={8}
-                    sx={{
-                      margin: '16px 0px 16px 16px'
-                    }}
                   >
-                      <VerticalArticalCardComponent
-                        key={index}
-                        name={item.seriesAuthors}
-                        articalData={item}
-                        series={true}
-                      />
+                    <VerticalArticalCardComponent
+                      key={index}
+                      name={item.seriesAuthors}
+                      articalData={item}
+                      series={true}
+                    />
                   </Grid>
                 </Grid>
               </>
                 :
                 <>
-                 <Grid
+                 <GridMarginLeft
                   item
                   xs={4}
                   sm={4}
                   md={4}
                   lg={4}
                   xl={4}
-                  sx={{
-                    margin: '0px 0px 0px 16px'
-                  }}
                 >
-                    <VerticalArticalCardComponent
-                      key={index}
-                      name={item.seriesAuthors}
-                      articalData={item}
-                      seriesCopyLink={`http://localhost:3000//series/${item.seriesId}`}
-                      series={true}
-                    />
-                </Grid>
-                <Grid
+                  <VerticalArticalCardComponent
+                    key={index}
+                    name={item.seriesAuthors}
+                    articalData={item}
+                    series={true}
+                  />
+                </GridMarginLeft>
+                <GridMarginLeft
                   item
                   xs={7}
                   sm={7}
                   md={7}
                   lg={7}
                   xl={7}
-                  sx={{
-                    margin: '0px 0px 16px 16px',
-                  }}
                 >
                   {textLoop(item, index)}
                   { (filteredSeriesList[index].length / 4) >= 1 && 
-                  <Grid
-                    container
-                    sx={{
-                      padding: '0px 0px 0px 16px',
-                    }}
-                  >
-                  <Button 
-                    variant="outlined"
-                    sx={{
-                      color: 'black',
-                    }}
-                  >
-                    <Link to={`/series/${item.seriesId}`}
-                        style={{
-                          textDecoration: "none"
-                        }}
-                     >
-                      Read More
-                    </Link>
-                    </Button>
-                    </Grid>
+                    <GridMarginLeft
+                      container
+                    >
+                      <Link to={`/series/${item.seriesId}`}
+                        style={LinkStyles()}
+                      >
+                        <Button 
+                          variant="outlined"
+                          sx={{
+                            color: 'black',
+                          }}
+                        >
+                          Read More
+                        </Button>
+                      </Link>
+                    </GridMarginLeft>
                   }
-                </Grid>
-                </>
-                }
-              </Grid>
+                </GridMarginLeft>
+              </>
+              }
+            </GridSeriesRoot>
             ))}
          </>
       )
@@ -325,7 +259,6 @@ export const Series: React.FC<Props> = ({
     name?: string;
     articalPage?: boolean;
     section?: string;
-    authorPage?: boolean;
     homePage?: boolean;
     seriesForAuthorsPage?: boolean;
   };

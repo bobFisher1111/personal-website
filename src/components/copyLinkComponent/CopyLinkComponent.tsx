@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import copyLink from '../../utilities/copyLink';
-
+import { ContentCopyIconStyle, EmailOutlinedIconStyles } from '../../styles/IconStyles';
 
 const CopyLinkComponent: React.FC<Props> = ({
   authorsId,
@@ -18,33 +16,21 @@ const CopyLinkComponent: React.FC<Props> = ({
   const [emailIcon, setEmailIcon] = useState<string>(defaultColor);
   const articalUrl = `http://localhost:3000/artical/${authorsId}/${articalId}`; // need to move this to .env file
   const seriesUrl = `http://localhost:3000/series/${seriesId}`;
-  const copyUrls = turnOnSeries ? seriesUrl : articalUrl; //
+  const copyUrls = turnOnSeries ? seriesUrl : articalUrl;
   return (
     <>
       {email ?
-          <EmailOutlinedIcon
+          <EmailOutlinedIconStyles
+            prop={emailIcon}
             id="copyEmail"
             fontSize="large"
             onClick={() => copyLink(setEmailIcon, authorsEmail)}
-            sx={{
-              color: emailIcon,
-              cursor: "pointer",
-              "&:hover": {
-                color: "#2F4C69",
-              },
-            }}
           />
         :
-          <ContentCopyIcon
+          <ContentCopyIconStyle
+            padding={padding}
+            prop={copyIconColor}
             onClick={() => copyLink(setCopyIconColor, copyUrls)}
-            sx={{
-              padding: padding,
-              cursor: 'pointer',
-              color: copyIconColor,
-              "&:hover": {
-                color: "#2F4C69",
-              },
-            }}
           />
       }
    </>
