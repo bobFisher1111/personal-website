@@ -28,19 +28,9 @@ const HomePageComponent = () => {
         justifyContent='flex-start'
         alignItems="center"
       >
-        <GridPageWidth
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-        >
-          <DividerForHeader/>
-      </GridPageWidth>
-      <SectionComponent
-        homePage={true}
-      />
+        <SectionComponent
+          homePage={true}
+        />
         <TabsComponent
           turnonsectiontabspadding={true}
           tabsData={HomePageComponentTabData(false, articalData)}

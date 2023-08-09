@@ -10,11 +10,9 @@ import { DivVerticalArticalRoot } from '../../../../styles/DivStyles';
 import { CardVerticalCard } from '../../../../styles/CardStyles';
 import { 
   BoxVerticalCardRoot,
-  BoxVerticalCardTitle,
   BoxVerticalCardFooter,
 } from '../../../../styles/BoxStyles';
 import {
-  TypographyVerticalCardTitleStyle,
   TypographyVerticalCardNameStyleHover,
   TypographyVerticalCardNameStyle,
 } from '../../../../styles/TypographyStyles';
@@ -43,17 +41,8 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
     <div  
       style={DivVerticalArticalRoot()}
     >
-      <CardVerticalCard 
-      >
+      <CardVerticalCard>
         <BoxVerticalCardRoot>
-          <BoxVerticalCardTitle>
-            <h1>turtle</h1>
-            <TypographyVerticalCardTitleStyle 
-              color="white"
-            >
-              {articalData?.articalTitle || articalData?.seriesTitle}
-            </TypographyVerticalCardTitleStyle>
-          </BoxVerticalCardTitle>
           {articalData?.useVideoInsteadOfImage ?
             <Link 
               href={series ? serieslUrl : articalUrl}

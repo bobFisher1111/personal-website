@@ -41,9 +41,49 @@
     - Add additonal chips for series & section of section like retro // completed, left retro out. not enough room
 - Sprint 4:
   - Add mobile view for entire website
-    - AppBar: // completed
+    - Mobile Views:
+      - safari:
+        - SE
+          - homepage
+        - Iphone 8
+          - homepage
+        - Iphone 8 plus
+          - homepage
+        - Ipad mini
+          - homepage
+        - Ioad pro 10.5
+          - homepage
+        - Ipad pro 12.9
+          - homepage
+        - 800 by 600
+          - homepage
+        - 1366 x 768
+          - homepage
+        - 1920 by 1080
+          - homepage
+      - Chrome
+        - Iphone SE
+          - homepage
+        - Iphone XR
+          - homepage
+        - Iphone 12 Pro
+          - homepage
+        - Pixel 5
+          - homepage
+        - Galaxy S8+
+          - homepage
+        - Galaxy Ultra
+          - homepage
+        - Ipad air
+          - homepage
+      - FireFox:
+        - Galaxy S20+
+          - homepage
+        - Iphone 12/13 Pro max
+          - homepage
+    - AppBar: // need to go back and redu
     - HomePage:
-      - Remove header
+      - completed
     - About:
     - Writers
     - Section Page

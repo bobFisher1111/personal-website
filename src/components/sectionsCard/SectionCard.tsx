@@ -3,9 +3,11 @@ import {
   CardMedia, Card,
 } from '@mui/material/';
 import { Link } from "react-router-dom";
-import { GridTopAndBottom, GridOverflowHeader } from '../../styles/GridStyles';
+import { GridSectionCardRoot, GridOverflowHeader } from '../../styles/GridStyles';
 import { CardActionsSectionName } from '../../styles/CardActionsStyles';
 import { ButtonSectionTtile } from '../../styles/ButtonStyles';
+import { CardSectionCard } from '../../styles/CardStyles';
+import { CardMediaSection } from '../../styles/CardMediaStyles';
 import { LinkStyles } from '../../styles/LinkStyles';
 
 const SectionCard: React.FC<Props> = ({
@@ -14,8 +16,8 @@ const SectionCard: React.FC<Props> = ({
   linkTo,
 }) => {
   return (
-    <GridTopAndBottom 
-      container 
+    <GridSectionCardRoot 
+      container
     >
       <GridOverflowHeader
           item
@@ -25,7 +27,9 @@ const SectionCard: React.FC<Props> = ({
           lg={12}
           xl={12}
         >
-          <Card>
+          <Card
+            sx={CardSectionCard}
+          >
           <Link 
               to={`/${linkTo}`}
               style={LinkStyles()}
@@ -36,6 +40,7 @@ const SectionCard: React.FC<Props> = ({
               width="200"
               height="212.5"
               image={imgCover}
+              sx={CardMediaSection}
             />
           </Link>
             <CardActionsSectionName>
@@ -54,7 +59,7 @@ const SectionCard: React.FC<Props> = ({
             </CardActionsSectionName>
           </Card>
         </GridOverflowHeader>
-      </GridTopAndBottom>
+      </GridSectionCardRoot>
   );
 }
 

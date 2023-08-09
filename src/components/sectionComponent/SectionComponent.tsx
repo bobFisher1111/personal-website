@@ -17,8 +17,8 @@ const SectionComponent: React.FC<Props> = ({
        <GridSections 
           homepage={homePage.toString()}
           item
-          xs={12}
-          sm={12}
+          xs={2}
+          sm={3}
           md={3}
           lg={3}
           xl={3}
@@ -32,8 +32,8 @@ const SectionComponent: React.FC<Props> = ({
         <GridSections
           homepage={homePage.toString()}
           item
-          xs={12}
-          sm={12}
+          xs={4}
+          sm={3}
           md={3}
           lg={3}
           xl={3}
@@ -47,23 +47,23 @@ const SectionComponent: React.FC<Props> = ({
         <GridSections
           homepage={homePage.toString()}
           item
-          xs={12}
-          sm={12}
+          xs={3}
+          sm={3}
           md={3}
           lg={3}
           xl={3}
         >
           <SectionCard
             imgCover={goldenboy2}
-            section='Shows / Movies'
+            section='Anime'
             linkTo='showsMovies'
           />
         </GridSections>
         <GridSections
           homepage={homePage.toString()}
           item
-          xs={12}
-          sm={12}
+          xs={3}
+          sm={3}
           md={3}
           lg={3}
           xl={3}

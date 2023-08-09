@@ -11,6 +11,11 @@ export const ButtonSectionTtile = styled(Button) ({
   "&:hover": {
     color: "#667A6E",
   },
+  '@media only screen and (max-width: 600px)': {
+    fontSize: '12px',
+    color: '#2F4C69',
+    fontWeight: 'bold',
+  },
 });
     
 export default [

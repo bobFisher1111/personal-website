@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {
     Grid,
     CardMedia,
+    Box,
   } from "@mui/material";
 import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
@@ -16,6 +17,7 @@ import {
   TypographyHorizontalArticalSubTitle,
   TypographyHorizontalArticalDate,
 } from '../../../../styles/TypographyStyles';
+import { LinkStyles } from '../../../../styles/LinkStyles';
 
 const HorizontalArticalCardComponent: React.FC<Props> = ({
   title,
@@ -70,14 +72,13 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
             <Link 
               to={`/artical/${authorsId}/${articalId}`}
               reloadDocument={true}
-              style={{
-                textDecoration: "none"
-              }}
+              style={LinkStyles()}
             >
-              <img
+              <Box
+                component="img"
                 alt="Artical Cover Image"
                 src={videoOrImageCover}
-                style={ImageHorizonatalArticals(articalPage)}
+                sx={ImageHorizonatalArticals(articalPage)}
               />
             </Link>
           :
@@ -113,14 +114,12 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
             <Link 
                 to={`/artical/${authorsId}/${articalId}`}
                 reloadDocument={true}
-                style={{
-                  textDecoration: "none"
-                }}
+                style={LinkStyles()}
               >
                 {!articalPageList &&
                 <TypographyHorizontalArticalTitle 
                   articalpage={articalPage}
-                  color="#2F4C69" 
+                  color="#2F4C69"
                 >
                   {title}
                 </TypographyHorizontalArticalTitle>
@@ -128,7 +127,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
                 <TypographyHorizontalArticalSubTitle 
                   articalpage={articalPageList}
                   cardtextwidth={cardTextWidth}
-                  color="#667A6E" 
+                  color="#667A6E"
                 >
                   {articalSubTitle}
                 </TypographyHorizontalArticalSubTitle>

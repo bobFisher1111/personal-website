@@ -19,6 +19,28 @@ export const GridAlignItems = styled(Grid) ({
   padding: '0px 16px 200px 16px',
   maxWidth: "1024px",
   margin: 'auto',
+  // verify if need this before Make PR *************
+  // '@media only screen and (min-width: 768px) and (max-width: 820px)': {
+  //   padding: '0px 16px 24px 16px',
+  // },
+  '@media only screen and (max-width: 600px)': {
+    padding: '0px 0px 200px 0px',
+  },
+});
+
+export const GridAlignItemSeries = styled(Grid) ({
+  padding: '0px 16px 200px 16px',
+  maxWidth: "1024px",
+  margin: 'auto',
+  '@media only screen and (min-width: 768px) and (max-width: 820px)': {
+    padding: '0px 16px 24px 16px',
+  },
+  '@media only screen and (max-width: 600px)': {
+    padding: '0px',
+  },
+  '@media only screen and (min-width: 992px)': {
+    display: 'none',
+  },
 });
 
 export const GridDesktopAppBar = styled(Grid) ({
@@ -29,7 +51,6 @@ export const GridDesktopAppBar = styled(Grid) ({
 });
 
 export const GridMobileAppBar = styled(Grid) ({
-  padding: '0px 16px 0px 16px',
   '@media (min-width: 1023px)': {
     display: 'none',
   },
@@ -76,7 +97,10 @@ export const GridOverflowHeader = styled(Grid) ({
 });
 
 export const GridHeaderTitle = styled(Grid) ({
-  padding: '25px 0px 25px 0px'
+  padding: '25px 0px 25px 0px',
+  '@media only screen and (max-width: 667px) and (orientation: landscape)': { // IPHONE SE Landscape ** 
+    padding: '0px',
+  },
 });
 
 export const GridPaddingRight = styled(Grid) ({
@@ -85,6 +109,13 @@ export const GridPaddingRight = styled(Grid) ({
 
 export const GridPadding = styled(Grid) ({
   padding: '16px',
+});
+
+export const GridPaddingArticalList = styled(Grid) ({
+  padding: '16px',
+  '@media only screen and (max-width: 600px)': {
+    padding: '12px'
+  },
 });
 
 export const GridAvatarPadding = styled(Grid) ({
@@ -106,7 +137,13 @@ export const GridMaxWidth = styled(Grid) ({
 export const GridPageWidth = styled(Grid) ({
   maxWidth: "1024px",
   margin: 'auto',
-  padding: '16px 8px 0px 8px',
+  padding: '16px 8px 0px 8px', 
+  '@media only screen and (min-width: 768px)': {
+    display: 'none', 
+  },
+  '@media only screen and (max-width: 600px)': {
+   display: 'none', 
+  },
 });
 
 export const GridPaddingTop = styled(Grid) ({
@@ -125,10 +162,21 @@ export const GridSections = styled(Grid)<homePageProp>(({ homepage }) => ({
       paddingTop: homepage ? '16px' : '32px',
     }
   },
+  '@media only screen and (max-width: 768px)': {
+    padding: '4px',
+    '&.MuiGrid-root': {
+      '&.MuiGrid-item': {
+        paddingTop: '0px',
+      }
+    },
+  },
 }));
 
 export const GridTabsComponent = styled(Grid)<tabsComponentProps>(({ turnonsectiontabspadding }) => ({
   padding: turnonsectiontabspadding ? '16px 0px 16px 0px' : '0px 0px 16px 0px',
+  '@media only screen and (max-width: 600px)': {
+    padding: '0px',
+  },
 }));
 
 export const GridSectionList = styled(Grid) ({
@@ -149,23 +197,69 @@ export const GridHoverBlack = styled(Grid) ({
 export const GridTopAndBottom = styled(Grid) ({
   padding: '16px 0px 16px 0px',
 });
+export const GridSectionCardRoot = styled(Grid) ({
+  padding: '16px 0px 16px 0px',
+  '@media only screen and (max-width: 600px)': {
+    padding: '0px',
+  },
+});
 
 export const GridSeriesArticalList = styled(Grid) ({
   padding: '0px 0px 16px 0px',
+  '@media only screen and (min-width: 768px)': {
+    padding: '0px 0px 0px 30px',
+  },
+  '@media only screen and (min-width: 992px)': {
+    padding: '0px',
+  },
 });
 
 export const GridSeriesRoot = styled(Grid) ({
   padding: '10px 0px 0px 0px',
 });
 
-export const GridMarginLeft = styled(Grid) ({
+export const GridMarginLeft = {
   margin: '0px 0px 0px 16px',
-});
+  '@media only screen and (max-width: 600px)': {
+    margin: '0px',
+  },
+};
+
+export const GridSeriesReadMoreMargin = {
+  margin: '0px 0px 0px 16px',
+  '@media only screen and (max-width: 600px)': {
+    margin: '0px 0px 16px 0px',
+    justifyContent: 'center',
+  },
+  '@media only screen and (min-width: 600px)': {
+    padding: '0px 0px 0px 30px',
+    justifyContent: 'center',
+  },
+  '@media only screen and (min-width: 992px)': {
+    padding: '0px',
+  },
+};
 
 export const GridVeriticalCardVideo = styled(Grid) ({
-  width: '345px',
+  maxWidth: '345px',
+  minWidth: '345px',
   height: '400px',
   background: '#2F4C69',
+  '@media only screen and (max-width: 600px)': {
+    minWidth: 'calc(100vw - 48px)',
+    maxWidth: 'calc(100vw - 48px)',
+    height: '200px',
+  },
+  '@media only screen and (min-width: 600px)': {
+    minWidth: '321px',
+    maxWidth: '365px',
+  },
+});
+
+export const GridHorizontalInfo = styled(Grid) ({
+  '@media only screen and (max-width: 600px)': {
+    padding: '0px 8px 2px 8px',
+  },
 });
 
 export default [ 
@@ -187,4 +281,9 @@ export default [
   GridSeriesRoot,
   GridMarginLeft,
   GridVeriticalCardVideo,
+  GridPaddingArticalList,
+  GridHorizontalInfo,
+  GridAlignItemSeries,
+  GridSectionCardRoot,
+  GridSeriesReadMoreMargin,
 ];

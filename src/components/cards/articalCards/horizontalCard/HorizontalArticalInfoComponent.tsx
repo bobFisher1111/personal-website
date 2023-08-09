@@ -8,6 +8,7 @@ import { LinkStyles } from '../../../../styles/LinkStyles';
 import { DivMaterialSymbolsOutlined, DivSeriesLeftPadding } from '../../../../styles/DivStyles';
 import { TypographyHorizontalInfoText } from '../../../../styles/TypographyStyles';
 import { ChipStyle, ChipNoPointer } from '../../../../styles/ChipStyles';
+import { GridHorizontalInfo } from '../../../../styles/GridStyles';
 
 const HorizontalArticalInfoComponent: React.FC<Props> = ({
   section,
@@ -21,29 +22,29 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
   seriesId,
 }) => {
     return (
-        <Grid 
+        <GridHorizontalInfo 
           container
-          direction="row"
+          direction="row"    
         >
           {!authorPage ?
             <Link 
               to={`/author/${authorsId}`}
               style={LinkStyles()}
             >
-              <div 
+              <Grid 
                 className={"material-symbols-outlined"}
-                style={DivMaterialSymbolsOutlined()}
+                sx={DivMaterialSymbolsOutlined()}
               >
                 account_circle
-              </div>
+              </Grid>
             </Link>
           :
-            <div 
+            <Grid 
               className={"material-symbols-outlined"}
               style={DivMaterialSymbolsOutlined()}
             >
               account_circle
-            </div>
+            </Grid>
           }
           {!authorPage ? 
             <Link 
@@ -107,7 +108,7 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
             padding={'0px 0px 0px 16px'}
             email={false}
           />
-        </Grid>
+        </GridHorizontalInfo>
     )
 }
 

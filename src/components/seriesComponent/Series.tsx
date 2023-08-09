@@ -12,6 +12,9 @@ import {
   GridSeriesArticalList,
   GridSeriesRoot,
   GridMarginLeft,
+  GridAlignItemSeries,
+  GridPageWidth,
+  GridSeriesReadMoreMargin,
 } from '../../styles/GridStyles';
 import {
   TypographySeriesArticalTitle,
@@ -19,6 +22,7 @@ import {
   TypographySeriesArticalDate,
   TypographySeriesTitle,
 } from '../../styles/TypographyStyles';
+import { DividerForHeader } from '../../styles/DividerStyles';
 
 export const Series: React.FC<Props> = ({
     data, 
@@ -162,18 +166,19 @@ export const Series: React.FC<Props> = ({
                 <Grid
                   container
                 >
-                  <GridMarginLeft
+                  <Grid
                     item
                     xs={12}
                     sm={12}
                     md={12}
                     lg={12}
                     xl={12}
+                    sx={GridMarginLeft}
                   >
                     <TypographySeriesTitle>
                       {`${item?.section}: ${item?.seriesTitle}`}
                     </TypographySeriesTitle>
-                  </GridMarginLeft>
+                  </Grid>
                 </Grid>
                 }
                 { articalPage ?
@@ -203,13 +208,14 @@ export const Series: React.FC<Props> = ({
               </>
                 :
                 <>
-                 <GridMarginLeft
+                 <Grid
                   item
-                  xs={4}
-                  sm={4}
+                  xs={7}
+                  sm={5}
                   md={4}
                   lg={4}
                   xl={4}
+                  sx={GridMarginLeft}
                 >
                   <VerticalArticalCardComponent
                     key={index}
@@ -217,19 +223,21 @@ export const Series: React.FC<Props> = ({
                     articalData={item}
                     series={true}
                   />
-                </GridMarginLeft>
-                <GridMarginLeft
+                </Grid>
+                <Grid
                   item
-                  xs={7}
-                  sm={7}
+                  xs={12}
+                  sm={6}
                   md={7}
                   lg={7}
                   xl={7}
+                  sx={GridMarginLeft}
                 >
                   {textLoop(item, index)}
                   { (filteredSeriesList[index].length / 4) >= 1 && 
-                    <GridMarginLeft
+                    <Grid
                       container
+                      sx={GridSeriesReadMoreMargin}
                     >
                       <Link to={`/series/${item.seriesId}`}
                         style={LinkStyles()}
@@ -243,9 +251,9 @@ export const Series: React.FC<Props> = ({
                           Read More
                         </Button>
                       </Link>
-                    </GridMarginLeft>
+                    </Grid>
                   }
-                </GridMarginLeft>
+                </Grid>
               </>
               }
             </GridSeriesRoot>

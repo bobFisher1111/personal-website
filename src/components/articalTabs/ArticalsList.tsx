@@ -4,8 +4,11 @@ import {
 } from "@mui/material";
 import ComingSoon from "../../utilities/ComingSoon";
 import HorizontalArticalCardComponent from '../cards/articalCards/horizontalCard/HorizontalArticalCardComponent';
-import { GridPadding, GridPaddingTop } from '../../styles/GridStyles';
-import { TypographyArticalPageArticals } from '../../styles/TypographyStyles';
+import { 
+  GridPaddingArticalList,
+  GridPaddingTop,
+} from '../../styles/GridStyles';
+import { TypographyArticalPageArticals, TypographyHorizontalArticalTitleArticalList } from '../../styles/TypographyStyles';
 
 export const ArticalsList: React.FC<Props> = ({
   turOnAuthorForArtical, 
@@ -25,7 +28,7 @@ export const ArticalsList: React.FC<Props> = ({
         }
         {!turOnAuthorForArtical &&
           <>
-            <GridPadding
+            <GridPaddingArticalList
               item
               xs={12}
               sm={12}
@@ -34,6 +37,13 @@ export const ArticalsList: React.FC<Props> = ({
               xl={12}
             />
             { sortByDate?.map((item: any, index: any) => (
+              <>
+               <TypographyHorizontalArticalTitleArticalList 
+                  articalpage={false}
+                  color="#2F4C69"
+                >
+                  {item.articalTitle}
+                </TypographyHorizontalArticalTitleArticalList>
               <HorizontalArticalCardComponent
                 key={index}
                 title={item.articalTitle}
@@ -53,6 +63,7 @@ export const ArticalsList: React.FC<Props> = ({
                 series={item.series}
                 seriesId={item.seriesId}
               />
+              </>
             ))}
           </>
         }

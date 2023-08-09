@@ -42,32 +42,12 @@ export const BoxAppBar = styled(Box) ({
   display: 'flex',
   maxWidth: "1024px",
   minWidth: "1024px",
-  margin: 'auto',
-  // desktop less than normal max width
-  '@media only screen and (max-width: 1023px)': {
-    maxWidth: "1023px",
-    minWidth: "820px",
-    margin: 0,
+  '@media only screen and (max-width: 600px)': {
+    maxWidth: "95vw",
+    minWidth: "95vw",
   },
-  // apple air
-  '@media only screen and (max-width:820px)': {
-    maxWidth: "820px",
-    minWidth: "520px",
-  },
-  // note ultra 20+
-  '@media only screen and (max-width:414px)': {
-    maxWidth: "414px",
-    minWidth: "412px",
-  },
-  // pixel 5 & iphone pro plus 12
-  '@media only screen and (max-width:393px)': {
-    maxWidth: "393px",
-    minWidth: "390px",
-  },
-  // Galaxy S8+
-  '@media only screen and (max-width:360px)': {
-    maxWidth: "360px",
-    minWidth: "360px",
+  '@media only screen and (min-width: 992px)': {
+    margin: 'auto',
   },
 })
 
@@ -91,6 +71,11 @@ export const BoxTabsChange = styled(Box) ({
   },
   "& button[aria-selected='true']": {
     borderBottom: "3px solid #667A6E"
+  },
+  '@media only screen and (max-width: 600px)': {
+    "& button[aria-selected='true']": {
+      borderBottom: "1px solid #667A6E"
+    },
   },
 });
 

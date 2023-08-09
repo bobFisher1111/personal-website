@@ -16,6 +16,10 @@ export const ContentCopyIconStyle = styled(ContentCopyIcon)<props>(({ prop, padd
   "&:hover": {
     color: "#2F4C69",
   },
+  '@media only screen and (max-width: 600px)': {
+    fontSize: '16px',
+    padding: '2px 0px 0px 16px',
+  },
 }));
 
 export const EmailOutlinedIconStyles = styled(EmailOutlinedIcon)<props>(({ prop }) => ({
