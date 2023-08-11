@@ -8,6 +8,7 @@ import {
   GridHeaderTitle,
 } from '../../styles/GridStyles';
 import { AvatarProfile } from '../../styles/AvatarStyles';
+import { LinkStyles } from '../../styles/LinkStyles';
 
 const HeaderComponent:  React.FC<Props> = ({
   title,
@@ -39,16 +40,13 @@ const HeaderComponent:  React.FC<Props> = ({
           {articalPage ? 
           <Link 
               to={`/author/${authorId}`}
-              style={{
-                textDecoration: "none"
-              }}
+              style={LinkStyles()}
             >
            <AvatarProfile 
              alt="Authors Avatar"
              src={avatarImage}
           />
           </Link>
-   
           :
           <AvatarProfile 
              alt="Authors Avatar"
@@ -62,9 +60,7 @@ const HeaderComponent:  React.FC<Props> = ({
         {articalPage ?
         <Link 
           to={`/author/${authorId}`}
-          style={{
-            textDecoration: "none"
-          }}
+          style={LinkStyles()}
         >
           {titleFunction(title)}
         </Link>

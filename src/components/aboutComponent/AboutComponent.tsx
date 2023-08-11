@@ -2,44 +2,26 @@ import React from 'react';
 import {
   Typography,
   Grid,
-  styled,
-  Checkbox,
 } from "@mui/material";
 import HeaderComponent from "../../components/headerComponent/HeaderComponent";
 import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
 import CopyLinkComponent from '../copyLinkComponent/CopyLinkComponent';
-
-// future updates. UI Changes example: https://nova.apple.com/business/
-// https://www.youtube.com/watch?v=sGQSz22U8VM 
-// https://stackoverflow.com/questions/7381150/how-to-send-an-email-from-javascript // look at this
+import { 
+  AboutCompGridRoot,
+  AboutCompAboutTitle,
+  AboutCompTitles,
+  AboutCompAboutText,
+  AboutCompAboutTextWithPAdding,
+} from './AboutComponentStyles';
 
 const AboutComponent: React.FC<Props> = () => {
-
-  const contactDescription = "Thank you for reaching out, we are looking forward to hearing from you. From the team at React2Python.";
-
-  // move this to themes later on, user later if implement email
-  const BlueCheckBox = styled(Checkbox) ({
-    padding: '0',
-    color: '#2F4C69',
-      '&.MuiCheckbox-root': {
-        '&.Mui-checked': {
-          color: '#2F4C69'
-        }
-      }
-  });
-
   const aboutText = 'React2Pyhton, is a hobbyist site from professional writes and software engineers and game enthusiast. This is passion project that will bring weakly articals along with update youtube videos that are connected to this website.';
-
+  const reportIssueText = 'Let us know if you experience any issues on mobile or desktop. We are a small team but will have an engineer address the issue. Contact us by email and if you experienced it on mobile, include the make of the phone in the email. Thanks from our team.';
+  
   return (
     <Grid
       container
-      sx={{
-        background: '#fff',
-        display: 'flex',
-        margin: 'auto',
-        padding: '36px 24px 0px 24px',
-        maxWidth: "1024px",
-      }}
+      sx={AboutCompGridRoot}
     >
       <HeaderComponent
         title='React2Python'
@@ -52,27 +34,16 @@ const AboutComponent: React.FC<Props> = () => {
           md={12}
           lg={12}
           xl={12}
-          sx={{
-            flex: 'auto',
-          }}
         >
           <Typography
             variant="h6"
-            style={{
-              fontSize: '24px',
-              textAlign: 'center',
-              color: '#2F4C69',
-              padding: '75px 0px 8px 0px',
-            }}
+            sx={AboutCompAboutTitle}
           >
             About
           </Typography>
           <Typography
             variant="h6"
-            style={{
-              textAlign: 'center',
-              color: '#667A6E',
-            }}
+            sx={AboutCompAboutText}
           >
             {aboutText}
           </Typography>
@@ -84,22 +55,14 @@ const AboutComponent: React.FC<Props> = () => {
           md={12}
           lg={12}
           xl={12}
-          sx={{
-            flex: 'auto',
-          }}
         >
           <Typography
             variant="h6"
-            style={{
-              fontSize: '24px',
-              textAlign: 'center',
-              color: '#2F4C69',
-              padding: '35px 0px 12px 0px',
-            }}
+            sx={AboutCompTitles}
           >
             Follow us on Social Media:
           </Typography>
-          <Grid
+        <Grid
           container
           direction="row"
           justifyContent="center"
@@ -118,18 +81,10 @@ const AboutComponent: React.FC<Props> = () => {
           md={12}
           lg={12}
           xl={12}
-          sx={{
-            flex: 'auto',
-          }}
         >
           <Typography
             variant="h6"
-            style={{
-              fontSize: '24px',
-              textAlign: 'center',
-              color: '#2F4C69',
-              padding: '35px 0px 0px 0px',
-            }}
+            sx={AboutCompTitles}
           >
             Contact us on:
           </Typography>
@@ -141,11 +96,7 @@ const AboutComponent: React.FC<Props> = () => {
           >
           <Typography
             variant="h6"
-            style={{
-              textAlign: 'center',
-              color: '#667A6E',
-              padding: '0px 8px 0px 0px',
-            }}
+            sx={AboutCompAboutTextWithPAdding}
           >
             react2python.com
           </Typography>
@@ -158,11 +109,7 @@ const AboutComponent: React.FC<Props> = () => {
           </Grid>
           <Typography
             variant="h6"
-            style={{
-              textAlign: 'center',
-              color: '#667A6E',
-              // padding: '0px 0px 12px 0px',
-            }}
+            sx={AboutCompAboutText}
           >
             Discord
           </Typography>
@@ -180,24 +127,15 @@ const AboutComponent: React.FC<Props> = () => {
         >
           <Typography
             variant="h6"
-            style={{
-              fontSize: '24px',
-              textAlign: 'center',
-              color: '#2F4C69',
-              padding: '35px 0px 0px 0px',
-            }}
+            sx={AboutCompTitles}
           >
             Report Issues:
           </Typography>
           <Typography
             variant="h6"
-            style={{
-              textAlign: 'center',
-              color: '#667A6E',
-            }}
+            sx={AboutCompAboutText}
           >
-            Let us know if you experience any issues on mobile or desktop. We are a small team but will have an engineer address the issue.
-            Contact us by email and if you experienced it on mobile, include the make of the phone in the email. Thanks from our team.
+            {reportIssueText}
           </Typography>
         </Grid>
         <Grid
@@ -207,72 +145,46 @@ const AboutComponent: React.FC<Props> = () => {
           md={12}
           lg={12}
           xl={12}
-          sx={{
-            flex: 'auto',
-          }}
         >
           <Typography
             variant="h6"
-            style={{
-              fontSize: '24px',
-              textAlign: 'center',
-              color: '#2F4C69',
-              padding: '35px 0px 0px 0px',
-            }}
+            sx={AboutCompTitles}
           >
             Road Map:
           </Typography>
           <Typography
             variant="h6"
-            style={{
-              textAlign: 'center',
-              color: '#667A6E',
-            }}
+            sx={AboutCompAboutText}
           >
             Create carousel for header
           </Typography>
           <Typography
             variant="h6"
-            style={{
-              textAlign: 'center',
-              color: '#667A6E',
-            }}
+            sx={AboutCompAboutText}
           >
             Overhaul to Artical Page
           </Typography>
           <Typography
             variant="h6"
-            style={{
-              textAlign: 'center',
-              color: '#667A6E',
-            }}
+            sx={AboutCompAboutText}
           >
             Dark Theme
           </Typography>
           <Typography
             variant="h6"
-            style={{
-              textAlign: 'center',
-              color: '#667A6E',
-            }}
+            sx={AboutCompAboutText}
           >
             Mobile version 2.0
           </Typography>
           <Typography
             variant="h6"
-            style={{
-              textAlign: 'center',
-              color: '#667A6E',
-            }}
+            sx={AboutCompAboutText}
           >
             Desktop version 2.0
           </Typography>
           <Typography
             variant="h6"
-            style={{
-              textAlign: 'center',
-              color: '#667A6E',
-            }}
+            sx={AboutCompAboutText}
           >
             Interactive yearly magazine
           </Typography>
@@ -290,39 +202,25 @@ const AboutComponent: React.FC<Props> = () => {
         >
           <Typography
             variant="h6"
-            style={{
-              fontSize: '24px',
-              textAlign: 'center',
-              color: '#2F4C69',
-              padding: '35px 0px 0px 0px',
-            }}
+            sx={AboutCompTitles}
           >
             Built with open source technology:
           </Typography>
           <Typography
             variant="h6"
-            style={{
-              textAlign: 'center',
-              color: '#76468c',
-            }}
+            sx={AboutCompAboutText}
           >
             React
           </Typography>
           <Typography
             variant="h6"
-            style={{
-              textAlign: 'center',
-              color: '#76468c',
-            }}
+            sx={AboutCompAboutText}
           >
             .Net
           </Typography>
           <Typography
             variant="h6"
-            style={{
-              textAlign: 'center',
-              color: '#76468c',
-            }}
+            sx={AboutCompAboutText}
           >
             MUI
           </Typography>
