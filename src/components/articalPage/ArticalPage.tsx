@@ -77,6 +77,7 @@ const ArticalPage: React.FC<Props> = ({
           videoOrImageCover={articalData?.coverImageOrVideo}
           sectionLink={articalData?.sectionLink}
           section={articalData?.section}
+          mobileImageWidth={'48px'}
         />
           {articalData  && articalData.artical?.map((item: any) => (
             createArtical(item)

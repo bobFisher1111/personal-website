@@ -62,6 +62,7 @@ export const ArticalsList: React.FC<Props> = ({
                 sectionLink={item.sectionLink}
                 series={item.series}
                 seriesId={item.seriesId}
+                mobileImageWidth={'48px'}
               />
               </>
             ))}
@@ -110,6 +111,7 @@ export const ArticalsList: React.FC<Props> = ({
                       articalPageList={true}
                       series={item.series}
                       seriesId={item.seriesId}
+                      mobileImageWidth={'48px'}
                     />
                   </>
                 ))}

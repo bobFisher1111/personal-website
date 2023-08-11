@@ -8,6 +8,15 @@ import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import HeaderComponent from "../headerComponent/HeaderComponent";
 import HorizontalArticalCardComponent from "../cards/articalCards/horizontalCard/HorizontalArticalCardComponent";
+import { LinkStyles } from '../../styles/LinkStyles';
+import {
+  seriesComponentGridRoot,
+  seriesComponentGridHeader,
+  seriesComponentGridArticalInfo,
+  seriesComponentTitle,
+  seriesComponentSubTitle,
+  seriesComponentdate,
+} from './SeriesComponentStyles';
 
 const SeriesComponent = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
@@ -32,18 +41,11 @@ const SeriesComponent = () => {
   return (
     <>
       <Grid
-      container
-      justifyContent='flex-start'
-      alignContent='center'
-      sx={{
-        background: '#fff',
-        minHeight: '100vh',
-        display: 'flex',
-        maxWidth: "1024px",
-        margin: 'auto',
-        padding: '40px 16px 100px 16px',
-      }}
-    >
+        container
+        justifyContent='flex-start'
+        alignContent='center'
+        sx={seriesComponentGridRoot}
+      >
       <Grid
         item
         xs={12}
@@ -51,9 +53,7 @@ const SeriesComponent = () => {
         md={12}
         lg={12}
         xl={12}
-        sx={{
-            alignItems: 'center',
-          }}
+        sx={seriesComponentGridHeader}
       >
         <HeaderComponent
           title={seriesInfo?.seriesTitle}
@@ -74,11 +74,7 @@ const SeriesComponent = () => {
           sectionLink={seriesInfo?.sectionLink}
           section={seriesInfo?.section}
           series={true}
-        />
-        <Divider
-          sx={{
-            borderColor: '#282c34',
-          }}
+          mobileImageWidth={'30px'}
         />
       </Grid>
       { getSeriesArticals?.map((item: any, index: any) => (
@@ -89,45 +85,23 @@ const SeriesComponent = () => {
         md={6}
         lg={6}
         xl={6}
-        sx={{
-          padding: '32px 0px 16px 0px',
-        }}
+        sx={seriesComponentGridArticalInfo}
       >
         <Link to={`/artical/${item?.authorId}/${item?.articalId}`}
-          style={{
-            textDecoration: "none"
-          }}
+          style={LinkStyles()}
         >
         <Typography
-          sx={{
-            fontSize: '20px',
-            padding: '0px 16px 0px 16px',
-            color: '#2F4C69',
-          }}
+          sx={seriesComponentTitle}
         >
             {`${item?.seriesType} ${index + 1}: ${item?.articalTitle}`}
         </Typography>
         <Typography
-           sx={{ 
-            color: '#667A6E',
-            fontSize:'16px',
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            display: '-webkit-box',
-            WebkitLineClamp: '2',
-            WebkitBoxOrient: 'vertical',
-            fontFamily: 'sans-serif',
-            padding: '0px 16px 0px 16px'
-          }} 
+           sx={seriesComponentSubTitle} 
         >
             {item.articalSubTitle}
         </Typography>
         <Typography
-          sx={{
-            fontSize:'14px',
-            color: '#76468c',
-            padding: '0px 16px 0px 16px'
-          }}
+          sx={seriesComponentdate}
         >
             {item.publishedDate}
         </Typography>

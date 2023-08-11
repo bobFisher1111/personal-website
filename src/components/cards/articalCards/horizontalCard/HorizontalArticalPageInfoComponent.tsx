@@ -1,11 +1,18 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import {
+  Typography,
+} from "@mui/material";
 import CopyLinkComponent from '../../../copyLinkComponent/CopyLinkComponent';
 import { GridArticalInfoComponent } from '../../../../styles/GridStyles';
 import { LinkStyles } from '../../../../styles/LinkStyles';
 import { DivMaterialSymbolsOutlined } from '../../../../styles/DivStyles';
 import { TypographyArticalInfoRight, TypographyArticalInfoLeft } from '../../../../styles/TypographyStyles';
 import { ChipStyle } from '../../../../styles/ChipStyles';
+import {
+  HorizArticalPageInfoCompAuthor,
+  HorizArticalPageInfoCompDate,
+} from './HorizontalArticalPageInfoComponentStyles';
 
 const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
   authorsId,
@@ -44,11 +51,12 @@ const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
           to={`/author/${authorsId}`}
           style={LinkStyles()}
         >
-          <TypographyArticalInfoRight
+          <Typography
             color="#2F4C69"
+            sx={HorizArticalPageInfoCompAuthor}
           >
             {author} 
-          </TypographyArticalInfoRight>
+          </Typography>
         </Link>
         <TypographyArticalInfoRight
           color="black"
@@ -57,6 +65,7 @@ const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
         </TypographyArticalInfoRight>
         <TypographyArticalInfoRight
           color="#667A6E"
+          sx={HorizArticalPageInfoCompDate}
         >
           {date}
         </TypographyArticalInfoRight>
