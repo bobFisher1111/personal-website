@@ -37,6 +37,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
   articalPageList,
   seriesId,
   mobileImageWidth,
+  videoHeight,
 }) => {
   const [authorPage, setAuthorPage] = useState<boolean>();
   const [sectionPage, setSectionPage] = useState<boolean>();
@@ -87,7 +88,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
               component="iframe"
               image={videoOrImageCover}
               allowFullScreen
-              sx={CardMedaiArticalVideo(articalPage, mobileImageWidth)}
+              sx={CardMedaiArticalVideo(articalPage, videoHeight, mobileImageWidth)}
             />
           }
           {articalPage && 
@@ -178,6 +179,7 @@ export type Props = {
   articalPageList?: any;
   seriesId?: string;
   mobileImageWidth: string;
+  videoHeight: boolean;
 };
   
 export default HorizontalArticalCardComponent;

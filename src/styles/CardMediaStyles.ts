@@ -3,7 +3,7 @@ import {
     CardMedia,
 } from "@mui/material";
 
-export const CardMedaiArticalVideo = (articalpage: boolean, mobileImageWidth?: string) => ({
+export const CardMedaiArticalVideo = (articalpage: boolean, videoHeight: boolean, mobileImageWidth?: string) => ({
   height: articalpage ? '576px' : '181px',
   border: '0px',
   borderRadius: '7px',
@@ -19,7 +19,7 @@ export const CardMedaiArticalVideo = (articalpage: boolean, mobileImageWidth?: s
   '@media only screen and (min-width: 768px)': {
     minWidth: articalpage ? `calc(100vw - ${mobileImageWidth})` : '321px',
     maxWidth: articalpage ? '960px' : '321px',
-    height: '444px',
+    height: videoHeight ? '444px' : '200px',
   },
   '@media only screen and (min-width: 992px)': {
     minWidth: articalpage ? '960px' : '321px',

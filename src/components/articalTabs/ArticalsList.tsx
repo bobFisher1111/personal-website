@@ -63,6 +63,7 @@ export const ArticalsList: React.FC<Props> = ({
                 series={item.series}
                 seriesId={item.seriesId}
                 mobileImageWidth={'48px'}
+                videoHeight={false}
               />
               </>
             ))}
@@ -112,6 +113,7 @@ export const ArticalsList: React.FC<Props> = ({
                       series={item.series}
                       seriesId={item.seriesId}
                       mobileImageWidth={'48px'}
+                      videoHeight={false}
                     />
                   </>
                 ))}

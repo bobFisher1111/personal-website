@@ -78,6 +78,7 @@ const ArticalPage: React.FC<Props> = ({
           sectionLink={articalData?.sectionLink}
           section={articalData?.section}
           mobileImageWidth={'48px'}
+          videoHeight={false}
         />
           {articalData  && articalData.artical?.map((item: any) => (
             createArtical(item)

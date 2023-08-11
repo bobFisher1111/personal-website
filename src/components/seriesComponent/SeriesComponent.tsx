@@ -75,6 +75,7 @@ const SeriesComponent = () => {
           section={seriesInfo?.section}
           series={true}
           mobileImageWidth={'30px'}
+          videoHeight={true}
         />
       </Grid>
       { getSeriesArticals?.map((item: any, index: any) => (
