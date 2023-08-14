@@ -23,7 +23,6 @@ export const ContentCopyIconStyle = styled(ContentCopyIcon)<props>(({ prop, padd
 }));
 
 export const EmailOutlinedIconStyles = styled(EmailOutlinedIcon)<props>(({ prop }) => ({
-
   cursor: 'pointer',
   color: prop,
   "&:hover": {

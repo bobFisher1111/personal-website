@@ -56,7 +56,11 @@ const SocialMediaComponent: React.FC<Props> = ({
             target="_blank"
             rel="noreferrer"
             >
-            <img src={YoutTubeLogo} height="20px" alt="YouTube logo" />
+            <img 
+              src={YoutTubeLogo} 
+              height="20px"
+              alt="YouTube logo"
+            />
           </a>
         </Grid>
         {turnOnEmail && 

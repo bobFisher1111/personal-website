@@ -6,6 +6,14 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
+import { LinkStyles } from '../../styles/LinkStyles';
+import {
+  WritersCardGridRoot,
+  WritersCardAvatar,
+  WritersCardTextAuthorName,
+  WritersCardGridAuthorName,
+  WritersCardTextAuthorTitle,
+} from './WritersStyleStyle';
 
 const WritersCard: React.FC<Props> = ({
   authorImage,
@@ -17,16 +25,15 @@ const WritersCard: React.FC<Props> = ({
   youtube,
   email,
 }) => {
+
   return (
     <Grid
       container
-      sx={{
-        padding: '8px 16px 16px 16px',
-      }}
+      sx={WritersCardGridRoot}
     >
       <Grid
         item
-        xs={4}
+        xs={3}
         sm={4}
         md={4}
         lg={4}
@@ -34,68 +41,41 @@ const WritersCard: React.FC<Props> = ({
       >
         <Link 
           to={`/author/${authorId}`}
-          style={{
-            textDecoration: "none"
-          }}
+          style={LinkStyles()}
         >
         <CardMedia
-            component="img"
-            image={authorImage}
-            sx={{
-            width: "120px",
-            height: "120px",
-            borderRadius: '50%',
-            }}
+          component="img"
+          image={authorImage}
+          sx={WritersCardAvatar}
         />
         </Link>
       </Grid>
         <Grid
           item
-          xs={8}
+          xs={9}
           sm={8}
           md={8}
           lg={8}
           xl={8}
-          sx={{
-            paddingTop: '4px'
-          }}
+          sx={WritersCardGridAuthorName}
         >
          <Link 
           to={`/author/${authorId}`}
-          style={{
-            textDecoration: "none"
-          }}
+          style={LinkStyles()}
         >
         <Typography
-          variant="h6"
-          sx={{
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            display: '-webkit-box',
-            WebkitLineClamp: '2',
-            WebkitBoxOrient: 'vertical',
-            color: '#2F4C69',
-          }}
+          sx={WritersCardTextAuthorName}
         >
           {authorName}
         </Typography>
         </Link>
         <Link 
           to={`/author/${authorId}`}
-          style={{
-            textDecoration: "none"
-          }}
+          style={LinkStyles()}
         >
         <Typography
           variant="subtitle1"
-          sx={{
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            display: '-webkit-box',
-            WebkitLineClamp: '2',
-            WebkitBoxOrient: 'vertical',
-            color: '#667A6E',
-          }}
+          sx={WritersCardTextAuthorTitle}
         >
           {authorsTitle}
         </Typography>
@@ -106,7 +86,7 @@ const WritersCard: React.FC<Props> = ({
         <SocialMediaComponent
           widthPadding={'8px 8px 8px 0px'}
           turnOnStyle={true}
-          turnOnEmail={true}
+          turnOnEmail={false}
           turnOnEmailStyle={true}
           facebook={facebook}
           twitter={twitter}
