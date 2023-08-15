@@ -31,9 +31,10 @@ export const CardVerticalCard = styled(Card) ({
   '@media only screen and (min-width: 992px)': {
     width: '345px',
   },
+  // series
   '@media only screen and (max-width: 600px)': {
-    minWidth: 'calc(100vw - 48px)',
-    maxWidth: 'calc(100vw - 48px)',
+    minWidth: 'calc(100vw - 32px)',
+    maxWidth: 'calc(100vw - 32px)',
   },
 });
 

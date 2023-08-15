@@ -30,7 +30,6 @@ const ShowsMoviesComponent = () => {
           articalSectionFilter,
           articalAnimeFilter,
           articalMoviesFilter,
-          articalTVShowsFilter,
         )}
       />
   );

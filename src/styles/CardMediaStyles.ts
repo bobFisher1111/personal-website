@@ -7,6 +7,7 @@ export const CardMedaiArticalVideo = (articalpage: boolean, videoHeight: boolean
   height: articalpage ? '576px' : '181px',
   border: '0px',
   borderRadius: '7px',
+  // artical video
   '@media only screen and (max-width: 600px)': {
     maxWidth: `calc(100vw - ${mobileImageWidth})`,
     minWidth: `calc(100vw - ${mobileImageWidth})`,

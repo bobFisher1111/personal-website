@@ -11,6 +11,9 @@ export const TabComponentText = styled(Tab) ({
   '@media only screen and (max-width: 600px)': {
     fontSize: '12px',
     fontWeight: 'bold',
+    '&.MuiButtonBase-root': {
+      padding: '0px',
+    },
   },
 });
       

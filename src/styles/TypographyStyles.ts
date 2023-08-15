@@ -74,7 +74,7 @@ export const TypographyHorizontalArticalSubTitle = styled(Typography)<articalPag
   maxWidth: articalpage ? '321px' : `${cardtextwidth} !important`,
   '@media only screen and (max-width: 600px)': {
     fontSize: '12px',
-    padding: '0px 8px 0px 8px',
+    padding: '0px 4px 0px 4px',
   },
 }));
 
@@ -82,7 +82,7 @@ export const TypographyHorizontalArticalDate = styled(Typography)({
   fontSize: '14px',
   '@media only screen and (max-width: 600px)': {
     fontSize: '12px',
-    padding: '0px 8px 0px 8px',
+    padding: '0px 4px 0px 4px',
   },
 });
 

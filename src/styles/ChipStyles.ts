@@ -16,6 +16,7 @@ export const ChipStyle = styled(Chip) ({
 });
 
 export const ChipNoPointer = styled(Chip) ({
+  borderRadius: '4px',
   color: 'black',
 });
       

@@ -6,7 +6,6 @@ const ShowsMoviesComponentTabData = (
   articalSectionFilter: any,
   articalAnimeFilter: any,
   articalMoviesFilter: any,
-  articalTVShowsFilter: any,
 ) => {
   return (
     [
@@ -21,10 +20,6 @@ const ShowsMoviesComponentTabData = (
       { 
         name: 'Movies',
         data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalMoviesFilter} />
-      },
-      { 
-        name: 'TV Shows',
-        data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalTVShowsFilter} />
       },
       { 
         name: 'Series',

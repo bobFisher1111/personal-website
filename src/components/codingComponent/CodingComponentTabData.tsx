@@ -5,7 +5,6 @@ const CodingComponentTabData = (
   turOnAuthorForArtical: boolean,
   articalSectionFilter: any,
   articalFrontEndFilter: any,
-  articalBackEndFilter: any,
   articalDataFilter: any,
 ) => {
   return (
@@ -15,12 +14,8 @@ const CodingComponentTabData = (
         data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalSectionFilter} />
       },
       { 
-        name: 'FrontEnd',
+        name: 'Full Stack',
         data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalFrontEndFilter} />
-      },
-      { 
-        name: 'BackEnd',
-        data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalBackEndFilter} />
       },
       { 
         name: 'Data',

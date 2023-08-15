@@ -14,9 +14,9 @@ const CodingComponent = () => {
     return item.sectionType === 'Front End';
   });
 
-  const articalBackEndFilter = articalData?.articals?.filter((item: any) => {
-    return item.sectionType === 'Back End';
-  });
+  // const articalBackEndFilter = articalData?.articals?.filter((item: any) => {
+  //   return item.sectionType === 'Back End';
+  // });
 
   const articalDataFilter = articalData?.articals?.filter((item: any) => {
     return item.sectionType === 'Data';
@@ -29,7 +29,7 @@ const CodingComponent = () => {
           false,
           articalSectionFilter,
           articalFrontEndFilter,
-          articalBackEndFilter,
+          // articalBackEndFilter,
           articalDataFilter,
         )}
       />

@@ -5,23 +5,19 @@ import {
   } from "@mui/material";
 import HeaderComponent from "../headerComponent/HeaderComponent";
 import TabsComponent from '../tabsComponent/TabsComponent';
-import { GridTopAndBottom } from '../../styles/GridStyles';
+import {
+  SectionComponentGridRoot,
+  SectionComponentGridTabs,
+} from './SectionComponentStyles';
 
 const SectionsComponent: React.FC<Props> = ({
   headerTitle,
   sectionTabData,
 }) => {
-
   return (
     <Grid
       container
-      sx={{
-        background: '#fff',
-        display: 'flex',
-        maxWidth: "1024px",
-        margin: 'auto',
-        padding: '40px 16px 100px 16px',
-      }}
+      sx={SectionComponentGridRoot}
     >
       <Grid
         item
@@ -35,26 +31,21 @@ const SectionsComponent: React.FC<Props> = ({
           title={headerTitle}
           authorAvatar={false}
         />
-        <Divider
-          sx={{
-            borderColor: '#282c34',
-            padding: '0px 0px 16px 0px',
-          }}
-        />
       </Grid>
-      <GridTopAndBottom
+      <Grid
        item
        xs={12}
        sm={12}
        md={12}
        lg={12}
        xl={12}
+       sx={SectionComponentGridTabs}
       >
         <TabsComponent
           turnonsectiontabspadding={true}
           tabsData={sectionTabData}
         />
-      </GridTopAndBottom>
+      </Grid>
     </Grid>
     );
   }

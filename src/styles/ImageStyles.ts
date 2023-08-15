@@ -7,6 +7,7 @@ export const ImageHorizonatalArticals = (articalPage: any, imageWidth?: any) => 
     borderRadius: '7px',
     aspectRatio: '16/9',
     width: articalPage ? '960px' : '321px',
+    // artical image
     '@media only screen and (max-width: 600px)': {
       width: `calc(100vw - ${imageWidth})`,
     },

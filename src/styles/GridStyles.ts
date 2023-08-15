@@ -127,7 +127,7 @@ export const GridRoot = styled(Grid) ({
   minHeight: '100vh',
   display: 'flex',
   margin: 'auto',
-  padding: '36px 24px 0px 24px',
+  padding: '36px 16px 0px 16px',
 });
 
 export const GridMaxWidth = styled(Grid) ({
@@ -207,7 +207,7 @@ export const GridSectionCardRoot = styled(Grid) ({
 export const GridSeriesArticalList = styled(Grid) ({
   padding: '0px 0px 16px 0px',
   '@media only screen and (min-width: 768px)': {
-    padding: '0px 0px 0px 30px',
+    padding: '0px 0px 0px 16px',
   },
   '@media only screen and (min-width: 992px)': {
     padding: '0px',
@@ -246,8 +246,8 @@ export const GridVeriticalCardVideo = styled(Grid) ({
   height: '400px',
   background: '#2F4C69',
   '@media only screen and (max-width: 600px)': {
-    minWidth: 'calc(100vw - 48px)',
-    maxWidth: 'calc(100vw - 48px)',
+    minWidth: 'calc(100vw - 32px)',
+    maxWidth: 'calc(100vw - 32px)',
     height: '200px',
   },
   '@media only screen and (min-width: 600px)': {
@@ -258,7 +258,7 @@ export const GridVeriticalCardVideo = styled(Grid) ({
 
 export const GridHorizontalInfo = styled(Grid) ({
   '@media only screen and (max-width: 600px)': {
-    padding: '0px 8px 2px 8px',
+    padding: '0px 4px 2px 4px',
   },
 });
 
