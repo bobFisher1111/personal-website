@@ -5,6 +5,13 @@ import
     Link,
 } from '@mui/material/';
 import Works from '../works/Works';
+import {
+  AuthorAboutGridFavorites,
+  AuthorAboutFavoritesHeader,
+  AuthorAboutFavoritesGridTitle,
+  AuthorAboutFavoritesTitle,
+  AuthorAboutAuthorsFavoritesResponse,
+} from './AuthorAboutStyles';
 
 const AuthorAbout: React.FC<Props> = ({
   turnPaddingOn,
@@ -12,1000 +19,664 @@ const AuthorAbout: React.FC<Props> = ({
   bookData,
 }) => {
   const questionaireData = aboutData?.about[0]?.questionaire[0];
+
   return (
     <>
-    <Grid 
-    container
-    direction="row"
-    justifyContent="flex-start"
-    alignItems="center"
-    >
-      <Works
-        authorsPage={true}
-        bookData={bookData}
-        aboutWorks={true}
-        articalPage={true}
-      />
-    </Grid>
-    <Grid 
-    container
-    direction="row"
-    justifyContent="flex-start"
-    alignItems="center"
-      sx={{
-        padding: turnPaddingOn ? '16px' : '32px',
-      }}
-    >
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          display: 'flex',
-        }}
+      <Grid 
+        container
+        direction="row"
+        justifyContent="flex-start"
+        alignItems="center"
       >
-        <Typography
-          variant="h6"
-          sx={{
-            color: '#667A6E',
-            paddingRight: '8px',
-          }}
-        >
-          Questionnaire:
-        </Typography>
+        <Works
+          authorsPage={true}
+          bookData={bookData}
+          aboutWorks={true}
+          articalPage={true}
+        />
       </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
+      <Grid 
+        container
+        direction="row"
+        justifyContent="flex-start"
+        alignItems="center"
+        sx={AuthorAboutGridFavorites(turnPaddingOn)}
       >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
         >
-          Favorite Video Game Console:
-        </Typography>
-        <Link 
-          href={questionaireData?.FavoriteVideoGameConsole?.link}
-          underline="none"
-          target="_blank"
-          rel="noopener"
-          sx={{
-            fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-            fontSize: '1rem',
-            lineHeight: '1.5',  
-            paddingRight: '4px',
-            color: '#551A8B',
-            "&:hover": {
-              color: "#667A6E",
-            },     
-          }}
+          <Typography
+            sx={AuthorAboutFavoritesHeader}
+          >
+            Favorite
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          {questionaireData?.FavoriteVideoGameConsole?.name}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Video Game Console:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteVideoGameConsole?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteVideoGameConsole?.name}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
+        >
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Video Game:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteVideoGame?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteVideoGame?.name}
+          </Link>     
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
+        >
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Video Game Series:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteVideoGameSeries?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+          {questionaireData?.FavoriteVideoGameSeries?.name}
         </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite Video Game:
-        </Typography>
-        <Link 
-          href={questionaireData?.FavoriteVideoGame?.link}
-          underline="none"
-          target="_blank"
-          rel="noopener"
-          sx={{
-            fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-            fontSize: '1rem',
-            lineHeight: '1.5',
-            color: '#551A8B',
-            "&:hover": {
-              color: "#667A6E",
-            },       
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Video Game Genere:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteVideoGameGenere?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteVideoGameGenere?.name}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          {questionaireData?.FavoriteVideoGame?.name}
-        </Link>     
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            JRPG:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteJRPG?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteJRPG?.name} 
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite Video Game Series:
-        </Typography>
-        <Link 
-          href={questionaireData?.FavoriteVideoGameSeries?.link}
-          underline="none"
-          target="_blank"
-          rel="noopener"
-          sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                    color: "#667A6E",
-                },      
-              }}
-            >
-              {questionaireData?.FavoriteVideoGameSeries?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            RPG:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteRPG?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteRPG?.name}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite Video Game Genere:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteVideoGameGenere?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                    color: "#667A6E",
-                },           
-              }}
-            >
-               {questionaireData?.FavoriteVideoGameGenere?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Action Game:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteActionGame?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteActionGame?.name}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite JRPG:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteJRPG?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },          
-              }}
-            >
-              {questionaireData?.FavoriteJRPG?.name} 
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Platformer:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoritePlatformer?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoritePlatformer?.name}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite RPG:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteRPG?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },           
-              }}
-            >
-              {questionaireData?.FavoriteRPG?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        sx={{
-          padding: '2px 16px 2px 16px',
-        display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Horror:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteHorror?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteHorror?.name}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite Action Game:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteActionGame?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },           
-              }}
-            >
-              {questionaireData?.FavoriteActionGame?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Beat 'em up:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteBeatEmUp?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteBeatEmUp?.name}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite Platformer:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoritePlatformer?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },           
-              }}
-            >
-              {questionaireData?.FavoritePlatformer?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Stealth Game:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteStealthGame?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteStealthGame?.name}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite Horror:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteHorror?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },          
-              }}
-            >
-             {questionaireData?.FavoriteHorror?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Life Simulation Game:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteLifeSimulationGame?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteLifeSimulationGame?.name}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite Beat 'em up:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteBeatEmUp?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },          
-              }}
-            >
-              {questionaireData?.FavoriteBeatEmUp?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Visual Novel:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteVisualNovel?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteVisualNovel?.name}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite Stealth Game:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteStealthGame?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },           
-              }}
-            >
-              {questionaireData?.FavoriteStealthGame?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            RTS:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteRTS?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteRTS?.name}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite Life Simulation Game:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteLifeSimulationGame?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },           
-              }}
-            >
-              {questionaireData?.FavoriteLifeSimulationGame?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
-        >
-          Favorite Visual Novel:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteVisualNovel?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },          
-              }}
-            >
-              {questionaireData?.FavoriteVisualNovel?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
-        >
-          Favorite RTS:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteRTS?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },          
-              }}
-            >
-              {questionaireData?.FavoriteRTS?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
-        >
-          Favorite MMO:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteMMO?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },           
-              }}
-            >
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            MMO:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteMMO?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
              {questionaireData?.FavoriteMMO?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite Shooter:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteShooter?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },           
-              }}
-            >
-             {questionaireData?.FavoriteShooter?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Shooter:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteShooter?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteShooter?.name}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite Fighting Game:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteFightingGame?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },          
-              }}
-            >
-             {questionaireData?.FavoriteFightingGame?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-            // fontWeight: 'bold',
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Fighting Game:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteFightingGame?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteFightingGame?.name}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite Racing Game:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteRacingGame?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },           
-              }}
-            >
-              {questionaireData?.FavoriteRacingGame?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Racing Game:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteRacingGame?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteRacingGame?.name}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite Sports Game:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteSportsGame?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },           
-              }}
-            >
-              {questionaireData?.FavoriteSportsGame?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Sports Game:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteSportsGame?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteSportsGame?.name}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite Waifu:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteWaifu?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },           
-              }}
-            >
-              {questionaireData?.FavoriteWaifu?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Waifu:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteWaifu?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteWaifu?.name}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite Anime:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteAnime?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },           
-              }}
-            >
-              {questionaireData?.FavoriteAnime?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Anime:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteAnime?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteAnime?.name}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite Movie:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteMovie?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },           
-              }}
-            >
-              {questionaireData?.FavoriteMovie?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Movie:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteMovie?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteMovie?.name}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite Food:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteFood?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },           
-              }}
-            >
-              {questionaireData?.FavoriteFood?.name}
-            </Link>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Food:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteFood?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteFood?.name}
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite Card Game:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteCardGame?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },           
-              }}
-            >
-              {questionaireData?.FavoriteCardGame?.name}
-            </Link>
-          
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
-        sx={{
-          padding: '2px 16px 2px 16px',
-          display: 'flex',
-        }}
-      >
-        <Typography
-          color="#2F4C69"
-          sx={{
-            paddingRight: '8px',
-          }}
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Card Game:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteCardGame?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteCardGame?.name}
+          </Link>  
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={AuthorAboutFavoritesGridTitle}
         >
-          Favorite Board Game:
-        </Typography>
-        <Link 
-              href={questionaireData?.FavoriteBoardGame?.link}
-              underline="none"
-              target="_blank"
-              rel="noopener"
-              sx={{
-                fontFamily: "Roboto, Helvetica, Arial, sans-serif",
-                fontSize: '1rem',
-                lineHeight: '1.5',
-                color: '#551A8B',
-                "&:hover": {
-                  color: "#667A6E",
-                },           
-              }}
-            >
-              {questionaireData?.FavoriteBoardGame?.name}
-            </Link>
+          <Typography
+            color="#2F4C69"
+            sx={AuthorAboutFavoritesTitle}
+          >
+            Board Game:
+          </Typography>
+          <Link 
+            href={questionaireData?.FavoriteBoardGame?.link}
+            underline="none"
+            target="_blank"
+            rel="noopener"
+            sx={AuthorAboutAuthorsFavoritesResponse}
+          >
+            {questionaireData?.FavoriteBoardGame?.name}
+          </Link>
+        </Grid>
       </Grid>
-    </Grid>
     </>
   );
 }

@@ -5,7 +5,6 @@ import {
 } from "@mui/material";
 import HeaderComponent from "../../components/headerComponent/HeaderComponent";
 import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
-import CopyLinkComponent from '../copyLinkComponent/CopyLinkComponent';
 import { 
   AboutCompGridRoot,
   AboutCompAboutTitle,
@@ -99,13 +98,7 @@ const AboutComponent: React.FC<Props> = () => {
             sx={AboutCompAboutTextWithPAdding}
           >
             react2python.com
-          </Typography>
-          {<CopyLinkComponent
-              defaultColor={'#667A6E'}
-              email={true}
-              authorsEmail={'react2python.com'}
-            />
-        } 
+          </Typography> 
           </Grid>
           <Typography
             variant="h6"

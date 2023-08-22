@@ -49,7 +49,7 @@ export const WritersCardTextAuthorTitle = {
   WebkitBoxOrient: 'vertical',
   color: '#667A6E',
   '@media only screen and (max-width: 600px)': {
-    fontSize: '16px',
+    fontSize: '12px',
   },
 };
 

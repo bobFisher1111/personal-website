@@ -13,7 +13,7 @@ import {
   WritersCardTextAuthorName,
   WritersCardGridAuthorName,
   WritersCardTextAuthorTitle,
-} from './WritersStyleStyle';
+} from './WritersCardStyle';
 
 const WritersCard: React.FC<Props> = ({
   authorImage,
@@ -86,7 +86,7 @@ const WritersCard: React.FC<Props> = ({
         <SocialMediaComponent
           widthPadding={'8px 8px 8px 0px'}
           turnOnStyle={true}
-          turnOnEmail={false}
+          turnOnEmail={true}
           turnOnEmailStyle={true}
           facebook={facebook}
           twitter={twitter}

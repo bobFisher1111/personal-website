@@ -2,13 +2,18 @@ import React from 'react';
 import {
   Typography,
   Grid,
-  Divider,
 } from "@mui/material";
 import HeaderComponent from '../headerComponent/HeaderComponent';
 import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
 import TabsComponent from '../tabsComponent/TabsComponent';
 import { useSelector } from 'react-redux';
 import AuthorComponetTabData from './AuthorComponetTabData';
+import {
+  AuthorComponentGridRoot,
+  AuthorComponentGridBiography,
+  AuthorComponentGridBiographyTitle,
+  AuthorComponentGridBiographyText,
+} from './AuthorComponentStyles';
 
 const AuthorComponent: React.FC<Props> = ({
   turOnArticalPage,
@@ -41,15 +46,7 @@ const AuthorComponent: React.FC<Props> = ({
     <Grid
       container
       justifyContent="center"
-      sx={{
-        background: '#fff',
-        display: 'flex',
-        paddingBottom: '200px',
-        maxWidth: "1024px",
-        margin: 'auto',
-        padding: '40px 16px 100px 16px',
-        borderLeft: turOnArticalPage ? '1px solid #667A6E' : '',
-      }}
+      sx={AuthorComponentGridRoot(turOnArticalPage)}
     >
       <Grid
         item
@@ -66,14 +63,6 @@ const AuthorComponent: React.FC<Props> = ({
           authorId={articalAuthorData?.authorId}
           articalPage={turOnArticalPage}
         />
-        {!turOnArticalPage && 
-        <Divider
-          sx={{
-            borderColor: '#282c34',
-            padding: '0px 0px 16px 0px',
-          }}
-        />
-        }
       </Grid>
       <Grid
         item
@@ -82,28 +71,17 @@ const AuthorComponent: React.FC<Props> = ({
         md={12}
         lg={12}
         xl={12}
-        sx={{
-          padding: '8px 16px 16px 16px',
-        }}
+        sx={AuthorComponentGridBiography}
       >
         <Typography
           variant="h6"
-          sx={{
-            textAlign: 'fled-start',
-            color: '#667A6E',
-            padding: '16px 0px 16px 0px',
-          }}
+          sx={AuthorComponentGridBiographyTitle}
         >
           {"Biography"}
         </Typography>
         <Typography
           color="#2F4C69"
-          sx={{
-            textAlign: 'fled-start',
-            // color: 'grey',
-            fontSize: '16px',
-            textIndent: '15px',
-          }}
+          sx={AuthorComponentGridBiographyText}
         >
           {authorData?.biography || articalAuthorData?.biography}
         </Typography>
