@@ -2,10 +2,10 @@ import React, { Suspense, useEffect } from 'react';
 import {
   Routes, Route, BrowserRouter,
 } from 'react-router-dom';
-import { AppDispatch } from './app/store';
+import { AppDispatch } from './store/redux/store';
 import { useDispatch } from 'react-redux';
-import GetWebsiteData from './features/webSiteData/GetWebsiteData';
-import Layout from './components/layout/Layout';
+import GetWebsiteData from './store/redux/webSiteData/GetWebsiteData';
+import Layout from './layout/Layout';
 import routes from './routes/Routes';
 import './App.css';
 

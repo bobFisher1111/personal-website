@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Grid,
 } from "@mui/material";
-import ComingSoon from "../../utilities/ComingSoon";
+import ComingSoon from "../comingSoon/ComingSoon";
 import HorizontalArticalCardComponent from '../cards/articalCards/horizontalCard/HorizontalArticalCardComponent';
 import { 
   GridPaddingArticalList,

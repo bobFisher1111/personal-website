@@ -5,9 +5,9 @@ import {
 } from "@mui/material";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import SectionComponent from '../../sectionComponent/SectionComponent';
-import { GridSectionList, GridHoverBlack } from '../../../styles/GridStyles';
-import { TypographyHoverBlack } from '../../../styles/TypographyStyles';
+import SectionComponent from '../../components/sectionComponent/SectionComponent';
+import { GridSectionList, GridHoverBlack } from '../../styles/GridStyles';
+import { TypographyHoverBlack } from '../../styles/TypographyStyles';
 
 const SectionsDropDown = () => {
   const [state, setState] = React.useState(false);

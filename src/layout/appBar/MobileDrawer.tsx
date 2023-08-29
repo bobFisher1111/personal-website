@@ -5,14 +5,14 @@ import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import { Link } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
-import SocialMediaComponent from '../../socialMediaComponent/SocialMediaComponent';
+import SocialMediaComponent from '../../components/socialMediaComponent/SocialMediaComponent';
 import { 
   TypographyMobileDrawer,
   TypograohyMobileDrawerWebistieName,
-} from '../../../styles/TypographyStyles';
-import { GridMobileDrawerAppBar, GridCenterItems } from '../../../styles/GridStyles';
-import { BoxMobileDrawer } from '../../../styles/BoxStyles';
-import { LinkStyles } from '../../../styles/LinkStyles';
+} from '../../styles/TypographyStyles';
+import { GridMobileDrawerAppBar, GridCenterItems } from '../../styles/GridStyles';
+import { BoxMobileDrawer } from '../../styles/BoxStyles';
+import { LinkStyles } from '../../styles/LinkStyles';
 
 type Anchor = 'left';
 

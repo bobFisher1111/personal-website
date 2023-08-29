@@ -17,10 +17,11 @@ export const CardMedaiArticalVideo = (articalpage: boolean, videoHeight: boolean
     maxWidth: 'calc(100vw - 48px)',
     minWidth: 'calc(100vw - 48px)',
   },
+  // here
   '@media only screen and (min-width: 768px)': {
     minWidth: articalpage ? `calc(100vw - ${mobileImageWidth})` : '321px',
-    maxWidth: articalpage ? '960px' : '321px',
-    height: videoHeight ? '444px' : '200px',
+    maxWidth: articalpage ? `calc(100vw - ${mobileImageWidth})` : '321px',
+    height: articalpage ? '450px': videoHeight ? '444px' : '200px',
   },
   '@media only screen and (min-width: 992px)': {
     minWidth: articalpage ? '960px' : '321px',

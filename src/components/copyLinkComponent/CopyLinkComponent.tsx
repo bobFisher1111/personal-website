@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { appBaseURL } from '../../config';
-import copyLink from '../../utilities/copyLink';
+import copyLink from '../../util/copyLink';
 import { ContentCopyIconStyle, EmailOutlinedIconStyles } from '../../styles/IconStyles';
 
 const CopyLinkComponent: React.FC<Props> = ({

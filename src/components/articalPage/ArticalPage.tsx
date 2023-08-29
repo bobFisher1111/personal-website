@@ -6,8 +6,13 @@ import HeaderComponent from "../headerComponent/HeaderComponent";
 import HorizontalArticalCardComponent from "../cards/articalCards/horizontalCard/HorizontalArticalCardComponent";
 import AuthorComponent from '../authorComponents/AuthorComponent';
 import { useSelector } from 'react-redux';
-import createArtical from '../../utilities/createArtical';
-import getNameFromUrl from '../../utilities/getNameFromUrl';
+import createArtical from '../createArticals/CreateArtical';
+import getNameFromUrl from '../../util/getNameFromUrl';
+import {
+  GridRoot,
+  GridHeader,
+  GridAuthorComponent,
+} from './ArticalPageStyles';
 
 
 const ArticalPage: React.FC<Props> = ({
@@ -44,9 +49,7 @@ const ArticalPage: React.FC<Props> = ({
       container
       justifyContent='flex-end'
       alignContent='center'
-      sx={{
-        paddingBottom: '200px',
-      }}
+      sx={GridRoot}
     >
       <Grid
         item
@@ -55,9 +58,7 @@ const ArticalPage: React.FC<Props> = ({
         md={12}
         lg={9}
         xl={9}
-        sx={{
-            alignItems: 'center',
-          }}
+        sx={GridHeader}
       >
        <HeaderComponent
           title={articalData?.articalTitle}
@@ -77,7 +78,7 @@ const ArticalPage: React.FC<Props> = ({
           videoOrImageCover={articalData?.coverImageOrVideo}
           sectionLink={articalData?.sectionLink}
           section={articalData?.section}
-          mobileImageWidth={'48px'}
+          mobileImageWidth={'22px'}
           videoHeight={false}
         />
           {articalData  && articalData.artical?.map((item: any) => (
@@ -91,6 +92,7 @@ const ArticalPage: React.FC<Props> = ({
         md={0}
         lg={3}
         xl={3}
+        sx={GridAuthorComponent}
       >
         <AuthorComponent
           turOnArticalPage={true}

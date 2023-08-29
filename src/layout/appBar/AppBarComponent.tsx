@@ -3,7 +3,7 @@ import {
   Box,
 } from "@mui/material";
 import WebSiteAppBar from './WebSiteAppBar';
-import AppBarStyles from '../../../styles/AppBarStyles';
+import AppBarStyles from '../../styles/AppBarStyles';
 
 const AppBarComponent = () => {
   /*

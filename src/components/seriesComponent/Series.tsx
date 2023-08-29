@@ -5,7 +5,7 @@ import {
   Grid,
   Button,
 } from "@mui/material";
-import ComingSoon from "../../utilities/ComingSoon";
+import ComingSoon from "../comingSoon/ComingSoon";
 import VerticalArticalCardComponent from "../cards/articalCards/verticalCard/VerticalArticalCardComponent";
 import { LinkStyles } from '../../styles/LinkStyles';
 import { 

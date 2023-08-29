@@ -70,7 +70,6 @@ export const GridCenterItems = styled(Grid) ({
 });
 
 export const GridHeader = styled(Grid) ({
-  padding: '50px 0px 0px 0px',
   '@media (max-width: 1023px)': {
     padding: '0px',
   },

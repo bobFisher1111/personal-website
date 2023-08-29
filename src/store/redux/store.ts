@@ -1,10 +1,8 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
-import WebSiteDataSlice from '../features/webSiteData/WebSiteDataSlice';
+import WebSiteDataSlice from './webSiteData/WebSiteDataSlice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
     webSiteData: WebSiteDataSlice.reducer,
   },
 });

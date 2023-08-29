@@ -18,6 +18,12 @@ export const ChipStyle = styled(Chip) ({
 export const ChipNoPointer = styled(Chip) ({
   borderRadius: '4px',
   color: 'black',
+  '@media only screen and (max-width: 600px)': {
+    fontSize: '10px',
+    '&.MuiChip-root': {
+      height: '24px',
+    },
+  },
 });
       
 export default [

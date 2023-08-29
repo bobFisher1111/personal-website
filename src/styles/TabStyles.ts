@@ -18,6 +18,6 @@ export const TabComponentText = styled(Tab) ({
 });
       
 export default [
-    TabComponentText,
+  TabComponentText,
 ];
     

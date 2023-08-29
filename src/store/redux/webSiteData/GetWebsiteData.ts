@@ -1,5 +1,5 @@
 import { createAsyncThunk, isRejectedWithValue, PayloadAction } from '@reduxjs/toolkit';
-import { getWebsiteData } from '../../services/getdata-services';
+import { getWebsiteData } from '../../../services/getdata-services';
 
 export const GetWebsiteData = createAsyncThunk("websiteData/getData", async (arg, {
   rejectWithValue,
