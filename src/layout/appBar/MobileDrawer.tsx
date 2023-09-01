@@ -10,6 +10,7 @@ import {
   TypographyMobileDrawer,
   TypograohyMobileDrawerWebistieName,
 } from '../../styles/TypographyStyles';
+import { MenuIconStyle } from './MobileDrawerStyle';
 import { GridMobileDrawerAppBar, GridCenterItems } from '../../styles/GridStyles';
 import { BoxMobileDrawer } from '../../styles/BoxStyles';
 import { LinkStyles } from '../../styles/LinkStyles';
@@ -213,9 +214,7 @@ const MobileDrawer = () => {
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}>
             <MenuIcon 
-              sx={{
-                color: 'white',
-              }}
+              sx={MenuIconStyle}
             />
           </Button>
           <Drawer

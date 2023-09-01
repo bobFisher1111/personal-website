@@ -93,10 +93,18 @@ const WebSiteAppBar = () => {
         <GridMobileAppBar
           item 
           xs={6}
-          sm={6}
+          sm={4}
           md={6}
           lg={0}
           xl={0}
+          sx={{
+            '@media only screen and (min-width: 768px)': {
+              paddingRight: '100px',
+            },
+            '@media only screen and (min-width: 820px)': {
+              paddingRight: '50px',
+            },
+          }}
         >
           <Grid
             container

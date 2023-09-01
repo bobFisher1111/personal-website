@@ -91,28 +91,28 @@ export const TypographyHorizontalArticalDate = styled(Typography)({
 });
 
 export const TypographyLinkTwoPage = styled(Typography) ({
-  color: "white",
+  color: "black",
   cursor: "pointer",
   "&:hover": {
-    color: "black",
+    color: "white",
   },
 });
 
 export const TypographyMobileTitle = styled(Typography) ({
   fontSize: '16px',
-  color: "white",
+  color: "black",
   cursor: "pointer",
   "&:hover": {
-    color: "black",
+    color: "white",
   },
 });
 
 export const TypographyDesktopTitle = styled(Typography) ({
   fontSize: '20px',
-  color: "white",
+  color: "black",
   cursor: "pointer",
   "&:hover": {
-    color: "black",
+    color: "white",
   },
 });
 
@@ -128,10 +128,10 @@ export const TypographyMobileDrawer = styled(Typography) ({
 
 export const TypograohyMobileDrawerWebistieName = styled(Typography) ({
   variant: "h6",
-  color: "white",
+  color: "black",
   cursor: "pointer",
   "&:hover": {
-    color: "black",
+    color: "white",
   },
   fontSize: '20px',
 });
@@ -150,9 +150,9 @@ export const TypographyHeaderTitle = styled(Typography) ({
 });
 
 export const TypographyHoverBlack = styled(Typography) ({
-  color: "white",
+  color: "black",
   "&:hover": {
-    color: "black",
+    color: "white",
   },
 });
 
