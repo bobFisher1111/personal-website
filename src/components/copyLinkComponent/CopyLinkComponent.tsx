@@ -24,7 +24,6 @@ const CopyLinkComponent: React.FC<Props> = ({
           <EmailOutlinedIconStyles
             prop={emailIcon}
             id="copyEmail"
-            fontSize="large"
             onClick={() => copyLink(setEmailIcon, authorsEmail)}
           />
         :

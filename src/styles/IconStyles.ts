@@ -28,6 +28,11 @@ export const EmailOutlinedIconStyles = styled(EmailOutlinedIcon)<props>(({ prop 
   "&:hover": {
     color: "#2F4C69",
   },
+  paddingTop: '5px',
+  '@media only screen and (max-width: 600px)': {
+    height: '30px',
+    padding: '0px',
+  },
 }));
         
 export default [

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import TwitterLogo from '../../assets/icons/TwitterLogo.svg';
 import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
 import FacebookLogo from '../../assets/icons/FacebookLogo.png';
-import { Grid } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 import CopyLinkComponent from '../copyLinkComponent/CopyLinkComponent';
 
 const SocialMediaComponent: React.FC<Props> = ({
@@ -28,7 +28,17 @@ const SocialMediaComponent: React.FC<Props> = ({
             target="_blank"
             rel="noreferrer"
             >
-            <img src={FacebookLogo} height="20px" alt="Facebook logo" />
+            <Box
+              component="img"
+              src={FacebookLogo}
+              alt="Facebook logo"
+              sx={{
+                height: '20px',
+                '@media only screen and (max-width: 600px)': {
+                  height: '15px',
+                },
+              }}
+            />
           </a>
         </Grid>
         <Grid
@@ -42,7 +52,18 @@ const SocialMediaComponent: React.FC<Props> = ({
             target="_blank"
             rel="noreferrer"
             >
-            <img src={TwitterLogo} height="20px" alt="Twitter logo" />
+            <Box
+              component="img"
+              src={TwitterLogo}
+              // height="20px"
+              alt="Twitter logo"
+              sx={{
+                height: '20px',
+                '@media only screen and (max-width: 600px)': {
+                  height: '15px',
+                },
+              }}
+            />
           </a>
         </Grid>
         <Grid
@@ -56,10 +77,17 @@ const SocialMediaComponent: React.FC<Props> = ({
             target="_blank"
             rel="noreferrer"
             >
-            <img 
+            <Box
+              component="img"
               src={YoutTubeLogo} 
               height="20px"
               alt="YouTube logo"
+              sx={{
+                height: '20px',
+                '@media only screen and (max-width: 600px)': {
+                  height: '15px',
+                },
+              }}
             />
           </a>
         </Grid>
