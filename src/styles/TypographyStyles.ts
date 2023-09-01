@@ -16,6 +16,10 @@ export const TypographyArticalPageArticals = styled(Typography) ({
   WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
   fontFamily: 'sans-serif',
+  '@media only screen and (min-width: 992px)': {
+    minWidth: '321px',
+    maxWidth: '321px',
+  },
 });
 
 export const TypographyArticalInfoRight = styled(Typography) ({

@@ -19,10 +19,6 @@ export const GridAlignItems = styled(Grid) ({
   padding: '0px 16px 200px 16px',
   maxWidth: "1024px",
   margin: 'auto',
-  // verify if need this before Make PR *************
-  // '@media only screen and (min-width: 768px) and (max-width: 820px)': {
-  //   padding: '0px 16px 24px 16px',
-  // },
   '@media only screen and (max-width: 600px)': {
     padding: '0px 0px 200px 0px',
   },

@@ -16,7 +16,8 @@ export const CardHorizontalArticalInfo = styled(Card)<articalPageProp>(({ artica
     maxWidth: '45%',
   },
   '@media only screen and (min-width: 992px)': {
-    maxWidth: '50%'
+    minWidth: '321px',
+    maxWidth: '321px',
   },
   '@media only screen and (max-width: 600px)': {
     padding: '0px',

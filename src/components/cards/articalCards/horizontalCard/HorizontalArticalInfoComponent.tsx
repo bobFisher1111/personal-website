@@ -101,13 +101,15 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
             </Link>
             </div>
           }
-          <CopyLinkComponent
-            authorsId={authorsId}
-            articalId={articalId}
-            defaultColor={'#667A6E'}
-            padding={'0px 0px 0px 16px'}
-            email={false}
-          />
+          {authorPage && series && sectionPage &&
+            <CopyLinkComponent
+              authorsId={authorsId}
+              articalId={articalId}
+              defaultColor={'#667A6E'}
+              padding={'0px 0px 0px 16px'}
+              email={false}
+            />
+          }
         </GridHorizontalInfo>
     )
 }

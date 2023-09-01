@@ -45,7 +45,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
   const getAuthorData = getWebsiteData?.authors?.filter((item: any) => {
     return item.authorId === authorsId;
   });
-
+  // articalPage = true;
   useEffect(() => {
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = currentLocation.split("/");
@@ -59,6 +59,8 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
     const checkIfIncludesSection = getIdFromCurrentLocation.includes(sectionLink);
     setSectionPage(checkIfIncludesSection);
   }, []);
+
+  console.log('what is articalPage', articalPage);
 
   return (
     <div>
