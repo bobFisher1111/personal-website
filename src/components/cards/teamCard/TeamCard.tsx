@@ -50,13 +50,13 @@ const TeamCard: React.FC<Props> = ({
           xl={6}
         >
           <CardContent sx={{fontColor: 'white'}}>
-            <Typography component="div" variant="h5" color="white">
+            <Typography component="span" variant="h5" color="white">
               {firstName} {lastName}
             </Typography>
-            <Typography variant="subtitle1" color="white" component="div">
+            <Typography variant="subtitle1" color="white" component="span">
               {title}
             </Typography>
-            <Typography variant="subtitle1" color="white" component="div">
+            <Typography variant="subtitle1" color="white" component="span">
               {teamInfo}
             </Typography>
           </CardContent>

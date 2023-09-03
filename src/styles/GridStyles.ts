@@ -8,7 +8,7 @@ type homePageProp = {
 };
 
 type imageWidthProp = {
-    imageWidth: string,
+    imagewidth: string,
  };
 
 type tabsComponentProps = {
@@ -82,8 +82,8 @@ export const GridArticalInfoComponent = styled(Grid) ({
   padding: '4px 0px 0px 0px',
 });
 
-export const GridHorizontalArticalMaxWidth = styled(Grid)<imageWidthProp>(({ imageWidth }) => ({
-  maxWidth: imageWidth,
+export const GridHorizontalArticalMaxWidth = styled(Grid)<imageWidthProp>(({ imagewidth }) => ({
+  maxWidth: imagewidth,
 }));
 
 export const GridOverflowHeader = styled(Grid) ({

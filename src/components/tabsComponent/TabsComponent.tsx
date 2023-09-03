@@ -45,6 +45,7 @@ const TabsComponent: React.FC<Props> = ({
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
   return (
     <BoxTabsChange>
       <GridTabsComponent
@@ -68,7 +69,10 @@ const TabsComponent: React.FC<Props> = ({
         </Tabs>
       </GridTabsComponent>
       {tabsData?.map((item: any, index: number) => (
-        <TabPanel value={value} index={index}>
+        <TabPanel 
+          value={value}
+          index={index}
+        >
           {tabsData[index].data}
         </TabPanel>
       ))}

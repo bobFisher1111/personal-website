@@ -47,7 +47,7 @@ const LatestArticalCard: React.FC<Props> = ({
             WebkitLineClamp: '2',
             WebkitBoxOrient: 'vertical',
           }} 
-          component="div"
+          component="span"
         >
           {articalInfo}
         </Typography>

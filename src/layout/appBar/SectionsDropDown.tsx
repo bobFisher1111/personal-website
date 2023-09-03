@@ -49,14 +49,19 @@ const SectionsDropDown = () => {
       <GridHoverBlack
         container
         onClick={toggleDrawer(true)}
+        sx={{
+          "&:hover": {
+            color: "white",
+          },
+        }}
       >
         <TypographyHoverBlack>
-          <Grid
-            container
-          >
+        <Grid
+          container
+        >
             Sections
-            {state ?  <KeyboardArrowUpIcon/> : <KeyboardArrowDownIcon />}
-          </Grid>
+            {state ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+        </Grid>
         </TypographyHoverBlack>
       </GridHoverBlack>
       <SwipeableDrawer

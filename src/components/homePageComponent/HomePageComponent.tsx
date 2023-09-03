@@ -7,9 +7,7 @@ import TabsComponent from '../tabsComponent/TabsComponent';
 import {
   GridAlignItems,
   GridRoot,
-  GridPageWidth,
 } from '../../styles/GridStyles';
-import { DividerForHeader } from '../../styles/DividerStyles';
 
 const HomePageComponent = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
