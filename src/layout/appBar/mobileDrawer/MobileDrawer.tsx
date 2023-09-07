@@ -55,7 +55,7 @@ const MobileDrawer = () => {
             style={LinkStyles()}
           >
             <TypograohyMobileDrawerWebistieName>
-              React2Python
+              WebsiteName
             </TypograohyMobileDrawerWebistieName>
           </Link>
         </Grid>

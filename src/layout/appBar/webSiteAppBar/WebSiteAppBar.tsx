@@ -35,7 +35,7 @@ const WebSiteAppBar = () => {
             style={LinkStyles()}
             >
             <TypographyDesktopTitle>
-              React2Python
+              WebsiteName
             </TypographyDesktopTitle>
           </Link>
         </GridDesktopAppBar>
@@ -116,7 +116,7 @@ const WebSiteAppBar = () => {
               }}
             >
               <TypographyMobileTitle>
-                React2Python
+                WebsiteName
               </TypographyMobileTitle>
             </Link>
           </Grid>

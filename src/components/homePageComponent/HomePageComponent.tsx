@@ -18,7 +18,7 @@ const HomePageComponent = () => {
       container
     >
       <HeaderComponent
-        title='React2Python'
+        title='WebsiteName'
         authorAvatar={false}
       />
       <GridAlignItems
