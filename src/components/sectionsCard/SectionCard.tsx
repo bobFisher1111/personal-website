@@ -1,11 +1,16 @@
 import React from 'react';
 import {
-  CardMedia, Card,
+  CardMedia,
+  Card,
+  CardActions,
+  Button,
 } from '@mui/material/';
 import { Link } from "react-router-dom";
 import { GridSectionCardRoot, GridOverflowHeader } from '../../styles/GridStyles';
-import { CardActionsSectionName } from '../../styles/CardActionsStyles';
-import { ButtonSectionTtile } from '../../styles/ButtonStyles';
+import { 
+  ButtonSectionTtileStyle,
+  CardActionsSectionNameStyle,
+} from './SectionCardStyles';
 import { CardSectionCard } from '../../styles/CardStyles';
 import { CardMediaSection } from '../../styles/CardMediaStyles';
 import { LinkStyles } from '../../styles/LinkStyles';
@@ -43,20 +48,23 @@ const SectionCard: React.FC<Props> = ({
               sx={CardMediaSection}
             />
           </Link>
-            <CardActionsSectionName>
+            <CardActions
+              sx={CardActionsSectionNameStyle}
+            >
             <Link 
               to={`/${linkTo}`}
               style={{
                 textDecoration: "none"
               }}
             >
-              <ButtonSectionTtile 
+              <Button 
                 size="small"
+                sx={ButtonSectionTtileStyle}
               >
                 {section}
-              </ButtonSectionTtile>
+              </Button>
             </Link>
-            </CardActionsSectionName>
+            </CardActions>
           </Card>
         </GridOverflowHeader>
       </GridSectionCardRoot>

@@ -2,13 +2,13 @@ import React from 'react';
 import {
   Grid,
 } from "@mui/material";
-import CopyLinkComponent from '../../../copyLinkComponent/CopyLinkComponent';
+import CopyLinkComponent from '../../../../copyLinkComponent/CopyLinkComponent';
 import { Link } from "react-router-dom";
-import { LinkStyles } from '../../../../styles/LinkStyles';
-import { DivMaterialSymbolsOutlined, DivSeriesLeftPadding } from '../../../../styles/DivStyles';
-import { TypographyHorizontalInfoText } from '../../../../styles/TypographyStyles';
-import { ChipStyle, ChipNoPointer } from '../../../../styles/ChipStyles';
-import { GridHorizontalInfo } from '../../../../styles/GridStyles';
+import { LinkStyles } from '../../../../../styles/LinkStyles';
+import { DivMaterialSymbolsOutlined, DivSeriesLeftPadding } from '../../../../../styles/DivStyles';
+import { TypographyHorizontalInfoText } from '../../../../../styles/TypographyStyles';
+import { ChipStyle, ChipNoPointer } from '../../../../../styles/ChipStyles';
+import { GridHorizontalInfo } from '../../../../../styles/GridStyles';
 
 const HorizontalArticalInfoComponent: React.FC<Props> = ({
   section,

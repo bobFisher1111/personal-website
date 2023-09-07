@@ -1,9 +1,10 @@
 import React from "react";
 import {
   Box,
+  AppBar,
 } from "@mui/material";
-import WebSiteAppBar from './WebSiteAppBar';
-import AppBarStyles from '../../styles/AppBarStyles';
+import WebSiteAppBar from './webSiteAppBar/WebSiteAppBar';
+import { AppBarStyles } from './AppBarComponentStyles';
 
 const AppBarComponent = () => {
   /*
@@ -19,9 +20,11 @@ const AppBarComponent = () => {
   */
   return (
     <Box>
-      <AppBarStyles>
+      <AppBar
+        sx={AppBarStyles}
+      >
         <WebSiteAppBar />      
-      </AppBarStyles>
+      </AppBar>
     </Box>
   )}
 

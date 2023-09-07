@@ -1,7 +1,7 @@
 import ArticalsList from "../articalTabs/ArticalsList";
 import Series from "../seriesComponent/Series";
 import Works from '../works/Works';
-import AuthorAbout from './AuthorAbout';
+import AuthorAbout from './authorAbout/AuthorAbout';
 
 const AuthorComponetTabData = (
   turOnAuthorForArtical: boolean,

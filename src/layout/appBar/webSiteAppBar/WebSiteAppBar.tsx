@@ -2,14 +2,14 @@ import {
   Grid,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import SocialMediaComponent from '../../components/socialMediaComponent/SocialMediaComponent';
-import AppBarLinksToPages from './AppBarLinksToPages';
-import MobileDrawer from './MobileDrawer';
-import { BoxAppBar } from '../../styles/BoxStyles';
-import { GridDesktopAppBar, GridMobileAppBar } from '../../styles/GridStyles';
-import { TypographyMobileTitle, TypographyDesktopTitle } from '../../styles/TypographyStyles';
-import { LinkStyles } from "../../styles/LinkStyles";
-import AppConfig from '../../config';
+import SocialMediaComponent from '../../../components/socialMediaComponent/SocialMediaComponent';
+import AppBarLinksToPages from '../appBarLinksToPages/AppBarLinksToPages';
+import MobileDrawer from '../mobileDrawer/MobileDrawer';
+import { BoxAppBar } from '../../../styles/BoxStyles';
+import { GridDesktopAppBar, GridMobileAppBar } from '../../../styles/GridStyles';
+import { TypographyMobileTitle, TypographyDesktopTitle } from '../../../styles/TypographyStyles';
+import { LinkStyles } from "../../../styles/LinkStyles";
+import AppConfig from '../../../config';
 
 const WebSiteAppBar = () => {
   const facebook = AppConfig.facebookURL;

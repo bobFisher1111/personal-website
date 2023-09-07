@@ -1,10 +1,11 @@
 import React, { useState, SyntheticEvent } from 'react';
 import {
+  Tab,
   Tabs,
 } from "@mui/material";
 import { BoxTabPanel, BoxTabsChange } from '../../styles/BoxStyles';
 import { GridTabsComponent } from '../../styles/GridStyles';
-import { TabComponentText } from '../../styles/TabStyles';
+import { TabComponentTextStyles } from './TabsComponentStyles';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -60,10 +61,11 @@ const TabsComponent: React.FC<Props> = ({
           textColor="inherit"
         >
           {tabsData?.map((item: any, index: any) => (
-            <TabComponentText
+            <Tab
               onClick={() => setValue(index)}
               label={item.name}
               {...tabProps(index)} 
+              sx={TabComponentTextStyles}
             />
           ))} 
         </Tabs>

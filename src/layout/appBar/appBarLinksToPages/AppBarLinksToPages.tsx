@@ -3,10 +3,10 @@ import {
   Grid,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import SectionsDropDown from './SectionsDropDown';
-import { TypographyLinkTwoPage } from '../../styles/TypographyStyles';
-import { GridPointer } from '../../styles/GridStyles';
-import { LinkStyles } from "../../styles/LinkStyles";
+import SectionsDropDown from '../sectionsDropDown/SectionsDropDown';
+import { TypographyLinkTwoPage } from '../../../styles/TypographyStyles';
+import { GridPointer } from '../../../styles/GridStyles';
+import { LinkStyles } from "../../../styles/LinkStyles";
 
 const AppBarLinksToPages = () => {
   return (

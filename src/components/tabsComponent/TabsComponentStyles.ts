@@ -1,10 +1,4 @@
-import {
-  styled,
-  Tab
-} from "@mui/material";
-
-// TabsComponent
-export const TabComponentText = styled(Tab) ({
+export const TabComponentTextStyles = {
   textTransform: 'initial',
   fontSize: '18px',
   color: '#2F4C69',
@@ -15,9 +9,9 @@ export const TabComponentText = styled(Tab) ({
       padding: '0px',
     },
   },
-});
+};
       
 export default [
-  TabComponentText,
+  TabComponentTextStyles,
 ];
     

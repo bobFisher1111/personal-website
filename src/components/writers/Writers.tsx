@@ -5,7 +5,7 @@ import {
 } from "@mui/material";
 import { useSelector } from 'react-redux';
 import HeaderComponent from '../headerComponent/HeaderComponent';
-import WritersCard from './WritersCard';
+import WritersCard from './writersCard/WritersCard';
 import {
   WritersGridRoot,
   WritersCardGrid,

@@ -5,8 +5,8 @@ import {
   CardMedia,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
-import { LinkStyles } from '../../styles/LinkStyles';
+import SocialMediaComponent from '../../socialMediaComponent/SocialMediaComponent';
+import { LinkStyles } from '../../../styles/LinkStyles';
 import {
   WritersCardGridRoot,
   WritersCardAvatar,

@@ -6,10 +6,10 @@ import {
   } from "@mui/material";
 import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
-import HorizontalArticalInfoComponent from './HorizontalArticalInfoComponent';
-import HorizontalArticalPageInfoComponent from './HorizontalArticalPageInfoComponent';
+import HorizontalArticalInfoComponent from './horizontalArticalInfoComponent/HorizontalArticalInfoComponent';
+import HorizontalArticalPageInfoComponent from './horizontalArticalPageInfoComponent/HorizontalArticalPageInfoComponent';
 import { GridHorizontalArticalContainer, GridHorizontalArticalMaxWidth } from '../../../../styles/GridStyles';
-import { ImageHorizonatalArticals } from '../../../../styles/ImageStyles';
+import { ImageHorizonatalArticalsStyles } from './HorizontalArticalCardComponentStyles';
 import { CardMedaiArticalVideo } from '../../../../styles/CardMediaStyles';
 import { CardHorizontalArticalInfo } from '../../../../styles/CardStyles';
 import {
@@ -80,7 +80,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
                 component="img"
                 alt="Artical Cover Image"
                 src={videoOrImageCover}
-                sx={ImageHorizonatalArticals(articalPage, mobileImageWidth)}
+                sx={ImageHorizonatalArticalsStyles(articalPage, mobileImageWidth)}
               />
             </Link>
           :

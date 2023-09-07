@@ -1,8 +1,4 @@
-import {
-    styled,
-} from "@mui/material";
-
-export const ImageHorizonatalArticals = (articalPage: any, imageWidth?: any) => ({
+export const ImageHorizonatalArticalsStyles = (articalPage: any, imageWidth?: any) => ({
     height: `${articalPage} ? '576px' : '181px'`,
     borderRadius: '7px',
     aspectRatio: '16/9',
@@ -25,5 +21,5 @@ export const ImageHorizonatalArticals = (articalPage: any, imageWidth?: any) => 
 });
 
 export default [
-  ImageHorizonatalArticals,
+  ImageHorizonatalArticalsStyles,
 ];

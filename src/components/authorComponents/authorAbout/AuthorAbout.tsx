@@ -4,7 +4,7 @@ import
     Grid,
     Link,
 } from '@mui/material/';
-import Works from '../works/Works';
+import Works from '../../works/Works';
 import {
   AuthorAboutGridFavorites,
   AuthorAboutFavoritesHeader,

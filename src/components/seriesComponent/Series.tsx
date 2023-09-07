@@ -22,7 +22,6 @@ import {
   TypographySeriesArticalDate,
   TypographySeriesTitle,
 } from '../../styles/TypographyStyles';
-import { DividerForHeader } from '../../styles/DividerStyles';
 
 export const Series: React.FC<Props> = ({
     data, 

@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import {
+  Avatar
+} from "@mui/material";
 import { TypographyHeaderTitle } from '../../styles/TypographyStyles';
 import {
   GridHeader, 
@@ -7,7 +10,7 @@ import {
   GridAvatarPadding, 
   GridHeaderTitle,
 } from '../../styles/GridStyles';
-import { AvatarProfile } from '../../styles/AvatarStyles';
+import { AvatarStyle } from './HeaderComponentStyles';
 import { LinkStyles } from '../../styles/LinkStyles';
 
 const HeaderComponent:  React.FC<Props> = ({
@@ -42,15 +45,17 @@ const HeaderComponent:  React.FC<Props> = ({
               to={`/author/${authorId}`}
               style={LinkStyles()}
             >
-           <AvatarProfile 
+           <Avatar 
              alt="Authors Avatar"
              src={avatarImage}
+             sx={AvatarStyle}
           />
           </Link>
           :
-          <AvatarProfile 
+          <Avatar 
              alt="Authors Avatar"
              src={avatarImage}
+             sx={AvatarStyle}
           />
           }
         </GridPaddingRight>

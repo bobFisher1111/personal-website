@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import {
   Typography,
 } from "@mui/material";
-import CopyLinkComponent from '../../../copyLinkComponent/CopyLinkComponent';
-import { GridArticalInfoComponent } from '../../../../styles/GridStyles';
-import { LinkStyles } from '../../../../styles/LinkStyles';
-import { DivMaterialSymbolsOutlined } from '../../../../styles/DivStyles';
-import { TypographyArticalInfoRight, TypographyArticalInfoLeft } from '../../../../styles/TypographyStyles';
-import { ChipStyle } from '../../../../styles/ChipStyles';
+import CopyLinkComponent from '../../../../copyLinkComponent/CopyLinkComponent';
+import { GridArticalInfoComponent } from '../../../../../styles/GridStyles';
+import { LinkStyles } from '../../../../../styles/LinkStyles';
+import { DivMaterialSymbolsOutlined } from '../../../../../styles/DivStyles';
+import { TypographyArticalInfoRight, TypographyArticalInfoLeft } from '../../../../../styles/TypographyStyles';
+import { ChipStyle } from '../../../../../styles/ChipStyles';
 import {
   HorizArticalPageInfoCompAuthor,
   HorizArticalPageInfoCompDate,
