@@ -10,8 +10,36 @@ export const TabComponentTextStyles = {
     },
   },
 };
+
+export const TabPanelStyle = {
+  p: 3
+};
+
+export const TabsChangeStyle = {
+  width: '100%',
+  '& .MuiBox-root': {
+    padding: '0px 0px 0px 0px',
+  },
+  '& .MuiTabs-flexContainer': {
+    padding: '0px 0px 0px 8px',
+  },
+  '& .MuiTabs-indicator': {
+    backgroundColor: '#667A6E',
+    border: '1px',
+  },
+  "& button[aria-selected='true']": {
+    borderBottom: "3px solid #667A6E"
+  },
+  '@media only screen and (max-width: 600px)': {
+    "& button[aria-selected='true']": {
+      borderBottom: "1px solid #667A6E"
+    },
+  },
+};
       
 export default [
   TabComponentTextStyles,
+  TabPanelStyle,
+  TabsChangeStyle,
 ];
     

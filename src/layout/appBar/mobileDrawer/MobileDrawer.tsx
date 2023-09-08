@@ -1,4 +1,7 @@
 import * as React from 'react';
+import {
+  Box,
+} from "@mui/material";
 import Drawer from '@mui/material/Drawer';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
@@ -10,9 +13,8 @@ import {
   TypographyMobileDrawer,
   TypograohyMobileDrawerWebistieName,
 } from '../../../styles/TypographyStyles';
-import { MenuIconStyle } from './MobileDrawerStyle';
+import { MenuIconStyle, BoxMobileDrawerStyle } from './MobileDrawerStyle';
 import { GridMobileDrawerAppBar, GridCenterItems } from '../../../styles/GridStyles';
-import { BoxMobileDrawer } from '../../../styles/BoxStyles';
 import { LinkStyles } from '../../../styles/LinkStyles';
 
 type Anchor = 'left';
@@ -42,7 +44,9 @@ const MobileDrawer = () => {
   const uniqueID = Number(Date.now());
 
   const list = (anchor: Anchor) => (
-    <BoxMobileDrawer>
+    <Box
+      sx={BoxMobileDrawerStyle}
+    >
       <GridMobileDrawerAppBar
         container
         justifyContent="flex-start"
@@ -205,7 +209,7 @@ const MobileDrawer = () => {
         </Grid>
       </GridMobileDrawerAppBar>
       <Divider id={`${uniqueID}`}/>
-    </BoxMobileDrawer>
+    </Box>
   );
 
   return (

@@ -1,11 +1,15 @@
 import React, { useState, SyntheticEvent } from 'react';
 import {
+  Box,
   Tab,
   Tabs,
 } from "@mui/material";
-import { BoxTabPanel, BoxTabsChange } from '../../styles/BoxStyles';
 import { GridTabsComponent } from '../../styles/GridStyles';
-import { TabComponentTextStyles } from './TabsComponentStyles';
+import { 
+  TabComponentTextStyles,
+  TabPanelStyle,
+  TabsChangeStyle,
+} from './TabsComponentStyles';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -24,9 +28,11 @@ const TabPanel = (props: TabPanelProps) => {
       {...other}
     >
       {value === index && (
-        <BoxTabPanel>
+        <Box
+          sx={TabPanelStyle}
+        >
           {children}
-        </BoxTabPanel>
+        </Box>
       )}
     </div>
   );
@@ -48,7 +54,9 @@ const TabsComponent: React.FC<Props> = ({
   };
 
   return (
-    <BoxTabsChange>
+    <Box
+      sx={TabsChangeStyle}
+    >
       <GridTabsComponent
         turnonsectiontabspadding={turnonsectiontabspadding.toString()}
         container 
@@ -78,7 +86,7 @@ const TabsComponent: React.FC<Props> = ({
           {tabsData[index].data}
         </TabPanel>
       ))}
-    </BoxTabsChange>
+    </Box>
   );
 }
 

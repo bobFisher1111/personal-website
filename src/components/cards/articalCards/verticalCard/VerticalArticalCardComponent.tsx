@@ -3,15 +3,12 @@ import {
   CardMedia,
   Grid,
   Link,
+  Box,
 } from '@mui/material/';
 import { appBaseURL } from '../../../../config';
 import CopyLinkComponent from '../../../copyLinkComponent/CopyLinkComponent';
 import { DivVerticalArticalRoot } from '../../../../styles/DivStyles';
 import { CardVerticalCard } from '../../../../styles/CardStyles';
-import { 
-  BoxVerticalCardRoot,
-  BoxVerticalCardFooter,
-} from '../../../../styles/BoxStyles';
 import {
   TypographyVerticalCardNameStyleHover,
   TypographyVerticalCardNameStyle,
@@ -19,6 +16,10 @@ import {
 import { GridVeriticalCardVideo, GridPadding } from '../../../../styles/GridStyles';
 import { CardMediaVerticalCardVideo, CardMediaVerticalCardImage } from '../../../../styles/CardMediaStyles';
 import { LinkStyles } from '../../../../styles/LinkStyles';
+import { 
+  CardRootStyle,
+  CardFooterStyle,
+} from './VerticalArticalCardComponentStyles';
 
 const VerticalArticalCardComponent: React.FC<Props> = ({
   name,
@@ -42,7 +43,9 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
       style={DivVerticalArticalRoot()}
     >
       <CardVerticalCard>
-        <BoxVerticalCardRoot>
+        <Box
+          sx={CardRootStyle}
+        >
           {articalData?.useVideoInsteadOfImage ?
             <Link 
               href={series ? serieslUrl : articalUrl}
@@ -74,10 +77,8 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
               />
               </Link>
           }
-          <BoxVerticalCardFooter
-            sx={{ 
-              bgcolor: 'black',
-            }}
+          <Box
+            sx={CardFooterStyle} 
           >
             <Grid 
               container
@@ -125,8 +126,8 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
                 />
               </GridPadding>
             </Grid>
-          </BoxVerticalCardFooter>
-        </BoxVerticalCardRoot>
+          </Box>
+        </Box>
       </CardVerticalCard>
     </div>
   )
