@@ -1,4 +1,7 @@
 import React, { useRef } from 'react';
+import {
+  Grid,
+} from "@mui/material";
 import HeaderComponent from "../../components/headerComponent/HeaderComponent";
 import { useSelector } from 'react-redux';
 import SectionComponent from '../sectionComponent/SectionComponent';
@@ -7,24 +10,26 @@ import TabsComponent from '../tabsComponent/TabsComponent';
 import {
   GridAlignItems,
   GridRoot,
-} from '../../styles/GridStyles';
+} from './HomePageComponentStyles'
 
 const HomePageComponent = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const articalData = getWebsiteData && getWebsiteData.articals;
 
   return (
-    <GridRoot
+    <Grid
       container
+      sx={GridRoot}
     >
       <HeaderComponent
         title='WebsiteName'
         authorAvatar={false}
       />
-      <GridAlignItems
+      <Grid
         container
         justifyContent='flex-start'
         alignItems="center"
+        sx={GridAlignItems}
       >
         <SectionComponent
           homePage={true}
@@ -33,8 +38,8 @@ const HomePageComponent = () => {
           turnonsectiontabspadding={true}
           tabsData={HomePageComponentTabData(false, articalData)}
         />
-      </GridAlignItems>
-    </GridRoot> 
+      </Grid>
+    </Grid> 
   );
 }
 

@@ -4,16 +4,18 @@ import {
   Card,
   CardActions,
   Button,
+  Grid,
 } from '@mui/material/';
 import { Link } from "react-router-dom";
-import { GridSectionCardRoot, GridOverflowHeader } from '../../styles/GridStyles';
 import { 
   ButtonSectionTtileStyle,
   CardActionsSectionNameStyle,
+  CardMediaSection,
+  CardSectionCard,
+  GridOverflowHeader,
+  GridSectionCardRoot,
 } from './SectionCardStyles';
-import { CardSectionCard } from '../../styles/CardStyles';
-import { CardMediaSection } from '../../styles/CardMediaStyles';
-import { LinkStyles } from '../../styles/LinkStyles';
+import { LinkStyles } from '../../util/styles/LinkStyles';
 
 const SectionCard: React.FC<Props> = ({
   imgCover,
@@ -21,16 +23,18 @@ const SectionCard: React.FC<Props> = ({
   linkTo,
 }) => {
   return (
-    <GridSectionCardRoot 
+    <Grid 
       container
+      sx={GridSectionCardRoot}
     >
-      <GridOverflowHeader
+      <Grid
           item
           xs={12}
           sm={12}
           md={12}
           lg={12}
           xl={12}
+          sx={GridOverflowHeader}
         >
           <Card
             sx={CardSectionCard}
@@ -66,8 +70,8 @@ const SectionCard: React.FC<Props> = ({
             </Link>
             </CardActions>
           </Card>
-        </GridOverflowHeader>
-      </GridSectionCardRoot>
+        </Grid>
+      </Grid>
   );
 }
 

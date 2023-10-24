@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import {
-    Grid,
-    CardMedia,
-    Box,
+  Card,
+  Grid,
+  CardMedia,
+  Box,
+  Typography,
   } from "@mui/material";
 import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 import HorizontalArticalInfoComponent from './horizontalArticalInfoComponent/HorizontalArticalInfoComponent';
 import HorizontalArticalPageInfoComponent from './horizontalArticalPageInfoComponent/HorizontalArticalPageInfoComponent';
-import { GridHorizontalArticalContainer, GridHorizontalArticalMaxWidth } from '../../../../styles/GridStyles';
-import { ImageHorizonatalArticalsStyles } from './HorizontalArticalCardComponentStyles';
-import { CardMedaiArticalVideo } from '../../../../styles/CardMediaStyles';
-import { CardHorizontalArticalInfo } from '../../../../styles/CardStyles';
 import {
-  TypographyHorizontalArticalTitle,
-  TypographyHorizontalArticalSubTitle,
+  CardHorizontalArticalInfo,
+  CardMedaiArticalVideo,
+  GridHorizontalArticalContainer,
+  GridHorizontalArticalMaxWidth,
+  ImageHorizonatalArticalsStyles,
   TypographyHorizontalArticalDate,
-} from '../../../../styles/TypographyStyles';
-import { LinkStyles } from '../../../../styles/LinkStyles';
+  TypographyHorizontalArticalSubTitle,
+  TypographyHorizontalArticalTitle,
+} from './HorizontalArticalCardComponentStyles';
+import { LinkStyles } from '../../../../util/styles/LinkStyles';
 
 const HorizontalArticalCardComponent: React.FC<Props> = ({
   title,
@@ -62,13 +65,14 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
 
   return (
     <div>
-      <GridHorizontalArticalContainer
+      <Grid
         container
         direction="row"
         justifyContent={!articalPage || articalPageList ? 'left' : 'center'}
+        sx={GridHorizontalArticalContainer}
       >
-        <GridHorizontalArticalMaxWidth
-          imagewidth={imageWidth}
+        <Grid
+          sx={GridHorizontalArticalMaxWidth(imageWidth)}
         >
           {!useVideoInsteadOfImage ?
             <Link 
@@ -108,10 +112,10 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
               />
             </Grid>
           }
-        </GridHorizontalArticalMaxWidth>
+        </Grid>
         {!articalPage && 
-          <CardHorizontalArticalInfo
-            articalpagelist={articalPageList}
+          <Card
+            sx={CardHorizontalArticalInfo(articalPageList)}
           >
             <Link 
                 to={`/artical/${authorsId}/${articalId}`}
@@ -119,26 +123,25 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
                 style={LinkStyles()}
               >
                 {!articalPageList &&
-                <TypographyHorizontalArticalTitle 
-                  articalpage={articalPage}
+                <Typography
+                  sx={TypographyHorizontalArticalTitle(articalPage)}
                   color="#2F4C69"
                 >
                   {title}
-                </TypographyHorizontalArticalTitle>
+                </Typography>
                 }
-                <TypographyHorizontalArticalSubTitle 
-                  articalpage={articalPageList}
-                  cardtextwidth={cardTextWidth}
-                  color="#667A6E"
+                <Typography
+                  sx={TypographyHorizontalArticalSubTitle(articalPageList, cardTextWidth)}
                 >
                   {articalSubTitle}
-                </TypographyHorizontalArticalSubTitle>
+                </Typography>
                 {!articalPage &&
-                  <TypographyHorizontalArticalDate
+                  <Typography
                     color="#76468c"
+                    sx={TypographyHorizontalArticalDate}
                   >
                     {date}
-                  </TypographyHorizontalArticalDate>
+                  </Typography>
                 }
               </Link>
                 <HorizontalArticalInfoComponent
@@ -152,9 +155,9 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
                   series={series}
                   seriesId={seriesId}
                 />
-          </CardHorizontalArticalInfo>
+          </Card>
         }
-      </GridHorizontalArticalContainer>
+      </Grid>
     </div>
   );
 }

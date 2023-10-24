@@ -1,21 +1,28 @@
 import React from 'react';
+import {
+  Grid,
+} from '@mui/material/';
 import SectionCard from "../sectionsCard/SectionCard";
 import Persona5Hacker from '../../assets/images/Persona5Hacker.jpg';
 import legendOfZelda from '../../assets/images/legendOfZelda.jpg';
 import suzuka from '../../assets/images/suzuka.jpeg';
 import goldenboy2 from '../../assets/images/goldenboy2.png';
-import { GridSections, GridMaxWidth } from '../../styles/GridStyles';
+import {
+  GridMaxWidth,
+  GridSections,
+} from "./SectionComponentStyles";
 
 const SectionComponent: React.FC<Props> = ({
   homePage
 }) => {
 
   return (
-    <GridMaxWidth
+    <Grid
       container
+      sx={GridMaxWidth}
     >
-       <GridSections 
-          homepage={homePage.toString()}
+       <Grid 
+          sx={GridSections(homePage)}
           item
           xs={2}
           sm={3}
@@ -28,9 +35,9 @@ const SectionComponent: React.FC<Props> = ({
             section='Coding'
             linkTo='coding'
           />
-        </GridSections>
-        <GridSections
-          homepage={homePage.toString()}
+        </Grid>
+        <Grid
+          sx={GridSections(homePage)}
           item
           xs={4}
           sm={3}
@@ -43,9 +50,9 @@ const SectionComponent: React.FC<Props> = ({
             section='Video Games'
             linkTo='videoGames'
           />
-        </GridSections>
-        <GridSections
-          homepage={homePage.toString()}
+        </Grid>
+        <Grid
+          sx={GridSections(homePage)}
           item
           xs={3}
           sm={3}
@@ -58,9 +65,9 @@ const SectionComponent: React.FC<Props> = ({
             section='Anime'
             linkTo='showsMovies'
           />
-        </GridSections>
-        <GridSections
-          homepage={homePage.toString()}
+        </Grid>
+        <Grid
+          sx={GridSections(homePage)}
           item
           xs={3}
           sm={3}
@@ -73,13 +80,14 @@ const SectionComponent: React.FC<Props> = ({
             section='Stories'
             linkTo='stories'
           />
-      </GridSections>
-    </GridMaxWidth>
+      </Grid>
+    </Grid>
   );
 }
 
 export type Props = {
   homePage: boolean;
 };
+
 export default SectionComponent;
   

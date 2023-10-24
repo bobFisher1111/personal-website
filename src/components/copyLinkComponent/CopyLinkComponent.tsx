@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import { appBaseURL } from '../../config';
 import copyLink from '../../util/copyLink';
-import { ContentCopyIconStyle, EmailOutlinedIconStyles } from '../../styles/IconStyles';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import {
+  ContentCopyIconStyle,
+  EmailOutlinedIconStyles,
+} from './CopyLinkComponentStyles';
+
 
 const CopyLinkComponent: React.FC<Props> = ({
   authorsId,
@@ -21,15 +27,14 @@ const CopyLinkComponent: React.FC<Props> = ({
   return (
     <>
       {email ?
-          <EmailOutlinedIconStyles
-            prop={emailIcon}
+          <EmailOutlinedIcon
+            sx={EmailOutlinedIconStyles(emailIcon)}
             id="copyEmail"
             onClick={() => copyLink(setEmailIcon, authorsEmail)}
           />
         :
-          <ContentCopyIconStyle
-            padding={padding}
-            prop={copyIconColor}
+          <ContentCopyIcon
+            sx={ContentCopyIconStyle(copyIconColor, padding)}
             onClick={() => copyLink(setCopyIconColor, copyUrls)}
           />
       }

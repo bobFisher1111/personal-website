@@ -6,7 +6,7 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import SocialMediaComponent from '../../socialMediaComponent/SocialMediaComponent';
-import { LinkStyles } from '../../../styles/LinkStyles';
+import { LinkStyles } from '../../../util/styles/LinkStyles';
 import {
   WritersCardGridRoot,
   WritersCardAvatar,

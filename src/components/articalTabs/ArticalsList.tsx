@@ -1,14 +1,16 @@
 import React from 'react';
 import {
   Grid,
+  Typography,
 } from "@mui/material";
 import ComingSoon from "../comingSoon/ComingSoon";
 import HorizontalArticalCardComponent from '../cards/articalCards/horizontalCard/HorizontalArticalCardComponent';
-import { 
+import {
   GridPaddingArticalList,
   GridPaddingTop,
-} from '../../styles/GridStyles';
-import { TypographyArticalPageArticals, TypographyHorizontalArticalTitleArticalList } from '../../styles/TypographyStyles';
+  TypographyArticalPageArticals,
+  TypographyHorizontalArticalTitleArticalList,
+} from './ArticalsListStyles';
 
 export const ArticalsList: React.FC<Props> = ({
   turOnAuthorForArtical, 
@@ -28,22 +30,22 @@ export const ArticalsList: React.FC<Props> = ({
         }
         {!turOnAuthorForArtical &&
           <>
-            <GridPaddingArticalList
+            <Grid
               item
               xs={12}
               sm={12}
               md={12}
               lg={12}
               xl={12}
+              sx={GridPaddingArticalList}
             />
             { sortByDate?.map((item: any, index: any) => (
               <>
-               <TypographyHorizontalArticalTitleArticalList 
-                  articalpage={false}
-                  color="#2F4C69"
+               <Typography
+                  sx={TypographyHorizontalArticalTitleArticalList(false)}
                 >
                   {item.articalTitle}
-                </TypographyHorizontalArticalTitleArticalList>
+                </Typography>
               <HorizontalArticalCardComponent
                 key={index}
                 title={item.articalTitle}
@@ -71,11 +73,12 @@ export const ArticalsList: React.FC<Props> = ({
         }
         {turOnAuthorForArtical &&
           <>
-            <GridPaddingTop
+            <Grid
               container
               direction="row"
               justifyContent="center"
               alignItems="center"
+              sx={GridPaddingTop}
             >
               <Grid
                 item
@@ -87,12 +90,13 @@ export const ArticalsList: React.FC<Props> = ({
               >
                 { sortByDate?.map((item: any, index: any) => (
                   <>
-                    <TypographyArticalPageArticals 
+                    <Typography 
                       variant="body1"
-                      color="#2F4C69" 
+                      color="#2F4C69"
+                      sx={TypographyArticalPageArticals}
                     >
                       {item.articalTitle}
-                    </TypographyArticalPageArticals>
+                    </Typography>
                     <HorizontalArticalCardComponent
                       key={index}
                       title={item.articalTitle}
@@ -118,7 +122,7 @@ export const ArticalsList: React.FC<Props> = ({
                   </>
                 ))}
               </Grid>
-            </GridPaddingTop>
+            </Grid>
           </>
         }
       </>

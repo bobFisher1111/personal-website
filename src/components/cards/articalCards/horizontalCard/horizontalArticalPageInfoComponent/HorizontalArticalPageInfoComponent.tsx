@@ -1,17 +1,20 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import {
+  Chip,
+  Grid,
   Typography,
 } from "@mui/material";
 import CopyLinkComponent from '../../../../copyLinkComponent/CopyLinkComponent';
-import { GridArticalInfoComponent } from '../../../../../styles/GridStyles';
-import { LinkStyles } from '../../../../../styles/LinkStyles';
-import { DivMaterialSymbolsOutlined } from '../../../../../styles/DivStyles';
-import { TypographyArticalInfoRight, TypographyArticalInfoLeft } from '../../../../../styles/TypographyStyles';
-import { ChipStyle } from '../../../../../styles/ChipStyles';
+import { LinkStyles } from '../../../../../util/styles/LinkStyles';
 import {
+  ChipStyle,
+  DivMaterialSymbolsOutlined,
+  GridArticalInfoComponent,
   HorizArticalPageInfoCompAuthor,
   HorizArticalPageInfoCompDate,
+  TypographyArticalInfoRight,
+  TypographyArticalInfoLeft,
 } from './HorizontalArticalPageInfoComponentStyles';
 
 const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
@@ -31,10 +34,11 @@ const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
 
   return (
     <>
-      <GridArticalInfoComponent 
+      <Grid 
         container 
         direction="row"
         justifyContent="center"
+        sx={GridArticalInfoComponent}
       >
         <Link 
           to={`/author/${authorsId}`}
@@ -58,40 +62,44 @@ const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
             {author} 
           </Typography>
         </Link>
-        <TypographyArticalInfoRight
+        <Typography
           color="black"
+          sx={TypographyArticalInfoRight}
         >
           |
-        </TypographyArticalInfoRight>
-        <TypographyArticalInfoRight
+        </Typography>
+        <Typography
           color="#667A6E"
           sx={HorizArticalPageInfoCompDate}
         >
           {date}
-        </TypographyArticalInfoRight>
-        <TypographyArticalInfoRight
+        </Typography>
+        <Typography
           color="#26282c34162e"
+          sx={TypographyArticalInfoRight}
         >
           |
-        </TypographyArticalInfoRight>
+        </Typography>
         <Link 
           to={`/${sectionLink}`}
           style={{
             textDecoration: "none"
           }}
         >
-          <ChipStyle
+          <Chip
             color="primary"
             label={section}
             variant="outlined"
             size="small"
+            sx={ChipStyle}
           />
         </Link>
-        <TypographyArticalInfoLeft
+        <Typography
           color="#26282c34162e"
+          sx={TypographyArticalInfoLeft}
         >
           |
-        </TypographyArticalInfoLeft>
+        </Typography>
         {series ? 
           <CopyLinkComponent
             seriesId={getSeriesIdFromUrl()}
@@ -109,7 +117,7 @@ const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
             email={false}
           />
         }
-      </GridArticalInfoComponent>
+      </Grid>
     </>
   )
 };

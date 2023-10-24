@@ -1,3 +1,10 @@
+export const GridTabsComponent = (turnonsectiontabspadding: boolean) => ({
+  padding: turnonsectiontabspadding ? '16px 0px 16px 0px' : '0px 0px 16px 0px',
+  '@media only screen and (max-width: 600px)': {
+    padding: '0px',
+  },
+});
+
 export const TabComponentTextStyles = {
   textTransform: 'initial',
   fontSize: '18px',
@@ -38,6 +45,7 @@ export const TabsChangeStyle = {
 };
       
 export default [
+  GridTabsComponent,
   TabComponentTextStyles,
   TabPanelStyle,
   TabsChangeStyle,

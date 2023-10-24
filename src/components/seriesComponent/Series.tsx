@@ -4,24 +4,21 @@ import { Link } from "react-router-dom";
 import {
   Grid,
   Button,
+  Typography,
 } from "@mui/material";
 import ComingSoon from "../comingSoon/ComingSoon";
 import VerticalArticalCardComponent from "../cards/articalCards/verticalCard/VerticalArticalCardComponent";
-import { LinkStyles } from '../../styles/LinkStyles';
-import { 
+import { LinkStyles } from '../../util/styles/LinkStyles';
+import {
+  GridMarginLeft,
+  GridSeriesReadMoreMargin,
   GridSeriesArticalList,
   GridSeriesRoot,
-  GridMarginLeft,
-  GridAlignItemSeries,
-  GridPageWidth,
-  GridSeriesReadMoreMargin,
-} from '../../styles/GridStyles';
-import {
-  TypographySeriesArticalTitle,
-  TypographySeriesArticalSubTitle,
   TypographySeriesArticalDate,
+  TypographySeriesArticalSubTitle,
+  TypographySeriesArticalTitle,
   TypographySeriesTitle,
-} from '../../styles/TypographyStyles';
+} from './SeriesStyle';
 
 export const Series: React.FC<Props> = ({
     data, 
@@ -100,8 +97,9 @@ export const Series: React.FC<Props> = ({
               if(item.seriesId === a.seriesId) {
               const seriesTitle = `${a.seriesType} ${i + 1}: ${a?.articalTitle}`;
               return (
-                  <GridSeriesArticalList
+                  <Grid
                       container
+                      sx={GridSeriesArticalList}
                     >
                       <Link to={`/artical/${a?.authorId}/${a?.articalId}`}
                         style={LinkStyles()}
@@ -114,9 +112,11 @@ export const Series: React.FC<Props> = ({
                         lg={12}
                         xl={12}
                       >
-                        <TypographySeriesArticalTitle>
+                        <Typography
+                          sx={TypographySeriesArticalTitle}
+                        >
                           {seriesTitle}
-                        </TypographySeriesArticalTitle>
+                        </Typography>
                     </Grid>
                     <Grid
                         item
@@ -126,9 +126,11 @@ export const Series: React.FC<Props> = ({
                         lg={12}
                         xl={12}
                       >
-                    <TypographySeriesArticalSubTitle>
+                    <Typography
+                      sx={TypographySeriesArticalSubTitle}
+                    >
                       { a.articalSubTitle}
-                    </TypographySeriesArticalSubTitle>
+                    </Typography>
                    </Grid>
                     <Grid
                         item
@@ -138,12 +140,14 @@ export const Series: React.FC<Props> = ({
                         lg={12}
                         xl={12}
                       >
-                    <TypographySeriesArticalDate>
+                    <Typography
+                      sx={TypographySeriesArticalDate}
+                    >
                       { a.publishedDate}
-                    </TypographySeriesArticalDate>
+                    </Typography>
                   </Grid>
                   </Link>
-                </GridSeriesArticalList>
+                </Grid>
               )
           }
         })
@@ -155,11 +159,12 @@ export const Series: React.FC<Props> = ({
           <ComingSoon />
         }
         {filterSeries.map((item: any, index: any) => (
-              <GridSeriesRoot
+              <Grid
                 container
                 direction="row"
                 justifyContent="flex-start"
                 alignItems="flex-start"
+                sx={GridSeriesRoot}
               >
                 {!articalPage && 
                 <Grid
@@ -174,9 +179,11 @@ export const Series: React.FC<Props> = ({
                     xl={12}
                     sx={GridMarginLeft}
                   >
-                    <TypographySeriesTitle>
+                    <Typography
+                      sx={TypographySeriesTitle}
+                    >
                       {`${item?.section}: ${item?.seriesTitle}`}
-                    </TypographySeriesTitle>
+                    </Typography>
                   </Grid>
                 </Grid>
                 }
@@ -255,7 +262,7 @@ export const Series: React.FC<Props> = ({
                 </Grid>
               </>
               }
-            </GridSeriesRoot>
+            </Grid>
             ))}
          </>
       )

@@ -1,14 +1,13 @@
 import React, { useEffect } from 'react';
 import {
   Grid,
-  Divider,
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux';
 import HeaderComponent from "../headerComponent/HeaderComponent";
 import HorizontalArticalCardComponent from "../cards/articalCards/horizontalCard/HorizontalArticalCardComponent";
-import { LinkStyles } from '../../styles/LinkStyles';
+import { LinkStyles } from '../../util/styles/LinkStyles';
 import {
   seriesComponentGridRoot,
   seriesComponentGridHeader,

@@ -1,21 +1,23 @@
 import * as React from 'react';
 import {
   Box,
+  Button,
+  Divider,
+  Drawer,
+  Grid,
+  Typography,
 } from "@mui/material";
-import Drawer from '@mui/material/Drawer';
-import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
 import { Link } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
 import SocialMediaComponent from '../../../components/socialMediaComponent/SocialMediaComponent';
+import { MenuIconStyle, BoxMobileDrawerStyle } from './MobileDrawerStyle';
 import { 
+  GridMobileDrawerAppBar,
+  GridCenterItems,
   TypographyMobileDrawer,
   TypograohyMobileDrawerWebistieName,
-} from '../../../styles/TypographyStyles';
-import { MenuIconStyle, BoxMobileDrawerStyle } from './MobileDrawerStyle';
-import { GridMobileDrawerAppBar, GridCenterItems } from '../../../styles/GridStyles';
-import { LinkStyles } from '../../../styles/LinkStyles';
+} from './MobileDrawerStyle';
+import { LinkStyles } from '../../../util/styles/LinkStyles';
 
 type Anchor = 'left';
 
@@ -47,9 +49,10 @@ const MobileDrawer = () => {
     <Box
       sx={BoxMobileDrawerStyle}
     >
-      <GridMobileDrawerAppBar
+      <Grid
         container
         justifyContent="flex-start"
+        sx={GridMobileDrawerAppBar}
       >
         <Grid
           item
@@ -58,18 +61,21 @@ const MobileDrawer = () => {
             to="/"
             style={LinkStyles()}
           >
-            <TypograohyMobileDrawerWebistieName>
+            <Typography
+              sx={TypograohyMobileDrawerWebistieName}
+            >
               WebsiteName
-            </TypograohyMobileDrawerWebistieName>
+            </Typography>
           </Link>
         </Grid>
-        <GridCenterItems
+        <Grid
           item
           xs={12}
           sm={12}
           md={12}
           lg={12}
           xl={12}
+          sx-={GridCenterItems}
         >
           <SocialMediaComponent
             turnOnStyle={true}
@@ -78,7 +84,7 @@ const MobileDrawer = () => {
             twitter={twitterUrl}
             youtube={youtubeUrl}
           />
-        </GridCenterItems>
+        </Grid>
         <Grid
           item
           xs={12}
@@ -91,11 +97,12 @@ const MobileDrawer = () => {
             to="/"
             style={LinkStyles()}
           >
-            <TypographyMobileDrawer 
+            <Typography
+              sx={TypographyMobileDrawer}
               onClick={toggleDrawer(anchor, false)}
             >
               Home
-            </TypographyMobileDrawer>
+            </Typography>
           </Link>
         </Grid>
         <Grid
@@ -110,11 +117,12 @@ const MobileDrawer = () => {
             to="/coding"
             style={LinkStyles()}
           >
-            <TypographyMobileDrawer 
+            <Typography 
+              sx={TypographyMobileDrawer}
               onClick={toggleDrawer(anchor, false)}
             >
               Coding
-            </TypographyMobileDrawer>
+            </Typography>
           </Link>
         </Grid>
         <Grid
@@ -128,11 +136,12 @@ const MobileDrawer = () => {
           <Link to="/videoGames"
             style={LinkStyles()}
           >
-            <TypographyMobileDrawer 
+            <Typography
+              sx={TypographyMobileDrawer}
               onClick={toggleDrawer(anchor, false)}
             >
               Video Games
-            </TypographyMobileDrawer>
+            </Typography>
           </Link>
         </Grid>
         <Grid
@@ -146,11 +155,12 @@ const MobileDrawer = () => {
           <Link to="/showsMovies"
             style={LinkStyles()}
           >
-            <TypographyMobileDrawer 
+            <Typography
+              sx={TypographyMobileDrawer}
               onClick={toggleDrawer(anchor, false)}
             >
               Shows/Movies
-            </TypographyMobileDrawer>
+            </Typography>
           </Link>
         </Grid>
         <Grid
@@ -164,11 +174,12 @@ const MobileDrawer = () => {
           <Link to="/stories"
             style={LinkStyles()}
           >
-           <TypographyMobileDrawer 
+            <Typography
+              sx={TypographyMobileDrawer}
               onClick={toggleDrawer(anchor, false)}
             >
               Stories
-            </TypographyMobileDrawer>
+            </Typography>
           </Link>
         </Grid>
         <Grid
@@ -182,11 +193,12 @@ const MobileDrawer = () => {
           <Link to="/writers"
             style={LinkStyles()}
           >
-            <TypographyMobileDrawer 
+            <Typography 
+              sx={TypographyMobileDrawer}
               onClick={toggleDrawer(anchor, false)}
             >
               Writers
-            </TypographyMobileDrawer>
+            </Typography>
           </Link>
         </Grid>
         <Grid
@@ -200,14 +212,15 @@ const MobileDrawer = () => {
           <Link to="/about"
             style={LinkStyles()}
           >
-            <TypographyMobileDrawer 
+            <Typography
+              sx={TypographyMobileDrawer}
               onClick={toggleDrawer(anchor, false)}
             >
               About
-            </TypographyMobileDrawer>
+            </Typography>
           </Link>
         </Grid>
-      </GridMobileDrawerAppBar>
+      </Grid>
       <Divider id={`${uniqueID}`}/>
     </Box>
   );

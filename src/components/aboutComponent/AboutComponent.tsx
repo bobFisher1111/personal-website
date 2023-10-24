@@ -14,7 +14,7 @@ import {
 } from './AboutComponentStyles';
 
 const AboutComponent: React.FC<Props> = () => {
-  const aboutText = 'React2Pyhton, is a hobbyist site from professional writes and software engineers and game enthusiast. This is passion project that will bring weakly articals along with update youtube videos that are connected to this website.';
+  const aboutText = 'WebsiteName, is a hobbyist site from professional writes and software engineers and game enthusiast. This is passion project that will bring weakly articals along with update youtube videos that are connected to this website.';
   const reportIssueText = 'Let us know if you experience any issues on mobile or desktop. We are a small team but will have an engineer address the issue. Contact us by email and if you experienced it on mobile, include the make of the phone in the email. Thanks from our team.';
   
   return (
@@ -23,7 +23,7 @@ const AboutComponent: React.FC<Props> = () => {
       sx={AboutCompGridRoot}
     >
       <HeaderComponent
-        title='React2Python'
+        title='WebsiteName'
         authorAvatar={false}
       />
       <Grid
@@ -97,7 +97,7 @@ const AboutComponent: React.FC<Props> = () => {
             variant="h6"
             sx={AboutCompAboutTextWithPAdding}
           >
-            react2python.com
+            WebsiteName.com
           </Typography> 
           </Grid>
           <Typography

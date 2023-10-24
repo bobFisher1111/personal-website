@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import {
+  Card,
   CardMedia,
   Grid,
   Link,
   Box,
+  Typography,
 } from '@mui/material/';
 import { appBaseURL } from '../../../../config';
 import CopyLinkComponent from '../../../copyLinkComponent/CopyLinkComponent';
-import { DivVerticalArticalRoot } from '../../../../styles/DivStyles';
-import { CardVerticalCard } from '../../../../styles/CardStyles';
+import { LinkStyles } from '../../../../util/styles/LinkStyles';
 import {
-  TypographyVerticalCardNameStyleHover,
-  TypographyVerticalCardNameStyle,
-} from '../../../../styles/TypographyStyles';
-import { GridVeriticalCardVideo, GridPadding } from '../../../../styles/GridStyles';
-import { CardMediaVerticalCardVideo, CardMediaVerticalCardImage } from '../../../../styles/CardMediaStyles';
-import { LinkStyles } from '../../../../styles/LinkStyles';
-import { 
+  CardMediaVerticalCardImage,
+  CardMediaVerticalCardVideo,
   CardRootStyle,
   CardFooterStyle,
+  CardVerticalCard,
+  DivVerticalArticalRoot,
+  GridPadding,
+  GridVeriticalCardVideo,
+  TypographyVerticalCardNameStyle,
+  TypographyVerticalCardNameStyleHover,
 } from './VerticalArticalCardComponentStyles';
 
 const VerticalArticalCardComponent: React.FC<Props> = ({
@@ -42,7 +44,9 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
     <div  
       style={DivVerticalArticalRoot()}
     >
-      <CardVerticalCard>
+      <Card
+        sx={CardVerticalCard}
+      >
         <Box
           sx={CardRootStyle}
         >
@@ -51,11 +55,12 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
               href={series ? serieslUrl : articalUrl}
               rel="noreferrer"
             >
-              <GridVeriticalCardVideo
+              <Grid
                 container
                 direction="row"
                 justifyContent="center"
                 alignItems="center"
+                sx={GridVeriticalCardVideo}
               >
                 <CardMedia
                   component="iframe"
@@ -63,7 +68,7 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
                   allowFullScreen
                   sx={CardMediaVerticalCardVideo}
                 />
-              </GridVeriticalCardVideo>
+              </Grid>
             </Link>
             :
             <Link 
@@ -97,23 +102,26 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
                     rel="noreferrer"
                     sx={LinkStyles}
                   >
-                    <TypographyVerticalCardNameStyleHover 
-                      color="white"
+                    <Typography
+                      sx={TypographyVerticalCardNameStyleHover}
+                      // color="white"
                     >
                       by {name}
-                    </TypographyVerticalCardNameStyleHover>
+                    </Typography>
                   </Link>
                 :
-                  <TypographyVerticalCardNameStyle 
-                    color="white"
+                  <Typography 
+                    sx={TypographyVerticalCardNameStyle}
+                    // color="white"
                   >
                     by {name}
-                  </TypographyVerticalCardNameStyle>
+                  </Typography>
                 }           
               </Grid>
-              <GridPadding 
+              <Grid 
                 item 
                 xs={2}
+                sx={GridPadding}
               >
                 <CopyLinkComponent
                   authorsId={articalData?.authorId}
@@ -124,11 +132,11 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
                   seriesId={articalData?.seriesId}
                   turnOnSeries={true}
                 />
-              </GridPadding>
+              </Grid>
             </Grid>
           </Box>
         </Box>
-      </CardVerticalCard>
+      </Card>
     </div>
   )
 };

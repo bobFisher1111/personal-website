@@ -1,15 +1,21 @@
 import {
   Box,
   Grid,
+  Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import SocialMediaComponent from '../../../components/socialMediaComponent/SocialMediaComponent';
 import AppBarLinksToPages from '../appBarLinksToPages/AppBarLinksToPages';
 import MobileDrawer from '../mobileDrawer/MobileDrawer';
-import { AppBarStyle } from './WebSiteAppBarStyles';
-import { GridDesktopAppBar, GridMobileAppBar } from '../../../styles/GridStyles';
-import { TypographyMobileTitle, TypographyDesktopTitle } from '../../../styles/TypographyStyles';
-import { LinkStyles } from "../../../styles/LinkStyles";
+import {
+  AppBarStyle,
+  GridDesktopAppBar,
+  GridMobileAppBar,
+  GridMobileAppBarTitle,
+  TypographyDesktopTitle,
+  TypographyMobileTitle,
+} from './WebSiteAppBarStyles';
+import { LinkStyles } from "../../../util/styles/LinkStyles";
 import AppConfig from '../../../config';
 
 const WebSiteAppBar = () => {
@@ -26,29 +32,33 @@ const WebSiteAppBar = () => {
         direction="row"
         alignItems="center"
       >
-        <GridDesktopAppBar
+        <Grid
           item 
           xs={0}
           sm={0}
           md={4}
           lg={4}
           xl={4}
+          sx={GridDesktopAppBar}
         >
           <Link to="/" 
             style={LinkStyles()}
             >
-            <TypographyDesktopTitle>
+            <Typography
+              sx={TypographyDesktopTitle}
+            >
               WebsiteName
-            </TypographyDesktopTitle>
+            </Typography>
           </Link>
-        </GridDesktopAppBar>
-        <GridDesktopAppBar
+        </Grid>
+        <Grid
           item 
           xs={0}
           sm={0}
           md={4}
           lg={4}
           xl={4}
+          sx={GridDesktopAppBar}
         >
           <Grid 
             container
@@ -61,14 +71,15 @@ const WebSiteAppBar = () => {
               youtube={youtube}
             />
           </Grid>
-        </GridDesktopAppBar>
-        <GridDesktopAppBar
+        </Grid>
+        <Grid
           item 
           xs={0}
           sm={0}
           md={4}
           lg={4}
           xl={4}
+          sx={GridDesktopAppBar}
         >
           <Grid 
             container
@@ -77,14 +88,15 @@ const WebSiteAppBar = () => {
           >
             <AppBarLinksToPages />
           </Grid>
-        </GridDesktopAppBar>
-        <GridMobileAppBar
+        </Grid>
+        <Grid
           item 
           xs={6}
           sm={6}
           md={6}
           lg={0}
           xl={0}
+          sx={GridMobileAppBar}
         >
           <Grid
             container
@@ -92,22 +104,15 @@ const WebSiteAppBar = () => {
           >
             <MobileDrawer />
           </Grid>
-        </GridMobileAppBar>
-        <GridMobileAppBar
+        </Grid>
+        <Grid
           item 
           xs={6}
           sm={4}
           md={6}
           lg={0}
           xl={0}
-          sx={{
-            '@media only screen and (min-width: 768px)': {
-              paddingRight: '100px',
-            },
-            '@media only screen and (min-width: 820px)': {
-              paddingRight: '50px',
-            },
-          }}
+          sx={GridMobileAppBarTitle}
         >
           <Grid
             container
@@ -118,12 +123,14 @@ const WebSiteAppBar = () => {
                 textDecoration: "none"
               }}
             >
-              <TypographyMobileTitle>
+              <Typography
+                sx={TypographyMobileTitle}
+              >
                 WebsiteName
-              </TypographyMobileTitle>
+              </Typography>
             </Link>
           </Grid>
-        </GridMobileAppBar>
+        </Grid>
       </Grid>
     </Box>
 )}

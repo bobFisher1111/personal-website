@@ -1,17 +1,19 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import {
-  Avatar
+  Avatar,
+  Grid,
+  Typography,
 } from "@mui/material";
-import { TypographyHeaderTitle } from '../../styles/TypographyStyles';
 import {
-  GridHeader, 
-  GridPaddingRight, 
-  GridAvatarPadding, 
+  AvatarStyle,
+  GridAvatarPadding,
+  GridHeader,
   GridHeaderTitle,
-} from '../../styles/GridStyles';
-import { AvatarStyle } from './HeaderComponentStyles';
-import { LinkStyles } from '../../styles/LinkStyles';
+  GridPaddingRight,
+  TypographyHeaderTitle,
+} from './HeaderComponentStyles';
+import { LinkStyles } from '../../util/styles/LinkStyles';
 
 const HeaderComponent:  React.FC<Props> = ({
   title,
@@ -22,23 +24,27 @@ const HeaderComponent:  React.FC<Props> = ({
 }) => {
   const titleFunction = (item: any) => {
     return (
-      <TypographyHeaderTitle>
+      <Typography
+        sx={TypographyHeaderTitle}
+      >
         {item}
-      </TypographyHeaderTitle>
+      </Typography>
     )
   };
 
   return (
-      <GridHeader
+      <Grid
         container
         direction="row"
         justifyContent="center"
         alignItems="center"
+        sx={GridHeader}
       >
         {authorAvatar ? 
         <>
-          <GridPaddingRight
+          <Grid
             item
+            sx={GridPaddingRight}
           >
           {articalPage ? 
           <Link 
@@ -58,9 +64,10 @@ const HeaderComponent:  React.FC<Props> = ({
              sx={AvatarStyle}
           />
           }
-        </GridPaddingRight>
-      <GridAvatarPadding
+        </Grid>
+      <Grid
         item
+        sx={GridAvatarPadding}
       >
         {articalPage ?
         <Link 
@@ -74,21 +81,22 @@ const HeaderComponent:  React.FC<Props> = ({
         {titleFunction(title)}
         </>
         }     
-     </GridAvatarPadding>
+     </Grid>
      </>
       :
-        <GridHeaderTitle
+        <Grid
           item
           xs={12}
           sm={12}
           md={12}
           lg={12}
           xl={12}
+          sx={GridHeaderTitle}
         >
          {titleFunction(title)}
-        </GridHeaderTitle>
+        </Grid>
       }
-      </GridHeader>
+      </Grid>
   );
 }
 

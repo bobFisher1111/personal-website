@@ -1,11 +1,12 @@
 import React, { useState, SyntheticEvent } from 'react';
 import {
   Box,
+  Grid,
   Tab,
   Tabs,
 } from "@mui/material";
-import { GridTabsComponent } from '../../styles/GridStyles';
-import { 
+import {
+  GridTabsComponent,
   TabComponentTextStyles,
   TabPanelStyle,
   TabsChangeStyle,
@@ -57,10 +58,10 @@ const TabsComponent: React.FC<Props> = ({
     <Box
       sx={TabsChangeStyle}
     >
-      <GridTabsComponent
-        turnonsectiontabspadding={turnonsectiontabspadding.toString()}
+      <Grid
         container 
         justifyContent={"center"}
+        sx={GridTabsComponent(turnonsectiontabspadding)}
       >
         <Tabs
           value={value}
@@ -77,7 +78,7 @@ const TabsComponent: React.FC<Props> = ({
             />
           ))} 
         </Tabs>
-      </GridTabsComponent>
+      </Grid>
       {tabsData?.map((item: any, index: number) => (
         <TabPanel 
           value={value}

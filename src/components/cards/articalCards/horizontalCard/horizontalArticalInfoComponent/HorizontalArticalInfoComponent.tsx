@@ -1,14 +1,20 @@
 import React from 'react';
 import {
+  Chip,
   Grid,
+  Typography,
 } from "@mui/material";
 import CopyLinkComponent from '../../../../copyLinkComponent/CopyLinkComponent';
 import { Link } from "react-router-dom";
-import { LinkStyles } from '../../../../../styles/LinkStyles';
-import { DivMaterialSymbolsOutlined, DivSeriesLeftPadding } from '../../../../../styles/DivStyles';
-import { TypographyHorizontalInfoText } from '../../../../../styles/TypographyStyles';
-import { ChipStyle, ChipNoPointer } from '../../../../../styles/ChipStyles';
-import { GridHorizontalInfo } from '../../../../../styles/GridStyles';
+import { LinkStyles } from '../../../../../util/styles/LinkStyles';
+import {
+  ChipNoPointer,
+  ChipStyle,
+  DivMaterialSymbolsOutlined,
+  DivSeriesLeftPadding,
+  GridHorizontalInfo,
+  TypographyHorizontalInfoText,
+} from './HorizontalArticalInfoComponentStyle';
 
 const HorizontalArticalInfoComponent: React.FC<Props> = ({
   section,
@@ -22,9 +28,10 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
   seriesId,
 }) => {
     return (
-        <GridHorizontalInfo 
+        <Grid 
           container
           direction="row"    
+          sx={GridHorizontalInfo}
         >
           {!authorPage ?
             <Link 
@@ -51,37 +58,41 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
               to={`/author/${authorsId}`}
               style={LinkStyles()}
             >
-              <TypographyHorizontalInfoText
-                color="#2F4C69"
+              <Typography
+                // color="#2F4C69"
+                sx={TypographyHorizontalInfoText}
               >
                 {aughtorsName}
-              </TypographyHorizontalInfoText> 
+              </Typography> 
             </Link>
           :
-            <TypographyHorizontalInfoText
-              color="#2F4C69"
+            <Typography
+              // color="#2F4C69"
+              sx={TypographyHorizontalInfoText}
             >
               {aughtorsName}
-            </TypographyHorizontalInfoText>
+            </Typography>
           }
           {!sectionPage ?
               <Link 
                 to={`/${sectionLink}`}
                 style={LinkStyles()}
               >
-              <ChipStyle
+              <Chip
                 color="primary"
                 label={section}
                 variant="outlined"
                 size="small"
+                sx={ChipStyle}
               />
             </Link>
           :
-            <ChipNoPointer
+            <Chip
               color="primary"
               label={section}
               variant="outlined"
               size="small"
+              sx={ChipNoPointer}
             />
           }
           {series &&
@@ -92,11 +103,12 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
               to={`/series/${seriesId}`}
               style={LinkStyles()}
             >
-              <ChipStyle
+              <Chip
                 color="secondary"
                 label={'Series'}
                 variant="outlined"
                 size="small"
+                sx={ChipStyle}
               />
             </Link>
             </div>
@@ -110,7 +122,7 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
               email={false}
             />
           }
-        </GridHorizontalInfo>
+        </Grid>
     )
 }
 

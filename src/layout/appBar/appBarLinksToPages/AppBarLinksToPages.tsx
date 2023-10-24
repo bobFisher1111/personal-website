@@ -1,12 +1,14 @@
 import {
-  Typography,
   Grid,
+  Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import SectionsDropDown from '../sectionsDropDown/SectionsDropDown';
-import { TypographyLinkTwoPage } from '../../../styles/TypographyStyles';
-import { GridPointer } from '../../../styles/GridStyles';
-import { LinkStyles } from "../../../styles/LinkStyles";
+import { LinkStyles } from "../../../util/styles/LinkStyles";
+import { 
+  GridPointer,
+  TypographyLinkTwoPage,
+} from "./AppBarLinksToPagesStyles";
 
 const AppBarLinksToPages = () => {
   return (
@@ -17,9 +19,11 @@ const AppBarLinksToPages = () => {
         <Link to="/about"
           style={LinkStyles()}
         >
-          <TypographyLinkTwoPage>
+          <Typography
+            sx={TypographyLinkTwoPage}
+          >
             About
-          </TypographyLinkTwoPage>
+          </Typography>
         </Link>
       </Grid>
       <Grid
@@ -28,16 +32,19 @@ const AppBarLinksToPages = () => {
         <Link to="/writers"
           style={LinkStyles()}
         >
-          <TypographyLinkTwoPage>
+          <Typography
+            sx={TypographyLinkTwoPage}
+          >
             Writers
-          </TypographyLinkTwoPage>
+          </Typography>
         </Link>
       </Grid>
-      <GridPointer
+      <Grid
         item
+        sx={GridPointer}
       >
         <SectionsDropDown />
-      </GridPointer>
+      </Grid>
     </>
   );
 }

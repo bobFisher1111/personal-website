@@ -1,0 +1,11 @@
+- Releases
+  - 1.0.0:
+    - Version one of website
+      - Includes:
+        - Sections 
+        - Homepage
+        - Artical Page
+        - Series Page
+        - Writers
+        - About
+  - 
