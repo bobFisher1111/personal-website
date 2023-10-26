@@ -14,6 +14,7 @@ import { MenuIconStyle, BoxMobileDrawerStyle } from './MobileDrawerStyle';
 import { 
   GridMobileDrawerAppBar,
   GridCenterItems,
+  GridSectionsStyle,
   TypographyMobileDrawer,
   TypograohyMobileDrawerWebistieName,
 } from './MobileDrawerStyle';
@@ -75,11 +76,11 @@ const MobileDrawer = () => {
           md={12}
           lg={12}
           xl={12}
-          sx-={GridCenterItems}
+          sx={GridCenterItems}
         >
           <SocialMediaComponent
             turnOnStyle={true}
-            widthPadding={'0px 0px 0px 8px'}
+            widthPadding={'16px 0px 0px 8px'}
             facebook={facebookUrl}
             twitter={twitterUrl}
             youtube={youtubeUrl}
@@ -92,6 +93,7 @@ const MobileDrawer = () => {
           md={12}
           lg={12}
           xl={12}
+          sx={GridSectionsStyle}
         >
           <Link
             to="/"

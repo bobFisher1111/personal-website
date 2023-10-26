@@ -5,6 +5,12 @@ export const AboutCompGridRoot = {
   padding: '36px 24px 100px 24px',
   maxWidth: "1024px",
 };
+
+export const AboutCompGridSocialMediaStyle = {
+  '& .MuiGrid-root': {
+    justifyContent: 'center'
+  }
+};
   
 export const AboutCompAboutTitle = {
   fontSize: '24px',
@@ -44,6 +50,7 @@ export const AboutCompAboutTextWithPAdding = {
 
 export default [
   AboutCompGridRoot,
+  AboutCompGridSocialMediaStyle,
   AboutCompAboutTitle,
   AboutCompTitles,
   AboutCompAboutText,

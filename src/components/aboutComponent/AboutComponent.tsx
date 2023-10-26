@@ -7,6 +7,7 @@ import HeaderComponent from "../../components/headerComponent/HeaderComponent";
 import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
 import { 
   AboutCompGridRoot,
+  AboutCompGridSocialMediaStyle,
   AboutCompAboutTitle,
   AboutCompTitles,
   AboutCompAboutText,
@@ -62,10 +63,8 @@ const AboutComponent: React.FC<Props> = () => {
             Follow us on Social Media:
           </Typography>
         <Grid
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
+          item
+          sx={AboutCompGridSocialMediaStyle}
         >
           <SocialMediaComponent
             widthPadding={'0px 0px 0px 16px'}

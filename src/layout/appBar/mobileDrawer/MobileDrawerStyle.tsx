@@ -17,8 +17,14 @@ export const GridMobileDrawerAppBar = {
 
 export const GridCenterItems = {
   display: 'flex',
-  justifyContent: 'center',
   padding: '16px 0px 16px 0px',
+  '& .MuiGrid-root': {
+    justifyContent: 'center'
+  }
+};
+
+export const GridSectionsStyle = {
+  padding: '16px 0px 0px 0px',
 };
 
 export const TypographyMobileDrawer = {
@@ -45,6 +51,7 @@ export default [
   MenuIconStyle,
   BoxMobileDrawerStyle,
   GridCenterItems,
+  GridSectionsStyle,
   GridMobileDrawerAppBar,
   TypographyMobileDrawer,
   TypograohyMobileDrawerWebistieName,

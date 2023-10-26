@@ -90,6 +90,9 @@ const AuthorComponent: React.FC<Props> = ({
         container
         justifyContent="center"
       >
+        <Grid 
+         item
+        >
         <SocialMediaComponent
           widthPadding={'16px 0px 16px 16px'}
           turnOnStyle={true}
@@ -99,6 +102,7 @@ const AuthorComponent: React.FC<Props> = ({
           twitter={authorData?.twitter || articalAuthorData?.twitter}
           youtube={authorData?.youtube || articalAuthorData?.youtube}
         />
+        </Grid>
         {turOnArticalPage ?
         <TabsComponent
         turnonsectiontabspadding={false}

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React  from 'react';
 import TwitterLogo from '../../assets/icons/TwitterLogo.svg';
 import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
 import FacebookLogo from '../../assets/icons/FacebookLogo.png';
@@ -16,7 +16,9 @@ const SocialMediaComponent: React.FC<Props> = ({
   youtube,
 }) => {
   return (
-    <>
+    <Grid 
+      container
+    >
       <Grid
         item
         sx={{
@@ -55,7 +57,6 @@ const SocialMediaComponent: React.FC<Props> = ({
             <Box
               component="img"
               src={TwitterLogo}
-              // height="20px"
               alt="Twitter logo"
               sx={{
                 height: '20px',
@@ -105,7 +106,7 @@ const SocialMediaComponent: React.FC<Props> = ({
             />
           </Grid>
         }
-    </>
+    </Grid>
   );
 }
 

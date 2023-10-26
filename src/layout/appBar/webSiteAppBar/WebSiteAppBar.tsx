@@ -66,6 +66,8 @@ const WebSiteAppBar = () => {
             justifyContent="center"
           >
             <SocialMediaComponent
+              widthPadding={'16px 0px 0px 16px'}
+              turnOnStyle={true}
               facebook={facebook}
               twitter={twitter}
               youtube={youtube}
