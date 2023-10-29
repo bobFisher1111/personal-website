@@ -1,9 +1,10 @@
+import React from 'react';
 import StoriesComponent from '../../components/storiesComponent/StoriesComponent';
 
-const StoriesPage = () => {
+const StoriesPage: React.FC = () => {
   return (
-      <StoriesComponent />
+    <StoriesComponent />
   );
-}
+};
 
 export default StoriesPage;

@@ -1,4 +1,4 @@
-import { seriesInfo } from "./seriesInfo";
+import { seriesInfo } from './seriesInfo';
 
 export type Articles = {
   articalId: number;

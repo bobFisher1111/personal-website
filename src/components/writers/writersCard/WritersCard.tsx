@@ -3,8 +3,8 @@ import {
   Grid,
   Typography,
   CardMedia,
-} from "@mui/material";
-import { Link } from "react-router-dom";
+} from '@mui/material';
+import { Link } from 'react-router-dom';
 import SocialMediaComponent from '../../socialMediaComponent/SocialMediaComponent';
 import { LinkStyles } from '../../../util/styles/LinkStyles';
 import {
@@ -43,61 +43,61 @@ const WritersCard: React.FC<Props> = ({
           to={`/author/${authorId}`}
           style={LinkStyles()}
         >
-        <CardMedia
-          component="img"
-          image={authorImage}
-          sx={WritersCardAvatar}
-        />
+          <CardMedia
+            component="img"
+            image={authorImage}
+            sx={WritersCardAvatar}
+          />
         </Link>
       </Grid>
-        <Grid
-          item
-          xs={9}
-          sm={8}
-          md={8}
-          lg={8}
-          xl={8}
-          sx={WritersCardGridAuthorName}
-        >
-         <Link 
+      <Grid
+        item
+        xs={9}
+        sm={8}
+        md={8}
+        lg={8}
+        xl={8}
+        sx={WritersCardGridAuthorName}
+      >
+        <Link 
           to={`/author/${authorId}`}
           style={LinkStyles()}
         >
-        <Typography
-          sx={WritersCardTextAuthorName}
-        >
-          {authorName}
-        </Typography>
+          <Typography
+            sx={WritersCardTextAuthorName}
+          >
+            {authorName}
+          </Typography>
         </Link>
         <Link 
           to={`/author/${authorId}`}
           style={LinkStyles()}
         >
-        <Typography
-          variant="subtitle1"
-          sx={WritersCardTextAuthorTitle}
-        >
-          {authorsTitle}
-        </Typography>
+          <Typography
+            variant="subtitle1"
+            sx={WritersCardTextAuthorTitle}
+          >
+            {authorsTitle}
+          </Typography>
         </Link>
         <Grid
           container
         >
-        <SocialMediaComponent
-          widthPadding={'8px 8px 8px 0px'}
-          turnOnStyle={true}
-          turnOnEmail={true}
-          turnOnEmailStyle={true}
-          facebook={facebook}
-          twitter={twitter}
-          youtube={youtube}
-          email={email}
-        />
+          <SocialMediaComponent
+            widthPadding={'8px 8px 8px 0px'}
+            turnOnStyle={true}
+            turnOnEmail={true}
+            turnOnEmailStyle={true}
+            facebook={facebook}
+            twitter={twitter}
+            youtube={youtube}
+            email={email}
+          />
         </Grid>
       </Grid>
     </Grid>
   );
-}
+};
 
 export type Props = {
   authorImage: string;

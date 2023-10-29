@@ -34,12 +34,14 @@ export const TabsChangeStyle = {
     backgroundColor: '#667A6E',
     border: '1px',
   },
+  // eslint-disable-next-line
   "& button[aria-selected='true']": {
-    borderBottom: "3px solid #667A6E"
+    borderBottom: '3px solid #667A6E'
   },
   '@media only screen and (max-width: 600px)': {
+    // eslint-disable-next-line
     "& button[aria-selected='true']": {
-      borderBottom: "1px solid #667A6E"
+      borderBottom: '1px solid #667A6E'
     },
   },
 };

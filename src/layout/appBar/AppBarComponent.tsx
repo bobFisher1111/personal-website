@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 import {
   Box,
   AppBar,
-} from "@mui/material";
+} from '@mui/material';
 import WebSiteAppBar from './webSiteAppBar/WebSiteAppBar';
 import { AppBarStyles } from './AppBarComponentStyles';
 
-const AppBarComponent = () => {
+const AppBarComponent: React.FC = () => {
   /*
     deside on color for appbar:
       - green: #667A6E
@@ -26,6 +26,7 @@ const AppBarComponent = () => {
         <WebSiteAppBar />      
       </AppBar>
     </Box>
-  )}
+  );
+};
 
 export default AppBarComponent;

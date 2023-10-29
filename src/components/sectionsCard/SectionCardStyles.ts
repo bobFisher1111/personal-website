@@ -2,8 +2,8 @@ export const ButtonSectionTtileStyle = {
   color: 'white',
   textTransform: 'initial',
   fontSize: '16px',
-  "&:hover": {
-    color: "#667A6E",
+  '&:hover': {
+    color: '#667A6E',
   },
   '@media only screen and (max-width: 600px)': {
     fontSize: '12px',
@@ -59,4 +59,4 @@ export default [
   CardSectionCard,
   GridOverflowHeader,
   GridSectionCardRoot,
-]
+];

@@ -1,8 +1,8 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import {
   Grid,
-} from "@mui/material";
-import HeaderComponent from "../../components/headerComponent/HeaderComponent";
+} from '@mui/material';
+import HeaderComponent from '../../components/headerComponent/HeaderComponent';
 import { useSelector } from 'react-redux';
 import SectionComponent from '../sectionComponent/SectionComponent';
 import HomePageComponentTabData from './HomePageComponentTabData';
@@ -10,7 +10,7 @@ import TabsComponent from '../tabsComponent/TabsComponent';
 import {
   GridAlignItems,
   GridRoot,
-} from './HomePageComponentStyles'
+} from './HomePageComponentStyles';
 
 const HomePageComponent = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
@@ -41,6 +41,6 @@ const HomePageComponent = () => {
       </Grid>
     </Grid> 
   );
-}
+};
 
 export default HomePageComponent;

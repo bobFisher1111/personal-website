@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-    Grid,
-    SwipeableDrawer,
-    Typography,
-} from "@mui/material";
+  Grid,
+  SwipeableDrawer,
+  Typography,
+} from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import SectionComponent from '../../../components/sectionComponent/SectionComponent';
@@ -13,23 +13,23 @@ import {
   TypographyHoverBlack,
 } from './SectionsDropDownStyles';
 
-const SectionsDropDown = () => {
+const SectionsDropDown: React.FC = () => {
   const [state, setState] = React.useState(false);
 
   const toggleDrawer =
     (open: boolean) =>
-    (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event &&
+      (event: React.KeyboardEvent | React.MouseEvent) => {
+        if (
+          event &&
         event.type === 'keydown' &&
         ((event as React.KeyboardEvent).key === 'Tab' ||
           (event as React.KeyboardEvent).key === 'Shift')
-      ) {
-        return;
-      }
+        ) {
+          return;
+        }
 
-      setState(open);
-    };
+        setState(open);
+      };
 
   const sectionList = () => (
     <Grid
@@ -59,12 +59,12 @@ const SectionsDropDown = () => {
         <Typography
           sx={TypographyHoverBlack}
         >
-        <Grid
-          container
-        >
+          <Grid
+            container
+          >
             Sections
             {state ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-        </Grid>
+          </Grid>
         </Typography>
       </Grid>
       <SwipeableDrawer
@@ -77,6 +77,6 @@ const SectionsDropDown = () => {
       </SwipeableDrawer>
     </div>
   );
-}
+};
 
 export default SectionsDropDown;

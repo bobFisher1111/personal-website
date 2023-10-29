@@ -1,15 +1,15 @@
 export const ArtPageBookExtraInfoGridRoot = (bottomheight: string) => {
   return {
     padding: `${bottomheight} 0px 0px 0px`,
-  }
+  };
 };
 
 export const ArtPageBookExtraInfoLinkBuy = {
   fontsize: '16px',
-  fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+  fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
   color: '#551A8B',
-  "&:hover": {
-    color: "#667A6E",
+  '&:hover': {
+    color: '#667A6E',
   },
   '@media only screen and (max-width: 600px)': {
     fontSize: '12px',
@@ -35,7 +35,7 @@ export const WorksTitle = (authorsPage: boolean | undefined) => {
     '@media only screen and (max-width: 600px)': {
       fontSize: '16px',
     },
-  }
+  };
 };
 
 export const WorksGridRoot = (authorsPage: boolean | undefined) => {
@@ -44,7 +44,7 @@ export const WorksGridRoot = (authorsPage: boolean | undefined) => {
     '@media only screen and (max-width: 600px)': {
       padding: '0px',
     },
-  }
+  };
 };
   
 export const WorksGridCover = (authorsPage: boolean | undefined) => {
@@ -54,18 +54,18 @@ export const WorksGridCover = (authorsPage: boolean | undefined) => {
     '@media only screen and (max-width: 600px)': {
       padding: '0px 80px 8px 8px',
     },
-  }
+  };
 };
 
 export const WorksCoverImage = (authorsPage: boolean | undefined) => {
   return {
-    width: authorsPage ? "148px" : "55px",
-    height: authorsPage ? "235px" : "85px",
+    width: authorsPage ? '148px' : '55px',
+    height: authorsPage ? '235px' : '85px',
     '@media only screen and (max-width: 600px)': {
-      width: "74px",
-      height: "118px",
+      width: '74px',
+      height: '118px',
     },
-  }
+  };
 };
 
 export const WorksGridInfo = {
@@ -74,7 +74,7 @@ export const WorksGridInfo = {
 
 export const WorksInfoTitle = (aboutWorks: boolean | undefined) => {
   return {
-    fontSize: aboutWorks ? "20px" : "20px",
+    fontSize: aboutWorks ? '20px' : '20px',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
     display: '-webkit-box',
@@ -100,7 +100,7 @@ export const WorksInfoSubTitle = {
 export const WorksInfoDate = (authorsPage: boolean | undefined) => {
   return {
     padding: authorsPage ? '0px' : '22px 0px 0px 0px',
-  }
+  };
 };
 
 export default [

@@ -1,9 +1,10 @@
+import React from 'react';
 import CodingComponent from '../../components/codingComponent/CodingComponent';
 
-const CodingPage = () => {
+const CodingPage: React.FC | undefined = () => {
   return (
-      <CodingComponent />
+    <CodingComponent />
   );
-}
+};
 
 export default CodingPage;

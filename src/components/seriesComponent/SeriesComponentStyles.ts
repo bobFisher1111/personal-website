@@ -1,7 +1,7 @@
 export const seriesComponentGridRoot = {
   background: '#fff',
   display: 'flex',
-  maxWidth: "1024px",
+  maxWidth: '1024px',
   margin: 'auto',
   padding: '40px 16px 100px 16px',
 };

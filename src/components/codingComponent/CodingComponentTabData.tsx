@@ -1,5 +1,6 @@
-import ArticalsList from "../articalTabs/ArticalsList";
-import Series from "../seriesComponent/Series";
+import React from 'react';
+import ArticalsList from '../articalTabs/ArticalsList';
+import Series from '../seriesComponent/Series';
 
 const CodingComponentTabData = (
   turOnAuthorForArtical: boolean,
@@ -23,10 +24,10 @@ const CodingComponentTabData = (
       },
       { 
         name: 'Series',
-        data: <Series data={articalSectionFilter} section={"Coding"} />
+        data: <Series data={articalSectionFilter} section={'Coding'} />
       },
     ]
-  )
-}
+  );
+};
 
 export default CodingComponentTabData;

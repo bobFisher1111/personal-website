@@ -8,7 +8,7 @@ const DashboardAnalytics = () => {
       </header>
     </>
   );
-}
+};
 
 export default DashboardAnalytics;
 

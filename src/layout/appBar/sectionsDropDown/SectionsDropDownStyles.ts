@@ -1,6 +1,6 @@
 export const GridHoverBlack = {
-  "&:hover": {
-    color: "black",
+  '&:hover': {
+    color: 'black',
   },
 };
 
@@ -14,10 +14,10 @@ export const GridSectionList = {
 };
 
 export const TypographyHoverBlack = {
-  color: "black",
-  "&:hover": {
-    color: "white",
-   },
+  color: 'black',
+  '&:hover': {
+    color: 'white',
+  },
 };
 
 export default [

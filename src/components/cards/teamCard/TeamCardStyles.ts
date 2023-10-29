@@ -5,4 +5,4 @@ export const GridOverflowHeader = {
   
 export default [
   GridOverflowHeader
-]
+];

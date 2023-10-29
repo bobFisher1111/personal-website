@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Typography,
   Grid,
-} from "@mui/material";
+} from '@mui/material';
 import HeaderComponent from '../headerComponent/HeaderComponent';
 import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
 import TabsComponent from '../tabsComponent/TabsComponent';
@@ -25,12 +25,12 @@ const AuthorComponent: React.FC<Props> = ({
   seriesForArticalPage,
 }) => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const webData = getWebsiteData && getWebsiteData
+  const webData = getWebsiteData && getWebsiteData;
   const getIdFromUrl = () => {
     const currentLocation = window.location.href;
-    const getIdFromCurrentLocation = currentLocation.split("/").reverse()[0];
+    const getIdFromCurrentLocation = currentLocation.split('/').reverse()[0];
     return (getIdFromCurrentLocation);
-  }
+  };
   const getAuthor = webData?.authors?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
   });
@@ -77,7 +77,7 @@ const AuthorComponent: React.FC<Props> = ({
           variant="h6"
           sx={AuthorComponentGridBiographyTitle}
         >
-          {"Biography"}
+          {'Biography'}
         </Typography>
         <Typography
           color="#2F4C69"
@@ -91,57 +91,57 @@ const AuthorComponent: React.FC<Props> = ({
         justifyContent="center"
       >
         <Grid 
-         item
+          item
         >
-        <SocialMediaComponent
-          widthPadding={'16px 0px 16px 16px'}
-          turnOnStyle={true}
-          turnOnEmail={true}
-          email={authorData?.email || articalAuthorData?.email}
-          facebook={authorData?.facebook || articalAuthorData?.facebook}
-          twitter={authorData?.twitter || articalAuthorData?.twitter}
-          youtube={authorData?.youtube || articalAuthorData?.youtube}
-        />
+          <SocialMediaComponent
+            widthPadding={'16px 0px 16px 16px'}
+            turnOnStyle={true}
+            turnOnEmail={true}
+            email={authorData?.email || articalAuthorData?.email}
+            facebook={authorData?.facebook || articalAuthorData?.facebook}
+            twitter={authorData?.twitter || articalAuthorData?.twitter}
+            youtube={authorData?.youtube || articalAuthorData?.youtube}
+          />
         </Grid>
         {turOnArticalPage ?
-        <TabsComponent
-        turnonsectiontabspadding={false}
-          tabsData={
-            AuthorComponetTabData(
-              true, 
-              articalData,
-              authorName,
-              false,
-              true,
-              bookData,
-              authorsData,
-              seriesForArticalPage,
-              false
-            )
-          }
-        />
-        :
-        <TabsComponent
-        turnonsectiontabspadding={false}
-          tabsData={
-            AuthorComponetTabData(
-              false, 
-              getArticals,
-              getIdFromUrl(),
-              false,
-              true,
-              getBooks,
-              authorData,
-              false,
-              true
-            )
-          }
-        />
+          <TabsComponent
+            turnonsectiontabspadding={false}
+            tabsData={
+              AuthorComponetTabData(
+                true, 
+                articalData,
+                authorName,
+                false,
+                true,
+                bookData,
+                authorsData,
+                seriesForArticalPage,
+                false
+              )
+            }
+          />
+          :
+          <TabsComponent
+            turnonsectiontabspadding={false}
+            tabsData={
+              AuthorComponetTabData(
+                false, 
+                getArticals,
+                getIdFromUrl(),
+                false,
+                true,
+                getBooks,
+                authorData,
+                false,
+                true
+              )
+            }
+          />
         }
       </Grid>
-   </Grid>
-  )
-}
+    </Grid>
+  );
+};
 
 export type Props = {
   turOnArticalPage: boolean;

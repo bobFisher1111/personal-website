@@ -2,7 +2,7 @@ export const ContentCopyIconStyle = (prop: string, padding: any) => ({
   color: prop,
   padding: padding,
   cursor: 'pointer',
-  "&:hover": {
+  '&:hover': {
     color: '#2F4C69',
   },
   '@media only screen and (max-width: 600px)': {
@@ -14,8 +14,8 @@ export const ContentCopyIconStyle = (prop: string, padding: any) => ({
 export const EmailOutlinedIconStyles = ( prop: string ) => ({
   cursor: 'pointer',
   color: prop,
-  "&:hover": {
-    color: "#2F4C69",
+  '&:hover': {
+    color: '#2F4C69',
   },
   paddingTop: '5px',
   '@media only screen and (max-width: 600px)': {

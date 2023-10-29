@@ -1,8 +1,8 @@
 import React from 'react';
 import 
-  { Typography, 
-    Grid,
-    Link,
+{ Typography, 
+  Grid,
+  Link,
 } from '@mui/material/';
 import Works from '../../works/Works';
 import {
@@ -128,8 +128,8 @@ const AuthorAbout: React.FC<Props> = ({
             rel="noopener"
             sx={AuthorAboutAuthorsFavoritesResponse}
           >
-          {questionaireData?.FavoriteVideoGameSeries?.name}
-        </Link>
+            {questionaireData?.FavoriteVideoGameSeries?.name}
+          </Link>
         </Grid>
         <Grid
           item
@@ -289,7 +289,7 @@ const AuthorAbout: React.FC<Props> = ({
             color="#2F4C69"
             sx={AuthorAboutFavoritesTitle}
           >
-            Beat 'em up:
+            {'Beat \'em up:'}
           </Typography>
           <Link 
             href={questionaireData?.FavoriteBeatEmUp?.link}
@@ -423,7 +423,7 @@ const AuthorAbout: React.FC<Props> = ({
             rel="noopener"
             sx={AuthorAboutAuthorsFavoritesResponse}
           >
-             {questionaireData?.FavoriteMMO?.name}
+            {questionaireData?.FavoriteMMO?.name}
           </Link>
         </Grid>
         <Grid
@@ -679,7 +679,7 @@ const AuthorAbout: React.FC<Props> = ({
       </Grid>
     </>
   );
-}
+};
 
 export type Props = {
   turnPaddingOn: boolean,

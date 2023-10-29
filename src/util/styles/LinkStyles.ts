@@ -1,5 +1,5 @@
 export const LinkStyles = () => ({
-  textDecoration: "none"
+  textDecoration: 'none',
 });
 
 export default [

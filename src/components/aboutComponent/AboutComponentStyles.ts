@@ -3,7 +3,7 @@ export const AboutCompGridRoot = {
   display: 'flex',
   margin: 'auto',
   padding: '36px 24px 100px 24px',
-  maxWidth: "1024px",
+  maxWidth: '1024px',
 };
 
 export const AboutCompGridSocialMediaStyle = {
@@ -36,7 +36,7 @@ export const AboutCompAboutText = {
   color: '#667A6E',
   '@media only screen and (max-width: 600px)': {
     fontSize: '12px',
-   },
+  },
 };
 
 export const AboutCompAboutTextWithPAdding = {

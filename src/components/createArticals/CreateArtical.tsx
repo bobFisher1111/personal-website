@@ -1,9 +1,10 @@
+import React from 'react';
 import {
   Typography,
   Grid,
   Box,
   CardMedia
-} from "@mui/material";
+} from '@mui/material';
 import {
   ImageGrid,
   CreateArticalImage,
@@ -32,7 +33,7 @@ export const CreateArtical = (articalData: string) => {
           sx={CreateArticalImage}
         />
       </Grid>
-    )
+    );
   }
   if (articalData.match('youtube.com')) {
     return (
@@ -47,7 +48,7 @@ export const CreateArtical = (articalData: string) => {
           sx={CreateArticalVideo}
         />
       </Grid>
-    )
+    );
   }
   if (articalData.startsWith('$')) {
     return (
@@ -63,8 +64,8 @@ export const CreateArtical = (articalData: string) => {
           { <strong>{articalData.slice(1)}</strong> }   
         </Typography>
       </Grid>
-    )
-  };
+    );
+  }
   if (articalData.startsWith('[')) {
     return (
       <Grid
@@ -79,8 +80,8 @@ export const CreateArtical = (articalData: string) => {
           {articalData.slice(1)} 
         </Typography>
       </Grid>
-    )
-  };
+    );
+  }
   if (articalData.startsWith('(')) {
     return (
       <Grid
@@ -92,26 +93,27 @@ export const CreateArtical = (articalData: string) => {
           color="#667A6E"
           sx={quoteText}
         >
+          {/*eslint-disable-next-line */}
           {<i>"{articalData.slice(1)}"</i>} 
         </Typography>
       </Grid>
-    )
-  };
+    );
+  }
   if (articalData.startsWith(']')) {
     return (
       <Grid
-      container
-      justifyContent="center"
-    >
-      <Typography
-        id="articalText"
-        color="#2F4C69"
-        sx={sectionText}
+        container
+        justifyContent="center"
       >
-        { articalData.slice(1) }
-      </Typography>
-    </Grid>
-    )
+        <Typography
+          id="articalText"
+          color="#2F4C69"
+          sx={sectionText}
+        >
+          { articalData.slice(1) }
+        </Typography>
+      </Grid>
+    );
   }
   return (
     <Grid
@@ -126,7 +128,7 @@ export const CreateArtical = (articalData: string) => {
         { articalData }
       </Typography>
     </Grid>
-  )
+  );
 };
 
 export default CreateArtical;

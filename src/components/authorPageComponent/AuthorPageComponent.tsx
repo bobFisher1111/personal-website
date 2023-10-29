@@ -1,6 +1,7 @@
+import React from 'react';
 import AuthorComponent from '../../components/authorComponents/AuthorComponent';
 
-const AuthorPageComponent = () => {
+const AuthorPageComponent: React.FC = () => {
   return (
     <>
       <AuthorComponent
@@ -8,6 +9,6 @@ const AuthorPageComponent = () => {
       />
     </>
   );
-}
+};
 
 export default AuthorPageComponent;

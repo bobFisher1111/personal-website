@@ -1,6 +1,6 @@
 export const GridAlignItems = {
   padding: '0px 16px 200px 16px',
-  maxWidth: "1024px",
+  maxWidth: '1024px',
   margin: 'auto',
   '@media only screen and (max-width: 600px)': {
     padding: '0px 0px 200px 0px',
@@ -18,4 +18,4 @@ export const GridRoot = {
 export default [
   GridAlignItems,
   GridRoot,
-]
+];

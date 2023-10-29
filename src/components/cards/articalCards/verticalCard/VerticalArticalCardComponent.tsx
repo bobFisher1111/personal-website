@@ -35,7 +35,7 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
 
   useEffect(() => {
     const currentLocation = window.location.href;
-    const getIdFromCurrentLocation = currentLocation.split("/");
+    const getIdFromCurrentLocation = currentLocation.split('/');
     const checkIfIncludesCurrentArtical = getIdFromCurrentLocation.includes(articalData?.articalId);
     setArticalPage(checkIfIncludesCurrentArtical);
   }, []);
@@ -72,15 +72,15 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
             </Link>
             :
             <Link 
-                href={series ? serieslUrl : articalUrl}
-                rel="noreferrer"
-              >
+              href={series ? serieslUrl : articalUrl}
+              rel="noreferrer"
+            >
               <CardMedia
                 component="img"
                 image={articalData?.coverImageOrVideo || articalData?.seriesCoverImageOrVideo}
                 sx={CardMediaVerticalCardImage}
               />
-              </Link>
+            </Link>
           }
           <Box
             sx={CardFooterStyle} 
@@ -109,7 +109,7 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
                       by {name}
                     </Typography>
                   </Link>
-                :
+                  :
                   <Typography 
                     sx={TypographyVerticalCardNameStyle}
                     // color="white"
@@ -138,7 +138,7 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
         </Box>
       </Card>
     </div>
-  )
+  );
 };
 
 export type Props = {

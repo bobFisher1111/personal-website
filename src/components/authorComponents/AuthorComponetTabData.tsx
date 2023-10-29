@@ -1,5 +1,6 @@
-import ArticalsList from "../articalTabs/ArticalsList";
-import Series from "../seriesComponent/Series";
+import React from 'react';
+import ArticalsList from '../articalTabs/ArticalsList';
+import Series from '../seriesComponent/Series';
 import Works from '../works/Works';
 import AuthorAbout from './authorAbout/AuthorAbout';
 
@@ -47,10 +48,10 @@ const AuthorComponetTabData = (
             turnPaddingOn={authorsPage}
             aboutData={authorData}
             bookData={getBooks}
-        />
+          />
       },
     ]
-  )
-}
+  );
+};
 
 export default AuthorComponetTabData;

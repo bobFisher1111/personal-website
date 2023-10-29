@@ -4,8 +4,8 @@ export const AuthorAboutGridFavorites = (turnpaaddingon: boolean) => {
     '@media only screen and (max-width: 600px)': {
       padding: '16px',
     },
-  }
-}
+  };
+};
 
 export const AuthorAboutFavoritesHeader = {
   color: '#667A6E',
@@ -30,18 +30,18 @@ export const AuthorAboutFavoritesTitle = {
 };
 
 export const AuthorAboutAuthorsFavoritesResponse = {
-  fontFamily: "Roboto, Helvetica, Arial, sans-serif",
+  fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
   fontSize: '1rem',
   lineHeight: '1.5',  
   paddingRight: '4px',
   color: '#551A8B',
-  "&:hover": {
-    color: "#667A6E",
+  '&:hover': {
+    color: '#667A6E',
   },  
   '@media only screen and (max-width: 600px)': {
     fontSize: '12px',
-   },   
-}
+  },   
+};
 
 export default [
   AuthorAboutGridFavorites,

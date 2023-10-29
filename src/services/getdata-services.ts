@@ -1,5 +1,5 @@
-import axios from "axios";
-import { apiBaseURL } from "../config";
+import axios from 'axios';
+import { apiBaseURL } from '../config';
 import { WebsiteData } from '../types/websiteData';
 import onSuccess from './onSuccess';
 

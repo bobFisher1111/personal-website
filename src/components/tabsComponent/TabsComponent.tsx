@@ -4,7 +4,7 @@ import {
   Grid,
   Tab,
   Tabs,
-} from "@mui/material";
+} from '@mui/material';
 import {
   GridTabsComponent,
   TabComponentTextStyles,
@@ -37,7 +37,7 @@ const TabPanel = (props: TabPanelProps) => {
       )}
     </div>
   );
-}
+};
 
 const TabsComponent: React.FC<Props> = ({
   turnonsectiontabspadding,
@@ -49,7 +49,7 @@ const TabsComponent: React.FC<Props> = ({
       id: `simple-tab-${index}`,
       'aria-controls': `simple-tabpanel-${index}`,
     };
-  }
+  };
   const handleChange = (event: SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
@@ -60,7 +60,7 @@ const TabsComponent: React.FC<Props> = ({
     >
       <Grid
         container 
-        justifyContent={"center"}
+        justifyContent='center'
         sx={GridTabsComponent(turnonsectiontabspadding)}
       >
         <Tabs
@@ -71,6 +71,7 @@ const TabsComponent: React.FC<Props> = ({
         >
           {tabsData?.map((item: any, index: any) => (
             <Tab
+              key={item.id}
               onClick={() => setValue(index)}
               label={item.name}
               {...tabProps(index)} 
@@ -80,7 +81,8 @@ const TabsComponent: React.FC<Props> = ({
         </Tabs>
       </Grid>
       {tabsData?.map((item: any, index: number) => (
-        <TabPanel 
+        <TabPanel
+          key={item.id}
           value={value}
           index={index}
         >
@@ -89,7 +91,7 @@ const TabsComponent: React.FC<Props> = ({
       ))}
     </Box>
   );
-}
+};
 
 export type Props = {
   turnonsectiontabspadding: boolean;

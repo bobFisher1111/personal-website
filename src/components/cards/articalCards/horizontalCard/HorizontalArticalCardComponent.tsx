@@ -5,9 +5,9 @@ import {
   CardMedia,
   Box,
   Typography,
-  } from "@mui/material";
+} from '@mui/material';
 import { useSelector } from 'react-redux';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import HorizontalArticalInfoComponent from './horizontalArticalInfoComponent/HorizontalArticalInfoComponent';
 import HorizontalArticalPageInfoComponent from './horizontalArticalPageInfoComponent/HorizontalArticalPageInfoComponent';
 import {
@@ -51,14 +51,14 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
 
   useEffect(() => {
     const currentLocation = window.location.href;
-    const getIdFromCurrentLocation = currentLocation.split("/");
+    const getIdFromCurrentLocation = currentLocation.split('/');
     const checkIfIncludesAuthor = getIdFromCurrentLocation.includes('author');
     setAuthorPage(checkIfIncludesAuthor);
   }, []);
 
   useEffect(() => {
     const currentLocation = window.location.href;
-    const getIdFromCurrentLocation = currentLocation.split("/");
+    const getIdFromCurrentLocation = currentLocation.split('/');
     const checkIfIncludesSection = getIdFromCurrentLocation.includes(sectionLink);
     setSectionPage(checkIfIncludesSection);
   }, []);
@@ -87,7 +87,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
                 sx={ImageHorizonatalArticalsStyles(articalPage, mobileImageWidth)}
               />
             </Link>
-          :
+            :
             <CardMedia
               component="iframe"
               image={videoOrImageCover}
@@ -118,49 +118,49 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
             sx={CardHorizontalArticalInfo(articalPageList)}
           >
             <Link 
-                to={`/artical/${authorsId}/${articalId}`}
-                reloadDocument={true}
-                style={LinkStyles()}
-              >
-                {!articalPageList &&
+              to={`/artical/${authorsId}/${articalId}`}
+              reloadDocument={true}
+              style={LinkStyles()}
+            >
+              {!articalPageList &&
                 <Typography
                   sx={TypographyHorizontalArticalTitle(articalPage)}
                   color="#2F4C69"
                 >
                   {title}
                 </Typography>
-                }
-                <Typography
-                  sx={TypographyHorizontalArticalSubTitle(articalPageList, cardTextWidth)}
-                >
-                  {articalSubTitle}
-                </Typography>
-                {!articalPage &&
+              }
+              <Typography
+                sx={TypographyHorizontalArticalSubTitle(articalPageList, cardTextWidth)}
+              >
+                {articalSubTitle}
+              </Typography>
+              {!articalPage &&
                   <Typography
                     color="#76468c"
                     sx={TypographyHorizontalArticalDate}
                   >
                     {date}
                   </Typography>
-                }
-              </Link>
-                <HorizontalArticalInfoComponent
-                  section={section}
-                  authorsId={authorsId}
-                  articalId={articalId}
-                  authorPage={authorPage}
-                  aughtorsName={getAuthorData[0]?.name}
-                  sectionLink={sectionLink}
-                  sectionPage={sectionPage}
-                  series={series}
-                  seriesId={seriesId}
-                />
+              }
+            </Link>
+            <HorizontalArticalInfoComponent
+              section={section}
+              authorsId={authorsId}
+              articalId={articalId}
+              authorPage={authorPage}
+              aughtorsName={getAuthorData[0]?.name}
+              sectionLink={sectionLink}
+              sectionPage={sectionPage}
+              series={series}
+              seriesId={seriesId}
+            />
           </Card>
         }
       </Grid>
     </div>
   );
-}
+};
 
 export type Props = {
   title?: string;

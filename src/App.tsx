@@ -9,10 +9,10 @@ import Layout from './layout/Layout';
 import routes from './routes/Routes';
 import './App.css';
 
-const App: React.FC<Props> = ({ position }) => {
+const App: React.FC<Props> = () => {
   const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
-    dispatch(GetWebsiteData())
+    dispatch(GetWebsiteData());
   }, []);
 
   return (
@@ -27,7 +27,7 @@ const App: React.FC<Props> = ({ position }) => {
             }) => ((
               <Route
                 path={path}
-                element={<Component/>}
+                element={<Component />}
                 key={path}
               />
             )))}
@@ -36,7 +36,7 @@ const App: React.FC<Props> = ({ position }) => {
       </Suspense>
     </BrowserRouter>
   );
-}
+};
 
 export type Props = {
   position?: {

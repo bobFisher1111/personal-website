@@ -1,11 +1,12 @@
+import React from 'react';
 import {
   Typography,
-} from "@mui/material";
+} from '@mui/material';
 import {
   commingSoonText,
 } from './ComingSoonStyles';
     
-const ComingSoon: React.FC<Props> = () => {
+const ComingSoon: React.FC = () => {
   return (
     <Typography
       variant="h5"
@@ -13,9 +14,7 @@ const ComingSoon: React.FC<Props> = () => {
     >
       Coming Soon...
     </Typography>
-  )
+  );
 };
-
-export type Props = {};
 
 export default ComingSoon;

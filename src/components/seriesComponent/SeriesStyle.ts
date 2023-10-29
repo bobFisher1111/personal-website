@@ -57,8 +57,8 @@ export const TypographySeriesArticalSubTitle = {
   },
   '@media only screen and (min-width: 600px)': {
     padding: '0px 0px 0px 16px',
- },
- '@media only screen and (max-width: 600px)': {
+  },
+  '@media only screen and (max-width: 600px)': {
     fontSize: '12px',
     padding: '0px 8px 0px 8px',
     WebkitLineClamp: '2',
@@ -105,4 +105,4 @@ export default [
   TypographySeriesArticalSubTitle,
   TypographySeriesArticalTitle,
   TypographySeriesTitle,
-]
+];

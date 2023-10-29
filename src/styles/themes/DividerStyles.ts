@@ -1,7 +1,7 @@
 import {
-    styled,
-    Divider
-  } from "@mui/material";
+  styled,
+  Divider
+} from '@mui/material';
   
 export const DividerForHeader = styled(Divider) ({
   borderColor: '#282c34',

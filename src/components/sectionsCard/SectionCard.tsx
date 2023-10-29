@@ -6,7 +6,7 @@ import {
   Button,
   Grid,
 } from '@mui/material/';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { 
   ButtonSectionTtileStyle,
   CardActionsSectionNameStyle,
@@ -28,21 +28,21 @@ const SectionCard: React.FC<Props> = ({
       sx={GridSectionCardRoot}
     >
       <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-          sx={GridOverflowHeader}
+        item
+        xs={12}
+        sm={12}
+        md={12}
+        lg={12}
+        xl={12}
+        sx={GridOverflowHeader}
+      >
+        <Card
+          sx={CardSectionCard}
         >
-          <Card
-            sx={CardSectionCard}
-          >
           <Link 
-              to={`/${linkTo}`}
-              style={LinkStyles()}
-            >
+            to={`/${linkTo}`}
+            style={LinkStyles()}
+          >
             <CardMedia
               component="img"
               alt="section image"
@@ -52,13 +52,13 @@ const SectionCard: React.FC<Props> = ({
               sx={CardMediaSection}
             />
           </Link>
-            <CardActions
-              sx={CardActionsSectionNameStyle}
-            >
+          <CardActions
+            sx={CardActionsSectionNameStyle}
+          >
             <Link 
               to={`/${linkTo}`}
               style={{
-                textDecoration: "none"
+                textDecoration: 'none'
               }}
             >
               <Button 
@@ -68,12 +68,12 @@ const SectionCard: React.FC<Props> = ({
                 {section}
               </Button>
             </Link>
-            </CardActions>
-          </Card>
-        </Grid>
+          </CardActions>
+        </Card>
       </Grid>
+    </Grid>
   );
-}
+};
 
 export type Props = {
   imgCover: string,

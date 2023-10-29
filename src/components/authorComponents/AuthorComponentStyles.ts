@@ -3,11 +3,11 @@ export const AuthorComponentGridRoot = (turonarticalpage: boolean) => {
     background: '#fff',
     display: 'flex',
     paddingBottom: '200px',
-    maxWidth: "1024px",
+    maxWidth: '1024px',
     margin: 'auto',
     padding: '40px 16px 100px 16px',
     borderLeft: turonarticalpage ? '1px solid #667A6E' : '',
-  }
+  };
 };
 
 export const AuthorComponentGridBiography = {
@@ -29,7 +29,7 @@ export const AuthorComponentGridBiographyText = {
   textIndent: '15px',
   '@media only screen and (max-width: 600px)': {
     fontSize: '12px',
-    },
+  },
 };
 
 export default [

@@ -6,8 +6,8 @@ import {
   Drawer,
   Grid,
   Typography,
-} from "@mui/material";
-import { Link } from "react-router-dom";
+} from '@mui/material';
+import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import SocialMediaComponent from '../../../components/socialMediaComponent/SocialMediaComponent';
 import { MenuIconStyle, BoxMobileDrawerStyle } from './MobileDrawerStyle';
@@ -22,7 +22,7 @@ import { LinkStyles } from '../../../util/styles/LinkStyles';
 
 type Anchor = 'left';
 
-const MobileDrawer = () => {
+const MobileDrawer: React.FC = () => {
   const [state, setState] = React.useState({
     left: false,
   });
@@ -42,7 +42,7 @@ const MobileDrawer = () => {
       }
 
       setState({ ...state, [anchor]: open });
-  };
+    };
 
   const uniqueID = Number(Date.now());
 
@@ -247,6 +247,6 @@ const MobileDrawer = () => {
       ))}
     </div>
   );
-}
+};
 
 export default MobileDrawer;

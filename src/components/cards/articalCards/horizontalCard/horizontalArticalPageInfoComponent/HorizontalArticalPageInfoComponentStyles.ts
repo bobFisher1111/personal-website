@@ -39,7 +39,7 @@ export const HorizArticalPageInfoCompDate = {
   '@media only screen and (max-width: 600px)': {
     paddingTop: '2px',
     fontSize: '12px',
-   },
+  },
 };
 
 export const TypographyArticalInfoRight = {

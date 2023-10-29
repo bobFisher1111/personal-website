@@ -1,7 +1,7 @@
 export const BoxMobileDrawerStyle = {
   width:  '75vw',
   height: '100vh',
-  backgroundColor: "white",
+  backgroundColor: 'white',
 };
 
 export const MenuIconStyle = {
@@ -9,7 +9,7 @@ export const MenuIconStyle = {
 };
 
 export const GridMobileDrawerAppBar = {
-  backgroundColor: "#667A6E",
+  backgroundColor: '#667A6E',
   maxHeight: '36px',
   padding: '0px 0px 0px 8px',
   borderBottom: 'solid #2F4C69 1px',
@@ -29,20 +29,20 @@ export const GridSectionsStyle = {
 
 export const TypographyMobileDrawer = {
   variant: 'h6',
-  color: "#2F4C69",
-  cursor: "pointer",
-  "&:hover": {
-    color: "black",
+  color: '#2F4C69',
+  cursor: 'pointer',
+  '&:hover': {
+    color: 'black',
   },
   fontSize: '20px',
 };
 
 export const TypograohyMobileDrawerWebistieName = {
-  variant: "h6",
-  color: "black",
-  cursor: "pointer",
-  "&:hover": {
-    color: "white",
+  variant: 'h6',
+  color: 'black',
+  cursor: 'pointer',
+  '&:hover': {
+    color: 'white',
   },
   fontSize: '20px',
 };

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import {
   Chip,
   Grid,
   Typography,
-} from "@mui/material";
+} from '@mui/material';
 import CopyLinkComponent from '../../../../copyLinkComponent/CopyLinkComponent';
 import { LinkStyles } from '../../../../../util/styles/LinkStyles';
 import {
@@ -28,9 +28,9 @@ const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
 }) => {
   const getSeriesIdFromUrl = () => {
     const currentLocation = window.location.href;
-    const seriesId = currentLocation.split("/").reverse()[0];
+    const seriesId = currentLocation.split('/').reverse()[0];
     return (seriesId);
-  }
+  };
 
   return (
     <>
@@ -45,7 +45,7 @@ const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
           style={LinkStyles()}
         >
           <div 
-            className={"material-symbols-outlined"}
+            className={'material-symbols-outlined'}
             style={DivMaterialSymbolsOutlined()}
           >
             account_circle
@@ -83,7 +83,7 @@ const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
         <Link 
           to={`/${sectionLink}`}
           style={{
-            textDecoration: "none"
+            textDecoration: 'none'
           }}
         >
           <Chip
@@ -107,8 +107,8 @@ const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
             padding={'0px 0px 0px 16px'}
             email={false}
             turnOnSeries={true}
-        />
-        :
+          />
+          :
           <CopyLinkComponent
             authorsId={authorsId}
             articalId={articalID}
@@ -119,7 +119,7 @@ const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
         }
       </Grid>
     </>
-  )
+  );
 };
 
 export type Props = {

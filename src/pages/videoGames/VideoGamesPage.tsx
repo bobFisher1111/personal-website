@@ -1,9 +1,10 @@
+import React from 'react';
 import VideoGamesComponent from '../../components/videoGamesComponent/VideoGamesComponent';
 
-const VideoGamesPage = () => {
+const VideoGamesPage: React.FC = () => {
   return (
     <VideoGamesComponent />
   );
-}
+};
 
 export default VideoGamesPage;

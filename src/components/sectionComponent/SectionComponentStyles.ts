@@ -22,4 +22,4 @@ export const GridSections = (homepage: boolean) => ({
 export default [
   GridMaxWidth,
   GridSections,
-]
+];

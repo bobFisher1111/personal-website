@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import {
   Avatar,
   Grid,
   Typography,
-} from "@mui/material";
+} from '@mui/material';
 import {
   AvatarStyle,
   GridAvatarPadding,
@@ -29,61 +29,61 @@ const HeaderComponent:  React.FC<Props> = ({
       >
         {item}
       </Typography>
-    )
+    );
   };
 
   return (
-      <Grid
-        container
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-        sx={GridHeader}
-      >
-        {authorAvatar ? 
+    <Grid
+      container
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+      sx={GridHeader}
+    >
+      {authorAvatar ? 
         <>
           <Grid
             item
             sx={GridPaddingRight}
           >
-          {articalPage ? 
-          <Link 
-              to={`/author/${authorId}`}
-              style={LinkStyles()}
-            >
-           <Avatar 
-             alt="Authors Avatar"
-             src={avatarImage}
-             sx={AvatarStyle}
-          />
-          </Link>
-          :
-          <Avatar 
-             alt="Authors Avatar"
-             src={avatarImage}
-             sx={AvatarStyle}
-          />
-          }
-        </Grid>
-      <Grid
-        item
-        sx={GridAvatarPadding}
-      >
-        {articalPage ?
-        <Link 
-          to={`/author/${authorId}`}
-          style={LinkStyles()}
-        >
-          {titleFunction(title)}
-        </Link>
-        :
-        <>
-        {titleFunction(title)}
+            {articalPage ? 
+              <Link 
+                to={`/author/${authorId}`}
+                style={LinkStyles()}
+              >
+                <Avatar 
+                  alt="Authors Avatar"
+                  src={avatarImage}
+                  sx={AvatarStyle}
+                />
+              </Link>
+              :
+              <Avatar 
+                alt="Authors Avatar"
+                src={avatarImage}
+                sx={AvatarStyle}
+              />
+            }
+          </Grid>
+          <Grid
+            item
+            sx={GridAvatarPadding}
+          >
+            {articalPage ?
+              <Link 
+                to={`/author/${authorId}`}
+                style={LinkStyles()}
+              >
+                {titleFunction(title)}
+              </Link>
+              :
+              <>
+                {titleFunction(title)}
+              </>
+            }     
+          </Grid>
         </>
-        }     
-     </Grid>
-     </>
-      :
+        :
         <Grid
           item
           xs={12}
@@ -93,12 +93,12 @@ const HeaderComponent:  React.FC<Props> = ({
           xl={12}
           sx={GridHeaderTitle}
         >
-         {titleFunction(title)}
+          {titleFunction(title)}
         </Grid>
       }
-      </Grid>
+    </Grid>
   );
-}
+};
 
 export type Props = {
   title?: string;

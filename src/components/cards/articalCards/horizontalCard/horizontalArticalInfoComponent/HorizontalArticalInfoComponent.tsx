@@ -3,9 +3,9 @@ import {
   Chip,
   Grid,
   Typography,
-} from "@mui/material";
+} from '@mui/material';
 import CopyLinkComponent from '../../../../copyLinkComponent/CopyLinkComponent';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { LinkStyles } from '../../../../../util/styles/LinkStyles';
 import {
   ChipNoPointer,
@@ -27,93 +27,93 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
   series,
   seriesId,
 }) => {
-    return (
-        <Grid 
-          container
-          direction="row"    
-          sx={GridHorizontalInfo}
+  return (
+    <Grid 
+      container
+      direction="row"    
+      sx={GridHorizontalInfo}
+    >
+      {!authorPage ?
+        <Link 
+          to={`/author/${authorsId}`}
+          style={LinkStyles()}
         >
-          {!authorPage ?
-            <Link 
-              to={`/author/${authorsId}`}
-              style={LinkStyles()}
-            >
-              <Grid 
-                className={"material-symbols-outlined"}
-                sx={DivMaterialSymbolsOutlined()}
-              >
-                account_circle
-              </Grid>
-            </Link>
-          :
-            <Grid 
-              className={"material-symbols-outlined"}
-              style={DivMaterialSymbolsOutlined()}
-            >
-              account_circle
-            </Grid>
-          }
-          {!authorPage ? 
-            <Link 
-              to={`/author/${authorsId}`}
-              style={LinkStyles()}
-            >
-              <Typography
-                // color="#2F4C69"
-                sx={TypographyHorizontalInfoText}
-              >
-                {aughtorsName}
-              </Typography> 
-            </Link>
-          :
-            <Typography
-              // color="#2F4C69"
-              sx={TypographyHorizontalInfoText}
-            >
-              {aughtorsName}
-            </Typography>
-          }
-          {!sectionPage ?
-              <Link 
-                to={`/${sectionLink}`}
-                style={LinkStyles()}
-              >
-              <Chip
-                color="primary"
-                label={section}
-                variant="outlined"
-                size="small"
-                sx={ChipStyle}
-              />
-            </Link>
-          :
-            <Chip
-              color="primary"
-              label={section}
-              variant="outlined"
-              size="small"
-              sx={ChipNoPointer}
-            />
-          }
-          {series &&
-           <div
-            style={DivSeriesLeftPadding()}
+          <Grid 
+            className={'material-symbols-outlined'}
+            sx={DivMaterialSymbolsOutlined()}
           >
-           <Link 
-              to={`/series/${seriesId}`}
-              style={LinkStyles()}
-            >
-              <Chip
-                color="secondary"
-                label={'Series'}
-                variant="outlined"
-                size="small"
-                sx={ChipStyle}
-              />
-            </Link>
-            </div>
-          }
-          {authorPage && series && sectionPage &&
+                account_circle
+          </Grid>
+        </Link>
+        :
+        <Grid 
+          className={'material-symbols-outlined'}
+          style={DivMaterialSymbolsOutlined()}
+        >
+              account_circle
+        </Grid>
+      }
+      {!authorPage ? 
+        <Link 
+          to={`/author/${authorsId}`}
+          style={LinkStyles()}
+        >
+          <Typography
+            // color="#2F4C69"
+            sx={TypographyHorizontalInfoText}
+          >
+            {aughtorsName}
+          </Typography> 
+        </Link>
+        :
+        <Typography
+          // color="#2F4C69"
+          sx={TypographyHorizontalInfoText}
+        >
+          {aughtorsName}
+        </Typography>
+      }
+      {!sectionPage ?
+        <Link 
+          to={`/${sectionLink}`}
+          style={LinkStyles()}
+        >
+          <Chip
+            color="primary"
+            label={section}
+            variant="outlined"
+            size="small"
+            sx={ChipStyle}
+          />
+        </Link>
+        :
+        <Chip
+          color="primary"
+          label={section}
+          variant="outlined"
+          size="small"
+          sx={ChipNoPointer}
+        />
+      }
+      {series &&
+           <div
+             style={DivSeriesLeftPadding()}
+           >
+             <Link 
+               to={`/series/${seriesId}`}
+               style={LinkStyles()}
+             >
+               <Chip
+                 color="secondary"
+                 label={'Series'}
+                 variant="outlined"
+                 size="small"
+                 sx={ChipStyle}
+               />
+             </Link>
+           </div>
+      }
+      {authorPage && series && sectionPage &&
             <CopyLinkComponent
               authorsId={authorsId}
               articalId={articalId}
@@ -121,10 +121,10 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
               padding={'0px 0px 0px 16px'}
               email={false}
             />
-          }
-        </Grid>
-    )
-}
+      }
+    </Grid>
+  );
+};
 
 export type Props = {
   section: string;

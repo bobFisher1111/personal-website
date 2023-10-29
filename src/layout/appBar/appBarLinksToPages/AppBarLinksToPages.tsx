@@ -1,16 +1,17 @@
+import React from 'react';
 import {
   Grid,
   Typography,
-} from "@mui/material";
-import { Link } from "react-router-dom";
+} from '@mui/material';
+import { Link } from 'react-router-dom';
 import SectionsDropDown from '../sectionsDropDown/SectionsDropDown';
-import { LinkStyles } from "../../../util/styles/LinkStyles";
+import { LinkStyles } from '../../../util/styles/LinkStyles';
 import { 
   GridPointer,
   TypographyLinkTwoPage,
-} from "./AppBarLinksToPagesStyles";
+} from './AppBarLinksToPagesStyles';
 
-const AppBarLinksToPages = () => {
+const AppBarLinksToPages: React.FC = () => {
   return (
     <>
       <Grid
@@ -47,6 +48,6 @@ const AppBarLinksToPages = () => {
       </Grid>
     </>
   );
-}
+};
 
 export default AppBarLinksToPages;

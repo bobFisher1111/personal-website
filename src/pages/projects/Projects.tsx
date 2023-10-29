@@ -1,5 +1,4 @@
 import React from 'react';
-import { Typography } from '@mui/material';
 
 const Projects = () => {
   return (
@@ -9,6 +8,6 @@ const Projects = () => {
       </header>
     </>
   );
-}
+};
 
 export default Projects;

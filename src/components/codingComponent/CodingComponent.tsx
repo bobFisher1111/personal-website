@@ -1,8 +1,9 @@
+import React from 'react';
 import SectionsComponent from '../sections/SectionsComponent';
 import { useSelector } from 'react-redux';
-import CodingComponentTabData from './CodingComponentTabData'
+import CodingComponentTabData from './CodingComponentTabData';
 
-const CodingComponent = () => {
+const CodingComponent: React.FC = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const articalData = getWebsiteData && getWebsiteData;
 
@@ -23,17 +24,16 @@ const CodingComponent = () => {
   });
 
   return (
-      <SectionsComponent
-        headerTitle='Coding'
-        sectionTabData={CodingComponentTabData(
-          false,
-          articalSectionFilter,
-          articalFrontEndFilter,
-          // articalBackEndFilter,
-          articalDataFilter,
-        )}
-      />
+    <SectionsComponent
+      headerTitle='Coding'
+      sectionTabData={CodingComponentTabData(
+        false,
+        articalSectionFilter,
+        articalFrontEndFilter,
+        articalDataFilter,
+      )}
+    />
   );
-}
+};
 
 export default CodingComponent;

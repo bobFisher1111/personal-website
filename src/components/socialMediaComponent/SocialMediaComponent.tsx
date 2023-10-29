@@ -1,8 +1,8 @@
-import React  from 'react';
+import React from 'react';
 import TwitterLogo from '../../assets/icons/TwitterLogo.svg';
 import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
 import FacebookLogo from '../../assets/icons/FacebookLogo.png';
-import { Grid, Box } from "@mui/material";
+import { Grid, Box } from '@mui/material';
 import CopyLinkComponent from '../copyLinkComponent/CopyLinkComponent';
 
 const SocialMediaComponent: React.FC<Props> = ({
@@ -25,74 +25,74 @@ const SocialMediaComponent: React.FC<Props> = ({
           padding: turnOnStyle ? widthPadding : '',
         }}
       >
-          <a 
-            href={facebook}
-            target="_blank"
-            rel="noreferrer"
-            >
-            <Box
-              component="img"
-              src={FacebookLogo}
-              alt="Facebook logo"
-              sx={{
-                height: '20px',
-                '@media only screen and (max-width: 600px)': {
-                  height: '15px',
-                },
-              }}
-            />
-          </a>
-        </Grid>
-        <Grid
-          item
-          sx={{
-            padding: turnOnStyle ? widthPadding : '',
-          }}
+        <a 
+          href={facebook}
+          target="_blank"
+          rel="noreferrer"
         >
-          <a 
-            href={twitter}
-            target="_blank"
-            rel="noreferrer"
-            >
-            <Box
-              component="img"
-              src={TwitterLogo}
-              alt="Twitter logo"
-              sx={{
-                height: '20px',
-                '@media only screen and (max-width: 600px)': {
-                  height: '15px',
-                },
-              }}
-            />
-          </a>
-        </Grid>
-        <Grid
-          item
-          sx={{
-            padding: turnOnStyle ? widthPadding : '',
-          }}
+          <Box
+            component="img"
+            src={FacebookLogo}
+            alt="Facebook logo"
+            sx={{
+              height: '20px',
+              '@media only screen and (max-width: 600px)': {
+                height: '15px',
+              },
+            }}
+          />
+        </a>
+      </Grid>
+      <Grid
+        item
+        sx={{
+          padding: turnOnStyle ? widthPadding : '',
+        }}
+      >
+        <a 
+          href={twitter}
+          target="_blank"
+          rel="noreferrer"
         >
-          <a 
-            href={youtube}
-            target="_blank"
-            rel="noreferrer"
-            >
-            <Box
-              component="img"
-              src={YoutTubeLogo} 
-              height="20px"
-              alt="YouTube logo"
-              sx={{
-                height: '20px',
-                '@media only screen and (max-width: 600px)': {
-                  height: '15px',
-                },
-              }}
-            />
-          </a>
-        </Grid>
-        {turnOnEmail && 
+          <Box
+            component="img"
+            src={TwitterLogo}
+            alt="Twitter logo"
+            sx={{
+              height: '20px',
+              '@media only screen and (max-width: 600px)': {
+                height: '15px',
+              },
+            }}
+          />
+        </a>
+      </Grid>
+      <Grid
+        item
+        sx={{
+          padding: turnOnStyle ? widthPadding : '',
+        }}
+      >
+        <a 
+          href={youtube}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Box
+            component="img"
+            src={YoutTubeLogo} 
+            height="20px"
+            alt="YouTube logo"
+            sx={{
+              height: '20px',
+              '@media only screen and (max-width: 600px)': {
+                height: '15px',
+              },
+            }}
+          />
+        </a>
+      </Grid>
+      {turnOnEmail && 
           <Grid
             item
             sx={{
@@ -105,10 +105,10 @@ const SocialMediaComponent: React.FC<Props> = ({
               authorsEmail={email}
             />
           </Grid>
-        }
+      }
     </Grid>
   );
-}
+};
 
 export type Props = {
   widthPadding?: string,

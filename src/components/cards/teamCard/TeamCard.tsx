@@ -71,7 +71,7 @@ const TeamCard: React.FC<Props> = ({
       </Grid>
     </Card>
   );
-}
+};
 
 export type Props = {
   firstName: string;

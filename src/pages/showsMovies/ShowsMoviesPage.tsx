@@ -1,9 +1,10 @@
+import React from 'react';
 import ShowsMoviesComponent from '../../components/showsMoviesComponent/ShowsMoviesComponent';
 
-const ShowsMoviesPage = () => {
+const ShowsMoviesPage: React.FC = () => {
   return (
-      <ShowsMoviesComponent />
+    <ShowsMoviesComponent />
   );
-}
+};
 
 export default ShowsMoviesPage;

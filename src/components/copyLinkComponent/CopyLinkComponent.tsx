@@ -27,20 +27,20 @@ const CopyLinkComponent: React.FC<Props> = ({
   return (
     <>
       {email ?
-          <EmailOutlinedIcon
-            sx={EmailOutlinedIconStyles(emailIcon)}
-            id="copyEmail"
-            onClick={() => copyLink(setEmailIcon, authorsEmail)}
-          />
+        <EmailOutlinedIcon
+          sx={EmailOutlinedIconStyles(emailIcon)}
+          id="copyEmail"
+          onClick={() => copyLink(setEmailIcon, authorsEmail)}
+        />
         :
-          <ContentCopyIcon
-            sx={ContentCopyIconStyle(copyIconColor, padding)}
-            onClick={() => copyLink(setCopyIconColor, copyUrls)}
-          />
+        <ContentCopyIcon
+          sx={ContentCopyIconStyle(copyIconColor, padding)}
+          onClick={() => copyLink(setCopyIconColor, copyUrls)}
+        />
       }
-   </>
-  )
-}
+    </>
+  );
+};
 
 export type Props = {
   authorsId?: string;

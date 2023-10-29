@@ -64,7 +64,7 @@ export const GridPadding = {
 };
 
 export const TypographyVerticalCardNameStyle = {
-  color: "white",
+  color: 'white',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
@@ -74,15 +74,15 @@ export const TypographyVerticalCardNameStyle = {
 };
 
 export const TypographyVerticalCardNameStyleHover = {
-  color: "white",
+  color: 'white',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
   WebkitLineClamp: '1',
   WebkitBoxOrient: 'vertical',
   padding: '16px',
-  "&:hover": {
-    color: "#667A6E",
+  '&:hover': {
+    color: '#667A6E',
   },
   '@media only screen and (max-width: 600px)': {
     fontSize: '12px',

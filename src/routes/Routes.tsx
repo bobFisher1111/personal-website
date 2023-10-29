@@ -51,7 +51,7 @@ const routes: Route[] = [
     element: ArticalPage,
   },
   {
-    path: `/author/:id`,
+    path: '/author/:id',
     element: AuthorPage,
   },
   {
@@ -71,7 +71,7 @@ const routes: Route[] = [
     element: VideoGamesPage,
   },
   {
-    path: `/series/:id`,
+    path: '/series/:id',
     element: SeriesPage,
   },
 ];

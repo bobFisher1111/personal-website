@@ -1,9 +1,10 @@
+import React from 'react';
 import {
   Box,
   Grid,
   Typography,
-} from "@mui/material";
-import { Link } from "react-router-dom";
+} from '@mui/material';
+import { Link } from 'react-router-dom';
 import SocialMediaComponent from '../../../components/socialMediaComponent/SocialMediaComponent';
 import AppBarLinksToPages from '../appBarLinksToPages/AppBarLinksToPages';
 import MobileDrawer from '../mobileDrawer/MobileDrawer';
@@ -15,10 +16,10 @@ import {
   TypographyDesktopTitle,
   TypographyMobileTitle,
 } from './WebSiteAppBarStyles';
-import { LinkStyles } from "../../../util/styles/LinkStyles";
+import { LinkStyles } from '../../../util/styles/LinkStyles';
 import AppConfig from '../../../config';
 
-const WebSiteAppBar = () => {
+const WebSiteAppBar: React.FC = () => {
   const facebook = AppConfig.facebookURL;
   const twitter = AppConfig.twitterURL;
   const youtube = AppConfig.youtubeURL;
@@ -43,7 +44,7 @@ const WebSiteAppBar = () => {
         >
           <Link to="/" 
             style={LinkStyles()}
-            >
+          >
             <Typography
               sx={TypographyDesktopTitle}
             >
@@ -122,7 +123,7 @@ const WebSiteAppBar = () => {
           >
             <Link to="/" 
               style={{
-                textDecoration: "none"
+                textDecoration: 'none'
               }}
             >
               <Typography
@@ -135,6 +136,7 @@ const WebSiteAppBar = () => {
         </Grid>
       </Grid>
     </Box>
-)}
+  );
+};
 
 export default WebSiteAppBar;
