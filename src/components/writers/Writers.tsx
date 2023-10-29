@@ -1,8 +1,7 @@
+import React from 'react';
 import {
-  Typography,
   Grid,
-  Divider,
-} from "@mui/material";
+} from '@mui/material';
 import { useSelector } from 'react-redux';
 import HeaderComponent from '../headerComponent/HeaderComponent';
 import WritersCard from './writersCard/WritersCard';
@@ -16,11 +15,11 @@ const Writers = () => {
   const authorsData = getWebsiteData.authors;
 
   return (
-      <>
-        <Grid
-          container
-          sx={WritersGridRoot}
-        >
+    <>
+      <Grid
+        container
+        sx={WritersGridRoot}
+      >
         <Grid
           item
           xs={12}
@@ -39,10 +38,11 @@ const Writers = () => {
       <Grid
         container
         sx={WritersCardGrid}
-        >
-        {authorsData && authorsData?.map((item: any, index: any) => (
+      >
+        {authorsData && authorsData?.map((item: any) => (
           <Grid
             item
+            key={item.id}
             xs={12}
             sm={6}
             md={6}
@@ -62,9 +62,9 @@ const Writers = () => {
           </Grid>
         ))}
       </Grid>
-     </> 
-    );
-  }
+    </> 
+  );
+};
   
-  export default Writers;
+export default Writers;
   

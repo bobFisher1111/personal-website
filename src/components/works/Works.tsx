@@ -31,7 +31,7 @@ const Works: React.FC<Props> = ({
   const titleHeightRef = useRef<any>();
   const bookPlotHeightRef = useRef<any>();
   const articalExtraInfoRef = useRef<any>();
-  const [artaicalPageExtraInfo, setArticalPageExtraInfo] = useState<number>(0)
+  const [artaicalPageExtraInfo, setArticalPageExtraInfo] = useState<number>(0);
   const [infoHeight, setInfoHeight] = useState<string>('');
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const Works: React.FC<Props> = ({
       const plotHieght: number = bookPlotHeightRef && bookPlotHeightRef?.current?.clientHeight;
       const bookHeight = bookImageHeightRef && bookImageHeightRef?.current?.clientHeight;
       const articalExtraInfo: number = articalExtraInfoRef && articalExtraInfoRef?.current?.clientHeight;
-      setArticalPageExtraInfo(bookHeight - titleHeight - plotHieght - articalExtraInfo)
+      setArticalPageExtraInfo(bookHeight - titleHeight - plotHieght - articalExtraInfo);
       const bottomHeight = artaicalPageExtraInfo.toString();
       const bottomHPixel = bottomHeight + 'px';
       setInfoHeight(bottomHPixel);
@@ -124,80 +124,81 @@ const Works: React.FC<Props> = ({
           xl={12}
         >
           <Typography
-            color={aboutWorks ? "#667A6E" : "#2F4C69"}
+            color={aboutWorks ? '#667A6E' : '#2F4C69'}
             sx={WorksTitle(authorsPage)}
           >
-            {aboutWorks ? 'Favorite books' : "Author Book's"}
+            {aboutWorks ? 'Favorite books' : 'Author Book\'s'}
           </Typography>
         </Grid>
       </Grid>
       {bookData?.map((item: any) => (
-      <Grid 
-        container
-        sx={WorksGridRoot(authorsPage)}
-      >
-        <Grid
-          item
-          xs={1}
-          sm={1}
-          md={1}
-          lg={1}
-          xl={1}
-          sx={WorksGridCover(authorsPage)}
+        <Grid 
+          container
+          key={item.id}
+          sx={WorksGridRoot(authorsPage)}
         >
-          <Button
-            href={item.buy}
-            target="_blank"
-            rel="noreferrer"
+          <Grid
+            item
+            xs={1}
+            sm={1}
+            md={1}
+            lg={1}
+            xl={1}
+            sx={WorksGridCover(authorsPage)}
           >
-            <CardMedia
-              ref={bookImageHeightRef}
-              component="img"
-              image={item.bookCoverSmall}
-              sx={WorksCoverImage(authorsPage)}
-            />
-          </Button>
-        </Grid>
-        <Grid
-          item
-          xs={articalPage ? 6 : 8}
-          sm={articalPage ? 6 : 8}
-          md={articalPage ? 6 : 8}
-          lg={articalPage ? 6 : 8}
-          xl={articalPage ? 6 : 8}
-          sx={WorksGridInfo}
-        >
-          <Typography
-            color={aboutWorks ? "#2F4C69" : "#667A6E"}
-            ref={titleHeightRef}
-            sx={WorksInfoTitle(aboutWorks)}
+            <Button
+              href={item.buy}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <CardMedia
+                ref={bookImageHeightRef}
+                component="img"
+                image={item.bookCoverSmall}
+                sx={WorksCoverImage(authorsPage)}
+              />
+            </Button>
+          </Grid>
+          <Grid
+            item
+            xs={articalPage ? 6 : 8}
+            sm={articalPage ? 6 : 8}
+            md={articalPage ? 6 : 8}
+            lg={articalPage ? 6 : 8}
+            xl={articalPage ? 6 : 8}
+            sx={WorksGridInfo}
           >
-            {item.bookTitle}
-          </Typography>
-          {authorsPage &&
             <Typography
-              color={aboutWorks ? "#667A6E" : "#2F4C69"}
+              color={aboutWorks ? '#2F4C69' : '#667A6E'}
+              ref={titleHeightRef}
+              sx={WorksInfoTitle(aboutWorks)}
+            >
+              {item.bookTitle}
+            </Typography>
+            {authorsPage &&
+            <Typography
+              color={aboutWorks ? '#667A6E' : '#2F4C69'}
               ref={bookPlotHeightRef}
               variant="subtitle1"
               sx={WorksInfoSubTitle}
             >
               {item.bookSubtitle}
             </Typography>
-          }
-          {authorsPage ?
-            articalPageBookExtrainfo(item, infoHeight)
-          :
-            <Typography
-              color="#2F4C69"
-              sx={WorksInfoDate(authorsPage)}
-            >
-              {item.year}
-            </Typography>
-          }
+            }
+            {authorsPage ?
+              articalPageBookExtrainfo(item, infoHeight)
+              :
+              <Typography
+                color="#2F4C69"
+                sx={WorksInfoDate(authorsPage)}
+              >
+                {item.year}
+              </Typography>
+            }
+          </Grid>
         </Grid>
-      </Grid>
-    ))}
-  </>
+      ))}
+    </>
   );
 };
 

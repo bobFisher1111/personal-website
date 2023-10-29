@@ -1,5 +1,6 @@
-import ArticalsList from "../articalTabs/ArticalsList";
-import Series from "../seriesComponent/Series";
+import React from 'react';
+import ArticalsList from '../articalTabs/ArticalsList';
+import Series from '../seriesComponent/Series';
 
 const VideoGamesComponentTabData = (
   turOnAuthorForArtical: boolean,
@@ -23,10 +24,10 @@ const VideoGamesComponentTabData = (
       },
       { 
         name: 'Series',
-        data: <Series data={articalSectionFilter} section={"Video Games"} />
+        data: <Series data={articalSectionFilter} section={'Video Games'} />
       },
     ]
-  )
-}
+  );
+};
 
 export default VideoGamesComponentTabData;

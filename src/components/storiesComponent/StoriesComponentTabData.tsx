@@ -1,5 +1,6 @@
-import ArticalsList from "../articalTabs/ArticalsList";
-import Series from "../seriesComponent/Series";
+import React from 'react';
+import ArticalsList from '../articalTabs/ArticalsList';
+import Series from '../seriesComponent/Series';
 
 const StoriesComponentTabData = (
   turOnAuthorForArtical: boolean,
@@ -13,10 +14,10 @@ const StoriesComponentTabData = (
       },
       { 
         name: 'Series',
-        data: <Series data={articalSectionFilter} section={"Stories"}/>
+        data: <Series data={articalSectionFilter} section={'Stories'}/>
       },
     ]
-  )
-}
+  );
+};
 
 export default StoriesComponentTabData;

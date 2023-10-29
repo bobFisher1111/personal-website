@@ -1,9 +1,8 @@
 import React from 'react';
 import {
-    Grid,
-    Divider,
-  } from "@mui/material";
-import HeaderComponent from "../headerComponent/HeaderComponent";
+  Grid,
+} from '@mui/material';
+import HeaderComponent from '../headerComponent/HeaderComponent';
 import TabsComponent from '../tabsComponent/TabsComponent';
 import {
   SectionComponentGridRoot,
@@ -33,13 +32,13 @@ const SectionsComponent: React.FC<Props> = ({
         />
       </Grid>
       <Grid
-       item
-       xs={12}
-       sm={12}
-       md={12}
-       lg={12}
-       xl={12}
-       sx={SectionComponentGridTabs}
+        item
+        xs={12}
+        sm={12}
+        md={12}
+        lg={12}
+        xl={12}
+        sx={SectionComponentGridTabs}
       >
         <TabsComponent
           turnonsectiontabspadding={true}
@@ -47,8 +46,8 @@ const SectionsComponent: React.FC<Props> = ({
         />
       </Grid>
     </Grid>
-    );
-  }
+  );
+};
 
 export type Props = {
   headerTitle?: string,
