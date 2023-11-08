@@ -1,0 +1,2 @@
+INSERT INTO Books (bookId, bookTitle, bookSubtitle, buy, genre, publishedDate, bookCoverLarge, bookCoverSmall, authorId)
+VALUES (01, 'Book 1 Title', 'Book 1 Subtitle', 'https://www.ign.com/', 'Fiction', '2023-05-01', 'https://edit.org/images/cat/book-covers-big-2019101610.jpg', 'https://edit.org/images/cat/book-covers-big-2019101610.jpg', 01);

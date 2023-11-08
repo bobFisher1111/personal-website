@@ -22,31 +22,25 @@
               - install:
                 npm i @fortawesome/react-fontawesome
                 npm i @fortawesome/free-solid-svg-icons
+                
+        - Run Database (microsoft sql)
+          - Setup:
+            - https://hub.docker.com/_/microsoft-azure-sql-edge
+            - docker Image:
+              - docker pull mcr.microsoft.com/azure-sql-edge
+            - Use Image:
+              - docker run --cap-add SYS_PTRACE -e 'ACCEPT_EULA=1' -e 'MSSQL_SA_PASSWORD=F1ghting1!' -p 1433:1433 --name azuresqledge -d -v sqlvolume:/var/opt/mssql mcr.microsoft.com/azure-sql-edge
 
-        - Sprint:
+          - Run Docker:
+            - check volumes: docker volume list
+            - User Name: sa
+            - Password: F1ghting1!
+            - Persist data:
+              - -v sqlvolume:/var/opt/mssql
+            - docker container id:
+              - e6c0f76a3c52f825bae44e2dc8e18fddf414b1acf57edc98d79a28c80bfd0e78
 
-            - Sprint 01: Setup Project: // completed
-                - create react app  
-                - install basic packages for project 
-                - setup temp data with json-server:
-                  - https://www.youtube.com/watch?v=_Fx6GDuIo1A
-
-            - Sprint 02: Header // starting
-                - restructure code // completed
-                - create basic homepage // completed
-                - create heater: // started
-                    - use router create empty pages: // completed
-                      1. user
-                      2. back to homepage
-                      3. contact
-                      4. about
-                      5. search bar
-                      6. articles
-                      7. youtube channel
-
-            - Sprint 03: HomePage
-                - create simple temp data for homepage
-                - create basic responsive layout
-
-            - Sprint 05: .....                 
+        - Database In Cloud:
+          - Most likely single database best option
+          - v(core) (recommended)
 */
