@@ -81,38 +81,34 @@ const SeriesComponent = () => {
         </Grid>
         { getSeriesArticals?.map((item: any, index: any) => (
           <Grid
-            container
             key={item.id}
+            item
+            xs={12}
+            sm={12}
+            md={6}
+            lg={6}
+            xl={6}
+            sx={seriesComponentGridArticalInfo}
           >
-            <Grid
-              item
-              xs={12}
-              sm={12}
-              md={6}
-              lg={6}
-              xl={6}
-              sx={seriesComponentGridArticalInfo}
+            <Link to={`/artical/${item?.authorId}/${item?.articalId}`}
+              style={LinkStyles()}
             >
-              <Link to={`/artical/${item?.authorId}/${item?.articalId}`}
-                style={LinkStyles()}
+              <Typography
+                sx={seriesComponentTitle}
               >
-                <Typography
-                  sx={seriesComponentTitle}
-                >
-                  {`${item?.seriesType} ${index + 1}: ${item?.articalTitle}`}
-                </Typography>
-                <Typography
-                  sx={seriesComponentSubTitle} 
-                >
-                  {item.articalSubTitle}
-                </Typography>
-                <Typography
-                  sx={seriesComponentdate}
-                >
-                  {item.publishedDate}
-                </Typography>
-              </Link>
-            </Grid>
+                {`${item?.seriesType} ${index + 1}: ${item?.articalTitle}`}
+              </Typography>
+              <Typography
+                sx={seriesComponentSubTitle} 
+              >
+                {item.articalSubTitle}
+              </Typography>
+              <Typography
+                sx={seriesComponentdate}
+              >
+                {item.publishedDate}
+              </Typography>
+            </Link>
           </Grid>
         ))}
       </Grid>
