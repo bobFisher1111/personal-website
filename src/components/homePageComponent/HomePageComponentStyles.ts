@@ -15,6 +15,24 @@ export const GridRoot = {
   padding: '36px 16px 0px 16px',
 };
 
+export const HeaderTitleStyles = {
+  textAlign: 'center',
+  color: '#2F4C69',
+  fontSize: '24px',
+  lineHeight: '40px',
+  padding: '25px 0px 0px 0px',
+  '@media (min-width: 601px)': {
+    display: 'none',
+  },
+};
+
+export const HomePageImage = {
+  padding: '32px 0px 0px 0px',
+  '@media only screen and (max-width: 600px)': {
+    display: 'none',
+  },
+};
+
 export default [
   GridAlignItems,
   GridRoot,

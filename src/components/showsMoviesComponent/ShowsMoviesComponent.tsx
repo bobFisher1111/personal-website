@@ -21,7 +21,7 @@ const ShowsMoviesComponent = () => {
 
   return (
     <SectionsComponent
-      headerTitle='Shows & Movies'
+      headerTitle='Reviews'
       sectionTabData={ShowsMoviesComponentTabData(
         false,
         articalSectionFilter,

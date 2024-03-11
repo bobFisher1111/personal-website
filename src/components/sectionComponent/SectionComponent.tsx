@@ -21,21 +21,6 @@ const SectionComponent: React.FC<Props> = ({
       container
       sx={GridMaxWidth}
     >
-      <Grid 
-        sx={GridSections(homePage)}
-        item
-        xs={2}
-        sm={3}
-        md={3}
-        lg={3}
-        xl={3}
-      >
-        <SectionCard
-          imgCover={Persona5Hacker}
-          section='Coding'
-          linkTo='coding'
-        />
-      </Grid>
       <Grid
         sx={GridSections(homePage)}
         item
@@ -62,8 +47,23 @@ const SectionComponent: React.FC<Props> = ({
       >
         <SectionCard
           imgCover={goldenboy2}
-          section='Anime'
+          section='Review'
           linkTo='showsMovies'
+        />
+      </Grid>
+      <Grid 
+        sx={GridSections(homePage)}
+        item
+        xs={2}
+        sm={3}
+        md={3}
+        lg={3}
+        xl={3}
+      >
+        <SectionCard
+          imgCover={Persona5Hacker}
+          section='Coding'
+          linkTo='coding'
         />
       </Grid>
       <Grid

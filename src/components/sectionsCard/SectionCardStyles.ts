@@ -7,7 +7,7 @@ export const ButtonSectionTtileStyle = {
   },
   '@media only screen and (max-width: 600px)': {
     fontSize: '12px',
-    color: '#2F4C69',
+    color: '#667A6E',
     fontWeight: 'bold',
   },
 };

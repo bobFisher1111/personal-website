@@ -15,7 +15,7 @@ import {
 } from './AboutComponentStyles';
 
 const AboutComponent: React.FC = () => {
-  const aboutText = 'WebsiteName, is a hobbyist site from professional writes and software engineers and game enthusiast. This is passion project that will bring weakly articals along with update youtube videos that are connected to this website.';
+  const aboutText = 'Gamers Shrine, is a hobbyist site from professional writes and software engineers and game enthusiast. This is passion project that will bring weakly articals along with update youtube videos that are connected to this website.';
   const reportIssueText = 'Let us know if you experience any issues on mobile or desktop. We are a small team but will have an engineer address the issue. Contact us by email and if you experienced it on mobile, include the make of the phone in the email. Thanks from our team.';
 
   return (
@@ -24,7 +24,7 @@ const AboutComponent: React.FC = () => {
       sx={AboutCompGridRoot}
     >
       <HeaderComponent
-        title='WebsiteName'
+        title='Gamers Shrine'
         authorAvatar={false}
       />
       <Grid
@@ -96,7 +96,7 @@ const AboutComponent: React.FC = () => {
             variant="h6"
             sx={AboutCompAboutTextWithPAdding}
           >
-            WebsiteName.com
+            GamersShrine.com
           </Typography> 
         </Grid>
         <Typography

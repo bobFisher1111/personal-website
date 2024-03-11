@@ -11,15 +11,15 @@ const ShowsMoviesComponentTabData = (
   return (
     [
       { 
-        name: 'All Articals',
+        name: 'All Reviews',
         data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalSectionFilter} />
       },
       { 
-        name: 'Anime',
+        name: 'Modern',
         data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalAnimeFilter} />
       },
       { 
-        name: 'Movies',
+        name: 'Retro',
         data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalMoviesFilter} />
       },
       { 

@@ -14,9 +14,10 @@ export const GridHeader = {
 };
 
 export const GridHeaderTitle = {
-  padding: '25px 0px 25px 0px',
+  padding: '25px 0px 12px 0px',
   '@media only screen and (max-width: 667px) and (orientation: landscape)': { // IPHONE SE Landscape ** 
-    padding: '0px',
+    // padding: '0px',
+    padding: '25px 0px 0px 0px',
   },
 };
 

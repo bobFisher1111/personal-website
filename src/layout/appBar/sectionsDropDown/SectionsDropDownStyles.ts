@@ -5,9 +5,9 @@ export const GridHoverBlack = {
 };
 
 export const GridSectionList = {
-  background: 'white',
+  background: '#667A6E',
   borderBottom: '3px solid #667A6E',
-  padding: '37px',
+  padding: '0px 37px 0px 37px',
   '&.MuiGrid-root': {
     marginTop: '0px'
   },

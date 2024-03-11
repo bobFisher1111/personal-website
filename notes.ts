@@ -17,6 +17,8 @@
             - json-server: 
                 - start server, use npx instead of npm
                 - npx json-server -p 3500 -w data/db.json
+                - run server
+                  - npx json-server --watch db.json --port 4200
             - fontawesome:
               - free version: 10 views per month
               - install:

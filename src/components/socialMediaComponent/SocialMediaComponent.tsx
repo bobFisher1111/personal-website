@@ -1,5 +1,5 @@
 import React from 'react';
-import TwitterLogo from '../../assets/icons/TwitterLogo.svg';
+import TwitterLogo from '../../assets/icons/logo-black.png';
 import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
 import FacebookLogo from '../../assets/icons/FacebookLogo.png';
 import { Grid, Box } from '@mui/material';

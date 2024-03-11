@@ -17,7 +17,7 @@ export const GridMobileDrawerAppBar = {
 
 export const GridCenterItems = {
   display: 'flex',
-  padding: '16px 0px 16px 0px',
+  // padding: '8px 0px 16px 0px',
   '& .MuiGrid-root': {
     justifyContent: 'center'
   }

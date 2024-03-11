@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  CardMedia,
+  // CardMedia,
   Card,
   CardActions,
   Button,
@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 import { 
   ButtonSectionTtileStyle,
   CardActionsSectionNameStyle,
-  CardMediaSection,
+  // CardMediaSection,
   CardSectionCard,
   GridOverflowHeader,
   GridSectionCardRoot,
@@ -18,7 +18,7 @@ import {
 import { LinkStyles } from '../../util/styles/LinkStyles';
 
 const SectionCard: React.FC<Props> = ({
-  imgCover,
+  // imgCover,
   section,
   linkTo,
 }) => {
@@ -43,14 +43,14 @@ const SectionCard: React.FC<Props> = ({
             to={`/${linkTo}`}
             style={LinkStyles()}
           >
-            <CardMedia
+            {/* <CardMedia
               component="img"
               alt="section image"
               width="200"
               height="212.5"
               image={imgCover}
               sx={CardMediaSection}
-            />
+            /> */}
           </Link>
           <CardActions
             sx={CardActionsSectionNameStyle}

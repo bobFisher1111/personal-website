@@ -16,7 +16,7 @@ import {
   GridCenterItems,
   GridSectionsStyle,
   TypographyMobileDrawer,
-  TypograohyMobileDrawerWebistieName,
+  // TypograohyMobileDrawerWebistieName,
 } from './MobileDrawerStyle';
 import { LinkStyles } from '../../../util/styles/LinkStyles';
 
@@ -52,24 +52,37 @@ const MobileDrawer: React.FC = () => {
     >
       <Grid
         container
-        justifyContent="flex-start"
+        justifyContent="center"
         sx={GridMobileDrawerAppBar}
       >
         <Grid
           item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+          sx={GridCenterItems}
         >
-          <Link
+          {/* <Link
             to="/"
             style={LinkStyles()}
           >
             <Typography
               sx={TypograohyMobileDrawerWebistieName}
             >
-              WebsiteName
+              Gamers Shrine
             </Typography>
-          </Link>
+          </Link> */}
+          <SocialMediaComponent
+            turnOnStyle={true}
+            widthPadding={'10px 0px 0px 8px'}
+            facebook={facebookUrl}
+            twitter={twitterUrl}
+            youtube={youtubeUrl}
+          />
         </Grid>
-        <Grid
+        {/* <Grid
           item
           xs={12}
           sm={12}
@@ -85,7 +98,7 @@ const MobileDrawer: React.FC = () => {
             twitter={twitterUrl}
             youtube={youtubeUrl}
           />
-        </Grid>
+        </Grid> */}
         <Grid
           item
           xs={12}
@@ -104,26 +117,6 @@ const MobileDrawer: React.FC = () => {
               onClick={toggleDrawer(anchor, false)}
             >
               Home
-            </Typography>
-          </Link>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-        >
-          <Link
-            to="/coding"
-            style={LinkStyles()}
-          >
-            <Typography 
-              sx={TypographyMobileDrawer}
-              onClick={toggleDrawer(anchor, false)}
-            >
-              Coding
             </Typography>
           </Link>
         </Grid>
@@ -161,7 +154,27 @@ const MobileDrawer: React.FC = () => {
               sx={TypographyMobileDrawer}
               onClick={toggleDrawer(anchor, false)}
             >
-              Shows/Movies
+              Reviews
+            </Typography>
+          </Link>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
+        >
+          <Link
+            to="/coding"
+            style={LinkStyles()}
+          >
+            <Typography 
+              sx={TypographyMobileDrawer}
+              onClick={toggleDrawer(anchor, false)}
+            >
+              Coding
             </Typography>
           </Link>
         </Grid>
