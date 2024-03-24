@@ -8,7 +8,7 @@ import ArticalPage from '../components/articalPage/ArticalPage';
 import AuthorPage from '../pages/author/AuthorPage';
 import WritersPage from '../pages/writers/WritersPage';
 import StoriesPage from '../pages/stories/StoriesPage';
-import ShowsMoviesPage from '../pages/showsMovies/ShowsMoviesPage';
+import ReviewsPage from '../pages/reviews/ReviewsPage';
 import VideoGamesPage from '../pages/videoGames/VideoGamesPage';
 import SeriesPage from '../pages/series/SeriesPage';
 
@@ -63,8 +63,8 @@ const routes: Route[] = [
     element: StoriesPage,
   }, 
   {
-    path:'/showsMovies',
-    element: ShowsMoviesPage,
+    path:'/reviews',
+    element: ReviewsPage,
   },
   {
     path:'/videoGames',

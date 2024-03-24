@@ -147,7 +147,7 @@ const MobileDrawer: React.FC = () => {
           lg={12}
           xl={12}
         >
-          <Link to="/showsMovies"
+          <Link to="/reviews"
             style={LinkStyles()}
           >
             <Typography

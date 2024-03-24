@@ -1,6 +1,12 @@
 export const AvatarStyle = {
-  width: 56,
-  height: 56,
+  width: '80px',
+  height: '80px',
+  borderRadius: '20px',
+  '@media only screen and (max-width: 600px)': {
+    width: '56px',
+    height: '56px',
+    borderRadius: '15px',
+  },
 };
 
 export const GridAvatarPadding = {

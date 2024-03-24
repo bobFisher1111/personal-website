@@ -25,11 +25,11 @@ const AuthorComponent: React.FC<Props> = ({
   seriesForArticalPage,
 }) => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const webData = getWebsiteData && getWebsiteData;
+  const webData = getWebsiteData && getWebsiteData?.websiteData;
   const getIdFromUrl = () => {
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = currentLocation.split('/').reverse()[0];
-    return (getIdFromCurrentLocation);
+    return Number(getIdFromCurrentLocation);
   };
   const getAuthor = webData?.authors?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
@@ -57,7 +57,7 @@ const AuthorComponent: React.FC<Props> = ({
         xl={12}
       >
         <HeaderComponent
-          title={ authorData?.name || articalAuthorData?.name}
+          title={authorData?.authorName || articalAuthorData?.authorName}
           authorAvatar={true}
           avatarImage={authorData?.avatarImage || articalAuthorData?.avatarImage}
           authorId={articalAuthorData?.authorId}

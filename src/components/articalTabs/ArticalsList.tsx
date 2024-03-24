@@ -4,6 +4,7 @@ import {
   Typography,
 } from '@mui/material';
 import ComingSoon from '../comingSoon/ComingSoon';
+import formatDate from '../../util/formatDate';
 import HorizontalArticalCardComponent from '../cards/articalCards/horizontalCard/HorizontalArticalCardComponent';
 import {
   GridPaddingArticalList,
@@ -23,6 +24,7 @@ export const ArticalsList: React.FC<Props> = ({
     const date2: any = new Date(b.publishedDate);
     return date2 - date1;
   });
+  
   return (
     <>
       {noArticals && 
@@ -52,11 +54,11 @@ export const ArticalsList: React.FC<Props> = ({
                   articalSubTitle={item.articalSubTitle}
                   author={item.author}
                   cardTextWidth={'639px'}
-                  date={item.publishedDate}
+                  date={formatDate(item.publishedDate)}
                   imageWidth={'321px'}
                   articalPage={false}
                   useVideoInsteadOfImage={item.useVideoInsteadOfImage}
-                  section={item.section}
+                  section={item.sections}
                   articalData={data}
                   authorsId={item.authorId}
                   articalId={item.articalId}
@@ -103,11 +105,11 @@ export const ArticalsList: React.FC<Props> = ({
                       articalSubTitle={item.articalSubTitle}
                       author={item.author}
                       cardTextWidth={'639px'}
-                      date={item.publishedDate}
+                      date={formatDate(item.publishedDate)}
                       imageWidth={'321px'}
                       articalPage={false}
                       useVideoInsteadOfImage={item.useVideoInsteadOfImage}
-                      section={item.section}
+                      section={item.sections}
                       articalData={data}
                       authorsId={item.authorId}
                       articalId={item.articalId}

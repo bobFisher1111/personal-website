@@ -11,7 +11,7 @@ const CodingComponentTabData = (
   return (
     [
       { 
-        name: 'All Articals',
+        name: 'All Articles',
         data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalSectionFilter} />
       },
       { 
@@ -19,7 +19,7 @@ const CodingComponentTabData = (
         data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalFrontEndFilter} />
       },
       { 
-        name: 'Data',
+        name: 'Game Dev',
         data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalDataFilter} />
       },
       { 

@@ -5,6 +5,8 @@ import {
 } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import ComingSoon from '../comingSoon/ComingSoon';
+import formatDate from '../../util/formatDate';
 import HeaderComponent from '../headerComponent/HeaderComponent';
 import HorizontalArticalCardComponent from '../cards/articalCards/horizontalCard/HorizontalArticalCardComponent';
 import { LinkStyles } from '../../util/styles/LinkStyles';
@@ -19,12 +21,11 @@ import {
 
 const SeriesComponent = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const seriesData = getWebsiteData && getWebsiteData;
-
+  const seriesData = getWebsiteData && getWebsiteData?.websiteData;
   const getSeriesIdFromUrl = () => {
     const currentLocation = window.location.href;
     const seriesId = currentLocation.split('/').reverse()[0];
-    return (seriesId);
+    return Number(seriesId);
   };
 
   const getSeriesFromId = seriesData?.series?.filter((item: any) => {
@@ -34,11 +35,8 @@ const SeriesComponent = () => {
   const getSeriesArticals = seriesData?.articals?.filter((item: any) => {
     return item.seriesId === getSeriesIdFromUrl();
   });
-
-  console.log('for key');
-
   const seriesInfo = getSeriesFromId && getSeriesFromId[0];
-
+  const noArticals = getSeriesArticals?.length === 0;
   return (
     <>
       <Grid
@@ -79,6 +77,9 @@ const SeriesComponent = () => {
             videoHeight={true}
           />
         </Grid>
+        {noArticals && 
+          <ComingSoon />
+        }
         { getSeriesArticals?.map((item: any, index: any) => (
           <Grid
             key={item.id}
@@ -106,7 +107,7 @@ const SeriesComponent = () => {
               <Typography
                 sx={seriesComponentdate}
               >
-                {item.publishedDate}
+                {formatDate(item.publishedDate)}
               </Typography>
             </Link>
           </Grid>

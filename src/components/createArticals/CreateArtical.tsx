@@ -50,7 +50,7 @@ export const CreateArtical = (articalData: string) => {
       </Grid>
     );
   }
-  if (articalData.startsWith('$')) {
+  if (articalData.startsWith('[PARAGRAPH_TITLE]')) {
     return (
       <Grid
         container
@@ -61,12 +61,12 @@ export const CreateArtical = (articalData: string) => {
           color="#2F4C69"
           sx={titleText}
         >
-          { <strong>{articalData.slice(1)}</strong> }   
+          { <strong>{articalData.slice(17)}</strong> }   
         </Typography>
       </Grid>
     );
   }
-  if (articalData.startsWith('[')) {
+  if (articalData.startsWith('[BULLET_LIST]')) {
     return (
       <Grid
         container
@@ -77,12 +77,12 @@ export const CreateArtical = (articalData: string) => {
           color="#76468c"
           sx={sectionTextParagraph}
         >
-          {articalData.slice(1)} 
+          {articalData.slice(13)} 
         </Typography>
       </Grid>
     );
   }
-  if (articalData.startsWith('(')) {
+  if (articalData.startsWith('[QUOTES]')) {
     return (
       <Grid
         container
@@ -94,12 +94,12 @@ export const CreateArtical = (articalData: string) => {
           sx={quoteText}
         >
           {/*eslint-disable-next-line */}
-          {<i>"{articalData.slice(1)}"</i>} 
+          {<i>"{articalData.slice(8)}"</i>} 
         </Typography>
       </Grid>
     );
   }
-  if (articalData.startsWith(']')) {
+  if (articalData.startsWith('[BULLET_LIST_CHILD]')) {
     return (
       <Grid
         container
@@ -110,7 +110,7 @@ export const CreateArtical = (articalData: string) => {
           color="#2F4C69"
           sx={sectionText}
         >
-          { articalData.slice(1) }
+          { articalData.slice(19) }
         </Typography>
       </Grid>
     );

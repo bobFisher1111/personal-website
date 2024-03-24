@@ -27,6 +27,7 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
   series,
   seriesId,
 }) => {
+
   return (
     <Grid 
       container
@@ -42,7 +43,7 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
             className={'material-symbols-outlined'}
             sx={DivMaterialSymbolsOutlined()}
           >
-                account_circle
+            account_circle
           </Grid>
         </Link>
         :
@@ -50,7 +51,7 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
           className={'material-symbols-outlined'}
           style={DivMaterialSymbolsOutlined()}
         >
-              account_circle
+          account_circle
         </Grid>
       }
       {!authorPage ? 

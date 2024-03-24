@@ -45,10 +45,9 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
   const [authorPage, setAuthorPage] = useState<boolean>();
   const [sectionPage, setSectionPage] = useState<boolean>();
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const getAuthorData = getWebsiteData?.authors?.filter((item: any) => {
+  const getAuthorData = getWebsiteData && getWebsiteData?.websiteData?.authors?.filter((item: any) => {
     return item.authorId === authorsId;
   });
-
   useEffect(() => {
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = currentLocation.split('/');
@@ -81,11 +80,22 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
               style={LinkStyles()}
             >
               <Box
+                // series
                 component="img"
                 alt="Artical Cover Image"
+                // imageProps={{ referrerPolicy: "no-referrer" }}
+                // style={{height:'100%', width:'100%'}}
                 src={videoOrImageCover}
                 sx={ImageHorizonatalArticalsStyles(articalPage, mobileImageWidth)}
               />
+              {/* <Box
+                // sx={ImageHorizonatalArticalsStyles(articalPage, mobileImageWidth)}
+              >
+                <img
+                  alt="Artical Cover Image"
+                  src={videoOrImageCover}
+                />
+              </Box> */}
             </Link>
             :
             <CardMedia
@@ -149,7 +159,7 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
               authorsId={authorsId}
               articalId={articalId}
               authorPage={authorPage}
-              aughtorsName={getAuthorData[0]?.name}
+              aughtorsName={getAuthorData[0]?.authorName}
               sectionLink={sectionLink}
               sectionPage={sectionPage}
               series={series}

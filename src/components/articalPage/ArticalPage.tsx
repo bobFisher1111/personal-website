@@ -7,6 +7,7 @@ import HorizontalArticalCardComponent from '../cards/articalCards/horizontalCard
 import AuthorComponent from '../authorComponents/AuthorComponent';
 import { useSelector } from 'react-redux';
 import createArtical from '../createArticals/CreateArtical';
+import formatDate from '../../util/formatDate';
 import getNameFromUrl from '../../util/getNameFromUrl';
 import {
   GridRoot,
@@ -17,11 +18,11 @@ import {
 
 const ArticalPage: React.FC = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const webData = getWebsiteData && getWebsiteData;
+  const webData = getWebsiteData && getWebsiteData?.websiteData;
   const getIdFromUrl = () => {
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = currentLocation.split('/').reverse()[1];
-    return (getIdFromCurrentLocation);
+    return Number(getIdFromCurrentLocation);
   };
   const getAuthor = webData?.authors?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
@@ -37,6 +38,7 @@ const ArticalPage: React.FC = () => {
   });
   const authorData = getAuthor && getAuthor[0];
   const articalData = currentArtical && currentArtical[0];
+  const articalArray = articalData?.artical.split("`");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -64,9 +66,9 @@ const ArticalPage: React.FC = () => {
             authorAvatar={false}
           />
           <HorizontalArticalCardComponent
-            author={authorData?.name}
+            author={authorData?.authorName}
             cardTextWidth={'1000px'}
-            date={articalData?.publishedDate}
+            date={formatDate(articalData?.publishedDate)}
             imageWidth={'1000px'}
             articalPage={true}
             articalSubTitle={articalData?.articalSubTitle}
@@ -76,11 +78,11 @@ const ArticalPage: React.FC = () => {
             articalId={articalData?.articalId}
             videoOrImageCover={articalData?.coverImageOrVideo}
             sectionLink={articalData?.sectionLink}
-            section={articalData?.section}
+            section={articalData?.sections}
             mobileImageWidth={'22px'}
             videoHeight={false}
           />
-          {articalData  && articalData.artical?.map((item: any) => (
+          {articalArray?.map((item: any) => (
             createArtical(item)
           ))}
         </Grid>
@@ -97,7 +99,7 @@ const ArticalPage: React.FC = () => {
             turOnArticalPage={true}
             articalAuthorData={authorData}
             articalData={getArticals}
-            authorName={authorData?.name}
+            authorName={authorData?.authorName}
             bookData={getBook}
             authorsData={authorData}
             seriesForArticalPage={true}

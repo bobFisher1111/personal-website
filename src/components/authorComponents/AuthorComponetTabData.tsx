@@ -2,7 +2,7 @@ import React from 'react';
 import ArticalsList from '../articalTabs/ArticalsList';
 import Series from '../seriesComponent/Series';
 import Works from '../works/Works';
-import AuthorAbout from './authorAbout/AuthorAbout';
+// import AuthorAbout from './authorAbout/AuthorAbout';
 
 const AuthorComponetTabData = (
   turOnAuthorForArtical: boolean,
@@ -41,15 +41,15 @@ const AuthorComponetTabData = (
             articalPage={true}
           />
       },
-      { 
-        name: 'About',
-        data: 
-          <AuthorAbout
-            turnPaddingOn={authorsPage}
-            aboutData={authorData}
-            bookData={getBooks}
-          />
-      },
+      // { 
+      //   name: 'About',
+      //   data: 
+      //     <AuthorAbout
+      //       turnPaddingOn={authorsPage}
+      //       aboutData={authorData}
+      //       bookData={getBooks}
+      //     />
+      // },
     ]
   );
 };

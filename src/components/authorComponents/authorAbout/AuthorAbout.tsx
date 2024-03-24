@@ -1,28 +1,29 @@
 import React from 'react';
 import 
 { Typography, 
-  Grid,
-  Link,
+  // Grid,
+  // Link,
 } from '@mui/material/';
-import Works from '../../works/Works';
-import {
-  AuthorAboutGridFavorites,
-  AuthorAboutFavoritesHeader,
-  AuthorAboutFavoritesGridTitle,
-  AuthorAboutFavoritesTitle,
-  AuthorAboutAuthorsFavoritesResponse,
-} from './AuthorAboutStyles';
+// import Works from '../../works/Works';
+// import {
+//   AuthorAboutGridFavorites,
+//   AuthorAboutFavoritesHeader,
+//   AuthorAboutFavoritesGridTitle,
+//   AuthorAboutFavoritesTitle,
+//   AuthorAboutAuthorsFavoritesResponse,
+// } from './AuthorAboutStyles';
 
 const AuthorAbout: React.FC<Props> = ({
-  turnPaddingOn,
+  // turnPaddingOn,
   aboutData,
-  bookData,
+  // bookData,
 }) => {
-  const questionaireData = aboutData?.about[0]?.questionaire[0];
+  const questionaireData =  aboutData; // aboutData?.about[0]?.questionaire[0];
 
   return (
     <>
-      <Grid 
+      <Typography>Coming soon...</Typography>
+      {/* <Grid 
         container
         direction="row"
         justifyContent="flex-start"
@@ -676,7 +677,7 @@ const AuthorAbout: React.FC<Props> = ({
             {questionaireData?.FavoriteBoardGame?.name}
           </Link>
         </Grid>
-      </Grid>
+      </Grid> */}
     </>
   );
 };

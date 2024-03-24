@@ -5,7 +5,7 @@ export const WritersCardGridRoot = {
 export const WritersCardAvatar = {
   width: '120px',
   height: '120px',
-  borderRadius: '50%',
+  borderRadius: '25px',
   '@media only screen and (max-width: 600px)': {
     width: '80px',
     height: '80px',

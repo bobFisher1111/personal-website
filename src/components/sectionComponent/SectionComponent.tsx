@@ -47,8 +47,8 @@ const SectionComponent: React.FC<Props> = ({
       >
         <SectionCard
           imgCover={goldenboy2}
-          section='Review'
-          linkTo='showsMovies'
+          section='Reviews'
+          linkTo='reviews'
         />
       </Grid>
       <Grid 

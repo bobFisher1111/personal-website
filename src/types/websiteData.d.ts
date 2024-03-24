@@ -1,9 +1,11 @@
 import { Books } from './books';
 import { Articles } from './articals';
 import { Authors } from './authors';
+import { Series } from './series';
 
 export type WebsiteData = {
-  books: Books[];
   articals: Articles[];
   authors: Authors[];
-}
+  books: Books[];
+  series: Series[];
+};

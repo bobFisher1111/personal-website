@@ -12,8 +12,7 @@ import {
 
 const Writers = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const authorsData = getWebsiteData.authors;
-
+  const authorsData = getWebsiteData && getWebsiteData?.websiteData?.authors;
   return (
     <>
       <Grid
@@ -51,7 +50,7 @@ const Writers = () => {
           >
             <WritersCard
               authorImage={item.avatarImage}
-              authorName={item.name}
+              authorName={item.authorName}
               authorsTitle={item.titles}
               authorId={item.authorId}
               facebook={item.facebook}

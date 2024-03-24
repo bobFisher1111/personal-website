@@ -2,7 +2,7 @@ import React from 'react';
 import ArticalsList from '../articalTabs/ArticalsList';
 import Series from '../seriesComponent/Series';
 
-const ShowsMoviesComponentTabData = (
+const ReviewsComponentTabData = (
   turOnAuthorForArtical: boolean,
   articalSectionFilter: any,
   articalAnimeFilter: any,
@@ -24,10 +24,10 @@ const ShowsMoviesComponentTabData = (
       },
       { 
         name: 'Series',
-        data: <Series data={articalSectionFilter} section={'Shows & Movies'}/>
+        data: <Series data={articalSectionFilter} section={'Reviews'}/>
       },
     ]
   );
 };
 
-export default ShowsMoviesComponentTabData;
+export default ReviewsComponentTabData;

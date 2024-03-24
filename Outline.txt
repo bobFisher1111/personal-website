@@ -133,3 +133,15 @@
   - Working on articals
   - Add dark themed saved in localstorage or cookie
   - Add Project Section to author
+- Things to do before First Release:
+  - add column isHidden to articals, Books, Authors, Series TABLE // completed
+  - implement backend // completed
+  - fix date format // completed
+  - Coding Section, change Data to Gaming // completed
+  - figure out image storage
+  - deploy front end on vercel
+  - fix on backend and database articals to articles
+  - change name for website on vercel
+- Future bugs to fix:
+  - console log warnings
+  - series doesn't have article attach to it, either put something comming soon or exclude it

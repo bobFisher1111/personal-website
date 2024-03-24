@@ -7,6 +7,7 @@ import {
   Typography,
 } from '@mui/material';
 import ComingSoon from '../comingSoon/ComingSoon';
+import formatDate from '../../util/formatDate';
 import VerticalArticalCardComponent from '../cards/articalCards/verticalCard/VerticalArticalCardComponent';
 import { LinkStyles } from '../../util/styles/LinkStyles';
 import {
@@ -30,8 +31,7 @@ export const Series: React.FC<Props> = ({
 }) => {
   const [filterSeries, setFilterSeries] = useState<any>([]);
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const series = getWebsiteData && getWebsiteData;
-
+  const series = getWebsiteData && getWebsiteData?.websiteData?.series;
 
   const getIdFromUrl = () => {
     const currentLocation = window.location.href;
@@ -39,14 +39,13 @@ export const Series: React.FC<Props> = ({
     return (getIdFromCurrentLocation);
   };
 
-  const newNonImmutableArray = series?.series?.map((item: any) => item);
+  const newNonImmutableArray = series?.map((item: any) => item);
   const sortByDate = newNonImmutableArray?.sort((a: any, b: any)=> {
     const date1: any = new Date(a.seriesStartDate);
     const date2: any = new Date(b.seriesStartDate);
     return date2 - date1;
   });
-
-  const seriesData = data?.filter((series: any) => series.series === true);
+  const seriesData = data && data?.filter((series: any) => series?.series === true);
   const createSeriesList = sortByDate?.map((x: any) => {
     const seriesList = seriesData?.filter((item: any) => {
       const sL: any = [];
@@ -58,7 +57,7 @@ export const Series: React.FC<Props> = ({
     return seriesList;
   });
 
-  const filteredSeriesList = createSeriesList.filter((value: any) => Object.keys(value).length !== 0);
+  const filteredSeriesList = createSeriesList && createSeriesList?.filter((value: any) => Object.keys(value).length !== 0);
   
   const seriesFilter = sortByDate?.filter((item: any) => {
     return item.section === section;
@@ -87,7 +86,7 @@ export const Series: React.FC<Props> = ({
     }
   }, []);
   
-  const noSeries = filteredSeriesList.length === 0;
+  const noSeries = filteredSeriesList?.length === 0;
 
   const textLoop = (item: any, index: number) => {
     return filteredSeriesList[index]?.slice(0, 4).filter(() => {
@@ -144,7 +143,7 @@ export const Series: React.FC<Props> = ({
                   <Typography
                     sx={TypographySeriesArticalDate}
                   >
-                    { a.publishedDate}
+                    {formatDate(a.publishedDate)}
                   </Typography>
                 </Grid>
               </Link>
@@ -159,7 +158,7 @@ export const Series: React.FC<Props> = ({
       {noSeries && 
           <ComingSoon />
       }
-      {filterSeries.map((item: any, index: any) => (
+      {filterSeries?.map((item: any, index: any) => (
         <Grid
           container
           key={item.id}
@@ -242,7 +241,7 @@ export const Series: React.FC<Props> = ({
                 sx={GridMarginLeft}
               >
                 {textLoop(item, index)}
-                { (filteredSeriesList[index].length / 4) >= 1 && 
+                { (filteredSeriesList[index]?.length / 4) >= 1 && 
                     <Grid
                       container
                       sx={GridSeriesReadMoreMargin}

@@ -25,7 +25,6 @@ const WritersCard: React.FC<Props> = ({
   youtube,
   email,
 }) => {
-
   return (
     <Grid
       container
