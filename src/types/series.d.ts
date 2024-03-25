@@ -3,7 +3,7 @@ export interface SeriesInfo {
   seriesId: string,
   seriesChapter: number,
   seriesPublishDate: string
-};
+}
 
 export interface SeriesInfo2 {
   seriesId: number,
@@ -17,4 +17,4 @@ export interface SeriesInfo2 {
 	section: string,
   authorid: number,
 	sectionLink: string
-};
+}

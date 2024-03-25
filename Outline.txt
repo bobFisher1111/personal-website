@@ -138,10 +138,19 @@
   - implement backend // completed
   - fix date format // completed
   - Coding Section, change Data to Gaming // completed
-  - figure out image storage
+  - figure out image storage // completed
+  - fix npm vulnerabilities: // completed
+    - Comes from currently on react
+      - Update Packages:
+        - Updated all but a few that were not allowed
+          - styled-components
+          - typescript
+  - remove react logo from tab
+  - hide or fix warning for production
   - deploy front end on vercel
   - fix on backend and database articals to articles
   - change name for website on vercel
 - Future bugs to fix:
+  - Improve image quality 
   - console log warnings
   - series doesn't have article attach to it, either put something comming soon or exclude it
