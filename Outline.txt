@@ -145,12 +145,14 @@
         - Updated all but a few that were not allowed
           - styled-components
           - typescript
-  - remove react logo from tab
-  - hide or fix warning for production
+  - remove react logo from tab // completed
   - deploy front end on vercel
+  - hide or fix warning for production
   - fix on backend and database articals to articles
   - change name for website on vercel
 - Future bugs to fix:
   - Improve image quality 
   - console log warnings
   - series doesn't have article attach to it, either put something comming soon or exclude it
+- Future Performance:
+  - Cache data on backend, that way less calls to database, only when new data is created
