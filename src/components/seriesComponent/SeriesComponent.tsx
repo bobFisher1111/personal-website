@@ -61,7 +61,7 @@ const SeriesComponent = () => {
           <HorizontalArticalCardComponent
             author={seriesInfo?.seriesAuthors}
             cardTextWidth={'1000px'}
-            date={seriesInfo?.seriesStartDate}
+            date={formatDate(seriesInfo?.seriesStartDate)}
             imageWidth={'1000px'}
             articalPage={true}
             articalSubTitle={'remove for series page'}
