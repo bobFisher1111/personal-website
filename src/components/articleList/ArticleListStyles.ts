@@ -1,4 +1,4 @@
-export const GridPaddingArticalList = {
+export const GridPaddingArticleList = {
   padding: '16px',
   '@media only screen and (max-width: 600px)': {
     padding: '12px'
@@ -9,7 +9,7 @@ export const GridPaddingTop = {
   paddingTop:'16px',
 };
 
-export const TypographyArticalPageArticals =  ({
+export const TypographyArticlePageArticles =  ({
   fontSize: '24px',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
@@ -23,7 +23,7 @@ export const TypographyArticalPageArticals =  ({
   },
 });
 
-export const TypographyHorizontalArticalTitleArticalList = (articalpage: boolean) => ({
+export const TypographyHorizontalArticleTitleArticleList = (articlepage: boolean) => ({
   color: '#2F4C69',
   fontSize: '20px',
   overflow: 'hidden',
@@ -32,7 +32,7 @@ export const TypographyHorizontalArticalTitleArticalList = (articalpage: boolean
   WebkitLineClamp: '1',
   WebkitBoxOrient: 'vertical',
   fontFamily: 'sans-serif',
-  maxWidth: articalpage ? '960px' : '321px',
+  maxWidth: articlepage ? '960px' : '321px',
   '@media only screen and (max-width: 600px)': {
     fontSize: '16px',
     padding: '0px 0px 8px 0px',
@@ -44,8 +44,8 @@ export const TypographyHorizontalArticalTitleArticalList = (articalpage: boolean
 });
 
 export default [
-  GridPaddingArticalList,
+  GridPaddingArticleList,
   GridPaddingTop,
-  TypographyArticalPageArticals,
-  TypographyHorizontalArticalTitleArticalList,
+  TypographyArticlePageArticles,
+  TypographyHorizontalArticleTitleArticleList,
 ];

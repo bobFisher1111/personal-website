@@ -11,7 +11,7 @@ import {
 
 const CopyLinkComponent: React.FC<Props> = ({
   authorsId,
-  articalId,
+  articleId,
   defaultColor,
   padding,
   email,
@@ -21,9 +21,9 @@ const CopyLinkComponent: React.FC<Props> = ({
 }) => {
   const [copyIconColor, setCopyIconColor] = useState<string>(defaultColor);
   const [emailIcon, setEmailIcon] = useState<string>(defaultColor);
-  const articalUrl = `${appBaseURL}/artical/${authorsId}/${articalId}`;
+  const articleUrl = `${appBaseURL}/article/${authorsId}/${articleId}`;
   const seriesUrl = `${appBaseURL}/series/${seriesId}`;
-  const copyUrls = turnOnSeries ? seriesUrl : articalUrl;
+  const copyUrls = turnOnSeries ? seriesUrl : articleUrl;
   return (
     <>
       {email ?
@@ -44,7 +44,7 @@ const CopyLinkComponent: React.FC<Props> = ({
 
 export type Props = {
   authorsId?: string;
-  articalId?: string;
+  articleId?: string;
   defaultColor: string;
   padding?: string;
   email: boolean;

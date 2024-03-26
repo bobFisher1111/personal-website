@@ -4,7 +4,7 @@ import {
   Grid,
 } from "@mui/material";
 
-const HorizontalArticalSubTextComponent: React.FC<Props> = ({
+const HorizontalArticleSubTextComponent: React.FC<Props> = ({
   articalSubTitle,
 }) => {
     return (
@@ -38,5 +38,5 @@ export type Props = {
   articalSubTitle: string | undefined;
 };
       
-export default HorizontalArticalSubTextComponent;
+export default HorizontalArticleSubTextComponent;
   

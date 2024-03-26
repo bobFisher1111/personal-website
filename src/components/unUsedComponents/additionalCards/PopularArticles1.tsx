@@ -5,7 +5,7 @@ import {
 import ThumbDownRoundedIcon from '@mui/icons-material/ThumbDownRounded';
 import ThumbUpRoundedIcon from '@mui/icons-material/ThumbUpRounded';
 
-const PopularArticals: React.FC<Props> = ({
+const PopularArticles: React.FC<Props> = ({
     title,
     name,
     articalInfo,
@@ -158,4 +158,4 @@ export type Props = {
   articalId?: string;
 };
 
-export default PopularArticals;
+export default PopularArticles;

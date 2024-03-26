@@ -5,7 +5,7 @@ import {
 import ThumbDownRoundedIcon from '@mui/icons-material/ThumbDownRounded';
 import ThumbUpRoundedIcon from '@mui/icons-material/ThumbUpRounded';
 
-const PopularArticals: React.FC<Props> = ({
+const PopularArticles: React.FC<Props> = ({
     title,
     name,
     articalInfo,
@@ -29,7 +29,7 @@ const PopularArticals: React.FC<Props> = ({
         <CardMedia
           component="img"
           alt="green iguana"
-          height="400"
+          height="200"
           image={articalImage}
         />
         <Typography
@@ -158,4 +158,4 @@ export type Props = {
   articalId?: string;
 };
 
-export default PopularArticals;
+export default PopularArticles;

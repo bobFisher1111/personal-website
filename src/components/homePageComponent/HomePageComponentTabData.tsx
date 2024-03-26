@@ -1,16 +1,16 @@
 import React from 'react';
-import ArticalsList from '../articalTabs/ArticalsList';
+import ArticleList from '../articleList/ArticleList';
 import Series from '../seriesComponent/Series';
 
 const HomePageComponentTabData = (
-  turOnAuthorForArtical: boolean,
+  turOnAuthorForArticle: boolean,
   data: any
 ) => {
   return (
     [
       { 
-        name: 'Articals',
-        data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={data} />
+        name: 'Articles',
+        data: <ArticleList turOnAuthorForArticle={turOnAuthorForArticle} data={data} />
       },
       { 
         name: 'Series',

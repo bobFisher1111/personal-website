@@ -16,33 +16,33 @@ import {
   CardRootStyle,
   CardFooterStyle,
   CardVerticalCard,
-  DivVerticalArticalRoot,
+  DivVerticalArticleRoot,
   GridPadding,
   GridVeriticalCardVideo,
   TypographyVerticalCardNameStyle,
   TypographyVerticalCardNameStyleHover,
-} from './VerticalArticalCardComponentStyles';
+} from './VerticalArticleCardComponentStyles';
 
-const VerticalArticalCardComponent: React.FC<Props> = ({
+const VerticalArticleCardComponent: React.FC<Props> = ({
   name,
-  articalData,
+  articleData,
   series,
 }) => {
-  const [articalPage, setArticalPage] = useState<boolean>();
-  const articalUrl = `${appBaseURL}/artical/${articalData?.authorId}/${articalData?.articalId}`;
-  const serieslUrl = `${appBaseURL}/series/${articalData?.seriesId}`;
-  const authorUrl = `${appBaseURL}/author/${articalData?.authorId}`;
+  const [articlePage, setArticlePage] = useState<boolean>();
+  const articleUrl = `${appBaseURL}/article/${articleData?.authorId}/${articleData?.articalId}`;
+  const serieslUrl = `${appBaseURL}/series/${articleData?.seriesId}`;
+  const authorUrl = `${appBaseURL}/author/${articleData?.authorId}`;
 
   useEffect(() => {
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = currentLocation.split('/');
-    const checkIfIncludesCurrentArtical = getIdFromCurrentLocation.includes(articalData?.articalId);
-    setArticalPage(checkIfIncludesCurrentArtical);
+    const checkIfIncludesCurrentAricle = getIdFromCurrentLocation.includes(articleData?.articalId);
+    setArticlePage(checkIfIncludesCurrentAricle);
   }, []);
 
   return (
     <div  
-      style={DivVerticalArticalRoot()}
+      style={DivVerticalArticleRoot()}
     >
       <Card
         sx={CardVerticalCard}
@@ -50,9 +50,9 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
         <Box
           sx={CardRootStyle}
         >
-          {articalData?.useVideoInsteadOfImage ?
+          {articleData?.useVideoInsteadOfImage ?
             <Link 
-              href={series ? serieslUrl : articalUrl}
+              href={series ? serieslUrl : articleUrl}
               rel="noreferrer"
             >
               <Grid
@@ -64,7 +64,7 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
               >
                 <CardMedia
                   component="iframe"
-                  image={articalData?.coverImageOrVideo || articalData?.seriesCoverImageOrVideo}
+                  image={articleData?.coverImageOrVideo || articleData?.seriesCoverImageOrVideo}
                   allowFullScreen
                   sx={CardMediaVerticalCardVideo}
                 />
@@ -72,12 +72,12 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
             </Link>
             :
             <Link 
-              href={series ? serieslUrl : articalUrl}
+              href={series ? serieslUrl : articleUrl}
               rel="noreferrer"
             >
               <CardMedia
                 component="img"
-                image={articalData?.coverImageOrVideo || articalData?.seriesCoverImageOrVideo}
+                image={articleData?.coverImageOrVideo || articleData?.seriesCoverImageOrVideo}
                 sx={CardMediaVerticalCardImage}
               />
             </Link>
@@ -96,9 +96,9 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
                 lg={10}
                 xl={10}
               >
-                {!articalPage ?
+                {!articlePage ?
                   <Link 
-                    href={series? authorUrl : articalUrl}
+                    href={series? authorUrl : articleUrl}
                     rel="noreferrer"
                     sx={LinkStyles}
                   >
@@ -124,12 +124,12 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
                 sx={GridPadding}
               >
                 <CopyLinkComponent
-                  authorsId={articalData?.authorId}
-                  articalId={articalData?.articalId}
+                  authorsId={articleData?.authorId}
+                  articleId={articleData?.articalId}
                   defaultColor={'#ffffff'}
                   padding={'0px 0px 0px 0px'}
                   email={false}
-                  seriesId={articalData?.seriesId}
+                  seriesId={articleData?.seriesId}
                   turnOnSeries={true}
                 />
               </Grid>
@@ -143,8 +143,8 @@ const VerticalArticalCardComponent: React.FC<Props> = ({
 
 export type Props = {
   name: string | undefined;
-  articalData: any;
+  articleData: any;
   series?: boolean,
 };
 
-export default VerticalArticalCardComponent;
+export default VerticalArticleCardComponent;

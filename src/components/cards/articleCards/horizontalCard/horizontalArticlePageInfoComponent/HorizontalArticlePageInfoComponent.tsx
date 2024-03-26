@@ -10,20 +10,20 @@ import { LinkStyles } from '../../../../../util/styles/LinkStyles';
 import {
   ChipStyle,
   DivMaterialSymbolsOutlined,
-  GridArticalInfoComponent,
-  HorizArticalPageInfoCompAuthor,
-  HorizArticalPageInfoCompDate,
-  TypographyArticalInfoRight,
-  TypographyArticalInfoLeft,
-} from './HorizontalArticalPageInfoComponentStyles';
+  GridArticleInfoComponent,
+  HorizAriclePageInfoCompAuthor,
+  HorizArticlePageInfoCompDate,
+  TypographyArticleInfoRight,
+  TypographyArticleInfoLeft,
+} from './HorizontalArticlePageInfoComponentStyles';
 
-const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
+const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
   authorsId,
   author,
   date,
   sectionLink,
   section,
-  articalID,
+  articleId,
   series,
 }) => {
   const getSeriesIdFromUrl = () => {
@@ -38,7 +38,7 @@ const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
         container 
         direction="row"
         justifyContent="center"
-        sx={GridArticalInfoComponent}
+        sx={GridArticleInfoComponent}
       >
         <Link 
           to={`/author/${authorsId}`}
@@ -57,26 +57,26 @@ const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
         >
           <Typography
             color="#2F4C69"
-            sx={HorizArticalPageInfoCompAuthor}
+            sx={HorizAriclePageInfoCompAuthor}
           >
             {author} 
           </Typography>
         </Link>
         <Typography
           color="black"
-          sx={TypographyArticalInfoRight}
+          sx={TypographyArticleInfoRight}
         >
           |
         </Typography>
         <Typography
           color="#667A6E"
-          sx={HorizArticalPageInfoCompDate}
+          sx={HorizArticlePageInfoCompDate}
         >
           {date}
         </Typography>
         <Typography
           color="#26282c34162e"
-          sx={TypographyArticalInfoRight}
+          sx={TypographyArticleInfoRight}
         >
           |
         </Typography>
@@ -96,7 +96,7 @@ const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
         </Link>
         <Typography
           color="#26282c34162e"
-          sx={TypographyArticalInfoLeft}
+          sx={TypographyArticleInfoLeft}
         >
           |
         </Typography>
@@ -111,7 +111,7 @@ const HorizontalArticalPageInfoComponent: React.FC<Props> = ({
           :
           <CopyLinkComponent
             authorsId={authorsId}
-            articalId={articalID}
+            articleId={articleId}
             defaultColor={'#667A6E'}
             padding={'0px 0px 0px 16px'}
             email={false}
@@ -128,8 +128,8 @@ export type Props = {
   date: string;
   sectionLink: string;
   section: string;
-  articalID: string;
+  articleId: string;
   series: boolean | undefined;
 };
 
-export default HorizontalArticalPageInfoComponent;
+export default HorizontalArticlePageInfoComponent;

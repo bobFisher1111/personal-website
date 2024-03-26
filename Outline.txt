@@ -146,11 +146,20 @@
           - styled-components
           - typescript
   - remove react logo from tab // completed
-  - deploy front end on vercel
-  - hide or fix warning for production
+  - deploy front end on vercel // completed
+  - hide or fix warning for production // completed
+  - get a domain and setup // completed
+  - setup social media:
+    - facebook:
+    - twitter(x):
+    - youtube:
   - fix on backend and database articals to articles
-  - change name for website on vercel
+- Future Features:
+  - code snipit for coding examples on article
 - Future bugs to fix:
+  - SeriesComponent
+    - Figure out how to get rid of this
+    - articleId={'articleData?.articleId'}
   - Improve image quality 
   - console log warnings
   - series doesn't have article attach to it, either put something comming soon or exclude it

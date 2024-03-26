@@ -14,12 +14,12 @@ import {
   DivSeriesLeftPadding,
   GridHorizontalInfo,
   TypographyHorizontalInfoText,
-} from './HorizontalArticalInfoComponentStyle';
+} from './HorizontalArticleInfoComponentStyle';
 
-const HorizontalArticalInfoComponent: React.FC<Props> = ({
+const HorizontalArticleInfoComponent: React.FC<Props> = ({
   section,
   authorsId,
-  articalId,
+  articleId,
   authorPage,
   aughtorsName,
   sectionLink,
@@ -117,7 +117,7 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
       {authorPage && series && sectionPage &&
             <CopyLinkComponent
               authorsId={authorsId}
-              articalId={articalId}
+              articleId={articleId}
               defaultColor={'#667A6E'}
               padding={'0px 0px 0px 16px'}
               email={false}
@@ -130,7 +130,7 @@ const HorizontalArticalInfoComponent: React.FC<Props> = ({
 export type Props = {
   section: string;
   authorsId: string;
-  articalId: string;
+  articleId: string;
   authorPage: boolean | undefined;
   aughtorsName: string;
   sectionLink: string;
@@ -139,4 +139,4 @@ export type Props = {
   seriesId?: string;
 };
     
-export default HorizontalArticalInfoComponent;
+export default HorizontalArticleInfoComponent;

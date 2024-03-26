@@ -1,30 +1,30 @@
 import React from 'react';
-import ArticalsList from '../articalTabs/ArticalsList';
+import ArticleList from '../articleList/ArticleList';
 import Series from '../seriesComponent/Series';
 
 const CodingComponentTabData = (
-  turOnAuthorForArtical: boolean,
-  articalSectionFilter: any,
-  articalFrontEndFilter: any,
-  articalDataFilter: any,
+  turOnAuthorForArticle: boolean,
+  articleSectionFilter: any,
+  articleFrontEndFilter: any,
+  articleDataFilter: any,
 ) => {
   return (
     [
       { 
         name: 'All Articles',
-        data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalSectionFilter} />
+        data: <ArticleList turOnAuthorForArticle={turOnAuthorForArticle} data={articleSectionFilter} />
       },
       { 
         name: 'Full Stack',
-        data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalFrontEndFilter} />
+        data: <ArticleList turOnAuthorForArticle={turOnAuthorForArticle} data={articleFrontEndFilter} />
       },
       { 
         name: 'Game Dev',
-        data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalDataFilter} />
+        data: <ArticleList turOnAuthorForArticle={turOnAuthorForArticle} data={articleDataFilter} />
       },
       { 
         name: 'Series',
-        data: <Series data={articalSectionFilter} section={'Coding'} />
+        data: <Series data={articleSectionFilter} section={'Coding'} />
       },
     ]
   );

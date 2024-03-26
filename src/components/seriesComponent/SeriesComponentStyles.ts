@@ -10,7 +10,7 @@ export const seriesComponentGridHeader = {
   alignItems: 'center',
 };
 
-export const seriesComponentGridArticalInfo = {
+export const seriesComponentGridArticleInfo = {
   padding: '32px 0px 16px 0px',
   '@media only screen and (max-width: 600px)': {
     padding: '16px 0px 16px 0px'
@@ -53,7 +53,7 @@ export const seriesComponentdate = {
 export default [
   seriesComponentGridRoot,
   seriesComponentGridHeader,
-  seriesComponentGridArticalInfo,
+  seriesComponentGridArticleInfo,
   seriesComponentTitle,
   seriesComponentSubTitle,
   seriesComponentdate,

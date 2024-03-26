@@ -5,17 +5,17 @@ import VideoGamesComponentTabData from './VideoGamesComponentTabData';
 
 const VideoGamesComponent = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const articalData = getWebsiteData && getWebsiteData?.websiteData;
+  const articleData = getWebsiteData && getWebsiteData?.websiteData;
 
-  const articalSectionFilter = articalData?.articals?.filter((item: any) => {
+  const articleSectionFilter = articleData?.articals?.filter((item: any) => {
     return item.sections === 'Video Games';
   });
 
-  const articalModernFilter = articalData?.articals?.filter((item: any) => {
+  const articleModernFilter = articleData?.articals?.filter((item: any) => {
     return item.sectionType === 'Modern Video Games';
   });
 
-  const articalRetroFilter = articalData?.articals?.filter((item: any) => {
+  const articleRetroFilter = articleData?.articals?.filter((item: any) => {
     return item.sectionType === 'Retro Video Games';
   });
   
@@ -24,9 +24,9 @@ const VideoGamesComponent = () => {
       headerTitle='Video Games'
       sectionTabData={VideoGamesComponentTabData(
         false,
-        articalSectionFilter,
-        articalModernFilter,
-        articalRetroFilter,
+        articleSectionFilter,
+        articleModernFilter,
+        articleRetroFilter,
       )}
     />
   );

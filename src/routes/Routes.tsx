@@ -4,7 +4,7 @@ import CodingPage from '../pages/coding/CodingPage';
 import Logout from '../pages/logout/Logout';
 import DashboardAnalytics from '../pages/dashboardAnalytics/DashboardAnalytics';
 import Profile from '../pages/profile/Profile';
-import ArticalPage from '../components/articalPage/ArticalPage';
+import ArticlePage from '../components/articlePage/ArticlePage';
 import AuthorPage from '../pages/author/AuthorPage';
 import WritersPage from '../pages/writers/WritersPage';
 import StoriesPage from '../pages/stories/StoriesPage';
@@ -42,13 +42,13 @@ const routes: Route[] = [
     path: '/profile',
     element: Profile,
   },
+  // {
+  //   path: '/projects',
+  //   element: ArticlePage,
+  // },
   {
-    path: '/projects',
-    element: ArticalPage,
-  },
-  {
-    path: '/artical/:id/:id',
-    element: ArticalPage,
+    path: '/article/:id/:id',
+    element: ArticlePage,
   },
   {
     path: '/author/:id',

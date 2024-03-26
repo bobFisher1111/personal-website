@@ -25,13 +25,13 @@ const Works: React.FC<Props> = ({
   authorsPage,
   bookData,
   aboutWorks,
-  articalPage,
+  articlePage,
 }) => {
   const bookImageHeightRef = useRef<any>();
   const titleHeightRef = useRef<any>();
   const bookPlotHeightRef = useRef<any>();
-  const articalExtraInfoRef = useRef<any>();
-  const [artaicalPageExtraInfo, setArticalPageExtraInfo] = useState<number>(0);
+  const articleExtraInfoRef = useRef<any>();
+  const [articlePageExtraInfo, setArticlePageExtraInfo] = useState<number>(0);
   const [infoHeight, setInfoHeight] = useState<string>('');
 
   useEffect(() => {
@@ -39,18 +39,18 @@ const Works: React.FC<Props> = ({
       const titleHeight: number = titleHeightRef && titleHeightRef?.current?.clientHeight;
       const plotHieght: number = bookPlotHeightRef && bookPlotHeightRef?.current?.clientHeight;
       const bookHeight = bookImageHeightRef && bookImageHeightRef?.current?.clientHeight;
-      const articalExtraInfo: number = articalExtraInfoRef && articalExtraInfoRef?.current?.clientHeight;
-      setArticalPageExtraInfo(bookHeight - titleHeight - plotHieght - articalExtraInfo);
-      const bottomHeight = artaicalPageExtraInfo.toString();
+      const articleExtraInfo: number = articleExtraInfoRef && articleExtraInfoRef?.current?.clientHeight;
+      setArticlePageExtraInfo(bookHeight - titleHeight - plotHieght - articleExtraInfo);
+      const bottomHeight = articlePageExtraInfo.toString();
       const bottomHPixel = bottomHeight + 'px';
       setInfoHeight(bottomHPixel);
     }
   }, [infoHeight]);
 
-  const articalPageBookExtrainfo = (item: any, bottomHeight: string) => {
+  const articlePageBookExtrainfo = (item: any, bottomHeight: string) => {
     return (
       <Grid
-        ref={articalExtraInfoRef}
+        ref={articleExtraInfoRef}
         container
         direction="row"
         justifyContent="flex-start"
@@ -161,11 +161,11 @@ const Works: React.FC<Props> = ({
           </Grid>
           <Grid
             item
-            xs={articalPage ? 6 : 8}
-            sm={articalPage ? 6 : 8}
-            md={articalPage ? 6 : 8}
-            lg={articalPage ? 6 : 8}
-            xl={articalPage ? 6 : 8}
+            xs={articlePage ? 6 : 8}
+            sm={articlePage ? 6 : 8}
+            md={articlePage ? 6 : 8}
+            lg={articlePage ? 6 : 8}
+            xl={articlePage ? 6 : 8}
             sx={WorksGridInfo}
           >
             <Typography
@@ -186,7 +186,7 @@ const Works: React.FC<Props> = ({
             </Typography>
             }
             {authorsPage ?
-              articalPageBookExtrainfo(item, infoHeight)
+              articlePageBookExtrainfo(item, infoHeight)
               :
               <Typography
                 color="#2F4C69"
@@ -206,7 +206,7 @@ export type Props = {
   authorsPage?: boolean;
   bookData?: any;
   aboutWorks?: boolean;
-  articalPage?: boolean;
+  articlePage?: boolean;
 };
 
 export default Works;

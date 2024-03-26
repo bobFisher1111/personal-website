@@ -1,30 +1,30 @@
 import React from 'react';
-import ArticalsList from '../articalTabs/ArticalsList';
+import ArticleList from '../articleList/ArticleList';
 import Series from '../seriesComponent/Series';
 
 const VideoGamesComponentTabData = (
-  turOnAuthorForArtical: boolean,
-  articalSectionFilter: any,
-  articalModernFilter: any,
-  articalRetroFilter: any,
+  turOnAuthorForArticle: boolean,
+  articleSectionFilter: any,
+  articleModernFilter: any,
+  articleRetroFilter: any,
 ) => {
   return (
     [
       { 
-        name: 'All Articals',
-        data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalSectionFilter} />
+        name: 'Articles',
+        data: <ArticleList turOnAuthorForArticle={turOnAuthorForArticle} data={articleSectionFilter} />
       },
       { 
         name: 'Modern',
-        data:<ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalModernFilter} />
+        data:<ArticleList turOnAuthorForArticle={turOnAuthorForArticle} data={articleModernFilter} />
       },
       { 
         name: 'Retro',
-        data:<ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalRetroFilter} />
+        data:<ArticleList turOnAuthorForArticle={turOnAuthorForArticle} data={articleRetroFilter} />
       },
       { 
         name: 'Series',
-        data: <Series data={articalSectionFilter} section={'Video Games'} />
+        data: <Series data={articleSectionFilter} section={'Video Games'} />
       },
     ]
   );

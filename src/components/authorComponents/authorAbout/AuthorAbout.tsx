@@ -33,7 +33,7 @@ const AuthorAbout: React.FC<Props> = ({
           authorsPage={true}
           bookData={bookData}
           aboutWorks={true}
-          articalPage={true}
+          articlePage={true}
         />
       </Grid>
       <Grid 

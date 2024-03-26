@@ -1,20 +1,20 @@
 import React from 'react';
-import ArticalsList from '../articalTabs/ArticalsList';
+import ArticleList from '../articleList/ArticleList';
 import Series from '../seriesComponent/Series';
 
 const StoriesComponentTabData = (
-  turOnAuthorForArtical: boolean,
-  articalSectionFilter: any,
+  turOnAuthorForArticle: boolean,
+  articleSectionFilter: any,
 ) => {
   return (
     [
       { 
         name: 'Stories',
-        data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalSectionFilter} />
+        data: <ArticleList turOnAuthorForArticle={turOnAuthorForArticle} data={articleSectionFilter} />
       },
       { 
         name: 'Series',
-        data: <Series data={articalSectionFilter} section={'Stories'}/>
+        data: <Series data={articleSectionFilter} section={'Stories'}/>
       },
     ]
   );

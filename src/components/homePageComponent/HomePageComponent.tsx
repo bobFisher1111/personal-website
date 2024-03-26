@@ -19,7 +19,7 @@ import foxShrineGamers from '../../assets/images/FoxGamer1.png';
 
 const HomePageComponent = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const articalData = getWebsiteData && getWebsiteData?.websiteData?.articals;
+  const articleData = getWebsiteData && getWebsiteData?.websiteData?.articals;
 
   return (
     <Grid
@@ -64,7 +64,7 @@ const HomePageComponent = () => {
         />
         <TabsComponent
           turnonsectiontabspadding={true}
-          tabsData={HomePageComponentTabData(false, articalData)}
+          tabsData={HomePageComponentTabData(false, articleData)}
         />
       </Grid>
     </Grid> 

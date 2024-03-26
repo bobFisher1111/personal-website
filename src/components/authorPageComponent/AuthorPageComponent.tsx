@@ -5,7 +5,7 @@ const AuthorPageComponent: React.FC = () => {
   return (
     <>
       <AuthorComponent
-        turOnArticalPage={false}
+        turOnArticlePage={false}
       />
     </>
   );

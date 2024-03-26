@@ -2,10 +2,10 @@ import React from 'react';
 import {
     Grid,
 } from "@mui/material";
-import PopularArticals from "../unUsedComponents/additionalCards/popularArticalCard/PopularArticals";
+import PopularArticles from "../unUsedComponents/additionalCards/popularArticleCard/PopularArticles";
 import xenob3 from '../../assets/images/xenob3.jpg';
 
-const PopularArticalsComponent: React.FC<Props> = ({
+const PopularArticlesComponent: React.FC<Props> = ({
   marginWidth,
 }) => {
   return (
@@ -28,7 +28,7 @@ const PopularArticalsComponent: React.FC<Props> = ({
             minWidth: '360px',
           }}
         >
-          <PopularArticals 
+          <PopularArticles 
             title={'XenoBlade Chronicals 3 Review'}
             name={'Bob Fisher'}
             articalInfo={'...'}
@@ -43,7 +43,7 @@ const PopularArticalsComponent: React.FC<Props> = ({
             minWidth: '360px',
           }}
         >
-          <PopularArticals 
+          <PopularArticles 
             title={'XenoBlade Chronicals 3 Review'}
             name={'Bob Fisher'}
             articalInfo={'...'}
@@ -58,7 +58,7 @@ const PopularArticalsComponent: React.FC<Props> = ({
             minWidth: '360px',
           }}
         >
-          <PopularArticals 
+          <PopularArticles 
             title={'XenoBlade Chronicals 3 Review'}
             name={'Bob Fisher'}
             articalInfo={'...'}
@@ -73,7 +73,7 @@ const PopularArticalsComponent: React.FC<Props> = ({
             minWidth: '360px',
           }}
         >
-          <PopularArticals 
+          <PopularArticles 
             title={'XenoBlade Chronicals 3 Review'}
             name={'Bob Fisher'}
             articalInfo={'...'}
@@ -88,7 +88,7 @@ const PopularArticalsComponent: React.FC<Props> = ({
             minWidth: '360px',
           }}
         >
-          <PopularArticals 
+          <PopularArticles 
             title={'XenoBlade Chronicals 3 Review'}
             name={'Bob Fisher'}
             articalInfo={'...'}
@@ -103,7 +103,7 @@ const PopularArticalsComponent: React.FC<Props> = ({
             minWidth: '360px',
           }}
         >
-          <PopularArticals 
+          <PopularArticles 
             title={'XenoBlade Chronicals 3 Review'}
             name={'Bob Fisher'}
             articalInfo={'...'}
@@ -118,7 +118,7 @@ const PopularArticalsComponent: React.FC<Props> = ({
             minWidth: '360px',
           }}
         >
-          <PopularArticals 
+          <PopularArticles 
             title={'XenoBlade Chronicals 3 Review'}
             name={'Bob Fisher'}
             articalInfo={'...'}
@@ -134,4 +134,4 @@ export type Props = {
   marginWidth: any;
 };
 
-export default PopularArticalsComponent;
+export default PopularArticlesComponent;

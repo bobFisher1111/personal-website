@@ -39,7 +39,7 @@ export const CardVerticalCard = {
   },
 };
 
-export const DivVerticalArticalRoot = () => ({
+export const DivVerticalArticleRoot = () => ({
   padding: '0px 0px 16px 0px',
 });
 
@@ -95,7 +95,7 @@ export default [
   CardRootStyle,
   CardFooterStyle,
   CardVerticalCard,
-  DivVerticalArticalRoot,
+  DivVerticalArticleRoot,
   GridPadding,
   GridVeriticalCardVideo,
   TypographyVerticalCardNameStyle,

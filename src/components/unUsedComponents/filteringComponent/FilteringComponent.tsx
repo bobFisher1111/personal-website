@@ -9,13 +9,13 @@ const FilteringComponent:  React.FC<Props> = ({
 }) => {
   const categories = [
     {
-      name: 'Latest Articals',
+      name: 'Latest Articles',
     },
     {
-      name: 'All Articals',
+      name: 'All Articles',
     },
     {
-      name: 'Popular Articals',
+      name: 'Popular Articles',
     },
   ];
   

@@ -16,13 +16,13 @@ import {
 } from './AuthorComponentStyles';
 
 const AuthorComponent: React.FC<Props> = ({
-  turOnArticalPage,
-  articalAuthorData,
-  articalData,
+  turOnArticlePage,
+  articleAuthorData,
+  articlelData,
   bookData,
   authorsData,
   authorName,
-  seriesForArticalPage,
+  seriesForArticlePage,
 }) => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const webData = getWebsiteData && getWebsiteData?.websiteData;
@@ -34,7 +34,7 @@ const AuthorComponent: React.FC<Props> = ({
   const getAuthor = webData?.authors?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
   });
-  const getArticals = webData?.articals?.filter((item: any) => {
+  const getArticles = webData?.articals?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
   });
   const getBooks = webData?.books?.filter((item: any) => {
@@ -46,7 +46,7 @@ const AuthorComponent: React.FC<Props> = ({
     <Grid
       container
       justifyContent="center"
-      sx={AuthorComponentGridRoot(turOnArticalPage)}
+      sx={AuthorComponentGridRoot(turOnArticlePage)}
     >
       <Grid
         item
@@ -57,11 +57,11 @@ const AuthorComponent: React.FC<Props> = ({
         xl={12}
       >
         <HeaderComponent
-          title={authorData?.authorName || articalAuthorData?.authorName}
+          title={authorData?.authorName || articleAuthorData?.authorName}
           authorAvatar={true}
-          avatarImage={authorData?.avatarImage || articalAuthorData?.avatarImage}
-          authorId={articalAuthorData?.authorId}
-          articalPage={turOnArticalPage}
+          avatarImage={authorData?.avatarImage || articleAuthorData?.avatarImage}
+          authorId={articleAuthorData?.authorId}
+          articlePage={turOnArticlePage}
         />
       </Grid>
       <Grid
@@ -83,7 +83,7 @@ const AuthorComponent: React.FC<Props> = ({
           color="#2F4C69"
           sx={AuthorComponentGridBiographyText}
         >
-          {authorData?.biography || articalAuthorData?.biography}
+          {authorData?.biography || articleAuthorData?.biography}
         </Typography>
       </Grid>
       <Grid
@@ -97,25 +97,25 @@ const AuthorComponent: React.FC<Props> = ({
             widthPadding={'16px 0px 16px 16px'}
             turnOnStyle={true}
             turnOnEmail={true}
-            email={authorData?.email || articalAuthorData?.email}
-            facebook={authorData?.facebook || articalAuthorData?.facebook}
-            twitter={authorData?.twitter || articalAuthorData?.twitter}
-            youtube={authorData?.youtube || articalAuthorData?.youtube}
+            email={authorData?.email || articleAuthorData?.email}
+            facebook={authorData?.facebook || articleAuthorData?.facebook}
+            twitter={authorData?.twitter || articleAuthorData?.twitter}
+            youtube={authorData?.youtube || articleAuthorData?.youtube}
           />
         </Grid>
-        {turOnArticalPage ?
+        {turOnArticlePage ?
           <TabsComponent
             turnonsectiontabspadding={false}
             tabsData={
               AuthorComponetTabData(
                 true, 
-                articalData,
+                articlelData,
                 authorName,
                 false,
                 true,
                 bookData,
                 authorsData,
-                seriesForArticalPage,
+                seriesForArticlePage,
                 false
               )
             }
@@ -126,7 +126,7 @@ const AuthorComponent: React.FC<Props> = ({
             tabsData={
               AuthorComponetTabData(
                 false, 
-                getArticals,
+                getArticles,
                 getIdFromUrl(),
                 false,
                 true,
@@ -144,13 +144,13 @@ const AuthorComponent: React.FC<Props> = ({
 };
 
 export type Props = {
-  turOnArticalPage: boolean;
-  articalAuthorData?: any;
-  articalData?: any;
+  turOnArticlePage: boolean;
+  articleAuthorData?: any;
+  articlelData?: any;
   bookData?: any;
   authorsData?: any;
   authorName?: string;
-  seriesForArticalPage?: boolean;
+  seriesForArticlePage?: boolean;
 };
 
 export default AuthorComponent;

@@ -8,36 +8,36 @@ import {
 } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import HorizontalArticalInfoComponent from './horizontalArticalInfoComponent/HorizontalArticalInfoComponent';
-import HorizontalArticalPageInfoComponent from './horizontalArticalPageInfoComponent/HorizontalArticalPageInfoComponent';
+import HorizontalArticleInfoComponent from './horizontalArticleInfoComponent/HorizontalArticleInfoComponent';
+import HorizontalArticlePageInfoComponent from './horizontalArticlePageInfoComponent/HorizontalArticlePageInfoComponent';
 import {
-  CardHorizontalArticalInfo,
-  CardMedaiArticalVideo,
-  GridHorizontalArticalContainer,
-  GridHorizontalArticalMaxWidth,
-  ImageHorizonatalArticalsStyles,
-  TypographyHorizontalArticalDate,
-  TypographyHorizontalArticalSubTitle,
-  TypographyHorizontalArticalTitle,
-} from './HorizontalArticalCardComponentStyles';
+  CardHorizontalArticleInfo,
+  CardMedaiArticleVideo,
+  GridHorizontalArticleContainer,
+  GridHorizontalArticleMaxWidth,
+  ImageHorizonatalArticleStyles,
+  TypographyHorizontalArticleDate,
+  TypographyHorizontalArticleSubTitle,
+  TypographyHorizontalArticleTitle,
+} from './HorizontalArticleCardComponentStyles';
 import { LinkStyles } from '../../../../util/styles/LinkStyles';
 
-const HorizontalArticalCardComponent: React.FC<Props> = ({
+const HorizontalArticleCardComponent: React.FC<Props> = ({
   title,
   author,
   cardTextWidth,
   date,
   imageWidth,
-  articalPage,
-  articalSubTitle,
+  articlePage,
+  articleSubTitle,
   useVideoInsteadOfImage,
   section,
   authorsId,
-  articalId,
+  articleId,
   videoOrImageCover,
   sectionLink,
   series,
-  articalPageList,
+  articlePageList,
   seriesId,
   mobileImageWidth,
   videoHeight,
@@ -67,26 +67,26 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
       <Grid
         container
         direction="row"
-        justifyContent={!articalPage || articalPageList ? 'left' : 'center'}
-        sx={GridHorizontalArticalContainer}
+        justifyContent={!articlePage || articlePageList ? 'left' : 'center'}
+        sx={GridHorizontalArticleContainer}
       >
         <Grid
-          sx={GridHorizontalArticalMaxWidth(imageWidth)}
+          sx={GridHorizontalArticleMaxWidth(imageWidth)}
         >
           {!useVideoInsteadOfImage ?
             <Link 
-              to={`/artical/${authorsId}/${articalId}`}
+              to={`/article/${authorsId}/${articleId}`}
               reloadDocument={true}
               style={LinkStyles()}
             >
               <Box
                 // series
                 component="img"
-                alt="Artical Cover Image"
+                alt="Article Cover Image"
                 // imageProps={{ referrerPolicy: "no-referrer" }}
                 // style={{height:'100%', width:'100%'}}
                 src={videoOrImageCover}
-                sx={ImageHorizonatalArticalsStyles(articalPage, mobileImageWidth)}
+                sx={ImageHorizonatalArticleStyles(articlePage, mobileImageWidth)}
               />
               {/* <Box
                 // sx={ImageHorizonatalArticalsStyles(articalPage, mobileImageWidth)}
@@ -102,62 +102,62 @@ const HorizontalArticalCardComponent: React.FC<Props> = ({
               component="iframe"
               image={videoOrImageCover}
               allowFullScreen
-              sx={CardMedaiArticalVideo(articalPage, videoHeight, mobileImageWidth)}
+              sx={CardMedaiArticleVideo(articlePage, videoHeight, mobileImageWidth)}
             />
           }
-          {articalPage && 
+          {articlePage && 
             <Grid
               container
               justifyContent="center"
               alignItems="center"
             >
-              <HorizontalArticalPageInfoComponent
+              <HorizontalArticlePageInfoComponent
                 authorsId={authorsId}
                 author={author}
                 date={date}
                 sectionLink={sectionLink}
                 section={section}
-                articalID={articalId}
+                articleId={articleId}
                 series={series}
               />
             </Grid>
           }
         </Grid>
-        {!articalPage && 
+        {!articlePage && 
           <Card
-            sx={CardHorizontalArticalInfo(articalPageList)}
+            sx={CardHorizontalArticleInfo(articlePageList)}
           >
             <Link 
-              to={`/artical/${authorsId}/${articalId}`}
+              to={`/article/${authorsId}/${articleId}`}
               reloadDocument={true}
               style={LinkStyles()}
             >
-              {!articalPageList &&
+              {!articlePageList &&
                 <Typography
-                  sx={TypographyHorizontalArticalTitle(articalPage)}
+                  sx={TypographyHorizontalArticleTitle(articlePage)}
                   color="#2F4C69"
                 >
                   {title}
                 </Typography>
               }
               <Typography
-                sx={TypographyHorizontalArticalSubTitle(articalPageList, cardTextWidth)}
+                sx={TypographyHorizontalArticleSubTitle(articlePageList, cardTextWidth)}
               >
-                {articalSubTitle}
+                {articleSubTitle}
               </Typography>
-              {!articalPage &&
+              {!articlePage &&
                   <Typography
                     color="#76468c"
-                    sx={TypographyHorizontalArticalDate}
+                    sx={TypographyHorizontalArticleDate}
                   >
                     {date}
                   </Typography>
               }
             </Link>
-            <HorizontalArticalInfoComponent
+            <HorizontalArticleInfoComponent
               section={section}
               authorsId={authorsId}
-              articalId={articalId}
+              articleId={articleId}
               authorPage={authorPage}
               aughtorsName={getAuthorData[0]?.authorName}
               sectionLink={sectionLink}
@@ -178,21 +178,20 @@ export type Props = {
   cardTextWidth: string;
   date: string;
   imageWidth: string;
-  articalPage: boolean;
-  articalSubTitle?: string;
+  articlePage: boolean;
+  articleSubTitle?: string;
   titleFontSize?: string;
   useVideoInsteadOfImage: boolean;
   section: string;
-  articalData: any;
   authorsId: string;
-  articalId: string;
+  articleId: string;
   videoOrImageCover: string;
   sectionLink: string;
   series?: boolean;
-  articalPageList?: any;
+  articlePageList?: any;
   seriesId?: string;
   mobileImageWidth: string;
   videoHeight: boolean;
 };
   
-export default HorizontalArticalCardComponent;
+export default HorizontalArticleCardComponent;

@@ -20,7 +20,7 @@ export const GridSeriesReadMoreMargin = {
   },
 };
 
-export const GridSeriesArticalList = {
+export const GridSeriesArticleList = {
   padding: '0px 0px 16px 0px',
   '@media only screen and (min-width: 768px)': {
     padding: '0px 0px 0px 16px',
@@ -34,7 +34,7 @@ export const GridSeriesRoot = {
   padding: '10px 0px 0px 0px',
 };
 
-export const TypographySeriesArticalDate = {  
+export const TypographySeriesArticleDate = {  
   color: '#76468c',
   padding: '0px 0px 0px 16px',
   fontSize:'14px',
@@ -44,7 +44,7 @@ export const TypographySeriesArticalDate = {
   },
 };
 
-export const TypographySeriesArticalSubTitle = {
+export const TypographySeriesArticleSubTitle = {
   color: '#667A6E',
   fontSize:'16px',
   overflow: 'hidden',
@@ -65,7 +65,7 @@ export const TypographySeriesArticalSubTitle = {
   },
 };
 
-export const TypographySeriesArticalTitle = {
+export const TypographySeriesArticleTitle = {
   color: '#2F4C69',
   padding: '0px 0px 0px 16px',
   fontSize:'20px',
@@ -99,10 +99,10 @@ export const TypographySeriesTitle = {
 export default [
   GridMarginLeft,
   GridSeriesReadMoreMargin,
-  GridSeriesArticalList,
+  GridSeriesArticleList,
   GridSeriesRoot,
-  TypographySeriesArticalDate,
-  TypographySeriesArticalSubTitle,
-  TypographySeriesArticalTitle,
+  TypographySeriesArticleDate,
+  TypographySeriesArticleSubTitle,
+  TypographySeriesArticleTitle,
   TypographySeriesTitle,
 ];

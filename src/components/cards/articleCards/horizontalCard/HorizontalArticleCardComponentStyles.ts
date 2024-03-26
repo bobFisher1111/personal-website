@@ -1,8 +1,8 @@
-export const CardHorizontalArticalInfo = ( articalpagelist: boolean ) => ({
+export const CardHorizontalArticleInfo = ( articlepagelist: boolean ) => ({
   maxWidth: '740px',
   backgroundColor: 'white',
   boxShadow: 'none',
-  padding: !articalpagelist ? '4px 0px 0px 24px' : '',
+  padding: !articlepagelist ? '4px 0px 0px 24px' : '',
   '@media only screen and (min-width: 768px)': {
     maxWidth: '45%',
   },
@@ -15,11 +15,10 @@ export const CardHorizontalArticalInfo = ( articalpagelist: boolean ) => ({
   },
 });
 
-export const CardMedaiArticalVideo = (articalpage: boolean, videoHeight: boolean, mobileImageWidth?: string) => ({
-  height: articalpage ? '576px' : '181px',
+export const CardMedaiArticleVideo = (articlepage: boolean, videoHeight: boolean, mobileImageWidth?: string) => ({
+  height: articlepage ? '576px' : '181px',
   border: '0px',
   borderRadius: '7px',
-  // artical video
   '@media only screen and (max-width: 600px)': {
     maxWidth: `calc(100vw - ${mobileImageWidth})`,
     minWidth: `calc(100vw - ${mobileImageWidth})`,
@@ -29,56 +28,55 @@ export const CardMedaiArticalVideo = (articalpage: boolean, videoHeight: boolean
     maxWidth: 'calc(100vw - 48px)',
     minWidth: 'calc(100vw - 48px)',
   },
-  // here
   '@media only screen and (min-width: 768px)': {
-    minWidth: articalpage ? `calc(100vw - ${mobileImageWidth})` : '321px',
-    maxWidth: articalpage ? `calc(100vw - ${mobileImageWidth})` : '321px',
-    height: articalpage ? '450px': videoHeight ? '444px' : '200px',
+    minWidth: articlepage ? `calc(100vw - ${mobileImageWidth})` : '321px',
+    maxWidth: articlepage ? `calc(100vw - ${mobileImageWidth})` : '321px',
+    height: articlepage ? '450px': videoHeight ? '444px' : '200px',
   },
   '@media only screen and (min-width: 992px)': {
-    minWidth: articalpage ? '960px' : '321px',
-    maxWidth: articalpage ? '960px' : '321px',
+    minWidth: articlepage ? '960px' : '321px',
+    maxWidth: articlepage ? '960px' : '321px',
   },
   '@media only screen and (min-width: 1200px)': {
-    minWidth: articalpage ? '960px' : '321px',
-    maxWidth: articalpage ? '960px' : '321px',
+    minWidth: articlepage ? '960px' : '321px',
+    maxWidth: articlepage ? '960px' : '321px',
   },
 });
 
-export const GridHorizontalArticalContainer = {
+export const GridHorizontalArticleContainer = {
   width: '100%',
   background: '#fff',
   display: 'flex',
   margin: '0px 0px 16px 0px',
 };
 
-export const GridHorizontalArticalMaxWidth = (imagewidth: string) => ({
+export const GridHorizontalArticleMaxWidth = (imagewidth: string) => ({
   maxWidth: imagewidth,
 });
 
-export const ImageHorizonatalArticalsStyles = (articalPage: any, imageWidth?: any) => ({
-  height: `${articalPage} ? '576px' : '181px'`,
+export const ImageHorizonatalArticleStyles = (articlepage: any, imagewidth?: any) => ({
+  height: `${articlepage} ? '576px' : '181px'`,
   borderRadius: '7px',
   aspectRatio: '16/9',
-  width: articalPage ? '960px' : '321px',
+  width: articlepage ? '960px' : '321px',
   '@media only screen and (max-width: 600px)': {
-    width: `calc(100vw - ${imageWidth})`
+    width: `calc(100vw - ${imagewidth})`
   },
   '@media only screen and (min-width: 600px)': {
-    width: `calc(100vw - ${imageWidth})`,
+    width: `calc(100vw - ${imagewidth})`,
   },
   '@media only screen and (min-width: 768px)': {
-    width: articalPage ? `calc(100vw - ${imageWidth})` : '321px',
+    width: articlepage ? `calc(100vw - ${imagewidth})` : '321px',
   },
   '@media only screen and (min-width: 992px)': {
-    width: articalPage ? '960px' : '321px',
+    width: articlepage ? '960px' : '321px',
   },
   '@media only screen and (min-width: 1200px)': {
-    width: articalPage ? '960px' : '321px',
+    width: articlepage ? '960px' : '321px',
   },
 });
 
-export const TypographyHorizontalArticalDate = {
+export const TypographyHorizontalArticleDate = {
   fontSize: '14px',
   '@media only screen and (max-width: 600px)': {
     fontSize: '12px',
@@ -86,7 +84,7 @@ export const TypographyHorizontalArticalDate = {
   },
 };
 
-export const TypographyHorizontalArticalSubTitle = (articalpage: boolean, cardtextwidth: string) => ({
+export const TypographyHorizontalArticleSubTitle = (articlepage: boolean, cardtextwidth: string) => ({
   color: '#667A6E',
   fontSize: '16px',
   overflow: 'hidden',
@@ -95,14 +93,14 @@ export const TypographyHorizontalArticalSubTitle = (articalpage: boolean, cardte
   WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
   fontFamily: 'sans-serif',
-  maxWidth: articalpage ? '321px' : `${cardtextwidth} !important`,
+  maxWidth: articlepage ? '321px' : `${cardtextwidth} !important`,
   '@media only screen and (max-width: 600px)': {
     fontSize: '12px',
     padding: '0px 4px 0px 4px',
   },
 });
 
-export const TypographyHorizontalArticalTitle = (articalpage: boolean) => ({
+export const TypographyHorizontalArticleTitle = (articlepage: boolean) => ({
   color: '#2F4C69',
   fontSize: '20px',
   overflow: 'hidden',
@@ -111,7 +109,7 @@ export const TypographyHorizontalArticalTitle = (articalpage: boolean) => ({
   WebkitLineClamp: '1',
   WebkitBoxOrient: 'vertical',
   fontFamily: 'sans-serif',
-  maxWidth: articalpage ? '960px' : '321px',
+  maxWidth: articlepage ? '960px' : '321px',
   '@media only screen and (max-width: 600px)': {
     display: 'none',
     fontSize: '16px',
@@ -120,12 +118,12 @@ export const TypographyHorizontalArticalTitle = (articalpage: boolean) => ({
 });
 
 export default [
-  CardHorizontalArticalInfo,
-  CardMedaiArticalVideo,
-  GridHorizontalArticalContainer,
-  GridHorizontalArticalMaxWidth,
-  ImageHorizonatalArticalsStyles,
-  TypographyHorizontalArticalDate,
-  TypographyHorizontalArticalSubTitle,
-  TypographyHorizontalArticalTitle,
+  CardHorizontalArticleInfo,
+  CardMedaiArticleVideo,
+  GridHorizontalArticleContainer,
+  GridHorizontalArticleMaxWidth,
+  ImageHorizonatalArticleStyles,
+  TypographyHorizontalArticleDate,
+  TypographyHorizontalArticleSubTitle,
+  TypographyHorizontalArticleTitle,
 ];

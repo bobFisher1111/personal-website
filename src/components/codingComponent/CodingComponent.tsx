@@ -5,13 +5,13 @@ import CodingComponentTabData from './CodingComponentTabData';
 
 const CodingComponent: React.FC = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const articalData = getWebsiteData && getWebsiteData?.websiteData?.articals;
+  const articleData = getWebsiteData && getWebsiteData?.websiteData?.articals;
 
-  const articalSectionFilter = articalData?.filter((item: any) => {
+  const articleSectionFilter = articleData?.filter((item: any) => {
     return item.sections === 'Coding';
   });
 
-  const articalFrontEndFilter = articalData?.filter((item: any) => {
+  const articleFrontEndFilter = articleData?.filter((item: any) => {
     return item.sectionType === 'Front End';
   });
 
@@ -19,7 +19,7 @@ const CodingComponent: React.FC = () => {
   //   return item.sectionType === 'Back End';
   // });
 
-  const articalDataFilter = articalData?.filter((item: any) => {
+  const articleDataFilter = articleData?.filter((item: any) => {
     return item.sectionType === 'Data';
   });
 
@@ -28,9 +28,9 @@ const CodingComponent: React.FC = () => {
       headerTitle='Coding'
       sectionTabData={CodingComponentTabData(
         false,
-        articalSectionFilter,
-        articalFrontEndFilter,
-        articalDataFilter,
+        articleSectionFilter,
+        articleFrontEndFilter,
+        articleDataFilter,
       )}
     />
   );

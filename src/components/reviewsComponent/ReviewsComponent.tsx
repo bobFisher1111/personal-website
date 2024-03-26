@@ -5,17 +5,17 @@ import ShowsMoviesComponentTabData from './ReviewsComponentTabData';
 
 const ReviewsComponent = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const articalData = getWebsiteData && getWebsiteData?.websiteData;
+  const articleData = getWebsiteData && getWebsiteData?.websiteData;
 
-  const articalSectionFilter = articalData?.articals?.filter((item: any) => {
+  const articleSectionFilter = articleData?.articals?.filter((item: any) => {
     return item.sections === 'Reviews';
   });
 
-  const articalAnimeFilter = articalSectionFilter?.filter((item: any) => {
+  const articleModernReviewsFilter = articleSectionFilter?.filter((item: any) => {
     return item.sectionType === 'Modern Reviews';
   });
 
-  const articalMoviesFilter = articalSectionFilter?.filter((item: any) => {
+  const articleRetroReviewsFilter = articleSectionFilter?.filter((item: any) => {
     return item.sectionType === 'Retro Reviews';
   });
 
@@ -24,9 +24,9 @@ const ReviewsComponent = () => {
       headerTitle='Reviews'
       sectionTabData={ShowsMoviesComponentTabData(
         false,
-        articalSectionFilter,
-        articalAnimeFilter,
-        articalMoviesFilter,
+        articleSectionFilter,
+        articleModernReviewsFilter,
+        articleRetroReviewsFilter,
       )}
     />
   );

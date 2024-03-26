@@ -20,11 +20,11 @@ export const DivMaterialSymbolsOutlined = () => ({
   },
 });
 
-export const GridArticalInfoComponent = {
+export const GridArticleInfoComponent = {
   padding: '4px 0px 0px 0px',
 };
 
-export const HorizArticalPageInfoCompAuthor = {
+export const HorizAriclePageInfoCompAuthor = {
   fontSize: '16px',
   paddingRight: '16px',
   '@media only screen and (max-width: 600px)': {
@@ -33,7 +33,7 @@ export const HorizArticalPageInfoCompAuthor = {
   },
 };
 
-export const HorizArticalPageInfoCompDate = {
+export const HorizArticlePageInfoCompDate = {
   fontSize: '16px',
   paddingRight: '16px',
   '@media only screen and (max-width: 600px)': {
@@ -42,12 +42,12 @@ export const HorizArticalPageInfoCompDate = {
   },
 };
 
-export const TypographyArticalInfoRight = {
+export const TypographyArticleInfoRight = {
   fontSize: '16px',
   paddingRight: '16px',
 };
 
-export const TypographyArticalInfoLeft = {
+export const TypographyArticleInfoLeft = {
   fontSize: '16px',
   paddingLeft: '16px'
 };
@@ -55,9 +55,9 @@ export const TypographyArticalInfoLeft = {
 export default [
   ChipStyle,
   DivMaterialSymbolsOutlined,
-  GridArticalInfoComponent,
-  HorizArticalPageInfoCompAuthor,
-  HorizArticalPageInfoCompDate,
-  TypographyArticalInfoRight,
-  TypographyArticalInfoLeft,
+  GridArticleInfoComponent,
+  HorizAriclePageInfoCompAuthor,
+  HorizArticlePageInfoCompDate,
+  TypographyArticleInfoRight,
+  TypographyArticleInfoLeft,
 ];

@@ -7,19 +7,19 @@ import {
 } from '@mui/material';
 import {
   ImageGrid,
-  CreateArticalImage,
-  CreateArticalVideo,
+  CreateArticleImage,
+  CreateArticleVideo,
   titleText,
   sectionText,
   sectionTextParagraph,
   quoteText,
   paragraphText,
-} from './CreateArticalStyles';
+} from './CreateArticleStyles';
 
 const imageExtensions = '.jpg' || '.jpeg' || '.jpg' || '.png';
 
-export const CreateArtical = (articalData: string) => {
-  if (articalData.match(imageExtensions)) {
+export const CreateArticle = (articleData: string) => {
+  if (articleData.match(imageExtensions)) {
     return (
       <Grid
         container
@@ -28,14 +28,14 @@ export const CreateArtical = (articalData: string) => {
       >
         <Box
           component="img"
-          alt="Artical Cover Image"
-          src={articalData}
-          sx={CreateArticalImage}
+          alt="Article Cover Image"
+          src={articleData}
+          sx={CreateArticleImage}
         />
       </Grid>
     );
   }
-  if (articalData.match('youtube.com')) {
+  if (articleData.match('youtube.com')) {
     return (
       <Grid
         container
@@ -43,74 +43,74 @@ export const CreateArtical = (articalData: string) => {
       >
         <CardMedia
           component="iframe"
-          image={articalData}
+          image={articleData}
           allowFullScreen
-          sx={CreateArticalVideo}
+          sx={CreateArticleVideo}
         />
       </Grid>
     );
   }
-  if (articalData.startsWith('[PARAGRAPH_TITLE]')) {
+  if (articleData.startsWith('[PARAGRAPH_TITLE]')) {
     return (
       <Grid
         container
         justifyContent="center"
       >
         <Typography
-          id="articalText"
+          id="articleText"
           color="#2F4C69"
           sx={titleText}
         >
-          { <strong>{articalData.slice(17)}</strong> }   
+          { <strong>{articleData.slice(17)}</strong> }   
         </Typography>
       </Grid>
     );
   }
-  if (articalData.startsWith('[BULLET_LIST]')) {
+  if (articleData.startsWith('[BULLET_LIST]')) {
     return (
       <Grid
         container
         justifyContent="center"
       >
         <Typography
-          id="articalText"
+          id="articleText"
           color="#76468c"
           sx={sectionTextParagraph}
         >
-          {articalData.slice(13)} 
+          {articleData.slice(13)} 
         </Typography>
       </Grid>
     );
   }
-  if (articalData.startsWith('[QUOTES]')) {
+  if (articleData.startsWith('[QUOTES]')) {
     return (
       <Grid
         container
         justifyContent="center"
       >
         <Typography
-          id="articalText"
+          id="articleText"
           color="#667A6E"
           sx={quoteText}
         >
           {/*eslint-disable-next-line */}
-          {<i>"{articalData.slice(8)}"</i>} 
+          {<i>"{articleData.slice(8)}"</i>} 
         </Typography>
       </Grid>
     );
   }
-  if (articalData.startsWith('[BULLET_LIST_CHILD]')) {
+  if (articleData.startsWith('[BULLET_LIST_CHILD]')) {
     return (
       <Grid
         container
         justifyContent="center"
       >
         <Typography
-          id="articalText"
+          id="articleText"
           color="#2F4C69"
           sx={sectionText}
         >
-          { articalData.slice(19) }
+          { articleData.slice(19) }
         </Typography>
       </Grid>
     );
@@ -121,14 +121,14 @@ export const CreateArtical = (articalData: string) => {
       justifyContent="center"
     >
       <Typography
-        id="articalText"
+        id="articleText"
         color="#2F4C69"
         sx={paragraphText}
       >
-        { articalData }
+        { articleData }
       </Typography>
     </Grid>
   );
 };
 
-export default CreateArtical;
+export default CreateArticle;

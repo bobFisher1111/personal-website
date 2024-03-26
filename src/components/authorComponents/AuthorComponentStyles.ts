@@ -1,4 +1,4 @@
-export const AuthorComponentGridRoot = (turonarticalpage: boolean) => {
+export const AuthorComponentGridRoot = (turonarticlepage: boolean) => {
   return {
     background: '#fff',
     display: 'flex',
@@ -6,7 +6,7 @@ export const AuthorComponentGridRoot = (turonarticalpage: boolean) => {
     maxWidth: '1024px',
     margin: 'auto',
     padding: '40px 16px 100px 16px',
-    borderLeft: turonarticalpage ? '1px solid #667A6E' : '',
+    borderLeft: turonarticlepage ? '1px solid #667A6E' : '',
   };
 };
 

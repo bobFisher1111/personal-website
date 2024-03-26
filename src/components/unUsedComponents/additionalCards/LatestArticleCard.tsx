@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  Typography, Button, CardActions, CardMedia, CardContent, Card, Grid,
+  Typography, Card, CardContent, CardMedia, CardActions, Button, Grid,
 } from '@mui/material/';
 import ThumbDownRoundedIcon from '@mui/icons-material/ThumbDownRounded';
 import ThumbUpRoundedIcon from '@mui/icons-material/ThumbUpRounded';
 
-const PopularArticals: React.FC<Props> = ({
+const LatestArticleCard: React.FC<Props> = ({
     title,
     name,
     articalInfo,
@@ -17,41 +17,15 @@ const PopularArticals: React.FC<Props> = ({
   return (
     <Card sx={{ 
       maxWidth: 500,
-      backgroundColor: '#282c34',
+      backgroundColor: '#2F4C69',
       }}
     >
-      <div
-        style={{
-          position: 'relative',
-          textAlign: 'center',
-        }}
-      >
-        <CardMedia
-          component="img"
-          alt="green iguana"
-          height="200"
-          image={articalImage}
-        />
-        <Typography
-          variant='h5'
-          sx={{
-            position: 'absolute',
-            top: '8px',
-            left: '8px',
-            height: '25px',
-            width: '25px',
-            borderRadius: '50%',
-            border: '1px solid #667A6E',
-            textAlign: 'center',
-            alignItems: 'center',
-            fontSize: '17px',
-            color: 'white',
-            backgroundColor: '#282c34',
-          }}
-        >
-          1
-        </Typography>
-      </div>
+      <CardMedia
+        component="img"
+        alt="green iguana"
+        height="200"
+        image={articalImage}
+      />
       <CardContent
         sx={{
           padding: '10px 16px 0px 16px',
@@ -60,7 +34,7 @@ const PopularArticals: React.FC<Props> = ({
         <Typography component="div" noWrap variant="h6" color="white">
           {title}
         </Typography>
-        <Typography variant="subtitle1" color="#667A6E" component="div">
+        <Typography variant="subtitle1" color="#ddb4f0" component="div">
           by {name}
         </Typography>
         <Typography 
@@ -73,7 +47,7 @@ const PopularArticals: React.FC<Props> = ({
             WebkitLineClamp: '2',
             WebkitBoxOrient: 'vertical',
           }} 
-          component="div"
+          component="span"
         >
           {articalInfo}
         </Typography>
@@ -98,8 +72,8 @@ const PopularArticals: React.FC<Props> = ({
               size="small"
               variant="outlined"
               sx={{
-                color: '#667A6E',
-                borderColor: '#667A6E',
+                color: '#ddb4f0',
+                borderColor: '#ddb4f0',
                 pointerEvent: 'none',
               }}
             >
@@ -114,8 +88,8 @@ const PopularArticals: React.FC<Props> = ({
               size="small"
               variant="outlined"
               sx={{
-                color: '#667A6E',
-                borderColor: '#667A6E',
+                color: '#ddb4f0',
+                borderColor: '#ddb4f0',
                 pointerEvent: 'none',
                 paddingLeft: '8px'
               }}
@@ -158,4 +132,4 @@ export type Props = {
   articalId?: string;
 };
 
-export default PopularArticals;
+export default LatestArticleCard;

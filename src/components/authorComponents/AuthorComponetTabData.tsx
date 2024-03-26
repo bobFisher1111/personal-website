@@ -1,18 +1,18 @@
 import React from 'react';
-import ArticalsList from '../articalTabs/ArticalsList';
+import ArticleList from '../articleList/ArticleList';
 import Series from '../seriesComponent/Series';
 import Works from '../works/Works';
 // import AuthorAbout from './authorAbout/AuthorAbout';
 
 const AuthorComponetTabData = (
-  turOnAuthorForArtical: boolean,
+  turOnAuthorForArticle: boolean,
   data: any,
   authorName: any,
   authorsPage: boolean,
-  turOnArticalPage: boolean,
+  turOnArticlePage: boolean,
   getBooks?: any,
   authorData?: any,
-  seriesForArticalPage?: boolean,
+  seriesForArticlePage?: boolean,
   seriesForAuthorsPage?: boolean,
 ) => {
 
@@ -20,14 +20,14 @@ const AuthorComponetTabData = (
     [
       { 
         name: 'Writings',
-        data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={data} />
+        data: <ArticleList turOnAuthorForArticle={turOnAuthorForArticle} data={data} />
       },
       { 
         name: 'Series',
         data: 
           <Series 
             data={data}
-            articalPage={seriesForArticalPage}
+            articlePage={seriesForArticlePage}
             name={authorName}
             seriesForAuthorsPage={seriesForAuthorsPage}
           />
@@ -36,9 +36,9 @@ const AuthorComponetTabData = (
         name: 'Books',
         data:   
           <Works
-            authorsPage={turOnArticalPage}
+            authorsPage={turOnArticlePage}
             bookData={getBooks}
-            articalPage={true}
+            articlePage={true}
           />
       },
       // { 

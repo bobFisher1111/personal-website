@@ -8,12 +8,12 @@ import { useSelector } from 'react-redux';
 import ComingSoon from '../comingSoon/ComingSoon';
 import formatDate from '../../util/formatDate';
 import HeaderComponent from '../headerComponent/HeaderComponent';
-import HorizontalArticalCardComponent from '../cards/articalCards/horizontalCard/HorizontalArticalCardComponent';
+import HorizontalArticleCardComponent from '../cards/articleCards/horizontalCard/HorizontalArticleCardComponent';
 import { LinkStyles } from '../../util/styles/LinkStyles';
 import {
   seriesComponentGridRoot,
   seriesComponentGridHeader,
-  seriesComponentGridArticalInfo,
+  seriesComponentGridArticleInfo,
   seriesComponentTitle,
   seriesComponentSubTitle,
   seriesComponentdate,
@@ -32,11 +32,11 @@ const SeriesComponent = () => {
     return item.seriesId === getSeriesIdFromUrl();
   });
 
-  const getSeriesArticals = seriesData?.articals?.filter((item: any) => {
+  const getSeriesArticles = seriesData?.articals?.filter((item: any) => {
     return item.seriesId === getSeriesIdFromUrl();
   });
   const seriesInfo = getSeriesFromId && getSeriesFromId[0];
-  const noArticals = getSeriesArticals?.length === 0;
+  const noArticles = getSeriesArticles?.length === 0;
   return (
     <>
       <Grid
@@ -58,17 +58,16 @@ const SeriesComponent = () => {
             title={seriesInfo?.seriesTitle}
             authorAvatar={false}
           />
-          <HorizontalArticalCardComponent
+          <HorizontalArticleCardComponent
             author={seriesInfo?.seriesAuthors}
             cardTextWidth={'1000px'}
             date={formatDate(seriesInfo?.seriesStartDate)}
             imageWidth={'1000px'}
-            articalPage={true}
-            articalSubTitle={'remove for series page'}
+            articlePage={true}
+            articleSubTitle={'remove for series page'}
             useVideoInsteadOfImage={seriesInfo?.useVideoInsteadOfImage}
-            articalData={seriesInfo}
             authorsId={seriesInfo?.authorId}
-            articalId={'articalData?.articalId'}
+            articleId={'articleData?.articleId'}
             videoOrImageCover={seriesInfo?.seriesCoverImageOrVideo}
             sectionLink={seriesInfo?.sectionLink}
             section={seriesInfo?.section}
@@ -77,10 +76,10 @@ const SeriesComponent = () => {
             videoHeight={true}
           />
         </Grid>
-        {noArticals && 
+        {noArticles && 
           <ComingSoon />
         }
-        { getSeriesArticals?.map((item: any, index: any) => (
+        { getSeriesArticles?.map((item: any, index: any) => (
           <Grid
             key={item.id}
             item
@@ -89,9 +88,9 @@ const SeriesComponent = () => {
             md={6}
             lg={6}
             xl={6}
-            sx={seriesComponentGridArticalInfo}
+            sx={seriesComponentGridArticleInfo}
           >
-            <Link to={`/artical/${item?.authorId}/${item?.articalId}`}
+            <Link to={`/article/${item?.authorId}/${item?.articalId}`}
               style={LinkStyles()}
             >
               <Typography

@@ -8,23 +8,23 @@ import {
 } from '@mui/material';
 import ComingSoon from '../comingSoon/ComingSoon';
 import formatDate from '../../util/formatDate';
-import VerticalArticalCardComponent from '../cards/articalCards/verticalCard/VerticalArticalCardComponent';
+import VerticalArticleCardComponent from '../cards/articleCards/verticalCard/VerticalArticleCardComponent';
 import { LinkStyles } from '../../util/styles/LinkStyles';
 import {
   GridMarginLeft,
   GridSeriesReadMoreMargin,
-  GridSeriesArticalList,
+  GridSeriesArticleList,
   GridSeriesRoot,
-  TypographySeriesArticalDate,
-  TypographySeriesArticalSubTitle,
-  TypographySeriesArticalTitle,
+  TypographySeriesArticleDate,
+  TypographySeriesArticleSubTitle,
+  TypographySeriesArticleTitle,
   TypographySeriesTitle,
 } from './SeriesStyle';
 
 export const Series: React.FC<Props> = ({
   data, 
   name,
-  articalPage,
+  articlePage,
   section,
   homePage,
   seriesForAuthorsPage,
@@ -63,7 +63,7 @@ export const Series: React.FC<Props> = ({
     return item.section === section;
   });
 
-  const seriesAuhtorFilterArticalPage = sortByDate?.filter((item: any) => {
+  const seriesAuhtorFilterArticlePage = sortByDate?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
   });
 
@@ -75,8 +75,8 @@ export const Series: React.FC<Props> = ({
     if (section !== undefined) {
       setFilterSeries(seriesFilter);
     } 
-    if (articalPage) {
-      setFilterSeries(seriesAuhtorFilterArticalPage);
+    if (articlePage) {
+      setFilterSeries(seriesAuhtorFilterArticlePage);
     }
     if (seriesForAuthorsPage) {
       setFilterSeries(seriesAuhtorFilterAuthorPage);
@@ -99,9 +99,9 @@ export const Series: React.FC<Props> = ({
             <Grid
               container
               key={a.id}
-              sx={GridSeriesArticalList}
+              sx={GridSeriesArticleList}
             >
-              <Link to={`/artical/${a?.authorId}/${a?.articalId}`}
+              <Link to={`/article/${a?.authorId}/${a?.articalId}`}
                 style={LinkStyles()}
               >
                 <Grid
@@ -113,7 +113,7 @@ export const Series: React.FC<Props> = ({
                   xl={12}
                 >
                   <Typography
-                    sx={TypographySeriesArticalTitle}
+                    sx={TypographySeriesArticleTitle}
                   >
                     {seriesTitle}
                   </Typography>
@@ -127,7 +127,7 @@ export const Series: React.FC<Props> = ({
                   xl={12}
                 >
                   <Typography
-                    sx={TypographySeriesArticalSubTitle}
+                    sx={TypographySeriesArticleSubTitle}
                   >
                     { a.articalSubTitle}
                   </Typography>
@@ -141,7 +141,7 @@ export const Series: React.FC<Props> = ({
                   xl={12}
                 >
                   <Typography
-                    sx={TypographySeriesArticalDate}
+                    sx={TypographySeriesArticleDate}
                   >
                     {formatDate(a.publishedDate)}
                   </Typography>
@@ -167,7 +167,7 @@ export const Series: React.FC<Props> = ({
           alignItems="flex-start"
           sx={GridSeriesRoot}
         >
-          {!articalPage && 
+          {!articlePage && 
                 <Grid
                   container
                 >
@@ -188,7 +188,7 @@ export const Series: React.FC<Props> = ({
                   </Grid>
                 </Grid>
           }
-          { articalPage ?
+          { articlePage ?
             <>
               <Grid
                 container
@@ -204,10 +204,10 @@ export const Series: React.FC<Props> = ({
                   lg={8}
                   xl={8}
                 >
-                  <VerticalArticalCardComponent
+                  <VerticalArticleCardComponent
                     key={index}
                     name={item.seriesAuthors}
-                    articalData={item}
+                    articleData={item}
                     series={true}
                   />
                 </Grid>
@@ -224,10 +224,10 @@ export const Series: React.FC<Props> = ({
                 xl={4}
                 sx={GridMarginLeft}
               >
-                <VerticalArticalCardComponent
+                <VerticalArticleCardComponent
                   key={index}
                   name={item.seriesAuthors}
-                  articalData={item}
+                  articleData={item}
                   series={true}
                 />
               </Grid>
@@ -272,7 +272,7 @@ export const Series: React.FC<Props> = ({
 export type Props = {
     data: any;
     name?: string;
-    articalPage?: boolean;
+    articlePage?: boolean;
     section?: string;
     homePage?: boolean;
     seriesForAuthorsPage?: boolean;

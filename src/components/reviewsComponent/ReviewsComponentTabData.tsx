@@ -1,30 +1,30 @@
 import React from 'react';
-import ArticalsList from '../articalTabs/ArticalsList';
+import ArticleList from '../articleList/ArticleList';
 import Series from '../seriesComponent/Series';
 
 const ReviewsComponentTabData = (
-  turOnAuthorForArtical: boolean,
-  articalSectionFilter: any,
-  articalAnimeFilter: any,
-  articalMoviesFilter: any,
+  turOnAuthorForArticle: boolean,
+  articleSectionFilter: any,
+  articleModernReviewsFilter: any,
+  articleRetroReviewsFilter: any,
 ) => {
   return (
     [
       { 
         name: 'All Reviews',
-        data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalSectionFilter} />
+        data: <ArticleList turOnAuthorForArticle={turOnAuthorForArticle} data={articleSectionFilter} />
       },
       { 
         name: 'Modern',
-        data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalAnimeFilter} />
+        data: <ArticleList turOnAuthorForArticle={turOnAuthorForArticle} data={articleModernReviewsFilter} />
       },
       { 
         name: 'Retro',
-        data: <ArticalsList turOnAuthorForArtical={turOnAuthorForArtical} data={articalMoviesFilter} />
+        data: <ArticleList turOnAuthorForArticle={turOnAuthorForArticle} data={articleRetroReviewsFilter} />
       },
       { 
         name: 'Series',
-        data: <Series data={articalSectionFilter} section={'Reviews'}/>
+        data: <Series data={articleSectionFilter} section={'Reviews'}/>
       },
     ]
   );

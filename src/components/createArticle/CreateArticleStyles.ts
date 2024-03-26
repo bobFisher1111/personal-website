@@ -5,7 +5,7 @@ export const ImageGrid = {
   },
 };
 
-export const CreateArticalImage = () => ({
+export const CreateArticleImage = () => ({
   height: '394px',
   width: '700px',
   borderRadius: '7px',
@@ -16,7 +16,7 @@ export const CreateArticalImage = () => ({
   },
 });
 
-export const CreateArticalIndentImage = () => ({
+export const CreateArticleIndentImage = () => ({
   height: '394px',
   width: '700px',
   borderRadius: '7px',
@@ -27,7 +27,7 @@ export const CreateArticalIndentImage = () => ({
   },
 });
 
-export const CreateArticalVideo = () => ({
+export const CreateArticleVideo = () => ({
   height: '394px',
   width: '700px',
   borderRadius: '7px',
@@ -144,9 +144,9 @@ export const paragraphText = {
 
 export default [
   ImageGrid,
-  CreateArticalImage,
-  CreateArticalVideo,
-  CreateArticalIndentImage,
+  CreateArticleImage,
+  CreateArticleVideo,
+  CreateArticleIndentImage,
   titleText,
   sectionText,
   sectionTextParagraph,

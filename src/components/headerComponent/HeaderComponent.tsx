@@ -20,7 +20,7 @@ const HeaderComponent:  React.FC<Props> = ({
   authorAvatar,
   avatarImage,
   authorId,
-  articalPage
+  articlePage
 }) => {
   const titleFunction = (item: any) => {
     return (
@@ -46,7 +46,7 @@ const HeaderComponent:  React.FC<Props> = ({
             item
             sx={GridPaddingRight}
           >
-            {articalPage ? 
+            {articlePage ? 
               <Link 
                 to={`/author/${authorId}`}
                 style={LinkStyles()}
@@ -69,7 +69,7 @@ const HeaderComponent:  React.FC<Props> = ({
             item
             sx={GridAvatarPadding}
           >
-            {articalPage ?
+            {articlePage ?
               <Link 
                 to={`/author/${authorId}`}
                 style={LinkStyles()}
@@ -105,7 +105,7 @@ export type Props = {
   authorAvatar: boolean;
   avatarImage?: string;
   authorId?: string;
-  articalPage?: boolean;
+  articlePage?: boolean;
 };
 
 export default HeaderComponent;

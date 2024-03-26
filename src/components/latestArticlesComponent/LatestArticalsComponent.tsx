@@ -2,13 +2,13 @@ import React from 'react';
 import {
     Grid,
 } from "@mui/material";
-import LatestArticalCard from "../cards/articalCards/verticalCard/VerticalArticalCardComponent";
+import LatestArticalCard from "../cards/articleCards/verticalCard/VerticalArticleCardComponent";
 import xenob3 from '../../assets/images/xenob3.jpg';
 import mgs5 from '../../assets/images/mgs5.jpg';
 import xenob2 from '../../assets/images/xenob2.jpg';
 import finalfantasy7 from '../../assets/images/finalfantasy7.jpg';
 
-const LatestArticalsComponent: React.FC<Props> = ({
+const LatestArticlesComponent: React.FC<Props> = ({
   marginWidth,
 }) => {
   return (
@@ -137,4 +137,4 @@ export type Props = {
   marginWidth: any;
 };
 
-export default LatestArticalsComponent;
+export default LatestArticlesComponent;

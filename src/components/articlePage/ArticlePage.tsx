@@ -3,20 +3,19 @@ import {
   Grid,
 } from '@mui/material';
 import HeaderComponent from '../headerComponent/HeaderComponent';
-import HorizontalArticalCardComponent from '../cards/articalCards/horizontalCard/HorizontalArticalCardComponent';
+import HorizontalArticleCardComponent from '../cards/articleCards/horizontalCard/HorizontalArticleCardComponent';
 import AuthorComponent from '../authorComponents/AuthorComponent';
 import { useSelector } from 'react-redux';
-import createArtical from '../createArticals/CreateArtical';
+import CreateArticle from '../createArticle/CreateArticle';
 import formatDate from '../../util/formatDate';
 import getNameFromUrl from '../../util/getNameFromUrl';
 import {
   GridRoot,
   GridHeader,
   GridAuthorComponent,
-} from './ArticalPageStyles';
+} from './ArticlePageStyles';
 
-
-const ArticalPage: React.FC = () => {
+const ArticlePage: React.FC = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const webData = getWebsiteData && getWebsiteData?.websiteData;
   const getIdFromUrl = () => {
@@ -27,18 +26,18 @@ const ArticalPage: React.FC = () => {
   const getAuthor = webData?.authors?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
   });
-  const getArticals = webData?.articals?.filter((item: any) => {
+  const getArticles = webData?.articals?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
   });
-  const currentArtical = getArticals?.filter((item: any) => {
+  const currentArticle = getArticles?.filter((item: any) => {
     return item.articalId === getNameFromUrl();
   });
   const getBook = webData?.books?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
   });
   const authorData = getAuthor && getAuthor[0];
-  const articalData = currentArtical && currentArtical[0];
-  const articalArray = articalData?.artical.split("`");
+  const articleData = currentArticle && currentArticle[0];
+  const articleArray = articleData?.artical.split("`");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -62,28 +61,27 @@ const ArticalPage: React.FC = () => {
           sx={GridHeader}
         >
           <HeaderComponent
-            title={articalData?.articalTitle}
+            title={articleData?.articalTitle}
             authorAvatar={false}
           />
-          <HorizontalArticalCardComponent
+          <HorizontalArticleCardComponent
             author={authorData?.authorName}
             cardTextWidth={'1000px'}
-            date={formatDate(articalData?.publishedDate)}
+            date={formatDate(articleData?.publishedDate)}
             imageWidth={'1000px'}
-            articalPage={true}
-            articalSubTitle={articalData?.articalSubTitle}
-            useVideoInsteadOfImage={articalData?.useVideoInsteadOfImage}
-            articalData={articalData}
-            authorsId={articalData?.authorId}
-            articalId={articalData?.articalId}
-            videoOrImageCover={articalData?.coverImageOrVideo}
-            sectionLink={articalData?.sectionLink}
-            section={articalData?.sections}
+            articlePage={true}
+            articleSubTitle={articleData?.articalSubTitle}
+            useVideoInsteadOfImage={articleData?.useVideoInsteadOfImage}
+            authorsId={articleData?.authorId}
+            articleId={articleData?.articalId}
+            videoOrImageCover={articleData?.coverImageOrVideo}
+            sectionLink={articleData?.sectionLink}
+            section={articleData?.sections}
             mobileImageWidth={'22px'}
             videoHeight={false}
           />
-          {articalArray?.map((item: any) => (
-            createArtical(item)
+          {articleArray?.map((item: any) => (
+            CreateArticle(item)
           ))}
         </Grid>
         <Grid
@@ -96,13 +94,13 @@ const ArticalPage: React.FC = () => {
           sx={GridAuthorComponent}
         >
           <AuthorComponent
-            turOnArticalPage={true}
-            articalAuthorData={authorData}
-            articalData={getArticals}
+            turOnArticlePage={true}
+            articleAuthorData={authorData}
+            articlelData={getArticles}
             authorName={authorData?.authorName}
             bookData={getBook}
             authorsData={authorData}
-            seriesForArticalPage={true}
+            seriesForArticlePage={true}
           />
         </Grid>
       </Grid>
@@ -110,4 +108,4 @@ const ArticalPage: React.FC = () => {
   );
 };
 
-export default ArticalPage;
+export default ArticlePage;

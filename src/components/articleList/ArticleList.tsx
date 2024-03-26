@@ -5,19 +5,19 @@ import {
 } from '@mui/material';
 import ComingSoon from '../comingSoon/ComingSoon';
 import formatDate from '../../util/formatDate';
-import HorizontalArticalCardComponent from '../cards/articalCards/horizontalCard/HorizontalArticalCardComponent';
+import HorizontalArticleCardComponent from '../cards/articleCards/horizontalCard/HorizontalArticleCardComponent';
 import {
-  GridPaddingArticalList,
+  GridPaddingArticleList,
   GridPaddingTop,
-  TypographyArticalPageArticals,
-  TypographyHorizontalArticalTitleArticalList,
-} from './ArticalsListStyles';
+  TypographyArticlePageArticles,
+  TypographyHorizontalArticleTitleArticleList,
+} from './ArticleListStyles';
 
-export const ArticalsList: React.FC<Props> = ({
-  turOnAuthorForArtical, 
+export const ArticleList: React.FC<Props> = ({
+  turOnAuthorForArticle, 
   data,
 }) => {
-  const noArticals = data?.length === 0;
+  const noArticles = data?.length === 0;
   const newNonImmutableArray = data?.map((item: any) => item);
   const sortByDate = newNonImmutableArray?.sort((a: any, b: any)=> {
     const date1: any = new Date(a.publishedDate);
@@ -27,10 +27,10 @@ export const ArticalsList: React.FC<Props> = ({
   
   return (
     <>
-      {noArticals && 
+      {noArticles && 
           <ComingSoon />
       }
-      {!turOnAuthorForArtical &&
+      {!turOnAuthorForArticle &&
           <>
             <Grid
               item
@@ -39,29 +39,28 @@ export const ArticalsList: React.FC<Props> = ({
               md={12}
               lg={12}
               xl={12}
-              sx={GridPaddingArticalList}
+              sx={GridPaddingArticleList}
             />
             { sortByDate?.map((item: any) => (
               <>
                 <Typography
-                  sx={TypographyHorizontalArticalTitleArticalList(false)}
+                  sx={TypographyHorizontalArticleTitleArticleList(false)}
                 >
                   {item.articalTitle}
                 </Typography>
-                <HorizontalArticalCardComponent
+                <HorizontalArticleCardComponent
                   key={item.id}
                   title={item.articalTitle}
-                  articalSubTitle={item.articalSubTitle}
+                  articleSubTitle={item.articalSubTitle}
                   author={item.author}
                   cardTextWidth={'639px'}
                   date={formatDate(item.publishedDate)}
                   imageWidth={'321px'}
-                  articalPage={false}
+                  articlePage={false}
                   useVideoInsteadOfImage={item.useVideoInsteadOfImage}
                   section={item.sections}
-                  articalData={data}
                   authorsId={item.authorId}
-                  articalId={item.articalId}
+                  articleId={item.articalId}
                   videoOrImageCover={item.coverImageOrVideo}
                   sectionLink={item.sectionLink}
                   series={item.series}
@@ -73,7 +72,7 @@ export const ArticalsList: React.FC<Props> = ({
             ))}
           </>
       }
-      {turOnAuthorForArtical &&
+      {turOnAuthorForArticle &&
           <>
             <Grid
               container
@@ -95,27 +94,26 @@ export const ArticalsList: React.FC<Props> = ({
                     <Typography 
                       variant="body1"
                       color="#2F4C69"
-                      sx={TypographyArticalPageArticals}
+                      sx={TypographyArticlePageArticles}
                     >
                       {item.articalTitle}
                     </Typography>
-                    <HorizontalArticalCardComponent
+                    <HorizontalArticleCardComponent
                       key={index}
                       title={item.articalTitle}
-                      articalSubTitle={item.articalSubTitle}
+                      articleSubTitle={item.articalSubTitle}
                       author={item.author}
                       cardTextWidth={'639px'}
                       date={formatDate(item.publishedDate)}
                       imageWidth={'321px'}
-                      articalPage={false}
+                      articlePage={false}
                       useVideoInsteadOfImage={item.useVideoInsteadOfImage}
                       section={item.sections}
-                      articalData={data}
                       authorsId={item.authorId}
-                      articalId={item.articalId}
+                      articleId={item.articalId}
                       videoOrImageCover={item.coverImageOrVideo}
                       sectionLink={item.sectionLink}
-                      articalPageList={true}
+                      articlePageList={true}
                       series={item.series}
                       seriesId={item.seriesId}
                       mobileImageWidth={'48px'}
@@ -132,8 +130,8 @@ export const ArticalsList: React.FC<Props> = ({
 };
 
 export type Props = {
-  turOnAuthorForArtical: boolean, 
+  turOnAuthorForArticle: boolean, 
   data: any, 
 };
 
-export default ArticalsList;
+export default ArticleList;

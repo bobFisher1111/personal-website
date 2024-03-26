@@ -4,7 +4,7 @@ import {
 } from '@mui/material/';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
-const PopularArticals: React.FC<Props> = ({
+const PopularArticles: React.FC<Props> = ({
     title,
     name,
     articalInfo,
@@ -135,4 +135,4 @@ export type Props = {
   articalId?: string;
 };
 
-export default PopularArticals;
+export default PopularArticles;
