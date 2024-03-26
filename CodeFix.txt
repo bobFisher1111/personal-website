@@ -1,7 +1,7 @@
 - homepage: 
   - FilteringComponent should have have unique key prop // completed
-- ArticalPage:
-  - Each child in a list should have a unique "key" prop. ArticalPage.tsx:221
+- ArticlePage:
+  - Each child in a list should have a unique "key" prop. ArticlePage.tsx:221
   - FilteringComponent should have have unique key prop // completed
 - AuthorPage:
   - FilteringComponent should have have unique key prop // completed

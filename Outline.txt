@@ -1,16 +1,16 @@
 - Sprint 1:
   - Basic website: // completed
     - Need to replace filteringComponent with sectionTab // completed
-      - HomePage // completed, go back and replace with new component ArticalTabs // completed
+      - HomePage // completed, go back and replace with new component ArticleTabs // completed
       - Project // completed
       - Author // completed
-      - Coding // completed, go back and replace with new component ArticalTabs // completed
+      - Coding // completed, go back and replace with new component ArticleTabs // completed
     - Refactor Homepage // completed
     - Add Youtube video or Image for Card // completed
     - Author Page create:
       - About Section // Completed
-    - Update ArticalPAge Author Section with new sections // completed
-    - Artical Page: // completed
+    - Update ArticlesPage Author Section with new sections // completed
+    - Article Page: // completed
         - CSS fixes
         - fontSize 
         - fontColor
@@ -29,15 +29,15 @@
       - Update header with sections dropdown where Coding is with [sections (oppsidedown)^]
     - Bring back for header Contact and update it // completed
     - Update LinkTabs // completed
-    - Update Artical Cards where you click it will bring up artical page // completed
+    - Update Article Cards where you click it will bring up article page // completed
     - Setup Redux // completed
   - Extra:
     - Create new section for Series // completed
       - Update db // completed
     - filtering by sections: working on // completed
-    - if artical or series has nothing, have a message for each section, like comming soon // completed
-    - filter articals and series by newest date // completed, left series articals first created in that order
-    - Artical Page, author picture + name links to authors page // completed
+    - if article or series has nothing, have a message for each section, like comming soon // completed
+    - filter articles and series by newest date // completed, left series article first created in that order
+    - Article Page, author picture + name links to authors page // completed
     - Add additonal chips for series & section of section like retro // completed, left retro out. not enough room
 - Sprint 4:
   - Add mobile view for entire website
@@ -87,7 +87,7 @@
     - About:
     - Writers
     - Section Page
-    - Artical Page
+    - Article Page
     - Series Page
 - Sprint 4.5:
   - Refactor website
@@ -102,7 +102,7 @@
 - Sprint 7:
   - Connect front end to backend
 - Sprint 8:
-  - Update articals to database from postman
+  - Update article to database from postman
 - Sprint 9:
   - DevOps
     // use free until test code is done
@@ -118,7 +118,7 @@
   - Write test code & refactor website
   - Make sure no console errors
 - Sprint 11:
-  - Write 5 Articals, maybe get Caleb & Trace to have articals as well
+  - Write 5 Article, maybe get Caleb & Trace to have articles as well
 - Sprint 12:
   - Purchase Website Name
   - Setup Youtube channel
@@ -130,11 +130,11 @@
   - Implement add support to website
   - Add google Analytics to website
   - Work on improving website 
-  - Working on articals
+  - Working on articles
   - Add dark themed saved in localstorage or cookie
   - Add Project Section to author
 - Things to do before First Release:
-  - add column isHidden to articals, Books, Authors, Series TABLE // completed
+  - add column isHidden to articles, Books, Authors, Series TABLE // completed
   - implement backend // completed
   - fix date format // completed
   - Coding Section, change Data to Gaming // completed

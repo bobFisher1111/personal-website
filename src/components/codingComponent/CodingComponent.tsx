@@ -15,7 +15,7 @@ const CodingComponent: React.FC = () => {
     return item.sectionType === 'Front End';
   });
 
-  // const articalBackEndFilter = articalData?.articals?.filter((item: any) => {
+  // const articleBackEndFilter = articleData?.articals?.filter((item: any) => {
   //   return item.sectionType === 'Back End';
   // });
 

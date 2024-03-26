@@ -4,7 +4,7 @@
       - Includes:
         - Sections 
         - Homepage
-        - Artical Page
+        - Article Page
         - Series Page
         - Writers
         - About

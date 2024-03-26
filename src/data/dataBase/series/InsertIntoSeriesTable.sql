@@ -1,2 +1,0 @@
-INSERT INTO Series (seriesId, seriesTitle, seriesCoverImageOrVideo, seriesAuthors, useVideoInsteadOfImage, seriesType, seriesTypeTitle, seriesStartDate, section, authorId, sectionLink)
-VALUES (01, 'Final Fantasy VIII', 'https://c4.wallpaperflare.com/wallpaper/716/41/312/final-fantasy-final-fantasy-vii-remake-cloud-strife-final-fantasy-vii-jessie-final-fantasy-hd-wallpaper-preview.jpg', 'Hawaiian Warrior', 0, 'Chapters', 'Book', '2023-05-01', 'Coding', 01, 'coding');

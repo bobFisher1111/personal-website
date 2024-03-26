@@ -89,10 +89,10 @@ const HorizontalArticleCardComponent: React.FC<Props> = ({
                 sx={ImageHorizonatalArticleStyles(articlePage, mobileImageWidth)}
               />
               {/* <Box
-                // sx={ImageHorizonatalArticalsStyles(articalPage, mobileImageWidth)}
+                // sx={ImageHorizonatalArticlesStyles(articlePage, mobileImageWidth)}
               >
                 <img
-                  alt="Artical Cover Image"
+                  alt="Article Cover Image"
                   src={videoOrImageCover}
                 />
               </Box> */}
