@@ -149,11 +149,13 @@
   - deploy front end on vercel // completed
   - hide or fix warning for production // completed
   - get a domain and setup // completed
+  - fix on frontend articals to articles // completed
+  - fix on backend and database articals to articles
   - setup social media:
     - facebook:
     - twitter(x):
     - youtube:
-  - fix on backend and database articals to articles
+  - Come up with data to test website
 - Future Features:
   - code snipit for coding examples on article
 - Future bugs to fix:

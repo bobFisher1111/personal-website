@@ -37,7 +37,7 @@ const HomePageComponent = () => {
         <Typography
           sx={HeaderTitleStyles}
         >
-          {"Gamer's Shrine"}
+          {"Gamers Shrine"}
         </Typography>
       </Grid>
       <Grid

@@ -48,7 +48,7 @@ const WebSiteAppBar: React.FC = () => {
             <Typography
               sx={TypographyDesktopTitle}
             >
-              {"Gamer's Shrine"}
+              {"Gamers Shrine"}
             </Typography>
           </Link>
         </Grid>

@@ -24,7 +24,7 @@ const AboutComponent: React.FC = () => {
       sx={AboutCompGridRoot}
     >
       <HeaderComponent
-        title="Gamer's Shrine"
+        title="Gamers Shrine"
         authorAvatar={false}
       />
       <Grid
@@ -99,12 +99,6 @@ const AboutComponent: React.FC = () => {
             GamersShrine.com
           </Typography> 
         </Grid>
-        <Typography
-          variant="h6"
-          sx={AboutCompAboutText}
-        >
-            Discord
-        </Typography>
       </Grid>
       <Grid
         item
