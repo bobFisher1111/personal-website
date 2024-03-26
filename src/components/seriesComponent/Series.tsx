@@ -94,14 +94,14 @@ export const Series: React.FC<Props> = ({
     })
       .map((a: any, i: number) => {
         if(item.seriesId === a.seriesId) {
-          const seriesTitle = `${a.seriesType} ${i + 1}: ${a?.articalTitle}`;
+          const seriesTitle = `${a.seriesType} ${i + 1}: ${a?.articleTitle}`;
           return (
             <Grid
               container
               key={a.id}
               sx={GridSeriesArticleList}
             >
-              <Link to={`/article/${a?.authorId}/${a?.articalId}`}
+              <Link to={`/article/${a?.authorId}/${a?.articleId}`}
                 style={LinkStyles()}
               >
                 <Grid
@@ -129,7 +129,7 @@ export const Series: React.FC<Props> = ({
                   <Typography
                     sx={TypographySeriesArticleSubTitle}
                   >
-                    { a.articalSubTitle}
+                    { a.articleSubTitle}
                   </Typography>
                 </Grid>
                 <Grid

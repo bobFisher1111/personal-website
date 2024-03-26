@@ -150,12 +150,14 @@
   - hide or fix warning for production // completed
   - get a domain and setup // completed
   - fix on frontend articals to articles // completed
-  - fix on backend and database articals to articles
+  - fix on backend and database articals to articles // completed
+  - Implement backend changes on front end for articles // completed
   - setup social media:
     - facebook:
     - twitter(x):
     - youtube:
   - Come up with data to test website
+  - Remove temp data server
 - Future Features:
   - code snipit for coding examples on article
 - Future bugs to fix:

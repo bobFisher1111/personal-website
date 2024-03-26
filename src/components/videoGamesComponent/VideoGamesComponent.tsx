@@ -7,15 +7,15 @@ const VideoGamesComponent = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const articleData = getWebsiteData && getWebsiteData?.websiteData;
 
-  const articleSectionFilter = articleData?.articals?.filter((item: any) => {
+  const articleSectionFilter = articleData?.articles?.filter((item: any) => {
     return item.sections === 'Video Games';
   });
 
-  const articleModernFilter = articleData?.articals?.filter((item: any) => {
+  const articleModernFilter = articleData?.articles?.filter((item: any) => {
     return item.sectionType === 'Modern Video Games';
   });
 
-  const articleRetroFilter = articleData?.articals?.filter((item: any) => {
+  const articleRetroFilter = articleData?.articles?.filter((item: any) => {
     return item.sectionType === 'Retro Video Games';
   });
   

@@ -26,18 +26,18 @@ const ArticlePage: React.FC = () => {
   const getAuthor = webData?.authors?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
   });
-  const getArticles = webData?.articals?.filter((item: any) => {
+  const getArticles = webData?.articles?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
   });
   const currentArticle = getArticles?.filter((item: any) => {
-    return item.articalId === getNameFromUrl();
+    return item.articleId === getNameFromUrl();
   });
   const getBook = webData?.books?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
   });
   const authorData = getAuthor && getAuthor[0];
   const articleData = currentArticle && currentArticle[0];
-  const articleArray = articleData?.artical.split("`");
+  const articleArray = articleData?.article.split("`");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -61,7 +61,7 @@ const ArticlePage: React.FC = () => {
           sx={GridHeader}
         >
           <HeaderComponent
-            title={articleData?.articalTitle}
+            title={articleData?.articleTitle}
             authorAvatar={false}
           />
           <HorizontalArticleCardComponent
@@ -70,10 +70,10 @@ const ArticlePage: React.FC = () => {
             date={formatDate(articleData?.publishedDate)}
             imageWidth={'1000px'}
             articlePage={true}
-            articleSubTitle={articleData?.articalSubTitle}
+            articleSubTitle={articleData?.articleSubTitle}
             useVideoInsteadOfImage={articleData?.useVideoInsteadOfImage}
             authorsId={articleData?.authorId}
-            articleId={articleData?.articalId}
+            articleId={articleData?.articleId}
             videoOrImageCover={articleData?.coverImageOrVideo}
             sectionLink={articleData?.sectionLink}
             section={articleData?.sections}

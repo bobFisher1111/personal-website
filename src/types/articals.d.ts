@@ -1,28 +1,28 @@
 export type Articles = {
-  articalId: number;
+  articleId: number;
   section: string;
   authorId: number;
-  articalTitle: string;
-  articalSubTitle: string;
+  articleTitle: string;
+  articleSubTitle: string;
   publishedDate: string;
   numberOfFavorites: number;
   series: boolean;
   seriesInfo?: seriesInfo[],
   useVideoInsteadOfImage: boolean,
   headerImageOrVideo: string;
-  artical: string[];
+  article: string[];
   sectionLink: string;
 }
 
 export type Articles2 = {
-	articalId: number,
+	articleId: number,
 	authorid: number,
 	seriesId: number,
   sections: string,
   sectionLink: string,
   sectionType: string,
-	articalTitle: string,
-  articalSubTitle: string,
+	articleTitle: string,
+  articleSubTitle: string,
   publishedDate: date,
   numberOfFavorites: number,
   series: boolean,
@@ -30,6 +30,6 @@ export type Articles2 = {
   seriesType: string,
   useVideoInsteadOfImage: boolean,
   coverImageOrVideo: string,
-  artical: string,
+  article: string,
 };
   

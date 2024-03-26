@@ -34,7 +34,7 @@ const AuthorComponent: React.FC<Props> = ({
   const getAuthor = webData?.authors?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
   });
-  const getArticles = webData?.articals?.filter((item: any) => {
+  const getArticles = webData?.articles?.filter((item: any) => {
     return item.authorId === getIdFromUrl();
   });
   const getBooks = webData?.books?.filter((item: any) => {

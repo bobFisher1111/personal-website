@@ -29,14 +29,14 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
   series,
 }) => {
   const [articlePage, setArticlePage] = useState<boolean>();
-  const articleUrl = `${appBaseURL}/article/${articleData?.authorId}/${articleData?.articalId}`;
+  const articleUrl = `${appBaseURL}/article/${articleData?.authorId}/${articleData?.articleId}`;
   const serieslUrl = `${appBaseURL}/series/${articleData?.seriesId}`;
   const authorUrl = `${appBaseURL}/author/${articleData?.authorId}`;
 
   useEffect(() => {
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = currentLocation.split('/');
-    const checkIfIncludesCurrentAricle = getIdFromCurrentLocation.includes(articleData?.articalId);
+    const checkIfIncludesCurrentAricle = getIdFromCurrentLocation.includes(articleData?.articleId);
     setArticlePage(checkIfIncludesCurrentAricle);
   }, []);
 
@@ -125,7 +125,7 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
               >
                 <CopyLinkComponent
                   authorsId={articleData?.authorId}
-                  articleId={articleData?.articalId}
+                  articleId={articleData?.articleId}
                   defaultColor={'#ffffff'}
                   padding={'0px 0px 0px 0px'}
                   email={false}

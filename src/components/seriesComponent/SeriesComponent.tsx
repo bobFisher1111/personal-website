@@ -32,7 +32,7 @@ const SeriesComponent = () => {
     return item.seriesId === getSeriesIdFromUrl();
   });
 
-  const getSeriesArticles = seriesData?.articals?.filter((item: any) => {
+  const getSeriesArticles = seriesData?.articles?.filter((item: any) => {
     return item.seriesId === getSeriesIdFromUrl();
   });
   const seriesInfo = getSeriesFromId && getSeriesFromId[0];
@@ -90,18 +90,18 @@ const SeriesComponent = () => {
             xl={6}
             sx={seriesComponentGridArticleInfo}
           >
-            <Link to={`/article/${item?.authorId}/${item?.articalId}`}
+            <Link to={`/article/${item?.authorId}/${item?.articleId}`}
               style={LinkStyles()}
             >
               <Typography
                 sx={seriesComponentTitle}
               >
-                {`${item?.seriesType} ${index + 1}: ${item?.articalTitle}`}
+                {`${item?.seriesType} ${index + 1}: ${item?.articleTitle}`}
               </Typography>
               <Typography
                 sx={seriesComponentSubTitle} 
               >
-                {item.articalSubTitle}
+                {item.articleSubTitle}
               </Typography>
               <Typography
                 sx={seriesComponentdate}

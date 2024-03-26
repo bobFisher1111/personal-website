@@ -46,12 +46,12 @@ export const ArticleList: React.FC<Props> = ({
                 <Typography
                   sx={TypographyHorizontalArticleTitleArticleList(false)}
                 >
-                  {item.articalTitle}
+                  {item.articleTitle}
                 </Typography>
                 <HorizontalArticleCardComponent
                   key={item.id}
-                  title={item.articalTitle}
-                  articleSubTitle={item.articalSubTitle}
+                  title={item.articleTitle}
+                  articleSubTitle={item.articleSubTitle}
                   author={item.author}
                   cardTextWidth={'639px'}
                   date={formatDate(item.publishedDate)}
@@ -60,7 +60,7 @@ export const ArticleList: React.FC<Props> = ({
                   useVideoInsteadOfImage={item.useVideoInsteadOfImage}
                   section={item.sections}
                   authorsId={item.authorId}
-                  articleId={item.articalId}
+                  articleId={item.articleId}
                   videoOrImageCover={item.coverImageOrVideo}
                   sectionLink={item.sectionLink}
                   series={item.series}
@@ -96,12 +96,12 @@ export const ArticleList: React.FC<Props> = ({
                       color="#2F4C69"
                       sx={TypographyArticlePageArticles}
                     >
-                      {item.articalTitle}
+                      {item.articleTitle}
                     </Typography>
                     <HorizontalArticleCardComponent
                       key={index}
-                      title={item.articalTitle}
-                      articleSubTitle={item.articalSubTitle}
+                      title={item.articleTitle}
+                      articleSubTitle={item.articleSubTitle}
                       author={item.author}
                       cardTextWidth={'639px'}
                       date={formatDate(item.publishedDate)}
@@ -110,7 +110,7 @@ export const ArticleList: React.FC<Props> = ({
                       useVideoInsteadOfImage={item.useVideoInsteadOfImage}
                       section={item.sections}
                       authorsId={item.authorId}
-                      articleId={item.articalId}
+                      articleId={item.articleId}
                       videoOrImageCover={item.coverImageOrVideo}
                       sectionLink={item.sectionLink}
                       articlePageList={true}

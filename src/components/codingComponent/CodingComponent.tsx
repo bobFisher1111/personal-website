@@ -5,7 +5,7 @@ import CodingComponentTabData from './CodingComponentTabData';
 
 const CodingComponent: React.FC = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const articleData = getWebsiteData && getWebsiteData?.websiteData?.articals;
+  const articleData = getWebsiteData && getWebsiteData?.websiteData?.articles;
 
   const articleSectionFilter = articleData?.filter((item: any) => {
     return item.sections === 'Coding';
@@ -15,7 +15,7 @@ const CodingComponent: React.FC = () => {
     return item.sectionType === 'Front End';
   });
 
-  // const articleBackEndFilter = articleData?.articals?.filter((item: any) => {
+  // const articleBackEndFilter = articleData?.articles?.filter((item: any) => {
   //   return item.sectionType === 'Back End';
   // });
 

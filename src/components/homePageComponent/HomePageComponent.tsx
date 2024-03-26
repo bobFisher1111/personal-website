@@ -19,7 +19,7 @@ import foxShrineGamers from '../../assets/images/FoxGamer1.png';
 
 const HomePageComponent = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const articleData = getWebsiteData && getWebsiteData?.websiteData?.articals;
+  const articleData = getWebsiteData && getWebsiteData?.websiteData?.articles;
 
   return (
     <Grid
