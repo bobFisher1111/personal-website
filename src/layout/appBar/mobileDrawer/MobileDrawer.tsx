@@ -19,6 +19,7 @@ import {
   // TypograohyMobileDrawerWebistieName,
 } from './MobileDrawerStyle';
 import { LinkStyles } from '../../../util/styles/LinkStyles';
+import AppConfig from '../../../config';
 
 type Anchor = 'left';
 
@@ -27,9 +28,9 @@ const MobileDrawer: React.FC = () => {
     left: false,
   });
 
-  const facebookUrl = 'https://www.facebook.com/';
-  const twitterUrl = 'https://twitter.com/';
-  const youtubeUrl = 'https://www.youtube.com/';
+  const facebook = AppConfig.facebookURL;
+  const twitter = AppConfig.twitterURL;
+  const youtube = AppConfig.youtubeURL;
 
   const toggleDrawer = (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -77,9 +78,9 @@ const MobileDrawer: React.FC = () => {
           <SocialMediaComponent
             turnOnStyle={true}
             widthPadding={'10px 0px 0px 8px'}
-            facebook={facebookUrl}
-            twitter={twitterUrl}
-            youtube={youtubeUrl}
+            facebook={facebook}
+            twitter={twitter}
+            youtube={youtube}
           />
         </Grid>
         {/* <Grid
