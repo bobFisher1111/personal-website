@@ -12,7 +12,7 @@ const CodingComponent: React.FC = () => {
   });
 
   const articleFrontEndFilter = articleData?.filter((item: any) => {
-    return item.sectionType === 'Front End';
+    return item.sectionType === 'Full Stack';
   });
 
   // const articleBackEndFilter = articleData?.articles?.filter((item: any) => {
@@ -20,7 +20,7 @@ const CodingComponent: React.FC = () => {
   // });
 
   const articleDataFilter = articleData?.filter((item: any) => {
-    return item.sectionType === 'Data';
+    return item.sectionType === 'Game Dev';
   });
 
   return (

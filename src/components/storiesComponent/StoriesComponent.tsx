@@ -9,6 +9,9 @@ const StoriesComponent = () => {
   const articleSectionFilter = articleData?.articles?.filter((item: any) => {
     return item.sections === 'Stories';
   });
+  const articleShortStoriesFilter = articleData?.articles?.filter((item: any) => {
+    return item.sectionType === 'Short Stories';
+  });
 
   return (
     <SectionsComponent
@@ -16,6 +19,7 @@ const StoriesComponent = () => {
       sectionTabData={StoriesComponentTabData(
         false,
         articleSectionFilter,
+        articleShortStoriesFilter,
       )}
     />
   );

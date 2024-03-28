@@ -39,7 +39,7 @@
     - filter articles and series by newest date // completed, left series article first created in that order
     - Article Page, author picture + name links to authors page // completed
     - Add additonal chips for series & section of section like retro // completed, left retro out. not enough room
-- Sprint 4:
+- Sprint 4: // completed
   - Add mobile view for entire website
     - Mobile Views:
       - safari:
@@ -89,7 +89,7 @@
     - Section Page
     - Article Page
     - Series Page
-- Sprint 4.5:
+- Sprint 4.5: // completed
   - Refactor website
     - move getURL function to utilties
   - Implement npm run check:all
@@ -97,13 +97,13 @@
 - Sprint 5:
   - Correct types and temp db
   - Create database
-- Sprint 6:
+- Sprint 6: // completed
   - Create backend to connect database with endpoint
-- Sprint 7:
+- Sprint 7: // completed
   - Connect front end to backend
-- Sprint 8:
+- Sprint 8: // completed
   - Update article to database from postman
-- Sprint 9:
+- Sprint 9: // completed used vercel
   - DevOps
     // use free until test code is done
     - Azure pipelines
@@ -114,17 +114,17 @@
     - Security for all three
       - research security for full stack
       - Add erratocode and sonar scans for website
-- Sprint 10:
+- Sprint 10: // do later ***
   - Write test code & refactor website
   - Make sure no console errors
-- Sprint 11:
+- Sprint 11: 
   - Write 5 Article, maybe get Caleb & Trace to have articles as well
-- Sprint 12:
+- Sprint 12: // completed
   - Purchase Website Name
   - Setup Youtube channel
   - Facebook
   - Twitter
-- Sprint 13:
+- Sprint 13: // completed
   - Release Website & pay fee 1 year 
 - Sprint 14: Version 1.0 to 2.0
   - Implement add support to website
@@ -152,11 +152,11 @@
   - fix on frontend articals to articles // completed
   - fix on backend and database articals to articles // completed
   - Implement backend changes on front end for articles // completed
-  - setup social media:
+  - setup social media: // completed
     - facebook:
     - twitter(x):
     - youtube:
-  - Come up with data to test website
+  - Come up with data to test website // starting
   - Remove temp data server
 - Future Features:
   - code snipit for coding examples on article
