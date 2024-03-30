@@ -41,6 +41,7 @@ const HorizontalArticleCardComponent: React.FC<Props> = ({
   seriesId,
   mobileImageWidth,
   videoHeight,
+  sectionType,
 }) => {
   const [authorPage, setAuthorPage] = useState<boolean>();
   const [sectionPage, setSectionPage] = useState<boolean>();
@@ -164,6 +165,7 @@ const HorizontalArticleCardComponent: React.FC<Props> = ({
               sectionPage={sectionPage}
               series={series}
               seriesId={seriesId}
+              sectionType={sectionType}
             />
           </Card>
         }
@@ -192,6 +194,7 @@ export type Props = {
   seriesId?: string;
   mobileImageWidth: string;
   videoHeight: boolean;
+  sectionType?: string;
 };
   
 export default HorizontalArticleCardComponent;

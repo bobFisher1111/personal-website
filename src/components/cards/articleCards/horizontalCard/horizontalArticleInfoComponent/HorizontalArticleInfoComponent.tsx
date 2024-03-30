@@ -24,10 +24,11 @@ const HorizontalArticleInfoComponent: React.FC<Props> = ({
   aughtorsName,
   sectionLink,
   sectionPage,
+  sectionType,
   series,
   seriesId,
 }) => {
-
+  
   return (
     <Grid 
       container
@@ -90,7 +91,7 @@ const HorizontalArticleInfoComponent: React.FC<Props> = ({
         :
         <Chip
           color="primary"
-          label={section}
+          label={sectionType}
           variant="outlined"
           size="small"
           sx={ChipNoPointer}
@@ -137,6 +138,7 @@ export type Props = {
   sectionPage: boolean | undefined;
   series?: boolean | undefined;
   seriesId?: string;
+  sectionType?: string;
 };
     
 export default HorizontalArticleInfoComponent;

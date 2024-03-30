@@ -169,3 +169,9 @@
   - series doesn't have article attach to it, either put something comming soon or exclude it
 - Future Performance:
   - Cache data on backend, that way less calls to database, only when new data is created
+- Group Testing:
+  - Click Section not working correctly // correct, updated article with correct section
+  - Fix section page, article should not include section name since on page, for example video games should not be tag to article on video game section page // completed
+  - On Series, if article is updated and should be in order of part 1 .. part 2 and so on. Right now its out of order, should be in decending order based on index maybe // completed
+  - Also on Series on tab, center for tab homepage and on section page the Read More button // completed
+  - Article Page, current writer under series showing nothing when there should be something: // completed

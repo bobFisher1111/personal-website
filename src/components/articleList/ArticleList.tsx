@@ -67,6 +67,7 @@ export const ArticleList: React.FC<Props> = ({
                   seriesId={item.seriesId}
                   mobileImageWidth={'32px'}
                   videoHeight={false}
+                  sectionType={item.sectionType}
                 />
               </>
             ))}

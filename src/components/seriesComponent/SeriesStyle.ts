@@ -6,17 +6,17 @@ export const GridMarginLeft = {
 };
 
 export const GridSeriesReadMoreMargin = {
-  margin: '0px 0px 0px 16px',
+  margin: '16px 0px 0px 16px',
   '@media only screen and (max-width: 600px)': {
     margin: '0px 0px 16px 0px',
     justifyContent: 'center',
   },
   '@media only screen and (min-width: 600px)': {
     padding: '0px 0px 0px 30px',
-    justifyContent: 'center',
+    justifyContent: 'left',
   },
   '@media only screen and (min-width: 992px)': {
-    padding: '0px',
+    padding: '0px 0px 0px 90px',
   },
 };
 

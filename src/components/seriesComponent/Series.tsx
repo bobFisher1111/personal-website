@@ -36,15 +36,15 @@ export const Series: React.FC<Props> = ({
   const getIdFromUrl = () => {
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = currentLocation.split('/').reverse()[1];
-    return (getIdFromCurrentLocation);
+    return Number(getIdFromCurrentLocation);
   };
-
   const newNonImmutableArray = series?.map((item: any) => item);
   const sortByDate = newNonImmutableArray?.sort((a: any, b: any)=> {
     const date1: any = new Date(a.seriesStartDate);
     const date2: any = new Date(b.seriesStartDate);
     return date2 - date1;
   });
+
   const seriesData = data && data?.filter((series: any) => series?.series === true);
   const createSeriesList = sortByDate?.map((x: any) => {
     const seriesList = seriesData?.filter((item: any) => {
@@ -54,7 +54,10 @@ export const Series: React.FC<Props> = ({
       }
     }
     );
-    return seriesList;
+    const sortSeriesList = seriesList.sort((a: any, b: any) => {
+      return b.articleId - a.articleId;
+    });
+    return sortSeriesList;
   });
 
   const filteredSeriesList = createSeriesList && createSeriesList?.filter((value: any) => Object.keys(value).length !== 0);
@@ -85,9 +88,7 @@ export const Series: React.FC<Props> = ({
       setFilterSeries(sortByDate);
     }
   }, []);
-  
   const noSeries = filteredSeriesList?.length === 0;
-
   const textLoop = (item: any, index: number) => {
     return filteredSeriesList[index]?.slice(0, 4).filter(() => {
       return item.seriesId === item.seriesId;

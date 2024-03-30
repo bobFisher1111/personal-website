@@ -27,7 +27,6 @@ const SeriesComponent = () => {
     const seriesId = currentLocation.split('/').reverse()[0];
     return Number(seriesId);
   };
-
   const getSeriesFromId = seriesData?.series?.filter((item: any) => {
     return item.seriesId === getSeriesIdFromUrl();
   });
@@ -37,6 +36,10 @@ const SeriesComponent = () => {
   });
   const seriesInfo = getSeriesFromId && getSeriesFromId[0];
   const noArticles = getSeriesArticles?.length === 0;
+  const sortSeriesList = getSeriesArticles?.sort((a: any, b: any) => {
+    return a.articleId - b.articleId;
+  });
+
   return (
     <>
       <Grid
@@ -79,7 +82,7 @@ const SeriesComponent = () => {
         {noArticles && 
           <ComingSoon />
         }
-        { getSeriesArticles?.map((item: any, index: any) => (
+        { sortSeriesList?.map((item: any, index: any) => (
           <Grid
             key={item.id}
             item

@@ -7,8 +7,8 @@ export const CardHorizontalArticleInfo = ( articlepagelist: boolean ) => ({
     maxWidth: '45%',
   },
   '@media only screen and (min-width: 992px)': {
-    minWidth: '321px',
-    maxWidth: '321px',
+    minWidth: articlepagelist ? '321px' : '647px',
+    maxWidth: articlepagelist ? '321px' : '0px',
   },
   '@media only screen and (max-width: 600px)': {
     padding: '0px',
