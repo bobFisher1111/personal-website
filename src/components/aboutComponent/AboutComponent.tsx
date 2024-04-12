@@ -142,6 +142,12 @@ const AboutComponent: React.FC = () => {
           variant="h6"
           sx={AboutCompAboutText}
         >
+          Update fonts throughout website
+        </Typography>
+        <Typography
+          variant="h6"
+          sx={AboutCompAboutText}
+        >
           Create careousel for homepage
         </Typography>
         <Typography
@@ -179,6 +185,12 @@ const AboutComponent: React.FC = () => {
           sx={AboutCompAboutText}
         >
           Migrate backend to .Net
+        </Typography>
+        <Typography
+          variant="h6"
+          sx={AboutCompAboutText}
+        >
+          Allow user interaction on website
         </Typography>
       </Grid>
       <Grid

@@ -63,13 +63,13 @@ const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
           </Typography>
         </Link>
         <Typography
-          color="black"
+          color="#0C0D0D"
           sx={TypographyArticleInfoRight}
         >
           |
         </Typography>
         <Typography
-          color="#667A6E"
+          color="#2F4C69"
           sx={HorizArticlePageInfoCompDate}
         >
           {date}

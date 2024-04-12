@@ -40,9 +40,7 @@ export const Series: React.FC<Props> = ({
   };
   const newNonImmutableArray = series?.map((item: any) => item);
   const sortByDate = newNonImmutableArray?.sort((a: any, b: any)=> {
-    const date1: any = new Date(a.seriesStartDate);
-    const date2: any = new Date(b.seriesStartDate);
-    return date2 - date1;
+    return b.seriesId - a.seriesId;
   });
 
   const seriesData = data && data?.filter((series: any) => series?.series === true);
@@ -88,14 +86,14 @@ export const Series: React.FC<Props> = ({
       setFilterSeries(sortByDate);
     }
   }, []);
-  const noSeries = filteredSeriesList?.length === 0;
+  const noSeries = seriesAuhtorFilterAuthorPage?.length === 0 && filteredSeriesList?.length === 0 && seriesFilter?.length === 0 && seriesAuhtorFilterArticlePage?.length === 0;
   const textLoop = (item: any, index: number) => {
-    return filteredSeriesList[index]?.slice(0, 4).filter(() => {
+    return (filteredSeriesList[index])?.slice(0, 4).filter(() => {
       return item.seriesId === item.seriesId;
     })
-      .map((a: any, i: number) => {
+      .map((a: any) => {
         if(item.seriesId === a.seriesId) {
-          const seriesTitle = `${a.seriesType} ${i + 1}: ${a?.articleTitle}`;
+          const seriesTitle = `${a.seriesType}: ${a?.articleTitle}`;
           return (
             <Grid
               container
@@ -205,6 +203,11 @@ export const Series: React.FC<Props> = ({
                   lg={8}
                   xl={8}
                 >
+                  <Typography
+                    sx={TypographySeriesTitle}
+                  >
+                    {`${item?.seriesTitle}`}
+                  </Typography>
                   <VerticalArticleCardComponent
                     key={index}
                     name={item.seriesAuthors}
@@ -253,7 +256,7 @@ export const Series: React.FC<Props> = ({
                         <Button 
                           variant="outlined"
                           sx={{
-                            color: 'black',
+                            color: '#0C0D0D',
                           }}
                         >
                           Read More

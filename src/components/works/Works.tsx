@@ -20,6 +20,7 @@ import {
   WorksInfoSubTitle,
   WorksInfoDate,
 } from './WorksStyle';
+import ComingSoon from '../comingSoon/ComingSoon';
 
 const Works: React.FC<Props> = ({
   authorsPage,
@@ -47,6 +48,7 @@ const Works: React.FC<Props> = ({
     }
   }, [infoHeight]);
 
+  const noBooks = bookData?.length === 0;
   const articlePageBookExtrainfo = (item: any, bottomHeight: string) => {
     return (
       <Grid
@@ -84,7 +86,7 @@ const Works: React.FC<Props> = ({
           xl={12}
         >
           <Typography
-            color="#667A6E"
+            color="grey"
             sx={ArtPageBookExtraInfoText}
           >
             {item.genre}
@@ -124,11 +126,14 @@ const Works: React.FC<Props> = ({
           xl={12}
         >
           <Typography
-            color={aboutWorks ? '#667A6E' : '#2F4C69'}
+            color={aboutWorks ? '#667A6E' : '#0C0D0D'}
             sx={WorksTitle(authorsPage)}
           >
             {aboutWorks ? 'Favorite books' : 'Author Book\'s'}
           </Typography>
+          {noBooks && 
+            <ComingSoon />
+          }
         </Grid>
       </Grid>
       {bookData?.map((item: any) => (
@@ -139,7 +144,7 @@ const Works: React.FC<Props> = ({
         >
           <Grid
             item
-            xs={1}
+            xs={5}
             sm={1}
             md={1}
             lg={1}
@@ -154,14 +159,14 @@ const Works: React.FC<Props> = ({
               <CardMedia
                 ref={bookImageHeightRef}
                 component="img"
-                image={item.bookCoverSmall}
+                image={item.bookCoverLarge}
                 sx={WorksCoverImage(authorsPage)}
               />
             </Button>
           </Grid>
           <Grid
             item
-            xs={articlePage ? 6 : 8}
+            xs={articlePage ? 6 : 7}
             sm={articlePage ? 6 : 8}
             md={articlePage ? 6 : 8}
             lg={articlePage ? 6 : 8}
@@ -169,7 +174,7 @@ const Works: React.FC<Props> = ({
             sx={WorksGridInfo}
           >
             <Typography
-              color={aboutWorks ? '#2F4C69' : '#667A6E'}
+              color={aboutWorks ? '#2F4C69' : '#0C0D0D'}
               ref={titleHeightRef}
               sx={WorksInfoTitle(aboutWorks)}
             >
@@ -177,7 +182,7 @@ const Works: React.FC<Props> = ({
             </Typography>
             {authorsPage &&
             <Typography
-              color={aboutWorks ? '#667A6E' : '#2F4C69'}
+              color={aboutWorks ? '#667A6E' : '#0C0D0D'}
               ref={bookPlotHeightRef}
               variant="subtitle1"
               sx={WorksInfoSubTitle}

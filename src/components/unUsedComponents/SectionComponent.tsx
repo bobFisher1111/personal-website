@@ -15,6 +15,7 @@ const SectionPage = () => {
         }}
       >
         <SectionCard
+          // homePage={true} // later for dark and light theme
           imgCover={xenob3}
           section={'Coding'}
           linkTo=''
@@ -27,6 +28,7 @@ const SectionPage = () => {
         }}
        >
          <SectionCard
+           // homePage={true} // later for dark and light theme
            imgCover={xenob3}
            section={'Data'}
            linkTo=''
@@ -39,6 +41,7 @@ const SectionPage = () => {
           }}
        >
          <SectionCard
+           // homePage={true} // later for dark and light theme
            imgCover={xenob3}
            section={'Game Dev'}
            linkTo=''
@@ -51,6 +54,7 @@ const SectionPage = () => {
          }}
        >
          <SectionCard
+          // homePage={true} // later for dark and light theme
           imgCover={xenob3}
           section={'Projects'}
           linkTo=''

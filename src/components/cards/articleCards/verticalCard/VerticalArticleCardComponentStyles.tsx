@@ -2,6 +2,11 @@ export const CardMediaVerticalCardImage = {
   '@media only screen and (min-width: 600px)': {
     height: '400px',
   },
+  '@media only screen and (max-width: 600px)': {
+    '&.MuiCardMedia-root': {
+      maxHeight: '224px',
+    },
+  },
 };
 
 export const CardMediaVerticalCardVideo = {
@@ -19,7 +24,7 @@ export const CardFooterStyle = {
   bottom: 0,
   left: 0,
   width: '100%',
-  bgcolor: 'black',
+  bgcolor: '#0C0D0D',
   color: 'white',
   opacity: 0.70,
 };

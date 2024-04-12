@@ -18,7 +18,7 @@ export const GridRoot = {
 export const HeaderTitleStyles = {
   textAlign: 'center',
   color: '#2F4C69',
-  fontSize: '24px',
+  fontSize: '36px',
   lineHeight: '40px',
   padding: '25px 0px 0px 0px',
   '@media (min-width: 601px)': {

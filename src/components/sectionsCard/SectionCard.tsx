@@ -19,6 +19,7 @@ import { LinkStyles } from '../../util/styles/LinkStyles';
 
 const SectionCard: React.FC<Props> = ({
   // imgCover,
+  // homePage, // later for dark and light theme
   section,
   linkTo,
 }) => {
@@ -53,6 +54,7 @@ const SectionCard: React.FC<Props> = ({
             /> */}
           </Link>
           <CardActions
+            // sx={CardActionsSectionNameStyle(homePage)} // later for dark and light theme
             sx={CardActionsSectionNameStyle}
           >
             <Link 
@@ -63,6 +65,7 @@ const SectionCard: React.FC<Props> = ({
             >
               <Button 
                 size="small"
+                // sx={ButtonSectionTtileStyle(homePage)} // later for dark and light theme
                 sx={ButtonSectionTtileStyle}
               >
                 {section}
@@ -76,6 +79,7 @@ const SectionCard: React.FC<Props> = ({
 };
 
 export type Props = {
+  // homePage: boolean, // later for dark and light theme
   imgCover: string,
   section: string,
   linkTo: string,

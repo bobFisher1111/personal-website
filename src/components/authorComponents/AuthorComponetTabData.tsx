@@ -19,7 +19,7 @@ const AuthorComponetTabData = (
   return (
     [
       { 
-        name: 'Writings',
+        name: 'Uploads',
         data: <ArticleList turOnAuthorForArticle={turOnAuthorForArticle} data={data} />
       },
       { 
@@ -33,7 +33,7 @@ const AuthorComponetTabData = (
           />
       },
       { 
-        name: 'Books',
+        name: 'Other',
         data:   
           <Works
             authorsPage={turOnArticlePage}

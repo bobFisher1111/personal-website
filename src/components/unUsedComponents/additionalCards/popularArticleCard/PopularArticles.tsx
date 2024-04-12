@@ -80,7 +80,7 @@ const PopularArticles: React.FC<Props> = ({
               textAlign: 'left',
               alignItems: 'center',
               color: 'white',
-              textShadow: 'black 2px 2px 2px',
+              textShadow: '#0C0D0D 2px 2px 2px',
             }}
           >
             {title}
@@ -91,7 +91,7 @@ const PopularArticles: React.FC<Props> = ({
             bottom: 0,
             left: 0,
             width: '100%',
-            bgcolor: 'black',
+            bgcolor: '#0C0D0D',
             color: 'white',
             padding: '16px',
             opacity: 0.70,

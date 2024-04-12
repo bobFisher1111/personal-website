@@ -1,3 +1,9 @@
+export const CreateArticleStyle = {
+  '@media only screen and (max-width: 600px)': {
+    padding: '16px 0px 0px 0px',
+  },
+};
+
 export const GridRoot = {
   paddingBottom: '200px',
 };
@@ -13,6 +19,7 @@ export const GridAuthorComponent = {
 };
 
 export default [
+  CreateArticleStyle,
   GridRoot,
   GridHeader,
   GridAuthorComponent,

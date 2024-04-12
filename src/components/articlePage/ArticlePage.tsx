@@ -10,6 +10,7 @@ import CreateArticle from '../createArticle/CreateArticle';
 import formatDate from '../../util/formatDate';
 import getNameFromUrl from '../../util/getNameFromUrl';
 import {
+  CreateArticleStyle,
   GridRoot,
   GridHeader,
   GridAuthorComponent,
@@ -80,9 +81,13 @@ const ArticlePage: React.FC = () => {
             mobileImageWidth={'22px'}
             videoHeight={false}
           />
-          {articleArray?.map((item: any) => (
-            CreateArticle(item)
-          ))}
+          <Grid
+            sx={CreateArticleStyle}
+          >
+            {articleArray?.map((item: any) => (
+              CreateArticle(item)
+            ))}
+          </Grid>
         </Grid>
         <Grid
           item

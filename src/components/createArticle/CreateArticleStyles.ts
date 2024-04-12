@@ -39,15 +39,17 @@ export const CreateArticleVideo = () => ({
 });
 
 export const titleText = {
-  borderColor: 'black',
+  borderColor: '#0C0D0D',
   padding: '16px 0px 0px 0px',
   lineHeight: '32px',
   fontSize: '26px',
-  fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
+  // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
   maxWidth: '1000px',
   '@media only screen and (max-width: 600px)': {
-    padding: '0px',
-    fontSize: '16px',
+    padding: '16px 0px 16px 0px',
+    fontSize: '22px',
+    lineHeight: '24px',
+    letterSpace: 0
   },
   '@media only screen and (min-width: 600px)': {
     padding: '16px 32px 8px 32px',
@@ -59,7 +61,7 @@ export const sectionText = {
   textIndent: '40px',
   lineHeight: '32px',
   fontSize: '20px',
-  fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
+  // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
   width: '850px',
   alignItems: 'center',
   ':: first-letter': {
@@ -67,8 +69,9 @@ export const sectionText = {
   },
   '@media only screen and (max-width: 600px)': {
     padding: '0px 32px 0px 32px',
-    fontSize: '12px',
-    lineHeight: '16px',
+    fontSize: '18px',
+    lineHeight: '28px',
+    letterSpacing: '-0.003.em',
     textIndent: '24px',
   },
   '@media only screen and (min-width: 600px)': {
@@ -91,11 +94,13 @@ export const sectionTextParagraph = {
   textIndent: '60px',
   lineHeight: '32px',
   fontSize: '20px',
-  fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
+  // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
   '@media only screen and (max-width: 600px)': {
     textIndent: '24px',
     padding: '0px',
-    fontSize: '12px',
+    fontSize: '18px',
+    lineHeight: '28px',
+    letterSpacing: '-0.003.em'
   },
   '@media only screen and (min-width: 600px)': {
     padding: '',
@@ -103,17 +108,18 @@ export const sectionTextParagraph = {
 };
 
 export const quoteText = {
-  borderColor: 'black',
+  borderColor: '#0C0D0D',
   padding: '16px 0px 0px 0px',
   lineHeight: '32px',
   fontSize: '26px',
-  fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
-  maxWidth: '1000px',
+  // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
+  maxWidth: '600px',
   fontStyle: 'itallic',
   '@media only screen and (max-width: 600px)': {
-    padding: '0px 16px 16px 16px',
-    fontSize: '12px',
-    lineHeight: '16px',
+    padding: '16px 48px 16px 48px',
+    fontSize: '18px',
+    lineHeight: '28px',
+    letterSpacing: '-0.003.em'
   },
   '@media only screen and (min-width: 600px)': {
     padding: '16px 32px 32px 32px',
@@ -125,7 +131,7 @@ export const paragraphText = {
   textIndent: '40px',
   lineHeight: '32px',
   fontSize: '20px',
-  fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
+  // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
   width: '1000px',
   alignItems: 'center',
   ':: first-letter': {
@@ -133,9 +139,10 @@ export const paragraphText = {
   },
   '@media only screen and (max-width: 600px)': {
     padding: '0px 16px 16px 16px',
-    fontSize: '12px',
-    lineHeight: '16px',
+    fontSize: '18px',
+    lineHeight: '28px',
     textIndent: '12px',
+    letterSpacing: '-0.003.em'
   },
   '@media only screen and (min-width: 600px)': {
     padding: '16px 32px 0px 32px',

@@ -79,41 +79,42 @@ export const ImageHorizonatalArticleStyles = (articlepage: any, imagewidth?: any
 export const TypographyHorizontalArticleDate = {
   fontSize: '14px',
   '@media only screen and (max-width: 600px)': {
-    fontSize: '12px',
+    fontSize: '14px',
     padding: '0px 4px 0px 4px',
   },
 };
 
 export const TypographyHorizontalArticleSubTitle = (articlepage: boolean, cardtextwidth: string) => ({
-  color: '#667A6E',
+  color: '#0C0D0D',
   fontSize: '16px',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
   WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
-  fontFamily: 'sans-serif',
+  // fontFamily: 'sans-serif',
   maxWidth: articlepage ? '321px' : `${cardtextwidth} !important`,
   '@media only screen and (max-width: 600px)': {
-    fontSize: '12px',
+    fontSize: '16px',
     padding: '0px 4px 0px 4px',
   },
 });
 
 export const TypographyHorizontalArticleTitle = (articlepage: boolean) => ({
-  color: '#2F4C69',
+  color: '#0C0D0D',
   fontSize: '20px',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
   WebkitLineClamp: '1',
   WebkitBoxOrient: 'vertical',
-  fontFamily: 'sans-serif',
-  maxWidth: articlepage ? '960px' : '321px',
+  // fontFamily: 'sans-serif',
+  maxWidth: articlepage ? '960px' : '639px',
   '@media only screen and (max-width: 600px)': {
-    display: 'none',
-    fontSize: '16px',
-    padding: '0px 8px 0px 8px',
+    // display: 'none',
+    fontSize: '20px',
+    padding: '0px 4px 0px 4px',
+    WebkitLineClamp: '2',
   },
 });
 

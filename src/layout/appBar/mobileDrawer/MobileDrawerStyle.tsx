@@ -1,11 +1,15 @@
 export const BoxMobileDrawerStyle = {
-  width:  '75vw',
+  width:  '100vw',
   height: '100vh',
   backgroundColor: 'white',
 };
 
+export const CloseDrawerIconStyle = {
+  color: '#0C0D0D',
+};
+
 export const MenuIconStyle = {
-  color: 'black',
+  color: '#0C0D0D',
 };
 
 export const GridMobileDrawerAppBar = {
@@ -17,7 +21,6 @@ export const GridMobileDrawerAppBar = {
 
 export const GridCenterItems = {
   display: 'flex',
-  // padding: '8px 0px 16px 0px',
   '& .MuiGrid-root': {
     justifyContent: 'center'
   }
@@ -28,18 +31,20 @@ export const GridSectionsStyle = {
 };
 
 export const TypographyMobileDrawer = {
+  padding: '0px 20px 0px 20px',
   variant: 'h6',
-  color: '#2F4C69',
+  // color: '#2F4C69',
+  color: '#0C0D0D',
   cursor: 'pointer',
   '&:hover': {
-    color: 'black',
+    color: '#0C0D0D',
   },
-  fontSize: '20px',
+  fontSize: '24px',
 };
 
 export const TypograohyMobileDrawerWebistieName = {
   variant: 'h6',
-  color: 'black',
+  color: '#0C0D0D',
   cursor: 'pointer',
   '&:hover': {
     color: 'white',
@@ -48,11 +53,12 @@ export const TypograohyMobileDrawerWebistieName = {
 };
 
 export default [
-  MenuIconStyle,
+  CloseDrawerIconStyle,
   BoxMobileDrawerStyle,
   GridCenterItems,
   GridSectionsStyle,
   GridMobileDrawerAppBar,
+  MenuIconStyle,
   TypographyMobileDrawer,
   TypograohyMobileDrawerWebistieName,
 ];

@@ -6,19 +6,19 @@ export const ArtPageBookExtraInfoGridRoot = (bottomheight: string) => {
 
 export const ArtPageBookExtraInfoLinkBuy = {
   fontsize: '16px',
-  fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
-  color: '#551A8B',
+  // fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
+  color: 'grey',
   '&:hover': {
     color: '#667A6E',
   },
   '@media only screen and (max-width: 600px)': {
-    fontSize: '12px',
+    fontSize: '16px',
   },     
 };
 
 export const ArtPageBookExtraInfoText = {
   '@media only screen and (max-width: 600px)': {
-    fontSize: '12px',
+    fontSize: '16px',
   },
 };
 
@@ -33,7 +33,7 @@ export const WorksTitle = (authorsPage: boolean | undefined) => {
     fontSize: '20px',
     padding: authorsPage ? '' : '16px',
     '@media only screen and (max-width: 600px)': {
-      fontSize: '16px',
+      fontSize: '20px',
     },
   };
 };
@@ -42,7 +42,7 @@ export const WorksGridRoot = (authorsPage: boolean | undefined) => {
   return {
     padding: authorsPage ? '0px 24px' : '0px 0px 8px 24px',
     '@media only screen and (max-width: 600px)': {
-      padding: '0px',
+      padding: '8px',
     },
   };
 };
@@ -62,14 +62,17 @@ export const WorksCoverImage = (authorsPage: boolean | undefined) => {
     width: authorsPage ? '148px' : '55px',
     height: authorsPage ? '235px' : '85px',
     '@media only screen and (max-width: 600px)': {
-      width: '74px',
-      height: '118px',
+      width: '148px',
+      height: '235px',
     },
   };
 };
 
 export const WorksGridInfo = {
   padding: '0px 0px 0px 8px',
+  '@media only screen and (max-width: 600px)': {
+    padding: '0px 0px 0px 16px',
+  },
 };
 
 export const WorksInfoTitle = (aboutWorks: boolean | undefined) => {
@@ -81,7 +84,7 @@ export const WorksInfoTitle = (aboutWorks: boolean | undefined) => {
     WebkitLineClamp: '1',
     WebkitBoxOrient: 'vertical',
     '@media only screen and (max-width: 600px)': {
-      fontSize: '14px',
+      fontSize: '18px',
     },
   };
 };
@@ -93,7 +96,7 @@ export const WorksInfoSubTitle = {
   WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
   '@media only screen and (max-width: 600px)': {
-    fontSize: '12px',
+    fontSize: '14px',
   },
 };
 

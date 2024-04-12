@@ -1,6 +1,6 @@
 export const ChipNoPointer = {
   borderRadius: '4px',
-  color: 'black',
+  color: '#0C0D0D',
   '@media only screen and (max-width: 600px)': {
     fontSize: '10px',
     '&.MuiChip-root': {
@@ -10,7 +10,7 @@ export const ChipNoPointer = {
 };
 
 export const ChipStyle = {
-  color: 'black',
+  color: '#0C0D0D',
   cursor: 'pointer',
   borderRadius: '4px',
   '@media only screen and (max-width: 600px)': {
@@ -23,11 +23,11 @@ export const ChipStyle = {
 
 export const DivMaterialSymbolsOutlined = () => ({
   fontSize: '20px',
-  color: '#2F4C69',
+  color: '#667A6E',
   marginRight: '4px',
   lineHeight: '24px',
   '@media only screen and (max-width: 600px)': {
-    fontSize: '16px',
+    fontSize: '18px',
   },
 });
 
@@ -42,12 +42,12 @@ export const GridHorizontalInfo = {
 };
 
 export const TypographyHorizontalInfoText = {
-  color: '#2F4C69',
+  color: '#667A6E',
   fontSize: '16px',
   paddingRight: '16px',
   lineHeight: '24px',
   '@media only screen and (max-width: 600px)': {
-    fontSize: '12px',
+    fontSize: '14px',
   },
   '@media only screen and (min-width: 600px)': {
     width: '100%',

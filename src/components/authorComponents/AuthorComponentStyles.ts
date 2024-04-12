@@ -16,10 +16,10 @@ export const AuthorComponentGridBiography = {
 
 export const AuthorComponentGridBiographyTitle = {
   textAlign: 'fled-start',
-  color: '#667A6E',
+  color: '#0C0D0D',
   padding: '16px 0px 16px 0px',
   '@media only screen and (max-width: 600px)': {
-    fontSize: '16px',
+    fontSize: '20px',
   },
 };
 
@@ -28,7 +28,13 @@ export const AuthorComponentGridBiographyText = {
   fontSize: '16px',
   textIndent: '15px',
   '@media only screen and (max-width: 600px)': {
-    fontSize: '12px',
+    fontSize: '16px',
+  },
+};
+
+export const HeaderComponentStyles = {
+  '@media only screen and (max-width: 600px)': {
+    padding: '16px 0px 0px 0px',
   },
 };
 
@@ -37,4 +43,5 @@ export default [
   AuthorComponentGridBiography,
   AuthorComponentGridBiographyTitle,
   AuthorComponentGridBiographyText,
+  HeaderComponentStyles,
 ];

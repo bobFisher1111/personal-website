@@ -166,7 +166,8 @@
     - articleId={'articleData?.articleId'}
   - Improve image quality 
   - console log warnings
-  - series doesn't have article attach to it, either put something comming soon or exclude it
+  - series doesn't have article attach to it, either put something comming soon or exclude it,
+  - Add a timer for a second or to on when you copy link or code that it reverts back to default color after clicked
 - Future Performance:
   - Cache data on backend, that way less calls to database, only when new data is created
 - Group Testing:
@@ -175,3 +176,13 @@
   - On Series, if article is updated and should be in order of part 1 .. part 2 and so on. Right now its out of order, should be in decending order based on index maybe // completed
   - Also on Series on tab, center for tab homepage and on section page the Read More button // completed
   - Article Page, current writer under series showing nothing when there should be something: // completed
+  - Writers Books, if no books add coming soon // completed
+  - Author has Series with no articles tied to it yet, showing coming soon // completed
+  - Series order for example Chapter 1 in correct order // completed
+  - Series Homepage after adding an article with no article to, all articles went away // completed
+  - Article Page, author part, series add title to the // completed
+  - Check the length of title on Final Fantasy 7 Remake: Jess & cloud // completed
+  - Update sections dropdown to hang below appbar // completed
+  - Make changes mobile sections drop down // completed
+  - Series, one of images to large on mobile // completed
+  - Update sections button and make it border with white background instead of solid color // completed

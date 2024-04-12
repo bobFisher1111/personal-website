@@ -5,7 +5,7 @@ export const WritersCardGridRoot = {
 export const WritersCardAvatar = {
   width: '120px',
   height: '120px',
-  borderRadius: '25px',
+  borderRadius: '8px',
   '@media only screen and (max-width: 600px)': {
     width: '80px',
     height: '80px',
@@ -23,7 +23,7 @@ export const WritersCardAvatar = {
 export const WritersCardGridAuthorName = {
   paddingTop: '4px',
   '@media only screen and (max-width: 600px)': {
-    padding: '10px 0px 0px 16px',
+    padding: '0px 0px 0px 16px',
   },
 };
 
@@ -34,9 +34,9 @@ export const WritersCardTextAuthorName = {
   display: '-webkit-box',
   WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
-  color: '#2F4C69',
+  color: '#0C0D0D',
   '@media only screen and (max-width: 600px)': {
-    fontSize: '16px',
+    fontSize: '20px',
   },
 };
 
@@ -47,9 +47,9 @@ export const WritersCardTextAuthorTitle = {
   display: '-webkit-box',
   WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
-  color: '#667A6E',
+  color: 'grey',
   '@media only screen and (max-width: 600px)': {
-    fontSize: '12px',
+    fontSize: '16px',
   },
 };
 

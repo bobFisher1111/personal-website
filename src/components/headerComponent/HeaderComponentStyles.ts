@@ -1,11 +1,10 @@
 export const AvatarStyle = {
-  width: '80px',
-  height: '80px',
-  borderRadius: '20px',
+  width: '100px',
+  height: '100px',
+  borderRadius: '8px',
   '@media only screen and (max-width: 600px)': {
-    width: '56px',
-    height: '56px',
-    borderRadius: '15px',
+    width: '75px',
+    height: '75px',
   },
 };
 
@@ -36,11 +35,12 @@ export const TypographyHeaderTitle = {
   color: '#2F4C69',
   fontSize: '32px',
   lineHeight: '40px',
+  // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
   '@media (min-width: 1023px)': {
     padding: '25px 0px 25px 0px',
   },
   '@media only screen and (max-width: 600px)': {
-    fontSize: '24px',
+    fontSize: '32px',
   },
 };
 

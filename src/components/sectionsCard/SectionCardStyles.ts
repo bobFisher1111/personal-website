@@ -11,6 +11,20 @@ export const ButtonSectionTtileStyle = {
     fontWeight: 'bold',
   },
 };
+// Later for dark and light theme
+// export const ButtonSectionTtileStyle = (homepage: boolean) => ({
+//   color: homepage ? '#2F4C69' :'white',
+//   textTransform: 'initial',
+//   fontSize: '16px',
+//   '&:hover': {
+//     color: '#667A6E',
+//   },
+//   '@media only screen and (max-width: 600px)': {
+//     fontSize: '14px',
+//     color: '#0C0D0D',
+//     fontWeight: 'bold',
+//   },
+// });
 
 export const CardActionsSectionNameStyle= {
   backgroundColor: '#282c34', 
@@ -21,6 +35,19 @@ export const CardActionsSectionNameStyle= {
     padding: '0px',
   },
 };
+
+// later for dark and light theme
+// export const CardActionsSectionNameStyle = (homepage: boolean) => ({
+//   backgroundColor: homepage ? 'white' : '#282c34', 
+//   justifyContent: 'center',
+//   border: homepage ? '1px solid #667A6E' : 'none',
+//   '@media only screen and (max-width: 600px)': {
+//     height: '66px',
+//     backgroundColor: 'white',
+//     padding: '0px',
+//     border: 'none',
+//   },
+// });
 
 export const CardMediaSection = {
   '@media only screen and (max-width: 600px)': {
@@ -39,6 +66,15 @@ export const CardSectionCard = {
     boxShadow: 0
   },
 };
+// Later update for dark and light theme
+// export const CardSectionCard = {
+//   '&.MuiCard-root': {
+//     borderRadius: '0px',
+//   },
+//   '@media only screen and (max-width: 600px)': {
+//     boxShadow: 0
+//   },
+// };
 
 export const GridOverflowHeader = {
   wordBreak: 'break-word',
@@ -46,7 +82,7 @@ export const GridOverflowHeader = {
 };
 
 export const GridSectionCardRoot = {
-  padding: '16px 0px 16px 0px',
+  padding: '16px 0px 0px 0px',
   '@media only screen and (max-width: 600px)': {
     padding: '0px',
   },

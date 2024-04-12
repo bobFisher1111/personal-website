@@ -21,7 +21,6 @@ export const GridSeriesReadMoreMargin = {
 };
 
 export const GridSeriesArticleList = {
-  padding: '0px 0px 16px 0px',
   '@media only screen and (min-width: 768px)': {
     padding: '0px 0px 0px 16px',
   },
@@ -35,17 +34,17 @@ export const GridSeriesRoot = {
 };
 
 export const TypographySeriesArticleDate = {  
-  color: '#76468c',
+  color: 'grey',
   padding: '0px 0px 0px 16px',
   fontSize:'14px',
   '@media only screen and (max-width: 600px)': {
-    fontSize: '12px',
+    fontSize: '14px',
     padding: '0px 8px 0px 8px',
   },
 };
 
 export const TypographySeriesArticleSubTitle = {
-  color: '#667A6E',
+  color: '#0C0D0D',
   fontSize:'16px',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
@@ -59,29 +58,29 @@ export const TypographySeriesArticleSubTitle = {
     padding: '0px 0px 0px 16px',
   },
   '@media only screen and (max-width: 600px)': {
-    fontSize: '12px',
+    fontSize: '14px',
     padding: '0px 8px 0px 8px',
     WebkitLineClamp: '2',
   },
 };
 
 export const TypographySeriesArticleTitle = {
-  color: '#2F4C69',
+  color: '#0C0D0D',
   padding: '0px 0px 0px 16px',
   fontSize:'20px',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
-  WebkitLineClamp: '1',
+  WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
   '@media only screen and (max-width: 600px)': {
-    fontSize: '16px',
+    fontSize: '20px',
     padding: '0px 8px 0px 8px',
   },
 };
 
 export const TypographySeriesTitle = {  
-  color: '#2F4C69',
+  color: '#0C0D0D',
   padding: '16px 0px 16px 0px',
   fontSize: '24px',
   overflow: 'hidden',
@@ -90,7 +89,7 @@ export const TypographySeriesTitle = {
   WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
   '@media only screen and (max-width: 600px)': {
-    fontSize: '16px',
+    fontSize: '22px',
     padding: '16px 0px 8px 0px',
     WebkitBoxOrient: 'unset',
   },

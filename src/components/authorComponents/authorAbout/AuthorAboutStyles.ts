@@ -30,7 +30,7 @@ export const AuthorAboutFavoritesTitle = {
 };
 
 export const AuthorAboutAuthorsFavoritesResponse = {
-  fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
+  // fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
   fontSize: '1rem',
   lineHeight: '1.5',  
   paddingRight: '4px',

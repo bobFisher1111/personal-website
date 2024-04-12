@@ -31,6 +31,7 @@ const SectionComponent: React.FC<Props> = ({
         xl={3}
       >
         <SectionCard
+          // homePage={homePage} // later for dark and light theme
           imgCover={legendOfZelda}
           section='Video Games'
           linkTo='videoGames'
@@ -46,6 +47,7 @@ const SectionComponent: React.FC<Props> = ({
         xl={3}
       >
         <SectionCard
+          // homePage={homePage} // later for dark and light theme
           imgCover={goldenboy2}
           section='Reviews'
           linkTo='reviews'
@@ -61,6 +63,7 @@ const SectionComponent: React.FC<Props> = ({
         xl={3}
       >
         <SectionCard
+          // homePage={homePage} // later for dark and light theme
           imgCover={Persona5Hacker}
           section='Coding'
           linkTo='coding'
@@ -76,6 +79,7 @@ const SectionComponent: React.FC<Props> = ({
         xl={3}
       >
         <SectionCard
+          // homePage={homePage} // later for dark and light theme
           imgCover={suzuka}
           section='Stories'
           linkTo='stories'

@@ -1,5 +1,5 @@
 export const ChipStyle = {
-  color: 'black',
+  color: '#0C0D0D',
   cursor: 'pointer',
   borderRadius: '4px',
   '@media only screen and (max-width: 600px)': {
@@ -30,6 +30,7 @@ export const HorizAriclePageInfoCompAuthor = {
   '@media only screen and (max-width: 600px)': {
     paddingTop: '2px',
     fontSize: '12px',
+    lineHeight: "1.75",
   },
 };
 

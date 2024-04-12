@@ -5,28 +5,28 @@ import {
 
 const DarkTextField = styled(TextField)({
   '& label.Mui-focused': {
-    color: 'black',
-    fontColor: 'black',
+    color: '#0C0D0D',
+    fontColor: '#0C0D0D',
   },
   '& .MuiInput-underline:after': {
-    borderBottomColor: 'black',
+    borderBottomColor: '#0C0D0D',
     fontColor: '#667A6E',
   },
   '& .MuiOutlinedInput-root': {
     '& fieldset': {
       borderColor: '#2F4C69',
       borderWidth: 'thin',
-      fontColor: 'black',
+      fontColor: '#0C0D0D',
     },
     '&:hover fieldset': {
       borderColor: '#2F4C69',
       borderWidth: 'thin',
-      fontColor: 'black',
+      fontColor: '#0C0D0D',
     },
     '&.Mui-focused fieldset': {
       borderColor: '#2F4C69',
       borderWidth: 'thin',
-      fontColor: 'black',
+      fontColor: '#0C0D0D',
     },
   },
   '& .MuiFormLabel-root': {

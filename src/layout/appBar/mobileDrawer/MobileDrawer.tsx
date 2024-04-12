@@ -8,10 +8,12 @@ import {
   Typography,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
+import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import SocialMediaComponent from '../../../components/socialMediaComponent/SocialMediaComponent';
 import { MenuIconStyle, BoxMobileDrawerStyle } from './MobileDrawerStyle';
 import { 
+  CloseDrawerIconStyle,
   GridMobileDrawerAppBar,
   GridCenterItems,
   GridSectionsStyle,
@@ -82,6 +84,14 @@ const MobileDrawer: React.FC = () => {
             twitter={twitter}
             youtube={youtube}
           />
+          <Grid>
+            <Button
+              sx={CloseDrawerIconStyle}
+              onClick={toggleDrawer(anchor, false)}
+            >
+              <CloseIcon/>
+            </Button>
+          </Grid>
         </Grid>
         {/* <Grid
           item

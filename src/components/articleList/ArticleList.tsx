@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Grid,
-  Typography,
 } from '@mui/material';
 import ComingSoon from '../comingSoon/ComingSoon';
 import formatDate from '../../util/formatDate';
@@ -9,8 +8,6 @@ import HorizontalArticleCardComponent from '../cards/articleCards/horizontalCard
 import {
   GridPaddingArticleList,
   GridPaddingTop,
-  TypographyArticlePageArticles,
-  TypographyHorizontalArticleTitleArticleList,
 } from './ArticleListStyles';
 
 export const ArticleList: React.FC<Props> = ({
@@ -20,9 +17,7 @@ export const ArticleList: React.FC<Props> = ({
   const noArticles = data?.length === 0;
   const newNonImmutableArray = data?.map((item: any) => item);
   const sortByDate = newNonImmutableArray?.sort((a: any, b: any)=> {
-    const date1: any = new Date(a.publishedDate);
-    const date2: any = new Date(b.publishedDate);
-    return date2 - date1;
+    return b.articleId - a.articleId;
   });
   
   return (
@@ -43,11 +38,6 @@ export const ArticleList: React.FC<Props> = ({
             />
             { sortByDate?.map((item: any) => (
               <>
-                <Typography
-                  sx={TypographyHorizontalArticleTitleArticleList(false)}
-                >
-                  {item.articleTitle}
-                </Typography>
                 <HorizontalArticleCardComponent
                   key={item.id}
                   title={item.articleTitle}
@@ -92,13 +82,6 @@ export const ArticleList: React.FC<Props> = ({
               >
                 { sortByDate?.map((item: any, index: any) => (
                   <>
-                    <Typography 
-                      variant="body1"
-                      color="#2F4C69"
-                      sx={TypographyArticlePageArticles}
-                    >
-                      {item.articleTitle}
-                    </Typography>
                     <HorizontalArticleCardComponent
                       key={index}
                       title={item.articleTitle}

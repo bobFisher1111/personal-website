@@ -82,7 +82,7 @@ const SeriesComponent = () => {
         {noArticles && 
           <ComingSoon />
         }
-        { sortSeriesList?.map((item: any, index: any) => (
+        { sortSeriesList?.map((item: any) => (
           <Grid
             key={item.id}
             item
@@ -99,7 +99,7 @@ const SeriesComponent = () => {
               <Typography
                 sx={seriesComponentTitle}
               >
-                {`${item?.seriesType} ${index + 1}: ${item?.articleTitle}`}
+                {`${item?.seriesType}: ${item?.articleTitle}`}
               </Typography>
               <Typography
                 sx={seriesComponentSubTitle} 

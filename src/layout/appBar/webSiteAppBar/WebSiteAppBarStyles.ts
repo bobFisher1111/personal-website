@@ -38,7 +38,7 @@ export const GridMobileAppBarTitle = {
 
 export const TypographyDesktopTitle = {
   fontSize: '20px',
-  color: 'black',
+  color: '#0C0D0D',
   cursor: 'pointer',
   '&:hover': {
     color: 'white',
@@ -46,8 +46,8 @@ export const TypographyDesktopTitle = {
 };
 
 export const TypographyMobileTitle = {
-  fontSize: '16px',
-  color: 'black',
+  fontSize: '20px',
+  color: '#0C0D0D',
   cursor: 'pointer',
   '&:hover': {
     color: 'white',

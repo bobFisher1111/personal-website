@@ -15,6 +15,7 @@ import {
   quoteText,
   paragraphText,
 } from './CreateArticleStyles';
+import CodeSnipit from './CodeSnipit';
 
 const imageExtensions = '.jpg' || '.jpeg' || '.jpg' || '.png';
 
@@ -57,8 +58,8 @@ export const CreateArticle = (articleData: string) => {
         justifyContent="center"
       >
         <Typography
-          id="articleText"
-          color="#2F4C69"
+          id="article Paragraph Title"
+          color="#0C0D0D"
           sx={titleText}
         >
           { <strong>{articleData.slice(17)}</strong> }   
@@ -73,8 +74,8 @@ export const CreateArticle = (articleData: string) => {
         justifyContent="center"
       >
         <Typography
-          id="articleText"
-          color="#76468c"
+          id="article Bullet List"
+          color="#0C0D0D"
           sx={sectionTextParagraph}
         >
           {articleData.slice(13)} 
@@ -89,7 +90,7 @@ export const CreateArticle = (articleData: string) => {
         justifyContent="center"
       >
         <Typography
-          id="articleText"
+          id="article Quotes"
           color="#667A6E"
           sx={quoteText}
         >
@@ -106,12 +107,22 @@ export const CreateArticle = (articleData: string) => {
         justifyContent="center"
       >
         <Typography
-          id="articleText"
-          color="#2F4C69"
+          id="article Bullet List Child"
+          color="#0C0D0D"
           sx={sectionText}
         >
           { articleData.slice(19) }
         </Typography>
+      </Grid>
+    );
+  }
+  if (articleData.startsWith('[CODESNIPIT]')) {
+    return (
+      <Grid
+        container
+        justifyContent="center"
+      >
+        <CodeSnipit displayCode={articleData} />
       </Grid>
     );
   }
@@ -122,7 +133,7 @@ export const CreateArticle = (articleData: string) => {
     >
       <Typography
         id="articleText"
-        color="#2F4C69"
+        color="#0C0D0D"
         sx={paragraphText}
       >
         { articleData }

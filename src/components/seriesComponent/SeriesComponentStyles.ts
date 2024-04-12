@@ -13,40 +13,40 @@ export const seriesComponentGridHeader = {
 export const seriesComponentGridArticleInfo = {
   padding: '32px 0px 16px 0px',
   '@media only screen and (max-width: 600px)': {
-    padding: '16px 0px 16px 0px'
+    padding: '0px 0px 16px 0px'
   },
 };
 
 export const seriesComponentTitle = {
   fontSize: '20px',
   padding: '0px 16px 0px 16px',
-  color: '#2F4C69',
+  color: '#0C0D0D',
   '@media only screen and (max-width: 600px)': {
-    fontSize: '16px',
+    fontSize: '20px',
   },
 };
 
 export const seriesComponentSubTitle = {
-  color: '#667A6E',
+  color: '#0C0D0D',
   fontSize:'16px',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
   WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
-  fontFamily: 'sans-serif',
+  // fontFamily: 'sans-serif',
   padding: '0px 16px 0px 16px',
   '@media only screen and (max-width: 600px)': {
-    fontSize: '12px',
+    fontSize: '14px',
   },
 };
 
 export const seriesComponentdate = {
   fontSize:'14px',
-  color: '#76468c',
+  color: 'grey',
   padding: '0px 16px 0px 16px',
   '@media only screen and (max-width: 600px)': {
-    fontSize: '12px',
+    fontSize: '14px',
   },
 };
   

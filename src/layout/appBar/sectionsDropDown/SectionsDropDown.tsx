@@ -10,6 +10,7 @@ import SectionComponent from '../../../components/sectionComponent/SectionCompon
 import { 
   GridHoverBlack,
   GridSectionList,
+  DropDownPosition,
   TypographyHoverBlack,
 } from './SectionsDropDownStyles';
 
@@ -72,6 +73,7 @@ const SectionsDropDown: React.FC = () => {
         open={state}
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}
+        sx={DropDownPosition}
       >
         {sectionList()}
       </SwipeableDrawer>

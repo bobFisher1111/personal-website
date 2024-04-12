@@ -4,7 +4,7 @@ export const GridPointer = {
 };
 
 export const TypographyLinkTwoPage = {
-  color: 'black',
+  color: '#0C0D0D',
   cursor: 'pointer',
   '&:hover': {
     color: 'white',

@@ -81,22 +81,11 @@ const HorizontalArticleCardComponent: React.FC<Props> = ({
               style={LinkStyles()}
             >
               <Box
-                // series
                 component="img"
                 alt="Article Cover Image"
-                // imageProps={{ referrerPolicy: "no-referrer" }}
-                // style={{height:'100%', width:'100%'}}
                 src={videoOrImageCover}
                 sx={ImageHorizonatalArticleStyles(articlePage, mobileImageWidth)}
               />
-              {/* <Box
-                // sx={ImageHorizonatalArticlesStyles(articlePage, mobileImageWidth)}
-              >
-                <img
-                  alt="Article Cover Image"
-                  src={videoOrImageCover}
-                />
-              </Box> */}
             </Link>
             :
             <CardMedia
@@ -133,14 +122,12 @@ const HorizontalArticleCardComponent: React.FC<Props> = ({
               reloadDocument={true}
               style={LinkStyles()}
             >
-              {!articlePageList &&
-                <Typography
-                  sx={TypographyHorizontalArticleTitle(articlePage)}
-                  color="#2F4C69"
-                >
-                  {title}
-                </Typography>
-              }
+              <Typography
+                sx={TypographyHorizontalArticleTitle(articlePage)}
+                color="#2F4C69"
+              >
+                {title}
+              </Typography>
               <Typography
                 sx={TypographyHorizontalArticleSubTitle(articlePageList, cardTextWidth)}
               >
@@ -148,7 +135,7 @@ const HorizontalArticleCardComponent: React.FC<Props> = ({
               </Typography>
               {!articlePage &&
                   <Typography
-                    color="#76468c"
+                    color="grey"
                     sx={TypographyHorizontalArticleDate}
                   >
                     {date}

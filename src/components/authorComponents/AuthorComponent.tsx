@@ -13,6 +13,7 @@ import {
   AuthorComponentGridBiography,
   AuthorComponentGridBiographyTitle,
   AuthorComponentGridBiographyText,
+  HeaderComponentStyles,
 } from './AuthorComponentStyles';
 
 const AuthorComponent: React.FC<Props> = ({
@@ -55,6 +56,7 @@ const AuthorComponent: React.FC<Props> = ({
         md={12}
         lg={12}
         xl={12}
+        sx={HeaderComponentStyles}
       >
         <HeaderComponent
           title={authorData?.authorName || articleAuthorData?.authorName}
@@ -80,7 +82,7 @@ const AuthorComponent: React.FC<Props> = ({
           {'Biography'}
         </Typography>
         <Typography
-          color="#2F4C69"
+          color="#0C0D0D"
           sx={AuthorComponentGridBiographyText}
         >
           {authorData?.biography || articleAuthorData?.biography}
