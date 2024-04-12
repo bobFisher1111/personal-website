@@ -5,6 +5,7 @@ import {
 } from '@mui/material';
 // import HeaderComponent from '../../components/headerComponent/HeaderComponent';
 import { useSelector } from 'react-redux';
+import { websiteHomePageImage } from '../../config';
 import SectionComponent from '../sectionComponent/SectionComponent';
 import HomePageComponentTabData from './HomePageComponentTabData';
 import TabsComponent from '../tabsComponent/TabsComponent';
@@ -14,7 +15,7 @@ import {
   HeaderTitleStyles,
   HomePageImage,
 } from './HomePageComponentStyles';
-import foxShrineGamers from '../../assets/images/FoxGamer1.png';
+// import foxShrineGamers from '../../assets/images/FoxGamer1.png';
 // import foxLogo1 from '../../assets/logo/foxLogo1.png';
 
 const HomePageComponent = () => {
@@ -48,7 +49,8 @@ const HomePageComponent = () => {
         // sx={GridAlignItems}
       >
         <img
-          src={foxShrineGamers}
+          // src={foxShrineGamers}
+          src={websiteHomePageImage}
           alt={'home page image'}
           loading="lazy"
         />

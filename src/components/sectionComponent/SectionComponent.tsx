@@ -3,10 +3,10 @@ import {
   Grid,
 } from '@mui/material/';
 import SectionCard from '../sectionsCard/SectionCard';
-import Persona5Hacker from '../../assets/images/Persona5Hacker.jpg';
-import legendOfZelda from '../../assets/images/legendOfZelda.jpg';
-import suzuka from '../../assets/images/suzuka.jpeg';
-import goldenboy2 from '../../assets/images/goldenboy2.png';
+// import Persona5Hacker from '../../assets/images/Persona5Hacker.jpg';
+// import legendOfZelda from '../../assets/images/legendOfZelda.jpg';
+// import suzuka from '../../assets/images/suzuka.jpeg';
+// import goldenboy2 from '../../assets/images/goldenboy2.png';
 import {
   GridMaxWidth,
   GridSections,
@@ -32,7 +32,7 @@ const SectionComponent: React.FC<Props> = ({
       >
         <SectionCard
           // homePage={homePage} // later for dark and light theme
-          imgCover={legendOfZelda}
+          imgCover={'legendOfZelda'}
           section='Video Games'
           linkTo='videoGames'
         />
@@ -48,7 +48,7 @@ const SectionComponent: React.FC<Props> = ({
       >
         <SectionCard
           // homePage={homePage} // later for dark and light theme
-          imgCover={goldenboy2}
+          imgCover={'goldenboy2'}
           section='Reviews'
           linkTo='reviews'
         />
@@ -64,7 +64,7 @@ const SectionComponent: React.FC<Props> = ({
       >
         <SectionCard
           // homePage={homePage} // later for dark and light theme
-          imgCover={Persona5Hacker}
+          imgCover={'Persona5Hacker'}
           section='Coding'
           linkTo='coding'
         />
@@ -80,7 +80,7 @@ const SectionComponent: React.FC<Props> = ({
       >
         <SectionCard
           // homePage={homePage} // later for dark and light theme
-          imgCover={suzuka}
+          imgCover={'suzuka'}
           section='Stories'
           linkTo='stories'
         />
