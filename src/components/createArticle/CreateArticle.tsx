@@ -16,6 +16,7 @@ import {
   paragraphText,
 } from './CreateArticleStyles';
 import CodeSnipit from './CodeSnipit';
+import ReviewScore from './ReviewScore';
 
 const imageExtensions = '.jpg' || '.jpeg' || '.jpg' || '.png';
 
@@ -123,6 +124,16 @@ export const CreateArticle = (articleData: string) => {
         justifyContent="center"
       >
         <CodeSnipit displayCode={articleData} />
+      </Grid>
+    );
+  }
+  if (articleData.startsWith('[REVIEW]')) {
+    return (
+      <Grid
+        container
+        justifyContent="center"
+      >
+        <ReviewScore text={articleData} />
       </Grid>
     );
   }

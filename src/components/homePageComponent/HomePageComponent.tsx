@@ -15,8 +15,6 @@ import {
   HeaderTitleStyles,
   HomePageImage,
 } from './HomePageComponentStyles';
-// import foxShrineGamers from '../../assets/images/FoxGamer1.png';
-// import foxLogo1 from '../../assets/logo/foxLogo1.png';
 
 const HomePageComponent = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
@@ -49,7 +47,6 @@ const HomePageComponent = () => {
         // sx={GridAlignItems}
       >
         <img
-          // src={foxShrineGamers}
           src={websiteHomePageImage}
           alt={'home page image'}
           loading="lazy"
