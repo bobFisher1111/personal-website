@@ -186,9 +186,6 @@ const ReviewScore: React.FC<Props> = ({
         item 
         xs={5} 
         container
-        // direction="row"
-        // justifyContent="center"
-        // alignItems="center"
       >
         <Grid
           item
