@@ -5,10 +5,16 @@ export const CopyCodeStyles = (copyIconColor: any) => ({
   '&:hover': {
     "color": '#2F4C69',
   },
+  '@media only screen and (max-width: 600px)': {
+    "height": "20px",
+  },
 });
 
 export const GridCopyCodeStyles = {
   "padding": "0px 16px 0px 0px",
+  '@media only screen and (max-width: 600px)': {
+    "padding": "0px 8px 0px 0px",
+  },
 };
 
 export const GridTitleStyle = {
@@ -27,30 +33,41 @@ export const HeaderStyles = {
     "width": "680px",
   },
   '@media only screen and (max-width: 600px)': {
-    "min-width": `calc(100vw - ${'32px'})`,
+    "height": "36px",
+    // "min-width": `calc(100vw - ${'32px'})`,
+    // "max-width": `calc(100vw - ${'16px'})`,
   },
 };
 
 export const PreTagStyles: any = () => ({
-  "fontSize": "16px",
-  "overflow": "auto",
-  "color": "white",
-  "textAlign": "left",
+  fontSize: '14px',
+  overflow: "auto",
+  color: "white",
+  textAlign: 'left',
   // "fontFamily": 'source-code-pro, Menlo, Monaco, "Courier New", Courier, monospace',
-  "border-bottom-left-radius": '8px',
-  "border-bottom-right-radius": '8px',
-  "margin": "0em",
-  "fontWeight": "bold",
-  '@media only screen and (max-width: 600px)': {
-    "min-width": `calc(100vw - ${'32px'})`,
+  borderBottomLeftRadius: '8px',
+  borderBottomRightRadius: '8px',
+  margin: "0em",
+  fontWeight: "bold",
+  '@media screen and (max-width: 600px)': {
+    minWidth: `calc(100vw - ${'8px'})`,
+    maxWidth: `calc(100vw - ${'8px'})`,
   },
-  '@media only screen and (min-width: 600px)': {
-    "width": "680px",
+  '@media screen and (min-width: 600px)': {
+    width: "680px",
+    fontSize: "26px",
   },
 });
 
 export const RootStyles = {
-  "padding": "18px",
+  "padding": "8px",
+  '@media only screen and (max-width: 600px)': {
+    // "padding": '0px 16px 0px 16px',
+    "min-width": `calc(100vw - ${'32px'})`,
+    "max-width": `calc(100vw - ${'32px'})`,
+    // 'boxSizing': 'content-box',
+    // width: '100%'
+  },
 };
 
 export const TitleOfCodeStyles = {

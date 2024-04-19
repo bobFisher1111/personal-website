@@ -1,0 +1,11 @@
+0. Things Need to add or fix before release:
+  a. Create link for for text on articles (CreateArticlePage) // completed
+  b. Fix padding on article for mobile and desktop // mobile complete 
+
+1. Dark Theme:
+  - https://colorhunt.co/
+    - 1. https://colorhunt.co/palette/1904827752fe8e8ffac2d9ff
+    - 2. https://colorhunt.co/palette/04364a176b8764ccc5dafffb
+    - 3. https://colorhunt.co/palette/040d12183d3d5c837493b1a6
+    - 4. https://colorhunt.co/palette/27374d526d829db2bfdde6ed
+    - 5. https://colorhunt.co/palette/f6f1f119a7ce146c94000000

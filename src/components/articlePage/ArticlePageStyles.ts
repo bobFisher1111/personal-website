@@ -1,6 +1,8 @@
 export const CreateArticleStyle = {
   '@media only screen and (max-width: 600px)': {
-    padding: '16px 0px 0px 0px',
+    // maxWidth: "100%",
+    overflowX: "hidden",
+    // padding: '16px 0px 0px 0px',
   },
 };
 
