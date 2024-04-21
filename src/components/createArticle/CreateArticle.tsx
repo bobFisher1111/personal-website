@@ -8,6 +8,8 @@ import {
 } from '@mui/material';
 import {
   BulletListChildLinkStyles,
+  BulletListUnorderedListStyles,
+  GridBulletListUnorderedListStyles,
   ImageGrid,
   CreateArticleImage,
   CreateArticleVideo,
@@ -30,7 +32,7 @@ export const CreateArticle = (articleData: string) => {
     return (
       <Grid
         container
-        justifyContent="center" // after mobile fixed
+        justifyContent="center"
         sx={ImageGrid}
       >
         <Box
@@ -46,7 +48,7 @@ export const CreateArticle = (articleData: string) => {
     return (
       <Grid
         container
-        justifyContent="center" // after mobile fixed
+        justifyContent="center"
       >
         <CardMedia
           component="iframe"
@@ -61,7 +63,7 @@ export const CreateArticle = (articleData: string) => {
     return (
       <Grid
         container
-        justifyContent="center" // after mobile fixed
+        justifyContent="flex-start"
         sx={ParagraphTitleRoot}
       >
         <Typography
@@ -78,7 +80,7 @@ export const CreateArticle = (articleData: string) => {
     return (
       <Grid
         container
-        justifyContent="center" // after mobile fixed
+        justifyContent="center"
       >
         <Typography
           id="article_Paragraph_Title"
@@ -94,10 +96,14 @@ export const CreateArticle = (articleData: string) => {
     return (
       <Grid
         container
-        justifyContent="center"
+        justifyContent="flex-start"
         alignItems="flex-start"
+        sx={GridBulletListUnorderedListStyles}
       >
-        <ul style={{"listStylePosition": "outside", "margin": "0px 16px 0px 0px"}}>
+        <ul
+          // style={{"listStylePosition": "outside", "margin": "0px 16px 0px 0px"}}
+          style={BulletListUnorderedListStyles()}
+        >
           <li>
             <Typography
               id="article_Bullet_List"
@@ -132,7 +138,7 @@ export const CreateArticle = (articleData: string) => {
     return (
       <Grid
         container
-        justifyContent="center" // after mobile fixed
+        justifyContent="center"
       >
         <Typography
           id="article_Quotes"

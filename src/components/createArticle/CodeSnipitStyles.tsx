@@ -1,41 +1,48 @@
 export const CopyCodeStyles = (copyIconColor: any) => ({
-  "padding": "0px",
-  "color": copyIconColor,
-  "cursor": 'pointer',
+  padding: "0px",
+  color: copyIconColor,
+  cursor: 'pointer',
   '&:hover': {
-    "color": '#2F4C69',
+    color: '#2F4C69',
   },
   '@media only screen and (max-width: 600px)': {
-    "height": "20px",
+    height: "20px",
   },
 });
 
 export const GridCopyCodeStyles = {
-  "padding": "0px 16px 0px 0px",
+  padding: "0px 16px 0px 0px",
   '@media only screen and (max-width: 600px)': {
-    "padding": "0px 8px 0px 0px",
+    padding: "0px 8px 0px 0px",
   },
 };
 
 export const GridTitleStyle = {
-  "color": "lightgrey",
-  "padding": "0px 0px 0px 16px",
-  "marginRight": "auto"
+  color: "lightgrey",
+  padding: "0px 0px 0px 16px",
+  marginRight: "auto"
 };
 
 export const HeaderStyles = {
-  "height": "48px",
-  "background": "#1f212a",
-  "borderTopRightRadius": "8px",
-  "borderTopLeftRadius": "8px",
-  "borderBottom": "1px grey solid",
+  height: "48px",
+  background: "#1f212a",
+  borderTopRightRadius: "8px",
+  borderTopLeftRadius: "8px",
+  borderBottom: "1px grey solid",
   '@media only screen and (min-width: 600px)': {
-    "width": "680px",
+    minWidth: "600px",
+    maxWidth: "600px",
+  },
+  '@media only screen and (min-width: 820px)': {
+    minWidth: "800px",
+    maxWidth: "800px",
+  },
+  '@media only screen and (min-width: 920px)': {
+    minWidth: "900px",
+    maxWidth: "900px",
   },
   '@media only screen and (max-width: 600px)': {
     "height": "36px",
-    // "min-width": `calc(100vw - ${'32px'})`,
-    // "max-width": `calc(100vw - ${'16px'})`,
   },
 };
 
@@ -54,25 +61,21 @@ export const PreTagStyles: any = () => ({
     maxWidth: `calc(100vw - ${'8px'})`,
   },
   '@media screen and (min-width: 600px)': {
-    width: "680px",
     fontSize: "26px",
   },
 });
 
 export const RootStyles = {
-  "padding": "8px",
+  padding: "8px",
   '@media only screen and (max-width: 600px)': {
-    // "padding": '0px 16px 0px 16px',
-    "min-width": `calc(100vw - ${'32px'})`,
-    "max-width": `calc(100vw - ${'32px'})`,
-    // 'boxSizing': 'content-box',
-    // width: '100%'
+    minWidth: `calc(100vw - ${'32px'})`,
+    maxWidth: `calc(100vw - ${'32px'})`,
   },
 };
 
 export const TitleOfCodeStyles = {
-  "fontSize": "16px",
-  "fontWeight": "bold",
+  fontSize: "16px",
+  fontWeight: "bold",
 };
 
 export default [

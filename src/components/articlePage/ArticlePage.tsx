@@ -10,6 +10,7 @@ import CreateArticle from '../createArticle/CreateArticle';
 import formatDate from '../../util/formatDate';
 import getNameFromUrl from '../../util/getNameFromUrl';
 import {
+  CreateArticleRoot,
   CreateArticleStyle,
   GridRoot,
   GridHeader,
@@ -17,6 +18,7 @@ import {
 } from './ArticlePageStyles';
 
 const ArticlePage: React.FC = () => {
+  // const horizontalCardRef = useRef(0);
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const webData = getWebsiteData && getWebsiteData?.websiteData;
   const getIdFromUrl = () => {
@@ -48,12 +50,15 @@ const ArticlePage: React.FC = () => {
     <>
       <Grid
         container
-        justifyContent='flex-end'
+        justifyContent='center'
         alignContent='center'
         sx={GridRoot}
       >
         <Grid
           item
+          container
+          justifyContent="center"
+          alignContent='center'
           xs={12}
           sm={12}
           md={12}
@@ -61,32 +66,37 @@ const ArticlePage: React.FC = () => {
           xl={9}
           sx={GridHeader}
         >
-          <HeaderComponent
-            title={articleData?.articleTitle}
-            authorAvatar={false}
-          />
-          <HorizontalArticleCardComponent
-            author={authorData?.authorName}
-            cardTextWidth={'1000px'}
-            date={formatDate(articleData?.publishedDate)}
-            imageWidth={'1000px'}
-            articlePage={true}
-            articleSubTitle={articleData?.articleSubTitle}
-            useVideoInsteadOfImage={articleData?.useVideoInsteadOfImage}
-            authorsId={articleData?.authorId}
-            articleId={articleData?.articleId}
-            videoOrImageCover={articleData?.coverImageOrVideo}
-            sectionLink={articleData?.sectionLink}
-            section={articleData?.sections}
-            mobileImageWidth={'22px'}
-            videoHeight={false}
-          />
           <Grid
-            sx={CreateArticleStyle}
+            sx={CreateArticleRoot}
           >
-            {articleArray?.map((item: any) => (
-              CreateArticle(item)
-            ))}
+            <HeaderComponent
+              title={articleData?.articleTitle}
+              authorAvatar={false}
+            />
+            <HorizontalArticleCardComponent
+              author={authorData?.authorName}
+              cardTextWidth={'1000px'}
+              date={formatDate(articleData?.publishedDate)}
+              imageWidth={'1000px'}
+              articlePage={true}
+              articleSubTitle={articleData?.articleSubTitle}
+              useVideoInsteadOfImage={articleData?.useVideoInsteadOfImage}
+              authorsId={articleData?.authorId}
+              articleId={articleData?.articleId}
+              videoOrImageCover={articleData?.coverImageOrVideo}
+              sectionLink={articleData?.sectionLink}
+              section={articleData?.sections}
+              mobileImageWidth={'22px'}
+              videoHeight={false}
+            />
+            <Grid
+              item
+              sx={CreateArticleStyle}
+            >
+              {articleArray?.map((item: any) => (
+                CreateArticle(item)
+              ))}
+            </Grid>
           </Grid>
         </Grid>
         <Grid
