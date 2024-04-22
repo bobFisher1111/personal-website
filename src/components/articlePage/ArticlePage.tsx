@@ -58,7 +58,7 @@ const ArticlePage: React.FC = () => {
           item
           container
           justifyContent="center"
-          alignContent='center'
+          alignContent='flex-start'
           xs={12}
           sm={12}
           md={12}
