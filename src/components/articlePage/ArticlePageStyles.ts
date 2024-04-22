@@ -13,6 +13,9 @@ export const CreateArticleRoot = {
     width: '960px',
   },
   '@media only screen and (min-width: 1200px)': {
+    width: '900px',
+  },
+  '@media only screen and (min-width: 1280px)': {
     width: '960px',
   },
 };
@@ -25,7 +28,6 @@ export const CreateArticleStyle = {
 
 export const GridRoot = {
   paddingBottom: '200px',
-  // border: '10px solid blue',
 };
 
 export const GridHeader = {
