@@ -30,8 +30,7 @@ export const ImageGrid = {
 };
 
 export const CreateArticleImage = () => ({
-  height: '394px',
-  width: '700px',
+  width: '100%',
   borderRadius: '7px',
   aspectRatio: '16/9',
   '@media only screen and (max-width: 600px)': {
@@ -83,12 +82,12 @@ export const ParagraphTitleRoot = {
 
 export const titleText = {
   borderColor: '#0C0D0D',
-  padding: '16px 0px 0px 0px',
+  padding: '8px 0px 0px 0px',
   lineHeight: '32px',
   fontSize: '26px',
   // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
   '@media only screen and (max-width: 600px)': {
-    padding: '16px 8px 8px 8px',
+    padding: '8px 8px 8px 8px',
     fontSize: '22px',
     lineHeight: '24px',
     letterSpace: 0,
@@ -179,6 +178,24 @@ export const sectionText = {
   },
 };
 
+export const sectionTextStyle = {
+  lineHeight: '32px',
+  fontSize: '20px',
+  padding: '0px 32px 0px 32px',
+  // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
+  '@media only screen and (max-width: 600px)': {
+    textIndent: '0px',
+    fontSize: '17px',
+    lineHeight: '28px',
+    letterSpacing: '-0.003.em',
+    minWidth: `calc(100vw - ${'64px'})`,
+    maxWidth: `calc(100vw - ${'64px'})`,
+  },
+  '@media only screen and (min-width: 600px)': {
+    padding: '',
+  },
+};
+
 export const sectionTextParagraph = {
   lineHeight: '32px',
   fontSize: '20px',
@@ -216,7 +233,7 @@ export const quoteText = {
 };
 
 export const paragraphText = {
-  padding: '16px 0px 0px 0px',
+  padding: '8px 0px 0px 0px',
   lineHeight: '32px',
   fontSize: '20px',
   // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
@@ -243,6 +260,7 @@ export default [
   LinkStyles,
   ParagraphTitleRoot,
   titleText,
+  sectionTextStyle,
   sectionText,
   SectionTextWithFirstLetterBold,
   sectionTextParagraph,

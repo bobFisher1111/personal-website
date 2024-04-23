@@ -16,6 +16,7 @@ import {
   LinkStyles,
   ParagraphTitleRoot,
   titleText,
+  sectionTextStyle,
   sectionText,
   sectionTextParagraph,
   quoteText,
@@ -114,6 +115,24 @@ export const CreateArticle = (articleData: string) => {
             </Typography>
           </li>
         </ul>
+      </Grid>
+    );
+  }
+  if (articleData.startsWith('[SECTION]')) {
+    return (
+      <Grid
+        container
+        justifyContent="flex-start"
+        alignItems="flex-start"
+        sx={GridBulletListUnorderedListStyles}
+      >
+        <Typography
+          id="article_Bullet_List"
+          color="#0C0D0D"
+          sx={sectionTextStyle}
+        >
+          {articleData.slice(13)} 
+        </Typography>
       </Grid>
     );
   }

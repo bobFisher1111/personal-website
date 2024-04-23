@@ -36,7 +36,7 @@ const HeaderComponent:  React.FC<Props> = ({
     <Grid
       container
       direction="row"
-      justifyContent="center"
+      justifyContent="flex-start"
       alignItems="center"
       sx={GridHeader}
     >
