@@ -1,3 +1,9 @@
+export const ArticlePageRoot = {
+  '@media only screen and (max-width: 600px)': {
+    padding: '0px 8px 0px 8px',
+  },
+};
+
 export const CardHorizontalArticleInfo = ( articlepagelist: boolean ) => ({
   maxWidth: '740px',
   backgroundColor: 'white',
@@ -16,13 +22,14 @@ export const CardHorizontalArticleInfo = ( articlepagelist: boolean ) => ({
 });
 
 export const CardMedaiArticleVideo = (articlepage: boolean, videoHeight: boolean, mobileImageWidth?: string) => ({
-  height: articlepage ? '576px' : '181px',
+  height: `${articlepage} ? '576px' : '181px'`,
   border: '0px',
-  borderRadius: '7px',
+  borderRadius: '4px',
+  aspectRatio: '16/9',
   '@media only screen and (max-width: 600px)': {
-    maxWidth: `calc(100vw - ${mobileImageWidth})`,
-    minWidth: `calc(100vw - ${mobileImageWidth})`,
-    height: '200px',
+    minWidth: articlepage ? '101vw' : `calc(100vw - ${mobileImageWidth})`,
+    borderRadius: articlepage ? '0px' : '4px',
+    border: articlepage ? '' : '0px',
   },
   '@media only screen and (min-width: 600px)': {
     maxWidth: 'calc(100vw - 48px)',
@@ -56,11 +63,12 @@ export const GridHorizontalArticleMaxWidth = (imagewidth: string) => ({
 
 export const ImageHorizonatalArticleStyles = (articlepage: any, imagewidth?: any) => ({
   height: `${articlepage} ? '576px' : '181px'`,
-  borderRadius: '7px',
+  borderRadius: '4px',
   aspectRatio: '16/9',
   width: articlepage ? '960px' : '321px',
   '@media only screen and (max-width: 600px)': {
-    width: `calc(100vw - ${imagewidth})`
+    width: articlepage ? '101vw' : `calc(100vw - ${imagewidth})`,
+    borderRadius: articlepage ? '0px' : '4px',
   },
   '@media only screen and (min-width: 600px)': {
     width: `calc(100vw - ${imagewidth})`,
@@ -118,7 +126,15 @@ export const TypographyHorizontalArticleTitle = (articlepage: boolean) => ({
   },
 });
 
+export const TitleStyle = {
+  fontSize: '32px',
+  '@media only screen and (max-width: 600px)': {
+    fontSize: '26px',
+  },
+};
+
 export default [
+  ArticlePageRoot,
   CardHorizontalArticleInfo,
   CardMedaiArticleVideo,
   GridHorizontalArticleContainer,
@@ -127,4 +143,5 @@ export default [
   TypographyHorizontalArticleDate,
   TypographyHorizontalArticleSubTitle,
   TypographyHorizontalArticleTitle,
+  TitleStyle,
 ];

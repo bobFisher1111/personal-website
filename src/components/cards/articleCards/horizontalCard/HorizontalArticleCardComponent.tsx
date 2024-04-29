@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import HorizontalArticleInfoComponent from './horizontalArticleInfoComponent/HorizontalArticleInfoComponent';
 import HorizontalArticlePageInfoComponent from './horizontalArticlePageInfoComponent/HorizontalArticlePageInfoComponent';
 import {
+  ArticlePageRoot,
   CardHorizontalArticleInfo,
   CardMedaiArticleVideo,
   GridHorizontalArticleContainer,
@@ -19,6 +20,7 @@ import {
   TypographyHorizontalArticleDate,
   TypographyHorizontalArticleSubTitle,
   TypographyHorizontalArticleTitle,
+  TitleStyle,
 } from './HorizontalArticleCardComponentStyles';
 import { LinkStyles } from '../../../../util/styles/LinkStyles';
 
@@ -98,9 +100,15 @@ const HorizontalArticleCardComponent: React.FC<Props> = ({
           {articlePage && 
             <Grid
               container
-              justifyContent="center"
+              justifyContent="flex-start"
               alignItems="center"
+              sx={ArticlePageRoot}
             >
+              <Typography
+                sx={TitleStyle}
+              >
+                {title}
+              </Typography>
               <HorizontalArticlePageInfoComponent
                 authorsId={authorsId}
                 author={author}

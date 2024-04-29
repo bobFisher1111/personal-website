@@ -3,11 +3,15 @@ export const seriesComponentGridRoot = {
   display: 'flex',
   maxWidth: '1024px',
   margin: 'auto',
-  padding: '40px 16px 100px 16px',
+  padding: '37px 16px 100px 16px',
 };
 
 export const seriesComponentGridHeader = {
   alignItems: 'center',
+  padding: "16px 0px 0px 0px",
+  '@media only screen and (max-width: 600px)': {
+    padding: "0px 0px 0px 0px",
+  },
 };
 
 export const seriesComponentGridArticleInfo = {

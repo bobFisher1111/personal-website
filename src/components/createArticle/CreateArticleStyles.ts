@@ -31,18 +31,17 @@ export const ImageGrid = {
 
 export const CreateArticleImage = () => ({
   width: '100%',
-  borderRadius: '7px',
-  aspectRatio: '16/9',
+  borderRadius: '4px',
+  border: '1px solid black',
   '@media only screen and (max-width: 600px)': {
     width: `calc(100vw - ${'72px'})`,
-    height: '200px',
   },
 });
 
 export const CreateArticleIndentImage = () => ({
   height: '394px',
   width: '700px',
-  borderRadius: '7px',
+  borderRadius: '4px',
   aspectRatio: '16/9',
   '@media only screen and (max-width: 600px)': {
     width: `calc(100vw - ${'72px'})`,
@@ -53,7 +52,7 @@ export const CreateArticleIndentImage = () => ({
 export const CreateArticleVideo = () => ({
   height: '394px',
   width: '700px',
-  borderRadius: '7px',
+  borderRadius: '4px',
   aspectRatio: '16/9',
   '@media only screen and (max-width: 600px)': {
     width: `calc(100vw - ${'72px'})`,
@@ -149,32 +148,19 @@ export const SectionTextWithFirstLetterBold = {
   },
 };
 
-export const sectionText = {
-  padding: '16px 0px 0px 0px',
-  textIndent: '40px',
+export const BulletListChildTextStyles = {
+  padding: '16px 32px 0px 32px',
   lineHeight: '32px',
   fontSize: '20px',
   // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
-  width: '850px',
+  width: '1000px',
   alignItems: 'center',
   '@media only screen and (max-width: 600px)': {
-    padding: '0px 48px 0px 48px',
+    padding: '0px 16px 0px 16px',
     fontSize: '17px',
     lineHeight: '28px',
     letterSpacing: '-0.003.em',
     textIndent: '0px',
-  },
-  '@media only screen and (min-width: 600px)': {
-    padding: '8px 62px 0px 62px',
-    textIndent: '24px',
-    width: '650px',
-  },
-  '@media only screen and (min-width: 992px)': {
-    textIndent: '24px',
-  },
-  '@media only screen and (min-width: 1200px)': {
-    textIndent: '24px',
-    width: '850px'
   },
 };
 
@@ -219,16 +205,16 @@ export const quoteText = {
   lineHeight: '32px',
   fontSize: '26px',
   // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
-  maxWidth: '600px',
+  maxWidth: '1000px',
   fontStyle: 'itallic',
   '@media only screen and (max-width: 600px)': {
-    padding: '16px 48px 16px 48px',
+    padding: '0px 16px 0px 16px',
     fontSize: '17px',
     lineHeight: '28px',
     letterSpacing: '-0.003.em'
   },
   '@media only screen and (min-width: 600px)': {
-    padding: '16px 32px 32px 32px',
+    padding: '16px 32px 16px 32px',
   },
 };
 
@@ -251,6 +237,7 @@ export const paragraphText = {
 
 export default [
   BulletListChildLinkStyles,
+  BulletListChildTextStyles,
   BulletListUnorderedListStyles,
   GridBulletListUnorderedListStyles,
   ImageGrid,
@@ -261,7 +248,6 @@ export default [
   ParagraphTitleRoot,
   titleText,
   sectionTextStyle,
-  sectionText,
   SectionTextWithFirstLetterBold,
   sectionTextParagraph,
   quoteText,

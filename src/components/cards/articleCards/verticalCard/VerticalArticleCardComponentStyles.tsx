@@ -11,7 +11,7 @@ export const CardMediaVerticalCardImage = {
 
 export const CardMediaVerticalCardVideo = {
   border: '0px',
-  borderRadius: '7px',
+  borderRadius: '4px',
 };
 
 export const CardRootStyle = {

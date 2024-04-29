@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ComingSoon from '../comingSoon/ComingSoon';
 import formatDate from '../../util/formatDate';
-import HeaderComponent from '../headerComponent/HeaderComponent';
+// import HeaderComponent from '../headerComponent/HeaderComponent';
 import HorizontalArticleCardComponent from '../cards/articleCards/horizontalCard/HorizontalArticleCardComponent';
 import { LinkStyles } from '../../util/styles/LinkStyles';
 import {
@@ -57,10 +57,6 @@ const SeriesComponent = () => {
           xl={12}
           sx={seriesComponentGridHeader}
         >
-          <HeaderComponent
-            title={seriesInfo?.seriesTitle}
-            authorAvatar={false}
-          />
           <HorizontalArticleCardComponent
             author={seriesInfo?.seriesAuthors}
             cardTextWidth={'1000px'}

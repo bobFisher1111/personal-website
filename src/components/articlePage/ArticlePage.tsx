@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import {
   Grid,
 } from '@mui/material';
-import HeaderComponent from '../headerComponent/HeaderComponent';
+// import HeaderComponent from '../headerComponent/HeaderComponent';
 import HorizontalArticleCardComponent from '../cards/articleCards/horizontalCard/HorizontalArticleCardComponent';
 import AuthorComponent from '../authorComponents/AuthorComponent';
 import { useSelector } from 'react-redux';
@@ -69,10 +69,6 @@ const ArticlePage: React.FC = () => {
           <Grid
             sx={CreateArticleRoot}
           >
-            <HeaderComponent
-              title={articleData?.articleTitle}
-              authorAvatar={false}
-            />
             <HorizontalArticleCardComponent
               author={authorData?.authorName}
               cardTextWidth={'1000px'}
@@ -86,6 +82,7 @@ const ArticlePage: React.FC = () => {
               videoOrImageCover={articleData?.coverImageOrVideo}
               sectionLink={articleData?.sectionLink}
               section={articleData?.sections}
+              title={articleData?.articleTitle}
               mobileImageWidth={'22px'}
               videoHeight={false}
             />

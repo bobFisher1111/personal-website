@@ -37,7 +37,7 @@ const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
       <Grid 
         container 
         direction="row"
-        justifyContent="center"
+        justifyContent="flex-start"
         sx={GridArticleInfoComponent}
       >
         <Link 

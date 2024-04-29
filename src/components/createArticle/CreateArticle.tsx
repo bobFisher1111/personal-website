@@ -8,6 +8,7 @@ import {
 } from '@mui/material';
 import {
   BulletListChildLinkStyles,
+  BulletListChildTextStyles,
   BulletListUnorderedListStyles,
   GridBulletListUnorderedListStyles,
   ImageGrid,
@@ -17,7 +18,6 @@ import {
   ParagraphTitleRoot,
   titleText,
   sectionTextStyle,
-  sectionText,
   sectionTextParagraph,
   quoteText,
   paragraphText,
@@ -29,6 +29,7 @@ import ReviewScore from './ReviewScore';
 const imageExtensions = '.jpg' || '.jpeg' || '.jpg' || '.png';
 
 export const CreateArticle = (articleData: string) => {
+  // Looks Good On Coding, 
   if (articleData.match(imageExtensions)) {
     return (
       <Grid
@@ -45,6 +46,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
+  // Looks Good On Coding, 
   if (articleData.match('youtube.com')) {
     return (
       <Grid
@@ -60,6 +62,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
+  // Looks Good On Coding, 
   if (articleData.startsWith('[PARAGRAPH_TITLE]')) {
     return (
       <Grid
@@ -77,6 +80,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
+  // Not Being Used
   if (articleData.startsWith('[PARAGRAPH_TITLE_WITH_PADDING]')) {
     return (
       <Grid
@@ -93,6 +97,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
+  // Looks Good On Coding, 
   if (articleData.startsWith('[BULLET_LIST]')) {
     return (
       <Grid
@@ -118,6 +123,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
+  // Looks Good On Coding, 
   if (articleData.startsWith('[SECTION]')) {
     return (
       <Grid
@@ -131,11 +137,12 @@ export const CreateArticle = (articleData: string) => {
           color="#0C0D0D"
           sx={sectionTextStyle}
         >
-          {articleData.slice(13)} 
+          {articleData.slice(9)} 
         </Typography>
       </Grid>
     );
   }
+  // Not being used
   if (articleData.startsWith('[INDENT_TEXT]')) {
     return (
       <Grid
@@ -153,6 +160,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
+  // Need work
   if (articleData.startsWith('[QUOTES]')) {
     return (
       <Grid
@@ -161,7 +169,7 @@ export const CreateArticle = (articleData: string) => {
       >
         <Typography
           id="article_Quotes"
-          color="#667A6E"
+          color="grey"
           sx={quoteText}
         >
           {/*eslint-disable-next-line */}
@@ -170,6 +178,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
+  // Being used on Reviews
   if (articleData.startsWith('[BULLET_LIST_CHILD]')) {
     return (
       <Grid
@@ -179,13 +188,14 @@ export const CreateArticle = (articleData: string) => {
         <Typography
           id="article_Bullet_List_Child"
           color="#0C0D0D"
-          sx={sectionText}
+          sx={BulletListChildTextStyles}
         >
           { articleData.slice(19) }
         </Typography>
       </Grid>
     );
   }
+  // Looks good on Coding
   if (articleData.startsWith('[BULLET_LIST_CHILD_LINKS]')) {
     return (
       <Grid
@@ -205,6 +215,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
+  // Looks Good On Coding
   if (articleData.startsWith('[CODESNIPIT]')) {
     return (
       <Grid
@@ -218,6 +229,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
+  // Needs work
   if (articleData.startsWith('[REVIEW]')) {
     return (
       <Grid
@@ -229,6 +241,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
+  // used on Coding
   if (articleData.startsWith('[LINKS]')) {
     return (
       <Grid
@@ -244,11 +257,12 @@ export const CreateArticle = (articleData: string) => {
           rel="noopener"
           sx={LinkStyles}
         >
-          {articleData.slice(7)}
+          { articleData.slice(7) }
         </Link>
       </Grid>
     );
   }
+  // looks good
   return (
     <Grid
       container
