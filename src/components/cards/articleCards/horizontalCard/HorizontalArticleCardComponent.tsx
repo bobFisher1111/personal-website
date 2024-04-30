@@ -104,11 +104,13 @@ const HorizontalArticleCardComponent: React.FC<Props> = ({
               alignItems="center"
               sx={ArticlePageRoot}
             >
-              <Typography
-                sx={TitleStyle}
-              >
-                {title}
-              </Typography>
+              {section !== 'Stories' &&
+                <Typography
+                  sx={TitleStyle}
+                >
+                  {title}
+                </Typography>
+              }
               <HorizontalArticlePageInfoComponent
                 authorsId={authorsId}
                 author={author}

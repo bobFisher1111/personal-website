@@ -15,6 +15,38 @@ export const BulletListUnorderedListStyles: any = () => ({
   margin: "0px 16px 0px 0px",
 });
 
+export const StoryChapterStyle = {
+  borderColor: '#0C0D0D',
+  padding: '32px 0px 32px 0px',
+  lineHeight: '32px',
+  fontSize: '32px',
+  // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
+  '@media only screen and (max-width: 600px)': {
+    padding: '8px 8px 8px 8px',
+    fontSize: '26px',
+    lineHeight: '28px',
+    letterSpace: 0,
+  },
+};
+
+export const StoryTitleStyle = {
+  borderColor: '#0C0D0D',
+  padding: '32px 0px 32px 0px',
+  lineHeight: '32px',
+  fontSize: '26px',
+  // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
+  '@media only screen and (max-width: 600px)': {
+    padding: '8px 8px 8px 8px',
+    fontSize: '20px',
+    lineHeight: '24px',
+    letterSpace: 0,
+  },
+};
+
+export const StoryTitleStyleRoot = {
+  padding: '16px 0px 48px 0px',
+};
+
 export const GridBulletListUnorderedListStyles = {
   '@media screen and (max-width: 600px)': {
     width: 'calc(100vw - 24px)',
@@ -73,9 +105,25 @@ export const LinkStyles = {
   },
 };
 
+export const ParagraphIndentStyle = {
+  textIndent: '24px',
+  lineHeight: '32px',
+  fontSize: '20px',
+  hyphens: 'auto',
+  // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
+  '@media only screen and (max-width: 600px)': {
+    textIndent: '12px',
+    fontSize: '17px',
+    lineHeight: '28px',
+    letterSpacing: '-0.003.em',
+    padding: '0px 8px 0px 8px',
+  },
+};
+
 export const ParagraphTitleRoot = {
   '@media only screen and (max-width: 600px)': {
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
+    padding: '16px 0px 16px 0px',
   },
 };
 
@@ -155,6 +203,7 @@ export const BulletListChildTextStyles = {
   // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
   width: '1000px',
   alignItems: 'center',
+  hyphens: 'auto',
   '@media only screen and (max-width: 600px)': {
     padding: '0px 16px 0px 16px',
     fontSize: '17px',
@@ -168,6 +217,7 @@ export const sectionTextStyle = {
   lineHeight: '32px',
   fontSize: '20px',
   padding: '0px 32px 0px 32px',
+  hyphens: 'auto',
   // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
   '@media only screen and (max-width: 600px)': {
     textIndent: '0px',
@@ -185,6 +235,7 @@ export const sectionTextStyle = {
 export const sectionTextParagraph = {
   lineHeight: '32px',
   fontSize: '20px',
+  hyphens: 'auto',
   // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
   '@media only screen and (max-width: 600px)': {
     textIndent: '0px',
@@ -207,6 +258,7 @@ export const quoteText = {
   // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
   maxWidth: '1000px',
   fontStyle: 'itallic',
+  hyphens: 'auto',
   '@media only screen and (max-width: 600px)': {
     padding: '0px 16px 0px 16px',
     fontSize: '17px',
@@ -222,6 +274,7 @@ export const paragraphText = {
   padding: '8px 0px 0px 0px',
   lineHeight: '32px',
   fontSize: '20px',
+  hyphens: 'auto',
   // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
   alignItems: 'center',
   ':: first-letter': {
@@ -245,11 +298,15 @@ export default [
   CreateArticleVideo,
   CreateArticleIndentImage,
   LinkStyles,
+  ParagraphIndentStyle,
   ParagraphTitleRoot,
   titleText,
   sectionTextStyle,
   SectionTextWithFirstLetterBold,
   sectionTextParagraph,
+  StoryChapterStyle,
+  StoryTitleStyleRoot,
+  StoryTitleStyle,
   quoteText,
   paragraphText,
   TitleTextWithPadding,

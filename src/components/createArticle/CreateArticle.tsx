@@ -15,10 +15,14 @@ import {
   CreateArticleImage,
   CreateArticleVideo,
   LinkStyles,
+  ParagraphIndentStyle,
   ParagraphTitleRoot,
   titleText,
   sectionTextStyle,
   sectionTextParagraph,
+  StoryChapterStyle,
+  StoryTitleStyle,
+  StoryTitleStyleRoot,
   quoteText,
   paragraphText,
   TitleTextWithPadding,
@@ -80,6 +84,24 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
+  // Looks Good On Story, 
+  if (articleData.startsWith('[STORY_CHAPTER]')) {
+    return (
+      <Grid
+        container
+        justifyContent="center"
+        sx={ParagraphTitleRoot}
+      >
+        <Typography
+          id="article_Chapter"
+          color="#0C0D0D"
+          sx={StoryChapterStyle}
+        >
+          { <strong>{articleData.slice(15)}</strong> }   
+        </Typography>
+      </Grid>
+    );
+  }
   // Not Being Used
   if (articleData.startsWith('[PARAGRAPH_TITLE_WITH_PADDING]')) {
     return (
@@ -107,7 +129,6 @@ export const CreateArticle = (articleData: string) => {
         sx={GridBulletListUnorderedListStyles}
       >
         <ul
-          // style={{"listStylePosition": "outside", "margin": "0px 16px 0px 0px"}}
           style={BulletListUnorderedListStyles()}
         >
           <li>
@@ -133,7 +154,7 @@ export const CreateArticle = (articleData: string) => {
         sx={GridBulletListUnorderedListStyles}
       >
         <Typography
-          id="article_Bullet_List"
+          id="article_section"
           color="#0C0D0D"
           sx={sectionTextStyle}
         >
@@ -151,7 +172,7 @@ export const CreateArticle = (articleData: string) => {
         alignItems="flex-start"
       >
         <Typography
-          id="article_Bullet_List"
+          id="article_indent_text"
           color="#0C0D0D"
           sx={sectionTextParagraph}
         >
@@ -160,7 +181,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
-  // Need work
+  // Looks good
   if (articleData.startsWith('[QUOTES]')) {
     return (
       <Grid
@@ -259,6 +280,42 @@ export const CreateArticle = (articleData: string) => {
         >
           { articleData.slice(7) }
         </Link>
+      </Grid>
+    );
+  }
+  // Looks good on story
+  if (articleData.startsWith('[PARAGRAPH_INDENT]')) {
+    return (
+      <Grid
+        container
+        justifyContent="center"
+        alignItems="flex-start"
+      >
+        <Typography
+          id="article_paragraph_indent"
+          color="#0C0D0D"
+          sx={ParagraphIndentStyle}
+        >
+          {articleData.slice(18)} 
+        </Typography>
+      </Grid>
+    );
+  }
+  // Looks Good On Stpru, 
+  if (articleData.startsWith('[STORY_TITLE]')) {
+    return (
+      <Grid
+        container
+        justifyContent="center"
+        sx={StoryTitleStyleRoot}
+      >
+        <Typography
+          id="article_story_title"
+          color="#0C0D0D"
+          sx={StoryTitleStyle}
+        >
+          { <strong>{articleData.slice(13)}</strong> }   
+        </Typography>
       </Grid>
     );
   }
