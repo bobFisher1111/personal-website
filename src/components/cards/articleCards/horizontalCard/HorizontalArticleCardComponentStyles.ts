@@ -1,6 +1,7 @@
 export const ArticlePageRoot = {
+  padding: '8px 0px 0px 0px',
   '@media only screen and (max-width: 600px)': {
-    padding: '0px 8px 0px 8px',
+    padding: '8px 8px 0px 8px',
   },
 };
 

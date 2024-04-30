@@ -16,11 +16,11 @@ import {
   CreateArticleVideo,
   LinkStyles,
   ParagraphIndentStyle,
-  ParagraphTitleRoot,
   titleText,
   sectionTextStyle,
   sectionTextParagraph,
   StoryChapterStyle,
+  StoryParagraphTitleRoot,
   StoryTitleStyle,
   StoryTitleStyleRoot,
   quoteText,
@@ -72,7 +72,6 @@ export const CreateArticle = (articleData: string) => {
       <Grid
         container
         justifyContent="flex-start"
-        sx={ParagraphTitleRoot}
       >
         <Typography
           id="article_Paragraph_Title"
@@ -90,7 +89,7 @@ export const CreateArticle = (articleData: string) => {
       <Grid
         container
         justifyContent="center"
-        sx={ParagraphTitleRoot}
+        sx={StoryParagraphTitleRoot}
       >
         <Typography
           id="article_Chapter"

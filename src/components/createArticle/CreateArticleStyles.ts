@@ -120,13 +120,6 @@ export const ParagraphIndentStyle = {
   },
 };
 
-export const ParagraphTitleRoot = {
-  '@media only screen and (max-width: 600px)': {
-    justifyContent: 'center',
-    padding: '16px 0px 16px 0px',
-  },
-};
-
 export const titleText = {
   borderColor: '#0C0D0D',
   padding: '8px 0px 0px 0px',
@@ -134,7 +127,7 @@ export const titleText = {
   fontSize: '26px',
   // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
   '@media only screen and (max-width: 600px)': {
-    padding: '8px 8px 8px 8px',
+    padding: '0px 8px 0px 8px',
     fontSize: '22px',
     lineHeight: '24px',
     letterSpace: 0,
@@ -250,6 +243,13 @@ export const sectionTextParagraph = {
   },
 };
 
+export const StoryParagraphTitleRoot = {
+  '@media only screen and (max-width: 600px)': {
+    justifyContent: 'center',
+    padding: '16px 0px 16px 0px',
+  },
+};
+
 export const quoteText = {
   borderColor: '#0C0D0D',
   padding: '16px 0px 0px 0px',
@@ -299,12 +299,12 @@ export default [
   CreateArticleIndentImage,
   LinkStyles,
   ParagraphIndentStyle,
-  ParagraphTitleRoot,
   titleText,
   sectionTextStyle,
   SectionTextWithFirstLetterBold,
   sectionTextParagraph,
   StoryChapterStyle,
+  StoryParagraphTitleRoot,
   StoryTitleStyleRoot,
   StoryTitleStyle,
   quoteText,
