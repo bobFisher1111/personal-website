@@ -1,7 +1,7 @@
 export const AvatarStyle = {
   width: '100px',
   height: '100px',
-  borderRadius: '8px',
+  borderRadius: '4px',
   '@media only screen and (max-width: 600px)': {
     width: '75px',
     height: '75px',

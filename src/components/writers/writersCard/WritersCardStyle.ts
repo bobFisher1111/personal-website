@@ -3,20 +3,20 @@ export const WritersCardGridRoot = {
 };
 
 export const WritersCardAvatar = {
-  width: '120px',
-  height: '120px',
-  borderRadius: '8px',
+  width: '140px',
+  height: '140px',
+  borderRadius: '4px',
   '@media only screen and (max-width: 600px)': {
     width: '80px',
-    height: '80px',
+    height: '110px',
   },
   '@media only screen and (min-width: 600px)': {
     width: '100px',
     height: '100px',
   },
   '@media only screen and (min-width: 992px)': {
-    width: '120px',
-    height: '120px',
+    width: '140px',
+    height: '140px',
   },
 };
 
