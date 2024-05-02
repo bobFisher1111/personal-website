@@ -1,7 +1,7 @@
 import React from 'react';
 import TwitterLogo from '../../assets/icons/logo-black.png';
 import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
-import FacebookLogo from '../../assets/icons/FacebookLogo.png';
+// import FacebookLogo from '../../assets/icons/FacebookLogo.png';
 import { Grid, Box } from '@mui/material';
 import CopyLinkComponent from '../copyLinkComponent/CopyLinkComponent';
 
@@ -11,7 +11,7 @@ const SocialMediaComponent: React.FC<Props> = ({
   turnOnEmail,
   turnOnEmailStyle,
   email,
-  facebook,
+  // facebook,
   twitter,
   youtube,
 }) => {
@@ -19,7 +19,7 @@ const SocialMediaComponent: React.FC<Props> = ({
     <Grid 
       container
     >
-      <Grid
+      {/* <Grid
         item
         sx={{
           padding: turnOnStyle ? widthPadding : '',
@@ -42,7 +42,7 @@ const SocialMediaComponent: React.FC<Props> = ({
             }}
           />
         </a>
-      </Grid>
+      </Grid> */}
       <Grid
         item
         sx={{
