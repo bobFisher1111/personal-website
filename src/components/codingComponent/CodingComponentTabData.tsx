@@ -15,7 +15,7 @@ const CodingComponentTabData = (
         data: <ArticleList turOnAuthorForArticle={turOnAuthorForArticle} data={articleSectionFilter} />
       },
       { 
-        name: 'Full Stack',
+        name: 'Coding',
         data: <ArticleList turOnAuthorForArticle={turOnAuthorForArticle} data={articleFrontEndFilter} />
       },
       { 
