@@ -12,7 +12,7 @@ export const WritersCardAvatar = {
   },
   '@media only screen and (min-width: 600px)': {
     width: '100px',
-    height: '100px',
+    height: '140px',
   },
   '@media only screen and (min-width: 992px)': {
     width: '140px',

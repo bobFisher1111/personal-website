@@ -33,7 +33,7 @@ const WritersCard: React.FC<Props> = ({
       <Grid
         item
         xs={3}
-        sm={4}
+        sm={3}
         md={4}
         lg={4}
         xl={4}
@@ -52,7 +52,7 @@ const WritersCard: React.FC<Props> = ({
       <Grid
         item
         xs={9}
-        sm={8}
+        sm={9}
         md={8}
         lg={8}
         xl={8}

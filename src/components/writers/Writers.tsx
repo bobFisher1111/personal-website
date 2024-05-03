@@ -47,7 +47,7 @@ const Writers = () => {
             item
             key={item.id}
             xs={12}
-            sm={6}
+            sm={12}
             md={6}
             lg={6}
             xl={6}
