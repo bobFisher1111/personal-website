@@ -13,6 +13,10 @@ import {
 const Writers = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const authorsData = getWebsiteData && getWebsiteData?.websiteData?.authors;
+  const newNonImmutableArray = authorsData?.map((item: any) => item);
+  const sortAuthorsById = newNonImmutableArray?.sort((a: any, b: any) => {
+    return a.authorId - b.authorId;
+  });
   return (
     <>
       <Grid
@@ -38,7 +42,7 @@ const Writers = () => {
         container
         sx={WritersCardGrid}
       >
-        {authorsData && authorsData?.map((item: any) => (
+        {sortAuthorsById?.map((item: any) => (
           <Grid
             item
             key={item.id}
