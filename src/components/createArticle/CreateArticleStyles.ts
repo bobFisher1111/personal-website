@@ -15,6 +15,10 @@ export const BulletListUnorderedListStyles: any = () => ({
   margin: "0px 16px 0px 0px",
 });
 
+export const DDTagStylesNested: any = () => ({
+  margin : "0px",
+});
+
 export const StoryChapterStyle = {
   borderColor: '#0C0D0D',
   padding: '32px 0px 32px 0px',
@@ -243,6 +247,24 @@ export const sectionTextParagraph = {
   },
 };
 
+export const NestedSectionTextParagraph = {
+  lineHeight: '32px',
+  fontSize: '20px',
+  hyphens: 'auto',
+  // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
+  '@media only screen and (max-width: 600px)': {
+    textIndent: '0px',
+    fontSize: '17px',
+    lineHeight: '28px',
+    letterSpacing: '-0.003.em',
+    minWidth: `calc(100vw - ${'100px'})`,
+    maxWidth: `calc(100vw - ${'100px'})`,
+  },
+  '@media only screen and (min-width: 600px)': {
+    padding: '',
+  },
+};
+
 export const StoryParagraphTitleRoot = {
   '@media only screen and (max-width: 600px)': {
     justifyContent: 'center',
@@ -288,6 +310,11 @@ export const paragraphText = {
   },
 };
 
+export const ULTagSylesForNested = () => ({
+  listStyleType: "none",
+  margin: "0px"
+});
+
 export default [
   BulletListChildLinkStyles,
   BulletListChildTextStyles,
@@ -297,7 +324,9 @@ export default [
   CreateArticleImage,
   CreateArticleVideo,
   CreateArticleIndentImage,
+  DDTagStylesNested,
   LinkStyles,
+  NestedSectionTextParagraph,
   ParagraphIndentStyle,
   titleText,
   sectionTextStyle,
@@ -310,4 +339,5 @@ export default [
   quoteText,
   paragraphText,
   TitleTextWithPadding,
+  ULTagSylesForNested,
 ];
