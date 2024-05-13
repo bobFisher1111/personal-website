@@ -10,11 +10,13 @@ import {
   BulletListChildLinkStyles,
   BulletListChildTextStyles,
   BulletListUnorderedListStyles,
+  DDTagStylesNested,
   GridBulletListUnorderedListStyles,
   ImageGrid,
   CreateArticleImage,
   CreateArticleVideo,
   LinkStyles,
+  NestedSectionTextParagraph,
   ParagraphIndentStyle,
   titleText,
   sectionTextStyle,
@@ -26,6 +28,7 @@ import {
   quoteText,
   paragraphText,
   TitleTextWithPadding,
+  ULTagSylesForNested,
 } from './CreateArticleStyles';
 import CodeSnipit from './CodeSnipit';
 import ReviewScore from './ReviewScore';
@@ -139,6 +142,34 @@ export const CreateArticle = (articleData: string) => {
               {articleData.slice(13)} 
             </Typography>
           </li>
+        </ul>
+      </Grid>
+    );
+  }
+  if (articleData.startsWith('[BULLET_LIST_NESTED]')) {
+    return (
+      <Grid
+        container
+        justifyContent="flex-start"
+        alignItems="flex-start"
+        sx={GridBulletListUnorderedListStyles}
+      >
+        <ul
+          style={ULTagSylesForNested()}
+        >
+          <dd style={DDTagStylesNested()}>
+            <ul>
+              <li>
+                <Typography
+                  id="article_Bullet_List"
+                  color="#0C0D0D"
+                  sx={NestedSectionTextParagraph}
+                >
+                  {articleData.slice(20)} 
+                </Typography>
+              </li>
+            </ul>
+          </dd>
         </ul>
       </Grid>
     );
@@ -322,7 +353,7 @@ export const CreateArticle = (articleData: string) => {
   return (
     <Grid
       container
-      justifyContent="center"
+      justifyContent="flex-start"
     >
       <Typography
         id="article_text"
