@@ -29,7 +29,7 @@ const AuthorComponent: React.FC<Props> = ({
   const webData = getWebsiteData && getWebsiteData?.websiteData;
   const getIdFromUrl = () => {
     const currentLocation = window.location.href;
-    const getIdFromCurrentLocation = currentLocation.split('/').reverse()[0];
+    const getIdFromCurrentLocation = currentLocation.split('/').reverse()[1];
     return Number(getIdFromCurrentLocation);
   };
   const getAuthor = webData?.authors?.filter((item: any) => {
