@@ -5,9 +5,8 @@ const Profile = () => {
   return (
     <>
       <header className="App-header">
-        <Typography sx={{
-          color: 'blue' 
-        }}
+        <Typography
+          color="primary"
         >
           <h1>Profile</h1>
         </Typography>

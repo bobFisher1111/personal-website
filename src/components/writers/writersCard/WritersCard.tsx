@@ -63,6 +63,7 @@ const WritersCard: React.FC<Props> = ({
           style={LinkStyles()}
         >
           <Typography
+            color="primary"
             sx={WritersCardTextAuthorName}
           >
             {authorName}
@@ -73,6 +74,7 @@ const WritersCard: React.FC<Props> = ({
           style={LinkStyles()}
         >
           <Typography
+            color="primary"
             variant="subtitle1"
             sx={WritersCardTextAuthorTitle}
           >
@@ -91,6 +93,8 @@ const WritersCard: React.FC<Props> = ({
             twitter={twitter}
             youtube={youtube}
             email={email}
+            alignContent={"flex-start"}
+            justifyContent={"flex-start"}
           />
         </Grid>
       </Grid>

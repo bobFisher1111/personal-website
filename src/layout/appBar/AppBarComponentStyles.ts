@@ -1,9 +1,8 @@
 export const AppBarStyles = {
   position: 'fixed',
   component: 'nav',
-  backgroundColor: '#667A6E',
   boxShadow: 'none',
-  borderBottom: 'solid #2F4C69 1px',
+  borderBottom: '1px solid #0C0D0D',
 };
   
 export default [

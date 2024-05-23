@@ -1,7 +1,7 @@
 import React from 'react';
 import {
-  Box,
   AppBar,
+  Box,
 } from '@mui/material';
 import WebSiteAppBar from './webSiteAppBar/WebSiteAppBar';
 import { AppBarStyles } from './AppBarComponentStyles';

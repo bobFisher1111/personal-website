@@ -32,7 +32,6 @@ export const Series: React.FC<Props> = ({
   const [filterSeries, setFilterSeries] = useState<any>([]);
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const series = getWebsiteData && getWebsiteData?.websiteData?.series;
-
   const getIdFromUrl = () => {
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = currentLocation.split('/').reverse()[1];
@@ -112,6 +111,7 @@ export const Series: React.FC<Props> = ({
                   xl={12}
                 >
                   <Typography
+                    color="primary"
                     sx={TypographySeriesArticleTitle}
                   >
                     {seriesTitle}
@@ -126,6 +126,7 @@ export const Series: React.FC<Props> = ({
                   xl={12}
                 >
                   <Typography
+                    color="primary"
                     sx={TypographySeriesArticleSubTitle}
                   >
                     { a.articleSubTitle}
@@ -140,6 +141,7 @@ export const Series: React.FC<Props> = ({
                   xl={12}
                 >
                   <Typography
+                    color="primary"
                     sx={TypographySeriesArticleDate}
                   >
                     {formatDate(a.publishedDate)}
@@ -180,6 +182,7 @@ export const Series: React.FC<Props> = ({
                     sx={GridMarginLeft}
                   >
                     <Typography
+                      color="primary"
                       sx={TypographySeriesTitle}
                     >
                       {`${item?.section}: ${item?.seriesTitle}`}
@@ -204,6 +207,7 @@ export const Series: React.FC<Props> = ({
                   xl={8}
                 >
                   <Typography
+                    color="primary"
                     sx={TypographySeriesTitle}
                   >
                     {`${item?.seriesTitle}`}
@@ -255,9 +259,6 @@ export const Series: React.FC<Props> = ({
                       >
                         <Button 
                           variant="outlined"
-                          sx={{
-                            color: '#0C0D0D',
-                          }}
                         >
                           Read More
                         </Button>

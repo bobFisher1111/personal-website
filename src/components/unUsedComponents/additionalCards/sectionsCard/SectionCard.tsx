@@ -15,7 +15,7 @@ import {
   GridOverflowHeader,
   GridSectionCardRoot,
 } from './SectionCardStyles';
-import { LinkStyles } from '../../util/styles/LinkStyles';
+import { LinkStyles } from '../../../../util/styles/LinkStyles';
 
 const SectionCard: React.FC<Props> = ({
   // imgCover,
@@ -54,6 +54,7 @@ const SectionCard: React.FC<Props> = ({
             /> */}
           </Link>
           <CardActions
+            // color="primary"
             // sx={CardActionsSectionNameStyle(homePage)} // later for dark and light theme
             sx={CardActionsSectionNameStyle}
           >
@@ -86,3 +87,5 @@ export type Props = {
 };
 
 export default SectionCard;
+
+

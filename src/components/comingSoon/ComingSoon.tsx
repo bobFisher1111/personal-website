@@ -9,6 +9,7 @@ import {
 const ComingSoon: React.FC = () => {
   return (
     <Typography
+      color="primary"
       variant="h5"
       sx={commingSoonText}
     >

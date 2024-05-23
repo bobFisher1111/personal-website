@@ -26,10 +26,10 @@ const SubTitlesComponent: React.FC<Props> = ({
         }}
       >
         <Typography
+          color="primary"
           variant="h6"
           sx={{
             textAlign: 'fled-start',
-            color: fontColor,
             padding: turnOnStyle ? '16px 0px 0px 0px' : '0px'
           }}
         >

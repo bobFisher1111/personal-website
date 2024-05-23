@@ -6,6 +6,7 @@ import StoriesComponentTabData from './StoriesComponentTabData';
 const StoriesComponent = () => {
   const getWebsiteData = useSelector((state: any) => state?.webSiteData?.data);
   const articleData = getWebsiteData && getWebsiteData?.websiteData;
+  const authorsData = getWebsiteData && getWebsiteData?.websiteData?.authors;
   const articleSectionFilter = articleData?.articles?.filter((item: any) => {
     return item.sections === 'Stories';
   });
@@ -17,9 +18,10 @@ const StoriesComponent = () => {
     <SectionsComponent
       headerTitle='Stories'
       sectionTabData={StoriesComponentTabData(
-        false,
+        authorsData,
         articleSectionFilter,
         articleShortStoriesFilter,
+        false,
       )}
     />
   );

@@ -47,7 +47,7 @@ const routes: Route[] = [
   //   element: ArticlePage,
   // },
   {
-    path: '/article/:id/:id',
+    path: '/article/:id/:id/',
     element: ArticlePage,
   },
   {

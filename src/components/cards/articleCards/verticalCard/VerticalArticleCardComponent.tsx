@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import {
   Card,
   CardMedia,
   Grid,
-  Link,
   Box,
   Typography,
 } from '@mui/material/';
@@ -28,6 +29,7 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
   articleData,
   series,
 }) => {
+  const theme = useSelector((state: any) => state.theme.darkTheme);
   const [articlePage, setArticlePage] = useState<boolean>();
   const articleUrl = `${appBaseURL}/article/${articleData?.authorId}/${articleData?.articleId}`;
   const serieslUrl = `${appBaseURL}/series/${articleData?.seriesId}`;
@@ -45,14 +47,14 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
       style={DivVerticalArticleRoot()}
     >
       <Card
-        sx={CardVerticalCard}
+        sx={CardVerticalCard(theme)}
       >
         <Box
           sx={CardRootStyle}
         >
           {articleData?.useVideoInsteadOfImage ?
             <Link 
-              href={series ? serieslUrl : articleUrl}
+              to={series ? serieslUrl : articleUrl}
               rel="noreferrer"
             >
               <Grid
@@ -72,7 +74,7 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
             </Link>
             :
             <Link 
-              href={series ? serieslUrl : articleUrl}
+              to={series ? serieslUrl : articleUrl}
               rel="noreferrer"
             >
               <CardMedia
@@ -98,21 +100,21 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
               >
                 {!articlePage ?
                   <Link 
-                    href={series? authorUrl : articleUrl}
+                    to={series? authorUrl : articleUrl}
                     rel="noreferrer"
-                    sx={LinkStyles}
+                    style={LinkStyles()}
                   >
                     <Typography
+                      color="secondary"
                       sx={TypographyVerticalCardNameStyleHover}
-                      // color="white"
                     >
                       by {name}
                     </Typography>
                   </Link>
                   :
-                  <Typography 
+                  <Typography
+                    color="secondary"
                     sx={TypographyVerticalCardNameStyle}
-                    // color="white"
                   >
                     by {name}
                   </Typography>

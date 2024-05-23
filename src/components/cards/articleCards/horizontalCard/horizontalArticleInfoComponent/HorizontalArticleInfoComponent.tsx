@@ -6,6 +6,7 @@ import {
 } from '@mui/material';
 import CopyLinkComponent from '../../../../copyLinkComponent/CopyLinkComponent';
 import { Link } from 'react-router-dom';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { LinkStyles } from '../../../../../util/styles/LinkStyles';
 import {
   ChipNoPointer,
@@ -43,8 +44,11 @@ const HorizontalArticleInfoComponent: React.FC<Props> = ({
           <Grid 
             className={'material-symbols-outlined'}
             sx={DivMaterialSymbolsOutlined()}
+            color="primary"
           >
-            account_circle
+            <AccountCircleOutlinedIcon
+              color="primary"
+            />
           </Grid>
         </Link>
         :
@@ -52,7 +56,9 @@ const HorizontalArticleInfoComponent: React.FC<Props> = ({
           className={'material-symbols-outlined'}
           style={DivMaterialSymbolsOutlined()}
         >
-          account_circle
+          <AccountCircleOutlinedIcon
+            color="primary"
+          />
         </Grid>
       }
       {!authorPage ? 
@@ -61,7 +67,7 @@ const HorizontalArticleInfoComponent: React.FC<Props> = ({
           style={LinkStyles()}
         >
           <Typography
-            // color="#2F4C69"
+            color="primary"
             sx={TypographyHorizontalInfoText}
           >
             {aughtorsName}
@@ -69,7 +75,7 @@ const HorizontalArticleInfoComponent: React.FC<Props> = ({
         </Link>
         :
         <Typography
-          // color="#2F4C69"
+          color="primary"
           sx={TypographyHorizontalInfoText}
         >
           {aughtorsName}
@@ -106,7 +112,7 @@ const HorizontalArticleInfoComponent: React.FC<Props> = ({
                style={LinkStyles()}
              >
                <Chip
-                 color="secondary"
+                 color="primary"
                  label={'Series'}
                  variant="outlined"
                  size="small"

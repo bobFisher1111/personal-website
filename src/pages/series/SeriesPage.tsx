@@ -1,7 +1,7 @@
 import React from 'react';
 import SeriesComponent from '../../components/seriesComponent/SeriesComponent';
 
-const SeriesPage: React.FC | undefined = () => {
+const SeriesPage: React.FC = () => {
   return (
     <SeriesComponent />
   );

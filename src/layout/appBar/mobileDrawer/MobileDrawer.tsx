@@ -1,8 +1,9 @@
 import * as React from 'react';
+import { useSelector } from 'react-redux';
 import {
+  AppBar,
   Box,
   Button,
-  Divider,
   Drawer,
   Grid,
   Typography,
@@ -12,16 +13,17 @@ import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import SocialMediaComponent from '../../../components/socialMediaComponent/SocialMediaComponent';
 import { MenuIconStyle, BoxMobileDrawerStyle } from './MobileDrawerStyle';
-import { 
+import {
+  AppBarStyles,
   CloseDrawerIconStyle,
   GridMobileDrawerAppBar,
   GridCenterItems,
   GridSectionsStyle,
   TypographyMobileDrawer,
-  // TypograohyMobileDrawerWebistieName,
 } from './MobileDrawerStyle';
 import { LinkStyles } from '../../../util/styles/LinkStyles';
 import AppConfig from '../../../config';
+import LightDarkMode from '../lightDarkMode/LightDarkMode';
 
 type Anchor = 'left';
 
@@ -29,7 +31,8 @@ const MobileDrawer: React.FC = () => {
   const [state, setState] = React.useState({
     left: false,
   });
-
+  const theme = useSelector((state: any) => state.theme.darkTheme);
+  // const [themes, setThemes] = React.useState<string>('white');
   const facebook = AppConfig.facebookURL;
   const twitter = AppConfig.twitterURL;
   const youtube = AppConfig.youtubeURL;
@@ -47,214 +50,222 @@ const MobileDrawer: React.FC = () => {
       setState({ ...state, [anchor]: open });
     };
 
-  const uniqueID = Number(Date.now());
-
   const list = (anchor: Anchor) => (
     <Box
+      id="five"
       sx={BoxMobileDrawerStyle}
+      // style={{backgroundColor: themes}}
+      style={{background: theme ? '#121212' : 'white'}}
     >
-      <Grid
-        container
-        justifyContent="center"
-        sx={GridMobileDrawerAppBar}
+      <AppBar
+        sx={AppBarStyles}
       >
         <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-          sx={GridCenterItems}
+          container
+          justifyContent="center"
+          sx={GridMobileDrawerAppBar}
         >
-          {/* <Link
-            to="/"
-            style={LinkStyles()}
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={12}            
+            lg={12}
+            xl={12}
+            sx={GridCenterItems}
           >
-            <Typography
-              sx={TypograohyMobileDrawerWebistieName}
+            <Grid
+              item
+              xs={4}
             >
-              Gamers Shrine
-            </Typography>
-          </Link> */}
-          <SocialMediaComponent
-            turnOnStyle={true}
-            widthPadding={'10px 0px 0px 8px'}
-            facebook={facebook}
-            twitter={twitter}
-            youtube={youtube}
-          />
-          <Grid>
-            <Button
-              sx={CloseDrawerIconStyle}
-              onClick={toggleDrawer(anchor, false)}
+              <LightDarkMode />
+            </Grid>
+            <Grid
+              item
+              xs={4}
             >
-              <CloseIcon/>
-            </Button>
+              <SocialMediaComponent
+                turnOnStyle={true}
+                widthPadding={'10px 0px 0px 8px'}
+                facebook={facebook}
+                twitter={twitter}
+                youtube={youtube}
+                alignContent={"center"}
+                justifyContent={"center"}
+              />
+            </Grid>
+            <Grid
+              item
+              container
+              xs={4}
+              style={{justifyContent: 'flex-end'}}
+            >
+              <Button
+                sx={CloseDrawerIconStyle}
+                onClick={toggleDrawer(anchor, false)}
+              >
+                <CloseIcon/>
+              </Button>
+            </Grid>
+          </Grid>
+          <Grid
+            container
+          >
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            xl={12}
+            sx={GridSectionsStyle}
+          >
+            <Link
+              to="/"
+              style={LinkStyles()}
+            >
+              <Typography
+                color="primary"
+                sx={TypographyMobileDrawer}
+                onClick={toggleDrawer(anchor, false)}
+              >
+                Home
+              </Typography>
+            </Link>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            xl={12}
+          >
+            <Link to="/videoGames"
+              style={LinkStyles()}
+            >
+              <Typography
+                color="primary"
+                sx={TypographyMobileDrawer}
+                onClick={toggleDrawer(anchor, false)}
+              >
+                Video Games
+              </Typography>
+            </Link>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            xl={12}
+          >
+            <Link to="/reviews"
+              style={LinkStyles()}
+            >
+              <Typography
+                color="primary"
+                sx={TypographyMobileDrawer}
+                onClick={toggleDrawer(anchor, false)}
+              >
+                Reviews
+              </Typography>
+            </Link>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            xl={12}
+          >
+            <Link
+              to="/coding"
+              style={LinkStyles()}
+            >
+              <Typography
+                color="primary"
+                sx={TypographyMobileDrawer}
+                onClick={toggleDrawer(anchor, false)}
+              >
+                Coding
+              </Typography>
+            </Link>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            xl={12}
+          >
+            <Link to="/stories"
+              style={LinkStyles()}
+            >
+              <Typography
+                color="primary"
+                sx={TypographyMobileDrawer}
+                onClick={toggleDrawer(anchor, false)}
+              >
+                Stories
+              </Typography>
+            </Link>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            xl={12}
+          >
+            <Link to="/writers"
+              style={LinkStyles()}
+            >
+              <Typography
+                color="primary"
+                sx={TypographyMobileDrawer}
+                onClick={toggleDrawer(anchor, false)}
+              >
+                Writers
+              </Typography>
+            </Link>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            xl={12}
+          >
+            <Link to="/about"
+              style={LinkStyles()}
+            >
+              <Typography
+                color="primary"
+                sx={TypographyMobileDrawer}
+                onClick={toggleDrawer(anchor, false)}
+              >
+                About
+              </Typography>
+            </Link>
           </Grid>
         </Grid>
-        {/* <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-          sx={GridCenterItems}
-        >
-          <SocialMediaComponent
-            turnOnStyle={true}
-            widthPadding={'16px 0px 0px 8px'}
-            facebook={facebookUrl}
-            twitter={twitterUrl}
-            youtube={youtubeUrl}
-          />
-        </Grid> */}
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-          sx={GridSectionsStyle}
-        >
-          <Link
-            to="/"
-            style={LinkStyles()}
-          >
-            <Typography
-              sx={TypographyMobileDrawer}
-              onClick={toggleDrawer(anchor, false)}
-            >
-              Home
-            </Typography>
-          </Link>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-        >
-          <Link to="/videoGames"
-            style={LinkStyles()}
-          >
-            <Typography
-              sx={TypographyMobileDrawer}
-              onClick={toggleDrawer(anchor, false)}
-            >
-              Video Games
-            </Typography>
-          </Link>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-        >
-          <Link to="/reviews"
-            style={LinkStyles()}
-          >
-            <Typography
-              sx={TypographyMobileDrawer}
-              onClick={toggleDrawer(anchor, false)}
-            >
-              Reviews
-            </Typography>
-          </Link>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-        >
-          <Link
-            to="/coding"
-            style={LinkStyles()}
-          >
-            <Typography 
-              sx={TypographyMobileDrawer}
-              onClick={toggleDrawer(anchor, false)}
-            >
-              Coding
-            </Typography>
-          </Link>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-        >
-          <Link to="/stories"
-            style={LinkStyles()}
-          >
-            <Typography
-              sx={TypographyMobileDrawer}
-              onClick={toggleDrawer(anchor, false)}
-            >
-              Stories
-            </Typography>
-          </Link>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-        >
-          <Link to="/writers"
-            style={LinkStyles()}
-          >
-            <Typography 
-              sx={TypographyMobileDrawer}
-              onClick={toggleDrawer(anchor, false)}
-            >
-              Writers
-            </Typography>
-          </Link>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-        >
-          <Link to="/about"
-            style={LinkStyles()}
-          >
-            <Typography
-              sx={TypographyMobileDrawer}
-              onClick={toggleDrawer(anchor, false)}
-            >
-              About
-            </Typography>
-          </Link>
-        </Grid>
-      </Grid>
-      <Divider id={`${uniqueID}`}/>
+      </AppBar>
     </Box>
   );
 
   return (
-    <div>
+    <Grid>
       {(['left'] as const).map((anchor) => (
-        <React.Fragment key={anchor}>
+        <React.Fragment 
+          key={anchor}
+        >
           <Button onClick={toggleDrawer(anchor, true)}>
             <MenuIcon 
               sx={MenuIconStyle}
@@ -269,7 +280,7 @@ const MobileDrawer: React.FC = () => {
           </Drawer>
         </React.Fragment>
       ))}
-    </div>
+    </Grid>
   );
 };
 

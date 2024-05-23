@@ -1,83 +1,115 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
+  Button,
+  Menu,
+  MenuItem,
   Grid,
-  SwipeableDrawer,
   Typography,
 } from '@mui/material';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import SectionComponent from '../../../components/sectionComponent/SectionComponent';
-import { 
-  GridHoverBlack,
-  GridSectionList,
-  DropDownPosition,
-  TypographyHoverBlack,
+import { LinkStyles } from '../../../util/styles/LinkStyles';
+import {
+  ButtonNameStyles,
+  MenuStyles,
 } from './SectionsDropDownStyles';
 
 const SectionsDropDown: React.FC = () => {
-  const [state, setState] = React.useState(false);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
 
-  const toggleDrawer =
-    (open: boolean) =>
-      (event: React.KeyboardEvent | React.MouseEvent) => {
-        if (
-          event &&
-        event.type === 'keydown' &&
-        ((event as React.KeyboardEvent).key === 'Tab' ||
-          (event as React.KeyboardEvent).key === 'Shift')
-        ) {
-          return;
-        }
-
-        setState(open);
-      };
-
-  const sectionList = () => (
-    <Grid
-      container
-      justifyContent="center"
-      alignItems="center"
-      direction="row"
-      spacing={2}
-      role="presentation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
-      sx={GridSectionList}
-    >
-      <SectionComponent
-        homePage={false}
-      />
-    </Grid>
-  );
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
-    <div>
+    <>
       <Grid
         container
-        onClick={toggleDrawer(true)}
-        sx={GridHoverBlack}
       >
-        <Typography
-          sx={TypographyHoverBlack}
+        <Button
+          id="basic-button"
+          aria-controls={open ? 'basic-menu' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClick}
         >
-          <Grid
-            container
+          <Typography
+            color="primary"
+            sx={ButtonNameStyles}
           >
             Sections
-            {state ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-          </Grid>
-        </Typography>
+          </Typography>
+        </Button>
+        <Menu
+          id="sections-dropdown"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          sx={MenuStyles}
+        >
+          <MenuItem 
+            color="primary"
+            onClick={handleClose}
+          >
+            <Link
+              to={'/videoGames'}
+              style={LinkStyles()}
+            >
+              <Typography
+                color="primary"
+              >
+                Gaming
+              </Typography>
+            </Link>
+          </MenuItem>
+          <MenuItem 
+            onClick={handleClose}
+          >
+            <Link
+              to={'/reviews'}
+              style={LinkStyles()}
+            >
+              <Typography
+                color="primary"
+              >
+                Reviews
+              </Typography>
+            </Link>
+          </MenuItem>
+          <MenuItem 
+            onClick={handleClose}
+          >
+            <Link
+              to={'/coding'}
+              style={LinkStyles()}
+            >
+              <Typography
+                color="primary"
+              >
+                Coding
+              </Typography>
+            </Link>
+          </MenuItem>
+          <MenuItem
+            onClick={handleClose}
+          >
+            <Link
+              to={'/stories'}
+              style={LinkStyles()}
+            >
+              <Typography
+                color="primary"
+              >
+                Stories
+              </Typography>
+            </Link>
+          </MenuItem>
+        </Menu>
       </Grid>
-      <SwipeableDrawer
-        anchor={'top'}
-        open={state}
-        onClose={toggleDrawer(false)}
-        onOpen={toggleDrawer(true)}
-        sx={DropDownPosition}
-      >
-        {sectionList()}
-      </SwipeableDrawer>
-    </div>
+    </>
   );
 };
 

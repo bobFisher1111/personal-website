@@ -1,13 +1,13 @@
 export const ButtonSectionTtileStyle = {
-  color: 'white',
+  // color: 'black',
   textTransform: 'initial',
   fontSize: '16px',
-  '&:hover': {
-    color: '#667A6E',
-  },
+  // '&:hover': {
+  //   color: '#667A6E',
+  // },
   '@media only screen and (max-width: 600px)': {
     fontSize: '12px',
-    color: '#667A6E',
+    // color: '#667A6E',
     fontWeight: 'bold',
   },
 };
@@ -27,12 +27,15 @@ export const ButtonSectionTtileStyle = {
 // });
 
 export const CardActionsSectionNameStyle= {
-  backgroundColor: '#282c34', 
+  // backgroundColor: '#282c34', 
+  // border: '1px solid red',
+  border: '2px solid #282c34',
   justifyContent: 'center',
   '@media only screen and (max-width: 600px)': {
     height: '66px',
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
     padding: '0px',
+    border: '0px'
   },
 };
 

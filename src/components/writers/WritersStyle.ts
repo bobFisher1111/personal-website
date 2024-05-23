@@ -1,5 +1,4 @@
 export const WritersGridRoot = {
-  background: '#fff',
   display: 'flex',
   paddingBottom: '200px',
   maxWidth: '1024px',
@@ -8,7 +7,6 @@ export const WritersGridRoot = {
 };
 
 export const WritersCardGrid = {
-  background: '#fff',
   display: 'flex',
   paddingBottom: '200px',
   maxWidth: '1024px',

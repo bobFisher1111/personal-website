@@ -25,6 +25,7 @@ const HeaderComponent:  React.FC<Props> = ({
   const titleFunction = (item: any) => {
     return (
       <Typography
+        color="primary"
         sx={TypographyHeaderTitle}
       >
         {item}

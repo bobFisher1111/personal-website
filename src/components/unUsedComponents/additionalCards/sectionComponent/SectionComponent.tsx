@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Grid,
 } from '@mui/material/';
-import SectionCard from '../sectionsCard/SectionCard';
+// import SectionCard from '../../../sectionsCard/SectionCard';
 // import Persona5Hacker from '../../assets/images/Persona5Hacker.jpg';
 // import legendOfZelda from '../../assets/images/legendOfZelda.jpg';
 // import suzuka from '../../assets/images/suzuka.jpeg';
@@ -30,12 +30,12 @@ const SectionComponent: React.FC<Props> = ({
         lg={3}
         xl={3}
       >
-        <SectionCard
+        {/* <SectionCard
           // homePage={homePage} // later for dark and light theme
           imgCover={'legendOfZelda'}
           section='Video Games'
           linkTo='videoGames'
-        />
+        /> */}
       </Grid>
       <Grid
         sx={GridSections(homePage)}
@@ -46,12 +46,12 @@ const SectionComponent: React.FC<Props> = ({
         lg={3}
         xl={3}
       >
-        <SectionCard
+        {/* <SectionCard
           // homePage={homePage} // later for dark and light theme
           imgCover={'goldenboy2'}
           section='Reviews'
           linkTo='reviews'
-        />
+        /> */}
       </Grid>
       <Grid 
         sx={GridSections(homePage)}
@@ -62,12 +62,12 @@ const SectionComponent: React.FC<Props> = ({
         lg={3}
         xl={3}
       >
-        <SectionCard
+        {/* <SectionCard
           // homePage={homePage} // later for dark and light theme
           imgCover={'Persona5Hacker'}
           section='Coding'
           linkTo='coding'
-        />
+        /> */}
       </Grid>
       <Grid
         sx={GridSections(homePage)}
@@ -78,12 +78,12 @@ const SectionComponent: React.FC<Props> = ({
         lg={3}
         xl={3}
       >
-        <SectionCard
+        {/* <SectionCard
           // homePage={homePage} // later for dark and light theme
           imgCover={'suzuka'}
           section='Stories'
           linkTo='stories'
-        />
+        /> */}
       </Grid>
     </Grid>
   );

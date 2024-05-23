@@ -1,5 +1,5 @@
 export const SectionComponentGridRoot = {
-  background: '#fff',
+  // background: '#fff',
   display: 'flex',
   maxWidth: '1024px',
   margin: 'auto',

@@ -5,11 +5,12 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import CopyLinkComponent from '../../../../copyLinkComponent/CopyLinkComponent';
 import { LinkStyles } from '../../../../../util/styles/LinkStyles';
 import {
+  AvatarImageStyles,
   ChipStyle,
-  DivMaterialSymbolsOutlined,
   GridArticleInfoComponent,
   HorizAriclePageInfoCompAuthor,
   HorizArticlePageInfoCompDate,
@@ -18,9 +19,11 @@ import {
 } from './HorizontalArticlePageInfoComponentStyles';
 
 const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
+  getAuthorData,
   authorsId,
   author,
   date,
+  justifyContent,
   sectionLink,
   section,
   articleId,
@@ -32,50 +35,54 @@ const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
     return (seriesId);
   };
 
+  const Img = styled('img')({
+    maxWidth: '100%',
+    maxHeight: '100%',
+  });
+
   return (
     <>
       <Grid 
         container 
         direction="row"
-        justifyContent="flex-start"
+        justifyContent={justifyContent}
         sx={GridArticleInfoComponent}
       >
         <Link 
           to={`/author/${authorsId}`}
           style={LinkStyles()}
         >
-          <div 
-            className={'material-symbols-outlined'}
-            style={DivMaterialSymbolsOutlined()}
-          >
-            account_circle
-          </div>
+          <Img
+            alt="complex"
+            src={getAuthorData && getAuthorData[0]?.avatarImage}
+            sx={AvatarImageStyles}
+          />
         </Link>
         <Link 
           to={`/author/${authorsId}`}
           style={LinkStyles()}
         >
           <Typography
-            color="#2F4C69"
+            color="primary"
             sx={HorizAriclePageInfoCompAuthor}
           >
             {author} 
           </Typography>
         </Link>
         <Typography
-          color="#0C0D0D"
+          color="primary"
           sx={TypographyArticleInfoRight}
         >
           |
         </Typography>
         <Typography
-          color="#2F4C69"
+          color="primary"
           sx={HorizArticlePageInfoCompDate}
         >
           {date}
         </Typography>
         <Typography
-          color="#26282c34162e"
+          color="primary"
           sx={TypographyArticleInfoRight}
         >
           |
@@ -95,7 +102,7 @@ const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
           />
         </Link>
         <Typography
-          color="#26282c34162e"
+          color="primary"
           sx={TypographyArticleInfoLeft}
         >
           |
@@ -123,6 +130,7 @@ const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
 };
 
 export type Props = {
+  getAuthorData: any;
   authorsId: string;
   author: string;
   date: string;
@@ -130,6 +138,7 @@ export type Props = {
   section: string;
   articleId: string;
   series: boolean | undefined;
+  justifyContent: string;
 };
 
 export default HorizontalArticlePageInfoComponent;

@@ -1,5 +1,4 @@
 export const BulletListChildLinkStyles = {
-  color: "#087EA4",
   fontSize: "24px",
   width: "850px",
   '@media only screen and (max-width: 600px)': {
@@ -68,7 +67,7 @@ export const ImageGrid = {
 export const CreateArticleImage = () => ({
   width: '100%',
   borderRadius: '4px',
-  border: '1px solid black',
+  border: '1px solid #0C0D0D',
   '@media only screen and (max-width: 600px)': {
     width: `calc(100vw - ${'72px'})`,
   },
@@ -97,13 +96,11 @@ export const CreateArticleVideo = () => ({
 });
 
 export const LinkStyles = {
-  color: "#087EA4",
   fontSize: "24px",
   width: "850px",
-  padding: '0px 16px 16px 16px',
+  padding: '0px 16px 0px 16px',
   '@media only screen and (max-width: 600px)': {
     fontSize: "18px",
-    padding: '0px 16px 0px 16px',
     minWidth: `calc(100vw - ${'32px'})`,
     maxWidth: `calc(100vw - ${'32px'})`,
   },

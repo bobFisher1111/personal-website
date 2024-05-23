@@ -6,6 +6,7 @@ import VideoGamesComponentTabData from './VideoGamesComponentTabData';
 const VideoGamesComponent = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const articleData = getWebsiteData && getWebsiteData?.websiteData;
+  const authorsData = getWebsiteData && getWebsiteData?.websiteData?.authors;
 
   const articleSectionFilter = articleData?.articles?.filter((item: any) => {
     return item.sections === 'Video Games';
@@ -23,10 +24,11 @@ const VideoGamesComponent = () => {
     <SectionsComponent
       headerTitle='Video Games'
       sectionTabData={VideoGamesComponentTabData(
-        false,
+        authorsData,
         articleSectionFilter,
         articleModernFilter,
         articleRetroFilter,
+        false,
       )}
     />
   );

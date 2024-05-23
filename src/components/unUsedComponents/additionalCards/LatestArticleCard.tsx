@@ -17,7 +17,7 @@ const LatestArticleCard: React.FC<Props> = ({
   return (
     <Card sx={{ 
       maxWidth: 500,
-      backgroundColor: '#2F4C69',
+      // backgroundColor: '#2F4C69',
       }}
     >
       <CardMedia

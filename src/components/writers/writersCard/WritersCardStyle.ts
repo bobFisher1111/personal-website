@@ -34,7 +34,6 @@ export const WritersCardTextAuthorName = {
   display: '-webkit-box',
   WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
-  color: '#0C0D0D',
   '@media only screen and (max-width: 600px)': {
     fontSize: '20px',
   },
@@ -47,7 +46,6 @@ export const WritersCardTextAuthorTitle = {
   display: '-webkit-box',
   WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
-  color: 'grey',
   '@media only screen and (max-width: 600px)': {
     fontSize: '16px',
   },

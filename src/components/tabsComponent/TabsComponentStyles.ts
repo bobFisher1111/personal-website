@@ -5,10 +5,10 @@ export const GridTabsComponent = (turnonsectiontabspadding: boolean) => ({
   },
 });
 
-export const TabComponentTextStyles = {
+export const TabComponentTextStyles = (theme: boolean) => ({
   textTransform: 'initial',
   fontSize: '18px',
-  color: '#2F4C69',
+  color: theme ? '#9DB2BF' : '#0C0D0D',
   '@media only screen and (max-width: 600px)': {
     fontSize: '14px',
     fontWeight: 'bold',
@@ -16,7 +16,7 @@ export const TabComponentTextStyles = {
       padding: '0px',
     },
   },
-};
+});
 
 export const TabPanelStyle = {
   p: 3
@@ -31,17 +31,15 @@ export const TabsChangeStyle = {
     padding: '0px 0px 0px 8px',
   },
   '& .MuiTabs-indicator': {
-    backgroundColor: '#667A6E',
     border: '1px',
   },
   // eslint-disable-next-line
   "& button[aria-selected='true']": {
-    borderBottom: '3px solid #667A6E'
+    borderBottom: '3px solid #0C0D0D'
   },
   '@media only screen and (max-width: 600px)': {
     // eslint-disable-next-line
     "& button[aria-selected='true']": {
-      borderBottom: '1px solid #667A6E'
     },
   },
 };

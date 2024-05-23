@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ComingSoon from '../comingSoon/ComingSoon';
 import formatDate from '../../util/formatDate';
-// import HeaderComponent from '../headerComponent/HeaderComponent';
 import HorizontalArticleCardComponent from '../cards/articleCards/horizontalCard/HorizontalArticleCardComponent';
 import { LinkStyles } from '../../util/styles/LinkStyles';
 import {
@@ -39,7 +38,6 @@ const SeriesComponent = () => {
   const sortSeriesList = getSeriesArticles?.sort((a: any, b: any) => {
     return a.articleId - b.articleId;
   });
-
   return (
     <>
       <Grid
@@ -93,16 +91,19 @@ const SeriesComponent = () => {
               style={LinkStyles()}
             >
               <Typography
+                color="primary"
                 sx={seriesComponentTitle}
               >
                 {`${item?.seriesType}: ${item?.articleTitle}`}
               </Typography>
               <Typography
+                color="primary"
                 sx={seriesComponentSubTitle} 
               >
                 {item.articleSubTitle}
               </Typography>
               <Typography
+                color="primary"
                 sx={seriesComponentdate}
               >
                 {formatDate(item.publishedDate)}

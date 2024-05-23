@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import WebSiteDataSlice from './webSiteData/WebSiteDataSlice';
+import ThemeSlice from './theme/ThemeSlice';
 
 export const store = configureStore({
   reducer: {
     webSiteData: WebSiteDataSlice.reducer,
+    theme: ThemeSlice,
   },
 });
 

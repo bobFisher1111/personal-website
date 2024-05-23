@@ -1,4 +1,6 @@
 import React, { useState, SyntheticEvent } from 'react';
+
+import { useSelector } from 'react-redux';
 import {
   Box,
   Grid,
@@ -44,6 +46,7 @@ const TabsComponent: React.FC<Props> = ({
   tabsData,
 }) => {
   const [value, setValue] = useState(0);
+  const theme = useSelector((state: any) => state.theme.darkTheme);
   const tabProps = (index: number) => {
     return {
       id: `simple-tab-${index}`,
@@ -56,6 +59,7 @@ const TabsComponent: React.FC<Props> = ({
 
   return (
     <Box
+      color="primary"
       sx={TabsChangeStyle}
     >
       <Grid
@@ -64,6 +68,7 @@ const TabsComponent: React.FC<Props> = ({
         sx={GridTabsComponent(turnonsectiontabspadding)}
       >
         <Tabs
+          color="primary"
           value={value}
           onChange={handleChange} 
           aria-label="basic tabs example"
@@ -71,11 +76,12 @@ const TabsComponent: React.FC<Props> = ({
         >
           {tabsData?.map((item: any, index: any) => (
             <Tab
+              color="primary"
               key={item.id}
               onClick={() => setValue(index)}
               label={item.name}
               {...tabProps(index)} 
-              sx={TabComponentTextStyles}
+              sx={TabComponentTextStyles(theme)}
             />
           ))} 
         </Tabs>

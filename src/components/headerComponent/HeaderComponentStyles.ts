@@ -32,7 +32,6 @@ export const GridPaddingRight = {
 
 export const TypographyHeaderTitle = {
   textAlign: 'center',
-  color: '#0C0D0D', // '#2F4C69',
   fontSize: '32px',
   lineHeight: '40px',
   // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',

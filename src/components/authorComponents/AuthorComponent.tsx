@@ -27,6 +27,7 @@ const AuthorComponent: React.FC<Props> = ({
 }) => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const webData = getWebsiteData && getWebsiteData?.websiteData;
+  const authorWebData = getWebsiteData && getWebsiteData?.websiteData?.authors;
   const getIdFromUrl = () => {
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = turOnArticlePage ? currentLocation.split('/').reverse()[1] : currentLocation.split('/').reverse()[0];
@@ -76,13 +77,14 @@ const AuthorComponent: React.FC<Props> = ({
         sx={AuthorComponentGridBiography}
       >
         <Typography
+          color="primary"
           variant="h6"
           sx={AuthorComponentGridBiographyTitle}
         >
           {'Biography'}
         </Typography>
         <Typography
-          color="#0C0D0D"
+          color="primary"
           sx={AuthorComponentGridBiographyText}
         >
           {authorData?.biography || articleAuthorData?.biography}
@@ -103,6 +105,8 @@ const AuthorComponent: React.FC<Props> = ({
             facebook={authorData?.facebook || articleAuthorData?.facebook}
             twitter={authorData?.twitter || articleAuthorData?.twitter}
             youtube={authorData?.youtube || articleAuthorData?.youtube}
+            alignContent={"center"}
+            justifyContent={"center"}
           />
         </Grid>
         {turOnArticlePage ?
@@ -110,8 +114,9 @@ const AuthorComponent: React.FC<Props> = ({
             turnonsectiontabspadding={false}
             tabsData={
               AuthorComponetTabData(
-                true, 
+                authorWebData, 
                 articlelData,
+                true,
                 authorName,
                 false,
                 true,
@@ -127,8 +132,9 @@ const AuthorComponent: React.FC<Props> = ({
             turnonsectiontabspadding={false}
             tabsData={
               AuthorComponetTabData(
-                false, 
+                authorWebData,
                 getArticles,
+                false,
                 getIdFromUrl(),
                 false,
                 true,

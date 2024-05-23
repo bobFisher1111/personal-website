@@ -60,7 +60,7 @@ const PopularArticles: React.FC<Props> = ({
             alignItems: 'center',
             fontSize: '17px',
             color: 'white',
-            backgroundColor: '#282c34',
+            // backgroundColor: '#282c34',
           }}
         >
           1
