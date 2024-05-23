@@ -25,11 +25,11 @@ export const CardFooterStyle = {
   left: 0,
   width: '100%',
   bgcolor: '#0C0D0D',
-  color: 'white',
   opacity: 0.70,
 };
 
-export const CardVerticalCard = {
+export const CardVerticalCard = (theme: boolean) => ({
+  border: theme ? '1px solid #9DB2BF' : '#0C0D0D',
   width: '365px',
   '@media only screen and (max-width: 992px)': {
     width: '321px',
@@ -42,7 +42,7 @@ export const CardVerticalCard = {
     minWidth: 'calc(100vw - 32px)',
     maxWidth: 'calc(100vw - 32px)',
   },
-};
+});
 
 export const DivVerticalArticleRoot = () => ({
   padding: '0px 0px 16px 0px',
@@ -52,7 +52,6 @@ export const GridVeriticalCardVideo = {
   maxWidth: '345px',
   minWidth: '345px',
   height: '400px',
-  background: '#2F4C69',
   '@media only screen and (max-width: 600px)': {
     minWidth: 'calc(100vw - 32px)',
     maxWidth: 'calc(100vw - 32px)',
@@ -69,7 +68,6 @@ export const GridPadding = {
 };
 
 export const TypographyVerticalCardNameStyle = {
-  color: 'white',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
@@ -79,16 +77,12 @@ export const TypographyVerticalCardNameStyle = {
 };
 
 export const TypographyVerticalCardNameStyleHover = {
-  color: 'white',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
   WebkitLineClamp: '1',
   WebkitBoxOrient: 'vertical',
   padding: '16px',
-  '&:hover': {
-    color: '#667A6E',
-  },
   '@media only screen and (max-width: 600px)': {
     fontSize: '12px',
   },

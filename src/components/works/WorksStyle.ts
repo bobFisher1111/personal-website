@@ -7,10 +7,6 @@ export const ArtPageBookExtraInfoGridRoot = (bottomheight: string) => {
 export const ArtPageBookExtraInfoLinkBuy = {
   fontsize: '16px',
   // fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
-  color: 'grey',
-  '&:hover': {
-    color: '#667A6E',
-  },
   '@media only screen and (max-width: 600px)': {
     fontSize: '16px',
   },     

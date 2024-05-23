@@ -2,7 +2,7 @@ import React from 'react';
 import {
     Grid,
 } from "@mui/material";
-import SectionCard from '../sectionsCard/SectionCard';
+import SectionCard from './additionalCards/sectionsCard/SectionCard';
 import xenob3 from '../../assets/images/xenob3.jpg';
 
 const SectionPage = () => {

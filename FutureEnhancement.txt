@@ -9,3 +9,30 @@
     - 3. https://colorhunt.co/palette/040d12183d3d5c837493b1a6
     - 4. https://colorhunt.co/palette/27374d526d829db2bfdde6ed
     - 5. https://colorhunt.co/palette/f6f1f119a7ce146c94000000
+  - Task Left:
+    - Sections when hover over change it solid color  // completed
+    - Finish up light mode toggle // completed
+    - Come up with a solution for where light Mode toggle will be on mobile // completed
+    - Fix copy Icon on CodeSnipit // completed
+    - Fix spacing on Article Reference: between two resources // completed
+    - The appbar in dark mode not matching on menu normal mode // completed
+    - Fix position of Appbar on desktop mode // completed
+    - links Latest, fix the color // completed
+    - Fix new sections reponsive issue // completed
+    - Fix desktop drop down dark mode // completed
+    - Section Mobile fix // completed
+    - Series by AuthorName color change // completed
+    - Series Page: one of images looks out of aspect, make some adjustments // completed
+    - Bug going to series page, dark theme goes away // completed
+    - Fix the Twitter & Youtube logo for dark Modern // completed
+    - Refactor // completed
+
+2. Fix Article Page Author part clicking on next article refreshs page issue
+3. Create A carasole for the homepage, similar to bing ai example
+4. Make it mostily single page appBar
+  - Create horiztonal swipping for Series on main page, make images smaller complete overhaul
+  - For section bar add Latest
+  - Get rid of each section having there own pages but when ever section hit then data appears where currently have articles 
+    and keep it Latest as automatically selected
+5. Refactor:
+  - ArticleList

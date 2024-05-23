@@ -1,5 +1,7 @@
 export const GridMaxWidth = {
-  maxWidth: '1600px',
+  // maxWidth: '1600px',
+  minWidth: '400px',
+  maxWidth: '400px',
 };
 
 export const GridSections = (homepage: boolean) => ({

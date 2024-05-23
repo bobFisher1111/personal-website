@@ -17,7 +17,7 @@ const PopularArticles: React.FC<Props> = ({
   return (
     <Card sx={{ 
       maxWidth: 500,
-      backgroundColor: '#282c34',
+      // backgroundColor: '#282c34',
       }}
     >
       <div
@@ -46,7 +46,7 @@ const PopularArticles: React.FC<Props> = ({
             alignItems: 'center',
             fontSize: '17px',
             color: 'white',
-            backgroundColor: '#282c34',
+            // backgroundColor: '#282c34',
           }}
         >
           1

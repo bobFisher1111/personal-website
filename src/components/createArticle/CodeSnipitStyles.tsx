@@ -2,9 +2,6 @@ export const CopyCodeStyles = (copyIconColor: any) => ({
   padding: "0px",
   color: copyIconColor,
   cursor: 'pointer',
-  '&:hover': {
-    color: '#2F4C69',
-  },
   '@media only screen and (max-width: 600px)': {
     height: "20px",
   },
@@ -18,7 +15,6 @@ export const GridCopyCodeStyles = {
 };
 
 export const GridTitleStyle = {
-  color: "lightgrey",
   padding: "0px 0px 0px 16px",
   marginRight: "auto"
 };
@@ -46,10 +42,16 @@ export const HeaderStyles = {
   },
 };
 
+export const PreTagGridStyles = {
+  '@media only screen and (min-width: 600px)': {
+    minWidth: "900px",
+    maxWidth: "900px",
+  },
+};
+
 export const PreTagStyles: any = () => ({
   fontSize: '14px',
   overflow: "auto",
-  color: "white",
   textAlign: 'left',
   // "fontFamily": 'source-code-pro, Menlo, Monaco, "Courier New", Courier, monospace',
   borderBottomLeftRadius: '8px',
@@ -59,9 +61,6 @@ export const PreTagStyles: any = () => ({
   '@media screen and (max-width: 600px)': {
     minWidth: `calc(100vw - ${'8px'})`,
     maxWidth: `calc(100vw - ${'8px'})`,
-  },
-  '@media screen and (min-width: 600px)': {
-    fontSize: "26px",
   },
 });
 
@@ -76,6 +75,7 @@ export const RootStyles = {
 export const TitleOfCodeStyles = {
   fontSize: "16px",
   fontWeight: "bold",
+  color: 'white',
 };
 
 export default [
@@ -83,6 +83,7 @@ export default [
   GridCopyCodeStyles,
   GridTitleStyle,
   HeaderStyles,
+  PreTagGridStyles,
   PreTagStyles,
   RootStyles,
   TitleOfCodeStyles,

@@ -3,10 +3,8 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
-// import HeaderComponent from '../../components/headerComponent/HeaderComponent';
 import { useSelector } from 'react-redux';
 import { websiteHomePageImage } from '../../config';
-import SectionComponent from '../sectionComponent/SectionComponent';
 import HomePageComponentTabData from './HomePageComponentTabData';
 import TabsComponent from '../tabsComponent/TabsComponent';
 import {
@@ -15,10 +13,19 @@ import {
   HeaderTitleStyles,
   HomePageImage,
 } from './HomePageComponentStyles';
+import SectionsComponent from '../sectionsComponent/SectionsComponent';
+import { styled } from '@mui/material/styles';
 
 const HomePageComponent = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const articleData = getWebsiteData && getWebsiteData?.websiteData?.articles;
+  const authorsData = getWebsiteData && getWebsiteData?.websiteData?.authors;
+
+  const Img = styled('img')({
+    maxWidth: '100%',
+    maxHeight: '100%',
+  });
+
 
   return (
     <Grid
@@ -34,6 +41,7 @@ const HomePageComponent = () => {
         xl={12}
       >
         <Typography
+          color="primary"
           sx={HeaderTitleStyles}
         >
           {"Gamers Shrine"}
@@ -44,12 +52,14 @@ const HomePageComponent = () => {
         justifyContent='center'
         alignItems="center"
         sx={HomePageImage}
-        // sx={GridAlignItems}
       >
-        <img
+        <Img
           src={websiteHomePageImage}
           alt={'home page image'}
           loading="lazy"
+          style={{
+            width: '1080px',
+          }}
         />
       </Grid>
       <Grid
@@ -58,12 +68,10 @@ const HomePageComponent = () => {
         alignItems="center"
         sx={GridAlignItems}
       >
-        <SectionComponent
-          homePage={true}
-        />
+        <SectionsComponent />
         <TabsComponent
           turnonsectiontabspadding={true}
-          tabsData={HomePageComponentTabData(false, articleData)}
+          tabsData={HomePageComponentTabData(authorsData, articleData, false)}
         />
       </Grid>
     </Grid> 

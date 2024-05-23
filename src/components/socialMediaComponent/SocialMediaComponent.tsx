@@ -1,6 +1,9 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import TwitterLogo from '../../assets/icons/logo-black.png';
+import TwitterLogoDark from '../../assets/icons/logo-white.png';
 import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
+import YoutTubeLogoDark from '../../assets/icons/yt_icon_mono_dark.png';
 // import FacebookLogo from '../../assets/icons/FacebookLogo.png';
 import { Grid, Box } from '@mui/material';
 import CopyLinkComponent from '../copyLinkComponent/CopyLinkComponent';
@@ -14,10 +17,15 @@ const SocialMediaComponent: React.FC<Props> = ({
   // facebook,
   twitter,
   youtube,
+  justifyContent,
+  alignContent,
 }) => {
+  const theme = useSelector((state: any) => state.theme.darkTheme);
   return (
     <Grid 
       container
+      justifyContent={justifyContent}
+      alignContent={alignContent}
     >
       {/* <Grid
         item
@@ -56,7 +64,7 @@ const SocialMediaComponent: React.FC<Props> = ({
         >
           <Box
             component="img"
-            src={TwitterLogo}
+            src={theme ? TwitterLogoDark : TwitterLogo}
             alt="Twitter logo"
             sx={{
               height: '20px',
@@ -80,7 +88,7 @@ const SocialMediaComponent: React.FC<Props> = ({
         >
           <Box
             component="img"
-            src={YoutTubeLogo} 
+            src={theme ? YoutTubeLogoDark : YoutTubeLogo} 
             height="20px"
             alt="YouTube logo"
             sx={{
@@ -96,11 +104,12 @@ const SocialMediaComponent: React.FC<Props> = ({
           <Grid
             item
             sx={{
-              padding: turnOnEmailStyle ? '0px' : '10px 0px 16px 16px'
+              padding: turnOnEmailStyle ? '0px' : '10px 0px 16px 16px',
+              alignContent: 'center',
             }}
           >
             <CopyLinkComponent
-              defaultColor={'#667A6E'}
+              defaultColor={theme ? '#ffffff' : '#667A6E'}
               email={true}
               authorsEmail={email}
             />
@@ -119,6 +128,8 @@ export type Props = {
   facebook?: string;
   twitter?: string;
   youtube?: string;
+  justifyContent: string,
+  alignContent: string,
 };
 
 export default SocialMediaComponent;

@@ -86,7 +86,7 @@ const Works: React.FC<Props> = ({
           xl={12}
         >
           <Typography
-            color="grey"
+            color="primary"
             sx={ArtPageBookExtraInfoText}
           >
             {item.genre}
@@ -101,7 +101,7 @@ const Works: React.FC<Props> = ({
           xl={12}
         >
           <Typography
-            color="#2F4C69"
+            color="primary"
             sx={ArtPageBookExtraInfoText}
           >
             {item.year}
@@ -126,7 +126,7 @@ const Works: React.FC<Props> = ({
           xl={12}
         >
           <Typography
-            color={aboutWorks ? '#667A6E' : '#0C0D0D'}
+            color="primary"
             sx={WorksTitle(authorsPage)}
           >
             {aboutWorks ? 'Favorite books' : 'Author Book\'s'}
@@ -174,7 +174,7 @@ const Works: React.FC<Props> = ({
             sx={WorksGridInfo}
           >
             <Typography
-              color={aboutWorks ? '#2F4C69' : '#0C0D0D'}
+              color="primary"
               ref={titleHeightRef}
               sx={WorksInfoTitle(aboutWorks)}
             >
@@ -182,7 +182,7 @@ const Works: React.FC<Props> = ({
             </Typography>
             {authorsPage &&
             <Typography
-              color={aboutWorks ? '#667A6E' : '#0C0D0D'}
+              color="primary"
               ref={bookPlotHeightRef}
               variant="subtitle1"
               sx={WorksInfoSubTitle}
@@ -194,7 +194,7 @@ const Works: React.FC<Props> = ({
               articlePageBookExtrainfo(item, infoHeight)
               :
               <Typography
-                color="#2F4C69"
+                color="primary"
                 sx={WorksInfoDate(authorsPage)}
               >
                 {item.year}

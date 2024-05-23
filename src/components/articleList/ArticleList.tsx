@@ -4,22 +4,24 @@ import {
 } from '@mui/material';
 import ComingSoon from '../comingSoon/ComingSoon';
 import formatDate from '../../util/formatDate';
-import HorizontalArticleCardComponent from '../cards/articleCards/horizontalCard/HorizontalArticleCardComponent';
+import ArticleCard from '../cards/articleCards/horizontalCard/articleCard/ArticleCard';
 import {
+  GridAuthorArticle,
   GridPaddingArticleList,
   GridPaddingTop,
 } from './ArticleListStyles';
 
 export const ArticleList: React.FC<Props> = ({
-  turOnAuthorForArticle, 
+  authorData,
   data,
+  turOnAuthorForArticle,
 }) => {
   const noArticles = data?.length === 0;
   const newNonImmutableArray = data?.map((item: any) => item);
   const sortByDate = newNonImmutableArray?.sort((a: any, b: any)=> {
     return b.articleId - a.articleId;
   });
-  
+
   return (
     <>
       {noArticles && 
@@ -38,26 +40,20 @@ export const ArticleList: React.FC<Props> = ({
             />
             { sortByDate?.map((item: any) => (
               <>
-                <HorizontalArticleCardComponent
-                  key={item.id}
-                  title={item.articleTitle}
-                  articleSubTitle={item.articleSubTitle}
-                  author={item.author}
-                  cardTextWidth={'639px'}
-                  date={formatDate(item.publishedDate)}
-                  imageWidth={'321px'}
-                  articlePage={false}
-                  useVideoInsteadOfImage={item.useVideoInsteadOfImage}
-                  section={item.sections}
-                  authorsId={item.authorId}
+                <ArticleCard
                   articleId={item.articleId}
-                  videoOrImageCover={item.coverImageOrVideo}
+                  authorData={authorData}
+                  articleMedia={item.coverImageOrVideo}
+                  authorId={item.authorId}
+                  date={formatDate(item.publishedDate)}
+                  isMediaVideo={item.useVideoInsteadOfImage}
+                  section={item.sections}
                   sectionLink={item.sectionLink}
                   series={item.series}
                   seriesId={item.seriesId}
-                  mobileImageWidth={'32px'}
-                  videoHeight={false}
-                  sectionType={item.sectionType}
+                  subtitle={item.articleSubTitle}
+                  title={item.articleTitle}
+                  turOnAuthorForArticle={false}
                 />
               </>
             ))}
@@ -74,34 +70,29 @@ export const ArticleList: React.FC<Props> = ({
             >
               <Grid
                 item
-                xs={8}
-                sm={8}
-                md={8}
-                lg={8}
-                xl={8}
-              >
-                { sortByDate?.map((item: any, index: any) => (
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                xl={12}
+                sx={GridAuthorArticle}
+              > 
+                { sortByDate?.map((item: any) => (
                   <>
-                    <HorizontalArticleCardComponent
-                      key={index}
-                      title={item.articleTitle}
-                      articleSubTitle={item.articleSubTitle}
-                      author={item.author}
-                      cardTextWidth={'639px'}
-                      date={formatDate(item.publishedDate)}
-                      imageWidth={'321px'}
-                      articlePage={false}
-                      useVideoInsteadOfImage={item.useVideoInsteadOfImage}
-                      section={item.sections}
-                      authorsId={item.authorId}
+                    <ArticleCard
                       articleId={item.articleId}
-                      videoOrImageCover={item.coverImageOrVideo}
+                      authorData={authorData}
+                      articleMedia={item.coverImageOrVideo}
+                      authorId={item.authorId}
+                      date={formatDate(item.publishedDate)}
+                      isMediaVideo={item.useVideoInsteadOfImage}
+                      section={item.sections}
                       sectionLink={item.sectionLink}
-                      articlePageList={true}
                       series={item.series}
                       seriesId={item.seriesId}
-                      mobileImageWidth={'48px'}
-                      videoHeight={false}
+                      subtitle={item.articleSubTitle}
+                      title={item.articleTitle}
+                      turOnAuthorForArticle={true}
                     />
                   </>
                 ))}
@@ -114,8 +105,9 @@ export const ArticleList: React.FC<Props> = ({
 };
 
 export type Props = {
-  turOnAuthorForArticle: boolean, 
-  data: any, 
+  authorData?: any,
+  data: any,
+  turOnAuthorForArticle: boolean,  
 };
 
 export default ArticleList;

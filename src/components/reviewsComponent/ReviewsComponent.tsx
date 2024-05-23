@@ -6,6 +6,7 @@ import ShowsMoviesComponentTabData from './ReviewsComponentTabData';
 const ReviewsComponent = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const articleData = getWebsiteData && getWebsiteData?.websiteData;
+  const authorsData = getWebsiteData && getWebsiteData?.websiteData?.authors;
 
   const articleSectionFilter = articleData?.articles?.filter((item: any) => {
     return item.sections === 'Reviews';
@@ -23,10 +24,11 @@ const ReviewsComponent = () => {
     <SectionsComponent
       headerTitle='Reviews'
       sectionTabData={ShowsMoviesComponentTabData(
-        false,
+        authorsData,
         articleSectionFilter,
         articleModernReviewsFilter,
         articleRetroReviewsFilter,
+        false,
       )}
     />
   );

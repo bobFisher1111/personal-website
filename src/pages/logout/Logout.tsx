@@ -5,9 +5,8 @@ const Logout = () => {
   return (
     <>
       <header className="App-header">
-        <Typography sx={{
-          color: 'blue' 
-        }}
+        <Typography
+          color="primary"
         >
           <h1>Logout</h1>
         </Typography>

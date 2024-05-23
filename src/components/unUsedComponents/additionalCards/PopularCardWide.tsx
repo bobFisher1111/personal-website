@@ -28,7 +28,7 @@ const PopularCardWide: React.FC<Props> = ({
         border: '1px solid #2F4C69',
         minHeight: '172px',
         maxHeight: '225px',
-        backgroundColor: '#282c34',
+        // backgroundColor: '#282c34',
       }}
     >
       <Grid 
@@ -51,7 +51,7 @@ const PopularCardWide: React.FC<Props> = ({
               alignItems: 'center',
               fontSize: '15px',
               color: 'white',
-              backgroundColor: '#282c34',
+              // backgroundColor: '#282c34',
             }}
           >
             7

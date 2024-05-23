@@ -36,7 +36,6 @@ import ReviewScore from './ReviewScore';
 const imageExtensions = '.jpg' || '.jpeg' || '.jpg' || '.png';
 
 export const CreateArticle = (articleData: string) => {
-  // Looks Good On Coding, 
   if (articleData.match(imageExtensions)) {
     return (
       <Grid
@@ -53,7 +52,6 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
-  // Looks Good On Coding, 
   if (articleData.match('youtube.com')) {
     return (
       <Grid
@@ -69,7 +67,6 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
-  // Looks Good On Coding, 
   if (articleData.startsWith('[PARAGRAPH_TITLE]')) {
     return (
       <Grid
@@ -78,7 +75,7 @@ export const CreateArticle = (articleData: string) => {
       >
         <Typography
           id="article_Paragraph_Title"
-          color="#0C0D0D"
+          color="primary"
           sx={titleText}
         >
           { <strong>{articleData.slice(17)}</strong> }   
@@ -86,7 +83,6 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
-  // Looks Good On Story, 
   if (articleData.startsWith('[STORY_CHAPTER]')) {
     return (
       <Grid
@@ -96,7 +92,7 @@ export const CreateArticle = (articleData: string) => {
       >
         <Typography
           id="article_Chapter"
-          color="#0C0D0D"
+          color="primary"
           sx={StoryChapterStyle}
         >
           { <strong>{articleData.slice(15)}</strong> }   
@@ -104,7 +100,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
-  // Not Being Used
+
   if (articleData.startsWith('[PARAGRAPH_TITLE_WITH_PADDING]')) {
     return (
       <Grid
@@ -113,7 +109,7 @@ export const CreateArticle = (articleData: string) => {
       >
         <Typography
           id="article_Paragraph_Title"
-          color="#0C0D0D"
+          color="primary"
           sx={TitleTextWithPadding}
         >
           { <strong>{articleData.slice(30)}</strong> }   
@@ -121,7 +117,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
-  // Looks Good On Coding, 
+ 
   if (articleData.startsWith('[BULLET_LIST]')) {
     return (
       <Grid
@@ -136,7 +132,7 @@ export const CreateArticle = (articleData: string) => {
           <li>
             <Typography
               id="article_Bullet_List"
-              color="#0C0D0D"
+              color="primary"
               sx={sectionTextParagraph}
             >
               {articleData.slice(13)} 
@@ -146,6 +142,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
+
   if (articleData.startsWith('[BULLET_LIST_NESTED]')) {
     return (
       <Grid
@@ -174,7 +171,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
-  // Looks Good On Coding, 
+
   if (articleData.startsWith('[SECTION]')) {
     return (
       <Grid
@@ -185,7 +182,7 @@ export const CreateArticle = (articleData: string) => {
       >
         <Typography
           id="article_section"
-          color="#0C0D0D"
+          color="primary"
           sx={sectionTextStyle}
         >
           {articleData.slice(9)} 
@@ -193,7 +190,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
-  // Not being used
+
   if (articleData.startsWith('[INDENT_TEXT]')) {
     return (
       <Grid
@@ -203,7 +200,7 @@ export const CreateArticle = (articleData: string) => {
       >
         <Typography
           id="article_indent_text"
-          color="#0C0D0D"
+          color="primary"
           sx={sectionTextParagraph}
         >
           {articleData.slice(13)} 
@@ -211,7 +208,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
-  // Looks good
+
   if (articleData.startsWith('[QUOTES]')) {
     return (
       <Grid
@@ -219,8 +216,8 @@ export const CreateArticle = (articleData: string) => {
         justifyContent="center"
       >
         <Typography
+          color="primary"
           id="article_Quotes"
-          color="grey"
           sx={quoteText}
         >
           {/*eslint-disable-next-line */}
@@ -229,7 +226,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
-  // Being used on Reviews
+
   if (articleData.startsWith('[BULLET_LIST_CHILD]')) {
     return (
       <Grid
@@ -238,7 +235,7 @@ export const CreateArticle = (articleData: string) => {
       >
         <Typography
           id="article_Bullet_List_Child"
-          color="#0C0D0D"
+          color="primary"
           sx={BulletListChildTextStyles}
         >
           { articleData.slice(19) }
@@ -246,7 +243,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
-  // Looks good on Coding
+
   if (articleData.startsWith('[BULLET_LIST_CHILD_LINKS]')) {
     return (
       <Grid
@@ -256,7 +253,6 @@ export const CreateArticle = (articleData: string) => {
         <Link
           id="bullet_list_child_links"
           href={articleData.slice(25)}
-          // underline="none"
           target="_blank"
           rel="noopener"
           sx={BulletListChildLinkStyles}
@@ -266,7 +262,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
-  // Looks Good On Coding
+
   if (articleData.startsWith('[CODESNIPIT]')) {
     return (
       <Grid
@@ -280,7 +276,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
-  // Needs work
+
   if (articleData.startsWith('[REVIEW]')) {
     return (
       <Grid
@@ -292,7 +288,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
-  // used on Coding
+
   if (articleData.startsWith('[LINKS]')) {
     return (
       <Grid
@@ -303,7 +299,6 @@ export const CreateArticle = (articleData: string) => {
       >
         <Link
           href={articleData.slice(7)}
-          // underline="none"
           target="_blank"
           rel="noopener"
           sx={LinkStyles}
@@ -313,7 +308,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
-  // Looks good on story
+
   if (articleData.startsWith('[PARAGRAPH_INDENT]')) {
     return (
       <Grid
@@ -323,7 +318,7 @@ export const CreateArticle = (articleData: string) => {
       >
         <Typography
           id="article_paragraph_indent"
-          color="#0C0D0D"
+          color="primary"
           sx={ParagraphIndentStyle}
         >
           {articleData.slice(18)} 
@@ -331,7 +326,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
-  // Looks Good On Stpru, 
+
   if (articleData.startsWith('[STORY_TITLE]')) {
     return (
       <Grid
@@ -341,7 +336,7 @@ export const CreateArticle = (articleData: string) => {
       >
         <Typography
           id="article_story_title"
-          color="#0C0D0D"
+          color="primary"
           sx={StoryTitleStyle}
         >
           { <strong>{articleData.slice(13)}</strong> }   
@@ -349,7 +344,7 @@ export const CreateArticle = (articleData: string) => {
       </Grid>
     );
   }
-  // looks good
+
   return (
     <Grid
       container
@@ -357,7 +352,7 @@ export const CreateArticle = (articleData: string) => {
     >
       <Typography
         id="article_text"
-        color="#0C0D0D"
+        color="primary"
         sx={paragraphText}
       >
         { articleData }

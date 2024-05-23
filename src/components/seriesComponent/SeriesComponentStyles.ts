@@ -1,5 +1,4 @@
 export const seriesComponentGridRoot = {
-  background: '#fff',
   display: 'flex',
   maxWidth: '1024px',
   margin: 'auto',
@@ -24,14 +23,12 @@ export const seriesComponentGridArticleInfo = {
 export const seriesComponentTitle = {
   fontSize: '20px',
   padding: '0px 16px 0px 16px',
-  color: '#0C0D0D',
   '@media only screen and (max-width: 600px)': {
     fontSize: '20px',
   },
 };
 
 export const seriesComponentSubTitle = {
-  color: '#0C0D0D',
   fontSize:'16px',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
@@ -47,7 +44,6 @@ export const seriesComponentSubTitle = {
 
 export const seriesComponentdate = {
   fontSize:'14px',
-  color: 'grey',
   padding: '0px 16px 0px 16px',
   '@media only screen and (max-width: 600px)': {
     fontSize: '14px',

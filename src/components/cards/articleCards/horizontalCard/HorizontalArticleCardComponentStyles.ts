@@ -5,20 +5,23 @@ export const ArticlePageRoot = {
   },
 };
 
-export const CardHorizontalArticleInfo = ( articlepagelist: boolean ) => ({
-  maxWidth: '740px',
-  backgroundColor: 'white',
-  boxShadow: 'none',
-  padding: !articlepagelist ? '4px 0px 0px 24px' : '',
-  '@media only screen and (min-width: 768px)': {
-    maxWidth: '45%',
+export const CardGrid = {
+  height: "180px",
+  '@media only screen and (max-width: 600px)': {
+    padding: '8px',
+    height: '166px',
   },
-  '@media only screen and (min-width: 992px)': {
-    minWidth: articlepagelist ? '321px' : '647px',
-    maxWidth: articlepagelist ? '321px' : '0px',
+};
+
+export const CardHorizontalArticleInfo = ( articlepagelist: boolean ) => ({
+  height: '180px',
+  boxShadow: 'none',
+  padding: !articlepagelist ? '0px 0px 0px 24px' : '',
+  '@media only screen and (min-width: 900px)': {
+    width: '660px',
   },
   '@media only screen and (max-width: 600px)': {
-    padding: '0px',
+    padding: '8px',
   },
 });
 
@@ -51,25 +54,34 @@ export const CardMedaiArticleVideo = (articlepage: boolean, videoHeight: boolean
   },
 });
 
-export const GridHorizontalArticleContainer = {
+export const GridHorizontalArticleContainer = (articlePage: boolean, theme: boolean, turOnAuthorForArticle?: boolean) => ({
   width: '100%',
-  background: '#fff',
   display: 'flex',
   margin: '0px 0px 16px 0px',
-};
+  border: theme || articlePage || turOnAuthorForArticle ? '' : '1px solid #0C0D0D',
+  '@media only screen and (max-width: 600px)': {
+    border: ((articlePage && theme) || (!articlePage && theme) || (articlePage && !theme)) ? '' : '1px solid #0C0D0D',
+  },
+});
 
-export const GridHorizontalArticleMaxWidth = (imagewidth: string) => ({
+// once we have an article with video, need to check this here
+export const GridHorizontalArticleMaxWidth = (imagewidth: string, theme: boolean, articlePage: boolean) => ({
   maxWidth: imagewidth,
+  height: theme || articlePage ? '' : '180px',
+  '@media only screen and (max-width: 770px)': {
+    height: '',
+    // width: articlePage ? '0px' : 'px', // may need to remove
+  },
 });
 
 export const ImageHorizonatalArticleStyles = (articlepage: any, imagewidth?: any) => ({
   height: `${articlepage} ? '576px' : '181px'`,
-  borderRadius: '4px',
+  objectFit: 'contain',
   aspectRatio: '16/9',
   width: articlepage ? '960px' : '321px',
   '@media only screen and (max-width: 600px)': {
-    width: articlepage ? '101vw' : `calc(100vw - ${imagewidth})`,
-    borderRadius: articlepage ? '0px' : '4px',
+    width: articlepage ? '102vw' : `calc(100vw - ${imagewidth})`,
+    borderRadius: articlepage ? '0px' : '0px',
   },
   '@media only screen and (min-width: 600px)': {
     width: `calc(100vw - ${imagewidth})`,
@@ -94,14 +106,12 @@ export const TypographyHorizontalArticleDate = {
 };
 
 export const TypographyHorizontalArticleSubTitle = (articlepage: boolean, cardtextwidth: string) => ({
-  color: '#0C0D0D',
   fontSize: '16px',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
   WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
-  // fontFamily: 'sans-serif',
   maxWidth: articlepage ? '321px' : `${cardtextwidth} !important`,
   '@media only screen and (max-width: 600px)': {
     fontSize: '16px',
@@ -110,17 +120,14 @@ export const TypographyHorizontalArticleSubTitle = (articlepage: boolean, cardte
 });
 
 export const TypographyHorizontalArticleTitle = (articlepage: boolean) => ({
-  color: '#0C0D0D',
   fontSize: '20px',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
   WebkitLineClamp: '1',
   WebkitBoxOrient: 'vertical',
-  // fontFamily: 'sans-serif',
   maxWidth: articlepage ? '960px' : '639px',
   '@media only screen and (max-width: 600px)': {
-    // display: 'none',
     fontSize: '20px',
     padding: '0px 4px 0px 4px',
     WebkitLineClamp: '2',
@@ -136,6 +143,7 @@ export const TitleStyle = {
 
 export default [
   ArticlePageRoot,
+  CardGrid,
   CardHorizontalArticleInfo,
   CardMedaiArticleVideo,
   GridHorizontalArticleContainer,

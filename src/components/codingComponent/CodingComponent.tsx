@@ -6,6 +6,7 @@ import CodingComponentTabData from './CodingComponentTabData';
 const CodingComponent: React.FC = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const articleData = getWebsiteData && getWebsiteData?.websiteData?.articles;
+  const authorsData = getWebsiteData && getWebsiteData?.websiteData?.authors;
 
   const articleSectionFilter = articleData?.filter((item: any) => {
     return item.sections === 'Coding';
@@ -27,10 +28,11 @@ const CodingComponent: React.FC = () => {
     <SectionsComponent
       headerTitle='Coding'
       sectionTabData={CodingComponentTabData(
-        false,
+        authorsData,
         articleSectionFilter,
         articleFrontEndFilter,
         articleDataFilter,
+        false,
       )}
     />
   );

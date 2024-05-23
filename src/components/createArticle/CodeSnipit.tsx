@@ -8,6 +8,7 @@ import {
   GridCopyCodeStyles,
   GridTitleStyle,
   HeaderStyles,
+  PreTagGridStyles,
   PreTagStyles,
   RootStyles,
   TitleOfCodeStyles,
@@ -62,13 +63,18 @@ const CodeSnipit: React.FC<Props> = ({
           />
         </Grid>
       </Grid>
-      <pre
-        style={PreTagStyles()}
-      > 
-        <code className="language-javascript">
-          {displayCode}
-        </code>
-      </pre>
+      <Grid
+        item
+        sx={PreTagGridStyles}
+      >
+        <pre
+          style={PreTagStyles()}
+        > 
+          <code className="language-javascript">
+            {displayCode}
+          </code>
+        </pre>
+      </Grid>
     </Grid>
   );
 };

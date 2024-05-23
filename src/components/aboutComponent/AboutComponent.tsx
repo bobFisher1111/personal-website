@@ -21,6 +21,9 @@ const AboutComponent: React.FC = () => {
   return (
     <Grid
       container
+      direction="row"
+      justifyContent="flex-start"
+      alignItems="center"
       sx={AboutCompGridRoot}
     >
       <HeaderComponent
@@ -36,12 +39,14 @@ const AboutComponent: React.FC = () => {
         xl={12}
       >
         <Typography
+          color="primary"
           variant="h6"
           sx={AboutCompAboutTitle}
         >
             About
         </Typography>
         <Typography
+          color="primary"
           variant="h6"
           sx={AboutCompAboutText}
         >
@@ -57,6 +62,7 @@ const AboutComponent: React.FC = () => {
         xl={12}
       >
         <Typography
+          color="primary"
           variant='h6'
           sx={AboutCompTitles}
         >
@@ -69,6 +75,8 @@ const AboutComponent: React.FC = () => {
           <SocialMediaComponent
             widthPadding={'0px 0px 0px 16px'}
             turnOnStyle={true}
+            alignContent={"center"}
+            justifyContent={"center"}
           />
         </Grid>
       </Grid>
@@ -81,18 +89,22 @@ const AboutComponent: React.FC = () => {
         xl={12}
       >
         <Typography
+          color="primary"
           variant="h6"
           sx={AboutCompTitles}
         >
             Contact us on:
         </Typography>
         <Grid
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={12}
+          xl={12}
         >
           <Typography
+            color="primary"
             variant="h6"
             sx={AboutCompAboutTextWithPAdding}
           >
@@ -112,12 +124,14 @@ const AboutComponent: React.FC = () => {
         }}
       >
         <Typography
+          color="primary"
           variant="h6"
           sx={AboutCompTitles}
         >
             Report Issues:
         </Typography>
         <Typography
+          color="primary"
           variant="h6"
           sx={AboutCompAboutText}
         >
@@ -133,60 +147,70 @@ const AboutComponent: React.FC = () => {
         xl={12}
       >
         <Typography
+          color="primary"
           variant="h6"
           sx={AboutCompTitles}
         >
             Road Map:
         </Typography>
         <Typography
+          color="primary"
           variant="h6"
           sx={AboutCompAboutText}
         >
           Update fonts throughout website
         </Typography>
         <Typography
+          color="primary"
           variant="h6"
           sx={AboutCompAboutText}
         >
           Create careousel for homepage
         </Typography>
         <Typography
+          color="primary"
           variant="h6"
           sx={AboutCompAboutText}
         >
           Overhaul to Article Page
         </Typography>
         <Typography
+          color="primary"
           variant="h6"
           sx={AboutCompAboutText}
         >
             Dark Theme
         </Typography>
         <Typography
+          color="primary"
           variant="h6"
           sx={AboutCompAboutText}
         >
             Mobile version 2.0
         </Typography>
         <Typography
+          color="primary"
           variant="h6"
           sx={AboutCompAboutText}
         >
             Desktop version 2.0
         </Typography>
         <Typography
+          color="primary"
           variant="h6"
           sx={AboutCompAboutText}
         >
             Interactive yearly magazine
         </Typography>
         <Typography
+          color="primary"
           variant="h6"
           sx={AboutCompAboutText}
         >
           Migrate backend to .Net
         </Typography>
         <Typography
+          color="primary"
           variant="h6"
           sx={AboutCompAboutText}
         >
@@ -205,24 +229,28 @@ const AboutComponent: React.FC = () => {
         }}
       >
         <Typography
+          color="primary"
           variant="h6"
           sx={AboutCompTitles}
         >
             Built with open source technology:
         </Typography>
         <Typography
+          color="primary"
           variant="h6"
           sx={AboutCompAboutText}
         >
             React
         </Typography>
         <Typography
+          color="primary"
           variant='h6'
           sx={AboutCompAboutText}
         >
           Express.js
         </Typography>
         <Typography
+          color="primary"
           variant="h6"
           sx={AboutCompAboutText}
         >

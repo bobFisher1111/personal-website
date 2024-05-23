@@ -32,7 +32,7 @@ const LatestArticalCardWide: React.FC<Props> = ({
         border: '1px solid #2F4C69',
         minHeight: '172px',
         maxHeight: '225px',
-        backgroundColor: '#2F4C69',
+        // backgroundColor: '#2F4C69',
       }}
     >
       <Grid 

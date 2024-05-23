@@ -22,7 +22,11 @@ const AuthorAbout: React.FC<Props> = ({
 
   return (
     <>
-      <Typography>Coming soon...</Typography>
+      <Typography
+        color="primary"
+      >
+        Coming soon...
+      </Typography>
       {/* <Grid 
         container
         direction="row"

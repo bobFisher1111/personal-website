@@ -8,7 +8,6 @@ export const AuthorAboutGridFavorites = (turnpaaddingon: boolean) => {
 };
 
 export const AuthorAboutFavoritesHeader = {
-  color: '#667A6E',
   paddingRight: '8px',
   fontSize: '20px',
   padding: '16px 0px 16px 0px',
@@ -33,11 +32,7 @@ export const AuthorAboutAuthorsFavoritesResponse = {
   // fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
   fontSize: '1rem',
   lineHeight: '1.5',  
-  paddingRight: '4px',
-  color: '#551A8B',
-  '&:hover': {
-    color: '#667A6E',
-  },  
+  paddingRight: '4px', 
   '@media only screen and (max-width: 600px)': {
     fontSize: '12px',
   },   

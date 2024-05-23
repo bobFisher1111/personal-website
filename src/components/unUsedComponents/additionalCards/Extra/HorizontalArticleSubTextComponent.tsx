@@ -17,7 +17,7 @@ const HorizontalArticleSubTextComponent: React.FC<Props> = ({
       >
         <Typography 
           variant="body1"
-          color="#667A6E" 
+          color="primary"
           sx={{
             overflow: 'hidden',
             textOverflow: 'ellipsis',

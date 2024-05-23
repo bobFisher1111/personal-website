@@ -1,5 +1,22 @@
+export const AccountCircleStyle = {
+  '@media only screen and (max-width: 600px)': {
+    fontSize: '16px',
+  },
+};
+
+export const AvatarImageStyles = {
+  width: '30px',
+  height: '30px',
+  borderRadius: '50%',
+  border: '1px solid black',
+  margin: '0px 8px 0px 0px',
+  '@media only screen and (max-width: 600px)': {
+    width: '20px',
+    height: '20px',
+  },
+};
+
 export const ChipStyle = {
-  color: '#0C0D0D',
   cursor: 'pointer',
   borderRadius: '4px',
   '@media only screen and (max-width: 600px)': {
@@ -9,16 +26,6 @@ export const ChipStyle = {
     },
   },
 };
-
-export const DivMaterialSymbolsOutlined = () => ({
-  fontSize: '20px',
-  color: '#2F4C69',
-  marginRight: '4px',
-  lineHeight: '24px',
-  '@media only screen and (max-width: 600px)': {
-    fontSize: '16px',
-  },
-});
 
 export const GridArticleInfoComponent = {
   padding: '4px 0px 0px 0px',
@@ -54,8 +61,9 @@ export const TypographyArticleInfoLeft = {
 };
 
 export default [
+  AccountCircleStyle,
+  AvatarImageStyles,
   ChipStyle,
-  DivMaterialSymbolsOutlined,
   GridArticleInfoComponent,
   HorizAriclePageInfoCompAuthor,
   HorizArticlePageInfoCompDate,
