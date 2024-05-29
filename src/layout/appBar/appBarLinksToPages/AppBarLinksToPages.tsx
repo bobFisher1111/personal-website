@@ -6,7 +6,8 @@ import {
 import { Link } from 'react-router-dom';
 import SectionsDropDown from '../sectionsDropDown/SectionsDropDown';
 import { LinkStyles } from '../../../util/styles/LinkStyles';
-import { 
+import {
+  AlignLinkTexts,
   GridPointer,
   TypographyLinkTwoPage,
 } from './AppBarLinksToPagesStyles';
@@ -16,7 +17,7 @@ const AppBarLinksToPages: React.FC = () => {
     <>
       <Grid
         item
-        style={{alignContent: 'center'}}
+        sx={AlignLinkTexts}
       >
         <Link to="/about"
           style={LinkStyles()}

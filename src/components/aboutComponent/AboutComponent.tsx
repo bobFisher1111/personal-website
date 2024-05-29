@@ -73,10 +73,10 @@ const AboutComponent: React.FC = () => {
           sx={AboutCompGridSocialMediaStyle}
         >
           <SocialMediaComponent
-            widthPadding={'0px 0px 0px 16px'}
+            widthPadding={'8px 0px 0px 16px'}
             turnOnStyle={true}
-            alignContent={"center"}
-            justifyContent={"center"}
+            alignContent={"flex-start"}
+            justifyContent={"flex-start"}
           />
         </Grid>
       </Grid>
@@ -158,6 +158,13 @@ const AboutComponent: React.FC = () => {
           variant="h6"
           sx={AboutCompAboutText}
         >
+          Working on improving accessibility
+        </Typography>
+        <Typography
+          color="primary"
+          variant="h6"
+          sx={AboutCompAboutText}
+        >
           Update fonts throughout website
         </Typography>
         <Typography
@@ -173,13 +180,6 @@ const AboutComponent: React.FC = () => {
           sx={AboutCompAboutText}
         >
           Overhaul to Article Page
-        </Typography>
-        <Typography
-          color="primary"
-          variant="h6"
-          sx={AboutCompAboutText}
-        >
-            Dark Theme
         </Typography>
         <Typography
           color="primary"
