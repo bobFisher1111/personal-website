@@ -4,6 +4,7 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
+import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import SocialMediaComponent from '../../../components/socialMediaComponent/SocialMediaComponent';
 import AppBarLinksToPages from '../appBarLinksToPages/AppBarLinksToPages';
@@ -22,6 +23,7 @@ import { LinkStyles } from '../../../util/styles/LinkStyles';
 import AppConfig from '../../../config';
 
 const WebSiteAppBar: React.FC = () => {
+  const theme = useSelector((state: any) => state.theme.darkTheme);
   const facebook = AppConfig.facebookURL;
   const twitter = AppConfig.twitterURL;
   const youtube = AppConfig.youtubeURL;
@@ -46,7 +48,7 @@ const WebSiteAppBar: React.FC = () => {
           sx={GridDesktopAppBar}
         >
           <Link to="/" 
-            style={LinkStyles()}
+            style={LinkStyles(theme)}
           >
             <Typography
               color="primary"
@@ -155,9 +157,7 @@ const WebSiteAppBar: React.FC = () => {
             sx={LinkGridMobileStyles}
           >
             <Link to="/" 
-              style={{
-                textDecoration: 'none'
-              }}
+              style={LinkStyles(theme)}
             >
               <Typography
                 color="primary"

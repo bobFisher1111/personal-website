@@ -3,6 +3,7 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
+import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import SectionsDropDown from '../sectionsDropDown/SectionsDropDown';
 import { LinkStyles } from '../../../util/styles/LinkStyles';
@@ -13,6 +14,7 @@ import {
 } from './AppBarLinksToPagesStyles';
 
 const AppBarLinksToPages: React.FC = () => {
+  const theme = useSelector((state: any) => state.theme.darkTheme);
   return (
     <>
       <Grid
@@ -20,7 +22,7 @@ const AppBarLinksToPages: React.FC = () => {
         sx={AlignLinkTexts}
       >
         <Link to="/about"
-          style={LinkStyles()}
+          style={LinkStyles(theme)}
         >
           <Typography
             color="primary"
@@ -32,10 +34,10 @@ const AppBarLinksToPages: React.FC = () => {
       </Grid>
       <Grid
         item
-        style={{alignContent: 'center'}}
+        sx={AlignLinkTexts}
       >
         <Link to="/writers"
-          style={LinkStyles()}
+          style={LinkStyles(theme)}
         >
           <Typography
             color="primary"

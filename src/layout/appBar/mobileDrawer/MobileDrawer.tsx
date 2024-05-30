@@ -32,7 +32,6 @@ const MobileDrawer: React.FC = () => {
     left: false,
   });
   const theme = useSelector((state: any) => state.theme.darkTheme);
-  // const [themes, setThemes] = React.useState<string>('white');
   const facebook = AppConfig.facebookURL;
   const twitter = AppConfig.twitterURL;
   const youtube = AppConfig.youtubeURL;
@@ -123,7 +122,7 @@ const MobileDrawer: React.FC = () => {
           >
             <Link
               to="/"
-              style={LinkStyles()}
+              style={LinkStyles(theme)}
             >
               <Typography
                 color="primary"
@@ -143,7 +142,7 @@ const MobileDrawer: React.FC = () => {
             xl={12}
           >
             <Link to="/videoGames"
-              style={LinkStyles()}
+              style={LinkStyles(theme)}
             >
               <Typography
                 color="primary"
@@ -163,7 +162,7 @@ const MobileDrawer: React.FC = () => {
             xl={12}
           >
             <Link to="/reviews"
-              style={LinkStyles()}
+              style={LinkStyles(theme)}
             >
               <Typography
                 color="primary"
@@ -184,7 +183,7 @@ const MobileDrawer: React.FC = () => {
           >
             <Link
               to="/coding"
-              style={LinkStyles()}
+              style={LinkStyles(theme)}
             >
               <Typography
                 color="primary"
@@ -204,7 +203,7 @@ const MobileDrawer: React.FC = () => {
             xl={12}
           >
             <Link to="/stories"
-              style={LinkStyles()}
+              style={LinkStyles(theme)}
             >
               <Typography
                 color="primary"
@@ -224,7 +223,7 @@ const MobileDrawer: React.FC = () => {
             xl={12}
           >
             <Link to="/writers"
-              style={LinkStyles()}
+              style={LinkStyles(theme)}
             >
               <Typography
                 color="primary"
@@ -244,7 +243,7 @@ const MobileDrawer: React.FC = () => {
             xl={12}
           >
             <Link to="/about"
-              style={LinkStyles()}
+              style={LinkStyles(theme)}
             >
               <Typography
                 color="primary"
@@ -266,8 +265,11 @@ const MobileDrawer: React.FC = () => {
         <React.Fragment 
           key={anchor}
         >
-          <Button onClick={toggleDrawer(anchor, true)}>
-            <MenuIcon 
+          <Button
+            aria-label="Menu for Sections Mobile"
+            onClick={toggleDrawer(anchor, true)}
+          >
+            <MenuIcon
               sx={MenuIconStyle}
             />
           </Button>

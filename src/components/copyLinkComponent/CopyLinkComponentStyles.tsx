@@ -1,5 +1,5 @@
-export const ContentCopyIconStyle = (prop: string, padding: any) => ({
-  color: prop,
+export const ContentCopyIconStyle = (theme: boolean, padding: any) => ({
+  color: theme ? '#9DB2BF' : '#0C0D0D',
   padding: padding,
   cursor: 'pointer',
   '&:hover': {
@@ -13,10 +13,10 @@ export const ContentCopyIconStyle = (prop: string, padding: any) => ({
   },
 });
 
-export const EmailOutlinedIconStyles = ( prop: string ) => ({
+export const EmailOutlinedIconStyles = ( theme: boolean ) => ({
   height: '30px',
   cursor: 'pointer',
-  color: prop,
+  color: theme ? '#9DB2BF' : '#0C0D0D',
   '&:hover': {
     color: '#2F4C69',
   },

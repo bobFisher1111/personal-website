@@ -4,6 +4,7 @@ import {
   Typography,
   CardMedia,
 } from '@mui/material';
+import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import SocialMediaComponent from '../../socialMediaComponent/SocialMediaComponent';
 import { LinkStyles } from '../../../util/styles/LinkStyles';
@@ -25,6 +26,7 @@ const WritersCard: React.FC<Props> = ({
   youtube,
   email,
 }) => {
+  const theme = useSelector((state: any) => state.theme.darkTheme);
   return (
     <Grid
       container
@@ -40,12 +42,13 @@ const WritersCard: React.FC<Props> = ({
       >
         <Link 
           to={`/author/${authorId}`}
-          style={LinkStyles()}
+          style={LinkStyles(theme)}
         >
           <CardMedia
             component="img"
             image={authorImage}
             sx={WritersCardAvatar}
+            alt={`${authorName} image`}
           />
         </Link>
       </Grid>
@@ -60,7 +63,7 @@ const WritersCard: React.FC<Props> = ({
       >
         <Link 
           to={`/author/${authorId}`}
-          style={LinkStyles()}
+          style={LinkStyles(theme)}
         >
           <Typography
             color="primary"
@@ -71,7 +74,7 @@ const WritersCard: React.FC<Props> = ({
         </Link>
         <Link 
           to={`/author/${authorId}`}
-          style={LinkStyles()}
+          style={LinkStyles(theme)}
         >
           <Typography
             color="primary"

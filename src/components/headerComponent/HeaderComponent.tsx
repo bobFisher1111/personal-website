@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import {
   Avatar,
@@ -22,6 +23,7 @@ const HeaderComponent:  React.FC<Props> = ({
   authorId,
   articlePage
 }) => {
+  const theme = useSelector((state: any) => state.theme.darkTheme);
   const titleFunction = (item: any) => {
     return (
       <Typography
@@ -50,7 +52,7 @@ const HeaderComponent:  React.FC<Props> = ({
             {articlePage ? 
               <Link 
                 to={`/author/${authorId}`}
-                style={LinkStyles()}
+                style={LinkStyles(theme)}
               >
                 <Avatar 
                   alt="Authors Avatar"
@@ -73,7 +75,7 @@ const HeaderComponent:  React.FC<Props> = ({
             {articlePage ?
               <Link 
                 to={`/author/${authorId}`}
-                style={LinkStyles()}
+                style={LinkStyles(theme)}
               >
                 {titleFunction(title)}
               </Link>
