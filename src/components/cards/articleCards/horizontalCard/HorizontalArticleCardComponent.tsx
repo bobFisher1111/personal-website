@@ -151,7 +151,7 @@ const HorizontalArticleCardComponent: React.FC<Props> = ({
               <Link
                 to={`/article/${authorsId}/${articleId}`}
                 reloadDocument={true}
-                style={LinkStyles()}
+                style={LinkStyles(theme)}
               >
                 <Typography
                   color="primary"

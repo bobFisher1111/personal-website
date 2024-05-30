@@ -1,7 +1,6 @@
-export const copyLink = (copyChangeColor: any, link: string | undefined) => {
+export const copyLink = (link: string | undefined) => {
   if (link !== undefined) {
     const copy = navigator.clipboard.writeText(link);
-    copyChangeColor('#2F4C69');
     return copy;
   }
 };

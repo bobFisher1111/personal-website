@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Grid, Typography } from '@mui/material';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import hljs from 'highlight.js';
-import "highlight.js/styles/base16/dracula.css";
+import "highlight.js/styles/a11y-dark.css";
 import { 
   CopyCodeStyles,
   GridCopyCodeStyles,

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from "react-redux";
 import {
   Chip,
   Grid,
@@ -29,6 +30,7 @@ const HorizontalArticleInfoComponent: React.FC<Props> = ({
   series,
   seriesId,
 }) => {
+  const theme = useSelector((state: any) => state.theme.darkTheme);
   
   return (
     <Grid 
@@ -39,7 +41,7 @@ const HorizontalArticleInfoComponent: React.FC<Props> = ({
       {!authorPage ?
         <Link 
           to={`/author/${authorsId}`}
-          style={LinkStyles()}
+          style={LinkStyles(theme)}
         >
           <Grid 
             className={'material-symbols-outlined'}
@@ -64,7 +66,7 @@ const HorizontalArticleInfoComponent: React.FC<Props> = ({
       {!authorPage ? 
         <Link 
           to={`/author/${authorsId}`}
-          style={LinkStyles()}
+          style={LinkStyles(theme)}
         >
           <Typography
             color="primary"
@@ -84,7 +86,7 @@ const HorizontalArticleInfoComponent: React.FC<Props> = ({
       {!sectionPage ?
         <Link 
           to={`/${sectionLink}`}
-          style={LinkStyles()}
+          style={LinkStyles(theme)}
         >
           <Chip
             color="primary"
@@ -109,7 +111,7 @@ const HorizontalArticleInfoComponent: React.FC<Props> = ({
            >
              <Link 
                to={`/series/${seriesId}`}
-               style={LinkStyles()}
+               style={LinkStyles(theme)}
              >
                <Chip
                  color="primary"
@@ -122,13 +124,12 @@ const HorizontalArticleInfoComponent: React.FC<Props> = ({
            </div>
       }
       {authorPage && series && sectionPage &&
-            <CopyLinkComponent
-              authorsId={authorsId}
-              articleId={articleId}
-              defaultColor={'#667A6E'}
-              padding={'0px 0px 0px 16px'}
-              email={false}
-            />
+        <CopyLinkComponent
+          authorsId={authorsId}
+          articleId={articleId}
+          padding={'0px 0px 0px 16px'}
+          email={false}
+        />
       }
     </Grid>
   );

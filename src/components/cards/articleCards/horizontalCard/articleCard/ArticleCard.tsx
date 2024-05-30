@@ -80,7 +80,7 @@ const ArticleCard: React.FC<Props> = ({
         >
           <Link 
             to={`/author/${authorId}`}
-            style={AvatarAuthorLinkStyles}
+            style={AvatarAuthorLinkStyles(theme)}
           >
             <Img
               alt="complex"
@@ -167,7 +167,7 @@ const ArticleCard: React.FC<Props> = ({
             <Link
               to={`/article/${authorId}/${articleId}`}
               // reloadDocument={true}
-              style={LinkStyles()}
+              style={LinkStyles(theme)}
             >
               <Grid
                 item
@@ -218,7 +218,7 @@ const ArticleCard: React.FC<Props> = ({
             >
               <Link
                 to={`/${sectionLink}`}
-                style={LinkStyles()}
+                style={LinkStyles(theme)}
               >
                 <Chip
                   color="primary"

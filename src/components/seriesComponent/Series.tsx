@@ -30,6 +30,7 @@ export const Series: React.FC<Props> = ({
   seriesForAuthorsPage,
 }) => {
   const [filterSeries, setFilterSeries] = useState<any>([]);
+  const theme = useSelector((state: any) => state.theme.darkTheme);
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const series = getWebsiteData && getWebsiteData?.websiteData?.series;
   const getIdFromUrl = () => {
@@ -100,7 +101,7 @@ export const Series: React.FC<Props> = ({
               sx={GridSeriesArticleList}
             >
               <Link to={`/article/${a?.authorId}/${a?.articleId}`}
-                style={LinkStyles()}
+                style={LinkStyles(theme)}
               >
                 <Grid
                   item
@@ -169,26 +170,26 @@ export const Series: React.FC<Props> = ({
           sx={GridSeriesRoot}
         >
           {!articlePage && 
-                <Grid
-                  container
+            <Grid
+              container
+            >
+              <Grid
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                xl={12}
+                sx={GridMarginLeft}
+              >
+                <Typography
+                  color="primary"
+                  sx={TypographySeriesTitle}
                 >
-                  <Grid
-                    item
-                    xs={12}
-                    sm={12}
-                    md={12}
-                    lg={12}
-                    xl={12}
-                    sx={GridMarginLeft}
-                  >
-                    <Typography
-                      color="primary"
-                      sx={TypographySeriesTitle}
-                    >
-                      {`${item?.section}: ${item?.seriesTitle}`}
-                    </Typography>
-                  </Grid>
-                </Grid>
+                  {`${item?.section}: ${item?.seriesTitle}`}
+                </Typography>
+              </Grid>
+            </Grid>
           }
           { articlePage ?
             <>
@@ -255,7 +256,7 @@ export const Series: React.FC<Props> = ({
                       sx={GridSeriesReadMoreMargin}
                     >
                       <Link to={`/series/${item.seriesId}`}
-                        style={LinkStyles()}
+                        style={LinkStyles(theme)}
                       >
                         <Button 
                           variant="outlined"

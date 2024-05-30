@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import {
   Chip,
@@ -29,6 +30,7 @@ const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
   articleId,
   series,
 }) => {
+  const theme = useSelector((state: any) => state.theme.darkTheme);
   const getSeriesIdFromUrl = () => {
     const currentLocation = window.location.href;
     const seriesId = currentLocation.split('/').reverse()[0];
@@ -50,7 +52,7 @@ const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
       >
         <Link 
           to={`/author/${authorsId}`}
-          style={LinkStyles()}
+          style={LinkStyles(theme)}
         >
           <Img
             alt="complex"
@@ -60,7 +62,7 @@ const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
         </Link>
         <Link 
           to={`/author/${authorsId}`}
-          style={LinkStyles()}
+          style={LinkStyles(theme)}
         >
           <Typography
             color="primary"
@@ -110,7 +112,6 @@ const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
         {series ? 
           <CopyLinkComponent
             seriesId={getSeriesIdFromUrl()}
-            defaultColor={'#667A6E'}
             padding={'0px 0px 0px 16px'}
             email={false}
             turnOnSeries={true}
@@ -119,7 +120,6 @@ const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
           <CopyLinkComponent
             authorsId={authorsId}
             articleId={articleId}
-            defaultColor={'#667A6E'}
             padding={'0px 0px 0px 16px'}
             email={false}
           />

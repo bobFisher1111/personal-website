@@ -6,6 +6,7 @@ import {
   Button,
   Grid,
 } from '@mui/material/';
+import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import { 
   ButtonSectionTtileStyle,
@@ -23,6 +24,7 @@ const SectionCard: React.FC<Props> = ({
   section,
   linkTo,
 }) => {
+  const theme = useSelector((state: any) => state.theme.darkTheme);
   return (
     <Grid 
       container
@@ -42,7 +44,7 @@ const SectionCard: React.FC<Props> = ({
         >
           <Link 
             to={`/${linkTo}`}
-            style={LinkStyles()}
+            style={LinkStyles(theme)}
           >
             {/* <CardMedia
               component="img"

@@ -102,7 +102,7 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
                   <Link 
                     to={series? authorUrl : articleUrl}
                     rel="noreferrer"
-                    style={LinkStyles()}
+                    style={LinkStyles(theme)}
                   >
                     <Typography
                       color="secondary"
@@ -128,7 +128,6 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
                 <CopyLinkComponent
                   authorsId={articleData?.authorId}
                   articleId={articleData?.articleId}
-                  defaultColor={'#ffffff'}
                   padding={'0px 0px 0px 0px'}
                   email={false}
                   seriesId={articleData?.seriesId}

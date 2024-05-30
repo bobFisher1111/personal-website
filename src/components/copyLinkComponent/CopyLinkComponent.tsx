@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector } from "react-redux";
 import { appBaseURL } from '../../config';
 import copyLink from '../../util/copyLink';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
@@ -12,15 +13,13 @@ import {
 const CopyLinkComponent: React.FC<Props> = ({
   authorsId,
   articleId,
-  defaultColor,
   padding,
   email,
   authorsEmail,
   seriesId,
   turnOnSeries,
 }) => {
-  const [copyIconColor, setCopyIconColor] = useState<string>(defaultColor);
-  const [emailIcon, setEmailIcon] = useState<string>(defaultColor);
+  const theme = useSelector((state: any) => state.theme.darkTheme);
   const articleUrl = `${appBaseURL}/article/${authorsId}/${articleId}`;
   const seriesUrl = `${appBaseURL}/series/${seriesId}`;
   const copyUrls = turnOnSeries ? seriesUrl : articleUrl;
@@ -28,14 +27,14 @@ const CopyLinkComponent: React.FC<Props> = ({
     <>
       {email ?
         <EmailOutlinedIcon
-          sx={EmailOutlinedIconStyles(emailIcon)}
+          sx={EmailOutlinedIconStyles(theme)}
           id="copyEmail"
-          onClick={() => copyLink(setEmailIcon, authorsEmail)}
+          onClick={() => copyLink(authorsEmail)}
         />
         :
         <ContentCopyIcon
-          sx={ContentCopyIconStyle(copyIconColor, padding)}
-          onClick={() => copyLink(setCopyIconColor, copyUrls)}
+          sx={ContentCopyIconStyle(theme, padding)}
+          onClick={() => copyLink(copyUrls)}
         />
       }
     </>
@@ -45,7 +44,6 @@ const CopyLinkComponent: React.FC<Props> = ({
 export type Props = {
   authorsId?: string;
   articleId?: string;
-  defaultColor: string;
   padding?: string;
   email: boolean;
   authorsEmail?: string;

@@ -21,6 +21,7 @@ const SocialMediaComponent: React.FC<Props> = ({
   alignContent,
 }) => {
   const theme = useSelector((state: any) => state.theme.darkTheme);
+
   return (
     <Grid 
       container
@@ -61,11 +62,12 @@ const SocialMediaComponent: React.FC<Props> = ({
           href={twitter}
           target="_blank"
           rel="noreferrer"
+          aria-label="X logo"
         >
           <Box
             component="img"
             src={theme ? TwitterLogoDark : TwitterLogo}
-            alt="Twitter logo"
+            alt="X logo"
             sx={{
               height: '20px',
               '@media only screen and (max-width: 600px)': {
@@ -85,6 +87,7 @@ const SocialMediaComponent: React.FC<Props> = ({
           href={youtube}
           target="_blank"
           rel="noreferrer"
+          aria-label="youtube logo"
         >
           <Box
             component="img"
@@ -109,7 +112,6 @@ const SocialMediaComponent: React.FC<Props> = ({
             }}
           >
             <CopyLinkComponent
-              defaultColor={theme ? '#ffffff' : '#667A6E'}
               email={true}
               authorsEmail={email}
             />

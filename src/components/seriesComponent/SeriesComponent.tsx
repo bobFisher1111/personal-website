@@ -19,6 +19,7 @@ import {
 } from './SeriesComponentStyles';
 
 const SeriesComponent = () => {
+  const theme = useSelector((state: any) => state.theme.darkTheme);
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const seriesData = getWebsiteData && getWebsiteData?.websiteData;
   const getSeriesIdFromUrl = () => {
@@ -88,7 +89,7 @@ const SeriesComponent = () => {
             sx={seriesComponentGridArticleInfo}
           >
             <Link to={`/article/${item?.authorId}/${item?.articleId}`}
-              style={LinkStyles()}
+              style={LinkStyles(theme)}
             >
               <Typography
                 color="primary"

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import {
   Button,
@@ -7,6 +8,8 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { LinkStyles } from '../../../util/styles/LinkStyles';
 import {
   ButtonNameStyles,
@@ -14,13 +17,17 @@ import {
 } from './SectionsDropDownStyles';
 
 const SectionsDropDown: React.FC = () => {
+  const [openState, setOpenState] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const theme = useSelector((state: any) => state.theme.darkTheme);
   const open = Boolean(anchorEl);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
+    setOpenState(true);
   };
   const handleClose = () => {
+    setOpenState(false);
     setAnchorEl(null);
   };
 
@@ -42,6 +49,7 @@ const SectionsDropDown: React.FC = () => {
           >
             Sections
           </Typography>
+          {openState ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
         </Button>
         <Menu
           id="sections-dropdown"
@@ -56,7 +64,7 @@ const SectionsDropDown: React.FC = () => {
           >
             <Link
               to={'/videoGames'}
-              style={LinkStyles()}
+              style={LinkStyles(theme)}
             >
               <Typography
                 color="primary"
@@ -70,7 +78,7 @@ const SectionsDropDown: React.FC = () => {
           >
             <Link
               to={'/reviews'}
-              style={LinkStyles()}
+              style={LinkStyles(theme)}
             >
               <Typography
                 color="primary"
@@ -84,7 +92,7 @@ const SectionsDropDown: React.FC = () => {
           >
             <Link
               to={'/coding'}
-              style={LinkStyles()}
+              style={LinkStyles(theme)}
             >
               <Typography
                 color="primary"
@@ -98,7 +106,7 @@ const SectionsDropDown: React.FC = () => {
           >
             <Link
               to={'/stories'}
-              style={LinkStyles()}
+              style={LinkStyles(theme)}
             >
               <Typography
                 color="primary"

@@ -15,10 +15,10 @@ export const ArticleImageStyles = (theme: boolean) => ({
   border: theme ? '1px solid #9DB2BF' : '1px solid black',
 });
 
-export const AvatarAuthorLinkStyles = {
+export const AvatarAuthorLinkStyles = (theme: boolean) => ({
   display: 'flex',
-  textDecoration: 'none',
-};
+  color: theme ? '#9DB2BF' : 'rgba(0, 0, 0, 0.6)',
+});
 
 export const AvatarImageStyles = (theme: boolean) => ({
   width: '30px',

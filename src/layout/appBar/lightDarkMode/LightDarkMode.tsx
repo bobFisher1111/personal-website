@@ -17,6 +17,7 @@ const LightDarkMode: React.FC = () => {
   return (
     <>
       <Button
+        aria-label="toggle on and off dark mode"
         onClick={() => dispatch(toggleTheme())}
       >
         {theme ? <DarkModeOutlinedIcon /> : <LightModeOutlinedIcon />}

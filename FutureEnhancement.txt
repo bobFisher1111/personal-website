@@ -2,7 +2,7 @@
   a. Create link for for text on articles (CreateArticlePage) // completed
   b. Fix padding on article for mobile and desktop // mobile complete 
 
-1. Dark Theme:
+1. Dark Theme: // completed
   - https://colorhunt.co/
     - 1. https://colorhunt.co/palette/1904827752fe8e8ffac2d9ff
     - 2. https://colorhunt.co/palette/04364a176b8764ccc5dafffb
@@ -27,12 +27,27 @@
     - Fix the Twitter & Youtube logo for dark Modern // completed
     - Refactor // completed
 
-2. Fix Article Page Author part clicking on next article refreshs page issue
-3. Create A carasole for the homepage, similar to bing ai example
-4. Make it mostily single page appBar
+2. Accessibility:
+  - Check with screen reader and see if need to add nav to app bar
+  - update pictures to have alt text, change on backend and database as well
+  - Underline links // completed
+  - Fix color contrast // completed
+  - Update images from backend to remove text
+  - Put back Sections Open and close arrow // completed
+  - Test:
+    - Light Mode:
+      - Desktop // completed
+      - Mobile // completed
+    - Dark Mode
+      - Desktop // completed
+      - Mobile // completed
+
+3. Fix Article Page Author part clicking on next article refreshs page issue
+4. Create A carasole for the homepage, similar to bing ai example
+5. Make it mostily single page appBar
   - Create horiztonal swipping for Series on main page, make images smaller complete overhaul
   - For section bar add Latest
   - Get rid of each section having there own pages but when ever section hit then data appears where currently have articles 
     and keep it Latest as automatically selected
-5. Refactor:
+6. Refactor:
   - ArticleList
