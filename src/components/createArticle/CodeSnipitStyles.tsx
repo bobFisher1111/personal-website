@@ -41,9 +41,17 @@ export const HeaderStyles = {
     "height": "36px",
   },
 };
-
+// maybe this
 export const PreTagGridStyles = {
   '@media only screen and (min-width: 600px)': {
+    minWidth: "600px",
+    maxWidth: "600px",
+  },
+  '@media only screen and (min-width: 820px)': {
+    minWidth: "800px",
+    maxWidth: "800px",
+  },
+  '@media only screen and (min-width: 920px)': {
     minWidth: "900px",
     maxWidth: "900px",
   },

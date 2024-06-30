@@ -16,6 +16,7 @@ export const ArticleImageStyles = (theme: boolean) => ({
 });
 
 export const AvatarAuthorLinkStyles = (theme: boolean) => ({
+  textDecoration: 'none',
   display: 'flex',
   color: theme ? '#9DB2BF' : 'rgba(0, 0, 0, 0.6)',
 });
@@ -100,6 +101,7 @@ export const LinkGridStyles = {
   display: 'flex',
 };
 
+// remove bottom border?
 export const RootStyles = (theme: boolean, turonauthorforarticle: boolean) => ({
   margin: 'auto',
   marginBottom: '16px',

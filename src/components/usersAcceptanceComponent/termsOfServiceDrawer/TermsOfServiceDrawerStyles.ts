@@ -1,6 +1,5 @@
 export const DisclaimerTitleStyles = (mobile: boolean | undefined, theme: boolean) => ({
   fontSize: mobile ? '24px' : '16px',
-  textDecoration: 'underline',
   textDecorationColor: theme ? '#9DB2BF' : 'rgba(0, 0, 0, 0.6)',
 });
 

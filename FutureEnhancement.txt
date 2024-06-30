@@ -30,7 +30,6 @@
 2. Accessibility:
   - Check with screen reader and see if need to add nav to app bar
   - update pictures to have alt text, change on backend and database as well
-  - Underline links // completed
   - Fix color contrast // completed
   - Update images from backend to remove text
   - Put back Sections Open and close arrow // completed
@@ -42,8 +41,8 @@
       - Desktop // completed
       - Mobile // completed
 
-3. Fix Article Page Author part clicking on next article refreshs page issue
-4: Article Page resizing with codesnipt mess up
+3. Fix Article Page Author part clicking on next article refreshs page issue // completed
+4: Article Page resizing with codesnipt mess up // completed
 5. Create A carasole for the homepage, similar to bing ai example
 6. Make it mostily single page appBar
   - Create horiztonal swipping for Series on main page, make images smaller complete overhaul
