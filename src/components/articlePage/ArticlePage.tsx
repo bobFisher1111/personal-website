@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import {
   Grid,
 } from '@mui/material';
-// import HeaderComponent from '../headerComponent/HeaderComponent';
 import HorizontalArticleCardComponent from '../cards/articleCards/horizontalCard/HorizontalArticleCardComponent';
 import AuthorComponent from '../authorComponents/AuthorComponent';
 import { useSelector } from 'react-redux';
@@ -18,7 +17,6 @@ import {
 } from './ArticlePageStyles';
 
 const ArticlePage: React.FC = () => {
-  // const horizontalCardRef = useRef(0);
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const webData = getWebsiteData && getWebsiteData?.websiteData;
   const getIdFromUrl = () => {
@@ -62,7 +60,7 @@ const ArticlePage: React.FC = () => {
           xs={12}
           sm={12}
           md={12}
-          lg={9}
+          lg={12}
           xl={9}
           sx={GridHeader}
         >
@@ -101,7 +99,7 @@ const ArticlePage: React.FC = () => {
           xs={0}
           sm={0}
           md={0}
-          lg={3}
+          lg={0}
           xl={3}
           sx={GridAuthorComponent}
         >

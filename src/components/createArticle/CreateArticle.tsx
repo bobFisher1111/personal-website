@@ -159,7 +159,7 @@ export const CreateArticle = (articleData: string) => {
               <li>
                 <Typography
                   id="article_Bullet_List"
-                  color="#0C0D0D"
+                  color="primary"
                   sx={NestedSectionTextParagraph}
                 >
                   {articleData.slice(20)} 

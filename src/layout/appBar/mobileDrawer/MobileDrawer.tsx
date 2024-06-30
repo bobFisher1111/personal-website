@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { FC, Fragment, KeyboardEvent, MouseEvent, useState } from 'react';
 import { useSelector } from 'react-redux';
 import {
   AppBar,
@@ -24,11 +24,12 @@ import {
 import { LinkStyles } from '../../../util/styles/LinkStyles';
 import AppConfig from '../../../config';
 import LightDarkMode from '../lightDarkMode/LightDarkMode';
+import TermsOfServiceDrawer from '../../../components/usersAcceptanceComponent/termsOfServiceDrawer/TermsOfServiceDrawer';
 
 type Anchor = 'left';
 
-const MobileDrawer: React.FC = () => {
-  const [state, setState] = React.useState({
+const MobileDrawer: FC = () => {
+  const [state, setState] = useState({
     left: false,
   });
   const theme = useSelector((state: any) => state.theme.darkTheme);
@@ -37,11 +38,11 @@ const MobileDrawer: React.FC = () => {
   const youtube = AppConfig.youtubeURL;
 
   const toggleDrawer = (anchor: Anchor, open: boolean) =>
-    (event: React.KeyboardEvent | React.MouseEvent) => {
+    (event: KeyboardEvent | MouseEvent) => {
       if (
         event.type === 'keydown' &&
-        ((event as React.KeyboardEvent).key === 'Tab' ||
-          (event as React.KeyboardEvent).key === 'Shift')
+        ((event as KeyboardEvent).key === 'Tab' ||
+          (event as KeyboardEvent).key === 'Shift')
       ) {
         return;
       }
@@ -53,7 +54,6 @@ const MobileDrawer: React.FC = () => {
     <Box
       id="five"
       sx={BoxMobileDrawerStyle}
-      // style={{backgroundColor: themes}}
       style={{background: theme ? '#121212' : 'white'}}
     >
       <AppBar
@@ -241,18 +241,9 @@ const MobileDrawer: React.FC = () => {
             md={12}
             lg={12}
             xl={12}
+            sx={TypographyMobileDrawer}
           >
-            <Link to="/about"
-              style={LinkStyles(theme)}
-            >
-              <Typography
-                color="primary"
-                sx={TypographyMobileDrawer}
-                onClick={toggleDrawer(anchor, false)}
-              >
-                About
-              </Typography>
-            </Link>
+            <TermsOfServiceDrawer mobile={true}/>
           </Grid>
         </Grid>
       </AppBar>
@@ -262,7 +253,7 @@ const MobileDrawer: React.FC = () => {
   return (
     <Grid>
       {(['left'] as const).map((anchor) => (
-        <React.Fragment 
+        <Fragment 
           key={anchor}
         >
           <Button
@@ -280,7 +271,7 @@ const MobileDrawer: React.FC = () => {
           >
             {list(anchor)}
           </Drawer>
-        </React.Fragment>
+        </Fragment>
       ))}
     </Grid>
   );

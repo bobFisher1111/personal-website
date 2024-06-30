@@ -12,6 +12,7 @@ import {
   GridPointer,
   TypographyLinkTwoPage,
 } from './AppBarLinksToPagesStyles';
+import TermsOfServiceDrawer from '../../../components/usersAcceptanceComponent/termsOfServiceDrawer/TermsOfServiceDrawer';
 
 const AppBarLinksToPages: React.FC = () => {
   const theme = useSelector((state: any) => state.theme.darkTheme);
@@ -19,22 +20,13 @@ const AppBarLinksToPages: React.FC = () => {
     <>
       <Grid
         item
-        sx={AlignLinkTexts}
+        sx={AlignLinkTexts(true)}
       >
-        <Link to="/about"
-          style={LinkStyles(theme)}
-        >
-          <Typography
-            color="primary"
-            sx={TypographyLinkTwoPage}
-          >
-            About
-          </Typography>
-        </Link>
+        <TermsOfServiceDrawer mobile={false} />
       </Grid>
       <Grid
         item
-        sx={AlignLinkTexts}
+        sx={AlignLinkTexts(false)}
       >
         <Link to="/writers"
           style={LinkStyles(theme)}
@@ -48,9 +40,7 @@ const AppBarLinksToPages: React.FC = () => {
         </Link>
       </Grid>
       <Grid
-        item
         sx={GridPointer}
-        style={{padding: '16px 0px 0px 0px'}}
       >
         <SectionsDropDown />
       </Grid>

@@ -10,14 +10,24 @@ import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 
 const LightDarkMode: React.FC = () => {
   // get theme from store
+  const rejectCookie = useSelector((state: any) => state.rejectCookie);
   const theme = useSelector((state: any) => state.theme.darkTheme);
   // initialize dispatch variable
   const dispatch = useDispatch();
+
+  const disableButton = () => {
+    if (localStorage.getItem('darkMode') === null) {
+      return rejectCookie.rejectCookies;
+    } else {
+      return false;
+    }
+  };
 
   return (
     <>
       <Button
         aria-label="toggle on and off dark mode"
+        disabled={disableButton()}
         onClick={() => dispatch(toggleTheme())}
       >
         {theme ? <DarkModeOutlinedIcon /> : <LightModeOutlinedIcon />}

@@ -43,11 +43,12 @@
       - Mobile // completed
 
 3. Fix Article Page Author part clicking on next article refreshs page issue
-4. Create A carasole for the homepage, similar to bing ai example
-5. Make it mostily single page appBar
+4: Article Page resizing with codesnipt mess up
+5. Create A carasole for the homepage, similar to bing ai example
+6. Make it mostily single page appBar
   - Create horiztonal swipping for Series on main page, make images smaller complete overhaul
   - For section bar add Latest
   - Get rid of each section having there own pages but when ever section hit then data appears where currently have articles 
     and keep it Latest as automatically selected
-6. Refactor:
+7. Refactor:
   - ArticleList

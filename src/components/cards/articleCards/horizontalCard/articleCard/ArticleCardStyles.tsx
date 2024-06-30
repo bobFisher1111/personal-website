@@ -31,10 +31,10 @@ export const AvatarImageStyles = (theme: boolean) => ({
   },
 });
 
-export const ArticleVideoStyles = (theme: boolean) => ({
+export const ArticleVideoStyles = (theme: boolean, turOnAuthorForArticle: boolean) => ({
   borderRadius: '6px',
   width: '300px',
-  height: '118px',
+  height: turOnAuthorForArticle ? '100px' : '136px',
   border: theme ? '1px solid #9DB2BF' : '1px solid black',
   '@media only screen and (max-width: 600px)': {
     height: '60px',

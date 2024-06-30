@@ -39,7 +39,7 @@ export const GridHeader = {
 };
 
 export const GridAuthorComponent = {
-  '@media only screen and (max-width: 1200px)': {
+  '@media only screen and (max-width: 1535px)': {
     display: 'none',
   },
 };

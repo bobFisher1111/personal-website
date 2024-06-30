@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment} from 'react';
 import {
   Grid,
 } from '@mui/material';
@@ -39,7 +39,7 @@ export const ArticleList: React.FC<Props> = ({
               sx={GridPaddingArticleList}
             />
             { sortByDate?.map((item: any) => (
-              <>
+              <Fragment key={crypto.randomUUID()}>
                 <ArticleCard
                   articleId={item.articleId}
                   authorData={authorData}
@@ -55,7 +55,7 @@ export const ArticleList: React.FC<Props> = ({
                   title={item.articleTitle}
                   turOnAuthorForArticle={false}
                 />
-              </>
+              </Fragment>
             ))}
           </>
       }

@@ -23,6 +23,7 @@ import {
   TypographyHorizontalArticleTitle,
   TitleStyle,
 } from './HorizontalArticleCardComponentStyles';
+import DisabledVideo from '../../../disabledVideo/DisabledVideo';
 import { LinkStyles } from '../../../../util/styles/LinkStyles';
 
 const HorizontalArticleCardComponent: React.FC<Props> = ({
@@ -50,6 +51,7 @@ const HorizontalArticleCardComponent: React.FC<Props> = ({
   const [authorPage, setAuthorPage] = useState<boolean>();
   const [sectionPage, setSectionPage] = useState<boolean>();
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
+  const rejectCookie = useSelector((state: any) => state.rejectCookie);
   const theme = useSelector((state: any) => state.theme.darkTheme);
   const getAuthorData = getWebsiteData && getWebsiteData?.websiteData?.authors?.filter((item: any) => {
     return item.authorId === authorsId;
@@ -66,7 +68,15 @@ const HorizontalArticleCardComponent: React.FC<Props> = ({
     const getIdFromCurrentLocation = currentLocation.split('/');
     const checkIfIncludesSection = getIdFromCurrentLocation.includes(sectionLink);
     setSectionPage(checkIfIncludesSection);
-  }, []);
+  }, [rejectCookie.enabledYouTubeVideos]);
+
+  const disableButton = () => {
+    if (localStorage.getItem('enableYouTubeVideo') === null) {
+      return false;
+    } else {
+      return true;
+    }
+  };
 
   return (
     <div>
@@ -87,12 +97,19 @@ const HorizontalArticleCardComponent: React.FC<Props> = ({
               sx={ImageHorizonatalArticleStyles(articlePage, mobileImageWidth)}
             />
             :
-            <CardMedia
-              component="iframe"
-              image={videoOrImageCover}
-              allowFullScreen
-              sx={CardMedaiArticleVideo(articlePage, videoHeight, mobileImageWidth)}
-            />
+            disableButton() ? 
+              <CardMedia
+                component="iframe"
+                image={videoOrImageCover}
+                allowFullScreen
+                sx={CardMedaiArticleVideo(articlePage, videoHeight, mobileImageWidth)}
+              />
+              :
+              <DisabledVideo 
+                articlePage={articlePage}
+                authorSectionArticlePage={false}
+                youtubeUrl={videoOrImageCover}
+              />
           }
           {articlePage && 
             <Grid

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
@@ -7,6 +7,7 @@ import {
   Typography,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import DisabledVideo from '../../../../disabledVideo/DisabledVideo';
 import { LinkStyles } from '../../../../../util/styles/LinkStyles';
 import {
   ArticleDataGridStyles,
@@ -44,6 +45,7 @@ const ArticleCard: React.FC<Props> = ({
   turOnAuthorForArticle,
 }) => {
   const theme = useSelector((state: any) => state.theme.darkTheme);
+  const rejectCookie = useSelector((state: any) => state.rejectCookie);
   const getAuthorData = authorData?.filter((item: any) => {
     return item.authorId === authorId;
   });
@@ -55,6 +57,20 @@ const ArticleCard: React.FC<Props> = ({
     maxWidth: '100%',
     maxHeight: '100%',
   });
+
+  const disableButton = () => {
+    if (localStorage.getItem('enableYouTubeVideo') === null) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
+  useEffect(() => {
+    if (localStorage.getItem('enableYouTubeVideo')) {
+      disableButton();
+    }
+  }, [rejectCookie.enabledYouTubeVideos]);
 
   return (
     <Grid
@@ -128,24 +144,31 @@ const ArticleCard: React.FC<Props> = ({
           xl={3}
           sx={ImageGridStyles}
         >
-          <Link
-            to={`/article/${authorId}/${articleId}`}
-            // reloadDocument={true}
-          >
-            {isMediaVideo ?
+          {isMediaVideo ?
+            disableButton() ?
               <Video
                 allowFullScreen
                 src={articleMedia}
-                sx={ArticleVideoStyles(theme)}
+                sx={ArticleVideoStyles(theme, turOnAuthorForArticle)}
               />
               :
+              <DisabledVideo
+                articlePage={false}
+                authorSectionArticlePage={true}
+                youtubeUrl={articleMedia}
+              />
+            :
+            <Link
+              to={`/article/${authorId}/${articleId}`}
+              reloadDocument={turOnAuthorForArticle ? true : false}
+            >
               <Img
                 alt="complex"
                 src={articleMedia}
                 sx={ArticleImageStyles(theme)}
               />
-            }
-          </Link>
+            </Link>
+          }
         </Grid>
         <Grid
           item
@@ -166,7 +189,7 @@ const ArticleCard: React.FC<Props> = ({
           >
             <Link
               to={`/article/${authorId}/${articleId}`}
-              // reloadDocument={true}
+              reloadDocument={turOnAuthorForArticle ? true : false}
               style={LinkStyles(theme)}
             >
               <Grid
