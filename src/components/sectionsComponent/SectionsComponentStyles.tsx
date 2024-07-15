@@ -6,8 +6,8 @@ export const ButtonBorderLeftStyles = (theme: boolean) => ({
   '&.MuiButtonBase-root': {
     '&.MuiButton-root': {
       borderRadius: '0px',
-      borderTopLeftRadius: '8px',
-      borderBottomLeftRadius: '8px',
+      borderTopLeftRadius: '4px',
+      borderBottomLeftRadius: '4px',
     },
   },
   '&:hover': {
@@ -37,8 +37,8 @@ export const ButtonBorderRightStyles = (theme: boolean) => ({
   '&.MuiButtonBase-root': {
     '&.MuiButton-root': {
       borderRadius: '0px',
-      borderTopRightRadius: '8px',
-      borderBottomRightRadius: '8px',
+      borderTopRightRadius: '4px',
+      borderBottomRightRadius: '4px',
     },
   },
   '&:hover': {

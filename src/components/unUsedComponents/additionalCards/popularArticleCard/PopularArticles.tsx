@@ -1,16 +1,14 @@
 import React from 'react';
 import {
-  Typography, Button, CardActions, CardMedia, CardContent, Card, Grid, Box,
+  Typography, CardMedia, Card, Grid, Box,
 } from '@mui/material/';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
 const PopularArticles: React.FC<Props> = ({
-    title,
-    name,
-    articalInfo,
-    articalImage,
+  title,
+  name,
+  articalImage,
 }) => {
-  articalInfo = "Xenoblade Chronicles 3 is an action role-playing game with a large open world to explore, being the sixth title in the Xenoblade series. Unlike previous Xenoblade series entries, the game allows for seven party members to participate in battles at once, including the main party and an additional 'Hero' character.";
   return (
     <Card sx={{ 
       maxWidth: 345,
@@ -32,7 +30,7 @@ const PopularArticles: React.FC<Props> = ({
           opacity: 1,
         }
       }
-      }}
+    }}
     >
       <Box 
         sx={{ 
@@ -66,26 +64,26 @@ const PopularArticles: React.FC<Props> = ({
           1
         </Typography>
         <Typography 
-            variant="h6" 
-            color="white"
-            sx={{
-              position: 'absolute',
-              top: '8px',
-              left: '41px',
-              height: '25px',
-              width: '275px',
-              overflow: 'hidden',
-              whiteSpace: 'nowrap',
-              textOverflow: 'ellipsis',
-              textAlign: 'left',
-              alignItems: 'center',
-              color: 'white',
-              textShadow: '#0C0D0D 2px 2px 2px',
-            }}
-          >
-            {title}
-         </Typography>
-         <Box
+          variant="h6" 
+          color="white"
+          sx={{
+            position: 'absolute',
+            top: '8px',
+            left: '41px',
+            height: '25px',
+            width: '275px',
+            overflow: 'hidden',
+            whiteSpace: 'nowrap',
+            textOverflow: 'ellipsis',
+            textAlign: 'left',
+            alignItems: 'center',
+            color: 'white',
+            textShadow: '#0C0D0D 2px 2px 2px',
+          }}
+        >
+          {title}
+        </Typography>
+        <Box
           sx={{
             position: 'absolute',
             bottom: 0,
@@ -119,11 +117,10 @@ const PopularArticles: React.FC<Props> = ({
             </Grid>
           </Grid>
         </Box>
-
       </Box>
     </Card>
   );
-}
+};
 
 export type Props = {
   title?: string;

@@ -6,18 +6,19 @@ import ThumbDownRoundedIcon from '@mui/icons-material/ThumbDownRounded';
 import ThumbUpRoundedIcon from '@mui/icons-material/ThumbUpRounded';
 
 const PopularArticles: React.FC<Props> = ({
-    title,
-    name,
-    articalInfo,
-    articalImage,
-    section,
-    date,
+  title,
+  name,
+  articalInfo,
+  articalImage,
+  // section,
+  // date,
 }) => {
   articalInfo = "Xenoblade Chronicles 3 is an action role-playing game with a large open world to explore, being the sixth title in the Xenoblade series. Unlike previous Xenoblade series entries, the game allows for seven party members to participate in battles at once, including the main party and an additional 'Hero' character.";
   return (
-    <Card sx={{ 
-      maxWidth: 500,
-      // backgroundColor: '#282c34',
+    <Card 
+      sx={{ 
+        maxWidth: 500,
+        // backgroundColor: '#282c34',
       }}
     >
       <div
@@ -146,7 +147,7 @@ const PopularArticles: React.FC<Props> = ({
       </CardActions>
     </Card>
   );
-}
+};
 
 export type Props = {
   title?: string;

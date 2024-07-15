@@ -147,7 +147,7 @@ export const TitleStyles = {
   WebkitBoxOrient: 'vertical',
   '@media only screen and (max-width: 600px)': {
     WebkitLineClamp: '2',
-    fontSize: '16px',
+    fontSize: '14px',
     maxHeight: '50px',
     minHeight: '50px',
   },

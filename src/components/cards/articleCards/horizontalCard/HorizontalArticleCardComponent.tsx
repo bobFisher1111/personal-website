@@ -109,6 +109,7 @@ const HorizontalArticleCardComponent: React.FC<Props> = ({
                 articlePage={articlePage}
                 authorSectionArticlePage={false}
                 youtubeUrl={videoOrImageCover}
+                carousel={false}
               />
           }
           {articlePage && 

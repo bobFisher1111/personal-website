@@ -16,6 +16,7 @@ const DisabledVideo: React.FC<Props> = ({
   articlePage,
   authorSectionArticlePage,
   youtubeUrl,
+  carousel,
 }) => {
   const theme = useSelector((state: any) => state.theme.darkTheme);
 
@@ -25,7 +26,7 @@ const DisabledVideo: React.FC<Props> = ({
       direction="row"
       justifyContent="center"
       alignItems="center"
-      sx={RootStyles(theme, articlePage)}
+      sx={RootStyles(theme, articlePage, carousel)}
     >
       <a 
         href={youtubeUrl}
@@ -72,6 +73,7 @@ export type Props = {
   articlePage: boolean,
   authorSectionArticlePage: boolean,
   youtubeUrl: any,
+  carousel: boolean,
 };
   
 export default DisabledVideo;

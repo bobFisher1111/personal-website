@@ -156,6 +156,7 @@ const ArticleCard: React.FC<Props> = ({
                 articlePage={false}
                 authorSectionArticlePage={true}
                 youtubeUrl={articleMedia}
+                carousel={false}
               />
             :
             <Link
