@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import {
   CardMedia,
   Grid,
@@ -7,6 +8,7 @@ import {
   Typography
 } from '@mui/material/';
 import DisabledVideo from '../disabledVideo/DisabledVideo';
+import { LinkStyles } from '../../util/styles/LinkStyles';
 import {
   ArticleDateGridStyles,
   ArticleDateStyles,
@@ -26,6 +28,7 @@ import {
 const CarouselArticles: React.FC<Props> = ({
   data,
 }) => {
+  const theme = useSelector((state: any) => state.theme.darkTheme);
   const Img = styled('img')({
     maxWidth: '100%',
     maxHeight: '100%',
@@ -39,6 +42,8 @@ const CarouselArticles: React.FC<Props> = ({
     }
   };
 
+  console.log('data', data);
+
   return (
     <Grid
       id={data.id.toString()}
@@ -48,20 +53,30 @@ const CarouselArticles: React.FC<Props> = ({
         sx={ImageGridStyles}
       >
         {!data.useVideoInsteadOfImage ?
-          <CardMedia
-            component="img"
-            alt="green iguana"
-            src={data.coverImageOrVideo}
-            sx={ImageVideoStyles}
-          />
+          <Link
+            to={`/article/${data.authorId}/${data.articleId}`}
+            style={LinkStyles(theme)}
+          >
+            <CardMedia
+              component="img"
+              alt="green iguana"
+              src={data.coverImageOrVideo}
+              sx={ImageVideoStyles}
+            />
+          </Link>
           :
           disableButton() ? 
-            <CardMedia
-              component="iframe"
-              image={data.videoOrImageCover}
-              allowFullScreen
-              sx={CardMedaiArticleVideo(false)}
-            />
+            <Link
+              to={`/article/${data.authorId}/${data.articleId}`}
+              style={LinkStyles(theme)}
+            >
+              <CardMedia
+                component="iframe"
+                image={data.videoOrImageCover}
+                allowFullScreen
+                sx={CardMedaiArticleVideo(false)}
+              />
+            </Link>
             :
             <DisabledVideo 
               articlePage={true}
@@ -127,22 +142,32 @@ const CarouselArticles: React.FC<Props> = ({
             xs={12}
             sx={ArticleTitleGridStyles}
           >
-            <Typography
-              color="primary"
-              sx={ArticleTitleStyles}
+            <Link
+              to={`/article/${data.authorId}/${data.articleId}`}
+              style={LinkStyles(theme)}
             >
-              {data.articleTitle}
-            </Typography>
+              <Typography
+                color="primary"
+                sx={ArticleTitleStyles}
+              >
+                {data.articleTitle}
+              </Typography>
+            </Link>
           </Grid>
         </Grid>
         <Grid
           sx={ArticleSubtitleGridStyles}
         >
-          <Typography
-            color="primary"
+          <Link
+            to={`/article/${data.authorId}/${data.articleId}`}
+            style={LinkStyles(theme)}
           >
-            {data.articleSubTitle}
-          </Typography>
+            <Typography
+              color="primary"
+            >
+              {data.articleSubTitle}
+            </Typography>
+          </Link>
         </Grid>
       </>
     </Grid>
