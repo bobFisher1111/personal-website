@@ -19,11 +19,9 @@ import {
   AuthorNameStyles,
   ChipStyles,
   DateStyles,
-  ImageGridStyles,
   LinkGridRootStyles,
   LinkGridStyles,
   RootStyles,
-  RootTopStyles,
   SeriesChipStyles,
   SubTitleStyles,
   TitleStyles,
@@ -83,7 +81,6 @@ const ArticleCard: React.FC<Props> = ({
         direction="row"
         justifyContent="flex-start"
         alignItems="center"
-        sx={RootTopStyles}
       >
         <Grid
           item
@@ -133,7 +130,6 @@ const ArticleCard: React.FC<Props> = ({
         direction="row"
         justifyContent="central"
         alignItems="central"
-        spacing={2}
       >
         <Grid
           item 
@@ -142,7 +138,6 @@ const ArticleCard: React.FC<Props> = ({
           md={3}
           lg={3}
           xl={3}
-          sx={ImageGridStyles}
         >
           {isMediaVideo ?
             disableButton() ?

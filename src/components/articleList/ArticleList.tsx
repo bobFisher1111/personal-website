@@ -7,7 +7,6 @@ import formatDate from '../../util/formatDate';
 import ArticleCard from '../cards/articleCards/horizontalCard/articleCard/ArticleCard';
 import {
   GridAuthorArticle,
-  GridPaddingArticleList,
   GridPaddingTop,
 } from './ArticleListStyles';
 
@@ -36,7 +35,6 @@ export const ArticleList: React.FC<Props> = ({
               md={12}
               lg={12}
               xl={12}
-              sx={GridPaddingArticleList}
             />
             { sortByDate?.map((item: any) => (
               <Fragment key={crypto.randomUUID()}>

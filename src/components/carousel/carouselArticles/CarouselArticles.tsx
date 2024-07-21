@@ -7,8 +7,8 @@ import {
   styled,
   Typography
 } from '@mui/material/';
-import DisabledVideo from '../disabledVideo/DisabledVideo';
-import { LinkStyles } from '../../util/styles/LinkStyles';
+import DisabledVideo from '../../disabledVideo/DisabledVideo';
+import { LinkStyles } from '../../../util/styles/LinkStyles';
 import {
   ArticleDateGridStyles,
   ArticleDateStyles,
@@ -42,15 +42,13 @@ const CarouselArticles: React.FC<Props> = ({
     }
   };
 
-  console.log('data', data);
-
   return (
     <Grid
       id={data.id.toString()}
-      sx={RootStyles}
+      sx={RootStyles(theme)}
     >
       <Grid
-        sx={ImageGridStyles}
+        sx={ImageGridStyles(theme)}
       >
         {!data.useVideoInsteadOfImage ?
           <Link
@@ -86,74 +84,72 @@ const CarouselArticles: React.FC<Props> = ({
             />
         }
       </Grid>
-      <>
+      <Grid
+        item
+        container
+        xs={12}
+      >
+        <Grid
+          item
+          xs={6}
+          sm={6}
+          md={8}
+          lg={8}
+          xl={8}
+          sx={AvatarGridStyles}
+        >
+          <Link 
+            to={`/author/${1}`}
+            style={AvatarAuthorLinkStyles(false)}
+          >
+            <Img
+              alt="complex"
+              src={data.avatarImage}
+              sx={AvatarImageStyles(theme)}
+            />
+            <Typography
+              color="primary"
+              sx={AuthorNameStyles(theme)}
+            >
+              {data.authorName}
+            </Typography>
+          </Link>
+        </Grid>
         <Grid
           item
           container
-          xs={12}
-        >
-          <Grid
-            item
-            xs={6}
-            sm={6}
-            md={8}
-            lg={8}
-            xl={8}
-            sx={AvatarGridStyles}
+          justifyContent={'flex-end'}
+          alignItems='center'
+          xs={6}
+          sm={6}
+          md={4}
+          lg={4}
+          xl={4}
+          sx={ArticleDateGridStyles}
+        > 
+          <Typography
+            color="primary"
+            sx={ArticleDateStyles(theme)}
           >
-            <Link 
-              to={`/author/${1}`}
-              style={AvatarAuthorLinkStyles(false)}
-            >
-              <Img
-                alt="complex"
-                src={data.avatarImage}
-                sx={AvatarImageStyles(false)}
-              />
-              <Typography
-                color="primary"
-                sx={AuthorNameStyles}
-              >
-                {data.authorName}
-              </Typography>
-            </Link>
-          </Grid>
-          <Grid
-            item
-            container
-            justifyContent={'flex-end'}
-            alignItems='center'
-            xs={6}
-            sm={6}
-            md={4}
-            lg={4}
-            xl={4}
-            sx={ArticleDateGridStyles}
-          > 
+            {data.Date}
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sx={ArticleTitleGridStyles}
+        >
+          <Link
+            to={`/article/${data.authorId}/${data.articleId}`}
+            style={LinkStyles(theme)}
+          >
             <Typography
               color="primary"
-              sx={ArticleDateStyles}
+              sx={ArticleTitleStyles(theme)}
             >
-              {data.Date}
+              {data.articleTitle}
             </Typography>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            sx={ArticleTitleGridStyles}
-          >
-            <Link
-              to={`/article/${data.authorId}/${data.articleId}`}
-              style={LinkStyles(theme)}
-            >
-              <Typography
-                color="primary"
-                sx={ArticleTitleStyles}
-              >
-                {data.articleTitle}
-              </Typography>
-            </Link>
-          </Grid>
+          </Link>
         </Grid>
         <Grid
           sx={ArticleSubtitleGridStyles}
@@ -164,12 +160,15 @@ const CarouselArticles: React.FC<Props> = ({
           >
             <Typography
               color="primary"
+              sx={{
+                color: theme ? '#9DB2BF' : 'white',
+              }}
             >
               {data.articleSubTitle}
             </Typography>
           </Link>
         </Grid>
-      </>
+      </Grid>
     </Grid>
   );
 };

@@ -1,7 +1,7 @@
 export const ArticleDataGridStyles = {
-  '&.MuiGrid-root': {
-    paddingTop: '8px',
-  },
+  width: '860px',
+  maxWidth: '100%',
+  paddingLeft: '16px',
   '@media only screen and (max-width: 600px)': {
     '&.MuiGrid-root': {
       paddingLeft: '8px',
@@ -44,6 +44,10 @@ export const ArticleVideoStyles = (theme: boolean, turOnAuthorForArticle: boolea
 
 export const AuthorNameGridStyles = {
   'display': 'flex',
+  padding: '8px 0px 0px 0px',
+  '@media only screen and (max-width: 600px)': {
+    padding: '0px',
+  },
 };
 
 export const AuthorNameStyles = {
@@ -64,15 +68,6 @@ export const ChipStyles = {
   },
 };
 
-export const ChipGridStyles = {
-  maxHeight: '50px',
-  minHeight: '50px',
-  '@media only screen and (max-width: 600px)': {
-    maxHeight: '25px',
-    minHeight: '25px',
-  },
-};
-
 export const DateStyles = {
   justifyContent: 'flex-end',
   display: 'flex',
@@ -81,18 +76,12 @@ export const DateStyles = {
   },
 };
 
-export const ImageGridStyles = {
-  '&.MuiGrid-root': {
-    paddingTop: '8px',
-  },
-};
-
 export const LinkGridRootStyles = {
-  maxHeight: '50px',
-  minHeight: '50px',
+  maxHeight: '85px',
+  minHeight: '85px',
   '@media only screen and (max-width: 600px)': {
-    maxHeight: '30px',
-    minHeight: '30px',
+    maxHeight: '28px',
+    minHeight: '28px',
     paddingTop: '2px',
   },
 };
@@ -101,24 +90,16 @@ export const LinkGridStyles = {
   display: 'flex',
 };
 
-// remove bottom border?
 export const RootStyles = (theme: boolean, turonauthorforarticle: boolean) => ({
   margin: 'auto',
   marginBottom: '16px',
   flexGrow: 1,
-  height: turonauthorforarticle  ? '145px' : '200px',
+  height: turonauthorforarticle  ? '145px' : '235px',
   borderBottom: theme ? '1px solid rgba(138, 147, 153, 0.25)' : '1px solid rgba(138, 147, 153, 0.25)',
   '@media only screen and (max-width: 600px)': {
     height: '140px',
   },
 });
-
-export const RootTopStyles = {
-  padding: '0px 0px 16px 0px',
-  '@media only screen and (max-width: 600px)': {
-    padding: '0px 0px 8px 0px',
-  },
-};
 
 export const SeriesChipStyles = {
   padding: '0px 0px 0px 8px',
@@ -152,24 +133,3 @@ export const TitleStyles = {
     minHeight: '50px',
   },
 };
-
-export default [
-  ArticleDataGridStyles,
-  ArticleImageStyles,
-  ArticleVideoStyles,
-  AvatarAuthorLinkStyles,
-  AvatarImageStyles,
-  AuthorNameGridStyles,
-  AuthorNameStyles,
-  ChipStyles,
-  ChipGridStyles,
-  DateStyles,
-  ImageGridStyles,
-  LinkGridRootStyles,
-  LinkGridStyles,
-  RootStyles,
-  RootTopStyles,
-  SeriesChipStyles,
-  SubTitleStyles,
-  TitleStyles,
-];

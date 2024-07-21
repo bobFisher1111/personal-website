@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import formatDate from '../../util/formatDate';
+import formatDate from '../../../util/formatDate';
 import CarouselArticles from './CarouselArticles';
 import {
   AlignGridStyles,
@@ -48,7 +48,7 @@ const CarouselComponent: FC<Props> = ({
     alignItems: "center",
     padding: '0px 16px 0px 16px',
     margin: 'auto',
-    width: '1400px',
+    width: '1430px',
     maxWidth: '100%',
     '@media only screen and (max-width: 600px)': {
       padding: '0px',

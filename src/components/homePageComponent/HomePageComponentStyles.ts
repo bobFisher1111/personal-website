@@ -1,6 +1,6 @@
 export const GridAlignItems = {
-  padding: '36px 16px 200px 16px',
-  maxWidth: '1024px',
+  padding: '0px 16px 16px 16px',
+  maxWidth: '1200px',
   margin: 'auto',
   '@media only screen and (max-width: 600px)': {
     padding: '0px 0px 200px 0px',
@@ -25,13 +25,48 @@ export const HeaderTitleStyles = {
 };
 
 export const HomePageImage = {
-  padding: '50px 0px 0px 0px',
+  padding: '24px 0px 0px 0px',
   '@media only screen and (max-width: 600px)': {
-    padding: '25px 0px 0px 0px',
+    padding: '12px 0px 0px 0px',
   },
 };
 
-export default [
-  GridAlignItems,
-  GridRoot,
-];
+export const LatestTextStyles = {
+  fontSize: '22px',
+  fontWeight: 'bold',
+  '@media only screen and (max-width: 600px)': {
+    fontSize: '16px',
+  },
+};
+
+export const SeriesIconStyles = {
+  fontSize: '26px',
+  '@media only screen and (max-width: 600px)': {
+    fontSize: '20px',
+  },
+};
+
+export const SeriesButtonStyles = {
+  textTransform: 'initial',
+  '&.MuiButtonBase-root': {
+    '&.MuiButton-root': {
+      padding: '0px',
+    },
+  },
+};
+
+export const SeriesGridStyles = {
+  maxWidth: '1200px',
+  margin: 'auto',
+  '@media only screen and (max-width: 600px)': {
+    padding: '0px 0px 0px 0px',
+  },
+};
+
+export const SeriesTextStyles = {
+  fontSize: '22px',
+  fontWeight: 'bold',
+  '@media only screen and (max-width: 600px)': {
+    fontSize: '16px',
+  },
+};

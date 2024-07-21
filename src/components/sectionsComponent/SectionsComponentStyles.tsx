@@ -93,9 +93,7 @@ export const Rootstyle = {
   maxWidth: '100%',
   minWidth: '100%',
   width: '1080px',
-  '@media only screen and (max-width: 600px)': {
-    padding: '0px 0px 16px 0px',
-  },
+  padding: '0px 0px 16px 0px',
 };
 
 export default [
