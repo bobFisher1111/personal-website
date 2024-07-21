@@ -72,7 +72,8 @@ export const TypographyVerticalCardNameStyle = {
   padding: '16px'
 };
 
-export const TypographyVerticalCardNameStyleHover = {
+export const TypographyVerticalCardNameStyleHover = (theme: boolean) => ({
+  color: theme ? '#9DB2BF' : 'white',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
@@ -84,4 +85,4 @@ export const TypographyVerticalCardNameStyleHover = {
   '@media only screen and (max-width: 600px)': {
     fontSize: '14px',
   },
-};
+});

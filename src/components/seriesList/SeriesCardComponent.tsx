@@ -91,8 +91,7 @@ const SeriesCardComponent: React.FC<Props> = ({
                   style={LinkStyles(theme)}
                 >
                   <Typography
-                    color="secondary"
-                    sx={TypographyVerticalCardNameStyleHover}
+                    sx={TypographyVerticalCardNameStyleHover(theme)}
                   >
                     {articleData?.seriesTitle}
                   </Typography>
