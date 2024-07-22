@@ -81,7 +81,7 @@ const SeriesComponent: FC<Props> = ({
         sx={CarouselComponentGridStyles}
       >
         {series?.map((item: any, index: any) => (
-          <SeriesCardComponent key={index} articleData={item} series={true} />
+          <SeriesCardComponent key={index} articleData={item} />
         ))}
       </Grid> 
     </AlignGrid>

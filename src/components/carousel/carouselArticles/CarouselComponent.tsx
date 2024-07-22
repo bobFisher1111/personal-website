@@ -124,6 +124,7 @@ const CarouselComponent: FC<Props> = ({
         sx={ArrowButtonGridStyles}
       >
         <Button
+          aria-label="Back Carousel Button"
           onClick={asyncUpdatePrev}
         >
           <ArrowBackIosIcon
@@ -157,6 +158,7 @@ const CarouselComponent: FC<Props> = ({
         sx={ArrowButtonGridStyles}
       >
         <Button
+          aria-label="Forward Carousel Button"
           onClick={asyncUpdateNext}
         >
           <ArrowForwardIosIcon

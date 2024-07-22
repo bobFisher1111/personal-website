@@ -12,21 +12,17 @@ import { appBaseURL } from '../../config';
 import { LinkStyles } from '../../util/styles/LinkStyles';
 import {
   CardMediaVerticalCardImage,
-  CardMediaVerticalCardVideo,
   CardRootStyle,
   CardFooterStyle,
   CardVerticalCard,
   DivVerticalArticleRoot,
-  GridVeriticalCardVideo,
   TypographyVerticalCardNameStyleHover,
 } from './SeriesCardStyles';
 
 const SeriesCardComponent: React.FC<Props> = ({
   articleData,
-  series,
 }) => {
   const theme = useSelector((state: any) => state.theme.darkTheme);
-  const articleUrl = `${appBaseURL}/article/${articleData?.authorId}/${articleData?.articleId}`;
   const serieslUrl = `${appBaseURL}/series/${articleData?.seriesId}`;
 
   return (
@@ -39,38 +35,17 @@ const SeriesCardComponent: React.FC<Props> = ({
         <Box
           sx={CardRootStyle}
         >
-          {articleData?.useVideoInsteadOfImage ?
-            <Link 
-              to={series ? serieslUrl : articleUrl}
-              rel="noreferrer"
-            >
-              <Grid
-                container
-                direction="row"
-                justifyContent="center"
-                alignItems="center"
-                sx={GridVeriticalCardVideo}
-              >
-                <CardMedia
-                  component="iframe"
-                  image={articleData?.seriesCoverImageOrVideo}
-                  allowFullScreen
-                  sx={CardMediaVerticalCardVideo}
-                />
-              </Grid>
-            </Link>
-            :
-            <Link 
-              to={series ? serieslUrl : articleUrl}
-              rel="noreferrer"
-            >
-              <CardMedia
-                component="img"
-                image={articleData?.coverImageOrVideo || articleData?.seriesCoverImageOrVideo}
-                sx={CardMediaVerticalCardImage}
-              />
-            </Link>
-          }
+          <Link 
+            to={serieslUrl}
+            rel="noreferrer"
+          >
+            <CardMedia
+              aria-label={`Series ${articleData?.seriesTitle} Image`}
+              component="img"
+              image={articleData?.coverImageOrVideo || articleData?.seriesCoverImageOrVideo}
+              sx={CardMediaVerticalCardImage}
+            />
+          </Link>
           <Box
             sx={CardFooterStyle} 
           >
@@ -79,14 +54,14 @@ const SeriesCardComponent: React.FC<Props> = ({
             >
               <Grid 
                 item 
-                xs={10}
-                sm={10}
-                md={10}
-                lg={10}
-                xl={10}
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                xl={12}
               >
                 <Link 
-                  to={series ? serieslUrl : articleUrl}
+                  to={serieslUrl}
                   rel="noreferrer"
                   style={LinkStyles(theme)}
                 >
@@ -107,7 +82,6 @@ const SeriesCardComponent: React.FC<Props> = ({
 
 export type Props = {
   articleData: any;
-  series?: boolean,
 };
 
 export default SeriesCardComponent;

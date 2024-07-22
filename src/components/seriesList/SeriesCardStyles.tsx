@@ -9,11 +9,6 @@ export const CardMediaVerticalCardImage = {
   },
 };
 
-export const CardMediaVerticalCardVideo = {
-  border: '0px',
-  borderRadius: '4px',
-};
-
 export const CardRootStyle = {
   position: 'relative',
 };
@@ -43,21 +38,6 @@ export const CardVerticalCard = (theme: boolean) => ({
 export const DivVerticalArticleRoot = () => ({
   padding: '8px 8px 8px 0px',
 });
-
-export const GridVeriticalCardVideo = {
-  maxWidth: '345px',
-  minWidth: '345px',
-  height: '400px',
-  '@media only screen and (max-width: 600px)': {
-    minWidth: 'calc(100vw - 32px)',
-    maxWidth: 'calc(100vw - 32px)',
-    height: '200px',
-  },
-  '@media only screen and (min-width: 600px)': {
-    minWidth: '321px',
-    maxWidth: '365px',
-  },
-};
 
 export const GridPadding = {
   padding: '16px',
