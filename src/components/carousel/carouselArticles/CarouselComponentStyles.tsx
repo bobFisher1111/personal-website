@@ -9,8 +9,8 @@ export const ArrowButtonGridStyles = {
 };
 
 export const ArrowButtonIconStyles = {
-  width: 35,
-  height: 35,
+  width: 50,
+  height: 50,
 };
 
 export const CarouselComponentGridStyles = {

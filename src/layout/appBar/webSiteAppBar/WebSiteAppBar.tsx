@@ -100,7 +100,7 @@ const WebSiteAppBar: React.FC = () => {
             <Grid 
               container
               spacing={2}
-              justifyContent="center"
+              justifyContent="flex-end"
             >
               <AppBarLinksToPages />
             </Grid>

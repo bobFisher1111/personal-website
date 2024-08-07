@@ -1,4 +1,4 @@
-import React, { Fragment} from 'react';
+import React, { Fragment } from 'react';
 import {
   Grid,
 } from '@mui/material';
@@ -105,7 +105,7 @@ export const ArticleList: React.FC<Props> = ({
 export type Props = {
   authorData?: any,
   data: any,
-  turOnAuthorForArticle: boolean,  
+  turOnAuthorForArticle: boolean,
 };
 
 export default ArticleList;

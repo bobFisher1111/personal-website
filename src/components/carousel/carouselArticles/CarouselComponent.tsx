@@ -5,8 +5,8 @@ import {
   Grid,
   styled,
 } from '@mui/material';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import KeyboardArrowRightTwoToneIcon from '@mui/icons-material/KeyboardArrowRightTwoTone';
+import KeyboardArrowLeftTwoToneIcon from '@mui/icons-material/KeyboardArrowLeftTwoTone';
 import formatDate from '../../../util/formatDate';
 import CarouselArticles from './CarouselArticles';
 import {
@@ -15,7 +15,6 @@ import {
   ArrowButtonIconStyles,
   CarouselComponentGridStyles,
 } from './CarouselComponentStyles';
-
 
 const CarouselComponent: FC<Props> = ({
   author,
@@ -127,7 +126,7 @@ const CarouselComponent: FC<Props> = ({
           aria-label="Back Carousel Button"
           onClick={asyncUpdatePrev}
         >
-          <ArrowBackIosIcon
+          <KeyboardArrowLeftTwoToneIcon
             color={'primary'}
             sx={ArrowButtonIconStyles}
           />
@@ -161,7 +160,7 @@ const CarouselComponent: FC<Props> = ({
           aria-label="Forward Carousel Button"
           onClick={asyncUpdateNext}
         >
-          <ArrowForwardIosIcon
+          <KeyboardArrowRightTwoToneIcon
             color="primary"
             sx={ArrowButtonIconStyles}
           />

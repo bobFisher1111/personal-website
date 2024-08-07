@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import {
-  Chip,
   Grid,
   Typography,
 } from '@mui/material';
@@ -11,12 +10,10 @@ import CopyLinkComponent from '../../../../copyLinkComponent/CopyLinkComponent';
 import { LinkStyles } from '../../../../../util/styles/LinkStyles';
 import {
   AvatarImageStyles,
-  ChipStyle,
   GridArticleInfoComponent,
   HorizAriclePageInfoCompAuthor,
   HorizArticlePageInfoCompDate,
   TypographyArticleInfoRight,
-  TypographyArticleInfoLeft,
 } from './HorizontalArticlePageInfoComponentStyles';
 
 const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
@@ -25,7 +22,6 @@ const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
   author,
   date,
   justifyContent,
-  sectionLink,
   section,
   articleId,
   series,
@@ -89,23 +85,14 @@ const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
         >
           |
         </Typography>
-        <Link 
-          to={`/${sectionLink}`}
-          style={{
-            textDecoration: 'none'
-          }}
-        >
-          <Chip
-            color="primary"
-            label={section}
-            variant="outlined"
-            size="small"
-            sx={ChipStyle}
-          />
-        </Link>
         <Typography
           color="primary"
-          sx={TypographyArticleInfoLeft}
+          sx={HorizAriclePageInfoCompAuthor}
+        >
+          {section}
+        </Typography>
+        <Typography
+          color="primary"
         >
           |
         </Typography>

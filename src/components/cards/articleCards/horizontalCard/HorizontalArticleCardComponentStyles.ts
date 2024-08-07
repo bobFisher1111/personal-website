@@ -61,6 +61,7 @@ export const GridHorizontalArticleContainer = (articlePage: boolean, theme: bool
   border: theme || articlePage || turOnAuthorForArticle ? '' : '1px solid #0C0D0D',
   '@media only screen and (max-width: 600px)': {
     border: ((articlePage && theme) || (!articlePage && theme) || (articlePage && !theme)) ? '' : '1px solid #0C0D0D',
+    padding: '6px 0px 0px 0px',
   },
 });
 

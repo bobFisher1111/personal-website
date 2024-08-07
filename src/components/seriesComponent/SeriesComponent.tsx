@@ -40,7 +40,7 @@ const SeriesComponent = () => {
     return a.articleId - b.articleId;
   });
   return (
-    <>
+    <Grid>
       <Grid
         container
         justifyContent='flex-start'
@@ -113,7 +113,7 @@ const SeriesComponent = () => {
           </Grid>
         ))}
       </Grid>
-    </>
+    </Grid>
   );
 };
 

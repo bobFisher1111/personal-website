@@ -5,11 +5,9 @@ import {
 } from '@mui/material';
 import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-import SectionsDropDown from '../sectionsDropDown/SectionsDropDown';
 import { LinkStyles } from '../../../util/styles/LinkStyles';
 import {
   AlignLinkTexts,
-  GridPointer,
   TypographyLinkTwoPage,
 } from './AppBarLinksToPagesStyles';
 import TermsOfServiceDrawer from '../../../components/usersAcceptanceComponent/termsOfServiceDrawer/TermsOfServiceDrawer';
@@ -38,11 +36,6 @@ const AppBarLinksToPages: React.FC = () => {
             Writers
           </Typography>
         </Link>
-      </Grid>
-      <Grid
-        sx={GridPointer}
-      >
-        <SectionsDropDown />
       </Grid>
     </>
   );

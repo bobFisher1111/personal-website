@@ -133,7 +133,7 @@ const MobileDrawer: FC = () => {
               </Typography>
             </Link>
           </Grid>
-          <Grid
+          {/* <Grid
             item
             xs={12}
             sm={12}
@@ -152,8 +152,8 @@ const MobileDrawer: FC = () => {
                 Video Games
               </Typography>
             </Link>
-          </Grid>
-          <Grid
+          </Grid> */}
+          {/* <Grid
             item
             xs={12}
             sm={12}
@@ -172,8 +172,8 @@ const MobileDrawer: FC = () => {
                 Reviews
               </Typography>
             </Link>
-          </Grid>
-          <Grid
+          </Grid> */}
+          {/* <Grid
             item
             xs={12}
             sm={12}
@@ -193,8 +193,8 @@ const MobileDrawer: FC = () => {
                 Coding
               </Typography>
             </Link>
-          </Grid>
-          <Grid
+          </Grid> */}
+          {/* <Grid
             item
             xs={12}
             sm={12}
@@ -213,7 +213,7 @@ const MobileDrawer: FC = () => {
                 Stories
               </Typography>
             </Link>
-          </Grid>
+          </Grid> */}
           <Grid
             item
             xs={12}

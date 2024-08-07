@@ -35,7 +35,6 @@ const ArticleCard: React.FC<Props> = ({
   date,
   isMediaVideo,
   section,
-  sectionLink,
   series,
   seriesId,
   subtitle,
@@ -235,18 +234,13 @@ const ArticleCard: React.FC<Props> = ({
               item
               sx={LinkGridStyles}
             >
-              <Link
-                to={`/${sectionLink}`}
-                style={LinkStyles(theme)}
-              >
-                <Chip
-                  color="primary"
-                  label={section}
-                  variant="outlined"
-                  size="small"
-                  sx={ChipStyles}
-                />
-              </Link>
+              <Chip
+                color="primary"
+                label={section}
+                variant="outlined"
+                size="small"
+                sx={ChipStyles}
+              />
               {series && <Link
                 to={`/series/${seriesId}`}
                 style={SeriesChipStyles}

@@ -8,10 +8,13 @@ export const GridAlignItems = {
 };
 
 export const GridRoot = {
-  minHeight: '100vh',
+  // minHeight: '100vh',
   display: 'flex',
   margin: 'auto',
-  padding: '36px 16px 0px 16px',
+  padding: '60px 16px 0px 16px',
+  '@media only screen and (max-width: 600px)': {
+    padding: '60px 16px 8px 16px',
+  },
 };
 
 export const HeaderTitleStyles = {
@@ -39,6 +42,31 @@ export const LatestTextStyles = {
   },
 };
 
+export const SectionNotSelectedStyles = {
+  color: '#0C0D0D',
+  marginRight: '8px',
+  padding: '4px',
+  fontSize: '22px',
+  cursor: 'pointer',
+  '@media only screen and (max-width: 600px)': {
+    fontSize: '16px',
+  },
+};
+
+export const SectionSelectedStyles = {
+  marginRight: '8px',
+  padding: '2px 4px 2px 4px', // 0.5em
+  border: '2px solid #0C0D0D',
+  borderRadius: '4px',
+  background: '#0C0D0D',
+  color: 'white',
+  fontSize: '22px',
+  cursor: 'pointer',
+  '@media only screen and (max-width: 600px)': {
+    fontSize: '16px',
+  },
+};
+
 export const SeriesIconStyles = {
   fontSize: '26px',
   '@media only screen and (max-width: 600px)': {
@@ -58,8 +86,9 @@ export const SeriesButtonStyles = {
 export const SeriesGridStyles = {
   maxWidth: '1200px',
   margin: 'auto',
+  // padding: '28px 0px 8px 0px',
   '@media only screen and (max-width: 600px)': {
-    padding: '0px 0px 0px 0px',
+    // padding: '0px 0px 8px 0px',
   },
 };
 

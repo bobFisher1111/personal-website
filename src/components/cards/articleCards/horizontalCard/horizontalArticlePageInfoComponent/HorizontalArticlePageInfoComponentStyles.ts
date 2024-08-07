@@ -1,9 +1,3 @@
-export const AccountCircleStyle = {
-  '@media only screen and (max-width: 600px)': {
-    fontSize: '16px',
-  },
-};
-
 export const AvatarImageStyles = {
   width: '30px',
   height: '30px',
@@ -13,17 +7,6 @@ export const AvatarImageStyles = {
   '@media only screen and (max-width: 600px)': {
     width: '20px',
     height: '20px',
-  },
-};
-
-export const ChipStyle = {
-  cursor: 'pointer',
-  borderRadius: '4px',
-  '@media only screen and (max-width: 600px)': {
-    fontSize: '10px',
-    '&.MuiChip-root': {
-      height: '24px',
-    },
   },
 };
 
@@ -54,19 +37,3 @@ export const TypographyArticleInfoRight = {
   fontSize: '16px',
   paddingRight: '16px',
 };
-
-export const TypographyArticleInfoLeft = {
-  fontSize: '16px',
-  paddingLeft: '16px'
-};
-
-export default [
-  AccountCircleStyle,
-  AvatarImageStyles,
-  ChipStyle,
-  GridArticleInfoComponent,
-  HorizAriclePageInfoCompAuthor,
-  HorizArticlePageInfoCompDate,
-  TypographyArticleInfoRight,
-  TypographyArticleInfoLeft,
-];
