@@ -76,15 +76,15 @@ export const DateStyles = {
   },
 };
 
-export const LinkGridRootStyles = {
-  maxHeight: '85px',
-  minHeight: '85px',
+export const LinkGridRootStyles = (articlePage: boolean) => ({
+  maxHeight: articlePage ? '40px' : '85px',
+  minHeight: articlePage ? '40px' : '85px',
   '@media only screen and (max-width: 600px)': {
     maxHeight: '28px',
     minHeight: '28px',
     paddingTop: '2px',
   },
-};
+});
 
 export const LinkGridStyles = {
   display: 'flex',

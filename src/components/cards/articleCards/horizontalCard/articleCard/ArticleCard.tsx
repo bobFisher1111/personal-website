@@ -30,6 +30,7 @@ import {
 const ArticleCard: React.FC<Props> = ({
   articleId,
   articleMedia,
+  articlePage,
   authorId,
   authorData,
   date,
@@ -228,19 +229,21 @@ const ArticleCard: React.FC<Props> = ({
             direction="row"
             justifyContent="flex-end"
             alignItems="flex-end"
-            sx={LinkGridRootStyles}
+            sx={LinkGridRootStyles(articlePage)}
           >
             <Grid
               item
               sx={LinkGridStyles}
             >
-              <Chip
-                color="primary"
-                label={section}
-                variant="outlined"
-                size="small"
-                sx={ChipStyles}
-              />
+              <div>
+                <Chip
+                  color="primary"
+                  label={section}
+                  variant="outlined"
+                  size="small"
+                  sx={ChipStyles}
+                />
+              </div>
               {series && <Link
                 to={`/series/${seriesId}`}
                 style={SeriesChipStyles}
@@ -263,6 +266,7 @@ const ArticleCard: React.FC<Props> = ({
 export type Props = {
   articleId: any;
   articleMedia: any;
+  articlePage: boolean;
   authorId: any;
   authorData: any;
   date: any;

@@ -138,7 +138,9 @@ export const TypographyHorizontalArticleTitle = (articlepage: boolean) => ({
 export const TitleStyle = {
   fontSize: '32px',
   '@media only screen and (max-width: 600px)': {
-    fontSize: '26px',
+    padding: '0px 8px 0px 8px',
+    fontSize: '24px',
+    fontWeight: 'bold',
   },
 };
 

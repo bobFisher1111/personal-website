@@ -42,8 +42,8 @@ export const LatestTextStyles = {
   },
 };
 
-export const SectionNotSelectedStyles = {
-  color: '#0C0D0D',
+export const SectionNotSelectedStyles = (theme: boolean) => ({
+  color: theme ? '#9DB2BF' : 'black',
   marginRight: '8px',
   padding: '4px',
   fontSize: '22px',
@@ -51,21 +51,21 @@ export const SectionNotSelectedStyles = {
   '@media only screen and (max-width: 600px)': {
     fontSize: '16px',
   },
-};
+});
 
-export const SectionSelectedStyles = {
+export const SectionSelectedStyles = (theme: boolean) => ({
   marginRight: '8px',
   padding: '2px 4px 2px 4px', // 0.5em
-  border: '2px solid #0C0D0D',
   borderRadius: '4px',
+  border: theme ? '1px solid #9DB2BF' : '',
+  color: theme ? '#9DB2BF' : 'white',
   background: '#0C0D0D',
-  color: 'white',
   fontSize: '22px',
   cursor: 'pointer',
   '@media only screen and (max-width: 600px)': {
     fontSize: '16px',
   },
-};
+});
 
 export const SeriesIconStyles = {
   fontSize: '26px',

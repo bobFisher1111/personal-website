@@ -24,19 +24,15 @@ import CarouselComponent from '../carousel/carouselArticles/CarouselComponent';
 import SeriesComponent from '../seriesList/SeriesComponent';
 
 const HomePageComponent: React.FC = () => {
+  const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
+  const theme = useSelector((state: any) => state.theme.darkTheme);
   const [numOfSeriesDisplayed, SetNumOfSeriesDisplayed] = useState<number>(4);
   const [seriesExpanded, SetSeriesExpanded] = useState<boolean>(false);
   const [sectionSelect, setSectionSelect] = useState<number>(1);
-  const [defaultSectionStyle, setDefualtSectionStyle] = useState<any>({
-    marginRight: '8px',
-    padding: '4px',
-  });
-  const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const articleData = getWebsiteData && getWebsiteData?.websiteData?.articles;
   const authorsData = getWebsiteData && getWebsiteData?.websiteData?.authors;
   const seriesData = getWebsiteData && getWebsiteData?.websiteData?.series;
   const [articles, setArticles] = useState<any>();
-  const [author,] = useState<any>(authorsData);
   const articlesData = articles === undefined ? articleData : articles;
   const reviewsFilter = articleData?.filter((item: any) => {
     return item.sections === 'Reviews';
@@ -56,19 +52,15 @@ const HomePageComponent: React.FC = () => {
       return setArticles(articleData);
     }
     if (sectionSelect === 2) {
-      setDefualtSectionStyle(SectionSelectedStyles);
       return setArticles(reviewsFilter);
     }
     if (sectionSelect === 3) {
-      setDefualtSectionStyle(SectionSelectedStyles);
       return setArticles(gamingFilter);
     }
     if (sectionSelect === 4) {
-      setDefualtSectionStyle(SectionSelectedStyles);
       return setArticles(codingFilter);
     }
     if (sectionSelect === 5) {
-      setDefualtSectionStyle(SectionSelectedStyles);
       return setArticles(storiesFilter);
     }
   }, [sectionSelect]);
@@ -88,35 +80,35 @@ const HomePageComponent: React.FC = () => {
         <Typography
           id="All_Button"
           onClick={() => setSectionSelect(1)}
-          sx={(sectionSelect === 1) ? SectionSelectedStyles : SectionNotSelectedStyles}
+          sx={(sectionSelect === 1) ? SectionSelectedStyles(theme) : SectionNotSelectedStyles(theme)}
         >
           ALL
         </Typography>
         <Typography
           id="Reviews_Button"
           onClick={() => setSectionSelect(2)}
-          sx={(sectionSelect === 2) ? defaultSectionStyle : SectionNotSelectedStyles}
+          sx={(sectionSelect === 2) ? SectionSelectedStyles(theme) : SectionNotSelectedStyles(theme)}
         >
           Reviews
         </Typography>
         <Typography
           id="Gaming_Button"
           onClick={() => setSectionSelect(3)}
-          sx={(sectionSelect === 3) ? defaultSectionStyle : SectionNotSelectedStyles}
+          sx={(sectionSelect === 3) ? SectionSelectedStyles(theme) : SectionNotSelectedStyles(theme)}
         >
           Gaming
         </Typography>
         <Typography
           id="Coding_Button"
           onClick={() => setSectionSelect(4)}
-          sx={(sectionSelect === 4) ? defaultSectionStyle : SectionNotSelectedStyles}
+          sx={(sectionSelect === 4) ? SectionSelectedStyles(theme) : SectionNotSelectedStyles(theme)}
         >
           Coding
         </Typography>
         <Typography
           id="Stories_Button"
           onClick={() => setSectionSelect(5)}
-          sx={(sectionSelect === 5) ? defaultSectionStyle : SectionNotSelectedStyles}
+          sx={(sectionSelect === 5) ? SectionSelectedStyles(theme) : SectionNotSelectedStyles(theme)}
         >
           Stories
         </Typography>
@@ -188,7 +180,7 @@ const HomePageComponent: React.FC = () => {
           >
             Latest
           </Typography>
-          <ArticleList authorData={author} data={articlesData} turOnAuthorForArticle={false} />
+          <ArticleList authorData={authorsData} data={articlesData} turOnAuthorForArticle={false} />
         </Grid>
       </Grid>
     </Grid> 

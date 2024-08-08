@@ -12,6 +12,9 @@ export const AvatarImageStyles = {
 
 export const GridArticleInfoComponent = {
   padding: '4px 0px 0px 0px',
+  '@media only screen and (max-width: 600px)': {
+    padding: '6px 8px 0px 8px'
+  },
 };
 
 export const HorizAriclePageInfoCompAuthor = {
