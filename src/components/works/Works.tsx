@@ -28,10 +28,10 @@ const Works: React.FC<Props> = ({
   aboutWorks,
   articlePage,
 }) => {
-  const bookImageHeightRef = useRef<any>();
-  const titleHeightRef = useRef<any>();
-  const bookPlotHeightRef = useRef<any>();
-  const articleExtraInfoRef = useRef<any>();
+  const bookImageHeightRef = useRef<any>(null);
+  const titleHeightRef = useRef<any>(null);
+  const bookPlotHeightRef = useRef<any>(null);
+  const articleExtraInfoRef = useRef<any>(null);
   const [articlePageExtraInfo, setArticlePageExtraInfo] = useState<number>(0);
   const [infoHeight, setInfoHeight] = useState<string>('');
 

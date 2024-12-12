@@ -1,0 +1,6 @@
+- Upgrade to react 19 & MUI V6 // completed
+- Fix App bar 
+- Carousel change
+- fix quality and maybe width of articles width
+- Articles Page width to be correct like 700 width or 800 look up
+- Connect with Caleb, and re-work website along with New name and domain

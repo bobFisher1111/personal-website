@@ -20,7 +20,7 @@ const CarouselComponent: FC<Props> = ({
   author,
   articles,
 }) => {
-  const widthRef = useRef<any>();
+  const widthRef = useRef<any>(null);
   const [count, setCount] = useState<any>(0);
   const [marginWidth, setMarginWidth] = useState<any>(widthRef);
   const theme = useSelector((state: any) => state.theme.darkTheme);
