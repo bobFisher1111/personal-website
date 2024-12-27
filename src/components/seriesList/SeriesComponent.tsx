@@ -1,9 +1,9 @@
 import React, { useState, useEffect, FC, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import {
-  Grid,
   styled,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import {
   AlignGridStyles,
   CarouselComponentGridStyles,
@@ -71,12 +71,7 @@ const SeriesComponent: FC<Props> = ({
     >
       <Grid
         className="carouselOne1"
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         container
         sx={CarouselComponentGridStyles}
       >

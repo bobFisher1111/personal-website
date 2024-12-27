@@ -1,10 +1,11 @@
 export const AuthorComponentGridRoot = (turonarticlepage: boolean) => {
+  // come back here 1
   return {
     display: 'flex',
     paddingBottom: '200px',
-    maxWidth: turonarticlepage ? '550px' : '1024px',
+    maxWidth: turonarticlepage ? '550px' : '1200px',
     margin: 'auto',
-    padding: '40px 16px 100px 16px',
+    padding: '76px 16px 100px 16px',
     borderLeft: turonarticlepage ? '1px solid #667A6E' : '',
   };
 };

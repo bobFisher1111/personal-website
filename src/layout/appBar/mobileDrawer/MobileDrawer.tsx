@@ -5,9 +5,9 @@ import {
   Box,
   Button,
   Drawer,
-  Grid,
   Typography,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import { Link } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -65,23 +65,16 @@ const MobileDrawer: FC = () => {
           sx={GridMobileDrawerAppBar}
         >
           <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}            
-            lg={12}
-            xl={12}
+            size={12}
             sx={GridCenterItems}
           >
             <Grid
-              item
-              xs={4}
+              size={4}
             >
               <LightDarkMode />
             </Grid>
             <Grid
-              item
-              xs={4}
+              size={4}
             >
               <SocialMediaComponent
                 turnOnStyle={true}
@@ -94,9 +87,8 @@ const MobileDrawer: FC = () => {
               />
             </Grid>
             <Grid
-              item
               container
-              xs={4}
+              size={4}
               style={{justifyContent: 'flex-end'}}
             >
               <Button
@@ -112,12 +104,7 @@ const MobileDrawer: FC = () => {
           >
           </Grid>
           <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}
-            lg={12}
-            xl={12}
+            size={12}
             sx={GridSectionsStyle}
           >
             <Link
@@ -133,94 +120,8 @@ const MobileDrawer: FC = () => {
               </Typography>
             </Link>
           </Grid>
-          {/* <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}
-            lg={12}
-            xl={12}
-          >
-            <Link to="/videoGames"
-              style={LinkStyles(theme)}
-            >
-              <Typography
-                color="primary"
-                sx={TypographyMobileDrawer}
-                onClick={toggleDrawer(anchor, false)}
-              >
-                Video Games
-              </Typography>
-            </Link>
-          </Grid> */}
-          {/* <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}
-            lg={12}
-            xl={12}
-          >
-            <Link to="/reviews"
-              style={LinkStyles(theme)}
-            >
-              <Typography
-                color="primary"
-                sx={TypographyMobileDrawer}
-                onClick={toggleDrawer(anchor, false)}
-              >
-                Reviews
-              </Typography>
-            </Link>
-          </Grid> */}
-          {/* <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}
-            lg={12}
-            xl={12}
-          >
-            <Link
-              to="/coding"
-              style={LinkStyles(theme)}
-            >
-              <Typography
-                color="primary"
-                sx={TypographyMobileDrawer}
-                onClick={toggleDrawer(anchor, false)}
-              >
-                Coding
-              </Typography>
-            </Link>
-          </Grid> */}
-          {/* <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}
-            lg={12}
-            xl={12}
-          >
-            <Link to="/stories"
-              style={LinkStyles(theme)}
-            >
-              <Typography
-                color="primary"
-                sx={TypographyMobileDrawer}
-                onClick={toggleDrawer(anchor, false)}
-              >
-                Stories
-              </Typography>
-            </Link>
-          </Grid> */}
           <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}
-            lg={12}
-            xl={12}
+            size={12}
           >
             <Link to="/writers"
               style={LinkStyles(theme)}
@@ -235,15 +136,10 @@ const MobileDrawer: FC = () => {
             </Link>
           </Grid>
           <Grid
-            item
-            xs={12}
-            sm={12}
-            md={12}
-            lg={12}
-            xl={12}
+            size={12}
             sx={TypographyMobileDrawer}
           >
-            <TermsOfServiceDrawer mobile={true}/>
+            <TermsOfServiceDrawer />
           </Grid>
         </Grid>
       </AppBar>

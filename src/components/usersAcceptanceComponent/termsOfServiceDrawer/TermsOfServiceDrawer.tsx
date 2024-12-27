@@ -2,9 +2,9 @@ import React, { FC, Fragment } from 'react';
 import { useSelector } from 'react-redux';
 import {
   Drawer,
-  Grid,
   Typography,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import TermsOfServiceComponent from '../termsOfServiceComponent/TermsOfServiceComponent';
 import { 
   DisclaimerTitleStyles,
@@ -13,7 +13,7 @@ import {
 
 type Anchor = 'left';
 
-const TermsOfServiceDrawer: FC<Props> = ({mobile}) => {
+const TermsOfServiceDrawer: FC = () => {
   const theme = useSelector((state: any) => state.theme.darkTheme);
 
   const [state, setState] = React.useState({
@@ -32,7 +32,7 @@ const TermsOfServiceDrawer: FC<Props> = ({mobile}) => {
 
       setState({ ...state, [anchor]: open });
     };
-  
+
   return (
     <Grid>
       {(['left'] as const).map((anchor) => (
@@ -44,7 +44,7 @@ const TermsOfServiceDrawer: FC<Props> = ({mobile}) => {
               aria-label="Menu for Sections Mobile"
               onClick={toggleDrawer(anchor, true)}
               color="primary"
-              sx={DisclaimerTitleStyles(mobile, theme)}
+              sx={DisclaimerTitleStyles(theme)}
             >
               Disclaimer
             </Typography>
@@ -63,10 +63,6 @@ const TermsOfServiceDrawer: FC<Props> = ({mobile}) => {
       ))}
     </Grid>
   );
-};
-
-export type Props = {
-  mobile?: boolean,
 };
 
 export default TermsOfServiceDrawer;

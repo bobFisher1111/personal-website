@@ -1,11 +1,11 @@
 import React from 'react';
 import {
   Typography,
-  Grid,
   Box,
   CardMedia,
   Link,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import {
   BulletListChildLinkStyles,
   BulletListChildTextStyles,

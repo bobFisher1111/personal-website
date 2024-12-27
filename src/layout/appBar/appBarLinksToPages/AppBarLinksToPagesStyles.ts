@@ -17,6 +17,7 @@ export const GridPointer = {
 
 export const TypographyLinkTwoPage = {
   cursor: 'pointer',
+  fontSize: '26px'
 };
 
 export default [

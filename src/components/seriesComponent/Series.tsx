@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
-  Grid,
   Button,
   Typography,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import ComingSoon from '../comingSoon/ComingSoon';
 import formatDate from '../../util/formatDate';
 import VerticalArticleCardComponent from '../cards/articleCards/verticalCard/VerticalArticleCardComponent';
@@ -104,12 +104,7 @@ export const Series: React.FC<Props> = ({
                 style={LinkStyles(theme)}
               >
                 <Grid
-                  item
-                  xs={12}
-                  sm={12}
-                  md={12}
-                  lg={12}
-                  xl={12}
+                  size={12}
                 >
                   <Typography
                     color="primary"
@@ -119,12 +114,7 @@ export const Series: React.FC<Props> = ({
                   </Typography>
                 </Grid>
                 <Grid
-                  item
-                  xs={12}
-                  sm={12}
-                  md={12}
-                  lg={12}
-                  xl={12}
+                  size={12}
                 >
                   <Typography
                     color="primary"
@@ -134,12 +124,7 @@ export const Series: React.FC<Props> = ({
                   </Typography>
                 </Grid>
                 <Grid
-                  item
-                  xs={12}
-                  sm={12}
-                  md={12}
-                  lg={12}
-                  xl={12}
+                  size={12}
                 >
                   <Typography
                     color="primary"
@@ -172,103 +157,59 @@ export const Series: React.FC<Props> = ({
           {!articlePage && 
             <Grid
               container
+              size={12}
+              sx={GridMarginLeft}
             >
-              <Grid
-                item
-                xs={12}
-                sm={12}
-                md={12}
-                lg={12}
-                xl={12}
-                sx={GridMarginLeft}
+              <Typography
+                color="primary"
+                sx={TypographySeriesTitle}
               >
-                <Typography
-                  color="primary"
-                  sx={TypographySeriesTitle}
-                >
-                  {`${item?.section}: ${item?.seriesTitle}`}
-                </Typography>
-              </Grid>
+                {`${item?.section}: ${item?.seriesTitle}`}
+              </Typography>
             </Grid>
           }
-          { articlePage ?
-            <>
-              <Grid
-                container
-                direction="row"
-                justifyContent="center"
-                alignItems="center"
-              >
-                <Grid
-                  item
-                  xs={8}
-                  sm={8}
-                  md={8}
-                  lg={8}
-                  xl={8}
-                >
-                  <Typography
-                    color="primary"
-                    sx={TypographySeriesTitle}
+          <Grid
+            container
+          >
+            <Grid
+              sx={GridMarginLeft}
+            >
+              <VerticalArticleCardComponent
+                key={index}
+                name={item.seriesAuthors}
+                articleData={item}
+                series={true}
+              />
+            </Grid>
+            <Grid
+              size={{
+                xs: 12,
+                sm: 6,
+                md: 7,
+                lg: 7,
+                xl: 7,
+              }}
+              sx={GridMarginLeft}
+            >
+              {textLoop(item, index)}
+              { (filteredSeriesList[index]?.length / 4) >= 1 && 
+                  <Grid
+                    container
+                    sx={GridSeriesReadMoreMargin}
                   >
-                    {`${item?.seriesTitle}`}
-                  </Typography>
-                  <VerticalArticleCardComponent
-                    key={index}
-                    name={item.seriesAuthors}
-                    articleData={item}
-                    series={true}
-                  />
-                </Grid>
-              </Grid>
-            </>
-            :
-            <>
-              <Grid
-                item
-                xs={7}
-                sm={5}
-                md={4}
-                lg={4}
-                xl={4}
-                sx={GridMarginLeft}
-              >
-                <VerticalArticleCardComponent
-                  key={index}
-                  name={item.seriesAuthors}
-                  articleData={item}
-                  series={true}
-                />
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={7}
-                lg={7}
-                xl={7}
-                sx={GridMarginLeft}
-              >
-                {textLoop(item, index)}
-                { (filteredSeriesList[index]?.length / 4) >= 1 && 
-                    <Grid
-                      container
-                      sx={GridSeriesReadMoreMargin}
+                    <Link to={`/series/${item.seriesId}`}
+                      style={LinkStyles(theme)}
                     >
-                      <Link to={`/series/${item.seriesId}`}
-                        style={LinkStyles(theme)}
+                      <Button 
+                        variant="outlined"
                       >
-                        <Button 
-                          variant="outlined"
-                        >
-                          Read More
-                        </Button>
-                      </Link>
-                    </Grid>
-                }
-              </Grid>
-            </>
-          }
+                        Read More
+                      </Button>
+                    </Link>
+                  </Grid>
+              }
+            </Grid>
+          </Grid>
         </Grid>
       ))}
     </>

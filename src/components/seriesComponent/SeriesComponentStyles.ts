@@ -2,7 +2,7 @@ export const seriesComponentGridRoot = {
   display: 'flex',
   maxWidth: '1024px',
   margin: 'auto',
-  padding: '37px 16px 100px 16px',
+  padding: '76px 16px 100px 16px',
 };
 
 export const seriesComponentGridHeader = {
@@ -14,7 +14,7 @@ export const seriesComponentGridHeader = {
 };
 
 export const seriesComponentGridArticleInfo = {
-  padding: '32px 0px 16px 0px',
+  padding: '16px 0px 16px 0px',
   '@media only screen and (max-width: 600px)': {
     padding: '0px 0px 16px 0px'
   },

@@ -1,8 +1,8 @@
 import React from 'react';
 import { 
-  Grid,
   Typography,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import {
   AlignTextStyle,
   FinalScoreStyle,
@@ -41,20 +41,23 @@ const ReviewScore: React.FC<Props> = ({
       sx={RootStyles}
     >
       <Grid
-        item
-        xs={7}
+        size={{
+          xs: 7,
+        }}
         container
         sx={LeftRootStyles}
       >
         <Grid
-          item
-          xs={12}
           container
+          size={{
+            xs: 12,
+          }}
           sx={LeftRootItemTopStyles}
         >
           <Grid
-            item
-            xs={8}
+            size={{
+              xs: 8,
+            }}
           >
             <Typography
               sx={TextStyles}
@@ -63,8 +66,9 @@ const ReviewScore: React.FC<Props> = ({
             </Typography>
           </Grid>
           <Grid
-            item
-            xs={4}
+            size={{
+              xs: 4,
+            }}
           >
             <Typography
               sx={TextScoreStyles}
@@ -74,14 +78,16 @@ const ReviewScore: React.FC<Props> = ({
           </Grid>
         </Grid>
         <Grid
-          item
-          xs={12}
+          size={{
+            xs: 12,
+          }}
           container
           sx={LeftRootItemStyles}
         >
           <Grid
-            item
-            xs={8}
+            size={{
+              xs: 8,
+            }}
           >
             <Typography
               sx={TextStyles}
@@ -90,8 +96,9 @@ const ReviewScore: React.FC<Props> = ({
             </Typography>
           </Grid>
           <Grid
-            item
-            xs={4}
+            size={{
+              xs: 4,
+            }}
           >
             <Typography
               sx={TextScoreStyles}
@@ -101,14 +108,16 @@ const ReviewScore: React.FC<Props> = ({
           </Grid>
         </Grid>
         <Grid
-          item
-          xs={12}
           container
+          size={{
+            xs: 12,
+          }}
           sx={LeftRootItemStyles}
         >
           <Grid
-            item
-            xs={8}
+            size={{
+              xs: 8,
+            }}
           >
             <Typography
               sx={TextStyles}
@@ -117,8 +126,9 @@ const ReviewScore: React.FC<Props> = ({
             </Typography>
           </Grid>
           <Grid
-            item
-            xs={4}
+            size={{
+              xs: 4,
+            }}
           >
             <Typography
               sx={TextScoreStyles}
@@ -128,14 +138,16 @@ const ReviewScore: React.FC<Props> = ({
           </Grid>
         </Grid>
         <Grid
-          item
-          xs={12}
+          size={{
+            xs: 12,
+          }}
           container
           sx={LeftRootItemStyles}
         >
           <Grid
-            item
-            xs={8}
+            size={{
+              xs: 8,
+            }}
           >
             <Typography
               sx={TextStyles}
@@ -144,8 +156,9 @@ const ReviewScore: React.FC<Props> = ({
             </Typography>
           </Grid>
           <Grid
-            item
-            xs={4}
+            size={{
+              xs: 4,
+            }}
           >
             <Typography
               sx={TextScoreStyles}
@@ -155,14 +168,16 @@ const ReviewScore: React.FC<Props> = ({
           </Grid>
         </Grid>
         <Grid
-          item
-          xs={12}
           container
+          size={{
+            xs: 12,
+          }}
           sx={LeftRootItemBottomStyles}
         >
           <Grid
-            item
-            xs={8}
+            size={{
+              xs: 8,
+            }}
           >
             <Typography
               sx={TextStyles}
@@ -171,8 +186,9 @@ const ReviewScore: React.FC<Props> = ({
             </Typography>
           </Grid>
           <Grid
-            item
-            xs={4}
+            size={{
+              xs: 4,
+            }}
           >
             <Typography
               sx={TextScoreStyles}
@@ -183,13 +199,15 @@ const ReviewScore: React.FC<Props> = ({
         </Grid>
       </Grid>
       <Grid
-        item 
-        xs={5} 
         container
+        size={{
+          xs: 5,
+        }}
       >
         <Grid
-          item
-          xs={12}
+          size={{
+            xs: 12,
+          }}
         >
           <Typography
             sx={FinalScoreStyle}
@@ -198,8 +216,9 @@ const ReviewScore: React.FC<Props> = ({
           </Typography>   
         </Grid>
         <Grid
-          item
-          xs={12}
+          size={{
+            xs: 12,
+          }}
         >
           <Typography
             sx={AlignTextStyle}

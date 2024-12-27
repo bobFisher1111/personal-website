@@ -5,9 +5,9 @@ import {
   Button,
   Menu,
   MenuItem,
-  Grid,
   Typography,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { LinkStyles } from '../../../util/styles/LinkStyles';

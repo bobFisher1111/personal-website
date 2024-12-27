@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  Grid,
-} from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import HeaderComponent from '../headerComponent/HeaderComponent';
 import TabsComponent from '../tabsComponent/TabsComponent';
 import {
@@ -19,12 +17,7 @@ const SectionsComponent: React.FC<Props> = ({
       sx={SectionComponentGridRoot}
     >
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
       >
         <HeaderComponent
           title={headerTitle}
@@ -32,12 +25,7 @@ const SectionsComponent: React.FC<Props> = ({
         />
       </Grid>
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={SectionComponentGridTabs}
       >
         <TabsComponent

@@ -2,9 +2,9 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   Button,
-  Grid,
   Typography,
 } from '@mui/material/';
+import Grid from '@mui/material/Grid2';
 import CloseIcon from '@mui/icons-material/Close';
 import { userAgreementValue } from '../../../config';
 import { cookiesOff } from '../../../store/redux/cookies/CookiesSlice';
@@ -57,12 +57,10 @@ const UserAcceptanceTextMessage: React.FC<Props> = ({
       sx={RootStyles}
     >
       <Grid
-        item
         container
       >
         <Grid
-          item
-          xs={10}
+          size={10}
           sx={TitleGridStyles}
         >
           <Typography
@@ -73,8 +71,7 @@ const UserAcceptanceTextMessage: React.FC<Props> = ({
           </Typography>
         </Grid>
         <Grid
-          item
-          xs={2}
+          size={2}
           sx={CloseIconGridStyles}
         >
           <Button
@@ -89,8 +86,7 @@ const UserAcceptanceTextMessage: React.FC<Props> = ({
           </Button>
         </Grid>
         <Grid
-          item
-          xs={12}
+          size={12}
           sx={AcceptanceMessageGrid}
         >
           <Typography
@@ -100,13 +96,11 @@ const UserAcceptanceTextMessage: React.FC<Props> = ({
           </Typography>
         </Grid>
         <Grid
-          item
-          xs={12}
+          size={12}
         >
-          <TermsOfServiceDrawer mobile={false} />
+          <TermsOfServiceDrawer />
         </Grid>
         <Grid
-          item
           container
           justifyContent={'flex-end'}
           alignItems="center"

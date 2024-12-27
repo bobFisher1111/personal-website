@@ -1,8 +1,8 @@
 import React, { useState, useEffect, FC, useRef } from 'react';
 import { useSelector } from 'react-redux';
+import Grid from '@mui/material/Grid2';
 import {
   Button,
-  Grid,
   styled,
 } from '@mui/material';
 import KeyboardArrowRightTwoToneIcon from '@mui/icons-material/KeyboardArrowRightTwoTone';
@@ -114,12 +114,13 @@ const CarouselComponent: FC<Props> = ({
       sx={AlignGridStyles}
     >
       <Grid
-        item
         container
         direction="row"
         justifyContent="center"
         alignItems="center"
-        xs={1}
+        size={{
+          xs: 1,
+        }}
         sx={ArrowButtonGridStyles}
       >
         <Button
@@ -134,12 +135,13 @@ const CarouselComponent: FC<Props> = ({
       </Grid>
       <Grid
         className="carouselOne1"
-        item
-        xs={12}
-        sm={10}
-        md={10}
-        lg={10}
-        xl={10}
+        size={{
+          xs: 12,
+          sm: 10,
+          md: 10,
+          lg: 10,
+          xl: 10,
+        }}
         container
         sx={CarouselComponentGridStyles}
       >
@@ -148,12 +150,13 @@ const CarouselComponent: FC<Props> = ({
         ))}
       </Grid> 
       <Grid
-        item
         container
         direction="row"
         justifyContent="center"
         alignItems="center"
-        xs={1}
+        size={{
+          xs: 1,
+        }}
         sx={ArrowButtonGridStyles}
       >
         <Button

@@ -1,9 +1,9 @@
 import React from 'react';
+import Grid from '@mui/material/Grid2';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import {
   CardMedia,
-  Grid,
   styled,
   Typography
 } from '@mui/material/';
@@ -85,17 +85,19 @@ const CarouselArticles: React.FC<Props> = ({
         }
       </Grid>
       <Grid
-        item
         container
-        xs={12}
+        size={{
+          xs: 6,
+        }}
       >
         <Grid
-          item
-          xs={6}
-          sm={6}
-          md={8}
-          lg={8}
-          xl={8}
+          size={{
+            xs: 6,
+            sm: 6,
+            md: 8,
+            lg: 8,
+            xl: 8,
+          }}
           sx={AvatarGridStyles}
         >
           <Link 
@@ -116,15 +118,16 @@ const CarouselArticles: React.FC<Props> = ({
           </Link>
         </Grid>
         <Grid
-          item
           container
           justifyContent={'flex-end'}
           alignItems='center'
-          xs={6}
-          sm={6}
-          md={4}
-          lg={4}
-          xl={4}
+          size={{
+            xs: 6,
+            sm: 6,
+            md: 4,
+            lg: 4,
+            xl: 4,
+          }}
           sx={ArticleDateGridStyles}
         > 
           <Typography
@@ -135,8 +138,9 @@ const CarouselArticles: React.FC<Props> = ({
           </Typography>
         </Grid>
         <Grid
-          item
-          xs={12}
+          size={{
+            xs: 12,
+          }}
           sx={ArticleTitleGridStyles}
         >
           <Link

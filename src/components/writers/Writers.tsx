@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  Grid,
-} from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import { useSelector } from 'react-redux';
 import HeaderComponent from '../headerComponent/HeaderComponent';
 import WritersCard from './writersCard/WritersCard';
@@ -24,12 +22,7 @@ const Writers = () => {
         sx={WritersGridRoot}
       >
         <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
+          size={12}
         >
           <HeaderComponent
             title='Writers'
@@ -44,13 +37,14 @@ const Writers = () => {
       >
         {sortAuthorsById?.map((item: any) => (
           <Grid
-            item
             key={item.id}
-            xs={12}
-            sm={12}
-            md={6}
-            lg={6}
-            xl={6}
+            size={{
+              xs: 12,
+              sm: 12,
+              md: 6,
+              lg: 6,
+              xl: 6,
+            }}
           >
             <WritersCard
               authorImage={item.avatarImage}
@@ -70,4 +64,3 @@ const Writers = () => {
 };
   
 export default Writers;
-  

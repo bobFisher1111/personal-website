@@ -1,8 +1,8 @@
 import React from 'react';
+import Grid from '@mui/material/Grid2';
 import { useSelector } from "react-redux";
 import {
   Chip,
-  Grid,
   Typography,
 } from '@mui/material';
 import CopyLinkComponent from '../../../../copyLinkComponent/CopyLinkComponent';
@@ -31,7 +31,7 @@ const HorizontalArticleInfoComponent: React.FC<Props> = ({
   seriesId,
 }) => {
   const theme = useSelector((state: any) => state.theme.darkTheme);
-  
+
   return (
     <Grid 
       container
@@ -106,22 +106,22 @@ const HorizontalArticleInfoComponent: React.FC<Props> = ({
         />
       }
       {series &&
-           <div
-             style={DivSeriesLeftPadding()}
-           >
-             <Link 
-               to={`/series/${seriesId}`}
-               style={LinkStyles(theme)}
-             >
-               <Chip
-                 color="primary"
-                 label={'Series'}
-                 variant="outlined"
-                 size="small"
-                 sx={ChipStyle}
-               />
-             </Link>
-           </div>
+        <div
+          style={DivSeriesLeftPadding()}
+        >
+          <Link 
+            to={`/series/${seriesId}`}
+            style={LinkStyles(theme)}
+          >
+            <Chip
+              color="primary"
+              label={'Series'}
+              variant="outlined"
+              size="small"
+              sx={ChipStyle}
+            />
+          </Link>
+        </div>
       }
       {authorPage && series && sectionPage &&
         <CopyLinkComponent

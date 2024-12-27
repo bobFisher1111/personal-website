@@ -21,6 +21,7 @@ export const GridSeriesReadMoreMargin = {
 };
 
 export const GridSeriesArticleList = {
+  marginBottom: '16px',
   '@media only screen and (max-width: 600px)': {
     display: 'none',
   },
@@ -37,7 +38,7 @@ export const GridSeriesRoot = {
 };
 
 export const TypographySeriesArticleDate = {  
-  padding: '0px 0px 0px 16px',
+  padding: '0px 0px 0px 8px',
   fontSize:'14px',
   '@media only screen and (max-width: 600px)': {
     fontSize: '14px',
@@ -56,7 +57,7 @@ export const TypographySeriesArticleSubTitle = {
     padding: '0px',
   },
   '@media only screen and (min-width: 600px)': {
-    padding: '0px 0px 0px 16px',
+    padding: '0px 0px 0px 8px',
   },
   '@media only screen and (max-width: 600px)': {
     fontSize: '14px',
@@ -66,7 +67,7 @@ export const TypographySeriesArticleSubTitle = {
 };
 
 export const TypographySeriesArticleTitle = {
-  padding: '0px 0px 0px 16px',
+  padding: '0px 0px 0px 8px',
   fontSize:'20px',
   overflow: 'hidden',
   textOverflow: 'ellipsis',

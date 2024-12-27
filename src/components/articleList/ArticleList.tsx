@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react';
-import {
-  Grid,
-} from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import ComingSoon from '../comingSoon/ComingSoon';
 import formatDate from '../../util/formatDate';
 import ArticleCard from '../cards/articleCards/horizontalCard/articleCard/ArticleCard';
@@ -29,12 +27,7 @@ export const ArticleList: React.FC<Props> = ({
       {!turOnAuthorForArticle &&
           <>
             <Grid
-              item
-              xs={12}
-              sm={12}
-              md={12}
-              lg={12}
-              xl={12}
+              size={12}
             />
             { sortByDate?.map((item: any) => (
               <Fragment key={crypto.randomUUID()}>
@@ -68,12 +61,7 @@ export const ArticleList: React.FC<Props> = ({
               sx={GridPaddingTop}
             >
               <Grid
-                item
-                xs={12}
-                sm={12}
-                md={12}
-                lg={12}
-                xl={12}
+                size={12}
                 sx={GridAuthorArticle}
               > 
                 { sortByDate?.map((item: any) => (

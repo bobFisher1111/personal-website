@@ -79,6 +79,7 @@ export const DateStyles = {
 export const LinkGridRootStyles = (articlePage: boolean) => ({
   maxHeight: articlePage ? '40px' : '85px',
   minHeight: articlePage ? '40px' : '85px',
+  width: '860px',
   '@media only screen and (max-width: 600px)': {
     maxHeight: '28px',
     minHeight: '28px',

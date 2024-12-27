@@ -1,9 +1,9 @@
 import React, { Fragment} from 'react';
 import {
   Drawer,
-  Grid,
   Typography,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import CookiesManagementComponent from '../cookiesManagementComponent/CookiesManagementComponent';
 import {
   DrawerStyles,

@@ -1,13 +1,12 @@
 import React from 'react';
 import {
-  Grid,
   Typography,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import { LinkStyles } from '../../../util/styles/LinkStyles';
 import {
-  AlignLinkTexts,
   TypographyLinkTwoPage,
 } from './AppBarLinksToPagesStyles';
 import TermsOfServiceDrawer from '../../../components/usersAcceptanceComponent/termsOfServiceDrawer/TermsOfServiceDrawer';
@@ -15,29 +14,22 @@ import TermsOfServiceDrawer from '../../../components/usersAcceptanceComponent/t
 const AppBarLinksToPages: React.FC = () => {
   const theme = useSelector((state: any) => state.theme.darkTheme);
   return (
-    <>
-      <Grid
-        item
-        sx={AlignLinkTexts(true)}
+    <Grid
+      container 
+      spacing={2}
+    >
+      <TermsOfServiceDrawer />
+      <Link to="/writers"
+        style={LinkStyles(theme)}
       >
-        <TermsOfServiceDrawer mobile={false} />
-      </Grid>
-      <Grid
-        item
-        sx={AlignLinkTexts(false)}
-      >
-        <Link to="/writers"
-          style={LinkStyles(theme)}
+        <Typography
+          color="primary"
+          sx={TypographyLinkTwoPage}
         >
-          <Typography
-            color="primary"
-            sx={TypographyLinkTwoPage}
-          >
-            Writers
-          </Typography>
-        </Link>
-      </Grid>
-    </>
+          Writers
+        </Typography>
+      </Link>
+    </Grid>
   );
 };
 

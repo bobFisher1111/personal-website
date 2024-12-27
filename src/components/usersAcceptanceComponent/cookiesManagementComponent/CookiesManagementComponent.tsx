@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import {
   Button,
-  Grid,
   Switch,
   Typography,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import CloseIcon from '@mui/icons-material/Close';
 import { userAgreementValue } from '../../../config';
 import {
@@ -107,18 +107,15 @@ const CookiesManagementComponent: React.FC<Props> = ({
       sx={RootStyles}
     >
       <Grid
-        item
         container
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={CookiesTitleAndCloseStyles}
       >
         <Grid
-          item
-          xs={6}
+          size={{
+            xs: 6,
+          }}
+
           sx={CookieSettingGridStyles}
         >
           <Typography
@@ -129,8 +126,9 @@ const CookiesManagementComponent: React.FC<Props> = ({
           </Typography>
         </Grid>
         <Grid
-          item
-          xs={6}
+          size={{
+            xs: 6,
+          }}
           sx={CloseIconGridStyles}
         >
           <Button
@@ -143,12 +141,7 @@ const CookiesManagementComponent: React.FC<Props> = ({
         </Grid>
       </Grid>
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={CookiesManagementTextStyles}
       >
         <Typography
@@ -158,12 +151,7 @@ const CookiesManagementComponent: React.FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={ToggleOnOffGridStyles}
       >
         <Typography
@@ -174,18 +162,12 @@ const CookiesManagementComponent: React.FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
         container
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={ToggleOnRootStyles}
       >
         <Grid
-          item
-          xs={6}
+          size={6}
           sx={ToggleOnGridStyles}
         >
           <Typography
@@ -196,8 +178,7 @@ const CookiesManagementComponent: React.FC<Props> = ({
           </Typography>
         </Grid>
         <Grid
-          item
-          xs={6}
+          size={6}
           sx={CookieGridSwitchStyles}
         >
           <Switch
@@ -212,18 +193,13 @@ const CookiesManagementComponent: React.FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
         container
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
+
         sx={ToggleOnRootStyles}
       >
         <Grid
-          item
-          xs={6}
+          size={6}
           sx={ToggleOnGridStyles}
         >
           <Typography
@@ -234,8 +210,7 @@ const CookiesManagementComponent: React.FC<Props> = ({
           </Typography>
         </Grid>
         <Grid
-          item
-          xs={6}
+          size={6}
           sx={CookieGridSwitchStyles}
         >
           <Switch
@@ -250,18 +225,12 @@ const CookiesManagementComponent: React.FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
         container
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={ToggleOnRootStyles}
       >
         <Grid
-          item
-          xs={6}
+          size={6}
           sx={ToggleOnGridStyles}
         >
           <Typography
@@ -272,8 +241,7 @@ const CookiesManagementComponent: React.FC<Props> = ({
           </Typography>
         </Grid>
         <Grid
-          item
-          xs={6}
+          size={6}
           sx={CookieGridSwitchStyles}
         >
           <Switch
@@ -288,19 +256,19 @@ const CookiesManagementComponent: React.FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
         container
         justifyContent="center"
         alignItems="center"
         sx={GridRootButtonStyles}
       >
         <Grid
-          item
-          xs={12}
-          sm={6}
-          md={6}
-          lg={6}
-          xl={6}
+          size={{
+            xs: 12,
+            sm: 6,
+            md: 6,
+            lg: 6,
+            xl: 6,
+          }}
           sx={AcceptGridButtonStyles}
           onClick={closeDrawer}
         >
@@ -316,12 +284,13 @@ const CookiesManagementComponent: React.FC<Props> = ({
           </Button>
         </Grid>
         <Grid
-          item
-          xs={12}
-          sm={6}
-          md={6}
-          lg={6}
-          xl={6}
+          size={{
+            xs: 12,
+            sm: 6,
+            md: 6,
+            lg: 6,
+            xl: 6,
+          }}
           sx={RejectGridButtonStyles}
           onClick={closeDrawer}
         >

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Grid, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import hljs from 'highlight.js';
 import "highlight.js/styles/a11y-dark.css";
@@ -34,7 +35,7 @@ const CodeSnipit: React.FC<Props> = ({
     count++;
     return count <= 2 ? '' : match;
   });
-  
+
   return (
     <Grid
       sx={RootStyles}
@@ -64,7 +65,6 @@ const CodeSnipit: React.FC<Props> = ({
         </Grid>
       </Grid>
       <Grid
-        item
         sx={PreTagGridStyles}
       >
         <pre

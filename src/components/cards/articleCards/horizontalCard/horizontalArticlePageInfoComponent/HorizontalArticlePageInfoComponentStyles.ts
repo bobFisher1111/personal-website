@@ -11,6 +11,8 @@ export const AvatarImageStyles = (theme: boolean) => ({
 });
 
 export const GridArticleInfoComponent = {
+  maxWidth: '1200px',
+  margin: 'auto',
   padding: '4px 0px 0px 0px',
   '@media only screen and (max-width: 600px)': {
     padding: '6px 8px 0px 8px'

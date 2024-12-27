@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import {
   Avatar,
-  Grid,
   Typography,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import {
   AvatarStyle,
   GridAvatarPadding,
@@ -46,7 +46,6 @@ const HeaderComponent:  React.FC<Props> = ({
       {authorAvatar ? 
         <>
           <Grid
-            item
             sx={GridPaddingRight}
           >
             {articlePage ? 
@@ -69,7 +68,6 @@ const HeaderComponent:  React.FC<Props> = ({
             }
           </Grid>
           <Grid
-            item
             sx={GridAvatarPadding}
           >
             {articlePage ?
@@ -88,12 +86,7 @@ const HeaderComponent:  React.FC<Props> = ({
         </>
         :
         <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
+          size={12}
           sx={GridHeaderTitle}
         >
           {titleFunction(title)}

@@ -27,9 +27,9 @@ export const CreateArticleStyle = {
 };
 
 export const GridRoot = {
-  padding: "16px 0px 200px 0px",
+  padding: '60px 0px 200px 0px',
   '@media only screen and (max-width: 600px)': {
-    padding: "0px 0px 200px 0px",
+    padding: '0px 0px 200px 0px',
   },
 };
 

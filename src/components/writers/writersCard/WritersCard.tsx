@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  Grid,
   Typography,
   CardMedia,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import SocialMediaComponent from '../../socialMediaComponent/SocialMediaComponent';
@@ -33,12 +33,13 @@ const WritersCard: React.FC<Props> = ({
       sx={WritersCardGridRoot}
     >
       <Grid
-        item
-        xs={3}
-        sm={3}
-        md={4}
-        lg={4}
-        xl={4}
+        size={{
+          xs: 3,
+          sm: 3,
+          md: 4,
+          lg: 4,
+          xl: 4,
+        }}
       >
         <Link 
           to={`/author/${authorId}`}
@@ -53,12 +54,13 @@ const WritersCard: React.FC<Props> = ({
         </Link>
       </Grid>
       <Grid
-        item
-        xs={9}
-        sm={9}
-        md={8}
-        lg={8}
-        xl={8}
+        size={{
+          xs: 9,
+          sm: 9,
+          md: 8,
+          lg: 8,
+          xl: 8,
+        }}
         sx={WritersCardGridAuthorName}
       >
         <Link 

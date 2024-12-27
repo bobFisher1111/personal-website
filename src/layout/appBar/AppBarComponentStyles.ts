@@ -3,7 +3,8 @@ export const AppBarStyles = {
   component: 'nav',
   boxShadow: 'none',
   borderBottom: '1px solid #0C0D0D',
-  height: '44px',
+  height: '60px',
+  justifyContent: 'center'
 };
   
 export default [

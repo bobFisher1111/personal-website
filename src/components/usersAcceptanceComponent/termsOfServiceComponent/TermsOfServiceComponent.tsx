@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
 import {
   Button,
-  Grid,
   Typography,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import CloseIcon from '@mui/icons-material/Close';
 import {
   CloseButtonStyles,
   CloseGridRootStyles,
-  CloseGridStyles,
+  // CloseGridStyles,
   CloseIconButtonStyles,
   GridStyles,
   MarginGridStyles,
@@ -39,18 +39,12 @@ const TermsOfServiceComponent: FC<Props> = ({
       sx={RootStyles}
     >
       <Grid
-        item
         container
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={MarginGridStyles}
       >
         <Grid
-          item
-          xs={10}
+          size={10}
           sx={GridStyles}
         >
           <Typography
@@ -61,8 +55,7 @@ const TermsOfServiceComponent: FC<Props> = ({
           </Typography>
         </Grid>
         <Grid
-          item
-          xs={2}
+          size={2}
         >
           <Button
             color="primary"
@@ -81,12 +74,7 @@ const TermsOfServiceComponent: FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={MarginGridStyles}
       >
         <Typography
@@ -96,8 +84,7 @@ const TermsOfServiceComponent: FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
+        size={12}
         sx={GridStyles}
       >
         <Typography
@@ -108,12 +95,7 @@ const TermsOfServiceComponent: FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={MarginGridStyles}
       >
         <Typography
@@ -123,8 +105,7 @@ const TermsOfServiceComponent: FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
+        size={12}
         sx={GridStyles}
       >
         <Typography
@@ -135,12 +116,7 @@ const TermsOfServiceComponent: FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={MarginGridStyles}
       >
         <Typography
@@ -150,8 +126,7 @@ const TermsOfServiceComponent: FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
+        size={12}
         sx={GridStyles}
       >
         <Typography
@@ -162,12 +137,7 @@ const TermsOfServiceComponent: FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={MarginGridStyles}
       >
         <Typography
@@ -177,8 +147,7 @@ const TermsOfServiceComponent: FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
+        size={12}
         sx={GridStyles}
       >
         <Typography
@@ -189,12 +158,7 @@ const TermsOfServiceComponent: FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={MarginGridStyles}
       >
         <Typography
@@ -204,12 +168,7 @@ const TermsOfServiceComponent: FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={MarginGridStyles}
       >
         <Typography
@@ -219,8 +178,7 @@ const TermsOfServiceComponent: FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
+        size={12}
         sx={GridStyles}
       >
         <Typography
@@ -231,12 +189,7 @@ const TermsOfServiceComponent: FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={MarginGridStyles}
       >
         <Typography
@@ -246,8 +199,7 @@ const TermsOfServiceComponent: FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
+        size={12}
         sx={GridStyles}
       >
         <Typography
@@ -258,12 +210,7 @@ const TermsOfServiceComponent: FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={MarginGridStyles}
       >
         <Typography
@@ -273,8 +220,7 @@ const TermsOfServiceComponent: FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
+        size={12}
         sx={GridStyles}
       >
         <Typography
@@ -285,12 +231,7 @@ const TermsOfServiceComponent: FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={MarginGridStyles}
       >
         <Typography
@@ -300,27 +241,19 @@ const TermsOfServiceComponent: FC<Props> = ({
         </Typography>
       </Grid>
       <Grid
-        item
         container
         justifyContent="center"
         alignItems="center"
         sx={CloseGridRootStyles}
       >
-        <Grid
-          item
-          xs={6}
-          sx={CloseGridStyles}
+        <Button
+          color="primary"
+          variant="contained"
           onClick={closeDrawer}
+          sx={CloseButtonStyles}
         >
-          <Button
-            color="primary"
-            variant="contained"
-            onClick={closeDrawer}
-            sx={CloseButtonStyles}
-          >
-            Close
-          </Button>
-        </Grid>
+          Close
+        </Button>
       </Grid>
     </Grid>
   );

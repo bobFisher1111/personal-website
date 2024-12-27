@@ -1,8 +1,6 @@
 import React from 'react';
-import {
-  Typography,
-  Grid,
-} from '@mui/material';
+import { Typography } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import HeaderComponent from '../../components/headerComponent/HeaderComponent';
 import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
 import { 
@@ -31,12 +29,7 @@ const AboutComponent: React.FC = () => {
         authorAvatar={false}
       />
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
       >
         <Typography
           color="primary"
@@ -54,12 +47,7 @@ const AboutComponent: React.FC = () => {
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
       >
         <Typography
           color="primary"
@@ -69,7 +57,6 @@ const AboutComponent: React.FC = () => {
             Follow us on Social Media:
         </Typography>
         <Grid
-          item
           sx={AboutCompGridSocialMediaStyle}
         >
           <SocialMediaComponent
@@ -81,12 +68,7 @@ const AboutComponent: React.FC = () => {
         </Grid>
       </Grid>
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
       >
         <Typography
           color="primary"
@@ -96,12 +78,7 @@ const AboutComponent: React.FC = () => {
             Contact us on:
         </Typography>
         <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
+          size={12}
         >
           <Typography
             color="primary"
@@ -113,12 +90,7 @@ const AboutComponent: React.FC = () => {
         </Grid>
       </Grid>
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={{
           flex: 'auto',
         }}
@@ -139,12 +111,7 @@ const AboutComponent: React.FC = () => {
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
       >
         <Typography
           color="primary"
@@ -218,12 +185,7 @@ const AboutComponent: React.FC = () => {
         </Typography>
       </Grid>
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={{
           flex: 'auto',
         }}

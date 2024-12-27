@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
+import Grid from '@mui/material/Grid2';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
   Chip,
-  Grid,
   Typography,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
@@ -15,7 +15,6 @@ import {
   ArticleVideoStyles,
   AvatarAuthorLinkStyles,
   AvatarImageStyles,
-  AuthorNameGridStyles,
   AuthorNameStyles,
   ChipStyles,
   DateStyles,
@@ -75,21 +74,15 @@ const ArticleCard: React.FC<Props> = ({
       container
       sx={RootStyles(theme, turOnAuthorForArticle)}
     >
-      <Grid 
-        item
+      <Grid
         container
         direction="row"
         justifyContent="flex-start"
         alignItems="center"
+        size={12}
       >
         <Grid
-          item
-          xs={8}
-          sm={8}
-          md={8}
-          lg={8}
-          xl={8}
-          sx={AuthorNameGridStyles}
+          size={8}
         >
           <Link 
             to={`/author/${authorId}`}
@@ -109,12 +102,7 @@ const ArticleCard: React.FC<Props> = ({
           </Link>
         </Grid>
         <Grid
-          item 
-          xs={4}
-          sm={4}
-          md={4}
-          lg={4}
-          xl={4} 
+          size={4}
         >
           <Typography
             color="primary"
@@ -124,20 +112,22 @@ const ArticleCard: React.FC<Props> = ({
           </Typography>
         </Grid>
       </Grid>
+
+
       <Grid 
-        item
         container
         direction="row"
         justifyContent="central"
         alignItems="central"
       >
         <Grid
-          item 
-          xs={4}
-          sm={3}
-          md={3}
-          lg={3}
-          xl={3}
+          size={{
+            xs: 4,
+            sm: 3,
+            md: 3,
+            lg: 3,
+            xl: 3,
+          }}
         >
           {isMediaVideo ?
             disableButton() ?
@@ -166,21 +156,15 @@ const ArticleCard: React.FC<Props> = ({
             </Link>
           }
         </Grid>
+
         <Grid
-          item
           container
           direction="column"
           justifyContent="flex-start"
           alignItems="flex-start"
-          xs={8}
-          sm={9}
-          md={9}
-          lg={9}
-          xl={9}
           sx={ArticleDataGridStyles}
         >
           <Grid
-            item
             container
           >
             <Link
@@ -189,12 +173,7 @@ const ArticleCard: React.FC<Props> = ({
               style={LinkStyles(theme)}
             >
               <Grid
-                item
-                xs={12}
-                sm={12}
-                md={12}
-                lg={12}
-                xl={12}
+                size={12}
               >
                 <Typography
                   color="primary"
@@ -206,12 +185,7 @@ const ArticleCard: React.FC<Props> = ({
               </Grid>
               {!turOnAuthorForArticle &&
                 <Grid
-                  item
-                  xs={12}
-                  sm={12}
-                  md={12}
-                  lg={12}
-                  xl={12}
+                  size={12}
                 >
                   <Typography
                     color="primary"
@@ -223,8 +197,7 @@ const ArticleCard: React.FC<Props> = ({
               }
             </Link>
           </Grid>
-          <Grid 
-            item
+          <Grid
             container
             direction="row"
             justifyContent="flex-end"
@@ -232,7 +205,6 @@ const ArticleCard: React.FC<Props> = ({
             sx={LinkGridRootStyles(articlePage)}
           >
             <Grid
-              item
               sx={LinkGridStyles}
             >
               <div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import Grid from '@mui/material/Grid2';
 import {
   Card,
-  Grid,
   CardMedia,
   Box,
   Typography,

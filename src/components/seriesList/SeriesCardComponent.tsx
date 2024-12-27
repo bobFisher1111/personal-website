@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import {
   Card,
   CardMedia,
-  Grid,
   Box,
   Typography,
 } from '@mui/material/';
+import Grid from '@mui/material/Grid2';
 import { appBaseURL } from '../../config';
 import { LinkStyles } from '../../util/styles/LinkStyles';
 import {
@@ -53,12 +53,7 @@ const SeriesCardComponent: React.FC<Props> = ({
               container
             >
               <Grid 
-                item 
-                xs={12}
-                sm={12}
-                md={12}
-                lg={12}
-                xl={12}
+                size={12}
               >
                 <Link 
                   to={serieslUrl}

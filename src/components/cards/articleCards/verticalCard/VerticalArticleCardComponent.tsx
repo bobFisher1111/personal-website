@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import Grid from '@mui/material/Grid2';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
   Card,
   CardMedia,
-  Grid,
   Box,
   Typography,
 } from '@mui/material/';
@@ -91,12 +91,7 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
               container
             >
               <Grid 
-                item 
-                xs={10}
-                sm={10}
-                md={10}
-                lg={10}
-                xl={10}
+                size={10}
               >
                 {!articlePage ?
                   <Link 
@@ -121,8 +116,7 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
                 }           
               </Grid>
               <Grid 
-                item 
-                xs={2}
+                size={2}
                 sx={GridPadding}
               >
                 <CopyLinkComponent

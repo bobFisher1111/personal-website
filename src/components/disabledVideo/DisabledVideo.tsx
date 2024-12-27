@@ -2,9 +2,9 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import {
   Box,
-  Grid,
   Typography,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
 import YoutTubeLogoDark from '../../assets/icons/yt_icon_mono_dark.png';
 import {
@@ -36,12 +36,11 @@ const DisabledVideo: React.FC<Props> = ({
       >
       
         <Grid
-          item
           container
           direction="row"
           justifyContent="center"
           alignItems="center"
-          xs={12}
+          size={12}
         >
           <Box
             component="img"
@@ -53,12 +52,11 @@ const DisabledVideo: React.FC<Props> = ({
           />
         </Grid>
         <Grid
-          item
           container
           direction="row"
           justifyContent="center"
           alignItems="center"
-          xs={12}
+          size={12}
         >
           <Typography>
             Disabled

@@ -1,12 +1,11 @@
 import React, { useState, SyntheticEvent } from 'react';
-
 import { useSelector } from 'react-redux';
 import {
   Box,
-  Grid,
   Tab,
   Tabs,
 } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import {
   GridTabsComponent,
   TabComponentTextStyles,

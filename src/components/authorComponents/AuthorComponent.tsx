@@ -1,8 +1,6 @@
 import React from 'react';
-import {
-  Typography,
-  Grid,
-} from '@mui/material';
+import Grid from '@mui/material/Grid2';
+import { Typography } from '@mui/material';
 import HeaderComponent from '../headerComponent/HeaderComponent';
 import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
 import TabsComponent from '../tabsComponent/TabsComponent';
@@ -51,12 +49,7 @@ const AuthorComponent: React.FC<Props> = ({
       sx={AuthorComponentGridRoot(turOnArticlePage)}
     >
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={HeaderComponentStyles}
       >
         <HeaderComponent
@@ -68,12 +61,7 @@ const AuthorComponent: React.FC<Props> = ({
         />
       </Grid>
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={AuthorComponentGridBiography}
       >
         <Typography
@@ -94,9 +82,7 @@ const AuthorComponent: React.FC<Props> = ({
         container
         justifyContent="center"
       >
-        <Grid 
-          item
-        >
+        <Grid>
           <SocialMediaComponent
             widthPadding={'16px 0px 16px 16px'}
             turnOnStyle={true}

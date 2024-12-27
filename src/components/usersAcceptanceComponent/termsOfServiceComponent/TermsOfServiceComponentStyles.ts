@@ -4,6 +4,7 @@ export const CloseButtonStyles = {
 };
 
 export const CloseGridRootStyles = {
+  margin: 'auto',
   padding: '32px 8px',
 };
 

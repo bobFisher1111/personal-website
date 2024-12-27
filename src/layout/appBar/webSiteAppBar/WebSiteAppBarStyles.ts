@@ -1,13 +1,7 @@
 export const AppBarStyle = {
   display: 'flex',
-  maxWidth: '100%',
-  maxHeight: '100%',
   width: '1200px',
-  '@media only screen and (max-width: 600px)': {
-  },
-  '@media only screen and (min-width: 992px)': {
-    margin: 'auto',
-  }, 
+  margin: 'auto',
 };
 
 export const GridDesktopAppBar = {
@@ -33,7 +27,7 @@ export const LinkGridMobileStyles = {
 };
 
 export const TypographyDesktopTitle = {
-  fontSize: '22px',
+  fontSize: '26px',
 };
 
 export const TypographyMobileTitle = {

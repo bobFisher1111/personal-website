@@ -1,5 +1,5 @@
 export const GridAlignItems = {
-  padding: '0px 16px 16px 16px',
+  padding: '60px 16px 16px 16px',
   maxWidth: '1200px',
   margin: 'auto',
   '@media only screen and (max-width: 600px)': {
@@ -8,10 +8,10 @@ export const GridAlignItems = {
 };
 
 export const GridRoot = {
-  // minHeight: '100vh',
+  maxWidth: '1200px',
   display: 'flex',
   margin: 'auto',
-  padding: '60px 16px 0px 16px',
+  padding: '60px 16px 200px 16px',
   '@media only screen and (max-width: 600px)': {
     padding: '60px 16px 8px 16px',
   },
@@ -55,7 +55,7 @@ export const SectionNotSelectedStyles = (theme: boolean) => ({
 
 export const SectionSelectedStyles = (theme: boolean) => ({
   marginRight: '8px',
-  padding: '2px 4px 2px 4px', // 0.5em
+  padding: '2px 4px 2px 4px',
   borderRadius: '4px',
   border: theme ? '1px solid #9DB2BF' : '',
   color: theme ? '#9DB2BF' : 'white',
@@ -86,10 +86,6 @@ export const SeriesButtonStyles = {
 export const SeriesGridStyles = {
   maxWidth: '1200px',
   margin: 'auto',
-  // padding: '28px 0px 8px 0px',
-  '@media only screen and (max-width: 600px)': {
-    // padding: '0px 0px 8px 0px',
-  },
 };
 
 export const SeriesTextStyles = {

@@ -1,8 +1,8 @@
 import React from 'react';
+import Grid from '@mui/material/Grid2';
 import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import {
-  Grid,
   Typography,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
@@ -39,80 +39,78 @@ const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
   });
 
   return (
-    <>
-      <Grid 
-        container 
-        direction="row"
-        justifyContent={justifyContent}
-        sx={GridArticleInfoComponent}
+    <Grid 
+      container 
+      direction="row"
+      justifyContent={justifyContent}
+      sx={GridArticleInfoComponent}
+    >
+      <Link 
+        to={`/author/${authorsId}`}
+        style={LinkStyles(theme)}
       >
-        <Link 
-          to={`/author/${authorsId}`}
-          style={LinkStyles(theme)}
-        >
-          <Img
-            alt="complex"
-            src={getAuthorData && getAuthorData[0]?.avatarImage}
-            sx={AvatarImageStyles(theme)}
-          />
-        </Link>
-        <Link 
-          to={`/author/${authorsId}`}
-          style={LinkStyles(theme)}
-        >
-          <Typography
-            color="primary"
-            sx={HorizAriclePageInfoCompAuthor}
-          >
-            {author} 
-          </Typography>
-        </Link>
-        <Typography
-          color="primary"
-          sx={TypographyArticleInfoRight}
-        >
-          |
-        </Typography>
-        <Typography
-          color="primary"
-          sx={HorizArticlePageInfoCompDate}
-        >
-          {date}
-        </Typography>
-        <Typography
-          color="primary"
-          sx={TypographyArticleInfoRight}
-        >
-          |
-        </Typography>
+        <Img
+          alt="complex"
+          src={getAuthorData && getAuthorData[0]?.avatarImage}
+          sx={AvatarImageStyles(theme)}
+        />
+      </Link>
+      <Link 
+        to={`/author/${authorsId}`}
+        style={LinkStyles(theme)}
+      >
         <Typography
           color="primary"
           sx={HorizAriclePageInfoCompAuthor}
         >
-          {section}
+          {author} 
         </Typography>
-        <Typography
-          color="primary"
-        >
-          |
-        </Typography>
-        {series ? 
-          <CopyLinkComponent
-            seriesId={getSeriesIdFromUrl()}
-            padding={'0px 0px 0px 16px'}
-            email={false}
-            turnOnSeries={true}
-          />
-          :
-          <CopyLinkComponent
-            authorsId={authorsId}
-            articleId={articleId}
-            padding={'0px 0px 0px 16px'}
-            email={false}
-          />
-        }
-      </Grid>
-    </>
+      </Link>
+      <Typography
+        color="primary"
+        sx={TypographyArticleInfoRight}
+      >
+        |
+      </Typography>
+      <Typography
+        color="primary"
+        sx={HorizArticlePageInfoCompDate}
+      >
+        {date}
+      </Typography>
+      <Typography
+        color="primary"
+        sx={TypographyArticleInfoRight}
+      >
+        |
+      </Typography>
+      <Typography
+        color="primary"
+        sx={HorizAriclePageInfoCompAuthor}
+      >
+        {section}
+      </Typography>
+      <Typography
+        color="primary"
+      >
+        |
+      </Typography>
+      {series ? 
+        <CopyLinkComponent
+          seriesId={getSeriesIdFromUrl()}
+          padding={'0px 0px 0px 16px'}
+          email={false}
+          turnOnSeries={true}
+        />
+        :
+        <CopyLinkComponent
+          authorsId={authorsId}
+          articleId={articleId}
+          padding={'0px 0px 0px 16px'}
+          email={false}
+        />
+      }
+    </Grid>
   );
 };
 

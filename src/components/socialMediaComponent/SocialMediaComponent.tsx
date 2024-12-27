@@ -5,7 +5,8 @@ import TwitterLogoDark from '../../assets/icons/logo-white.png';
 import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
 import YoutTubeLogoDark from '../../assets/icons/yt_icon_mono_dark.png';
 // import FacebookLogo from '../../assets/icons/FacebookLogo.png';
-import { Grid, Box } from '@mui/material';
+import { Box } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import CopyLinkComponent from '../copyLinkComponent/CopyLinkComponent';
 
 const SocialMediaComponent: React.FC<Props> = ({
@@ -53,7 +54,6 @@ const SocialMediaComponent: React.FC<Props> = ({
         </a>
       </Grid> */}
       <Grid
-        item
         sx={{
           padding: turnOnStyle ? widthPadding : '',
         }}
@@ -78,7 +78,6 @@ const SocialMediaComponent: React.FC<Props> = ({
         </a>
       </Grid>
       <Grid
-        item
         sx={{
           padding: turnOnStyle ? widthPadding : '',
         }}
@@ -105,7 +104,6 @@ const SocialMediaComponent: React.FC<Props> = ({
       </Grid>
       {turnOnEmail && 
           <Grid
-            item
             sx={{
               padding: turnOnEmailStyle ? '0px' : '10px 0px 16px 16px',
               alignContent: 'center',

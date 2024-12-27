@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from 'react';
 import { 
   Typography,
   CardMedia,  
-  Grid,
   Link,
   Button,
 } from '@mui/material/';
+import Grid from '@mui/material/Grid2';
 import {
   ArtPageBookExtraInfoGridRoot,
   ArtPageBookExtraInfoLinkBuy,
@@ -60,12 +60,7 @@ const Works: React.FC<Props> = ({
         sx={ArtPageBookExtraInfoGridRoot(bottomHeight)}
       >
         <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
+          size={12}
         >
           <Link 
             href={item.buy}
@@ -78,12 +73,7 @@ const Works: React.FC<Props> = ({
           </Link>
         </Grid>
         <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
+          size={12}
         >
           <Typography
             color="primary"
@@ -93,12 +83,7 @@ const Works: React.FC<Props> = ({
           </Typography>
         </Grid>
         <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
+          size={12}
         >
           <Typography
             color="primary"
@@ -118,12 +103,7 @@ const Works: React.FC<Props> = ({
         sx={WorksGridRootTitle(authorsPage)}
       >
         <Grid 
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
+          size={12}
         >
           <Typography
             color="primary"
@@ -143,12 +123,13 @@ const Works: React.FC<Props> = ({
           sx={WorksGridRoot(authorsPage)}
         >
           <Grid
-            item
-            xs={5}
-            sm={1}
-            md={1}
-            lg={1}
-            xl={1}
+            size={{
+              xs: 5,
+              sm: 1,
+              md: 1,
+              lg: 1,
+              xl: 1,
+            }}
             sx={WorksGridCover(authorsPage)}
           >
             <Button
@@ -165,12 +146,13 @@ const Works: React.FC<Props> = ({
             </Button>
           </Grid>
           <Grid
-            item
-            xs={articlePage ? 6 : 7}
-            sm={articlePage ? 6 : 8}
-            md={articlePage ? 6 : 8}
-            lg={articlePage ? 6 : 8}
-            xl={articlePage ? 6 : 8}
+            size={{
+              xs: articlePage ? 6 : 7,
+              sm: articlePage ? 6 : 8,
+              md: articlePage ? 6 : 8,
+              lg: articlePage ? 6 : 8,
+              xl: articlePage ? 6 : 8,
+            }}
             sx={WorksGridInfo}
           >
             <Typography

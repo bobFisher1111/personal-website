@@ -1,9 +1,6 @@
 import React, { useEffect } from 'react';
-import {
-  Grid,
-} from '@mui/material';
+import Grid from '@mui/material/Grid2';
 import HorizontalArticleCardComponent from '../cards/articleCards/horizontalCard/HorizontalArticleCardComponent';
-import AuthorComponent from '../authorComponents/AuthorComponent';
 import { useSelector } from 'react-redux';
 import CreateArticle from '../createArticle/CreateArticle';
 import formatDate from '../../util/formatDate';
@@ -13,7 +10,6 @@ import {
   CreateArticleStyle,
   GridRoot,
   GridHeader,
-  GridAuthorComponent,
 } from './ArticlePageStyles';
 
 const ArticlePage: React.FC = () => {
@@ -33,9 +29,6 @@ const ArticlePage: React.FC = () => {
   const currentArticle = getArticles?.filter((item: any) => {
     return item.articleId === getNameFromUrl();
   });
-  const getBook = webData?.books?.filter((item: any) => {
-    return item.authorId === getIdFromUrl();
-  });
   const authorData = getAuthor && getAuthor[0];
   const articleData = currentArticle && currentArticle[0];
   const articleArray = articleData?.article.split("`");
@@ -53,15 +46,16 @@ const ArticlePage: React.FC = () => {
         sx={GridRoot}
       >
         <Grid
-          item
           container
           justifyContent="center"
           alignContent='flex-start'
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={9}
+          size={{
+            xs: 12,
+            sm: 12,
+            md: 12,
+            lg: 12,
+            xl: 9,
+          }}
           sx={GridHeader}
         >
           <Grid
@@ -85,7 +79,6 @@ const ArticlePage: React.FC = () => {
               videoHeight={false}
             />
             <Grid
-              item
               sx={CreateArticleStyle}
             >
               {articleArray?.map((item: any) => (
@@ -93,25 +86,6 @@ const ArticlePage: React.FC = () => {
               ))}
             </Grid>
           </Grid>
-        </Grid>
-        <Grid
-          item
-          xs={0}
-          sm={0}
-          md={0}
-          lg={0}
-          xl={3}
-          sx={GridAuthorComponent}
-        >
-          <AuthorComponent
-            turOnArticlePage={true}
-            articleAuthorData={authorData}
-            articlelData={getArticles}
-            authorName={authorData?.authorName}
-            bookData={getBook}
-            authorsData={authorData}
-            seriesForArticlePage={true}
-          />
         </Grid>
       </Grid>
     </>

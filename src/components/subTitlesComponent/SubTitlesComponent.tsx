@@ -1,7 +1,8 @@
 import React from 'react';
 import {
-  Grid, Typography,
+  Typography,
 } from "@mui/material";
+import Grid from '@mui/material/Grid2';
 
 const SubTitlesComponent: React.FC<Props> = ({
   subtitle,
@@ -13,12 +14,7 @@ const SubTitlesComponent: React.FC<Props> = ({
       container
     >
       <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={12}
-        xl={12}
+        size={12}
         sx={{
           maxWidth: "1024px",
           margin: 'auto',

@@ -2,7 +2,6 @@ import HomePage from '../pages/home/HomePage';
 import About from '../pages/about/About';
 import CodingPage from '../pages/coding/CodingPage';
 import Logout from '../pages/logout/Logout';
-import DashboardAnalytics from '../pages/dashboardAnalytics/DashboardAnalytics';
 import Profile from '../pages/profile/Profile';
 import ArticlePage from '../components/articlePage/ArticlePage';
 import AuthorPage from '../pages/author/AuthorPage';
@@ -23,10 +22,6 @@ const routes: Route[] = [
     element: About,
   },
   {
-    path: '/dashboard',
-    element: DashboardAnalytics,
-  },
-  {
     path: '/coding',
     element: CodingPage,
   },
@@ -42,10 +37,6 @@ const routes: Route[] = [
     path: '/profile',
     element: Profile,
   },
-  // {
-  //   path: '/projects',
-  //   element: ArticlePage,
-  // },
   {
     path: '/article/:id/:id/',
     element: ArticlePage,

@@ -1,9 +1,9 @@
 import React from 'react';
 import 
 { Typography, 
-  // Grid,
   // Link,
 } from '@mui/material/';
+import Grid from '@mui/material/Grid2';
 // import Works from '../../works/Works';
 // import {
 //   AuthorAboutGridFavorites,
