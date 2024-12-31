@@ -3,15 +3,10 @@ import Grid from '@mui/material/Grid2';
 import ComingSoon from '../comingSoon/ComingSoon';
 import formatDate from '../../util/formatDate';
 import ArticleCard from '../cards/articleCards/horizontalCard/articleCard/ArticleCard';
-import {
-  GridAuthorArticle,
-  GridPaddingTop,
-} from './ArticleListStyles';
 
 export const ArticleList: React.FC<Props> = ({
   authorData,
   data,
-  turOnAuthorForArticle,
 }) => {
   const noArticles = data?.length === 0;
   const newNonImmutableArray = data?.map((item: any) => item);
@@ -20,75 +15,32 @@ export const ArticleList: React.FC<Props> = ({
   });
 
   return (
-    <>
-      {noArticles && 
-          <ComingSoon />
-      }
-      {!turOnAuthorForArticle &&
-          <>
-            <Grid
-              size={12}
+    <Grid
+      container
+    >
+      {noArticles ? 
+        <ComingSoon />
+        : sortByDate?.map((item: any) => (
+          <Fragment key={crypto.randomUUID()}>
+            <ArticleCard
+              articleId={item.articleId}
+              authorData={authorData}
+              articleMedia={item.coverImageOrVideo}
+              articlePage={false}
+              authorId={item.authorId}
+              date={formatDate(item.publishedDate)}
+              isMediaVideo={item.useVideoInsteadOfImage}
+              section={item.sections}
+              sectionLink={item.sectionLink}
+              series={item.series}
+              seriesId={item.seriesId}
+              subtitle={item.articleSubTitle}
+              title={item.articleTitle}
+              turOnAuthorForArticle={false}
             />
-            { sortByDate?.map((item: any) => (
-              <Fragment key={crypto.randomUUID()}>
-                <ArticleCard
-                  articleId={item.articleId}
-                  authorData={authorData}
-                  articleMedia={item.coverImageOrVideo}
-                  articlePage={turOnAuthorForArticle}
-                  authorId={item.authorId}
-                  date={formatDate(item.publishedDate)}
-                  isMediaVideo={item.useVideoInsteadOfImage}
-                  section={item.sections}
-                  sectionLink={item.sectionLink}
-                  series={item.series}
-                  seriesId={item.seriesId}
-                  subtitle={item.articleSubTitle}
-                  title={item.articleTitle}
-                  turOnAuthorForArticle={false}
-                />
-              </Fragment>
-            ))}
-          </>
-      }
-      {turOnAuthorForArticle &&
-          <>
-            <Grid
-              container
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
-              sx={GridPaddingTop}
-            >
-              <Grid
-                size={12}
-                sx={GridAuthorArticle}
-              > 
-                { sortByDate?.map((item: any) => (
-                  <>
-                    <ArticleCard
-                      articleId={item.articleId}
-                      authorData={authorData}
-                      articleMedia={item.coverImageOrVideo}
-                      articlePage={turOnAuthorForArticle}
-                      authorId={item.authorId}
-                      date={formatDate(item.publishedDate)}
-                      isMediaVideo={item.useVideoInsteadOfImage}
-                      section={item.sections}
-                      sectionLink={item.sectionLink}
-                      series={item.series}
-                      seriesId={item.seriesId}
-                      subtitle={item.articleSubTitle}
-                      title={item.articleTitle}
-                      turOnAuthorForArticle={true}
-                    />
-                  </>
-                ))}
-              </Grid>
-            </Grid>
-          </>
-      }
-    </>
+          </Fragment>
+        ))}
+    </Grid>
   );
 };
 

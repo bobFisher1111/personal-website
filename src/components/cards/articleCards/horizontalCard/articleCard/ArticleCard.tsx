@@ -18,8 +18,8 @@ import {
   AuthorNameStyles,
   ChipStyles,
   DateStyles,
+  GridNameDateStyles,
   LinkGridRootStyles,
-  LinkGridStyles,
   RootStyles,
   SeriesChipStyles,
   SubTitleStyles,
@@ -80,6 +80,7 @@ const ArticleCard: React.FC<Props> = ({
         justifyContent="flex-start"
         alignItems="center"
         size={12}
+        sx={GridNameDateStyles}
       >
         <Grid
           size={8}
@@ -112,8 +113,6 @@ const ArticleCard: React.FC<Props> = ({
           </Typography>
         </Grid>
       </Grid>
-
-
       <Grid 
         container
         direction="row"
@@ -156,47 +155,34 @@ const ArticleCard: React.FC<Props> = ({
             </Link>
           }
         </Grid>
-
         <Grid
-          container
-          direction="column"
-          justifyContent="flex-start"
-          alignItems="flex-start"
           sx={ArticleDataGridStyles}
         >
-          <Grid
-            container
+          <Link
+            to={`/article/${authorId}/${articleId}`}
+            reloadDocument={turOnAuthorForArticle ? true : false}
+            style={LinkStyles(theme)}
           >
-            <Link
-              to={`/article/${authorId}/${articleId}`}
-              reloadDocument={turOnAuthorForArticle ? true : false}
-              style={LinkStyles(theme)}
+            <Typography
+              color="primary"
+              variant="h6"
+              sx={TitleStyles}
             >
+              {title}
+            </Typography>
+            {!turOnAuthorForArticle &&
               <Grid
                 size={12}
               >
                 <Typography
                   color="primary"
-                  variant="h6"
-                  sx={TitleStyles}
+                  sx={SubTitleStyles}
                 >
-                  {title}
+                  {subtitle}
                 </Typography>
               </Grid>
-              {!turOnAuthorForArticle &&
-                <Grid
-                  size={12}
-                >
-                  <Typography
-                    color="primary"
-                    sx={SubTitleStyles}
-                  >
-                    {subtitle}
-                  </Typography>
-                </Grid>
-              }
-            </Link>
-          </Grid>
+            }
+          </Link>
           <Grid
             container
             direction="row"
@@ -204,30 +190,24 @@ const ArticleCard: React.FC<Props> = ({
             alignItems="flex-end"
             sx={LinkGridRootStyles(articlePage)}
           >
-            <Grid
-              sx={LinkGridStyles}
+            <Chip
+              color="primary"
+              label={section}
+              variant="outlined"
+              size="small"
+              sx={ChipStyles}
+            />
+            {series && <Link
+              to={`/series/${seriesId}`}
+              style={SeriesChipStyles}
             >
-              <div>
-                <Chip
-                  color="primary"
-                  label={section}
-                  variant="outlined"
-                  size="small"
-                  sx={ChipStyles}
-                />
-              </div>
-              {series && <Link
-                to={`/series/${seriesId}`}
-                style={SeriesChipStyles}
-              >
-                <Chip
-                  color="primary"
-                  label={'Series'}
-                  size="small"
-                  sx={ChipStyles}
-                />
-              </Link>}
-            </Grid>
+              <Chip
+                color="primary"
+                label={'Series'}
+                size="small"
+                sx={ChipStyles}
+              />
+            </Link>}
           </Grid>
         </Grid>
       </Grid>

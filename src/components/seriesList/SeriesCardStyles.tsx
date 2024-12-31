@@ -30,8 +30,7 @@ export const CardVerticalCard = (theme: boolean) => ({
     width: '272px',
   },
   '@media only screen and (max-width: 600px)': {
-    minWidth: 'calc(100vw - 32px)',
-    maxWidth: 'calc(100vw - 32px)',
+    width: '570px',
   },
 });
 
