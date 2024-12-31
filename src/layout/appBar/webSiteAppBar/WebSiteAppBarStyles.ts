@@ -2,9 +2,22 @@ export const AppBarStyle = {
   display: 'flex',
   width: '1200px',
   margin: 'auto',
+  '@media (max-width: 600px)': {
+    width: '600px',
+    margin: 0,
+  }
 };
 
 export const GridDesktopAppBar = {
+  '@media (max-width: 900px)': {
+    display: 'none',
+  },
+};
+
+export const GridDesktopAppBar2 = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
   '@media (max-width: 900px)': {
     display: 'none',
   },
@@ -17,6 +30,8 @@ export const GridMobileAppBar = {
 };
 
 export const GridMobileAppBarTitle = {
+  display: 'flex',
+  justifyContent: 'flex-end',
   '@media (min-width: 900px)': {
     display: 'none',
   },
@@ -28,6 +43,10 @@ export const LinkGridMobileStyles = {
 
 export const TypographyDesktopTitle = {
   fontSize: '26px',
+  '@media (max-width: 600px)': {
+    fontSize: '22px',
+    cursor: 'pointer',
+  }
 };
 
 export const TypographyMobileTitle = {

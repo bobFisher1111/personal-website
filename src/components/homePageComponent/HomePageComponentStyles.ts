@@ -1,19 +1,21 @@
 export const GridAlignItems = {
   padding: '60px 16px 16px 16px',
-  maxWidth: '1200px',
+  width: '1200px',
   margin: 'auto',
   '@media only screen and (max-width: 600px)': {
     padding: '0px 0px 200px 0px',
+    width: '600px',
   },
 };
 
 export const GridRoot = {
-  maxWidth: '1200px',
+  width: '1200px',
   display: 'flex',
   margin: 'auto',
   padding: '60px 16px 200px 16px',
   '@media only screen and (max-width: 600px)': {
     padding: '60px 16px 8px 16px',
+    width: '600px',
   },
 };
 
@@ -84,8 +86,11 @@ export const SeriesButtonStyles = {
 };
 
 export const SeriesGridStyles = {
-  maxWidth: '1200px',
+  width: '1200px',
   margin: 'auto',
+  '@media (max-width: 600px)': {
+    width: '600px',
+  }
 };
 
 export const SeriesTextStyles = {

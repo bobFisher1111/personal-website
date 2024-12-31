@@ -12,12 +12,14 @@ import { Link } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import SocialMediaComponent from '../../../components/socialMediaComponent/SocialMediaComponent';
-import { MenuIconStyle, BoxMobileDrawerStyle } from './MobileDrawerStyle';
+import { 
+  MenuIconStyle, 
+  BoxMobileDrawerStyle
+} from './MobileDrawerStyle';
 import {
   AppBarStyles,
   CloseDrawerIconStyle,
   GridMobileDrawerAppBar,
-  GridCenterItems,
   GridSectionsStyle,
   TypographyMobileDrawer,
 } from './MobileDrawerStyle';
@@ -52,7 +54,6 @@ const MobileDrawer: FC = () => {
 
   const list = (anchor: Anchor) => (
     <Box
-      id="five"
       sx={BoxMobileDrawerStyle}
       style={{background: theme ? '#121212' : 'white'}}
     >
@@ -62,46 +63,38 @@ const MobileDrawer: FC = () => {
         <Grid
           container
           justifyContent="center"
+          alignItems="center"
           sx={GridMobileDrawerAppBar}
         >
           <Grid
-            size={12}
-            sx={GridCenterItems}
+            size={2}
           >
-            <Grid
-              size={4}
-            >
-              <LightDarkMode />
-            </Grid>
-            <Grid
-              size={4}
-            >
-              <SocialMediaComponent
-                turnOnStyle={true}
-                widthPadding={'10px 0px 0px 8px'}
-                facebook={facebook}
-                twitter={twitter}
-                youtube={youtube}
-                alignContent={"center"}
-                justifyContent={"center"}
-              />
-            </Grid>
-            <Grid
-              container
-              size={4}
-              style={{justifyContent: 'flex-end'}}
-            >
-              <Button
-                sx={CloseDrawerIconStyle}
-                onClick={toggleDrawer(anchor, false)}
-              >
-                <CloseIcon/>
-              </Button>
-            </Grid>
+            <LightDarkMode />
+          </Grid>
+          <Grid
+            size={8}
+          >
+            <SocialMediaComponent
+              turnOnStyle={true}
+              widthPadding={'8px 0px 0px 8px'}
+              facebook={facebook}
+              twitter={twitter}
+              youtube={youtube}
+              alignContent={"center"}
+              justifyContent={"center"}
+            />
           </Grid>
           <Grid
             container
+            size={2}
+            style={{justifyContent: 'flex-end'}}
           >
+            <Button
+              sx={CloseDrawerIconStyle}
+              onClick={toggleDrawer(anchor, false)}
+            >
+              <CloseIcon/>
+            </Button>
           </Grid>
           <Grid
             size={12}

@@ -6,9 +6,13 @@ import { Link } from 'react-router-dom';
 import SocialMediaComponent from '../../../components/socialMediaComponent/SocialMediaComponent';
 import AppBarLinksToPages from '../appBarLinksToPages/AppBarLinksToPages';
 import LightDarkMode from '../lightDarkMode/LightDarkMode';
+import MobileDrawer from '../mobileDrawer/MobileDrawer';
 import {
   AppBarStyle,
+  GridDesktopAppBar,
+  GridMobileAppBarTitle,
   TypographyDesktopTitle,
+  GridDesktopAppBar2
 } from './WebSiteAppBarStyles';
 import { LinkStyles } from '../../../util/styles/LinkStyles';
 import AppConfig from '../../../config';
@@ -28,7 +32,13 @@ const WebSiteAppBar: React.FC = () => {
       sx={AppBarStyle}
     >
       <Grid
-        size={4}
+        size={{
+          xs: 6,
+          sm: 6,
+          md: 4,
+          lg: 4,
+          xl: 4,
+        }}
       >
         <Link to="/" 
           style={LinkStyles(theme)}
@@ -46,7 +56,14 @@ const WebSiteAppBar: React.FC = () => {
         </Link>
       </Grid>
       <Grid
-        size={4}
+        size={{
+          xs: 0,
+          sm: 0,
+          md: 4,
+          lg: 4,
+          xl: 4,
+        }}
+        sx={GridDesktopAppBar}
       >
         <SocialMediaComponent
           widthPadding={'8px 0px 0px 16px'}
@@ -59,14 +76,30 @@ const WebSiteAppBar: React.FC = () => {
         />
       </Grid>
       <Grid
-        style={{
-          display: 'flex',
-          alignItems: 'center'
+        id="2"
+        size={{
+          xs: 0,
+          sm: 0,
+          md: 4,
+          lg: 4,
+          xl: 4,
         }}
-        size={4}
+        sx={GridDesktopAppBar2}
       >
         <AppBarLinksToPages />
         <LightDarkMode />
+      </Grid>
+      <Grid
+        size={{
+          xs: 6,
+          sm: 6,
+          md: 0,
+          lg: 0,
+          xl: 0,
+        }}
+        sx={GridMobileAppBarTitle}
+      >
+        <MobileDrawer />
       </Grid>
     </Grid>
   );

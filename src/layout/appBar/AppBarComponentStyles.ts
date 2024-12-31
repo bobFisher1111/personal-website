@@ -4,7 +4,7 @@ export const AppBarStyles = {
   boxShadow: 'none',
   borderBottom: '1px solid #0C0D0D',
   height: '60px',
-  justifyContent: 'center'
+  justifyContent: 'center',
 };
   
 export default [

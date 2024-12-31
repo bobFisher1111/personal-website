@@ -5,8 +5,9 @@ export const AppBarStyles = {
 };
 
 export const BoxMobileDrawerStyle = {
-  width:  '100vw',
-  height: '100vh',
+  '@media (max-width: 600px)': {
+    width: '600px',
+  }
 };
 
 export const CloseDrawerIconStyle = {
@@ -20,8 +21,12 @@ export const MenuIconStyle = {
 };
 
 export const GridMobileDrawerAppBar = {
-  maxHeight: '36px',
+  height: '60px',
   borderBottom: '1px solid #0C0D0D',
+  '@media (max-width: 600px)': {
+    width: '600px',
+    padding: '8px'
+  }
 };
 
 export const GridCenterItems = {
@@ -32,7 +37,7 @@ export const GridCenterItems = {
 };
 
 export const GridSectionsStyle = {
-  padding: '16px 0px 0px 0px',
+  margin: '32px 0px 0px 0px',
 };
 
 export const TypographyMobileDrawer = {
