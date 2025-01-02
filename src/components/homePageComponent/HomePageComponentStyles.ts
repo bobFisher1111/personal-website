@@ -4,7 +4,7 @@ export const GridAlignItems = {
   margin: 'auto',
   '@media only screen and (max-width: 600px)': {
     padding: '0px 0px 200px 0px',
-    width: '600px',
+    width: 'calc(100vw)',
   },
 };
 
@@ -15,7 +15,7 @@ export const GridRoot = {
   padding: '60px 16px 200px 16px',
   '@media only screen and (max-width: 600px)': {
     padding: '60px 16px 8px 16px',
-    width: '600px',
+    width: 'calc(100vw)',
   },
 };
 
@@ -89,7 +89,7 @@ export const SeriesGridStyles = {
   width: '1200px',
   margin: 'auto',
   '@media (max-width: 600px)': {
-    width: '600px',
+    width: 'calc(100vw)',
   }
 };
 

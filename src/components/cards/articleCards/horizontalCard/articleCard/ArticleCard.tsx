@@ -184,10 +184,6 @@ const ArticleCard: React.FC<Props> = ({
             }
           </Link>
           <Grid
-            container
-            direction="row"
-            justifyContent="flex-end"
-            alignItems="flex-end"
             sx={LinkGridRootStyles(articlePage)}
           >
             <Chip

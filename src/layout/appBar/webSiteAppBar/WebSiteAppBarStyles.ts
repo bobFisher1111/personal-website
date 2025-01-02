@@ -3,7 +3,7 @@ export const AppBarStyle = {
   width: '1200px',
   margin: 'auto',
   '@media (max-width: 600px)': {
-    width: '600px',
+    width: 'calc(100vw)',
     margin: 0,
   }
 };
@@ -43,6 +43,7 @@ export const LinkGridMobileStyles = {
 
 export const TypographyDesktopTitle = {
   fontSize: '26px',
+  padding: '0px 0px 0px 16px',
   '@media (max-width: 600px)': {
     fontSize: '22px',
     cursor: 'pointer',

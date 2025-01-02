@@ -1,7 +1,7 @@
 export const DrawerStyles = {
   "& .MuiDrawer-paper": {
     position: 'relative',
-    width: '600px',
+    width: 'calc(100vw)',
     transition: "none !important",
     height: '840px',
     justifContent: 'center',
@@ -15,7 +15,7 @@ export const DrawerStyles = {
   '@media only screen and (max-width: 600px)': {
     "& .MuiDrawer-paper": {
       position: 'relative',
-      width: '600px',
+      width: 'calc(100vw)',
       minWidth: '100%',
       maxWidth: '100%',
       transition: "none !important",

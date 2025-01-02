@@ -46,10 +46,6 @@ const WebSiteAppBar: React.FC = () => {
           <Typography
             color="primary"
             sx={TypographyDesktopTitle}
-            style={{
-              padding: '0px 0px 0px 20px',
-
-            }}
           >
             {"Gamers Shrine"}
           </Typography>

@@ -3,7 +3,7 @@ import HomePageComponent from '../../components/homePageComponent/HomePageCompon
 
 const HomePage: React.FC = () => {
   return (
-    <HomePageComponent />
+    <HomePageComponent /> 
   );
 };
 

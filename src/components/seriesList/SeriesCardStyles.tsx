@@ -26,11 +26,9 @@ export const CardVerticalCard = (theme: boolean) => ({
   border: theme ? '1px solid #9DB2BF' : '#0C0D0D',
   width: '276px',
   boxShadow: 'none',
-  '@media only screen and (max-width: 635px)': {
-    width: '272px',
-  },
   '@media only screen and (max-width: 600px)': {
-    width: '570px',
+    minWidth: 'calc(100vw - 32px)',
+    maxWidth: 'calc(100vw - 32px)',
   },
 });
 

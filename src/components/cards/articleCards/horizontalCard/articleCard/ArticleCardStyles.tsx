@@ -1,11 +1,12 @@
 export const ArticleDataGridStyles = {
   width: '860px',
+  maxWidth: '100%',
   paddingLeft: '16px',
   '@media only screen and (max-width: 600px)': {
     '&.MuiGrid-root': {
       paddingLeft: '8px',
     },
-    width: '350px'
+    width: 'calc(60vw)',
   },
 };
 
@@ -86,9 +87,13 @@ export const LinkGridRootStyles = (articlePage: boolean) => ({
   maxHeight: articlePage ? '40px' : '85px',
   minHeight: articlePage ? '40px' : '85px',
   width: '860px',
+  display: 'flex',
+  justifyContent: 'flex-end',
+  alignItems: 'flex-end',
   '@media only screen and (max-width: 600px)': {
-    minHeight: '55px',
-    width: '360px',
+    maxWidth: '100%',
+    maxHeight: '28px',
+    minHeight: '28px',
   },
 });
 
@@ -103,7 +108,7 @@ export const RootStyles = (theme: boolean, turonauthorforarticle: boolean) => ({
   height: turonauthorforarticle  ? '145px' : '235px',
   borderBottom: theme ? '1px solid rgba(138, 147, 153, 0.25)' : '1px solid rgba(138, 147, 153, 0.25)',
   '@media only screen and (max-width: 600px)': {
-    height: '150px',
+    height: '140px',
   },
 });
 

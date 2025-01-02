@@ -6,7 +6,7 @@ export const AppBarStyles = {
 
 export const BoxMobileDrawerStyle = {
   '@media (max-width: 600px)': {
-    width: '600px',
+    width: 'calc(100vw)',
   }
 };
 
@@ -24,7 +24,7 @@ export const GridMobileDrawerAppBar = {
   height: '60px',
   borderBottom: '1px solid #0C0D0D',
   '@media (max-width: 600px)': {
-    width: '600px',
+    width: 'calc(100vw)',
     padding: '8px'
   }
 };
