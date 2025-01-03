@@ -1,7 +1,6 @@
 export const CreateArticleRoot = {
   '@media only screen and (max-width: 600px)': {
-    minWidth: 'calc(100vw - 16px)',
-    maxWidth: 'calc(100vw - 16px)',
+    width: 'calc(100vw - 32px)',
   },
   '@media only screen and (min-width: 600px)': {
     width: '600px',
@@ -35,7 +34,7 @@ export const GridRoot = {
 
 export const GridHeader = {
   width: '1000px',
-  paddingTop: '37px',
+  paddingTop: '76px',
 };
 
 export const GridAuthorComponent = {

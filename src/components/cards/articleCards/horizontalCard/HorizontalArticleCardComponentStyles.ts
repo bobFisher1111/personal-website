@@ -71,7 +71,6 @@ export const GridHorizontalArticleMaxWidth = (imagewidth: string, theme: boolean
   height: theme || articlePage ? '' : '180px',
   '@media only screen and (max-width: 770px)': {
     height: '',
-    // width: articlePage ? '0px' : 'px', // may need to remove
   },
 });
 
@@ -81,7 +80,7 @@ export const ImageHorizonatalArticleStyles = (articlepage: any, imagewidth?: any
   aspectRatio: '16/9',
   width: articlepage ? '960px' : '321px',
   '@media only screen and (max-width: 600px)': {
-    width: articlepage ? '102vw' : `calc(100vw - ${imagewidth})`,
+    width: `calc(100vw - 32px)`,
     borderRadius: articlepage ? '0px' : '0px',
   },
   '@media only screen and (min-width: 600px)': {
