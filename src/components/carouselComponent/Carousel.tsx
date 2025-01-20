@@ -161,14 +161,14 @@ const Carousel: React.FC<Props> = ({
             onClick={prevArticle}
             color="primary"
           >
-            <ArrowBackIosIcon fontSize="medium" />
+            <ArrowBackIosIcon fontSize="small" />
           </Button>
           <Button
             onClick={pauseCarousel}
             color="primary"
           >
             {isPaused ?
-              <PlayArrowIcon fontSize="large" /> : <Pause fontSize="small" />
+              <PlayArrowIcon fontSize="small" /> : <Pause fontSize="small" />
             }
           </Button>
           <Button
