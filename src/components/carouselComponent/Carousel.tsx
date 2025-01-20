@@ -128,31 +128,41 @@ const Carousel: React.FC<Props> = ({
             </Typography>
           </Grid>
         </Grid>
-        <CardMedia
-          component="img"
-          sx={mobileImageStyles(theme)}
-          image={carouselData[currentIndex]?.coverImageOrVideo}
-          alt="Live from space album cover"
-        />
+        <Link
+          to={`/article/${carouselData[currentIndex]?.authorId}/${carouselData[currentIndex]?.articleId}`}
+          style={LinkStyles(theme)}
+        >
+          <CardMedia
+            component="img"
+            sx={mobileImageStyles(theme)}
+            image={carouselData[currentIndex]?.coverImageOrVideo}
+            alt="Live from space album cover"
+          />
+        </Link>
         <CardContent
           sx={mobileCardSRootStyles}
         >
-          <Typography
-            component="div"
-            variant="h5"
-            color="primary"
-            sx={mobileArticleTitleStyles}
+          <Link
+            to={`/article/${carouselData[currentIndex]?.authorId}/${carouselData[currentIndex]?.articleId}`}
+            style={LinkStyles(theme)}
           >
-            {carouselData[currentIndex]?.articleTitle}
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            component="div"
-            color="primary"
-            sx={mobileSubtitleStyles}
-          >
-            {carouselData[currentIndex]?.articleSubTitle}
-          </Typography>
+            <Typography
+              component="div"
+              variant="h5"
+              color="primary"
+              sx={mobileArticleTitleStyles}
+            >
+              {carouselData[currentIndex]?.articleTitle}
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              component="div"
+              color="primary"
+              sx={mobileSubtitleStyles}
+            >
+              {carouselData[currentIndex]?.articleSubTitle}
+            </Typography>
+          </Link>
         </CardContent>
         <Grid
           sx={mobileCarouselPlayStyles}
