@@ -4,7 +4,7 @@ import {
 } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import { useSelector } from "react-redux";
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { LinkStyles } from '../../../util/styles/LinkStyles';
 import {
   TypographyLinkTwoPage,

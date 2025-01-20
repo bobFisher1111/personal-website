@@ -7,7 +7,7 @@ import {
   Typography,
 } from '@mui/material';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import HorizontalArticleInfoComponent from './horizontalArticleInfoComponent/HorizontalArticleInfoComponent';
 import HorizontalArticlePageInfoComponent from './horizontalArticlePageInfoComponent/HorizontalArticlePageInfoComponent';
 import {

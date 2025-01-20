@@ -6,7 +6,7 @@ import {
   Typography,
 } from '@mui/material';
 import CopyLinkComponent from '../../../../copyLinkComponent/CopyLinkComponent';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { LinkStyles } from '../../../../../util/styles/LinkStyles';
 import {

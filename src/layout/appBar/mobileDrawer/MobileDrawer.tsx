@@ -8,7 +8,7 @@ import {
   Typography,
 } from '@mui/material';
 import Grid from '@mui/material/Grid2';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import SocialMediaComponent from '../../../components/socialMediaComponent/SocialMediaComponent';

@@ -3,7 +3,7 @@ import {
   Routes,
   Route,
   BrowserRouter,
-} from 'react-router-dom';
+} from 'react-router';
 import { AppDispatch } from './store/redux/store';
 import { useDispatch, useSelector } from 'react-redux';
 import {
