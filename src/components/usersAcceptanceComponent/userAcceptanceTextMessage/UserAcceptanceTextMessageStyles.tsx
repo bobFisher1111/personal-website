@@ -39,7 +39,7 @@ export const RejectButtonStyles = {
 export const RootStyles = {
   width: 'auto',
   height: '20vh',
-  borderTop: '2px solid black',
+  borderTop: '2px solid #0C0D0D',
   padding: '36px',
   '@media only screen and (max-width: 1100px)': {
     height: '22vh',

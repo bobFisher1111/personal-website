@@ -1,3 +1,10 @@
+export const CarouselGrid = {
+  padding: '32px 0px 16px 0px',
+  '@media only screen and (max-width: 600px)': {
+    padding: '16px 0px 0px 0px',
+  },
+};
+
 export const GridAlignItems = {
   padding: '60px 16px 16px 16px',
   width: '1200px',
@@ -45,7 +52,7 @@ export const LatestTextStyles = {
 };
 
 export const SectionNotSelectedStyles = (theme: boolean) => ({
-  color: theme ? '#9DB2BF' : 'black',
+  color: theme ? '#9DB2BF' : '#0C0D0D',
   marginRight: '8px',
   padding: '4px',
   fontSize: '22px',

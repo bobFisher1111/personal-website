@@ -90,7 +90,7 @@ export const RootStyles = {
 export const ToggleOnRootStyles = {
   display: 'flex',
   marginBottom: '8px',
-  border: '1px solid black',
+  border: '1px solid #0C0D0D',
   borderRadius: '8px',
   padding: '8px',
 };

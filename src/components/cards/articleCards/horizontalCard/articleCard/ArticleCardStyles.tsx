@@ -1,3 +1,8 @@
+import {
+  LIGHT_PRIMARY,
+  DARK_PRIMARY,
+} from '../../../../../store/redux/theme/CONSTANTS';
+
 export const ArticleDataGridStyles = {
   width: '860px',
   maxWidth: '100%',
@@ -13,7 +18,7 @@ export const ArticleDataGridStyles = {
 export const ArticleImageStyles = (theme: boolean) => ({
   width: '300px',
   borderRadius: '6px',
-  border: theme ? '1px solid #9DB2BF' : '1px solid black',
+  border: theme ? `1px solid ${DARK_PRIMARY}` : `1px solid ${LIGHT_PRIMARY}`,
 });
 
 export const AvatarAuthorLinkStyles = (theme: boolean) => ({
@@ -21,12 +26,12 @@ export const AvatarAuthorLinkStyles = (theme: boolean) => ({
   display: 'flex',
   color: theme ? '#9DB2BF' : 'rgba(0, 0, 0, 0.6)',
 });
-
+//
 export const AvatarImageStyles = (theme: boolean) => ({
   width: '30px',
   height: '30px',
   borderRadius: '50%',
-  border: theme ? '1px solid #9DB2BF' : '1px solid black',
+  border: theme ? `1px solid ${DARK_PRIMARY}` : `1px solid ${LIGHT_PRIMARY}`,
   '@media only screen and (max-width: 600px)': {
     width: '20px',
     height: '20px',
@@ -37,7 +42,7 @@ export const ArticleVideoStyles = (theme: boolean, turOnAuthorForArticle: boolea
   borderRadius: '6px',
   width: '300px',
   height: turOnAuthorForArticle ? '100px' : '136px',
-  border: theme ? '1px solid #9DB2BF' : '1px solid black',
+  border: theme ? `1px solid ${DARK_PRIMARY}` : `1px solid ${LIGHT_PRIMARY}`,
   '@media only screen and (max-width: 600px)': {
     height: '60px',
   },

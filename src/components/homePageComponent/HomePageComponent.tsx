@@ -8,15 +8,18 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { useSelector } from 'react-redux';
 import ArticleList from '../articleList/ArticleList';
+import Carousel from '../carouselComponent/Carousel';
+import SeriesComponent from '../seriesList/SeriesComponent';
 import {
+  CarouselGrid,
   GridRoot,
   LatestTextStyles,
   SeriesIconStyles,
   SeriesButtonStyles,
   SeriesTextStyles,
 } from './HomePageComponentStyles';
-import SeriesComponent from '../seriesList/SeriesComponent';
 import Sections from './Sections';
+
 
 const HomePageComponent: React.FC = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
@@ -25,7 +28,6 @@ const HomePageComponent: React.FC = () => {
   const articleData = getWebsiteData && getWebsiteData?.websiteData?.articles;
   const authorsData = getWebsiteData && getWebsiteData?.websiteData?.authors;
   const seriesData = getWebsiteData && getWebsiteData?.websiteData?.series;
-
   const [data, setData] = useState<any>(articleData);
 
   return (
@@ -35,6 +37,11 @@ const HomePageComponent: React.FC = () => {
       alignItems="center"
       sx={GridRoot}
     >
+      <Grid
+        sx={CarouselGrid}
+      >
+        <Carousel data={articleData} author={authorsData} />
+      </Grid>
       <Grid
         size={12}
       >
