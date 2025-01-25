@@ -63,6 +63,11 @@ export const desktopImageStyles = (theme: boolean) => ({
   border: theme ? `1px solid ${DARK_PRIMARY}` : `1px solid ${LIGHT_PRIMARY}`,
   borderRadius: '4px',
   height: '405px',
+  // width: '200px',
+  /* Media query for iPhone landscape mode */
+  '@media only screen and (max-device-width: 932px) and (orientation: landscape)': {
+    height: '200px',
+  },
   '@media only screen and (max-width: 600px)': {
     display: 'none',
   },
