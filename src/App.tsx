@@ -10,7 +10,7 @@ import {
   CssBaseline,
   ThemeProvider,
 } from '@mui/material';
-import UsersAcceptanceComponent from '../src/components/usersAcceptanceComponent/UsersAcceptanceComponent';
+// import UsersAcceptanceComponent from '../src/components/usersAcceptanceComponent/UsersAcceptanceComponent';
 import GetWebsiteData from './store/redux/webSiteData/GetWebsiteData';
 import { darkTheme, lightTheme } from './store/redux/theme/Theme';
 import Layout from './layout/Layout';
@@ -29,7 +29,7 @@ const App: React.FC<Props> = () => {
       <ThemeProvider theme={theme?.darkTheme ? darkTheme : lightTheme}>
         <CssBaseline />
         <Suspense fallback={<div>Loading...</div>}>
-          <UsersAcceptanceComponent />
+          {/* <UsersAcceptanceComponent /> */}
           <Layout />
           <div className="app">
             <Routes>
