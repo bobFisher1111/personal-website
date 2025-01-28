@@ -9,7 +9,7 @@ export const AppBarStyle = {
 };
 
 export const GridDesktopAppBar = {
-  '@media (max-width: 900px)': {
+  '@media (max-width: 600px)': {
     display: 'none',
   },
 };
@@ -18,13 +18,13 @@ export const GridDesktopAppBar2 = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-end',
-  '@media (max-width: 900px)': {
+  '@media (max-width: 600px)': {
     display: 'none',
   },
 };
 
 export const GridMobileAppBar = {
-  '@media (min-width: 900px)': {
+  '@media (min-width: 601px)': {
     display: 'none',
   },
 };
@@ -32,7 +32,7 @@ export const GridMobileAppBar = {
 export const GridMobileAppBarTitle = {
   display: 'flex',
   justifyContent: 'flex-end',
-  '@media (min-width: 900px)': {
+  '@media (min-width: 601px)': {
     display: 'none',
   },
 };

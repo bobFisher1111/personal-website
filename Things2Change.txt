@@ -2,6 +2,9 @@
 - Fix App bar // completed
 - Carousel change // completed
 - Upgrade to react-routerv7 // completed
+- Check to see if author on article list is working correctly
+- Fix Tablet Mode for Ipads
+- look into issue on public wifi not working
 - Fix series on homepage where if user clicks section if theres none then show none or comming soon
 - Remove unused code
 - Create CONSTANT File, keep like colors and other things in there
