@@ -34,7 +34,7 @@ const WebSiteAppBar: React.FC = () => {
       <Grid
         size={{
           xs: 6,
-          sm: 6,
+          sm: 4,
           md: 4,
           lg: 4,
           xl: 4,
@@ -54,7 +54,7 @@ const WebSiteAppBar: React.FC = () => {
       <Grid
         size={{
           xs: 0,
-          sm: 0,
+          sm: 4,
           md: 4,
           lg: 4,
           xl: 4,
@@ -75,7 +75,7 @@ const WebSiteAppBar: React.FC = () => {
         id="2"
         size={{
           xs: 0,
-          sm: 0,
+          sm: 4,
           md: 4,
           lg: 4,
           xl: 4,
