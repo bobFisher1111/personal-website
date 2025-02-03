@@ -23,7 +23,10 @@ export const cardStyles = (theme: boolean) => ({
   // },
   '@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5)': {
     height: '500px',
-  }  
+  },
+  '@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)':  {
+    height: '500px',
+  } 
 });
 
 export const desktopArticleSubTitleStyles = {
