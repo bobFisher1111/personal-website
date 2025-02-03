@@ -18,9 +18,12 @@ export const cardStyles = (theme: boolean) => ({
     borderRadius: '4px',
   },
   // remove this or change if it doesn't work
-  '@media screen and (min-width: 601px) and (max-width: 1024px) and (orientation: landscape)': {
+  // '@media screen and (min-width: 601px) and (max-width: 1024px) and (orientation: landscape)': {
+  //   height: '500px',
+  // },
+  '@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5)': {
     height: '500px',
-  },
+  }  
 });
 
 export const desktopArticleSubTitleStyles = {
