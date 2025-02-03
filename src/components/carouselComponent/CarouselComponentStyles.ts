@@ -17,6 +17,10 @@ export const cardStyles = (theme: boolean) => ({
     padding: '16px',
     borderRadius: '4px',
   },
+  // remove this or change if it doesn't work
+  '@media screen and (min-width: 601px) and (max-width: 1024px) and (orientation: landscape)': {
+    height: '500px',
+  },
 });
 
 export const desktopArticleSubTitleStyles = {
