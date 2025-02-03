@@ -13,12 +13,9 @@ export const cardStyles = (theme: boolean) => ({
   '@media only screen and (max-width: 600px)': {
     border: theme ? `1px solid ${DARK_PRIMARY}` : `1px solid ${LIGHT_PRIMARY}`,
     width: 'calc(100vw - 32px)',
-    height: '200px',
+    height: '500px',
     padding: '16px',
     borderRadius: '4px',
-    '@media only screen and (max-width: 600px)': {
-      height: '500px'
-    },
   },
 });
 

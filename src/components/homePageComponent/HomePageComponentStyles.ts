@@ -1,5 +1,8 @@
 export const CarouselGrid = {
   padding: '32px 0px 16px 0px',
+  '@media screen and (min-width: 601px) and (max-width: 1024px) and (orientation: landscape)': {
+    padding: '16px 0px 8px 0px',
+  },
   '@media only screen and (max-width: 600px)': {
     padding: '16px 0px 0px 0px',
   },
