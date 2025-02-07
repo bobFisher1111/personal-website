@@ -26,7 +26,7 @@ export const cardStyles = (theme: boolean) => ({
   },
   '@media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)':  {
     height: '500px',
-  } 
+  },
 });
 
 export const desktopArticleSubTitleStyles = {
@@ -66,6 +66,7 @@ export const desktopGridRootAvatarDateStyles = {
   padding: '16px',
 };
 
+//
 export const desktopImageStyles = (theme: boolean) => ({
   border: theme ? `1px solid ${DARK_PRIMARY}` : `1px solid ${LIGHT_PRIMARY}`,
   borderRadius: '4px',
@@ -74,6 +75,7 @@ export const desktopImageStyles = (theme: boolean) => ({
   /* Media query for iPhone landscape mode */
   '@media only screen and (max-device-width: 932px) and (orientation: landscape)': {
     // height: '200px',
+    maxWidth: '600px' // testing may need to change
   },
   '@media only screen and (max-width: 600px)': {
     display: 'none',
