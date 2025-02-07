@@ -75,6 +75,9 @@ export const desktopImageStyles = (theme: boolean) => ({
   /* Media query for iPhone landscape mode */
   '@media only screen and (max-device-width: 932px) and (orientation: landscape)': {
     // height: '200px',
+    // maxWidth: '600px' // testing may need to change
+  },
+  '@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5)': {
     maxWidth: '600px' // testing may need to change
   },
   '@media only screen and (max-width: 600px)': {
