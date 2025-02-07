@@ -78,7 +78,7 @@ export const desktopImageStyles = (theme: boolean) => ({
     // maxWidth: '600px' // testing may need to change
   },
   '@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5)': {
-    maxWidth: '600px' // testing may need to change
+    width: '600px' // testing may need to change
   },
   '@media only screen and (max-width: 600px)': {
     display: 'none',
