@@ -18,10 +18,12 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { LinkStyles } from '../../util/styles/LinkStyles';
 import {
   cardStyles,
+  controlsStyles,
   desktopArticleSubTitleStyles,
   desktopArticleTitleStyles,
   desktopCardContentStyles,
   desktopCarouselPlayStyles,
+  desktopDateStyles,
   desktopGridDateStyles,
   desktopGridRootStyles,
   desktopGridRootAvatarDateStyles,
@@ -230,6 +232,7 @@ const Carousel: React.FC<Props> = ({
             <Typography
               color="primary"
               component="div"
+              sx={desktopDateStyles}
             >
               {carouselData[currentIndex]?.Date} 
             </Typography>
@@ -242,37 +245,36 @@ const Carousel: React.FC<Props> = ({
             onClick={prevArticle}
             color="primary"
           >
-            <ArrowBackIosIcon fontSize="large" />
+            <ArrowBackIosIcon sx={controlsStyles} fontSize="large" />
           </Button>
           <Button
             onClick={pauseCarousel}
             color="primary"
+            sx={{height: '1px'}}
           >
             {isPaused ?
-              <PlayArrowIcon fontSize="large" /> : <Pause fontSize="large" />
+              <PlayArrowIcon sx={controlsStyles} fontSize="large" /> : <Pause sx={controlsStyles} fontSize="large" />
             }
           </Button>
           <Button
             onClick={nextArticle}
             color="primary"
           >
-            <ArrowForwardIosIcon fontSize="large" />
+            <ArrowForwardIosIcon sx={controlsStyles} fontSize="large" />
           </Button>
         </Grid>
       </Grid>
-      <Grid>
-        <Link
-          to={`/article/${carouselData[currentIndex]?.authorId}/${carouselData[currentIndex]?.articleId}`}
-          style={LinkStyles(theme)}
-        >
-          <CardMedia
-            component="img"
-            sx={desktopImageStyles(theme)}
-            image={carouselData[currentIndex]?.coverImageOrVideo}
-            alt="Live from space album cover"
-          />
-        </Link>
-      </Grid>
+      <Link
+        to={`/article/${carouselData[currentIndex]?.authorId}/${carouselData[currentIndex]?.articleId}`}
+        style={LinkStyles(theme)}
+      >
+        <CardMedia
+          component="img"
+          sx={desktopImageStyles(theme)}
+          image={carouselData[currentIndex]?.coverImageOrVideo}
+          alt="Live from space album cover"
+        />
+      </Link>
     </Card>
   );
 };

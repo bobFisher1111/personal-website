@@ -18,6 +18,10 @@ export const AvatarImageStyles = (theme: boolean) => ({
     width: '20px',
     height: '20px',
   },
+  '@media only screen and (max-device-width: 812px) and (orientation: landscape)': {
+    width: '16px',
+    height: '16px',
+  }
 });
 
 export const AuthorNameStyles = {
@@ -26,4 +30,7 @@ export const AuthorNameStyles = {
   '@media only screen and (max-width: 600px)': {
     fontSize: '14px'
   },
+  '@media only screen and (max-device-width: 812px) and (orientation: landscape)': {
+    fontSize: '12px'
+  }
 };

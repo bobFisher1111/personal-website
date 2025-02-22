@@ -17,7 +17,10 @@ export const GridPointer = {
 
 export const TypographyLinkTwoPage = {
   cursor: 'pointer',
-  fontSize: '26px'
+  fontSize: '26px',
+  '@media only screen and (max-device-width: 812px) and (orientation: landscape)': {
+    fontSize: '22px'
+  }
 };
 
 export default [

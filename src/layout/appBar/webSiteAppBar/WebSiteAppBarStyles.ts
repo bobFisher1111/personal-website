@@ -5,6 +5,12 @@ export const AppBarStyle = {
   '@media (max-width: 600px)': {
     width: 'calc(100vw)',
     margin: 0,
+  },
+  '@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5)':  {
+    width: 'calc(100vw)',
+  },
+  '@media only screen and (max-device-width: 812px) and (orientation: landscape)': {
+    width: 'calc(100vw)',
   }
 };
 
@@ -47,6 +53,9 @@ export const TypographyDesktopTitle = {
   '@media (max-width: 600px)': {
     fontSize: '22px',
     cursor: 'pointer',
+  },
+  '@media only screen and (max-device-width: 812px) and (orientation: landscape)': {
+    fontSize: '22px'
   }
 };
 

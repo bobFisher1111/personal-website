@@ -11,7 +11,7 @@ import ArticleList from '../articleList/ArticleList';
 import Carousel from '../carouselComponent/Carousel';
 import SeriesComponent from '../seriesList/SeriesComponent';
 import {
-  CarouselGrid,
+  // CarouselGrid,
   GridRoot,
   LatestTextStyles,
   SeriesIconStyles,
@@ -37,11 +37,11 @@ const HomePageComponent: React.FC = () => {
       alignItems="center"
       sx={GridRoot}
     >
-      <Grid
+      {/* <Grid // breaking issue here
         sx={CarouselGrid}
-      >
-        <Carousel data={articleData} author={authorsData} />
-      </Grid>
+      > */}
+      <Carousel data={articleData} author={authorsData} />
+      {/* </Grid> */}
       <Grid
         size={12}
       >

@@ -1,6 +1,9 @@
 export const DisclaimerTitleStyles = (theme: boolean) => ({
   fontSize: '26px',
   textDecorationColor: theme ? '#9DB2BF' : 'rgba(0, 0, 0, 0.6)',
+  '@media only screen and (max-device-width: 812px) and (orientation: landscape)': {
+    fontSize: '22px'
+  }
 });
 
 export const DrawerStyles = {
