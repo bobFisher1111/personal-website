@@ -21,7 +21,7 @@ export const ArticleList: React.FC<Props> = ({
       {noArticles ? 
         <ComingSoon />
         : sortByDate?.map((item: any) => (
-          <Fragment key={crypto.randomUUID()}>
+          <Fragment key={item.articleId}>
             <ArticleCard
               articleId={item.articleId}
               authorData={authorData}

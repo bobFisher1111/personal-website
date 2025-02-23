@@ -13,6 +13,12 @@ export const ArticleDataGridStyles = {
     },
     width: 'calc(60vw)',
   },
+  '@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5)':  {
+    width: '700px',
+  },
+  '@media only screen and (max-device-width: 812px) and (orientation: landscape)': {
+    width: '500px',
+  },
 };
 
 export const ArticleImageStyles = (theme: boolean) => ({
@@ -99,6 +105,12 @@ export const LinkGridRootStyles = (articlePage: boolean) => ({
     maxWidth: '100%',
     maxHeight: '28px',
     minHeight: '28px',
+  },
+  '@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5)':  {
+    width: '730px',
+  },
+  '@media only screen and (max-device-width: 812px) and (orientation: landscape)': {
+    width: '580px',
   },
 });
 
