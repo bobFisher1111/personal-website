@@ -35,7 +35,7 @@ const WritersCard: React.FC<Props> = ({
       <Grid
         size={{
           xs: 3,
-          sm: 3,
+          sm: 2,
           md: 4,
           lg: 4,
           xl: 4,
@@ -56,7 +56,7 @@ const WritersCard: React.FC<Props> = ({
       <Grid
         size={{
           xs: 9,
-          sm: 9,
+          sm: 10,
           md: 8,
           lg: 8,
           xl: 8,

@@ -30,6 +30,9 @@ export const GridRoot = {
   '@media only screen and (max-width: 600px)': {
     padding: '0px 0px 200px 0px',
   },
+  '@media only screen and (max-device-width: 812px) and (orientation: landscape)': {
+    width: 'calc(100vw - 75px)'
+  },
 };
 
 export const GridHeader = {

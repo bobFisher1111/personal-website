@@ -37,4 +37,14 @@ export const DrawerStyles = {
       marginRight: 'auto',
     },
   },
+  '@media only screen and (max-device-width: 812px) and (orientation: landscape)': {
+    "& .MuiDrawer-paper": {
+      height: '350px'
+    }
+  },
+  '@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5)': {
+    "& .MuiDrawer-paper": {
+      height: '700px'
+    },
+  },
 };
