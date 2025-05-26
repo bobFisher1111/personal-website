@@ -12,7 +12,9 @@ import {
 
 const Sections: FC<Props> = ({
   data,
+  series,
   setData,
+  setSeries,
 }) => {
   const [sectionSelect, setSectionSelect] = useState<number>(1);
   const theme = useSelector((state: any) => state.theme.darkTheme);
@@ -30,20 +32,38 @@ const Sections: FC<Props> = ({
     return item.section === 'Stories';
   });
 
+  const reviewsFilterSeries = series?.filter((item: any) => {
+    return item.section === 'Reviews';
+  });
+  const gamingFilterSeries = series?.filter((item: any) => {
+    return item.section === 'Video Games';
+  });
+  const codingFilterSeries = series?.filter((item: any) => {
+    return item.section === 'Coding';
+  });
+  const storiesFilterSeries = series?.filter((item: any) => {
+    return item.section === 'Stories';
+  });
+
   useEffect(() => {
     if (sectionSelect === 1) {
+      setSeries(series);
       return setData(data);
     }
     if (sectionSelect === 2) {
+      setSeries(reviewsFilterSeries);
       return setData(reviewsFilter);
     }
     if (sectionSelect === 3) {
+      setSeries(gamingFilterSeries);
       return setData(gamingFilter);
     }
     if (sectionSelect === 4) {
+      setSeries(codingFilterSeries);
       return setData(codingFilter);
     }
     if (sectionSelect === 5) {
+      setSeries(storiesFilterSeries);
       return setData(storiesFilter);
     }
   }, [data, sectionSelect]);
@@ -99,7 +119,9 @@ const Sections: FC<Props> = ({
 
 export type Props = {
   data: any,
-  setData: any
+  series: any,
+  setData: any,
+  setSeries: any,
 };
 
 export default Sections;

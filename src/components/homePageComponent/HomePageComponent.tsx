@@ -4,8 +4,8 @@ import {
   Typography,
 } from '@mui/material';
 import Grid from '@mui/material/Grid2';
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
+// import AddIcon from '@mui/icons-material/Add';
+// import RemoveIcon from '@mui/icons-material/Remove';
 import { useSelector } from 'react-redux';
 import ArticleList from '../articleList/ArticleList';
 import Carousel from '../carouselComponent/Carousel';
@@ -14,7 +14,7 @@ import {
   // CarouselGrid,
   GridRoot,
   LatestTextStyles,
-  SeriesIconStyles,
+  // SeriesIconStyles,
   SeriesButtonStyles,
   SeriesTextStyles,
 } from './HomePageComponentStyles';
@@ -23,12 +23,13 @@ import Sections from './Sections';
 
 const HomePageComponent: React.FC = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const [numOfSeriesDisplayed, SetNumOfSeriesDisplayed] = useState<number>(4);
-  const [seriesExpanded, SetSeriesExpanded] = useState<boolean>(false);
+  // const [numOfSeriesDisplayed, SetNumOfSeriesDisplayed] = useState<number>(4);
+  // const [seriesExpanded, SetSeriesExpanded] = useState<boolean>(false);
   const articleData = getWebsiteData && getWebsiteData?.articles;
   const authorsData = getWebsiteData && getWebsiteData?.authors;
   const seriesData = getWebsiteData && getWebsiteData?.series;
   const [data, setData] = useState<any>(articleData);
+  const [series, setSeries] = useState<any>(seriesData);
 
   return (
     <Grid
@@ -45,7 +46,7 @@ const HomePageComponent: React.FC = () => {
       <Grid
         size={12}
       >
-        <Sections data={articleData} setData={setData} />
+        <Sections data={articleData} series={seriesData} setData={setData} setSeries={setSeries} />
       </Grid>
       <Grid
         size={12}
@@ -59,10 +60,10 @@ const HomePageComponent: React.FC = () => {
           >
             Series 
           </Typography>
-          {!seriesExpanded ? 
+          {/* {!seriesExpanded ? 
             <AddIcon
               onClick={() => {
-                SetNumOfSeriesDisplayed(seriesData.length);
+                SetNumOfSeriesDisplayed(series.length);
                 return SetSeriesExpanded(true);
               }}
               sx={SeriesIconStyles}
@@ -75,9 +76,9 @@ const HomePageComponent: React.FC = () => {
                 return SetSeriesExpanded(false);
               }}
             />
-          }
+          } */}
         </Button>
-        <SeriesComponent series={seriesData?.slice(0, numOfSeriesDisplayed)} />
+        <SeriesComponent series={series?.slice(0, 4)} /> {/*  Come back later when redesign and fix this*/}
       </Grid>
       <Grid
         size={12}
