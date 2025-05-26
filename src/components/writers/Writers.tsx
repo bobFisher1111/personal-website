@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 import Grid from '@mui/material/Grid2';
 import { useSelector } from 'react-redux';
 import HeaderComponent from '../headerComponent/HeaderComponent';
@@ -9,8 +9,9 @@ import {
 } from './WritersStyle';
 
 const Writers = () => {
+  const id = useId();
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const authorsData = getWebsiteData && getWebsiteData?.websiteData?.authors;
+  const authorsData = getWebsiteData?.authors;
   const newNonImmutableArray = authorsData?.map((item: any) => item);
   const sortAuthorsById = newNonImmutableArray?.sort((a: any, b: any) => {
     return a.authorId - b.authorId;
@@ -27,7 +28,7 @@ const Writers = () => {
           <HeaderComponent
             title='Writers'
             authorAvatar={false}
-            avatarImage={authorsData?.avatarImage}
+            avatarImage={authorsData?.avatar_image}
           />
         </Grid>
       </Grid>
@@ -35,9 +36,9 @@ const Writers = () => {
         container
         sx={WritersCardGrid}
       >
-        {sortAuthorsById?.map((item: any) => (
+        {sortAuthorsById?.map((item: any, index: number) => (
           <Grid
-            key={item.id}
+            key={`${id}-${index}`}
             size={{
               xs: 12,
               sm: 12,
@@ -47,13 +48,13 @@ const Writers = () => {
             }}
           >
             <WritersCard
-              authorImage={item.avatarImage}
-              authorName={item.authorName}
+              authorImage={item.avatar_image}
+              authorName={item.author_name}
               authorsTitle={item.titles}
-              authorId={item.authorId}
+              authorId={item.author_id}
               facebook={item.facebook}
               twitter={item.twitter}
-              youtube={item.youtube}
+              youtube={item.you_tube}
               email={item.email}
             />
           </Grid>

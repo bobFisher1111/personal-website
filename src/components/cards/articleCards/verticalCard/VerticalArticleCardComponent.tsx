@@ -31,14 +31,14 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
 }) => {
   const theme = useSelector((state: any) => state.theme.darkTheme);
   const [articlePage, setArticlePage] = useState<boolean>();
-  const articleUrl = `${appBaseURL}/article/${articleData?.authorId}/${articleData?.articleId}`;
-  const serieslUrl = `${appBaseURL}/series/${articleData?.seriesId}`;
-  const authorUrl = `${appBaseURL}/author/${articleData?.authorId}`;
+  const articleUrl = `${appBaseURL}/article/${articleData?.author_id}/${articleData?.article_id}`;
+  const serieslUrl = `${appBaseURL}/series/${articleData?.series_id}`;
+  const authorUrl = `${appBaseURL}/author/${articleData?.author_id}`;
 
   useEffect(() => {
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = currentLocation.split('/');
-    const checkIfIncludesCurrentAricle = getIdFromCurrentLocation.includes(articleData?.articleId);
+    const checkIfIncludesCurrentAricle = getIdFromCurrentLocation.includes(articleData?.article_id);
     setArticlePage(checkIfIncludesCurrentAricle);
   }, []);
 
@@ -52,7 +52,7 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
         <Box
           sx={CardRootStyle}
         >
-          {articleData?.useVideoInsteadOfImage ?
+          {articleData?.use_video_instead_of_image ?
             <Link 
               to={series ? serieslUrl : articleUrl}
               rel="noreferrer"
@@ -66,7 +66,7 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
               >
                 <CardMedia
                   component="iframe"
-                  image={articleData?.coverImageOrVideo || articleData?.seriesCoverImageOrVideo}
+                  image={articleData?.cover_image_or_video || articleData?.series_cover_image_or_video}
                   allowFullScreen
                   sx={CardMediaVerticalCardVideo}
                 />
@@ -79,7 +79,7 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
             >
               <CardMedia
                 component="img"
-                image={articleData?.coverImageOrVideo || articleData?.seriesCoverImageOrVideo}
+                image={articleData?.cover_image_or_video || articleData?.series_cover_image_or_video}
                 sx={CardMediaVerticalCardImage}
               />
             </Link>
@@ -120,11 +120,11 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
                 sx={GridPadding}
               >
                 <CopyLinkComponent
-                  authorsId={articleData?.authorId}
-                  articleId={articleData?.articleId}
+                  authorsId={articleData?.author_id}
+                  articleId={articleData?.article_id}
                   padding={'0px 0px 0px 0px'}
                   email={false}
-                  seriesId={articleData?.seriesId}
+                  seriesId={articleData?.series_id}
                   turnOnSeries={true}
                 />
               </Grid>

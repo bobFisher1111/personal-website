@@ -4,6 +4,7 @@ import ComingSoon from '../comingSoon/ComingSoon';
 import formatDate from '../../util/formatDate';
 import ArticleCard from '../cards/articleCards/horizontalCard/articleCard/ArticleCard';
 
+
 export const ArticleList: React.FC<Props> = ({
   authorData,
   data,
@@ -11,7 +12,7 @@ export const ArticleList: React.FC<Props> = ({
   const noArticles = data?.length === 0;
   const newNonImmutableArray = data?.map((item: any) => item);
   const sortByDate = newNonImmutableArray?.sort((a: any, b: any)=> {
-    return b.articleId - a.articleId;
+    return b.article_id - a.article_id;
   });
 
   return (
@@ -21,21 +22,21 @@ export const ArticleList: React.FC<Props> = ({
       {noArticles ? 
         <ComingSoon />
         : sortByDate?.map((item: any) => (
-          <Fragment key={item.articleId}>
+          <Fragment key={item.article_id}>
             <ArticleCard
-              articleId={item.articleId}
+              articleId={item.article_id}
               authorData={authorData}
-              articleMedia={item.coverImageOrVideo}
+              articleMedia={item.cover_image_or_video}
               articlePage={false}
-              authorId={item.authorId}
-              date={formatDate(item.publishedDate)}
-              isMediaVideo={item.useVideoInsteadOfImage}
-              section={item.sections}
-              sectionLink={item.sectionLink}
-              series={item.series}
-              seriesId={item.seriesId}
-              subtitle={item.articleSubTitle}
-              title={item.articleTitle}
+              authorId={item.author_id}
+              date={formatDate(item.published_date)}
+              isMediaVideo={item.use_video_instead_of_image}
+              section={item.section}
+              sectionLink={item.section_link}
+              series={item.series_id}
+              seriesId={item.series_id}
+              subtitle={item.article_subtitle}
+              title={item.article_title}
               turOnAuthorForArticle={false}
             />
           </Fragment>

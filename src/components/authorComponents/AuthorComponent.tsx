@@ -24,21 +24,21 @@ const AuthorComponent: React.FC<Props> = ({
   seriesForArticlePage,
 }) => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const webData = getWebsiteData && getWebsiteData?.websiteData;
-  const authorWebData = getWebsiteData && getWebsiteData?.websiteData?.authors;
+  const webData = getWebsiteData;
+  const authorWebData = getWebsiteData?.authors;
   const getIdFromUrl = () => {
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = turOnArticlePage ? currentLocation.split('/').reverse()[1] : currentLocation.split('/').reverse()[0];
     return Number(getIdFromCurrentLocation);
   };
   const getAuthor = webData?.authors?.filter((item: any) => {
-    return item.authorId === getIdFromUrl();
+    return item.author_id === getIdFromUrl();
   });
   const getArticles = webData?.articles?.filter((item: any) => {
-    return item.authorId === getIdFromUrl();
+    return item.author_id === getIdFromUrl();
   });
   const getBooks = webData?.books?.filter((item: any) => {
-    return item.authorId === getIdFromUrl();
+    return item.author_id === getIdFromUrl();
   });
   const authorData = getAuthor && getAuthor[0];
 
@@ -53,10 +53,10 @@ const AuthorComponent: React.FC<Props> = ({
         sx={HeaderComponentStyles}
       >
         <HeaderComponent
-          title={authorData?.authorName || articleAuthorData?.authorName}
+          title={authorData?.author_name || articleAuthorData?.author_name}
           authorAvatar={true}
-          avatarImage={authorData?.avatarImage || articleAuthorData?.avatarImage}
-          authorId={articleAuthorData?.authorId}
+          avatarImage={authorData?.avatar_image || articleAuthorData?.avatar_image}
+          authorId={articleAuthorData?.author_id}
           articlePage={turOnArticlePage}
         />
       </Grid>
@@ -90,7 +90,7 @@ const AuthorComponent: React.FC<Props> = ({
             email={authorData?.email || articleAuthorData?.email}
             facebook={authorData?.facebook || articleAuthorData?.facebook}
             twitter={authorData?.twitter || articleAuthorData?.twitter}
-            youtube={authorData?.youtube || articleAuthorData?.youtube}
+            youtube={authorData?.you_tube || articleAuthorData?.you_tube}
             alignContent={"center"}
             justifyContent={"center"}
           />

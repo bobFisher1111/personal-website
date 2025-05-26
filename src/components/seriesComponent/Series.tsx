@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useId, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router';
 import {
@@ -30,9 +30,10 @@ export const Series: React.FC<Props> = ({
   seriesForAuthorsPage,
 }) => {
   const [filterSeries, setFilterSeries] = useState<any>([]);
+  const id = useId();
   const theme = useSelector((state: any) => state.theme.darkTheme);
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const series = getWebsiteData && getWebsiteData?.websiteData?.series;
+  const series = getWebsiteData?.series;
   const getIdFromUrl = () => {
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = currentLocation.split('/').reverse()[1];
@@ -40,20 +41,19 @@ export const Series: React.FC<Props> = ({
   };
   const newNonImmutableArray = series?.map((item: any) => item);
   const sortByDate = newNonImmutableArray?.sort((a: any, b: any)=> {
-    return b.seriesId - a.seriesId;
+    return b.series_id - a.series_id;
   });
 
-  const seriesData = data && data?.filter((series: any) => series?.series === true);
+  const seriesData = data && data?.filter((series: any) => series?.series_id !== null);
   const createSeriesList = sortByDate?.map((x: any) => {
     const seriesList = seriesData?.filter((item: any) => {
       const sL: any = [];
-      if (item?.seriesId ===  x?.seriesId) {
+      if (item?.series_id ===  x?.series_id) {
         return sL.push(x);
       }
-    }
-    );
+    });
     const sortSeriesList = seriesList.sort((a: any, b: any) => {
-      return b.articleId - a.articleId;
+      return b.article_id - a.article_id;
     });
     return sortSeriesList;
   });
@@ -65,11 +65,11 @@ export const Series: React.FC<Props> = ({
   });
 
   const seriesAuhtorFilterArticlePage = sortByDate?.filter((item: any) => {
-    return item.authorId === getIdFromUrl();
+    return item.author_id === getIdFromUrl();
   });
 
   const seriesAuhtorFilterAuthorPage = sortByDate?.filter((item: any) => {
-    return item.authorId === name;
+    return item.author_id === name;
   });
 
   useEffect(() => {
@@ -87,20 +87,21 @@ export const Series: React.FC<Props> = ({
     }
   }, []);
   const noSeries = seriesAuhtorFilterAuthorPage?.length === 0 && filteredSeriesList?.length === 0 && seriesFilter?.length === 0 && seriesAuhtorFilterArticlePage?.length === 0;
+  // there is a bug here if create series with no article tied to it, will not show articles on left
   const textLoop = (item: any, index: number) => {
     return (filteredSeriesList[index])?.slice(0, 4).filter(() => {
-      return item.seriesId === item.seriesId;
+      return item.series_id === item.series_id;
     })
-      .map((a: any) => {
-        if(item.seriesId === a.seriesId) {
-          const seriesTitle = `${a.seriesType}: ${a?.articleTitle}`;
+      .map((a: any, index: number) => {
+        if(item.series_id) {
+          const seriesTitle = `${a.series_type}: ${a?.article_title}`;
           return (
             <Grid
               container
-              key={a.id}
+              key={index}
               sx={GridSeriesArticleList}
             >
-              <Link to={`/article/${a?.authorId}/${a?.articleId}`}
+              <Link to={`/article/${a?.author_id}/${a?.article_id}`}
                 style={LinkStyles(theme)}
               >
                 <Grid
@@ -120,7 +121,7 @@ export const Series: React.FC<Props> = ({
                     color="primary"
                     sx={TypographySeriesArticleSubTitle}
                   >
-                    { a.articleSubTitle}
+                    { a.article_subtitle}
                   </Typography>
                 </Grid>
                 <Grid
@@ -130,7 +131,7 @@ export const Series: React.FC<Props> = ({
                     color="primary"
                     sx={TypographySeriesArticleDate}
                   >
-                    {formatDate(a.publishedDate)}
+                    {formatDate(a.published_date)}
                   </Typography>
                 </Grid>
               </Link>
@@ -148,7 +149,7 @@ export const Series: React.FC<Props> = ({
       {filterSeries?.map((item: any, index: any) => (
         <Grid
           container
-          key={item.id}
+          key={`${id}-${index}`}
           direction="row"
           justifyContent="flex-start"
           alignItems="flex-start"
@@ -164,7 +165,7 @@ export const Series: React.FC<Props> = ({
                 color="primary"
                 sx={TypographySeriesTitle}
               >
-                {`${item?.section}: ${item?.seriesTitle}`}
+                {`${item?.section}: ${item?.series_title}`}
               </Typography>
             </Grid>
           }
@@ -175,8 +176,8 @@ export const Series: React.FC<Props> = ({
               sx={GridMarginLeft}
             >
               <VerticalArticleCardComponent
-                key={index}
-                name={item.seriesAuthors}
+                key={`${id}-${index}`}
+                name={item.series_authors}
                 articleData={item}
                 series={true}
               />
@@ -197,7 +198,7 @@ export const Series: React.FC<Props> = ({
                     container
                     sx={GridSeriesReadMoreMargin}
                   >
-                    <Link to={`/series/${item.seriesId}`}
+                    <Link to={`/series/${item.series_id}`}
                       style={LinkStyles(theme)}
                     >
                       <Button 

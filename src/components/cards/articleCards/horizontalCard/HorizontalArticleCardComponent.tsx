@@ -53,8 +53,8 @@ const HorizontalArticleCardComponent: React.FC<Props> = ({
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const rejectCookie = useSelector((state: any) => state.rejectCookie);
   const theme = useSelector((state: any) => state.theme.darkTheme);
-  const getAuthorData = getWebsiteData && getWebsiteData?.websiteData?.authors?.filter((item: any) => {
-    return item.authorId === authorsId;
+  const getAuthorData = getWebsiteData && getWebsiteData?.authors?.filter((item: any) => {
+    return item.author_id === authorsId;
   });
   useEffect(() => {
     const currentLocation = window.location.href;
@@ -197,7 +197,7 @@ const HorizontalArticleCardComponent: React.FC<Props> = ({
                 authorsId={authorsId}
                 articleId={articleId}
                 authorPage={authorPage}
-                aughtorsName={getAuthorData[0]?.authorName}
+                aughtorsName={getAuthorData[0]?.author_name}
                 sectionLink={sectionLink}
                 sectionPage={sectionPage}
                 series={series}

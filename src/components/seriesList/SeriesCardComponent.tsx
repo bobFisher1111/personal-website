@@ -23,7 +23,7 @@ const SeriesCardComponent: React.FC<Props> = ({
   articleData,
 }) => {
   const theme = useSelector((state: any) => state.theme.darkTheme);
-  const serieslUrl = `${appBaseURL}/series/${articleData?.seriesId}`;
+  const serieslUrl = `${appBaseURL}/series/${articleData?.series_id}`;
 
   return (
     <div  
@@ -40,9 +40,9 @@ const SeriesCardComponent: React.FC<Props> = ({
             rel="noreferrer"
           >
             <CardMedia
-              aria-label={`Series ${articleData?.seriesTitle} Image`}
+              aria-label={`Series ${articleData?.series_title} Image`}
               component="img"
-              image={articleData?.coverImageOrVideo || articleData?.seriesCoverImageOrVideo}
+              image={articleData?.series_cover_image_or_video || articleData?.series_cover_image_or_video}
               sx={CardMediaVerticalCardImage}
             />
           </Link>
@@ -63,7 +63,7 @@ const SeriesCardComponent: React.FC<Props> = ({
                   <Typography
                     sx={TypographyVerticalCardNameStyleHover(theme)}
                   >
-                    {articleData?.seriesTitle}
+                    {articleData?.series_title}
                   </Typography>
                 </Link>
               </Grid>

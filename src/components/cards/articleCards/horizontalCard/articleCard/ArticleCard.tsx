@@ -44,7 +44,7 @@ const ArticleCard: React.FC<Props> = ({
   const theme = useSelector((state: any) => state.theme.darkTheme);
   const rejectCookie = useSelector((state: any) => state.rejectCookie);
   const getAuthorData = authorData?.filter((item: any) => {
-    return item.authorId === authorId;
+    return item.author_id === authorId;
   });
   const Img = styled('img')({
     maxWidth: '100%',
@@ -91,14 +91,14 @@ const ArticleCard: React.FC<Props> = ({
           >
             <Img
               alt="complex"
-              src={getAuthorData && getAuthorData[0]?.avatarImage}
+              src={getAuthorData && getAuthorData[0]?.avatar_image}
               sx={AvatarImageStyles(theme)}
             />
             <Typography
               color="primary"
               sx={AuthorNameStyles}
             >
-              {getAuthorData && getAuthorData[0]?.authorName}
+              {getAuthorData && getAuthorData[0]?.author_name}
             </Typography>
           </Link>
         </Grid>

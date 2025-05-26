@@ -1,15 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { getWebsiteData } from '../../../services/getdata-services';
+import websiteData from '../../../websiteData/websiteData.json';
 
-export const GetWebsiteData = createAsyncThunk('websiteData/getData', async (arg, {
-  rejectWithValue,
-}) => {
-  try {
-    const data = await getWebsiteData();
-    return data;
-  } catch (error: any) {
-    rejectWithValue(error.response.data);
-  }
+export const GetWebsiteData = createAsyncThunk('websiteData/getData', async () => {
+  return websiteData;
 });
 
 export default GetWebsiteData;

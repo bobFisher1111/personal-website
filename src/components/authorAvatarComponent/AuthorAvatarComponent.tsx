@@ -25,19 +25,19 @@ const AuthorAvatarComponent: React.FC<Props> = ({
   return (
     <Grid>
       <Link 
-        to={`/author/${author?.authorId}`}
+        to={`/author/${author?.author_id}`}
         style={AvatarAuthorLinkStyles(theme)}
       >
         <Img
           alt="complex"
-          src={author?.avatarImage}
+          src={author?.avatar_image}
           sx={AvatarImageStyles(theme)}
         />
         <Typography
           color="primary"
           sx={AuthorNameStyles}
         >
-          {author?.authorName}
+          {author?.author_name}
         </Typography>
       </Link>
     </Grid>

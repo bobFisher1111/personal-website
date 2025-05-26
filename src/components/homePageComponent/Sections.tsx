@@ -18,16 +18,16 @@ const Sections: FC<Props> = ({
   const theme = useSelector((state: any) => state.theme.darkTheme);
 
   const reviewsFilter = data?.filter((item: any) => {
-    return item.sections === 'Reviews';
+    return item.section === 'Reviews';
   });
   const gamingFilter = data?.filter((item: any) => {
-    return item.sections === 'Video Games';
+    return item.section === 'Video Games';
   });
   const codingFilter = data?.filter((item: any) => {
-    return item.sections === 'Coding';
+    return item.section === 'Coding';
   });
   const storiesFilter = data?.filter((item: any) => {
-    return item.sections === 'Stories';
+    return item.section === 'Stories';
   });
 
   useEffect(() => {

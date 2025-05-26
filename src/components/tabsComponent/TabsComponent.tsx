@@ -1,4 +1,4 @@
-import React, { useState, SyntheticEvent } from 'react';
+import React, { useId, useState, SyntheticEvent } from 'react';
 import { useSelector } from 'react-redux';
 import {
   Box,
@@ -45,6 +45,7 @@ const TabsComponent: React.FC<Props> = ({
   tabsData,
 }) => {
   const [value, setValue] = useState(0);
+  const id = useId();
   const theme = useSelector((state: any) => state.theme.darkTheme);
   const tabProps = (index: number) => {
     return {
@@ -73,10 +74,10 @@ const TabsComponent: React.FC<Props> = ({
           aria-label="basic tabs example"
           textColor="inherit"
         >
-          {tabsData?.map((item: any, index: any) => (
+          {tabsData?.map((item: any, index: number) => (
             <Tab
               color="primary"
-              key={item.id}
+              key={`${id}-${index}`}
               onClick={() => setValue(index)}
               label={item.name}
               {...tabProps(index)} 
@@ -87,7 +88,7 @@ const TabsComponent: React.FC<Props> = ({
       </Grid>
       {tabsData?.map((item: any, index: number) => (
         <TabPanel
-          key={item.id}
+          key={`${item}-${index}`}
           value={value}
           index={index}
         >

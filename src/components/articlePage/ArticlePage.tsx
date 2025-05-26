@@ -2,36 +2,37 @@ import React, { useEffect } from 'react';
 import Grid from '@mui/material/Grid2';
 import HorizontalArticleCardComponent from '../cards/articleCards/horizontalCard/HorizontalArticleCardComponent';
 import { useSelector } from 'react-redux';
-import CreateArticle from '../createArticle/CreateArticle';
+// import CreateArticle from '../createArticle/CreateArticle';
 import formatDate from '../../util/formatDate';
 import getNameFromUrl from '../../util/getNameFromUrl';
 import {
   CreateArticleRoot,
-  CreateArticleStyle,
+  // CreateArticleStyle,
   GridRoot,
   GridHeader,
 } from './ArticlePageStyles';
+import MarkDownComponent from './MarkDownComponent';
 
 const ArticlePage: React.FC = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const webData = getWebsiteData && getWebsiteData?.websiteData;
+  const webData = getWebsiteData;
   const getIdFromUrl = () => {
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = currentLocation.split('/').reverse()[1];
     return Number(getIdFromCurrentLocation);
   };
   const getAuthor = webData?.authors?.filter((item: any) => {
-    return item.authorId === getIdFromUrl();
+    return item.author_id === getIdFromUrl();
   });
   const getArticles = webData?.articles?.filter((item: any) => {
-    return item.authorId === getIdFromUrl();
+    return item.author_id === getIdFromUrl();
   });
   const currentArticle = getArticles?.filter((item: any) => {
-    return item.articleId === getNameFromUrl();
+    return item.article_id === getNameFromUrl();
   });
   const authorData = getAuthor && getAuthor[0];
   const articleData = currentArticle && currentArticle[0];
-  const articleArray = articleData?.article.split("`");
+  // const articleArray = articleData?.article.split("`");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -62,28 +63,30 @@ const ArticlePage: React.FC = () => {
             sx={CreateArticleRoot}
           >
             <HorizontalArticleCardComponent
-              author={authorData?.authorName}
+              author={authorData?.author_name}
               cardTextWidth={'1000px'}
-              date={formatDate(articleData?.publishedDate)}
+              date={formatDate(articleData?.published_date)}
               imageWidth={'1000px'}
               articlePage={true}
-              articleSubTitle={articleData?.articleSubTitle}
-              useVideoInsteadOfImage={articleData?.useVideoInsteadOfImage}
-              authorsId={articleData?.authorId}
-              articleId={articleData?.articleId}
-              videoOrImageCover={articleData?.coverImageOrVideo}
-              sectionLink={articleData?.sectionLink}
-              section={articleData?.sections}
-              title={articleData?.articleTitle}
+              articleSubTitle={articleData?.article_subtitle}
+              useVideoInsteadOfImage={articleData?.use_video_instead_of_image}
+              authorsId={articleData?.author_id}
+              articleId={articleData?.article_id}
+              videoOrImageCover={articleData?.cover_image_or_video}
+              sectionLink={articleData?.section_link}
+              section={articleData?.section}
+              title={articleData?.article_title}
               mobileImageWidth={'22px'}
               videoHeight={false}
             />
+            
             <Grid
-              sx={CreateArticleStyle}
+              // sx={CreateArticleStyle}
             >
-              {articleArray?.map((item: any) => (
+              {/* {articleArray?.map((item: any) => (
                 CreateArticle(item)
-              ))}
+              ))} */}
+              <MarkDownComponent />
             </Grid>
           </Grid>
         </Grid>

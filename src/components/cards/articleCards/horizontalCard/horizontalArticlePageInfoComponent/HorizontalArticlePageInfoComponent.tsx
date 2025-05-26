@@ -51,7 +51,7 @@ const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
       >
         <Img
           alt="complex"
-          src={getAuthorData && getAuthorData[0]?.avatarImage}
+          src={getAuthorData && getAuthorData[0]?.avatar_image}
           sx={AvatarImageStyles(theme)}
         />
       </Link>

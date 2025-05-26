@@ -25,9 +25,9 @@ const HomePageComponent: React.FC = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const [numOfSeriesDisplayed, SetNumOfSeriesDisplayed] = useState<number>(4);
   const [seriesExpanded, SetSeriesExpanded] = useState<boolean>(false);
-  const articleData = getWebsiteData && getWebsiteData?.websiteData?.articles;
-  const authorsData = getWebsiteData && getWebsiteData?.websiteData?.authors;
-  const seriesData = getWebsiteData && getWebsiteData?.websiteData?.series;
+  const articleData = getWebsiteData && getWebsiteData?.articles;
+  const authorsData = getWebsiteData && getWebsiteData?.authors;
+  const seriesData = getWebsiteData && getWebsiteData?.series;
   const [data, setData] = useState<any>(articleData);
 
   return (

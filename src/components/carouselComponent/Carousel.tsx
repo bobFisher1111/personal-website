@@ -57,23 +57,23 @@ const Carousel: React.FC<Props> = ({
 
   const carouselData: any[] = [];
   returnLastFourArticles(data)?.map((item: any) =>  item).sort((a: any, b: any) => {
-    return b.articleId - a.articleId;
+    return b.article_id - a.article_id;
   }).map((item: any) => {
     author?.filter((x: any) => {
-      if (x.authorId === item.authorId) {
+      if (x.author_id === item.author_id) {
         return carouselData.push({
           alt: 'article image', // add to database ********, for next release
-          avatarImage: x.avatarImage,
-          authorName: x.authorName,
-          coverImageOrVideo: item.coverImageOrVideo,
-          Date: formatDate(item.publishedDate),
-          articleTitle: item.articleTitle,
-          articleSubTitle: item.articleSubTitle,
-          articleId: item.articleId,
-          authorId: x.authorId,
-          useVideoInsteadOfImage: item.useVideoInsteadOfImage,
-          series: item.series,
-          seriesId: item.seriesId,
+          avatar_image: x.avatar_image,
+          author_name: x.author_name,
+          cover_image_or_video: item.cover_image_or_video,
+          Date: formatDate(item.published_date),
+          article_title: item.article_title,
+          article_subtitle: item.article_subtitle,
+          article_id: item.article_id,
+          author_id: x.author_id,
+          use_video_instead_of_image: item.use_video_instead_of_image,
+          series: item.series_id !== null, // may need to verify this
+          series_id: item.series_id,
         });
       }
     });
@@ -83,7 +83,7 @@ const Carousel: React.FC<Props> = ({
     if (!isPaused) {
       const timer = setInterval(() => {
         setCurrentIndex((prevIndex) => {
-          return (prevIndex + 1) % 4;
+          return (prevIndex + 1) % 3; // Chnage back to 4, once starting, bug if there isn't 4
         });
       }, 10000);
       return () => clearInterval(timer);
@@ -91,11 +91,11 @@ const Carousel: React.FC<Props> = ({
   }, [isPaused]);
 
   const nextArticle = () => {
-    setCurrentIndex((currentIndex + 1) % 4);
+    setCurrentIndex((currentIndex + 1) % 3); // Chnage back to 4, once starting, bug if there isn't 4
   };
 
   const prevArticle = () => {
-    setCurrentIndex((currentIndex - 1 + 4) % 4);
+    setCurrentIndex((currentIndex - 1 + 4) % 3); // Chnage back to 4, once starting, bug if there isn't 4
   };
 
   const pauseCarousel = () => {
@@ -131,13 +131,13 @@ const Carousel: React.FC<Props> = ({
           </Grid>
         </Grid>
         <Link
-          to={`/article/${carouselData[currentIndex]?.authorId}/${carouselData[currentIndex]?.articleId}`}
+          to={`/article/${carouselData[currentIndex]?.author_id}/${carouselData[currentIndex]?.article_id}`}
           style={LinkStyles(theme)}
         >
           <CardMedia
             component="img"
             sx={mobileImageStyles(theme)}
-            image={carouselData[currentIndex]?.coverImageOrVideo}
+            image={carouselData[currentIndex]?.cover_image_or_video}
             alt="Live from space album cover"
           />
         </Link>
@@ -145,7 +145,7 @@ const Carousel: React.FC<Props> = ({
           sx={mobileCardSRootStyles}
         >
           <Link
-            to={`/article/${carouselData[currentIndex]?.authorId}/${carouselData[currentIndex]?.articleId}`}
+            to={`/article/${carouselData[currentIndex]?.author_id}/${carouselData[currentIndex]?.article_id}`}
             style={LinkStyles(theme)}
           >
             <Typography
@@ -154,7 +154,7 @@ const Carousel: React.FC<Props> = ({
               color="primary"
               sx={mobileArticleTitleStyles}
             >
-              {carouselData[currentIndex]?.articleTitle}
+              {carouselData[currentIndex]?.article_title}
             </Typography>
             <Typography
               variant="subtitle1"
@@ -162,7 +162,7 @@ const Carousel: React.FC<Props> = ({
               color="primary"
               sx={mobileSubtitleStyles}
             >
-              {carouselData[currentIndex]?.articleSubTitle}
+              {carouselData[currentIndex]?.article_subtitle}
             </Typography>
           </Link>
         </CardContent>
@@ -199,7 +199,7 @@ const Carousel: React.FC<Props> = ({
           sx={desktopCardContentStyles}
         >
           <Link
-            to={`/article/${carouselData[currentIndex]?.authorId}/${carouselData[currentIndex]?.articleId}`}
+            to={`/article/${carouselData[currentIndex]?.author_id}/${carouselData[currentIndex]?.article_id}`}
             style={LinkStyles(theme)}
           >
             <Typography
@@ -208,7 +208,7 @@ const Carousel: React.FC<Props> = ({
               variant="h5"
               sx={desktopArticleTitleStyles}
             >
-              {carouselData[currentIndex]?.articleTitle}
+              {carouselData[currentIndex]?.article_title}
             </Typography>
             <Typography
               color="primary"
@@ -216,7 +216,7 @@ const Carousel: React.FC<Props> = ({
               component="div"
               sx={desktopArticleSubTitleStyles}
             >
-              {carouselData[currentIndex]?.articleSubTitle}
+              {carouselData[currentIndex]?.article_subtitle}
             </Typography>
           </Link>
         </CardContent>
@@ -265,13 +265,14 @@ const Carousel: React.FC<Props> = ({
         </Grid>
       </Grid>
       <Link
-        to={`/article/${carouselData[currentIndex]?.authorId}/${carouselData[currentIndex]?.articleId}`}
+        to={`/article/${carouselData[currentIndex]?.author_id}/${carouselData[currentIndex]?.article_id}`}
         style={LinkStyles(theme)}
       >
         <CardMedia
           component="img"
           sx={desktopImageStyles(theme)}
-          image={carouselData[currentIndex]?.coverImageOrVideo}
+          loading="lazy"
+          image={carouselData[currentIndex]?.cover_image_or_video}
           alt="Live from space album cover"
         />
       </Link>
