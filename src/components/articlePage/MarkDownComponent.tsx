@@ -3,38 +3,27 @@ import ReactMarkdown from 'react-markdown';
 import { Box } from '@mui/material';
 
 const MarkDownComponent = () => {
-  const markdown = `
-  # Title
-  Once upon a time, in a "land far", **far away**, there was a small village nestled in a lush valley. The villagers were known for their kindness and hospitality, and they lived in harmony with nature.
-
-  Every morning, the sun would rise over the mountains, casting a golden glow over the valley. The villagers would wake up to the sound of birds singing and the gentle rustling of leaves in the breeze. Life in the village was peaceful and content.
-
-  However, one day, a mysterious stranger arrived in the village. The stranger was tall and cloaked in shadows, with eyes that seemed to pierce through the soul. The villagers were wary but curious, and they gathered around to hear the stranger's story.
-
-  As the days went by, the stranger's presence began to change the village. Some villagers grew fearful, while others became more open and adventurous. The stranger's tales of distant lands and incredible adventures ignited a spark in the hearts of the villagers, and they began to dream of exploring beyond the valley.
-
-  ## Subtitle
-
-  ### Things to do ###
-
-  - List item 1
-  - List item 2
-  - List item 3
-
-  1. First item
-  2. Second item
-  3. Third item
-      1. Indented item
-      2. Indented item
-  4. Fourth item
-
-  \`\`\`
-  const codeSample = () => {
-    console.log("Hello, world!");
+  const testData = {
+    "article_subtitle": "test",
+    "article_title": "test",
+    "author_id": 1,
+    "cover_image_or_video": "test",
+    "markdown_data": "***\\n### Test One\\n***\\n***what is going on in the world today,***\\n**Movie** time is going to be good\\n> Locate the Cat\\n> 1. what is going on in the world\\n> 2. Give me a turtle\\n> - Give a monkey a dollar\\n`let cat = [monkey]`",
+    "published_date": "2025-07-15",
+    "section": "test",
+    "section_link": "test",
+    "section_type": "test",
+    "series_id": 1,
+    "series_chapter": "test",
+    "series_type": "test"
   };
-  \`\`\`
-  `;
-  // https://www.markdownguide.org/basic-syntax/
+  const prepMarkdownData = (rawData: any) =>{
+    // Replace escaped newlines (\\n) with actual newlines
+    let cleaned = rawData.replace(/\\\\n/g, '\n');
+    cleaned = cleaned.replace(/\\n/g, '\n');
+    return cleaned;
+  };
+  const formattedMarkdown = prepMarkdownData(testData.markdown_data);
   return (
     <Box sx={{ fontSize: '20px', maxWidth: '1200px', margin: '0 auto', wordWrap: 'break-word', overflowWrap: 'break-word' }}>
       <ReactMarkdown
@@ -47,6 +36,9 @@ const MarkDownComponent = () => {
           h2: ({ ...props }) => (
             <Box component="h2" sx={{ fontSize: '1.5em', fontWeight: 'medium', color: 'green' }} {...props} />
           ),
+          h3: ({ ...props }) => (
+            <Box component="h2" sx={{ fontSize: '1.5em', fontWeight: 'medium', color: 'green' }} {...props} />
+          ),
           // list title
           ul: ({ ...props }) => (
             <Box component="ul" sx={{ paddingLeft: '40px', listStyleType: 'disc', color: 'orange' }} {...props} />
@@ -55,18 +47,30 @@ const MarkDownComponent = () => {
             <Box component="ol" sx={{ paddingLeft: '40px', listStyleType: 'decimal', color: 'red' }} {...props} />
           ),
           li: ({ ...props }) => (
-            <Box component="li" sx={{ fontSize: '1em', marginBottom: '8px', color: 'darkgrey' }} {...props} />
+            <Box component="li" sx={{ fontSize: '1em', marginBottom: '8px', color: 'purple' }} {...props} />
           ),
-          // code syntax
-          code: ({ ...props }) => (
-            <Box component="code" sx={{ fontFamily: 'monospace', backgroundColor: '#f0f0f0', padding: '4px', borderRadius: '4px', display: 'block', maxWidth: '100%' }} {...props} />
+          code: ({children, ...props }) => (
+            <Box
+              component="pre"
+              sx={{
+                fontFamily: '"Source Code Pro", "Roboto Mono", monospace',
+                backgroundColor: '#f5f5f5',
+                padding: 1,
+                borderRadius: 1,
+                overflowX: 'auto',
+                fontSize: '0.9rem',
+              }}
+              {...props}
+            >
+              <code>{children}</code>
+            </Box>
           ),
           p: ({ ...props }) => (
             <Box component="p" sx={{ marginBottom: '16px', textIndent: '20px' }} {...props} />
           ),
         }}
       >
-        {markdown}
+        {formattedMarkdown}
       </ReactMarkdown>
     </Box>
   );

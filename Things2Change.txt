@@ -13,3 +13,6 @@
 - Connect with Caleb, and re-work website along with New name and domain
 - Figure out issue with min-width
 - Issue on Author page when selecting between article and series, the screen jumps
+
+- New issues to address:
+  - on authors page, when user selects series in prod(vercel), it goes to gamersshrine/, which not correct will need to test once I get new URL
