@@ -1,6 +1,5 @@
 import React from 'react';
-import { Typography } from '@mui/material';
-import Grid from '@mui/material/Grid2';
+import { Grid, Typography } from '@mui/material';
 import { useSelector } from "react-redux";
 import { Link } from 'react-router';
 import SocialMediaComponent from '../../../components/socialMediaComponent/SocialMediaComponent';

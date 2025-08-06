@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import {
   Button,
+  Grid,
   Switch,
   Typography,
 } from '@mui/material';
-import Grid from '@mui/material/Grid2';
 import CloseIcon from '@mui/icons-material/Close';
 import { userAgreementValue } from '../../../config';
 import {

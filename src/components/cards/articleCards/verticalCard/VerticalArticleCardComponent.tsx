@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import Grid from '@mui/material/Grid2';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router';
 import {
+  Box,
   Card,
   CardMedia,
-  Box,
+  Grid,
   Typography,
-} from '@mui/material/';
+} from '@mui/material';
 import { appBaseURL } from '../../../../config';
 import CopyLinkComponent from '../../../copyLinkComponent/CopyLinkComponent';
 import { LinkStyles } from '../../../../util/styles/LinkStyles';

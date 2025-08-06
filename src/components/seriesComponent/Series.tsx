@@ -3,9 +3,9 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router';
 import {
   Button,
+  Grid,
   Typography,
 } from '@mui/material';
-import Grid from '@mui/material/Grid2';
 import ComingSoon from '../comingSoon/ComingSoon';
 import formatDate from '../../util/formatDate';
 import VerticalArticleCardComponent from '../cards/articleCards/verticalCard/VerticalArticleCardComponent';

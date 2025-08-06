@@ -1,5 +1,5 @@
 import React, { useId } from 'react';
-import Grid from '@mui/material/Grid2';
+import Grid from '@mui/material/Grid';
 import { useSelector } from 'react-redux';
 import HeaderComponent from '../headerComponent/HeaderComponent';
 import WritersCard from './writersCard/WritersCard';

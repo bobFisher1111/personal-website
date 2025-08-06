@@ -1,8 +1,8 @@
 import React from 'react';
 import {
+  Grid,
   Typography,
 } from '@mui/material';
-import Grid from '@mui/material/Grid2';
 import { useSelector } from "react-redux";
 import { Link } from 'react-router';
 import { LinkStyles } from '../../../util/styles/LinkStyles';

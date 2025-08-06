@@ -1,5 +1,5 @@
 import React from 'react';
-import Grid from '@mui/material/Grid2';
+import Grid from '@mui/material/Grid';
 import HeaderComponent from '../headerComponent/HeaderComponent';
 import TabsComponent from '../tabsComponent/TabsComponent';
 import {

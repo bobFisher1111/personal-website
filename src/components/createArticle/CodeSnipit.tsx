@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Typography } from '@mui/material';
-import Grid from '@mui/material/Grid2';
+import { Grid, Typography } from '@mui/material';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import hljs from 'highlight.js';
 import "highlight.js/styles/a11y-dark.css";

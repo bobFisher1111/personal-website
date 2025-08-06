@@ -1,5 +1,5 @@
 import React from 'react';
-import Grid from '@mui/material/Grid2';
+import Grid from '@mui/material/Grid';
 import LatestArticalCard from "../cards/articleCards/verticalCard/VerticalArticleCardComponent";
 import xenob3 from '../../assets/images/xenob3.jpg';
 import mgs5 from '../../assets/images/mgs5.jpg';

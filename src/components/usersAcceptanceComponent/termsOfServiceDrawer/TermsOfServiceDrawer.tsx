@@ -2,9 +2,9 @@ import React, { FC, Fragment } from 'react';
 import { useSelector } from 'react-redux';
 import {
   Drawer,
+  Grid,
   Typography,
 } from '@mui/material';
-import Grid from '@mui/material/Grid2';
 import TermsOfServiceComponent from '../termsOfServiceComponent/TermsOfServiceComponent';
 import { 
   DisclaimerTitleStyles,

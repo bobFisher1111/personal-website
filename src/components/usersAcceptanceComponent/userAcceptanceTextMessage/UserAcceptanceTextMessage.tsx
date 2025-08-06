@@ -2,9 +2,9 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   Button,
+  Grid,
   Typography,
 } from '@mui/material/';
-import Grid from '@mui/material/Grid2';
 import CloseIcon from '@mui/icons-material/Close';
 import { userAgreementValue } from '../../../config';
 import { cookiesOff } from '../../../store/redux/cookies/CookiesSlice';

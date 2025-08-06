@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import {
   Button,
+  Grid,
   Typography,
 } from '@mui/material';
-import Grid from '@mui/material/Grid2';
 // import AddIcon from '@mui/icons-material/Add';
 // import RemoveIcon from '@mui/icons-material/Remove';
 import { useSelector } from 'react-redux';

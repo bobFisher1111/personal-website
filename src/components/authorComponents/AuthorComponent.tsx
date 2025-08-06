@@ -1,6 +1,5 @@
 import React from 'react';
-import Grid from '@mui/material/Grid2';
-import { Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import HeaderComponent from '../headerComponent/HeaderComponent';
 import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
 import TabsComponent from '../tabsComponent/TabsComponent';

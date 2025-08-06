@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Grid from '@mui/material/Grid2';
 import {
+  Box,
   Card,
   CardMedia,
-  Box,
+  Grid,
   Typography,
 } from '@mui/material';
 import { useSelector } from 'react-redux';

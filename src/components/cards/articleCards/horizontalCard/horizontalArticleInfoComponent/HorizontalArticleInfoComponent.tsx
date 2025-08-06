@@ -1,8 +1,8 @@
 import React from 'react';
-import Grid from '@mui/material/Grid2';
 import { useSelector } from "react-redux";
 import {
   Chip,
+  Grid,
   Typography,
 } from '@mui/material';
 import CopyLinkComponent from '../../../../copyLinkComponent/CopyLinkComponent';

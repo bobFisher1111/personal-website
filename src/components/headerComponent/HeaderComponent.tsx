@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 import { Link } from 'react-router';
 import {
   Avatar,
+  Grid,
   Typography,
 } from '@mui/material';
-import Grid from '@mui/material/Grid2';
 import {
   AvatarStyle,
   GridAvatarPadding,

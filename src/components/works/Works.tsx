@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { 
-  Typography,
-  CardMedia,  
-  Link,
+import {
   Button,
-} from '@mui/material/';
-import Grid from '@mui/material/Grid2';
+  CardMedia,
+  Grid,
+  Link,
+  Typography
+} from '@mui/material';
 import {
   ArtPageBookExtraInfoGridRoot,
   ArtPageBookExtraInfoLinkBuy,

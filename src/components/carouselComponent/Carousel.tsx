@@ -6,9 +6,9 @@ import {
   Card,
   CardContent,
   CardMedia,
+  Grid,
   Typography,
 } from '@mui/material';
-import Grid from '@mui/material/Grid2';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { Pause } from '@mui/icons-material';
 import formatDate from '../../util/formatDate';

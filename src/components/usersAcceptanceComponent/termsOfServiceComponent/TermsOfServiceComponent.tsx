@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import {
   Button,
+  Grid,
   Typography,
 } from '@mui/material';
-import Grid from '@mui/material/Grid2';
 import CloseIcon from '@mui/icons-material/Close';
 import {
   CloseButtonStyles,

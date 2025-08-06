@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  Typography,
   CardMedia,
+  Grid,
+  Typography,
 } from '@mui/material';
-import Grid from '@mui/material/Grid2';
 import { useSelector } from "react-redux";
 import { Link } from 'react-router';
 import SocialMediaComponent from '../../socialMediaComponent/SocialMediaComponent';

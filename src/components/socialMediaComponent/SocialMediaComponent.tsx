@@ -5,8 +5,7 @@ import TwitterLogoDark from '../../assets/icons/logo-white.png';
 import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
 import YoutTubeLogoDark from '../../assets/icons/yt_icon_mono_dark.png';
 // import FacebookLogo from '../../assets/icons/FacebookLogo.png';
-import { Box } from '@mui/material';
-import Grid from '@mui/material/Grid2';
+import { Box, Grid } from '@mui/material';
 import CopyLinkComponent from '../copyLinkComponent/CopyLinkComponent';
 
 const SocialMediaComponent: React.FC<Props> = ({

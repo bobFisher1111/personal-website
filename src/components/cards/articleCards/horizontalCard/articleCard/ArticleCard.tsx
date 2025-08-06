@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import Grid from '@mui/material/Grid2';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router';
 import {
   Chip,
+  Grid,
   Typography,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';

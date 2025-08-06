@@ -1,9 +1,9 @@
 import React, { useState, useEffect, FC, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import {
+  Grid,
   styled,
 } from '@mui/material';
-import Grid from '@mui/material/Grid2';
 import {
   AlignGridStyles,
   CarouselComponentGridStyles,

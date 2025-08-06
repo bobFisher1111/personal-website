@@ -2,12 +2,12 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router';
 import {
+  Box,
   Card,
   CardMedia,
-  Box,
+  Grid,
   Typography,
-} from '@mui/material/';
-import Grid from '@mui/material/Grid2';
+} from '@mui/material';
 import { appBaseURL } from '../../config';
 import { LinkStyles } from '../../util/styles/LinkStyles';
 import {

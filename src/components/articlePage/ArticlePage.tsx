@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Grid from '@mui/material/Grid2';
+import Grid from '@mui/material/Grid';
 import HorizontalArticleCardComponent from '../cards/articleCards/horizontalCard/HorizontalArticleCardComponent';
 import { useSelector } from 'react-redux';
 // import CreateArticle from '../createArticle/CreateArticle';

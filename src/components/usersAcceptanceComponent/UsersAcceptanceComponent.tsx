@@ -1,7 +1,7 @@
 import React, { Fragment} from 'react';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import UserAcceptanceTextMessage from './userAcceptanceTextMessage/UserAcceptanceTextMessage';
-import Grid from '@mui/material/Grid2';
+import Grid from '@mui/material/Grid';
 import { userAgreementValue } from '../../config';
 
 type Anchor = 'bottom';

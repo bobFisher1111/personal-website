@@ -2,9 +2,9 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import {
   Box,
+  Grid,
   Typography,
 } from '@mui/material';
-import Grid from '@mui/material/Grid2';
 import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
 import YoutTubeLogoDark from '../../assets/icons/yt_icon_mono_dark.png';
 import {
