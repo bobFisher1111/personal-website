@@ -9,7 +9,6 @@ import { LinkStyles } from '../../../util/styles/LinkStyles';
 import {
   TypographyLinkTwoPage,
 } from './AppBarLinksToPagesStyles';
-import TermsOfServiceDrawer from '../../../components/usersAcceptanceComponent/termsOfServiceDrawer/TermsOfServiceDrawer';
 
 const AppBarLinksToPages: React.FC = () => {
   const theme = useSelector((state: any) => state.theme.darkTheme);
@@ -18,7 +17,12 @@ const AppBarLinksToPages: React.FC = () => {
       container 
       spacing={2}
     >
-      <TermsOfServiceDrawer />
+      <Typography
+        color="primary"
+        sx={TypographyLinkTwoPage}
+      >
+        About
+      </Typography>
       <Link to="/writers"
         style={LinkStyles(theme)}
       >

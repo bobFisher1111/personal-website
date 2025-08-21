@@ -1,0 +1,31 @@
+/*
+  - Road Map:
+    - Clean up Repository:
+      - Fix issues, check each Page & Components tied to it
+      - Pages:
+        - App Bar // Started
+        - HomePage
+        - Series Page
+        - Article Pages
+        - Writers Page
+        - Author Page
+        - Article Page
+    - Changes:
+      - HomePage:
+        - Redesign Sections
+        - Change How series looks, look into redesign
+      - Series Page:
+      - Writers Page:
+      - Author Page:
+      - Article Page:
+      - Mobile View
+        - Ipad:
+        - Phones:
+      - Socials
+    - Build About Section
+    - Rebranding
+    - Update Dark Mode with new color scheme 
+    - Update Light Mode with new color scheme
+    - Update Disclaimer
+    - Build new Carousel
+*/

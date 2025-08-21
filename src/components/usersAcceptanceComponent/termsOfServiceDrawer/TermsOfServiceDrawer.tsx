@@ -1,20 +1,18 @@
 import React, { FC, Fragment } from 'react';
-import { useSelector } from 'react-redux';
 import {
   Drawer,
   Grid,
-  Typography,
 } from '@mui/material';
 import TermsOfServiceComponent from '../termsOfServiceComponent/TermsOfServiceComponent';
 import { 
-  DisclaimerTitleStyles,
+  // DisclaimerTitleStyles,
   DrawerStyles,
 } from './TermsOfServiceDrawerStyles';
 
 type Anchor = 'left';
 
 const TermsOfServiceDrawer: FC = () => {
-  const theme = useSelector((state: any) => state.theme.darkTheme);
+  // const theme = useSelector((state: any) => state.theme.darkTheme);
 
   const [state, setState] = React.useState({
     left: false,
@@ -40,14 +38,14 @@ const TermsOfServiceDrawer: FC = () => {
           key={anchor}
         >
           <Grid>
-            <Typography
+            {/* <Typography
               aria-label="Menu for Sections Mobile"
               onClick={toggleDrawer(anchor, true)}
               color="primary"
               sx={DisclaimerTitleStyles(theme)}
             >
-              Disclaimer
-            </Typography>
+              Disclaimer1
+            </Typography> */}
           </Grid>
           <Drawer
             anchor={anchor}

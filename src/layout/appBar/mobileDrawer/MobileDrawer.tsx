@@ -26,7 +26,6 @@ import {
 import { LinkStyles } from '../../../util/styles/LinkStyles';
 import AppConfig from '../../../config';
 import LightDarkMode from '../lightDarkMode/LightDarkMode';
-import TermsOfServiceDrawer from '../../../components/usersAcceptanceComponent/termsOfServiceDrawer/TermsOfServiceDrawer';
 
 type Anchor = 'left';
 
@@ -107,9 +106,8 @@ const MobileDrawer: FC = () => {
               <Typography
                 color="primary"
                 sx={TypographyMobileDrawer}
-                onClick={toggleDrawer(anchor, false)}
               >
-                Home
+                About
               </Typography>
             </Link>
           </Grid>
@@ -127,12 +125,6 @@ const MobileDrawer: FC = () => {
                 Writers
               </Typography>
             </Link>
-          </Grid>
-          <Grid
-            size={12}
-            sx={TypographyMobileDrawer}
-          >
-            <TermsOfServiceDrawer />
           </Grid>
         </Grid>
       </AppBar>
