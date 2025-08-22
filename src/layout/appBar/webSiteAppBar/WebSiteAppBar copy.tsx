@@ -1,7 +1,7 @@
 import React from 'react';
-import { Grid, Typography, useTheme } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import { useSelector } from "react-redux";
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import SocialMediaComponent from '../../../components/socialMediaComponent/SocialMediaComponent';
 import AppBarLinksToPages from '../appBarLinksToPages/AppBarLinksToPages';
 import LightDarkMode from '../lightDarkMode/LightDarkMode';
@@ -16,10 +16,12 @@ import {
 import { LinkStyles } from '../../../util/styles/LinkStyles';
 import AppConfig from '../../../config';
 
+
 const WebSiteAppBar: React.FC = () => {
-  const theme = useTheme();
-  const isDarkTheme = useSelector((state: any) => state.theme.darkTheme);
-  const { facebookURL, twitterURL, youtubeURL } = AppConfig;
+  const theme = useSelector((state: any) => state.theme.darkTheme);
+  const facebook = AppConfig.facebookURL;
+  const twitter = AppConfig.twitterURL;
+  const youtube = AppConfig.youtubeURL;
 
   return (
     <Grid 
@@ -27,7 +29,7 @@ const WebSiteAppBar: React.FC = () => {
       direction="row"
       alignItems="center"
       justifyContent="center"
-      sx={AppBarStyle(theme)}
+      sx={AppBarStyle}
     >
       <Grid
         size={{
@@ -38,16 +40,17 @@ const WebSiteAppBar: React.FC = () => {
           xl: 4,
         }}
       >
-        <Link to="/" style={LinkStyles(isDarkTheme)}>
+        <Link to="/" 
+          style={LinkStyles(theme)}
+        >
           <Typography
             color="primary"
-            sx={TypographyDesktopTitle(theme)}
+            sx={TypographyDesktopTitle}
           >
             {"Gamers Shrine"}
           </Typography>
         </Link>
       </Grid>
-
       <Grid
         size={{
           xs: 0,
@@ -56,19 +59,18 @@ const WebSiteAppBar: React.FC = () => {
           lg: 4,
           xl: 4,
         }}
-        sx={GridDesktopAppBar(theme)}
+        sx={GridDesktopAppBar}
       >
         <SocialMediaComponent
           widthPadding={'8px 0px 0px 16px'}
           turnOnStyle={true}
-          facebook={facebookURL}
-          twitter={twitterURL}
-          youtube={youtubeURL}
+          facebook={facebook}
+          twitter={twitter}
+          youtube={youtube}
           alignContent={"center"}
           justifyContent={"center"}
         />
       </Grid>
-
       <Grid
         id="2"
         size={{
@@ -78,12 +80,11 @@ const WebSiteAppBar: React.FC = () => {
           lg: 4,
           xl: 4,
         }}
-        sx={GridDesktopAppBar2(theme)}
+        sx={GridDesktopAppBar2}
       >
         <AppBarLinksToPages />
         <LightDarkMode />
       </Grid>
-
       <Grid
         size={{
           xs: 6,
@@ -92,7 +93,7 @@ const WebSiteAppBar: React.FC = () => {
           lg: 0,
           xl: 0,
         }}
-        sx={GridMobileAppBarTitle(theme)}
+        sx={GridMobileAppBarTitle}
       >
         <MobileDrawer />
       </Grid>
