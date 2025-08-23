@@ -2,14 +2,14 @@
   - Road Map:
     - Clean up Repository:
       - Fix issues, check each Page & Components tied to it
-      - Pages:
-        - App Bar // Started
-        - HomePage
-        - Series Page
-        - Article Pages
-        - Writers Page
-        - Author Page
-        - Article Page
+        - Layout // Complete
+        - Components:
+          - HomePage // completed
+          - Series Page
+          - Article Pages
+          - Writers Page
+          - Author Page
+          - Article Page
     - Changes:
       - HomePage:
         - Redesign Sections

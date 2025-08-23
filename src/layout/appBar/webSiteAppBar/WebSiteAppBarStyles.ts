@@ -1,20 +1,21 @@
 import { Theme } from '@mui/material/styles';
 
 export const AppBarStyle = (theme: Theme) => ({
-  display: 'flex',
-  width: '1200px',
-  margin: 'auto',
-  [theme.breakpoints.down('sm')]: {
-    width: '100vw',
+  display: "flex",
+  margin: "auto",
+  width: "100%",
+  maxWidth: "1200px",
+  [theme.breakpoints.down("sm")]: {
+    width: "100vw",
     margin: 0,
   },
-  [theme.breakpoints.up('md')]: {
-    '@media (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5)': {
-      width: '100vw',
+  [theme.breakpoints.up("md")]: {
+    "@media (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5)": {
+      width: "100vw",
     },
   },
-  '@media only screen and (max-device-width: 812px) and (orientation: landscape)': {
-    width: '100vw',
+  "@media only screen and (max-device-width: 812px) and (orientation: landscape)": {
+    width: "100vw",
   },
 });
 

@@ -1,27 +1,27 @@
 import React, { useState } from "react";
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Grid, Typography, useTheme } from "@mui/material";
 import { useSelector } from "react-redux";
 import ArticleList from "../articleList/ArticleList";
 import SeriesComponent from "../seriesList/SeriesComponent";
+import Sections from "./Sections";
 import {
   GridRoot,
   LatestTextStyles,
   SeriesButtonStyles,
   SeriesTextStyles,
 } from "./HomePageComponentStyles";
-import Sections from "./Sections";
-
 
 const HomePageComponent: React.FC = () => {
+  const theme = useTheme();
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const articleData = getWebsiteData && getWebsiteData?.articles;
-  const authorsData = getWebsiteData && getWebsiteData?.authors;
-  const seriesData = getWebsiteData && getWebsiteData?.series;
+  const articleData = getWebsiteData?.articles;
+  const authorsData = getWebsiteData?.authors;
+  const seriesData = getWebsiteData?.series;
   const [data, setData] = useState<any>(articleData);
   const [series, setSeries] = useState<any>(seriesData);
 
   return (
-    <Grid container justifyContent="center" alignItems="center" sx={GridRoot}>
+    <Grid container justifyContent="center" alignItems="center" sx={GridRoot(theme)}>
       <Grid size={12}>
         <Sections
           data={articleData}
@@ -30,16 +30,18 @@ const HomePageComponent: React.FC = () => {
           setSeries={setSeries}
         />
       </Grid>
+
       <Grid size={12}>
-        <Button sx={SeriesButtonStyles}>
-          <Typography color="primary" sx={SeriesTextStyles}>
+        <Button sx={SeriesButtonStyles()}>
+          <Typography color="primary" sx={SeriesTextStyles(theme)}>
             Series
           </Typography>
         </Button>
         <SeriesComponent series={series?.slice(0, 4)} />
       </Grid>
+
       <Grid size={12}>
-        <Typography color="primary" sx={LatestTextStyles}>
+        <Typography color="primary" sx={LatestTextStyles(theme)}>
           Latest
         </Typography>
         <ArticleList
