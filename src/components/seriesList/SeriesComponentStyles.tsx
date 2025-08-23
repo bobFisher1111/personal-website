@@ -1,23 +1,25 @@
-export const AlignGridStyles = {
-  marginBottom: '25px',
-};
+import { Theme } from '@mui/material';
 
-export const ArrowButtonGridStyles = {
-  '@media only screen and (max-width: 600px)': {
+export const AlignGridStyles = (theme: Theme) => ({
+  marginBottom: theme.spacing(3.125), // 25px
+});
+
+export const ArrowButtonGridStyles = (theme: Theme) => ({
+  [theme.breakpoints.down('sm')]: {
     display: 'none',
   },
-};
+});
 
 export const ArrowButtonIconStyles = {
   width: 35,
   height: 35,
 };
 
-export const CarouselComponentGridStyles = {
-  '@media only screen and (max-width: 600px)': {
+export const CarouselComponentGridStyles = (theme: Theme) => ({
+  [theme.breakpoints.down('sm')]: {
     borderBottom: 'none',
   },
   '&::-webkit-scrollbar': {
-    display: 'none'
+    display: 'none',
   },
-};
+});

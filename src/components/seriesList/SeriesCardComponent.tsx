@@ -7,6 +7,7 @@ import {
   CardMedia,
   Grid,
   Typography,
+  useTheme,
 } from '@mui/material';
 import { appBaseURL } from '../../config';
 import { LinkStyles } from '../../util/styles/LinkStyles';
@@ -19,50 +20,28 @@ import {
   TypographyVerticalCardNameStyleHover,
 } from './SeriesCardStyles';
 
-const SeriesCardComponent: React.FC<Props> = ({
-  articleData,
-}) => {
-  const theme = useSelector((state: any) => state.theme.darkTheme);
+const SeriesCardComponent: React.FC<Props> = ({ articleData }) => {
+  const darkTheme = useSelector((state: any) => state.theme.darkTheme);
+  const theme = useTheme();
   const serieslUrl = `${appBaseURL}/series/${articleData?.series_id}`;
 
   return (
-    <div  
-      style={DivVerticalArticleRoot()}
-    >
-      <Card
-        sx={CardVerticalCard(theme)}
-      >
-        <Box
-          sx={CardRootStyle}
-        >
-          <Link 
-            to={serieslUrl}
-            rel="noreferrer"
-          >
+    <div style={DivVerticalArticleRoot(theme)}>
+      <Card sx={CardVerticalCard(theme, darkTheme)}>
+        <Box sx={CardRootStyle}>
+          <Link to={serieslUrl} rel="noreferrer">
             <CardMedia
               aria-label={`Series ${articleData?.series_title} Image`}
               component="img"
               image={articleData?.series_cover_image_or_video || articleData?.series_cover_image_or_video}
-              sx={CardMediaVerticalCardImage}
+              sx={CardMediaVerticalCardImage(theme)}
             />
           </Link>
-          <Box
-            sx={CardFooterStyle} 
-          >
-            <Grid 
-              container
-            >
-              <Grid 
-                size={12}
-              >
-                <Link 
-                  to={serieslUrl}
-                  rel="noreferrer"
-                  style={LinkStyles(theme)}
-                >
-                  <Typography
-                    sx={TypographyVerticalCardNameStyleHover(theme)}
-                  >
+          <Box sx={CardFooterStyle}>
+            <Grid container>
+              <Grid size={12}>
+                <Link to={serieslUrl} rel="noreferrer" style={LinkStyles(darkTheme)}>
+                  <Typography sx={TypographyVerticalCardNameStyleHover(theme, darkTheme)}>
                     {articleData?.series_title}
                   </Typography>
                 </Link>

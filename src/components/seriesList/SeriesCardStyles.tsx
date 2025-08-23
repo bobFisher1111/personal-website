@@ -1,13 +1,15 @@
-export const CardMediaVerticalCardImage = {
-  '@media only screen and (min-width: 600px)': {
+import { Theme } from '@mui/material';
+
+export const CardMediaVerticalCardImage = (theme: Theme) => ({
+  [theme.breakpoints.up('sm')]: {
     height: '200px',
   },
-  '@media only screen and (max-width: 600px)': {
+  [theme.breakpoints.down('sm')]: {
     '&.MuiCardMedia-root': {
       maxHeight: '50px',
     },
   },
-};
+});
 
 export const CardRootStyle = {
   position: 'relative',
@@ -19,47 +21,47 @@ export const CardFooterStyle = {
   left: 0,
   width: '100%',
   bgcolor: '#0C0D0D',
-  opacity: 0.80,
+  opacity: 0.8,
 };
 
-export const CardVerticalCard = (theme: boolean) => ({
-  border: theme ? '1px solid #9DB2BF' : '#0C0D0D',
+export const CardVerticalCard = (theme: Theme, darkTheme: boolean) => ({
+  border: darkTheme ? '1px solid #9DB2BF' : '#0C0D0D',
   width: '276px',
   boxShadow: 'none',
-  '@media only screen and (max-width: 600px)': {
+  [theme.breakpoints.down('sm')]: {
     minWidth: 'calc(100vw - 32px)',
     maxWidth: 'calc(100vw - 32px)',
   },
 });
 
-export const DivVerticalArticleRoot = () => ({
-  padding: '8px 8px 8px 0px',
+export const DivVerticalArticleRoot = (theme: Theme) => ({
+  padding: theme.spacing(1, 1, 1, 0),
 });
 
-export const GridPadding = {
-  padding: '16px',
-};
+export const GridPadding = (theme: Theme) => ({
+  padding: theme.spacing(2),
+});
 
-export const TypographyVerticalCardNameStyle = {
+export const TypographyVerticalCardNameStyle = (theme: Theme) => ({
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
-  WebkitLineClamp: '1',
+  WebkitLineClamp: 1,
   WebkitBoxOrient: 'vertical',
-  padding: '16px'
-};
+  padding: theme.spacing(2),
+});
 
-export const TypographyVerticalCardNameStyleHover = (theme: boolean) => ({
-  color: theme ? '#9DB2BF' : 'white',
+export const TypographyVerticalCardNameStyleHover = (theme: Theme, darkTheme: boolean) => ({
+  color: darkTheme ? '#9DB2BF' : 'white',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
-  WebkitLineClamp: '1',
+  WebkitLineClamp: 1,
   WebkitBoxOrient: 'vertical',
-  padding: '16px',
-  fontWeight: '900',
+  padding: theme.spacing(2),
+  fontWeight: 900,
   textShadow: 'none',
-  '@media only screen and (max-width: 600px)': {
+  [theme.breakpoints.down('sm')]: {
     fontSize: '14px',
   },
 });

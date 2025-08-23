@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import {
   Grid,
   styled,
+  useTheme,
 } from '@mui/material';
 import {
   AlignGridStyles,
@@ -10,13 +11,12 @@ import {
 } from './SeriesComponentStyles';
 import SeriesCardComponent from './SeriesCardComponent';
 
-const SeriesComponent: FC<Props> = ({
-  series,
-}) => {
+const SeriesComponent: FC<Props> = ({ series }) => {
   const widthRef = useRef<any>(null);
   const [count, setCount] = useState<any>(0);
   const [marginWidth, setMarginWidth] = useState<any>(widthRef);
-  const theme = useSelector((state: any) => state.theme.darkTheme);
+  const colorTheme = useSelector((state: any) => state.theme.darkTheme);
+  const theme = useTheme();
   const count1: string = count.toString();
 
   const updatedLeftMargin = () => {
@@ -29,21 +29,21 @@ const SeriesComponent: FC<Props> = ({
       window.addEventListener("resize", updatedLeftMargin);
     }
     return () => {
-      if(widthRef && widthRef.current) {
+      if (widthRef && widthRef.current) {
         window.removeEventListener("resize", updatedLeftMargin);
       }
     };
   }, [marginWidth]);
 
-  const AlignGrid = styled(Grid) ({
+  const AlignGrid = styled(Grid)(({ theme }) => ({
     justifyContent: 'center',
     alignItems: "center",
     margin: 'auto',
     maxWidth: '100%',
-    '@media only screen and (max-width: 600px)': {
+    [theme.breakpoints.down('sm')]: {
       padding: '0px',
     },
-  });
+  }));
 
   useEffect(() => {
     if (count === 5) {
@@ -52,39 +52,39 @@ const SeriesComponent: FC<Props> = ({
     if (count === 0) {
       setCount(4);
     }
-    if (count || theme) {
-      document.getElementById(count1)?.scrollIntoView({ 
+    if (count || colorTheme) {
+      document.getElementById(count1)?.scrollIntoView({
         behavior: "auto",
         block: 'nearest',
         inline: 'center',
       });
     }
-  }, [count, theme]);
-  
+  }, [count, colorTheme]);
+
   return (
     <AlignGrid
       id="Align Grid"
       container
       justifyContent={'center'}
       alignContent={'center'}
-      sx={AlignGridStyles}
+      sx={AlignGridStyles(theme)}
     >
       <Grid
         className="carouselOne1"
         size={12}
         container
-        sx={CarouselComponentGridStyles}
+        sx={CarouselComponentGridStyles(theme)}
       >
         {series?.map((item: any, index: any) => (
           <SeriesCardComponent key={index} articleData={item} />
         ))}
-      </Grid> 
+      </Grid>
     </AlignGrid>
   );
 };
 
 export type Props = {
-  series: any,
+  series: any;
 };
 
 export default SeriesComponent;
