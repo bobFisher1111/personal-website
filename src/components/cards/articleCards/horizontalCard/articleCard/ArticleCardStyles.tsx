@@ -1,115 +1,108 @@
+import { Theme } from "@mui/material";
 import {
   LIGHT_PRIMARY,
   DARK_PRIMARY,
 } from '../../../../../store/redux/theme/CONSTANTS';
 
-export const ArticleDataGridStyles = {
+export const ArticleDataGridStyles = (theme: Theme) => ({
   width: '860px',
   maxWidth: '100%',
   paddingLeft: '16px',
-  '@media only screen and (max-width: 600px)': {
+  [theme.breakpoints.down('sm')]: {
     '&.MuiGrid-root': {
       paddingLeft: '8px',
     },
-    width: 'calc(60vw)',
+    width: '60vw',
   },
-  '@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5)':  {
+  '@media (min-width:1024px) and (max-height:1366px) and (orientation:portrait)': {
     width: '700px',
   },
-  '@media only screen and (max-device-width: 812px) and (orientation: landscape)': {
+  '@media (max-width:812px) and (orientation:landscape)': {
     width: '500px',
   },
-};
+});
 
-export const ArticleImageStyles = (theme: boolean) => ({
+export const ArticleImageStyles = (theme: Theme, colorTheme: boolean) => ({
   width: '300px',
   borderRadius: '6px',
-  border: theme ? `1px solid ${DARK_PRIMARY}` : `1px solid ${LIGHT_PRIMARY}`,
+  border: colorTheme ? `1px solid ${DARK_PRIMARY}` : `1px solid ${LIGHT_PRIMARY}`,
 });
 
-export const AvatarAuthorLinkStyles = (theme: boolean) => ({
+export const AvatarAuthorLinkStyles = (colorTheme: boolean) => ({
   textDecoration: 'none',
   display: 'flex',
-  color: theme ? '#9DB2BF' : 'rgba(0, 0, 0, 0.6)',
+  color: colorTheme ? '#9DB2BF' : 'rgba(0, 0, 0, 0.6)',
 });
-//
-export const AvatarImageStyles = (theme: boolean) => ({
+
+export const AvatarImageStyles = (theme: Theme, colorTheme: boolean) => ({
   width: '30px',
   height: '30px',
   borderRadius: '50%',
-  border: theme ? `1px solid ${DARK_PRIMARY}` : `1px solid ${LIGHT_PRIMARY}`,
-  '@media only screen and (max-width: 600px)': {
+  border: colorTheme ? `1px solid ${DARK_PRIMARY}` : `1px solid ${LIGHT_PRIMARY}`,
+  [theme.breakpoints.down('sm')]: {
     width: '20px',
     height: '20px',
   },
 });
 
-export const ArticleVideoStyles = (theme: boolean, turOnAuthorForArticle: boolean) => ({
+export const ArticleVideoStyles = (theme: Theme, colorTheme: boolean, turOnAuthorForArticle: boolean) => ({
   borderRadius: '6px',
   width: '300px',
   height: turOnAuthorForArticle ? '100px' : '136px',
-  border: theme ? `1px solid ${DARK_PRIMARY}` : `1px solid ${LIGHT_PRIMARY}`,
-  '@media only screen and (max-width: 600px)': {
+  border: colorTheme ? `1px solid ${DARK_PRIMARY}` : `1px solid ${LIGHT_PRIMARY}`,
+  [theme.breakpoints.down('sm')]: {
     height: '60px',
   },
 });
 
-export const AuthorNameGridStyles = {
-  'display': 'flex',
-  padding: '8px 0px 0px 0px',
-  '@media only screen and (max-width: 600px)': {
-    padding: '0px',
-  },
-};
-
-export const AuthorNameStyles = {
+export const AuthorNameStyles = (theme: Theme) => ({
   padding: '0px 0px 0px 8px',
   alignContent: 'center',
-  '@media only screen and (max-width: 600px)': {
-    fontSize: '14px'
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '14px',
   },
-};
+});
 
-export const ChipStyles = {
+export const ChipStyles = (theme: Theme) => ({
   borderRadius: '4px',
-  '@media only screen and (max-width: 600px)': {
+  [theme.breakpoints.down('sm')]: {
     fontSize: '10px',
     '&.MuiChip-root': {
       height: '24px',
     },
   },
-};
+});
 
-export const DateStyles = {
+export const DateStyles = (theme: Theme) => ({
   justifyContent: 'flex-end',
   display: 'flex',
-  '@media only screen and (max-width: 600px)': {
-    fontSize: '14px'
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '14px',
   },
-};
+});
 
-export const GridNameDateStyles = {
-  '@media only screen and (max-width: 600px)': {
-    padding: '4px 0px 4px 0px'
+export const GridNameDateStyles = (theme: Theme) => ({
+  [theme.breakpoints.down('sm')]: {
+    padding: '4px 0px 4px 0px',
   },
-};
+});
 
-export const LinkGridRootStyles = (articlePage: boolean) => ({
+export const LinkGridRootStyles = (theme: Theme, articlePage: boolean) => ({
   maxHeight: articlePage ? '40px' : '85px',
   minHeight: articlePage ? '40px' : '85px',
   width: '860px',
   display: 'flex',
   justifyContent: 'flex-end',
   alignItems: 'flex-end',
-  '@media only screen and (max-width: 600px)': {
+  [theme.breakpoints.down('sm')]: {
     maxWidth: '100%',
     maxHeight: '28px',
     minHeight: '28px',
   },
-  '@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5)':  {
+  '@media (min-width:1024px) and (max-height:1366px) and (orientation:portrait)': {
     width: '730px',
   },
-  '@media only screen and (max-device-width: 812px) and (orientation: landscape)': {
+  '@media (max-width:812px) and (orientation:landscape)': {
     width: '580px',
   },
 });
@@ -118,13 +111,15 @@ export const LinkGridStyles = {
   display: 'flex',
 };
 
-export const RootStyles = (theme: boolean, turonauthorforarticle: boolean) => ({
+export const RootStyles = (theme: Theme, colorTheme: boolean, turOnAuthorForArticle: boolean) => ({
   margin: 'auto',
   marginBottom: '16px',
   flexGrow: 1,
-  height: turonauthorforarticle  ? '145px' : '235px',
-  borderBottom: theme ? '1px solid rgba(138, 147, 153, 0.25)' : '1px solid rgba(138, 147, 153, 0.25)',
-  '@media only screen and (max-width: 600px)': {
+  height: turOnAuthorForArticle ? '145px' : '235px',
+  borderBottom: colorTheme
+    ? '1px solid rgba(138, 147, 153, 0.25)'
+    : '1px solid rgba(138, 147, 153, 0.25)',
+  [theme.breakpoints.down('sm')]: {
     height: '140px',
   },
 });
@@ -134,19 +129,19 @@ export const SeriesChipStyles = {
   textDecoration: 'none',
 };
 
-export const SubTitleStyles = {
+export const SubTitleStyles = (theme: Theme) => ({
   maxHeight: '50px',
   minHeight: '50px',
   overflow: 'hidden',
   display: '-webkit-box',
   WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
-  '@media only screen and (max-width: 600px)': {
+  [theme.breakpoints.down('sm')]: {
     display: 'none',
   },
-};
+});
 
-export const TitleStyles = {
+export const TitleStyles = (theme: Theme) => ({
   fontWeight: 'bold',
   maxHeight: '30px',
   minHeight: '30px',
@@ -154,10 +149,10 @@ export const TitleStyles = {
   display: '-webkit-box',
   WebkitLineClamp: '1',
   WebkitBoxOrient: 'vertical',
-  '@media only screen and (max-width: 600px)': {
+  [theme.breakpoints.down('sm')]: {
     WebkitLineClamp: '2',
     fontSize: '14px',
     maxHeight: '50px',
     minHeight: '50px',
   },
-};
+});

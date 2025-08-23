@@ -11,17 +11,16 @@ export const ArticleList: React.FC<Props> = ({
 }) => {
   const noArticles = data?.length === 0;
   const newNonImmutableArray = data?.map((item: any) => item);
-  const sortByDate = newNonImmutableArray?.sort((a: any, b: any)=> {
-    return b.article_id - a.article_id;
-  });
+  const sortByDate = newNonImmutableArray?.sort((a: any, b: any) => b.article_id - a.article_id);
 
   return (
     <Grid
       container
     >
-      {noArticles ? 
+      {noArticles ? (
         <ComingSoon />
-        : sortByDate?.map((item: any) => (
+      ) : (
+        sortByDate?.map((item: any) => (
           <Fragment key={item.article_id}>
             <ArticleCard
               articleId={item.article_id}
@@ -40,15 +39,16 @@ export const ArticleList: React.FC<Props> = ({
               turOnAuthorForArticle={false}
             />
           </Fragment>
-        ))}
+        ))
+      )}
     </Grid>
   );
 };
 
 export type Props = {
-  authorData?: any,
-  data: any,
-  turOnAuthorForArticle: boolean,
+  authorData?: any;
+  data: any;
+  turOnAuthorForArticle: boolean;
 };
 
 export default ArticleList;

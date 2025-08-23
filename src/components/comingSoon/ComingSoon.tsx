@@ -1,17 +1,15 @@
 import React from 'react';
-import {
-  Typography,
-} from '@mui/material';
-import {
-  commingSoonText,
-} from './ComingSoonStyles';
-    
+import { Typography, useTheme } from '@mui/material';
+import { comingSoonText } from './ComingSoonStyles';
+
 const ComingSoon: React.FC = () => {
+  const theme = useTheme();
+
   return (
     <Typography
       color="primary"
       variant="h5"
-      sx={commingSoonText}
+      sx={comingSoonText(theme)}
     >
       Coming Soon...
     </Typography>

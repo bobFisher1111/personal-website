@@ -1,10 +1,11 @@
-export const commingSoonText = {
+import { Theme } from "@mui/material";
+
+export const comingSoonText = (theme: Theme) => ({
   padding: '16px',
-  '@media only screen and (max-width: 600px)': {
+  fontSize: '24px',
+  [theme.breakpoints.down('sm')]: {
     fontSize: '20px',
   },
-};
+});
 
-export default [
-  commingSoonText,
-];
+export default [comingSoonText];

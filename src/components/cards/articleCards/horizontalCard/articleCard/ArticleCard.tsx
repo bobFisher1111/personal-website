@@ -1,11 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router';
-import {
-  Chip,
-  Grid,
-  Typography,
-} from '@mui/material';
+import { Chip, Grid, Typography, useTheme } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import DisabledVideo from '../../../../disabledVideo/DisabledVideo';
 import { LinkStyles } from '../../../../../util/styles/LinkStyles';
@@ -41,169 +37,109 @@ const ArticleCard: React.FC<Props> = ({
   title,
   turOnAuthorForArticle,
 }) => {
-  const theme = useSelector((state: any) => state.theme.darkTheme);
+  const colorTheme = useSelector((state: any) => state.theme.darkTheme);
   const rejectCookie = useSelector((state: any) => state.rejectCookie);
-  const getAuthorData = authorData?.filter((item: any) => {
-    return item.author_id === authorId;
-  });
-  const Img = styled('img')({
-    maxWidth: '100%',
-    maxHeight: '100%',
-  });
-  const Video = styled('iframe')({
-    maxWidth: '100%',
-    maxHeight: '100%',
-  });
+  const theme = useTheme();
 
-  const disableButton = () => {
-    if (localStorage.getItem('enableYouTubeVideo') === null) {
-      return false;
-    } else {
-      return true;
-    }
-  };
+  const getAuthorData = authorData?.filter((item: any) => item.author_id === authorId);
+  const Img = styled('img')({ maxWidth: '100%', maxHeight: '100%' });
+  const Video = styled('iframe')({ maxWidth: '100%', maxHeight: '100%' });
+
+  const isVideoDisabled = localStorage.getItem('enableYouTubeVideo') === null;
 
   useEffect(() => {
-    if (localStorage.getItem('enableYouTubeVideo')) {
-      disableButton();
-    }
+    localStorage.getItem('enableYouTubeVideo');
   }, [rejectCookie.enabledYouTubeVideos]);
 
   return (
-    <Grid
-      container
-      sx={RootStyles(theme, turOnAuthorForArticle)}
-    >
-      <Grid
-        container
-        direction="row"
-        justifyContent="flex-start"
-        alignItems="center"
-        size={12}
-        sx={GridNameDateStyles}
-      >
-        <Grid
-          size={8}
-        >
-          <Link 
-            to={`/author/${authorId}`}
-            style={AvatarAuthorLinkStyles(theme)}
-          >
+    <Grid container sx={RootStyles(theme, colorTheme, turOnAuthorForArticle)}>
+      <Grid container direction="row" justifyContent="flex-start" alignItems="center" size={12} sx={GridNameDateStyles(theme)}>
+        <Grid size={8}>
+          <Link to={`/author/${authorId}`} style={AvatarAuthorLinkStyles(colorTheme)}>
             <Img
               alt="complex"
-              src={getAuthorData && getAuthorData[0]?.avatar_image}
-              sx={AvatarImageStyles(theme)}
+              src={getAuthorData?.[0]?.avatar_image}
+              sx={AvatarImageStyles(theme, colorTheme)}
             />
-            <Typography
-              color="primary"
-              sx={AuthorNameStyles}
-            >
-              {getAuthorData && getAuthorData[0]?.author_name}
+            <Typography color="primary" sx={AuthorNameStyles(theme)}>
+              {getAuthorData?.[0]?.author_name}
             </Typography>
           </Link>
         </Grid>
-        <Grid
-          size={4}
-        >
-          <Typography
-            color="primary"
-            sx={DateStyles}
-          >
+        <Grid size={4}>
+          <Typography color="primary" sx={DateStyles(theme)}>
             {date}
           </Typography>
         </Grid>
       </Grid>
-      <Grid 
-        container
-        direction="row"
-        justifyContent="central"
-        alignItems="central"
-      >
-        <Grid
-          size={{
-            xs: 4,
-            sm: 3,
-            md: 3,
-            lg: 3,
-            xl: 3,
-          }}
-        >
-          {isMediaVideo ?
-            disableButton() ?
-              <Video
-                allowFullScreen
-                src={articleMedia}
-                sx={ArticleVideoStyles(theme, turOnAuthorForArticle)}
-              />
-              :
+
+      <Grid container direction="row" justifyContent="central" alignItems="central">
+        <Grid size={{ xs: 4, sm: 3, md: 3, lg: 3, xl: 3 }}>
+          {isMediaVideo ? (
+            isVideoDisabled ? (
               <DisabledVideo
                 articlePage={false}
                 authorSectionArticlePage={true}
                 youtubeUrl={articleMedia}
                 carousel={false}
               />
-            :
+            ) : (
+              <Video
+                allowFullScreen
+                src={articleMedia}
+                sx={ArticleVideoStyles(theme, colorTheme, turOnAuthorForArticle)}
+              />
+            )
+          ) : (
             <Link
               to={`/article/${authorId}/${articleId}`}
-              reloadDocument={turOnAuthorForArticle ? true : false}
+              reloadDocument={turOnAuthorForArticle}
             >
               <Img
                 alt="complex"
                 src={articleMedia}
-                sx={ArticleImageStyles(theme)}
+                sx={ArticleImageStyles(theme, colorTheme)}
               />
             </Link>
-          }
+          )}
         </Grid>
-        <Grid
-          sx={ArticleDataGridStyles}
-        >
+
+        <Grid sx={ArticleDataGridStyles(theme)}>
           <Link
             to={`/article/${authorId}/${articleId}`}
-            reloadDocument={turOnAuthorForArticle ? true : false}
-            style={LinkStyles(theme)}
+            reloadDocument={turOnAuthorForArticle}
+            style={LinkStyles(colorTheme)}
           >
-            <Typography
-              color="primary"
-              variant="h6"
-              sx={TitleStyles}
-            >
+            <Typography color="primary" variant="h6" sx={TitleStyles(theme)}>
               {title}
             </Typography>
-            {!turOnAuthorForArticle &&
-              <Grid
-                size={12}
-              >
-                <Typography
-                  color="primary"
-                  sx={SubTitleStyles}
-                >
+            {!turOnAuthorForArticle && (
+              <Grid size={12}>
+                <Typography color="primary" sx={SubTitleStyles(theme)}>
                   {subtitle}
                 </Typography>
               </Grid>
-            }
+            )}
           </Link>
-          <Grid
-            sx={LinkGridRootStyles(articlePage)}
-          >
+
+          <Grid sx={LinkGridRootStyles(theme, articlePage)}>
             <Chip
               color="primary"
               label={section}
               variant="outlined"
               size="small"
-              sx={ChipStyles}
+              sx={ChipStyles(theme)}
             />
-            {series && <Link
-              to={`/series/${seriesId}`}
-              style={SeriesChipStyles}
-            >
-              <Chip
-                color="primary"
-                label={'Series'}
-                size="small"
-                sx={ChipStyles}
-              />
-            </Link>}
+            {series && (
+              <Link to={`/series/${seriesId}`} style={SeriesChipStyles}>
+                <Chip
+                  color="primary"
+                  label="Series"
+                  size="small"
+                  sx={ChipStyles(theme)}
+                />
+              </Link>
+            )}
           </Grid>
         </Grid>
       </Grid>
@@ -227,5 +163,5 @@ export type Props = {
   title: any;
   turOnAuthorForArticle: boolean;
 };
-  
+
 export default ArticleCard;
