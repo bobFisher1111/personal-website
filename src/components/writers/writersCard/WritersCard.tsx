@@ -4,7 +4,8 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
+import { useTheme } from '@mui/material/styles';
 import { Link } from 'react-router';
 import SocialMediaComponent from '../../socialMediaComponent/SocialMediaComponent';
 import { LinkStyles } from '../../../util/styles/LinkStyles';
@@ -26,12 +27,11 @@ const WritersCard: React.FC<Props> = ({
   youtube,
   email,
 }) => {
-  const theme = useSelector((state: any) => state.theme.darkTheme);
+  const theme = useTheme();
+  const colorTheme = useSelector((state: any) => state.theme.darkTheme);
+
   return (
-    <Grid
-      container
-      sx={WritersCardGridRoot}
-    >
+    <Grid container sx={WritersCardGridRoot()}>
       <Grid
         size={{
           xs: 3,
@@ -41,14 +41,11 @@ const WritersCard: React.FC<Props> = ({
           xl: 4,
         }}
       >
-        <Link 
-          to={`/author/${authorId}`}
-          style={LinkStyles(theme)}
-        >
+        <Link to={`/author/${authorId}`} style={LinkStyles(colorTheme)}>
           <CardMedia
             component="img"
             image={authorImage}
-            sx={WritersCardAvatar}
+            sx={WritersCardAvatar(theme)}
             alt={`${authorName} image`}
           />
         </Link>
@@ -61,36 +58,25 @@ const WritersCard: React.FC<Props> = ({
           lg: 8,
           xl: 8,
         }}
-        sx={WritersCardGridAuthorName}
+        sx={WritersCardGridAuthorName(theme)}
       >
-        <Link 
-          to={`/author/${authorId}`}
-          style={LinkStyles(theme)}
-        >
-          <Typography
-            color="primary"
-            sx={WritersCardTextAuthorName}
-          >
+        <Link to={`/author/${authorId}`} style={LinkStyles(colorTheme)}>
+          <Typography color="primary" sx={WritersCardTextAuthorName(theme)}>
             {authorName}
           </Typography>
         </Link>
-        <Link 
-          to={`/author/${authorId}`}
-          style={LinkStyles(theme)}
-        >
+        <Link to={`/author/${authorId}`} style={LinkStyles(colorTheme)}>
           <Typography
             color="primary"
             variant="subtitle1"
-            sx={WritersCardTextAuthorTitle}
+            sx={WritersCardTextAuthorTitle(theme)}
           >
             {authorsTitle}
           </Typography>
         </Link>
-        <Grid
-          container
-        >
+        <Grid container>
           <SocialMediaComponent
-            widthPadding={'8px 8px 8px 0px'}
+            widthPadding="8px 8px 8px 0px"
             turnOnStyle={true}
             turnOnEmail={true}
             turnOnEmailStyle={true}
@@ -98,8 +84,8 @@ const WritersCard: React.FC<Props> = ({
             twitter={twitter}
             youtube={youtube}
             email={email}
-            alignContent={"flex-start"}
-            justifyContent={"flex-start"}
+            alignContent="flex-start"
+            justifyContent="flex-start"
           />
         </Grid>
       </Grid>

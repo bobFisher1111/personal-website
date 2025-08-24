@@ -1,12 +1,18 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useTheme } from '@mui/material/styles';
+import { Box, Grid } from '@mui/material';
+import CopyLinkComponent from '../copyLinkComponent/CopyLinkComponent';
 import TwitterLogo from '../../assets/icons/logo-black.png';
 import TwitterLogoDark from '../../assets/icons/logo-white.png';
 import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
 import YoutTubeLogoDark from '../../assets/icons/yt_icon_mono_dark.png';
 // import FacebookLogo from '../../assets/icons/FacebookLogo.png';
-import { Box, Grid } from '@mui/material';
-import CopyLinkComponent from '../copyLinkComponent/CopyLinkComponent';
+import {
+  socialMediaIconStyle,
+  socialMediaGridItemStyle,
+  emailGridStyle,
+} from './SocialMediaComponentStyles';
 
 const SocialMediaComponent: React.FC<Props> = ({
   widthPadding,
@@ -20,115 +26,65 @@ const SocialMediaComponent: React.FC<Props> = ({
   justifyContent,
   alignContent,
 }) => {
-  const theme = useSelector((state: any) => state.theme.darkTheme);
+  const colorTheme = useSelector((state: any) => state.theme.darkTheme);
+  const theme = useTheme();
 
   return (
-    <Grid 
-      container
-      justifyContent={justifyContent}
-      alignContent={alignContent}
-    >
-      {/* <Grid
-        item
-        sx={{
-          padding: turnOnStyle ? widthPadding : '',
-        }}
-      >
-        <a 
-          href={facebook}
-          target="_blank"
-          rel="noreferrer"
-        >
+    <Grid container justifyContent={justifyContent} alignContent={alignContent}>
+      {/* Facebook section is commented out */}
+      {/* <Grid sx={socialMediaGridItemStyle(muiTheme, widthPadding, turnOnStyle)}>
+        <a href={facebook} target="_blank" rel="noreferrer">
           <Box
             component="img"
-            src={FacebookLogo}
+            src={darkTheme ? FacebookLogoDark : FacebookLogo}
             alt="Facebook logo"
-            sx={{
-              height: '20px',
-              '@media only screen and (max-width: 600px)': {
-                height: '15px',
-              },
-            }}
+            sx={socialMediaIconStyle(muiTheme)}
           />
         </a>
       </Grid> */}
-      <Grid
-        sx={{
-          padding: turnOnStyle ? widthPadding : '',
-        }}
-      >
-        <a 
-          href={twitter}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="X logo"
-        >
+
+      <Grid sx={socialMediaGridItemStyle(theme, widthPadding, turnOnStyle)}>
+        <a href={twitter} target="_blank" rel="noreferrer" aria-label="X logo">
           <Box
             component="img"
-            src={theme ? TwitterLogoDark : TwitterLogo}
+            src={colorTheme ? TwitterLogoDark : TwitterLogo}
             alt="X logo"
-            sx={{
-              height: '20px',
-              '@media only screen and (max-width: 600px)': {
-                height: '15px',
-              },
-            }}
+            sx={socialMediaIconStyle(theme)}
           />
         </a>
       </Grid>
-      <Grid
-        sx={{
-          padding: turnOnStyle ? widthPadding : '',
-        }}
-      >
-        <a 
-          href={youtube}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="youtube logo"
-        >
+
+      <Grid sx={socialMediaGridItemStyle(theme, widthPadding, turnOnStyle)}>
+        <a href={youtube} target="_blank" rel="noreferrer" aria-label="YouTube logo">
           <Box
             component="img"
-            src={theme ? YoutTubeLogoDark : YoutTubeLogo} 
-            height="20px"
+            src={colorTheme ? YoutTubeLogoDark : YoutTubeLogo}
             alt="YouTube logo"
-            sx={{
-              height: '20px',
-              '@media only screen and (max-width: 600px)': {
-                height: '15px',
-              },
-            }}
+            sx={socialMediaIconStyle(theme)}
           />
         </a>
       </Grid>
-      {turnOnEmail && 
-          <Grid
-            sx={{
-              padding: turnOnEmailStyle ? '0px' : '10px 0px 16px 16px',
-              alignContent: 'center',
-            }}
-          >
-            <CopyLinkComponent
-              email={true}
-              authorsEmail={email}
-            />
-          </Grid>
-      }
+
+      {turnOnEmail && (
+        <Grid sx={emailGridStyle(turnOnEmailStyle)}>
+          <CopyLinkComponent email authorsEmail={email} />
+        </Grid>
+      )}
     </Grid>
   );
 };
 
 export type Props = {
-  widthPadding?: string,
-  turnOnStyle?: boolean,
-  turnOnEmail?: boolean,
-  turnOnEmailStyle?: boolean,
+  widthPadding?: string;
+  turnOnStyle?: boolean;
+  turnOnEmail?: boolean;
+  turnOnEmailStyle?: boolean;
   email?: string;
   facebook?: string;
   twitter?: string;
   youtube?: string;
-  justifyContent: string,
-  alignContent: string,
+  justifyContent: string;
+  alignContent: string;
 };
 
 export default SocialMediaComponent;

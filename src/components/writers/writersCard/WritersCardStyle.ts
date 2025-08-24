@@ -1,60 +1,54 @@
-export const WritersCardGridRoot = {
-  padding: '8px 16px 16px 16px',
-};
+import { Theme } from '@mui/material/styles';
 
-export const WritersCardAvatar = {
+export const WritersCardGridRoot = () => ({
+  padding: '8px 16px 16px 16px',
+});
+
+export const WritersCardAvatar = (theme: Theme) => ({
   width: '140px',
   height: '140px',
   borderRadius: '4px',
-  '@media only screen and (max-width: 600px)': {
+  [theme.breakpoints.down('sm')]: {
     width: '80px',
     height: '110px',
   },
-  '@media only screen and (min-width: 600px)': {
+  [theme.breakpoints.up('sm')]: {
     width: '100px',
     height: '140px',
   },
-  '@media only screen and (min-width: 992px)': {
+  [theme.breakpoints.up('lg')]: {
     width: '140px',
     height: '140px',
   },
-};
+});
 
-export const WritersCardGridAuthorName = {
+export const WritersCardGridAuthorName = (theme: Theme) => ({
   paddingTop: '4px',
-  '@media only screen and (max-width: 600px)': {
+  [theme.breakpoints.down('sm')]: {
     padding: '0px 0px 0px 16px',
   },
-};
+});
 
-export const WritersCardTextAuthorName = {
+export const WritersCardTextAuthorName = (theme: Theme) => ({
   fontSize: '20px',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
   WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
-  '@media only screen and (max-width: 600px)': {
+  [theme.breakpoints.down('sm')]: {
     fontSize: '20px',
   },
-};
+});
 
-export const WritersCardTextAuthorTitle = {
+export const WritersCardTextAuthorTitle = (theme: Theme) => ({
   fontSize: '20px',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
   WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
-  '@media only screen and (max-width: 600px)': {
+  [theme.breakpoints.down('sm')]: {
     fontSize: '16px',
   },
-};
-
-export default [
-  WritersCardGridRoot,
-  WritersCardAvatar,
-  WritersCardTextAuthorName,
-  WritersCardGridAuthorName,
-  WritersCardTextAuthorTitle,
-];
+});
