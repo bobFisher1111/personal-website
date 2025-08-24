@@ -1,21 +1,24 @@
-export const RootStyles = (theme: boolean, articlepage: boolean, carousel: boolean) => ({
+import { Theme } from '@mui/material/styles';
+
+export const RootStyles = (
+  darkTheme: boolean,
+  articlePage: boolean,
+  carousel: boolean
+) => (theme: Theme) => ({
   borderRadius: '6px',
-  backgroundColor: theme ? '#0C0D0D' : 'white',
-  maxHeight: '100%',
-  minHeight: '100%',
-  minWidth: '100%',
-  maxWidth: '100%',
+  backgroundColor: darkTheme ? '#0C0D0D' : 'white',
   border: '1px solid #0C0D0D',
-  height: articlepage ? '450px' : '',
-  // height: articlepage? '189px' : '',
-  '@media only screen and (max-width: 600px)': {
-    height: carousel? '189px' : '',
+  width: '100%',
+  height: articlePage ? '450px' : 'auto',
+
+  [theme.breakpoints.down('sm')]: {
+    height: carousel ? '189px' : 'auto',
   },
 });
 
-export const YouTubeDisabledStyle = {
+export const YouTubeDisabledStyle = (theme: Theme) => ({
   height: '20px',
-  '@media only screen and (max-width: 600px)': {
+  [theme.breakpoints.down('sm')]: {
     height: '15px',
   },
-};
+});
