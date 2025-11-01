@@ -1,13 +1,19 @@
-export const CardMediaVerticalCardImage = {
-  '@media only screen and (min-width: 600px)': {
+import { Theme } from '@mui/material';
+
+export const CardMediaVerticalCardImage = (theme: Theme) => ({
+  width: '100%',
+  height: 'auto',
+
+  [theme.breakpoints.up('sm')]: {
     height: '400px',
   },
-  '@media only screen and (max-width: 600px)': {
+
+  [theme.breakpoints.down(740)]: {
     '&.MuiCardMedia-root': {
       maxHeight: '224px',
     },
   },
-};
+});
 
 export const CardMediaVerticalCardVideo = {
   border: '0px',
@@ -16,7 +22,7 @@ export const CardMediaVerticalCardVideo = {
 
 export const CardRootStyle = {
   position: 'relative',
-  boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19)',
 };
 
 export const CardFooterStyle = {
@@ -24,79 +30,75 @@ export const CardFooterStyle = {
   bottom: 0,
   left: 0,
   width: '100%',
-  bgcolor: '#0C0D0D',
-  opacity: 0.70,
+  backgroundColor: '#0C0D0D',
+  opacity: 0.7,
 };
 
-export const CardVerticalCard = (theme: boolean) => ({
-  border: theme ? '1px solid #9DB2BF' : '#0C0D0D',
+export const CardVerticalCard = (theme: Theme, darkTheme: boolean) => ({
+  border: darkTheme ? '1px solid #9DB2BF' : '#0C0D0D',
   width: '365px',
-  '@media only screen and (max-width: 992px)': {
+
+  [theme.breakpoints.down(992)]: {
     width: '321px',
   },
-  '@media only screen and (min-width: 992px)': {
+
+  [theme.breakpoints.up(992)]: {
     width: '345px',
   },
-  // series
-  '@media only screen and (max-width: 600px)': {
-    minWidth: 'calc(100vw - 32px)',
-    maxWidth: 'calc(100vw - 32px)',
+
+  [theme.breakpoints.down(740)]: {
+    minWidth: 'calc(100vw - 48px)',
+    maxWidth: 'calc(100vw - 48px)',
   },
 });
 
-export const DivVerticalArticleRoot = () => ({
-  padding: '0px 0px 16px 0px',
+export const DivVerticalArticleRoot = (theme: Theme) => ({
+  paddingBottom: theme.spacing(2),
 });
 
-export const GridVeriticalCardVideo = {
+export const GridVeriticalCardVideo = (theme: Theme) => ({
   maxWidth: '345px',
   minWidth: '345px',
   height: '400px',
-  '@media only screen and (max-width: 600px)': {
+
+  [theme.breakpoints.down(740)]: {
     minWidth: 'calc(100vw - 32px)',
     maxWidth: 'calc(100vw - 32px)',
     height: '200px',
   },
-  '@media only screen and (min-width: 600px)': {
+
+  [theme.breakpoints.up('sm')]: {
     minWidth: '321px',
     maxWidth: '365px',
   },
-};
+});
 
-export const GridPadding = {
-  padding: '16px',
-};
+export const GridPadding = (theme: Theme) => ({
+  padding: theme.spacing(2),
+});
 
-export const TypographyVerticalCardNameStyle = {
+export const TypographyVerticalCardNameStyle = (theme: Theme) => ({
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
-  WebkitLineClamp: '1',
+  WebkitLineClamp: 1,
   WebkitBoxOrient: 'vertical',
-  padding: '16px'
-};
+  padding: theme.spacing(2),
+});
 
-export const TypographyVerticalCardNameStyleHover = {
+export const TypographyVerticalCardNameStyleHover = (theme: Theme) => ({
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
-  WebkitLineClamp: '1',
+  WebkitLineClamp: 1,
   WebkitBoxOrient: 'vertical',
-  padding: '16px',
-  '@media only screen and (max-width: 600px)': {
+  padding: theme.spacing(2),
+
+  [theme.breakpoints.down(740)]: {
     fontSize: '12px',
   },
-};
 
-export default [
-  CardMediaVerticalCardImage,
-  CardMediaVerticalCardVideo,
-  CardRootStyle,
-  CardFooterStyle,
-  CardVerticalCard,
-  DivVerticalArticleRoot,
-  GridPadding,
-  GridVeriticalCardVideo,
-  TypographyVerticalCardNameStyle,
-  TypographyVerticalCardNameStyleHover,
-];
+  '&:hover': {
+    textDecoration: 'underline',
+  },
+});

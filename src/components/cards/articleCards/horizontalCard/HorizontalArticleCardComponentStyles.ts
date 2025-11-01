@@ -1,158 +1,162 @@
-export const ArticlePageRoot = {
+import { Theme } from '@mui/material/styles';
+
+export const articlePageRoot = (theme: Theme) => ({
   padding: '8px 0px 0px 0px',
-  '@media only screen and (max-width: 600px)': {
+  [theme.breakpoints.down('sm')]: {
     padding: '8px 8px 0px 8px',
   },
-};
+});
 
-export const CardGrid = {
-  height: "180px",
-  '@media only screen and (max-width: 600px)': {
+export const cardGrid = (theme: Theme) => ({
+  height: '180px',
+  [theme.breakpoints.down('sm')]: {
     padding: '8px',
     height: '166px',
   },
-};
+});
 
-export const CardHorizontalArticleInfo = ( articlepagelist: boolean ) => ({
+export const cardHorizontalArticleInfo = (articlePageList: boolean) => ({
   height: '180px',
   boxShadow: 'none',
-  padding: !articlepagelist ? '0px 0px 0px 24px' : '',
-  '@media only screen and (min-width: 900px)': {
+  padding: !articlePageList ? '0px 0px 0px 24px' : '',
+  '@media (min-width:900px)': {
     width: '660px',
   },
-  '@media only screen and (max-width: 600px)': {
+  '@media (max-width:600px)': {
     padding: '8px',
   },
 });
 
-export const CardMedaiArticleVideo = (articlepage: boolean, videoHeight: boolean, mobileImageWidth?: string) => ({
-  height: `${articlepage} ? '576px' : '181px'`,
+export const cardMediaArticleVideo = (
+  theme: Theme,
+  articlePage: boolean,
+  videoHeight: boolean,
+  mobileImageWidth?: string
+) => ({
+  height: articlePage ? '576px' : videoHeight ? '444px' : '181px',
   border: '0px',
-  borderRadius: '4px',
+  borderRadius: articlePage ? '0px' : '4px',
   aspectRatio: '16/9',
-  '@media only screen and (max-width: 600px)': {
-    minWidth: articlepage ? '101vw' : `calc(100vw - ${mobileImageWidth})`,
-    borderRadius: articlepage ? '0px' : '4px',
-    border: articlepage ? '' : '0px',
+  [theme.breakpoints.down('sm')]: {
+    minWidth: articlePage ? '100vw' : `calc(100vw - ${mobileImageWidth})`,
   },
-  '@media only screen and (min-width: 600px)': {
+  [theme.breakpoints.up('sm')]: {
     maxWidth: 'calc(100vw - 48px)',
     minWidth: 'calc(100vw - 48px)',
   },
-  '@media only screen and (min-width: 768px)': {
-    minWidth: articlepage ? `calc(100vw - ${mobileImageWidth})` : '321px',
-    maxWidth: articlepage ? `calc(100vw - ${mobileImageWidth})` : '321px',
-    height: articlepage ? '450px': videoHeight ? '444px' : '200px',
+  '@media (min-width:1024px) and (max-width:1199px)': {
+    minWidth: articlePage ? '800px' : '300px',
+    maxWidth: articlePage ? '800px' : '300px',
   },
-  '@media only screen and (min-width: 992px)': {
-    minWidth: articlepage ? '960px' : '321px',
-    maxWidth: articlepage ? '960px' : '321px',
-  },
-  '@media only screen and (min-width: 1200px)': {
-    minWidth: articlepage ? '960px' : '321px',
-    maxWidth: articlepage ? '960px' : '321px',
+  [theme.breakpoints.up('lg')]: {
+    minWidth: articlePage ? '960px' : '321px',
+    maxWidth: articlePage ? '960px' : '321px',
   },
 });
 
-export const GridHorizontalArticleContainer = (articlePage: boolean, theme: boolean, turOnAuthorForArticle?: boolean) => ({
+export const gridHorizontalArticleContainer = (
+  theme: Theme,
+  articlePage: boolean,
+  darkTheme: boolean,
+  turOnAuthorForArticle?: boolean
+) => ({
   width: '100%',
   display: 'flex',
   margin: '0px 0px 16px 0px',
-  border: theme || articlePage || turOnAuthorForArticle ? '' : '1px solid #0C0D0D',
-  '@media only screen and (max-width: 600px)': {
-    border: ((articlePage && theme) || (!articlePage && theme) || (articlePage && !theme)) ? '' : '1px solid #0C0D0D',
+  border: darkTheme || articlePage || turOnAuthorForArticle ? '' : '1px solid #0C0D0D',
+  [theme.breakpoints.down('sm')]: {
+    border: darkTheme || articlePage ? '' : '1px solid #0C0D0D',
     padding: '6px 0px 0px 0px',
   },
 });
 
-// once we have an article with video, need to check this here
-export const GridHorizontalArticleMaxWidth = (imagewidth: string, theme: boolean, articlePage: boolean) => ({
-  maxWidth: imagewidth,
-  height: theme || articlePage ? '' : '180px',
-  '@media only screen and (max-width: 770px)': {
-    height: '',
+export const gridHorizontalArticleMaxWidth = (
+  theme: Theme,
+  imageWidth: string,
+  darkTheme: boolean,
+  articlePage: boolean
+) => ({
+  maxWidth: imageWidth,
+  height: darkTheme || articlePage ? undefined : '180px',
+  '@media (min-width:1024px) and (max-width:1199px)': {
+    maxWidth: articlePage ? '800px' : '300px',
+  },
+  [theme.breakpoints.down('md')]: {
+    height: undefined,
   },
 });
 
-export const ImageHorizonatalArticleStyles = (articlepage: any, imagewidth?: any) => ({
-  height: `${articlepage} ? '576px' : '181px'`,
-  objectFit: 'contain',
+export const imageHorizontalArticleStyles = (
+  theme: Theme,
+  articlePage: boolean,
+  imageWidth?: string
+) => ({
+  height: articlePage ? 'auto' : '181px',
+  objectFit: 'cover',
   aspectRatio: '16/9',
-  width: articlepage ? '960px' : '321px',
-  '@media only screen and (max-width: 600px)': {
-    width: `calc(100vw - 32px)`,
-    borderRadius: articlepage ? '0px' : '0px',
+  width: articlePage ? '960px' : '321px',
+  [theme.breakpoints.down('sm')]: {
+    width: '100%',
+    height: 'auto',
+    marginTop: 0,
+    paddingTop: 0,
   },
-  '@media only screen and (min-width: 600px)': {
-    width: `calc(100vw - ${imagewidth})`,
+  [theme.breakpoints.up('sm')]: {
+    width: `calc(100vw - ${imageWidth || '48px'})`,
   },
-  '@media only screen and (min-width: 768px)': {
-    width: articlepage ? `calc(100vw - ${imagewidth})` : '321px',
+  '@media (min-width:1024px) and (max-width:1199px)': {
+    width: articlePage ? '800px' : '300px',
   },
-  '@media only screen and (min-width: 992px)': {
-    width: articlepage ? '960px' : '321px',
-  },
-  '@media only screen and (min-width: 1200px)': {
-    width: articlepage ? '960px' : '321px',
+  [theme.breakpoints.up('lg')]: {
+    width: articlePage ? '960px' : '321px',
   },
 });
 
-export const TypographyHorizontalArticleDate = {
+export const typographyHorizontalArticleDate = (theme: Theme) => ({
   fontSize: '14px',
-  '@media only screen and (max-width: 600px)': {
+  [theme.breakpoints.down('sm')]: {
     fontSize: '14px',
-    padding: '0px 4px 0px 4px',
+    padding: '0px 4px',
   },
-};
+});
 
-export const TypographyHorizontalArticleSubTitle = (articlepage: boolean, cardtextwidth: string) => ({
+export const typographyHorizontalArticleSubTitle = (
+  theme: Theme,
+  articlePageList: boolean,
+  cardTextWidth: string
+) => ({
   fontSize: '16px',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
   WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
-  maxWidth: articlepage ? '321px' : `${cardtextwidth} !important`,
-  '@media only screen and (max-width: 600px)': {
+  maxWidth: articlePageList ? '321px' : `${cardTextWidth} !important`,
+  [theme.breakpoints.down('sm')]: {
     fontSize: '16px',
-    padding: '0px 4px 0px 4px',
+    padding: '0px 4px',
   },
 });
 
-export const TypographyHorizontalArticleTitle = (articlepage: boolean) => ({
+export const typographyHorizontalArticleTitle = (theme: Theme, articlePage: boolean) => ({
   fontSize: '20px',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
-  WebkitLineClamp: '1',
+  WebkitLineClamp: articlePage ? '1' : '2',
   WebkitBoxOrient: 'vertical',
-  maxWidth: articlepage ? '960px' : '639px',
-  '@media only screen and (max-width: 600px)': {
+  maxWidth: articlePage ? '960px' : '639px',
+  [theme.breakpoints.down('sm')]: {
     fontSize: '20px',
-    padding: '0px 4px 0px 4px',
-    WebkitLineClamp: '2',
+    padding: '0px 4px',
   },
 });
 
-export const TitleStyle = {
+export const titleStyle = (theme: Theme) => ({
   fontSize: '32px',
-  '@media only screen and (max-width: 600px)': {
-    padding: '0px 8px 0px 8px',
+  [theme.breakpoints.down('sm')]: {
+    padding: '0px 8px',
     fontSize: '24px',
     fontWeight: 'bold',
   },
-};
-
-export default [
-  ArticlePageRoot,
-  CardGrid,
-  CardHorizontalArticleInfo,
-  CardMedaiArticleVideo,
-  GridHorizontalArticleContainer,
-  GridHorizontalArticleMaxWidth,
-  ImageHorizonatalArticleStyles,
-  TypographyHorizontalArticleDate,
-  TypographyHorizontalArticleSubTitle,
-  TypographyHorizontalArticleTitle,
-  TitleStyle,
-];
+});

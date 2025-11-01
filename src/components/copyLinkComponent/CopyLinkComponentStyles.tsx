@@ -1,31 +1,36 @@
-export const ContentCopyIconStyle = (theme: boolean, padding: any) => ({
-  color: theme ? '#9DB2BF' : '#0C0D0D',
-  padding: padding,
+import { Theme } from '@mui/material';
+
+export const ContentCopyIconStyle = (
+  theme: Theme,
+  darkTheme: boolean,
+  padding: string | number
+) => ({
+  color: darkTheme ? '#9DB2BF' : '#0C0D0D',
+  padding,
   cursor: 'pointer',
+  width: '40px',
+
   '&:hover': {
     color: '#2F4C69',
   },
-  width: '40px',
-  '@media only screen and (max-width: 600px)': {
+
+  [theme.breakpoints.down('sm')]: {
     fontSize: '16px',
     padding: '2px 0px 0px 8px',
     height: '20px',
   },
 });
 
-export const EmailOutlinedIconStyles = ( theme: boolean ) => ({
+export const EmailOutlinedIconStyles = (theme: Theme, darkTheme: boolean) => ({
   height: '30px',
   cursor: 'pointer',
-  color: theme ? '#9DB2BF' : '#0C0D0D',
+  color: darkTheme ? '#9DB2BF' : '#0C0D0D',
+
   '&:hover': {
     color: '#2F4C69',
   },
-  '@media only screen and (max-width: 600px)': {
-    padding: '0px',
+
+  [theme.breakpoints.down('sm')]: {
+    padding: 0,
   },
 });
-
-export default [
-  ContentCopyIconStyle,
-  EmailOutlinedIconStyles,
-];

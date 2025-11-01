@@ -1,5 +1,6 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
+import { useTheme } from '@mui/material';
 import HeaderComponent from '../headerComponent/HeaderComponent';
 import TabsComponent from '../tabsComponent/TabsComponent';
 import {
@@ -11,23 +12,17 @@ const SectionsComponent: React.FC<Props> = ({
   headerTitle,
   sectionTabData,
 }) => {
+  const theme = useTheme();
+
   return (
-    <Grid
-      container
-      sx={SectionComponentGridRoot}
-    >
-      <Grid
-        size={12}
-      >
+    <Grid container sx={SectionComponentGridRoot(theme)}>
+      <Grid size={{ xs: 12 }}>
         <HeaderComponent
           title={headerTitle}
           authorAvatar={false}
         />
       </Grid>
-      <Grid
-        size={12}
-        sx={SectionComponentGridTabs}
-      >
+      <Grid size={{ xs: 12 }} sx={SectionComponentGridTabs(theme)}>
         <TabsComponent
           turnonsectiontabspadding={true}
           tabsData={sectionTabData}
@@ -38,9 +33,8 @@ const SectionsComponent: React.FC<Props> = ({
 };
 
 export type Props = {
-  headerTitle?: string,
-  sectionTabData?: any,
+  headerTitle?: string;
+  sectionTabData?: any;
 };
-  
+
 export default SectionsComponent;
-  

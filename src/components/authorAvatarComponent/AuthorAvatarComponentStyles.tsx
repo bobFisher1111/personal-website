@@ -1,36 +1,38 @@
+import { Theme } from '@mui/material/styles';
 import {
   LIGHT_PRIMARY,
   DARK_PRIMARY,
 } from '../../store/redux/theme/CONSTANTS';
 
-export const AvatarAuthorLinkStyles = (theme: boolean) => ({
+export const avatarAuthorLinkStyles = (darkTheme: boolean) => ({
   textDecoration: 'none',
   display: 'flex',
-  color: theme ? `${DARK_PRIMARY}` : `${LIGHT_PRIMARY}`,
+  alignItems: 'center',
+  color: darkTheme ? DARK_PRIMARY : LIGHT_PRIMARY,
 });
 
-export const AvatarImageStyles = (theme: boolean) => ({
+export const avatarImageStyles = (theme: Theme, darkTheme: boolean) => ({
   width: '30px',
   height: '30px',
   borderRadius: '50%',
-  border: theme ? `1px solid ${DARK_PRIMARY}` : `1px solid ${LIGHT_PRIMARY}`,
-  '@media only screen and (max-width: 600px)': {
+  border: `1px solid ${darkTheme ? DARK_PRIMARY : LIGHT_PRIMARY}`,
+  [theme.breakpoints.down('sm')]: {
     width: '20px',
     height: '20px',
   },
-  '@media only screen and (max-device-width: 812px) and (orientation: landscape)': {
+  '@media (max-device-width:812px) and (orientation: landscape)': {
     width: '16px',
     height: '16px',
-  }
+  },
 });
 
-export const AuthorNameStyles = {
+export const authorNameStyles = (theme: Theme) => ({
   padding: '0px 0px 0px 8px',
   alignContent: 'center',
-  '@media only screen and (max-width: 600px)': {
-    fontSize: '14px'
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '14px',
   },
-  '@media only screen and (max-device-width: 812px) and (orientation: landscape)': {
-    fontSize: '12px'
-  }
-};
+  '@media (max-device-width:812px) and (orientation: landscape)': {
+    fontSize: '12px',
+  },
+});

@@ -1,16 +1,29 @@
-export const SectionComponentGridRoot = {
-  // background: '#fff',
+import { Theme } from '@mui/material';
+
+export const SectionComponentGridRoot = (theme: Theme) => ({
   display: 'flex',
   maxWidth: '1024px',
   margin: 'auto',
   padding: '36px 16px 0px 16px',
-};
 
-export const SectionComponentGridTabs = {
+  [theme.breakpoints.down('md')]: {
+    flexDirection: 'column',
+    padding: '24px 12px 0px 12px',
+  },
+
+  [theme.breakpoints.down('sm')]: {
+    padding: '16px 8px 0px 8px',
+  },
+});
+
+export const SectionComponentGridTabs = (theme: Theme) => ({
   padding: '0px 0px 200px 0px',
-};
 
-export default [
-  SectionComponentGridRoot,
-  SectionComponentGridTabs,
-];
+  [theme.breakpoints.down('md')]: {
+    paddingBottom: '120px',
+  },
+
+  [theme.breakpoints.down('sm')]: {
+    paddingBottom: '80px',
+  },
+});

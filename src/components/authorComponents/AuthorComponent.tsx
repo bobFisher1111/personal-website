@@ -1,16 +1,17 @@
 import React from 'react';
 import { Grid, Typography } from '@mui/material';
+import { useSelector } from 'react-redux';
+import { useTheme } from '@mui/material/styles';
 import HeaderComponent from '../headerComponent/HeaderComponent';
 import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
 import TabsComponent from '../tabsComponent/TabsComponent';
-import { useSelector } from 'react-redux';
 import AuthorComponetTabData from './AuthorComponetTabData';
 import {
-  AuthorComponentGridRoot,
-  AuthorComponentGridBiography,
-  AuthorComponentGridBiographyTitle,
-  AuthorComponentGridBiographyText,
-  HeaderComponentStyles,
+  authorComponentGridRoot,
+  authorComponentGridBiography,
+  authorComponentGridBiographyTitle,
+  authorComponentGridBiographyText,
+  headerComponentStyles,
 } from './AuthorComponentStyles';
 
 const AuthorComponent: React.FC<Props> = ({
@@ -22,34 +23,36 @@ const AuthorComponent: React.FC<Props> = ({
   authorName,
   seriesForArticlePage,
 }) => {
+  const muiTheme = useTheme();
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const webData = getWebsiteData;
   const authorWebData = getWebsiteData?.authors;
+
   const getIdFromUrl = () => {
     const currentLocation = window.location.href;
-    const getIdFromCurrentLocation = turOnArticlePage ? currentLocation.split('/').reverse()[1] : currentLocation.split('/').reverse()[0];
+    const getIdFromCurrentLocation = turOnArticlePage
+      ? currentLocation.split('/').reverse()[1]
+      : currentLocation.split('/').reverse()[0];
     return Number(getIdFromCurrentLocation);
   };
-  const getAuthor = webData?.authors?.filter((item: any) => {
-    return item.author_id === getIdFromUrl();
-  });
-  const getArticles = webData?.articles?.filter((item: any) => {
-    return item.author_id === getIdFromUrl();
-  });
-  const getBooks = webData?.books?.filter((item: any) => {
-    return item.author_id === getIdFromUrl();
-  });
-  const authorData = getAuthor && getAuthor[0];
+
+  const getAuthor = webData?.authors?.filter(
+    (item: any) => item.author_id === getIdFromUrl()
+  );
+  const getArticles = webData?.articles?.filter(
+    (item: any) => item.author_id === getIdFromUrl()
+  );
+  const getBooks = webData?.books?.filter(
+    (item: any) => item.author_id === getIdFromUrl()
+  );
+
+  const authorData = getAuthor?.[0];
 
   return (
-    <Grid
-      container
-      justifyContent="center"
-      sx={AuthorComponentGridRoot(turOnArticlePage)}
-    >
+    <Grid container justifyContent="center" sx={authorComponentGridRoot(turOnArticlePage)}>
       <Grid
         size={12}
-        sx={HeaderComponentStyles}
+        sx={headerComponentStyles(muiTheme)}
       >
         <HeaderComponent
           title={authorData?.author_name || articleAuthorData?.author_name}
@@ -59,78 +62,64 @@ const AuthorComponent: React.FC<Props> = ({
           articlePage={turOnArticlePage}
         />
       </Grid>
+
       <Grid
         size={12}
-        sx={AuthorComponentGridBiography}
+        sx={authorComponentGridBiography()}
       >
-        <Typography
-          color="primary"
-          variant="h6"
-          sx={AuthorComponentGridBiographyTitle}
-        >
-          {'Biography'}
+        <Typography color="primary" variant="h6" sx={authorComponentGridBiographyTitle(muiTheme)}>
+          Biography
         </Typography>
-        <Typography
-          color="primary"
-          sx={AuthorComponentGridBiographyText}
-        >
+        <Typography color="primary" sx={authorComponentGridBiographyText(muiTheme)}>
           {authorData?.biography || articleAuthorData?.biography}
         </Typography>
       </Grid>
-      <Grid
-        container
-        justifyContent="center"
-      >
+
+      <Grid container justifyContent="center">
         <Grid>
           <SocialMediaComponent
-            widthPadding={'16px 0px 16px 16px'}
+            widthPadding="16px 0px 16px 16px"
             turnOnStyle={true}
             turnOnEmail={true}
             email={authorData?.email || articleAuthorData?.email}
             facebook={authorData?.facebook || articleAuthorData?.facebook}
             twitter={authorData?.twitter || articleAuthorData?.twitter}
             youtube={authorData?.you_tube || articleAuthorData?.you_tube}
-            alignContent={"center"}
-            justifyContent={"center"}
+            alignContent="center"
+            justifyContent="center"
           />
         </Grid>
-        {turOnArticlePage ?
-          <TabsComponent
-            turnonsectiontabspadding={false}
-            tabsData={
-              AuthorComponetTabData(
-                authorWebData, 
-                articlelData,
-                true,
-                authorName,
-                false,
-                true,
-                bookData,
-                authorsData,
-                seriesForArticlePage,
-                false
-              )
-            }
-          />
-          :
-          <TabsComponent
-            turnonsectiontabspadding={false}
-            tabsData={
-              AuthorComponetTabData(
-                authorWebData,
-                getArticles,
-                false,
-                getIdFromUrl(),
-                false,
-                true,
-                getBooks,
-                authorData,
-                false,
-                true
-              )
-            }
-          />
-        }
+
+        <TabsComponent
+          turnonsectiontabspadding={false}
+          tabsData={
+            turOnArticlePage
+              ? AuthorComponetTabData(
+                  authorWebData,
+                  articlelData,
+                  true,
+                  authorName,
+                  false,
+                  true,
+                  bookData,
+                  authorsData,
+                  seriesForArticlePage,
+                  false
+                )
+              : AuthorComponetTabData(
+                  authorWebData,
+                  getArticles,
+                  false,
+                  getIdFromUrl(),
+                  false,
+                  true,
+                  getBooks,
+                  authorData,
+                  false,
+                  true
+                )
+          }
+        />
       </Grid>
     </Grid>
   );

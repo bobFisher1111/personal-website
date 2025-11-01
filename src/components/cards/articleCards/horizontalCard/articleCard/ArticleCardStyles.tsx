@@ -1,62 +1,58 @@
-import { Theme } from "@mui/material";
+import { Theme } from '@mui/material';
 import {
   LIGHT_PRIMARY,
   DARK_PRIMARY,
 } from '../../../../../store/redux/theme/CONSTANTS';
 
 export const ArticleDataGridStyles = (theme: Theme) => ({
-  width: '860px',
-  maxWidth: '100%',
-  paddingLeft: '16px',
-  [theme.breakpoints.down('sm')]: {
-    '&.MuiGrid-root': {
-      paddingLeft: '8px',
-    },
-    width: '60vw',
-  },
-  '@media (min-width:1024px) and (max-height:1366px) and (orientation:portrait)': {
-    width: '700px',
-  },
-  '@media (max-width:812px) and (orientation:landscape)': {
-    width: '500px',
-  },
+  paddingLeft: theme.spacing(2),
 });
 
-export const ArticleImageStyles = (theme: Theme, colorTheme: boolean) => ({
-  width: '300px',
+export const ArticleImageStyles = (darkTheme: boolean) => ({
+  width: 'clamp(240px, 25vw, 300px)',
   borderRadius: '6px',
-  border: colorTheme ? `1px solid ${DARK_PRIMARY}` : `1px solid ${LIGHT_PRIMARY}`,
+  border: `1px solid ${darkTheme ? DARK_PRIMARY : LIGHT_PRIMARY}`,
 });
 
-export const AvatarAuthorLinkStyles = (colorTheme: boolean) => ({
+export const ArticleVideoStyles = (
+  theme: Theme,
+  darkTheme: boolean,
+  turOnAuthorForArticle: boolean
+) => ({
+  borderRadius: '6px',
+  width: 'clamp(240px, 25vw, 300px)',
+  height: turOnAuthorForArticle ? '100px' : '136px',
+  border: `1px solid ${darkTheme ? DARK_PRIMARY : LIGHT_PRIMARY}`,
+  [theme.breakpoints.down('sm')]: {
+    height: turOnAuthorForArticle ? '80px' : '110px',
+  },
+});
+
+export const AvatarAuthorLinkStyles = (
+  theme: Theme,
+  darkTheme: boolean
+) => ({
   textDecoration: 'none',
   display: 'flex',
-  color: colorTheme ? '#9DB2BF' : 'rgba(0, 0, 0, 0.6)',
+  color: darkTheme ? '#9DB2BF' : theme.palette.text.secondary,
 });
 
-export const AvatarImageStyles = (theme: Theme, colorTheme: boolean) => ({
+export const AvatarImageStyles = (
+  theme: Theme,
+  darkTheme: boolean
+) => ({
   width: '30px',
   height: '30px',
   borderRadius: '50%',
-  border: colorTheme ? `1px solid ${DARK_PRIMARY}` : `1px solid ${LIGHT_PRIMARY}`,
+  border: `1px solid ${darkTheme ? DARK_PRIMARY : LIGHT_PRIMARY}`,
   [theme.breakpoints.down('sm')]: {
     width: '20px',
     height: '20px',
   },
 });
 
-export const ArticleVideoStyles = (theme: Theme, colorTheme: boolean, turOnAuthorForArticle: boolean) => ({
-  borderRadius: '6px',
-  width: '300px',
-  height: turOnAuthorForArticle ? '100px' : '136px',
-  border: colorTheme ? `1px solid ${DARK_PRIMARY}` : `1px solid ${LIGHT_PRIMARY}`,
-  [theme.breakpoints.down('sm')]: {
-    height: '60px',
-  },
-});
-
 export const AuthorNameStyles = (theme: Theme) => ({
-  padding: '0px 0px 0px 8px',
+  paddingLeft: theme.spacing(1),
   alignContent: 'center',
   [theme.breakpoints.down('sm')]: {
     fontSize: '14px',
@@ -67,9 +63,7 @@ export const ChipStyles = (theme: Theme) => ({
   borderRadius: '4px',
   [theme.breakpoints.down('sm')]: {
     fontSize: '10px',
-    '&.MuiChip-root': {
-      height: '24px',
-    },
+    height: '24px',
   },
 });
 
@@ -83,55 +77,54 @@ export const DateStyles = (theme: Theme) => ({
 
 export const GridNameDateStyles = (theme: Theme) => ({
   [theme.breakpoints.down('sm')]: {
-    padding: '4px 0px 4px 0px',
+    padding: '4px 0px',
   },
 });
 
-export const LinkGridRootStyles = (theme: Theme, articlePage: boolean) => ({
+export const GridWidthStyle = {
+  width: '100%',
+}
+
+export const LinkGridRootStyles = (
+  theme: Theme,
+  articlePage: boolean
+) => ({
   maxHeight: articlePage ? '40px' : '85px',
   minHeight: articlePage ? '40px' : '85px',
-  width: '860px',
+  width: '100%',
   display: 'flex',
   justifyContent: 'flex-end',
   alignItems: 'flex-end',
   [theme.breakpoints.down('sm')]: {
-    maxWidth: '100%',
     maxHeight: '28px',
     minHeight: '28px',
   },
-  '@media (min-width:1024px) and (max-height:1366px) and (orientation:portrait)': {
-    width: '730px',
-  },
-  '@media (max-width:812px) and (orientation:landscape)': {
-    width: '580px',
-  },
 });
 
-export const LinkGridStyles = {
-  display: 'flex',
-};
-
-export const RootStyles = (theme: Theme, colorTheme: boolean, turOnAuthorForArticle: boolean) => ({
+export const RootStyles = (
+  theme: Theme,
+  darkTheme: boolean,
+  turOnAuthorForArticle: boolean
+) => ({
   margin: 'auto',
-  marginBottom: '16px',
+  marginBottom: theme.spacing(2),
   flexGrow: 1,
   height: turOnAuthorForArticle ? '145px' : '235px',
-  borderBottom: colorTheme
-    ? '1px solid rgba(138, 147, 153, 0.25)'
-    : '1px solid rgba(138, 147, 153, 0.25)',
+  borderBottom: '1px solid rgba(138, 147, 153, 0.25)',
   [theme.breakpoints.down('sm')]: {
     height: '140px',
   },
 });
 
 export const SeriesChipStyles = {
-  padding: '0px 0px 0px 8px',
+  paddingLeft: '8px',
   textDecoration: 'none',
 };
 
 export const SubTitleStyles = (theme: Theme) => ({
+  fontSize: 'clamp(14px, 1.8vw, 18px)',
+  lineHeight: 1.4,
   maxHeight: '50px',
-  minHeight: '50px',
   overflow: 'hidden',
   display: '-webkit-box',
   WebkitLineClamp: '2',
@@ -141,18 +134,13 @@ export const SubTitleStyles = (theme: Theme) => ({
   },
 });
 
-export const TitleStyles = (theme: Theme) => ({
+export const TitleStyles = () => ({
   fontWeight: 'bold',
-  maxHeight: '30px',
-  minHeight: '30px',
+  fontSize: 'clamp(16px, 2vw, 20px)',
+  lineHeight: 1.3,
+  maxHeight: '48px',
   overflow: 'hidden',
   display: '-webkit-box',
-  WebkitLineClamp: '1',
+  WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
-  [theme.breakpoints.down('sm')]: {
-    WebkitLineClamp: '2',
-    fontSize: '14px',
-    maxHeight: '50px',
-    minHeight: '50px',
-  },
 });

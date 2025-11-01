@@ -1,21 +1,17 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import {
-  Grid,
-  Typography,
-} from '@mui/material';
+import { useTheme, styled } from '@mui/material/styles';
+import { Grid, Typography } from '@mui/material';
 import { Link } from 'react-router';
-import { styled } from '@mui/material/styles';
 import {
-  AvatarAuthorLinkStyles,
-  AvatarImageStyles,
-  AuthorNameStyles,
+  avatarAuthorLinkStyles,
+  avatarImageStyles,
+  authorNameStyles,
 } from './AuthorAvatarComponentStyles';
-    
-const AuthorAvatarComponent: React.FC<Props> = ({
-  author,
-}) => {
-  const theme = useSelector((state: any) => state.theme.darkTheme);
+
+const AuthorAvatarComponent: React.FC<Props> = ({ author }) => {
+  const darkTheme = useSelector((state: any) => state.theme.darkTheme);
+  const muiTheme = useTheme();
 
   const Img = styled('img')({
     maxWidth: '100%',
@@ -24,19 +20,16 @@ const AuthorAvatarComponent: React.FC<Props> = ({
 
   return (
     <Grid>
-      <Link 
+      <Link
         to={`/author/${author?.author_id}`}
-        style={AvatarAuthorLinkStyles(theme)}
+        style={avatarAuthorLinkStyles(darkTheme)}
       >
         <Img
-          alt="complex"
+          alt="Author avatar"
           src={author?.avatar_image}
-          sx={AvatarImageStyles(theme)}
+          sx={avatarImageStyles(muiTheme, darkTheme)}
         />
-        <Typography
-          color="primary"
-          sx={AuthorNameStyles}
-        >
+        <Typography color="primary" sx={authorNameStyles(muiTheme)}>
           {author?.author_name}
         </Typography>
       </Link>

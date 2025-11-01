@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React
+//, { useState } 
+from "react";
 import { Button, Grid, Typography, useTheme } from "@mui/material";
 import { useSelector } from "react-redux";
 import ArticleList from "../articleList/ArticleList";
 import SeriesComponent from "../seriesList/SeriesComponent";
-import Sections from "./Sections";
+// import Sections from "./Sections";
 import {
   GridRoot,
   LatestTextStyles,
@@ -17,19 +19,19 @@ const HomePageComponent: React.FC = () => {
   const articleData = getWebsiteData?.articles;
   const authorsData = getWebsiteData?.authors;
   const seriesData = getWebsiteData?.series;
-  const [data, setData] = useState<any>(articleData);
-  const [series, setSeries] = useState<any>(seriesData);
+  // const [data] = useState<any>(articleData);  // add setData back later from Sections Component
+  // const [series] = useState<any>(seriesData); // add setSeries back later from the Sections component
 
   return (
     <Grid container justifyContent="center" alignItems="center" sx={GridRoot(theme)}>
-      <Grid size={12}>
+      {/* <Grid size={12}>
         <Sections
           data={articleData}
           series={seriesData}
           setData={setData}
           setSeries={setSeries}
         />
-      </Grid>
+      </Grid> */}
 
       <Grid size={12}>
         <Button sx={SeriesButtonStyles()}>
@@ -37,7 +39,7 @@ const HomePageComponent: React.FC = () => {
             Series
           </Typography>
         </Button>
-        <SeriesComponent series={series?.slice(0, 4)} />
+        <SeriesComponent series={seriesData?.slice(0, 4)} />
       </Grid>
 
       <Grid size={12}>
@@ -46,7 +48,7 @@ const HomePageComponent: React.FC = () => {
         </Typography>
         <ArticleList
           authorData={authorsData}
-          data={data}
+          data={articleData}
           turOnAuthorForArticle={false}
         />
       </Grid>

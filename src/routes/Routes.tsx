@@ -1,5 +1,4 @@
 import HomePage from '../pages/home/HomePage';
-import About from '../pages/about/About';
 import CodingPage from '../pages/coding/CodingPage';
 import Logout from '../pages/logout/Logout';
 import Profile from '../pages/profile/Profile';
@@ -17,10 +16,6 @@ type Route = {
 };
 
 const routes: Route[] = [
-  {
-    path: '/about',
-    element: About,
-  },
   {
     path: '/coding',
     element: CodingPage,

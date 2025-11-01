@@ -12,9 +12,9 @@ import {
 import { Link } from 'react-router';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
-import SocialMediaComponent from '../../../components/socialMediaComponent/SocialMediaComponent';
-import LightDarkMode from '../lightDarkMode/LightDarkMode';
-import AppConfig from '../../../config';
+import SocialMediaComponent from '../../../socialMediaComponent/SocialMediaComponent';
+import LightDarkMode from '../../../../layout/appBar/lightDarkMode/LightDarkMode';
+import AppConfig from '../../../../config';
 
 import {
   MenuIconStyle,
@@ -26,7 +26,7 @@ import {
   TypographyMobileDrawer,
 } from './MobileDrawerStyle';
 
-import { LinkStyles } from '../../../util/styles/LinkStyles';
+import { LinkStyles } from '../../../../util/styles/LinkStyles';
 
 type Anchor = 'left';
 

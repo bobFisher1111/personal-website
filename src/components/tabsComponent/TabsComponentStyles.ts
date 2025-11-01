@@ -1,15 +1,19 @@
-export const GridTabsComponent = (turnonsectiontabspadding: boolean) => ({
+import { Theme } from '@mui/material';
+
+export const GridTabsComponent = (theme: Theme, turnonsectiontabspadding: boolean) => ({
   padding: turnonsectiontabspadding ? '16px 0px 16px 0px' : '0px 0px 16px 0px',
-  '@media only screen and (max-width: 600px)': {
+
+  [theme.breakpoints.down('sm')]: {
     padding: '0px',
   },
 });
 
-export const TabComponentTextStyles = (theme: boolean) => ({
+export const TabComponentTextStyles = (theme: Theme, darkTheme: boolean) => ({
   textTransform: 'initial',
   fontSize: '18px',
-  color: theme ? '#9DB2BF' : '#0C0D0D',
-  '@media only screen and (max-width: 600px)': {
+  color: darkTheme ? '#9DB2BF' : '#0C0D0D',
+
+  [theme.breakpoints.down('sm')]: {
     fontSize: '14px',
     fontWeight: 'bold',
     '&.MuiButtonBase-root': {
@@ -19,13 +23,13 @@ export const TabComponentTextStyles = (theme: boolean) => ({
 });
 
 export const TabPanelStyle = {
-  p: 3
+  p: 3,
 };
 
-export const TabsChangeStyle = {
+export const TabsChangeStyle = (theme: Theme) => ({
   width: '100%',
   '& .MuiBox-root': {
-    padding: '0px 0px 0px 0px',
+    padding: '0px',
   },
   '& .MuiTabs-flexContainer': {
     padding: '0px 0px 0px 8px',
@@ -33,21 +37,11 @@ export const TabsChangeStyle = {
   '& .MuiTabs-indicator': {
     border: '1px',
   },
-  // eslint-disable-next-line
   "& button[aria-selected='true']": {
-    borderBottom: '3px solid #0C0D0D'
+    borderBottom: '3px solid #0C0D0D',
   },
-  '@media only screen and (max-width: 600px)': {
-    // eslint-disable-next-line
-    "& button[aria-selected='true']": {
-    },
+
+  [theme.breakpoints.down('sm')]: {
+    // Reserved for future mobile-specific overrides
   },
-};
-      
-export default [
-  GridTabsComponent,
-  TabComponentTextStyles,
-  TabPanelStyle,
-  TabsChangeStyle,
-];
-    
+});

@@ -1,21 +1,18 @@
 import React from 'react';
-import { useSelector } from "react-redux";
-import {
-  Chip,
-  Grid,
-  Typography,
-} from '@mui/material';
-import CopyLinkComponent from '../../../../copyLinkComponent/CopyLinkComponent';
+import { useSelector } from 'react-redux';
+import { useTheme } from '@mui/material/styles';
+import { Chip, Grid, Typography } from '@mui/material';
 import { Link } from 'react-router';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import CopyLinkComponent from '../../../../copyLinkComponent/CopyLinkComponent';
 import { LinkStyles } from '../../../../../util/styles/LinkStyles';
 import {
-  ChipNoPointer,
-  ChipStyle,
-  DivMaterialSymbolsOutlined,
-  DivSeriesLeftPadding,
-  GridHorizontalInfo,
-  TypographyHorizontalInfoText,
+  chipNoPointer,
+  chipStyle,
+  iconWrapper,
+  seriesPadding,
+  gridHorizontalInfo,
+  authorNameText,
 } from './HorizontalArticleInfoComponentStyle';
 
 const HorizontalArticleInfoComponent: React.FC<Props> = ({
@@ -30,107 +27,77 @@ const HorizontalArticleInfoComponent: React.FC<Props> = ({
   series,
   seriesId,
 }) => {
-  const theme = useSelector((state: any) => state.theme.darkTheme);
+  const darkTheme = useSelector((state: any) => state.theme.darkTheme);
+  const muiTheme = useTheme();
 
   return (
-    <Grid 
-      container
-      direction="row"    
-      sx={GridHorizontalInfo}
-    >
-      {!authorPage ?
-        <Link 
-          to={`/author/${authorsId}`}
-          style={LinkStyles(theme)}
-        >
-          <Grid 
-            className={'material-symbols-outlined'}
-            sx={DivMaterialSymbolsOutlined()}
-            color="primary"
-          >
-            <AccountCircleOutlinedIcon
-              color="primary"
-            />
+    <Grid container direction="row" sx={gridHorizontalInfo(muiTheme)}>
+      {!authorPage ? (
+        <Link to={`/author/${authorsId}`} style={LinkStyles(darkTheme)}>
+          <Grid sx={iconWrapper(muiTheme)}>
+            <AccountCircleOutlinedIcon color="primary" />
           </Grid>
         </Link>
-        :
-        <Grid 
-          className={'material-symbols-outlined'}
-          style={DivMaterialSymbolsOutlined()}
-        >
-          <AccountCircleOutlinedIcon
-            color="primary"
-          />
+      ) : (
+        <Grid sx={iconWrapper(muiTheme)}>
+          <AccountCircleOutlinedIcon color="primary" />
         </Grid>
-      }
-      {!authorPage ? 
-        <Link 
-          to={`/author/${authorsId}`}
-          style={LinkStyles(theme)}
-        >
-          <Typography
-            color="primary"
-            sx={TypographyHorizontalInfoText}
-          >
+      )}
+
+      {!authorPage ? (
+        <Link to={`/author/${authorsId}`} style={LinkStyles(darkTheme)}>
+          <Typography color="primary" sx={authorNameText(muiTheme)}>
             {aughtorsName}
-          </Typography> 
+          </Typography>
         </Link>
-        :
-        <Typography
-          color="primary"
-          sx={TypographyHorizontalInfoText}
-        >
+      ) : (
+        <Typography color="primary" sx={authorNameText(muiTheme)}>
           {aughtorsName}
         </Typography>
-      }
-      {!sectionPage ?
-        <Link 
-          to={`/${sectionLink}`}
-          style={LinkStyles(theme)}
-        >
+      )}
+
+      {!sectionPage ? (
+        <Link to={`/${sectionLink}`} style={LinkStyles(darkTheme)}>
           <Chip
             color="primary"
             label={section}
             variant="outlined"
             size="small"
-            sx={ChipStyle}
+            sx={chipStyle(muiTheme)}
           />
         </Link>
-        :
+      ) : (
         <Chip
           color="primary"
           label={sectionType}
           variant="outlined"
           size="small"
-          sx={ChipNoPointer}
+          sx={chipNoPointer(muiTheme)}
         />
-      }
-      {series &&
-        <div
-          style={DivSeriesLeftPadding()}
-        >
-          <Link 
-            to={`/series/${seriesId}`}
-            style={LinkStyles(theme)}
-          >
+      )}
+
+      {series && (
+        <div style={seriesPadding()}>
+          <Link to={`/series/${seriesId}`} style={LinkStyles(darkTheme)}>
             <Chip
               color="primary"
-              label={'Series'}
+              label="Series"
               variant="outlined"
               size="small"
-              sx={ChipStyle}
+              sx={chipStyle(muiTheme)}
             />
           </Link>
         </div>
-      }
-      {authorPage && series && sectionPage &&
+      )}
+
+      {authorPage && series && sectionPage && (
         <CopyLinkComponent
           authorsId={authorsId}
           articleId={articleId}
-          padding={'0px 0px 0px 16px'}
+          padding="0px 0px 0px 16px"
           email={false}
         />
-      }
+      )}
     </Grid>
   );
 };
@@ -139,13 +106,13 @@ export type Props = {
   section: string;
   authorsId: string;
   articleId: string;
-  authorPage: boolean | undefined;
+  authorPage?: boolean;
   aughtorsName: string;
   sectionLink: string;
-  sectionPage: boolean | undefined;
-  series?: boolean | undefined;
+  sectionPage?: boolean;
+  series?: boolean;
   seriesId?: string;
   sectionType?: string;
 };
-    
+
 export default HorizontalArticleInfoComponent;

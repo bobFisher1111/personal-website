@@ -7,6 +7,7 @@ import {
   CardMedia,
   Grid,
   Typography,
+  useTheme,
 } from '@mui/material';
 import { appBaseURL } from '../../../../config';
 import CopyLinkComponent from '../../../copyLinkComponent/CopyLinkComponent';
@@ -24,45 +25,40 @@ import {
   TypographyVerticalCardNameStyleHover,
 } from './VerticalArticleCardComponentStyles';
 
+/*
+  - issue on writes/series when resizing around 740px mark, update later
+*/
 const VerticalArticleCardComponent: React.FC<Props> = ({
   name,
   articleData,
   series,
 }) => {
-  const theme = useSelector((state: any) => state.theme.darkTheme);
+  const darkTheme = useSelector((state: any) => state.theme.darkTheme);
+  const theme = useTheme();
   const [articlePage, setArticlePage] = useState<boolean>();
   const articleUrl = `${appBaseURL}/article/${articleData?.author_id}/${articleData?.article_id}`;
-  const serieslUrl = `${appBaseURL}/series/${articleData?.series_id}`;
+  const seriesUrl = `${appBaseURL}/series/${articleData?.series_id}`;
   const authorUrl = `${appBaseURL}/author/${articleData?.author_id}`;
 
   useEffect(() => {
     const currentLocation = window.location.href;
     const getIdFromCurrentLocation = currentLocation.split('/');
-    const checkIfIncludesCurrentAricle = getIdFromCurrentLocation.includes(articleData?.article_id);
-    setArticlePage(checkIfIncludesCurrentAricle);
+    const checkIfIncludesCurrentArticle = getIdFromCurrentLocation.includes(articleData?.article_id);
+    setArticlePage(checkIfIncludesCurrentArticle);
   }, []);
 
   return (
-    <div  
-      style={DivVerticalArticleRoot()}
-    >
-      <Card
-        sx={CardVerticalCard(theme)}
-      >
-        <Box
-          sx={CardRootStyle}
-        >
-          {articleData?.use_video_instead_of_image ?
-            <Link 
-              to={series ? serieslUrl : articleUrl}
-              rel="noreferrer"
-            >
+    <div style={DivVerticalArticleRoot(theme)}>
+      <Card sx={CardVerticalCard(theme, darkTheme)}>
+        <Box sx={CardRootStyle}>
+          {articleData?.use_video_instead_of_image ? (
+            <Link to={series ? seriesUrl : articleUrl} rel="noreferrer">
               <Grid
                 container
                 direction="row"
                 justifyContent="center"
                 alignItems="center"
-                sx={GridVeriticalCardVideo}
+                sx={GridVeriticalCardVideo(theme)}
               >
                 <CardMedia
                   component="iframe"
@@ -72,57 +68,35 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
                 />
               </Grid>
             </Link>
-            :
-            <Link 
-              to={series ? serieslUrl : articleUrl}
-              rel="noreferrer"
-            >
+          ) : (
+            <Link to={series ? seriesUrl : articleUrl} rel="noreferrer">
               <CardMedia
                 component="img"
                 image={articleData?.cover_image_or_video || articleData?.series_cover_image_or_video}
-                sx={CardMediaVerticalCardImage}
+                sx={CardMediaVerticalCardImage(theme)}
               />
             </Link>
-          }
-          <Box
-            sx={CardFooterStyle} 
-          >
-            <Grid 
-              container
-            >
-              <Grid 
-                size={10}
-              >
-                {!articlePage ?
-                  <Link 
-                    to={series? authorUrl : articleUrl}
-                    rel="noreferrer"
-                    style={LinkStyles(theme)}
-                  >
-                    <Typography
-                      color="secondary"
-                      sx={TypographyVerticalCardNameStyleHover}
-                    >
+          )}
+          <Box sx={CardFooterStyle}>
+            <Grid container>
+              <Grid size={{ xs: 10 }}>
+                {!articlePage ? (
+                  <Link to={series ? authorUrl : articleUrl} rel="noreferrer" style={LinkStyles(darkTheme)}>
+                    <Typography color="secondary" sx={TypographyVerticalCardNameStyleHover(theme)}>
                       by {name}
                     </Typography>
                   </Link>
-                  :
-                  <Typography
-                    color="secondary"
-                    sx={TypographyVerticalCardNameStyle}
-                  >
+                ) : (
+                  <Typography color="secondary" sx={TypographyVerticalCardNameStyle(theme)}>
                     by {name}
                   </Typography>
-                }           
+                )}
               </Grid>
-              <Grid 
-                size={2}
-                sx={GridPadding}
-              >
+              <Grid size={{ xs: 2 }} sx={GridPadding(theme)}>
                 <CopyLinkComponent
                   authorsId={articleData?.author_id}
                   articleId={articleData?.article_id}
-                  padding={'0px 0px 0px 0px'}
+                  padding="0px 0px 0px 0px"
                   email={false}
                   seriesId={articleData?.series_id}
                   turnOnSeries={true}
@@ -139,7 +113,7 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
 export type Props = {
   name: string | undefined;
   articleData: any;
-  series?: boolean,
+  series?: boolean;
 };
 
 export default VerticalArticleCardComponent;

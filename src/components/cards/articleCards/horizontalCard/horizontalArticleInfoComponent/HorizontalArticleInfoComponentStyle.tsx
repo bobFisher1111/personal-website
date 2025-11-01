@@ -1,65 +1,56 @@
-export const ChipNoPointer = {
-  borderRadius: '4px',
-  '@media only screen and (max-width: 600px)': {
-    fontSize: '10px',
-    '&.MuiChip-root': {
-      height: '24px',
-    },
-  },
-};
+import { Theme } from '@mui/material/styles';
 
-export const ChipStyle = {
+export const chipNoPointer = (theme: Theme) => ({
+  borderRadius: '4px',
+  pointerEvents: 'none',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '10px',
+    height: '24px',
+  },
+});
+
+export const chipStyle = (theme: Theme) => ({
   border: '1px solid #0C0D0D',
   color: '#0C0D0D',
   cursor: 'pointer',
   borderRadius: '4px',
-  '@media only screen and (max-width: 600px)': {
+  [theme.breakpoints.down('sm')]: {
     fontSize: '10px',
-    '&.MuiChip-root': {
-      height: '24px',
-    },
+    height: '24px',
   },
-};
+});
 
-export const DivMaterialSymbolsOutlined = () => ({
+export const iconWrapper = (theme: Theme) => ({
   fontSize: '20px',
   marginRight: '4px',
   lineHeight: '24px',
-  '@media only screen and (max-width: 600px)': {
+  display: 'flex',
+  alignItems: 'center',
+  [theme.breakpoints.down('sm')]: {
     fontSize: '18px',
   },
 });
 
-export const DivSeriesLeftPadding = () => ({
+export const seriesPadding = () => ({
   padding: '0px 0px 0px 16px',
 });
 
-export const GridHorizontalInfo = {
-  '@media only screen and (max-width: 600px)': {
+export const gridHorizontalInfo = (theme: Theme) => ({
+  padding: '0px 4px 2px 4px',
+  display: 'flex',
+  alignItems: 'center',
+  flexWrap: 'wrap',
+  gap: '8px',
+  [theme.breakpoints.down('sm')]: {
     padding: '0px 4px 2px 4px',
   },
-};
+});
 
-export const TypographyHorizontalInfoText = {
+export const authorNameText = (theme: Theme) => ({
   fontSize: '16px',
   paddingRight: '16px',
   lineHeight: '24px',
-  '@media only screen and (max-width: 600px)': {
+  [theme.breakpoints.down('sm')]: {
     fontSize: '14px',
   },
-  '@media only screen and (min-width: 600px)': {
-    width: '100%',
-  },
-  '@media only screen and (min-width: 992px)': {
-    width: 'auto',
-  },
-};
-
-export default [
-  ChipNoPointer,
-  ChipStyle,
-  DivMaterialSymbolsOutlined,
-  DivSeriesLeftPadding,
-  GridHorizontalInfo,
-  TypographyHorizontalInfoText,
-];
+});

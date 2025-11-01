@@ -2,24 +2,24 @@ import React from 'react';
 import { Grid, Typography, useTheme } from '@mui/material';
 import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-import SocialMediaComponent from '../../../components/socialMediaComponent/SocialMediaComponent';
+// import SocialMediaComponent from '../../../components/socialMediaComponent/SocialMediaComponent';
 import AppBarLinksToPages from '../appBarLinksToPages/AppBarLinksToPages';
 import LightDarkMode from '../lightDarkMode/LightDarkMode';
-import MobileDrawer from '../mobileDrawer/MobileDrawer';
+import MobileDrawer from '../../../components/writers/writersCard/mobileDrawer/MobileDrawer';
 import {
   AppBarStyle,
-  GridDesktopAppBar,
+  // GridDesktopAppBar,
   GridMobileAppBarTitle,
   TypographyDesktopTitle,
   GridDesktopAppBar2
 } from './WebSiteAppBarStyles';
 import { LinkStyles } from '../../../util/styles/LinkStyles';
-import AppConfig from '../../../config';
+// import AppConfig from '../../../config';
 
 const WebSiteAppBar: React.FC = () => {
   const theme = useTheme();
   const isDarkTheme = useSelector((state: any) => state.theme.darkTheme);
-  const { facebookURL, twitterURL, youtubeURL } = AppConfig;
+  // const { facebookURL, twitterURL, youtubeURL } = AppConfig;
 
   return (
     <Grid 
@@ -32,10 +32,10 @@ const WebSiteAppBar: React.FC = () => {
       <Grid
         size={{
           xs: 6,
-          sm: 4,
-          md: 4,
-          lg: 4,
-          xl: 4,
+          sm: 6,
+          md: 6,
+          lg: 6,
+          xl: 6,
         }}
       >
         <Link to="/" style={LinkStyles(isDarkTheme)}>
@@ -43,12 +43,12 @@ const WebSiteAppBar: React.FC = () => {
             color="primary"
             sx={TypographyDesktopTitle(theme)}
           >
-            {"Gamers Shrine"}
+            {"Children of Time"}
           </Typography>
         </Link>
       </Grid>
 
-      <Grid
+      {/* <Grid
         size={{
           xs: 0,
           sm: 4,
@@ -67,16 +67,16 @@ const WebSiteAppBar: React.FC = () => {
           alignContent={"center"}
           justifyContent={"center"}
         />
-      </Grid>
+      </Grid> */}
 
       <Grid
         id="2"
         size={{
           xs: 0,
-          sm: 4,
-          md: 4,
-          lg: 4,
-          xl: 4,
+          sm: 6,
+          md: 6,
+          lg: 6,
+          xl: 6,
         }}
         sx={GridDesktopAppBar2(theme)}
       >

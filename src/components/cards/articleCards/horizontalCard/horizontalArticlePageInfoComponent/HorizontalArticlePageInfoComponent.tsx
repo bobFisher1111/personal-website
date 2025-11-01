@@ -1,19 +1,15 @@
 import React from 'react';
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router';
-import {
-  Grid,
-  Typography,
-} from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { Grid, Typography, useTheme, styled } from '@mui/material';
 import CopyLinkComponent from '../../../../copyLinkComponent/CopyLinkComponent';
 import { LinkStyles } from '../../../../../util/styles/LinkStyles';
 import {
-  AvatarImageStyles,
-  GridArticleInfoComponent,
-  HorizAriclePageInfoCompAuthor,
-  HorizArticlePageInfoCompDate,
-  TypographyArticleInfoRight,
+  avatarImageStyles,
+  gridArticleInfoComponent,
+  authorTextStyles,
+  dateTextStyles,
+  separatorStyles,
 } from './HorizontalArticlePageInfoComponentStyles';
 
 const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
@@ -26,90 +22,64 @@ const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
   articleId,
   series,
 }) => {
-  const theme = useSelector((state: any) => state.theme.darkTheme);
-  const getSeriesIdFromUrl = () => {
-    const currentLocation = window.location.href;
-    const seriesId = currentLocation.split('/').reverse()[0];
-    return (seriesId);
-  };
+  const darkTheme = useSelector((state: any) => state.theme.darkTheme);
+  const muiTheme = useTheme();
 
   const Img = styled('img')({
     maxWidth: '100%',
     maxHeight: '100%',
   });
 
+  const getSeriesIdFromUrl = () => {
+    const currentLocation = window.location.href;
+    return currentLocation.split('/').reverse()[0];
+  };
+
   return (
-    <Grid 
-      container 
-      direction="row"
-      justifyContent={justifyContent}
-      sx={GridArticleInfoComponent}
-    >
-      <Link 
-        to={`/author/${authorsId}`}
-        style={LinkStyles(theme)}
-      >
+    <Grid container direction="row" justifyContent={justifyContent} sx={gridArticleInfoComponent(muiTheme)}>
+      <Link to={`/author/${authorsId}`} style={LinkStyles(darkTheme)}>
         <Img
-          alt="complex"
-          src={getAuthorData && getAuthorData[0]?.avatar_image}
-          sx={AvatarImageStyles(theme)}
+          alt="Author avatar"
+          src={getAuthorData?.[0]?.avatar_image}
+          sx={avatarImageStyles(muiTheme, darkTheme)}
         />
       </Link>
-      <Link 
-        to={`/author/${authorsId}`}
-        style={LinkStyles(theme)}
-      >
-        <Typography
-          color="primary"
-          sx={HorizAriclePageInfoCompAuthor}
-        >
-          {author} 
+
+      <Link to={`/author/${authorsId}`} style={LinkStyles(darkTheme)}>
+        <Typography color="primary" sx={authorTextStyles(muiTheme)}>
+          {author}
         </Typography>
       </Link>
-      <Typography
-        color="primary"
-        sx={TypographyArticleInfoRight}
-      >
-        |
-      </Typography>
-      <Typography
-        color="primary"
-        sx={HorizArticlePageInfoCompDate}
-      >
+
+      <Typography color="primary" sx={separatorStyles}>|</Typography>
+
+      <Typography color="primary" sx={dateTextStyles(muiTheme)}>
         {date}
       </Typography>
-      <Typography
-        color="primary"
-        sx={TypographyArticleInfoRight}
-      >
-        |
-      </Typography>
-      <Typography
-        color="primary"
-        sx={HorizAriclePageInfoCompAuthor}
-      >
+
+      <Typography color="primary" sx={separatorStyles}>|</Typography>
+
+      <Typography color="primary" sx={authorTextStyles(muiTheme)}>
         {section}
       </Typography>
-      <Typography
-        color="primary"
-      >
-        |
-      </Typography>
-      {series ? 
+
+      <Typography color="primary" sx={separatorStyles}>|</Typography>
+
+      {series ? (
         <CopyLinkComponent
           seriesId={getSeriesIdFromUrl()}
-          padding={'0px 0px 0px 16px'}
+          padding="0px 0px 0px 16px"
           email={false}
           turnOnSeries={true}
         />
-        :
+      ) : (
         <CopyLinkComponent
           authorsId={authorsId}
           articleId={articleId}
-          padding={'0px 0px 0px 16px'}
+          padding="0px 0px 0px 16px"
           email={false}
         />
-      }
+      )}
     </Grid>
   );
 };
@@ -119,10 +89,9 @@ export type Props = {
   authorsId: string;
   author: string;
   date: string;
-  sectionLink: string;
   section: string;
   articleId: string;
-  series: boolean | undefined;
+  series?: boolean;
   justifyContent: string;
 };
 
