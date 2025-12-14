@@ -1,1 +1,0 @@
-import{F as o,j as n,T as i}from"./index-CP0GLXPR.js";const r=()=>({padding:"16px",fontSize:o.sectionTitle}),s=()=>n.jsx(i,{color:"primary",variant:"h5",sx:r,children:"Coming Soon..."});export{s as C};

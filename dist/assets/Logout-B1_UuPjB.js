@@ -1,1 +1,0 @@
-import{j as r,T as e}from"./index-CP0GLXPR.js";const s=()=>r.jsx(r.Fragment,{children:r.jsx("header",{className:"App-header",children:r.jsx(e,{color:"primary",children:r.jsx("h1",{children:"Logout"})})})});export{s as default};
