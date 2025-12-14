@@ -1,14 +1,16 @@
-import HomePage from '../pages/home/HomePage';
-import CodingPage from '../pages/coding/CodingPage';
-import Logout from '../pages/logout/Logout';
-import Profile from '../pages/profile/Profile';
-import ArticlePage from '../components/articlePage/ArticlePage';
-import AuthorPage from '../pages/author/AuthorPage';
-import WritersPage from '../pages/writers/WritersPage';
-import StoriesPage from '../pages/stories/StoriesPage';
-import ReviewsPage from '../pages/reviews/ReviewsPage';
-import VideoGamesPage from '../pages/videoGames/VideoGamesPage';
-import SeriesPage from '../pages/series/SeriesPage';
+import { lazy } from 'react';
+
+const HomePage = lazy(() => import('../pages/home/HomePage'));
+const CodingPage = lazy(() => import('../pages/coding/CodingPage'));
+const Logout = lazy(() => import('../pages/logout/Logout'));
+const Profile = lazy(() => import('../pages/profile/Profile'));
+const ArticlePage = lazy(() => import('../components/articlePage/ArticlePage'));
+const AuthorPage = lazy(() => import('../pages/author/AuthorPage'));
+const WritersPage = lazy(() => import('../pages/writers/WritersPage'));
+const StoriesPage = lazy(() => import('../pages/stories/StoriesPage'));
+const ReviewsPage = lazy(() => import('../pages/reviews/ReviewsPage'));
+const VideoGamesPage = lazy(() => import('../pages/videoGames/VideoGamesPage'));
+const SeriesPage = lazy(() => import('../pages/series/SeriesPage'));
 
 type Route = {
   path?: string;
