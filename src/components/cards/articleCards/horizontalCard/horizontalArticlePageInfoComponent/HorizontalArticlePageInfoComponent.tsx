@@ -42,6 +42,7 @@ const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
           alt="Author avatar"
           src={getAuthorData?.[0]?.avatar_image}
           sx={avatarImageStyles(muiTheme, darkTheme)}
+          referrerPolicy="no-referrer"
         />
       </Link>
 

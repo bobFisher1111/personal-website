@@ -35,6 +35,7 @@ const SeriesCardComponent: React.FC<Props> = ({ articleData }) => {
               component="img"
               image={articleData?.series_cover_image_or_video || articleData?.series_cover_image_or_video}
               sx={CardMediaVerticalCardImage(theme)}
+              referrerPolicy="no-referrer"
             />
           </Link>
           <Box sx={CardFooterStyle}>

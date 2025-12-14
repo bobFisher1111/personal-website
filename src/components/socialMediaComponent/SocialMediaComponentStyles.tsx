@@ -1,7 +1,8 @@
 import { Theme } from '@mui/material/styles';
+import { SIZES } from '../../store/redux/theme/CONSTANTS';
 
 export const socialMediaIconStyle = (theme: Theme) => ({
-  height: '20px',
+  height: SIZES.height.socialMediaIcons,
   [theme.breakpoints.down('sm')]: {
     height: '15px',
   },

@@ -3,7 +3,7 @@ import {
   LIGHT_PRIMARY,
   DARK_PRIMARY,
 } from '../../../../../store/redux/theme/CONSTANTS';
-
+// Still need to do this file: 
 export const avatarImageStyles = (theme: Theme, darkTheme: boolean) => ({
   width: '30px',
   height: '30px',

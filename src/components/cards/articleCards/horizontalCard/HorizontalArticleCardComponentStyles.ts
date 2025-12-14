@@ -1,5 +1,5 @@
 import { Theme } from '@mui/material/styles';
-
+// Still need to do this file:
 export const articlePageRoot = (theme: Theme) => ({
   padding: '8px 0px 0px 0px',
   [theme.breakpoints.down('sm')]: {
@@ -109,54 +109,5 @@ export const imageHorizontalArticleStyles = (
   },
   [theme.breakpoints.up('lg')]: {
     width: articlePage ? '960px' : '321px',
-  },
-});
-
-export const typographyHorizontalArticleDate = (theme: Theme) => ({
-  fontSize: '14px',
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '14px',
-    padding: '0px 4px',
-  },
-});
-
-export const typographyHorizontalArticleSubTitle = (
-  theme: Theme,
-  articlePageList: boolean,
-  cardTextWidth: string
-) => ({
-  fontSize: '16px',
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
-  display: '-webkit-box',
-  WebkitLineClamp: '2',
-  WebkitBoxOrient: 'vertical',
-  maxWidth: articlePageList ? '321px' : `${cardTextWidth} !important`,
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '16px',
-    padding: '0px 4px',
-  },
-});
-
-export const typographyHorizontalArticleTitle = (theme: Theme, articlePage: boolean) => ({
-  fontSize: '20px',
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
-  display: '-webkit-box',
-  WebkitLineClamp: articlePage ? '1' : '2',
-  WebkitBoxOrient: 'vertical',
-  maxWidth: articlePage ? '960px' : '639px',
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '20px',
-    padding: '0px 4px',
-  },
-});
-
-export const titleStyle = (theme: Theme) => ({
-  fontSize: '32px',
-  [theme.breakpoints.down('sm')]: {
-    padding: '0px 8px',
-    fontSize: '24px',
-    fontWeight: 'bold',
   },
 });

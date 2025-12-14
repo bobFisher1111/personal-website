@@ -1,5 +1,11 @@
 import { Theme } from '@mui/material';
-
+import {
+  FONT_SIZES,
+  FONT_WEIGHTS,
+  // LINE_HEIGHTS,
+  // SIZES,
+} from "../../../../store/redux/theme/CONSTANTS";
+// 
 export const CardMediaVerticalCardImage = (theme: Theme) => ({
   width: '100%',
   height: 'auto',
@@ -87,6 +93,8 @@ export const TypographyVerticalCardNameStyle = (theme: Theme) => ({
 });
 
 export const TypographyVerticalCardNameStyleHover = (theme: Theme) => ({
+  fontSize: FONT_SIZES.body1,  
+  fontWeight: FONT_WEIGHTS.bold,
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',

@@ -1,3 +1,5 @@
+import { FONT_SIZES } from "../../store/redux/theme/CONSTANTS";
+
 export const AvatarStyle = {
   width: '100px',
   height: '100px',
@@ -21,7 +23,6 @@ export const GridHeader = {
 export const GridHeaderTitle = {
   padding: '25px 0px 12px 0px',
   '@media only screen and (max-width: 667px) and (orientation: landscape)': { // IPHONE SE Landscape ** 
-    // padding: '0px',
     padding: '25px 0px 0px 0px',
   },
 };
@@ -31,15 +32,14 @@ export const GridPaddingRight = {
 };
 
 export const TypographyHeaderTitle = {
-  textAlign: 'center',
-  fontSize: '32px',
+  fontSize: FONT_SIZES.h3,
   lineHeight: '40px',
   // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
   '@media (min-width: 1023px)': {
     padding: '25px 0px 25px 0px',
   },
   '@media only screen and (max-width: 600px)': {
-    fontSize: '28px',
+    fontSize: FONT_SIZES.h3,
   },
 };
 

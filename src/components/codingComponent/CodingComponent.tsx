@@ -16,10 +16,6 @@ const CodingComponent: React.FC = () => {
     return item.sectionType === 'Full Stack';
   });
 
-  // const articleBackEndFilter = articleData?.articles?.filter((item: any) => {
-  //   return item.sectionType === 'Back End';
-  // });
-
   const articleDataFilter = articleData?.filter((item: any) => {
     return item.sectionType === 'Game Dev';
   });

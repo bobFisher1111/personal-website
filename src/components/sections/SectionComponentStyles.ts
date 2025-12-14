@@ -1,8 +1,9 @@
 import { Theme } from '@mui/material';
+import { SIZES } from '../../store/redux/theme/CONSTANTS';
 
 export const SectionComponentGridRoot = (theme: Theme) => ({
   display: 'flex',
-  maxWidth: '1024px',
+  maxWidth: SIZES.maxWidth.screenWidth,
   margin: 'auto',
   padding: '36px 16px 0px 16px',
 

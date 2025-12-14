@@ -1,4 +1,5 @@
 import { Theme } from '@mui/material/styles';
+import { FONT_SIZES } from '../../../store/redux/theme/CONSTANTS';
 
 export const WritersCardGridRoot = () => ({
   padding: '8px 16px 16px 16px',
@@ -30,7 +31,7 @@ export const WritersCardGridAuthorName = (theme: Theme) => ({
 });
 
 export const WritersCardTextAuthorName = (theme: Theme) => ({
-  fontSize: '20px',
+  fontSize: FONT_SIZES.body1,
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
@@ -42,7 +43,7 @@ export const WritersCardTextAuthorName = (theme: Theme) => ({
 });
 
 export const WritersCardTextAuthorTitle = (theme: Theme) => ({
-  fontSize: '20px',
+  fontSize: FONT_SIZES.body1,
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',

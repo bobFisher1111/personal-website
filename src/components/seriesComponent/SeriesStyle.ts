@@ -1,4 +1,5 @@
 import { Theme } from '@mui/material/styles';
+import { FONT_SIZES, FONT_WEIGHTS } from '../../store/redux/theme/CONSTANTS';
 
 export const GridMarginLeft = (theme: Theme) => ({
   margin: '0px 0px 0px 16px',
@@ -40,14 +41,14 @@ export const GridSeriesRoot = () => ({
 
 export const TypographySeriesArticleDate = (theme: Theme) => ({
   padding: '0px 0px 0px 8px',
-  fontSize: '14px',
+  fontSize: FONT_SIZES.date,
   [theme.breakpoints.down('sm')]: {
     padding: '0px 8px',
   },
 });
 
 export const TypographySeriesArticleSubTitle = (theme: Theme) => ({
-  fontSize: '16px',
+  fontSize: FONT_SIZES.subtitle,
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
@@ -55,7 +56,7 @@ export const TypographySeriesArticleSubTitle = (theme: Theme) => ({
   WebkitBoxOrient: 'vertical',
   padding: '0px 0px 0px 8px',
   [theme.breakpoints.down('sm')]: {
-    fontSize: '14px',
+    fontSize: FONT_SIZES.subtitle,
     padding: '0px 8px',
     WebkitLineClamp: 2,
   },
@@ -66,7 +67,8 @@ export const TypographySeriesArticleSubTitle = (theme: Theme) => ({
 
 export const TypographySeriesArticleTitle = (theme: Theme) => ({
   padding: '0px 0px 0px 8px',
-  fontSize: '20px',
+  fontSize: FONT_SIZES.title,
+  fontWeight: FONT_WEIGHTS.bold,
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
@@ -79,14 +81,14 @@ export const TypographySeriesArticleTitle = (theme: Theme) => ({
 
 export const TypographySeriesTitle = (theme: Theme) => ({
   padding: '16px 0px 16px 0px',
-  fontSize: '24px',
+  fontSize: FONT_SIZES.sectionTitle,
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
   WebkitLineClamp: 2,
   WebkitBoxOrient: 'vertical',
   [theme.breakpoints.down('sm')]: {
-    fontSize: '22px',
+    fontSize: FONT_SIZES.sectionTitle,
     padding: '16px 0px 8px 0px',
     WebkitBoxOrient: 'unset',
   },

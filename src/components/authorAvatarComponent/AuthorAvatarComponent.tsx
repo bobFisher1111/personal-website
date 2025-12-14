@@ -8,7 +8,7 @@ import {
   avatarImageStyles,
   authorNameStyles,
 } from './AuthorAvatarComponentStyles';
-
+// May not need but will need to refactor styling with constants if I use this later, usually was with carousel
 const AuthorAvatarComponent: React.FC<Props> = ({ author }) => {
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
   const muiTheme = useTheme();
@@ -28,6 +28,7 @@ const AuthorAvatarComponent: React.FC<Props> = ({ author }) => {
           alt="Author avatar"
           src={author?.avatar_image}
           sx={avatarImageStyles(muiTheme, darkTheme)}
+          referrerPolicy="no-referrer"
         />
         <Typography color="primary" sx={authorNameStyles(muiTheme)}>
           {author?.author_name}

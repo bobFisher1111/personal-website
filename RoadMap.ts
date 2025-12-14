@@ -29,3 +29,11 @@
     - Update Disclaimer
     - Build new Carousel
 */
+
+// Incase issue comes back with memory leak with carousel, keep this here for reference, add this back to package.json scripts:
+// "types": "tsc --noEmit --project tsconfig.json",
+//     "lint": "eslint src --ext .ts,.tsx",
+//     "lint:fix": "eslint src --ext .ts,.tsx --fix",
+  
+//     "test:all": "npm run types && npm run lint && npx jest",
+//     "typecheck": "tsc --noEmit"

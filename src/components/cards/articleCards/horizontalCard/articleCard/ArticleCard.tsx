@@ -62,7 +62,8 @@ const ArticleCard: React.FC<Props> = ({
             <Img
               alt="complex"
               src={getAuthorData?.[0]?.avatar_image}
-              sx={AvatarImageStyles(theme, darkTheme)}
+              sx={AvatarImageStyles(darkTheme)}
+              referrerPolicy="no-referrer"
             />
             <Typography color="primary" sx={AuthorNameStyles(theme)}>
               {getAuthorData?.[0]?.author_name}
@@ -105,7 +106,8 @@ const ArticleCard: React.FC<Props> = ({
               <Img
                 alt="complex"
                 src={articleMedia}
-                sx={ArticleImageStyles(darkTheme)}
+                sx={ArticleImageStyles(theme, darkTheme)}
+                referrerPolicy="no-referrer"
               />
             </Link>
           )}
@@ -113,7 +115,11 @@ const ArticleCard: React.FC<Props> = ({
 
         <Grid size={{ xs: 8, sm: 9, md: 9, lg: 9, xl: 9 }} sx={ArticleDataGridStyles}>
           <Link to={`/article/${authorId}/${articleId}`} reloadDocument={turOnAuthorForArticle} style={LinkStyles(darkTheme)}>
-            <Typography color="primary" variant="h6" sx={{ ...TitleStyles(), marginBottom: '4px' }}>
+            <Typography 
+              color="primary" 
+              // variant="h6" 
+              sx={{ ...TitleStyles(theme), marginBottom: '4px' }}
+            >
               {title}
             </Typography>
             {!turOnAuthorForArticle && (

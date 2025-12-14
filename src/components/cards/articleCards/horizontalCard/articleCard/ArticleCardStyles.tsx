@@ -1,17 +1,29 @@
 import { Theme } from '@mui/material';
 import {
-  LIGHT_PRIMARY,
-  DARK_PRIMARY,
+  COLORS,
+  FONT_SIZES,
+  FONT_WEIGHTS,
+  LINE_HEIGHTS,
+  SIZES,
 } from '../../../../../store/redux/theme/CONSTANTS';
 
 export const ArticleDataGridStyles = (theme: Theme) => ({
-  paddingLeft: theme.spacing(2),
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  paddingLeft: theme.spacing(SIZES.spacingNumeric.sm),
+  paddingRight: theme.spacing(SIZES.spacingNumeric.sm),
 });
 
-export const ArticleImageStyles = (darkTheme: boolean) => ({
-  width: 'clamp(240px, 25vw, 300px)',
-  borderRadius: '6px',
-  border: `1px solid ${darkTheme ? DARK_PRIMARY : LIGHT_PRIMARY}`,
+export const ArticleImageStyles = ( theme: Theme, darkTheme: boolean) => ({
+  borderRadius: SIZES.borderRadius,
+  border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
+  width: '100%',
+  height: 'auto',
+  [theme.breakpoints.up('sm')]: {
+    width: SIZES.imageAspectRatio16by9.width,
+    height: SIZES.imageAspectRatio16by9.height,
+  },
 });
 
 export const ArticleVideoStyles = (
@@ -19,14 +31,16 @@ export const ArticleVideoStyles = (
   darkTheme: boolean,
   turOnAuthorForArticle: boolean
 ) => ({
-  borderRadius: '6px',
-  width: 'clamp(240px, 25vw, 300px)',
-  height: turOnAuthorForArticle ? '100px' : '136px',
-  border: `1px solid ${darkTheme ? DARK_PRIMARY : LIGHT_PRIMARY}`,
-  [theme.breakpoints.down('sm')]: {
-    height: turOnAuthorForArticle ? '80px' : '110px',
+  borderRadius: SIZES.borderRadius,
+  border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
+  width: '100%',
+  height: turOnAuthorForArticle ? SIZES.height.rootSm : SIZES.height.articleTallSm,
+  [theme.breakpoints.up('sm')]: {
+    width: SIZES.imageAspectRatio16by9.width,
+    height: SIZES.imageAspectRatio16by9.height,
   },
 });
+
 
 export const AvatarAuthorLinkStyles = (
   theme: Theme,
@@ -34,70 +48,69 @@ export const AvatarAuthorLinkStyles = (
 ) => ({
   textDecoration: 'none',
   display: 'flex',
-  color: darkTheme ? '#9DB2BF' : theme.palette.text.secondary,
+  color: darkTheme ? COLORS.dark.primary : theme.palette.text.secondary,
 });
 
-export const AvatarImageStyles = (
-  theme: Theme,
-  darkTheme: boolean
-) => ({
-  width: '30px',
-  height: '30px',
+export const AvatarImageStyles = (darkTheme: boolean) => ({
+  width: SIZES.avatar.sm,
+  height: SIZES.avatar.sm,
   borderRadius: '50%',
-  border: `1px solid ${darkTheme ? DARK_PRIMARY : LIGHT_PRIMARY}`,
-  [theme.breakpoints.down('sm')]: {
-    width: '20px',
-    height: '20px',
-  },
+  border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
 });
 
 export const AuthorNameStyles = (theme: Theme) => ({
-  paddingLeft: theme.spacing(1),
+  paddingLeft: theme.spacing(SIZES.spacingNumeric.sm),
   alignContent: 'center',
+  fontSize: FONT_SIZES.avatarName,
+  fontWeight: FONT_WEIGHTS.regular,
+  lineHeight: LINE_HEIGHTS.normal,
   [theme.breakpoints.down('sm')]: {
-    fontSize: '14px',
+    fontSize: FONT_SIZES.base,
   },
 });
 
 export const ChipStyles = (theme: Theme) => ({
-  borderRadius: '4px',
+  borderRadius: '0.25rem', // 4px
   [theme.breakpoints.down('sm')]: {
-    fontSize: '10px',
-    height: '24px',
+    fontSize: '0.625rem', // 10px
+    height: SIZES.chip.heightSm,
   },
 });
 
 export const DateStyles = (theme: Theme) => ({
   justifyContent: 'flex-end',
   display: 'flex',
+  fontSize: FONT_SIZES.date,
+  fontWeight: FONT_WEIGHTS.regular,
+  lineHeight: LINE_HEIGHTS.normal,
   [theme.breakpoints.down('sm')]: {
-    fontSize: '14px',
+    fontSize: FONT_SIZES.base,
   },
 });
 
 export const GridNameDateStyles = (theme: Theme) => ({
   [theme.breakpoints.down('sm')]: {
-    padding: '4px 0px',
+    padding: `${SIZES.spacing.xxs} 0px`,
   },
 });
 
 export const GridWidthStyle = {
-  width: '100%',
-}
+  width: SIZES.width.full,
+};
 
 export const LinkGridRootStyles = (
   theme: Theme,
   articlePage: boolean
 ) => ({
-  maxHeight: articlePage ? '40px' : '85px',
-  minHeight: articlePage ? '40px' : '85px',
-  width: '100%',
+  maxHeight: articlePage ? SIZES.height.appBar : SIZES.height.articleTall,
+  minHeight: articlePage ? SIZES.height.appBar : SIZES.height.articleTall,
+  width: SIZES.width.full,
   display: 'flex',
   justifyContent: 'flex-end',
   alignItems: 'flex-end',
   [theme.breakpoints.down('sm')]: {
-    maxHeight: '28px',
-    minHeight: '28px',
+    maxHeight: '1.75rem',
+    minHeight: '1.75rem',
   },
 });
 
@@ -107,24 +120,27 @@ export const RootStyles = (
   turOnAuthorForArticle: boolean
 ) => ({
   margin: 'auto',
-  marginBottom: theme.spacing(2),
+  marginBottom: theme.spacing(SIZES.spacingNumeric.md),
+  paddingLeft: theme.spacing(SIZES.spacingNumeric.sm),
+  paddingRight: theme.spacing(SIZES.spacingNumeric.sm),
   flexGrow: 1,
-  height: turOnAuthorForArticle ? '145px' : '235px',
+  height: turOnAuthorForArticle ? SIZES.height.rootShort : SIZES.height.rootTall,
   borderBottom: '1px solid rgba(138, 147, 153, 0.25)',
   [theme.breakpoints.down('sm')]: {
-    height: '140px',
+    height: SIZES.height.rootSm,
   },
 });
 
 export const SeriesChipStyles = {
-  paddingLeft: '8px',
+  paddingLeft: SIZES.spacing.sm,
   textDecoration: 'none',
 };
 
 export const SubTitleStyles = (theme: Theme) => ({
-  fontSize: 'clamp(14px, 1.8vw, 18px)',
-  lineHeight: 1.4,
-  maxHeight: '50px',
+  fontSize: FONT_SIZES.subtitle,
+  fontWeight: FONT_WEIGHTS.regular,
+  lineHeight: LINE_HEIGHTS.normal,
+  maxHeight: SIZES.spacing.titlePad,
   overflow: 'hidden',
   display: '-webkit-box',
   WebkitLineClamp: '2',
@@ -134,13 +150,16 @@ export const SubTitleStyles = (theme: Theme) => ({
   },
 });
 
-export const TitleStyles = () => ({
-  fontWeight: 'bold',
-  fontSize: 'clamp(16px, 2vw, 20px)',
-  lineHeight: 1.3,
-  maxHeight: '48px',
+export const TitleStyles = (theme: Theme) => ({
+  fontSize: FONT_SIZES.title,
+  fontWeight: FONT_WEIGHTS.bold,
+  lineHeight: LINE_HEIGHTS.normal,
+  maxHeight: '3rem',
   overflow: 'hidden',
   display: '-webkit-box',
   WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
+  [theme.breakpoints.down('sm')]: {
+    fontWeight: 200,
+  },
 });

@@ -1,0 +1,15 @@
+# Ignore dependencies
+node_modules
+
+# Ignore build outputs
+build
+dist
+
+# Ignore test coverage reports
+coverage
+
+# Ignore Next.js build folder (if applicable)
+.next
+
+# Ignore compiled/minified files
+*.min.js

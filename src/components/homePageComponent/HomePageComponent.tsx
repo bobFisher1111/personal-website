@@ -1,18 +1,20 @@
 import React
 //, { useState } 
 from "react";
-import { Button, Grid, Typography, useTheme } from "@mui/material";
+import { 
+  // Button, 
+  Grid, Typography, useTheme } from "@mui/material";
 import { useSelector } from "react-redux";
 import ArticleList from "../articleList/ArticleList";
 import SeriesComponent from "../seriesList/SeriesComponent";
 // import Sections from "./Sections";
 import {
   GridRoot,
-  LatestTextStyles,
-  SeriesButtonStyles,
-  SeriesTextStyles,
+  SectionTextStyles,
+  // SeriesButtonStyles,
+  // SeriesTextStyles,
 } from "./HomePageComponentStyles";
-
+//
 const HomePageComponent: React.FC = () => {
   const theme = useTheme();
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
@@ -34,16 +36,19 @@ const HomePageComponent: React.FC = () => {
       </Grid> */}
 
       <Grid size={12}>
-        <Button sx={SeriesButtonStyles()}>
+        {/* <Button sx={SeriesButtonStyles()}>
           <Typography color="primary" sx={SeriesTextStyles(theme)}>
             Series
           </Typography>
-        </Button>
+        </Button> */}
+        <Typography color="primary" sx={SectionTextStyles(theme)}>
+            Series
+          </Typography>
         <SeriesComponent series={seriesData?.slice(0, 4)} />
       </Grid>
 
       <Grid size={12}>
-        <Typography color="primary" sx={LatestTextStyles(theme)}>
+        <Typography color="primary" sx={SectionTextStyles(theme)}>
           Latest
         </Typography>
         <ArticleList

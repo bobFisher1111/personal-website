@@ -21,7 +21,7 @@ import {
   WorksInfoDate,
 } from './WorksStyle';
 import ComingSoon from '../comingSoon/ComingSoon';
-
+// Currently not really being used but may use later for authors page or article page
 const Works: React.FC<Props> = ({
   authorsPage,
   bookData,
@@ -142,6 +142,7 @@ const Works: React.FC<Props> = ({
                 component="img"
                 image={item.bookCoverLarge}
                 sx={WorksCoverImage(authorsPage)}
+                referrerPolicy="no-referrer"
               />
             </Button>
           </Grid>

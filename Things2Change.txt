@@ -1,18 +1,21 @@
-- Upgrade to react 19 & MUI V6 // completed
-- Fix App bar // completed
-- Carousel change // completed
+// This is list going forward as of 11/1/25
+- Upgrade to react 19 & MUI V7 // completed
 - Upgrade to react-routerv7 // completed
+- Connect for articles data markdown from file
+- Create CONSTANT File, keep like colors and other things in there, UPDATE FONT SIZE // working on
 - Check to see if author on article list is working correctly
 - Fix Tablet Mode for Ipads
 - look into issue on public wifi not working
 - Fix series on homepage where if user clicks section if theres none then show none or comming soon
 - Remove unused code
-- Create CONSTANT File, keep like colors and other things in there
 - fix quality and maybe width of articles width
 - Articles Page width to be correct like 700 width or 800 look up
 - Connect with Caleb, and re-work website along with New name and domain
 - Figure out issue with min-width
 - Issue on Author page when selecting between article and series, the screen jumps
+- Fix App bar
+- Carousel change, need new one removed outlined
+- Site filter, create new one removed old
 
 - New issues to address:
   - on authors page, when user selects series in prod(vercel), it goes to gamersshrine/, which not correct will need to test once I get new URL

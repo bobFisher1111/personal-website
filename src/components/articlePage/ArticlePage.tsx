@@ -2,12 +2,10 @@ import React, { useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import HorizontalArticleCardComponent from '../cards/articleCards/horizontalCard/HorizontalArticleCardComponent';
 import { useSelector } from 'react-redux';
-// import CreateArticle from '../createArticle/CreateArticle';
 import formatDate from '../../util/formatDate';
 import getNameFromUrl from '../../util/getNameFromUrl';
 import {
   CreateArticleRoot,
-  // CreateArticleStyle,
   GridRoot,
   GridHeader,
 } from './ArticlePageStyles';
@@ -64,18 +62,14 @@ const ArticlePage: React.FC = () => {
           >
             <HorizontalArticleCardComponent
               author={authorData?.author_name}
-              cardTextWidth={'1000px'}
               date={formatDate(articleData?.published_date)}
               imageWidth={'1000px'}
               articlePage={true}
-              articleSubTitle={articleData?.article_subtitle}
               useVideoInsteadOfImage={articleData?.use_video_instead_of_image}
               authorsId={articleData?.author_id}
               articleId={articleData?.article_id}
               videoOrImageCover={articleData?.cover_image_or_video}
-              sectionLink={articleData?.section_link}
               section={articleData?.section}
-              title={articleData?.article_title}
               mobileImageWidth={'22px'}
               videoHeight={false}
             />

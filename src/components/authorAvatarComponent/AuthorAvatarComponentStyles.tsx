@@ -12,8 +12,8 @@ export const avatarAuthorLinkStyles = (darkTheme: boolean) => ({
 });
 
 export const avatarImageStyles = (theme: Theme, darkTheme: boolean) => ({
-  width: '30px',
-  height: '30px',
+  width: '24px',
+  height: '24px',
   borderRadius: '50%',
   border: `1px solid ${darkTheme ? DARK_PRIMARY : LIGHT_PRIMARY}`,
   [theme.breakpoints.down('sm')]: {

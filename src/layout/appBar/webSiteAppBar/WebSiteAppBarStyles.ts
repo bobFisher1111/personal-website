@@ -1,21 +1,23 @@
+// src/styles/appBarStyles.ts
 import { Theme } from '@mui/material/styles';
+import { FONT_SIZES, SIZES } from '../../../store/redux/theme/CONSTANTS';
 
 export const AppBarStyle = (theme: Theme) => ({
-  display: "flex",
-  margin: "auto",
-  width: "100%",
-  maxWidth: "1200px",
-  [theme.breakpoints.down("sm")]: {
-    width: "100vw",
+  display: 'flex',
+  margin: 'auto',
+  width: '100%',
+  maxWidth: SIZES.maxWidth.appBar,
+  [theme.breakpoints.down('sm')]: {
+    width: '100vw',
     margin: 0,
   },
-  [theme.breakpoints.up("md")]: {
-    "@media (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5)": {
-      width: "100vw",
+  [theme.breakpoints.up('md')]: {
+    '@media (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5)': {
+      width: '100vw',
     },
   },
-  "@media only screen and (max-device-width: 812px) and (orientation: landscape)": {
-    width: "100vw",
+  '@media only screen and (max-device-width: 812px) and (orientation: landscape)': {
+    width: '100vw',
   },
 });
 
@@ -49,26 +51,25 @@ export const GridMobileAppBarTitle = (theme: Theme) => ({
 });
 
 export const LinkGridMobileStyles = {
-  padding: '4px 16px 4px 0px',
+  padding: SIZES.padding.linkGridMobile,
 };
 
 export const TypographyDesktopTitle = (theme: Theme) => ({
-  fontSize: '26px',
-  padding: '0px 0px 0px 16px',
+  fontSize: FONT_SIZES.sectionTitle,
+  padding: SIZES.padding.desktopTitle,
   [theme.breakpoints.down('sm')]: {
-    fontSize: '22px',
+    fontSize: FONT_SIZES.body1,
     cursor: 'pointer',
   },
   '@media only screen and (max-device-width: 812px) and (orientation: landscape)': {
-    fontSize: '22px',
+    fontSize: FONT_SIZES.large,
   },
 });
 
 export const TypographyMobileTitle = {
-  fontSize: '22px',
+  fontSize: FONT_SIZES.body1,
   cursor: 'pointer',
 };
-
 
 export default [
   AppBarStyle,

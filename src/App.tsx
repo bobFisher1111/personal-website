@@ -1,28 +1,31 @@
-import React, { Suspense, useMemo } from 'react';
-import {
-  Routes,
-  Route,
-  BrowserRouter,
-} from 'react-router';
-import { AppDispatch } from './store/redux/store';
+import React, { Suspense, useEffect } from 'react';
+import { BrowserRouter } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  CssBaseline,
-  ThemeProvider,
-} from '@mui/material';
-// import UsersAcceptanceComponent from '../src/components/usersAcceptanceComponent/UsersAcceptanceComponent';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import { AppDispatch, RootState } from './store/redux/store';
 import GetWebsiteData from './store/redux/webSiteData/GetWebsiteData';
 import { darkTheme, lightTheme } from './store/redux/theme/Theme';
+import { setDarkTheme } from './store/redux/theme/ThemeSlice';
 import Layout from './layout/Layout';
-import routes from './routes/Routes';
+import AppRoutes from './AppRoutes'; // ✅ new import
 import './App.css';
+
+// Uncomment this component when user acceptance flow is ready
+// import UsersAcceptanceComponent from '../src/components/usersAcceptanceComponent/UsersAcceptanceComponent';
 
 const App: React.FC<Props> = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const theme = useSelector((state: any) => state.theme);
-  useMemo(() => {
+  const theme = useSelector((state: RootState) => state.theme);
+
+  useEffect(() => {
     dispatch(GetWebsiteData());
-  }, []);
+  }, [dispatch]);
+
+  useEffect(() => {
+    const stored = localStorage.getItem('darkMode');
+    if (stored === 'true') dispatch(setDarkTheme(true));
+    if (stored === 'false') dispatch(setDarkTheme(false));
+  }, [dispatch]);
 
   return (
     <BrowserRouter>
@@ -32,18 +35,7 @@ const App: React.FC<Props> = () => {
           {/* <UsersAcceptanceComponent /> */}
           <Layout />
           <div className="app">
-            <Routes>
-              {routes.map(({
-                path,
-                element: Component,
-              }) => ((
-                <Route
-                  path={path}
-                  element={<Component />}
-                  key={path}
-                />
-              )))}
-            </Routes>
+            <AppRoutes />
           </div>
         </Suspense>
       </ThemeProvider>

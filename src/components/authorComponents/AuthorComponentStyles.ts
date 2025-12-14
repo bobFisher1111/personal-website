@@ -1,5 +1,6 @@
 import { Theme } from '@mui/material/styles';
-
+import { FONT_SIZES } from '../../store/redux/theme/CONSTANTS';
+//
 export const authorComponentGridRoot = (turOnArticlePage: boolean) => ({
   display: 'flex',
   paddingBottom: '200px',
@@ -15,6 +16,7 @@ export const authorComponentGridBiography = () => ({
 
 export const authorComponentGridBiographyTitle = (theme: Theme) => ({
   textAlign: 'flex-start',
+  fontSize: FONT_SIZES.sectionTitle,
   padding: '16px 0px',
   [theme.breakpoints.down('sm')]: {
     fontSize: '20px',
@@ -23,10 +25,10 @@ export const authorComponentGridBiographyTitle = (theme: Theme) => ({
 
 export const authorComponentGridBiographyText = (theme: Theme) => ({
   textAlign: 'flex-start',
-  fontSize: '16px',
+  fontSize: FONT_SIZES.body1,
   textIndent: '15px',
   [theme.breakpoints.down('sm')]: {
-    fontSize: '16px',
+    fontSize: FONT_SIZES.body1,
   },
 });
 

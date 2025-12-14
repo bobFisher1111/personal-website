@@ -53,16 +53,13 @@ const SeriesComponent = () => {
       <Grid size={12}>
         <HorizontalArticleCardComponent
           author={seriesInfo?.series_authors}
-          cardTextWidth="1000px"
           date={formatDate(seriesInfo?.series_start_date)}
           imageWidth="1000px"
           articlePage={true}
-          articleSubTitle="remove for series page"
           useVideoInsteadOfImage={seriesInfo?.use_video_instead_of_image}
           authorsId={seriesInfo?.author_id}
           articleId="articleData?.articleId"
           videoOrImageCover={seriesInfo?.series_cover_image_or_video}
-          sectionLink={seriesInfo?.section_link}
           section={seriesInfo?.section}
           series={true}
           mobileImageWidth="30px"

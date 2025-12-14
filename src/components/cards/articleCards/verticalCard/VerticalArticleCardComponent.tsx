@@ -65,6 +65,7 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
                   image={articleData?.cover_image_or_video || articleData?.series_cover_image_or_video}
                   allowFullScreen
                   sx={CardMediaVerticalCardVideo}
+                  referrerPolicy="no-referrer"
                 />
               </Grid>
             </Link>
@@ -74,6 +75,7 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
                 component="img"
                 image={articleData?.cover_image_or_video || articleData?.series_cover_image_or_video}
                 sx={CardMediaVerticalCardImage(theme)}
+                referrerPolicy="no-referrer"
               />
             </Link>
           )}

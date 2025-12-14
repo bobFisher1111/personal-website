@@ -1,11 +1,8 @@
-import { Theme } from "@mui/material";
+import { FONT_SIZES } from "../../store/redux/theme/CONSTANTS";
 
-export const comingSoonText = (theme: Theme) => ({
+export const comingSoonText = () => ({
   padding: '16px',
-  fontSize: '24px',
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '20px',
-  },
+  fontSize: FONT_SIZES.sectionTitle,
 });
 
 export default [comingSoonText];

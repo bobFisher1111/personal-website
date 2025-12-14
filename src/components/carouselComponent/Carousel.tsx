@@ -38,7 +38,7 @@ import {
   mobileSubtitleStyles,
 } from './CarouselComponentStyles';
 
-
+// Come back to this later if use and add styles to constans file
 const Carousel: React.FC<Props> = ({
   data,
   author,
@@ -139,6 +139,7 @@ const Carousel: React.FC<Props> = ({
             sx={mobileImageStyles(theme)}
             image={carouselData[currentIndex]?.cover_image_or_video}
             alt="Live from space album cover"
+            referrerPolicy="no-referrer"
           />
         </Link>
         <CardContent
@@ -274,6 +275,7 @@ const Carousel: React.FC<Props> = ({
           loading="lazy"
           image={carouselData[currentIndex]?.cover_image_or_video}
           alt="Live from space album cover"
+          referrerPolicy="no-referrer"
         />
       </Link>
     </Card>

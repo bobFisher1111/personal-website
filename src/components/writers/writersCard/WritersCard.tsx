@@ -47,6 +47,7 @@ const WritersCard: React.FC<Props> = ({
             image={authorImage}
             sx={WritersCardAvatar(theme)}
             alt={`${authorName} image`}
+            referrerPolicy="no-referrer"
           />
         </Link>
       </Grid>

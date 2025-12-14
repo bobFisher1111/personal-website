@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 import { userAgreementValue } from '../../config';
 
 type Anchor = 'bottom';
-
+// Come back to this later, and refactor and also constants file sheet
 const UsersAcceptanceComponent = () => {
   const [state, setState] = React.useState(() =>(
     localStorage.getItem('userAgreement') !== `${userAgreementValue}`) ? { bottom: true} : {bottom: false}

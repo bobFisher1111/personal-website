@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Container, Box, Typography, Link as MuiLink } from '@mui/material';
-
+// Come back here after next push, and add style to constants file later
 const MarkDownComponent: React.FC = () => {
   const test_1 = {
     article_title: 'Test',
@@ -48,7 +48,7 @@ const MarkDownComponent: React.FC = () => {
             <Typography variant="subtitle2" component="h6" gutterBottom {...props} />
           ),
           p: (props) => (
-            <Typography variant="body1" component="p" sx={{ textIndent: '20px', mb: 2 }} {...props} />
+            <Typography variant="body1" component="div" sx={{ textIndent: '20px', mb: 2 }} {...props} />
           ),
           strong: (props) => (
             <Box component="strong" sx={{ fontWeight: 'bold' }} {...props} />

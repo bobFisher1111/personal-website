@@ -1,8 +1,9 @@
 import { Theme } from '@mui/material/styles';
+import { SIZES, FONT_SIZES, FONT_WEIGHTS } from '../../store/redux/theme/CONSTANTS';
 
 export const seriesComponentGridRoot = () => ({
   display: 'flex',
-  maxWidth: '1024px',
+  maxWidth: SIZES.maxWidth.screenWidth,
   margin: 'auto',
   padding: '76px 16px 100px 16px',
 });
@@ -23,16 +24,16 @@ export const seriesComponentGridArticleInfo = (theme: Theme) => ({
 });
 
 export const seriesComponentTitle = (theme: Theme) => ({
-  fontSize: '20px',
+  fontSize: FONT_SIZES.title, // 24px for desktop
   padding: '0px 16px',
+  fontWeight: FONT_WEIGHTS.bold,
   [theme.breakpoints.down('sm')]: {
-    fontSize: '18px',
+    fontSize: FONT_SIZES.title, // 20px
   },
 });
 
-
 export const seriesComponentSubTitle = (theme: Theme) => ({
-  fontSize: '16px',
+  fontSize: FONT_SIZES.subtitle, // 18px for desktop
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
@@ -40,15 +41,31 @@ export const seriesComponentSubTitle = (theme: Theme) => ({
   WebkitBoxOrient: 'vertical',
   padding: '0px 16px',
   [theme.breakpoints.down('sm')]: {
-    fontSize: '14px',
+    fontSize: FONT_SIZES.subtitle, // 16px
   },
 });
 
 export const seriesComponentDate = (theme: Theme) => ({
-  fontSize: '14px',
+  fontSize: FONT_SIZES.body1, // 16px for desktop
   padding: '0px 16px',
   [theme.breakpoints.down('sm')]: {
-    fontSize: '14px',
+    fontSize: FONT_SIZES.base, // 14px
+  },
+});
+
+// ✅ NEW: Image style with 16:9 aspect ratio for desktop only
+export const seriesComponentImageStyle = (theme: Theme) => ({
+  objectFit: 'cover',
+  width: '100%',
+  height: 'auto',
+  [theme.breakpoints.up('sm')]: {
+    width: SIZES.imageAspectRatio16by9.width,
+    height: SIZES.imageAspectRatio16by9.height,
+  },
+  [theme.breakpoints.down('sm')]: {
+    '&.MuiCardMedia-root': {
+      maxHeight: '35px',
+    },
   },
 });
 
@@ -59,4 +76,5 @@ export default [
   seriesComponentTitle,
   seriesComponentSubTitle,
   seriesComponentDate,
+  seriesComponentImageStyle,
 ];
