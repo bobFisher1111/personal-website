@@ -9,7 +9,7 @@ type AppConfig = {
   websiteHomePageImage: string;
 }
 
-export const appBaseURL = import.meta.env.VITE_APP_BASE_URL;
+export const appBaseURL = import.meta.env.VITE_APP_BASE_URL || window.location.origin;
 export const apiBaseURL = import.meta.env.VITE_API_BASE_URL;
 export const facebookURL = import.meta.env.VITE_FACEBOOK_URL;
 export const youtubeURL = import.meta.env.VITE_YOUTUBE_URL;
