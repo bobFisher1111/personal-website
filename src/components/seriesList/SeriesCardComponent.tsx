@@ -23,6 +23,7 @@ import {
 const SeriesCardComponent: React.FC<Props> = ({ articleData }) => {
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
   const theme = useTheme();
+  console.log('Series Card Component appBaseURL:', appBaseURL);
   const serieslUrl = `${appBaseURL}/series/${articleData?.series_id}`;
 
   return (
