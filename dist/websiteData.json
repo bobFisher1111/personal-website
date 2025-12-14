@@ -1,0 +1,119 @@
+{
+  "articles": [
+    {
+      "article_title": "Commonly used React Hooks Test",
+      "article_subtitle": "Top seven React Hooks most React developers will use in their application.",
+      "author_id": 1,
+      "markdown_data": "# Draconem stamina celanda turres \n ## Haec penetralibus luridus fundit linguam pignoribus \n\n Lorem markdownum putria infelix stirpe est animis iam gratata, in cum Arethusae animus extrema ait. Aures quod cycnus Iovis Tereus; **addit arma** spatium Pyreneus calathis terrena rerum: est.",
+      "published_date": "2024-05-01",
+      "section": "Coding",
+      "section_link": "coding",
+      "section_type": "blog",
+      "cover_image_or_video": "https://lh3.googleusercontent.com/pw/AP1GczM9u26cBsPEWYoACNvtsrYGp2PbTIIZz2k3FYv_x5w9rA-Enx3mIvsZv4-zcoJAF7YURtDo93zaRbz6-ml-S5a8wnk9WTKhKs1YKwQ80ZvuZ8IQZpY=w2400",
+      "is_hidden": false,
+      "use_video_instead_of_image": false,
+      "series_id": 1,
+      "series_chapter": 1,
+      "series_type": "Part 1",
+      "article_id": 1
+    },
+    {
+      "article_title": "Commonly used React Hooks",
+      "article_subtitle": "Top seven React Hooks most React developers will use in their application.",
+      "author_id": 1,
+      "markdown_data": "# Draconem stamina celanda turres \n ## Haec penetralibus luridus fundit linguam pignoribus \n\n Lorem markdownum putria infelix stirpe est animis iam gratata, in cum Arethusae animus extrema ait. Aures quod cycnus Iovis Tereus; **addit arma** spatium Pyreneus calathis terrena rerum: est.",
+      "published_date": "2024-05-01",
+      "section": "Coding",
+      "section_link": "coding",
+      "section_type": "blog",
+      "cover_image_or_video": "https://lh3.googleusercontent.com/pw/AP1GczM9u26cBsPEWYoACNvtsrYGp2PbTIIZz2k3FYv_x5w9rA-Enx3mIvsZv4-zcoJAF7YURtDo93zaRbz6-ml-S5a8wnk9WTKhKs1YKwQ80ZvuZ8IQZpY=w2400",
+      "is_hidden": false,
+      "use_video_instead_of_image": false,
+      "series_id": 2,
+      "series_chapter": 1,
+      "series_type": "Part 1",
+      "article_id": 3
+    },
+    {
+      "article_title": "Commonly used React Hooks 15",
+      "article_subtitle": "Top seven React Hooks most React developers will use in their application.",
+      "author_id": 1,
+      "markdown_data": "# Draconem stamina celanda turres \n ## Haec penetralibus luridus fundit linguam pignoribus \n\n Lorem markdownum putria infelix stirpe est animis iam gratata, in cum Arethusae animus extrema ait. Aures quod cycnus Iovis Tereus; **addit arma** spatium Pyreneus calathis terrena rerum: est.",
+      "published_date": "2024-05-01",
+      "section": "Coding",
+      "section_link": "coding",
+      "section_type": "blog",
+      "cover_image_or_video": "https://lh3.googleusercontent.com/pw/AP1GczM9u26cBsPEWYoACNvtsrYGp2PbTIIZz2k3FYv_x5w9rA-Enx3mIvsZv4-zcoJAF7YURtDo93zaRbz6-ml-S5a8wnk9WTKhKs1YKwQ80ZvuZ8IQZpY=w2400",
+      "is_hidden": false,
+      "use_video_instead_of_image": false,
+      "series_id": null,
+      "series_chapter": 1,
+      "series_type": null,
+      "article_id": 2
+    }
+  ],
+  "authors": [
+    {
+      "author_name": "Sean R",
+      "about": "",
+      "avatar_image": "https://lh3.googleusercontent.com/pw/AP1GczOTDheT2arR3g0Ff--dkD2OhhgvyZqu-rvtmToPJNukYIZLIlCBoAs3T8kfQanZPWVM13Blbm1ya9xqLarJ4Xcp-CQuvqrAJsm8xMAqvrzUy_swnmk=w2400",
+      "biography": "I’m a front-end developer who loves teaching others how to code. My tutorials will be focusing mostly on entry level web applications. If you're a recent college grad or someone interested in the profession. I will be going over things that you will need to know to get into the market. What is expected and most likely what you didn’t learn in college. Most of my articles will eventually have a video that goes along with the topic in the near future. When I’m not coding, you can find me enjoying a glass of green tea with jasmine, the perfect blend. My favorite gaming genre is JRPGs. Currently in the process of developing my own video games. Follow me here as I post updates regarding the game I’m currently working on. Along with coding tutorials for beginners.",
+      "blue_sky": "",
+      "date": null,
+      "email": "rsr0986@gmail.com",
+      "face_book": "",
+      "is_hidden": false,
+      "personal_site": "",
+      "titles": "Tech Writer",
+      "twitter": "",
+      "you_tube": "",
+      "author_id": 1
+    },
+    {
+      "author_name": "Bob The Fisher",
+      "about": "",
+      "avatar_image": "https://lh3.googleusercontent.com/pw/AP1GczP208aMZKcJwQtzf6aOH_pjakf9RRNPg4aLfR3uiZj89bwLWMmQ7EulbAbAgA_yzecrgUCMb2_hspl-xklxBTYJLjQLkPJf7mzf6YNY--wCEDRjhwg=w2400",
+      "biography": "A seeker of wisdom from ages past, tracing footsteps of ancient civilizations across the globe. From ancient structures to the myths of Norse. Finding parallels between long-gone societies and the tenets of modern religion, suggesting many truths hidden in text. Uncovering secrets found in the unknown realm. Taking time to enjoy life and debate with friends. A connoisseur of coffee and wine. Someone who enjoys playing retro games and discovering the tricks the developers used to make them. You can find me here with my latest work and things I’m currently interested in.",
+      "blue_sky": "",
+      "date": null,
+      "email": "rsr09861@gmail.com",
+      "face_book": "",
+      "is_hidden": false,
+      "personal_site": "",
+      "titles": "Philosopher",
+      "twitter": "",
+      "you_tube": "",
+      "author_id": 4
+    }
+  ],
+  "series": [
+    {
+      "author_id": 1,
+      "is_hidden": false,
+      "section": "Coding",
+      "section_link": "coding",
+      "series_authors": "Sean R",
+      "series_cover_image_or_video": "https://lh3.googleusercontent.com/pw/AP1GczN1gylhewBpfktN2G5YKNu-69PGHdyk1Jl2wBx4v-ZSpSPddu_eAF8w_jYWZ_G4YGstUSh1FysXqv7iY9Ok-lV-p0iZR1z4SxI4YCKjWAPaggwWixk=w2400",
+      "series_start_date": "2024-05-16",
+      "series_title": "Coding Challenges",
+      "series_type": "Full Stack",
+      "series_type_title": "Part",
+      "use_video_instead_of_image": false,
+      "series_id": 1
+    },
+    {
+      "author_id": 1,
+      "is_hidden": false,
+      "section": "Coding",
+      "section_link": "coding",
+      "series_authors": "Sean R",
+      "series_cover_image_or_video": "https://lh3.googleusercontent.com/pw/AP1GczMxfJKTUZWC-8PUzh8_ll_Z4J0V6qDaABv92SJazVwW-8CXfIBCEpQ0VLxDHA7NZxtaj4wFNp7Og7iyuAJeemBYD-bsFVM3fRfpTTcwZcRK1DwtQo4=w2400",
+      "series_start_date": "2024-05-16",
+      "series_title": "Full Stack",
+      "series_type": "Full Stack",
+      "series_type_title": "Part",
+      "use_video_instead_of_image": false,
+      "series_id": 2
+    }
+  ]
+}
