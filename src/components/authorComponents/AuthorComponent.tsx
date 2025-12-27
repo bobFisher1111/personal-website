@@ -39,7 +39,7 @@ const AuthorComponent: React.FC = () => {
   const authorData = getAuthor?.[0];
 
   return (
-    <Grid container justifyContent="center" sx={authorComponentGridRoot(false)}>
+    <Grid container justifyContent="center" sx={authorComponentGridRoot()}>
       <Grid
         size={12}
         sx={headerComponentStyles(muiTheme)}
@@ -86,13 +86,8 @@ const AuthorComponent: React.FC = () => {
             AuthorComponetTabData(
               authorWebData,
               getArticles,
-              false,
               getIdFromUrl(),
-              false,
-              true,
               getBooks,
-              authorData,
-              false,
               true
             )
           }

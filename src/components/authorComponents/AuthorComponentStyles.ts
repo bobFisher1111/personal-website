@@ -1,13 +1,12 @@
 import { Theme } from '@mui/material/styles';
 import { FONT_SIZES } from '../../store/redux/theme/CONSTANTS';
 //
-export const authorComponentGridRoot = (turOnArticlePage: boolean) => ({
+export const authorComponentGridRoot = () => ({
   display: 'flex',
   paddingBottom: '200px',
-  maxWidth: turOnArticlePage ? '550px' : '1200px',
+  maxWidth: '1200px',
   margin: 'auto',
   padding: '76px 16px 100px 16px',
-  borderLeft: turOnArticlePage ? '1px solid #667A6E' : '',
 });
 
 export const authorComponentGridBiography = () => ({

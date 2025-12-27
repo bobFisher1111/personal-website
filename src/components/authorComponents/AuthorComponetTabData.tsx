@@ -6,21 +6,15 @@ import Works from '../works/Works';
 const AuthorComponetTabData = (
   authorsData: any,
   data: any,
-  turOnAuthorForArticle: boolean,
   authorName: any,
-  authorsPage: boolean,
-  turOnArticlePage: boolean,
   getBooks?: any,
-  authorData?: any,
-  seriesForArticlePage?: boolean,
   seriesForAuthorsPage?: boolean,
 ) => {
-
   return (
     [
       { 
         name: 'Uploads',
-        data: <ArticleList authorData={authorsData} data={data} turOnAuthorForArticle={turOnAuthorForArticle} />
+        data: <ArticleList authorData={authorsData} data={data} turOnAuthorForArticle={false} />
       },
       { 
         name: 'Series',
@@ -28,16 +22,14 @@ const AuthorComponetTabData = (
           <Series 
             data={data}
             name={authorName}
-            seriesForAuthorsPage={seriesForAuthorsPage}
+            seriesForAuthorsPage={seriesForAuthorsPage} // this is next part going to work on
           />
       },
       { 
         name: 'Other',
         data:   
           <Works
-            authorsPage={turOnArticlePage}
             bookData={getBooks}
-            articlePage={true}
           />
       },
     ]

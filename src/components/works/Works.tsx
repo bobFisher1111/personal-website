@@ -1,15 +1,11 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import {
   Button,
   CardMedia,
   Grid,
-  Link,
   Typography
 } from '@mui/material';
 import {
-  ArtPageBookExtraInfoGridRoot,
-  ArtPageBookExtraInfoLinkBuy,
-  ArtPageBookExtraInfoText,
   WorksGridRootTitle,
   WorksTitle,
   WorksGridRoot,
@@ -18,85 +14,31 @@ import {
   WorksGridInfo,
   WorksInfoTitle,
   WorksInfoSubTitle,
-  WorksInfoDate,
 } from './WorksStyle';
 import ComingSoon from '../comingSoon/ComingSoon';
 // Currently not really being used but may use later for authors page or article page
 const Works: React.FC<Props> = ({
-  authorsPage,
   bookData,
-  aboutWorks,
-  articlePage,
 }) => {
   const bookImageHeightRef = useRef<any>(null);
   const titleHeightRef = useRef<any>(null);
   const bookPlotHeightRef = useRef<any>(null);
-  const articleExtraInfoRef = useRef<any>(null);
-  const [articlePageExtraInfo, setArticlePageExtraInfo] = useState<number>(0);
-  const [infoHeight, setInfoHeight] = useState<string>('');
 
   const noBooks = bookData?.length === 0;
-  const articlePageBookExtrainfo = (item: any, bottomHeight: string) => {
-    return (
-      <Grid
-        ref={articleExtraInfoRef}
-        container
-        direction="row"
-        justifyContent="flex-start"
-        alignItems="flex-end"
-        sx={ArtPageBookExtraInfoGridRoot(bottomHeight)}
-      >
-        <Grid
-          size={12}
-        >
-          <Link 
-            href={item.buy}
-            underline="none"
-            target="_blank"
-            rel="noopener"
-            sx={ArtPageBookExtraInfoLinkBuy}
-          >
-            Buy
-          </Link>
-        </Grid>
-        <Grid
-          size={12}
-        >
-          <Typography
-            color="primary"
-            sx={ArtPageBookExtraInfoText}
-          >
-            {item.genre}
-          </Typography>
-        </Grid>
-        <Grid
-          size={12}
-        >
-          <Typography
-            color="primary"
-            sx={ArtPageBookExtraInfoText}
-          >
-            {item.year}
-          </Typography>
-        </Grid>
-      </Grid>
-    );
-  };
-
   return (
     <>
       <Grid
         container
-        sx={WorksGridRootTitle(authorsPage)}
+        sx={WorksGridRootTitle}
       >
         <Grid 
           size={12}
         >
           <Typography
             color="primary"
-            sx={WorksTitle(authorsPage)}
+            sx={WorksTitle}
           >
-            {aboutWorks ? 'Favorite books' : 'Author Book\'s'}
+            {"Author Books"}
           </Typography>
           {noBooks && 
             <ComingSoon />
@@ -107,7 +49,7 @@ const Works: React.FC<Props> = ({
         <Grid 
           container
           key={item.id}
-          sx={WorksGridRoot(authorsPage)}
+          sx={WorksGridRoot}
         >
           <Grid
             size={{
@@ -117,7 +59,7 @@ const Works: React.FC<Props> = ({
               lg: 1,
               xl: 1,
             }}
-            sx={WorksGridCover(authorsPage)}
+            sx={WorksGridCover}
           >
             <Button
               href={item.buy}
@@ -128,29 +70,28 @@ const Works: React.FC<Props> = ({
                 ref={bookImageHeightRef}
                 component="img"
                 image={item.bookCoverLarge}
-                sx={WorksCoverImage(authorsPage)}
+                sx={WorksCoverImage}
                 referrerPolicy="no-referrer"
               />
             </Button>
           </Grid>
           <Grid
             size={{
-              xs: articlePage ? 6 : 7,
-              sm: articlePage ? 6 : 8,
-              md: articlePage ? 6 : 8,
-              lg: articlePage ? 6 : 8,
-              xl: articlePage ? 6 : 8,
+              xs: 7,
+              sm: 8,
+              md: 8,
+              lg: 8,
+              xl: 8,
             }}
             sx={WorksGridInfo}
           >
             <Typography
               color="primary"
               ref={titleHeightRef}
-              sx={WorksInfoTitle(aboutWorks)}
+              sx={WorksInfoTitle}
             >
               {item.bookTitle}
             </Typography>
-            {authorsPage &&
             <Typography
               color="primary"
               ref={bookPlotHeightRef}
@@ -159,17 +100,6 @@ const Works: React.FC<Props> = ({
             >
               {item.bookSubtitle}
             </Typography>
-            }
-            {authorsPage ?
-              articlePageBookExtrainfo(item, infoHeight)
-              :
-              <Typography
-                color="primary"
-                sx={WorksInfoDate(authorsPage)}
-              >
-                {item.year}
-              </Typography>
-            }
           </Grid>
         </Grid>
       ))}
@@ -178,10 +108,7 @@ const Works: React.FC<Props> = ({
 };
 
 export type Props = {
-  authorsPage?: boolean;
   bookData?: any;
-  aboutWorks?: boolean;
-  articlePage?: boolean;
 };
 
 export default Works;
