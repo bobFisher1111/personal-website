@@ -1,14 +1,13 @@
 import { Theme } from '@mui/material/styles';
 import {
-  LIGHT_PRIMARY,
-  DARK_PRIMARY,
+  COLORS,
 } from '../../../../../store/redux/theme/CONSTANTS';
-// Still need to do this file: 
+
 export const avatarImageStyles = (theme: Theme, darkTheme: boolean) => ({
   width: '30px',
   height: '30px',
   borderRadius: '50%',
-  border: `1px solid ${darkTheme ? DARK_PRIMARY : LIGHT_PRIMARY}`,
+  border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
   marginRight: '8px',
   [theme.breakpoints.down('sm')]: {
     width: '20px',

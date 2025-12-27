@@ -1,17 +1,16 @@
 import {
-  LIGHT_PRIMARY,
-  DARK_PRIMARY,
+  COLORS,
 } from '../../store/redux/theme/CONSTANTS';
 
 export const cardStyles = (theme: boolean) => ({
   display: 'flex', 
   width: '1160px', 
-  border: theme ? `2px solid ${DARK_PRIMARY}` : `2px solid ${LIGHT_PRIMARY}`, 
+  border: theme ? `2px solid ${COLORS.dark.primary}` : `2px solid ${COLORS.light.primary}`, 
   boxShadow: 'none',
   padding: '32px',
   borderRadius: '8px',
   '@media only screen and (max-width: 600px)': {
-    border: theme ? `1px solid ${DARK_PRIMARY}` : `1px solid ${LIGHT_PRIMARY}`,
+    border: theme ? `1px solid ${COLORS.dark.primary}` : `1px solid ${COLORS.light.primary}`,
     width: 'calc(100vw - 32px)',
     height: '500px',
     padding: '16px',
@@ -117,7 +116,7 @@ export const desktopGridRootAvatarDateStyles = {
 };
 
 export const desktopImageStyles = (theme: boolean) => ({
-  border: theme ? `1px solid ${DARK_PRIMARY}` : `1px solid ${LIGHT_PRIMARY}`,
+  border: theme ? `1px solid ${COLORS.dark.primary}` : `1px solid ${COLORS.light.primary}`,
   borderRadius: '4px',
   height: '405px',
   '@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5)': {
@@ -178,7 +177,7 @@ export const mobileGridDateStyles = {
 export const mobileImageStyles = (theme: boolean) => ({
   borderRadius: '4px', 
   height: '215px',
-  border: theme ? `1px solid ${DARK_PRIMARY}` : `px solid ${LIGHT_PRIMARY}`
+  border: theme ? `1px solid ${COLORS.dark.primary}` : `1px solid ${COLORS.light.primary}`
 });
 
 export const mobileSubtitleStyles = {

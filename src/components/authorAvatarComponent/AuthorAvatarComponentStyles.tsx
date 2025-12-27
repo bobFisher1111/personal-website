@@ -1,21 +1,20 @@
 import { Theme } from '@mui/material/styles';
 import {
-  LIGHT_PRIMARY,
-  DARK_PRIMARY,
+  COLORS,
 } from '../../store/redux/theme/CONSTANTS';
 
 export const avatarAuthorLinkStyles = (darkTheme: boolean) => ({
   textDecoration: 'none',
   display: 'flex',
   alignItems: 'center',
-  color: darkTheme ? DARK_PRIMARY : LIGHT_PRIMARY,
+  color: darkTheme ? COLORS.dark.primary : COLORS.light.primary,
 });
 
 export const avatarImageStyles = (theme: Theme, darkTheme: boolean) => ({
   width: '24px',
   height: '24px',
   borderRadius: '50%',
-  border: `1px solid ${darkTheme ? DARK_PRIMARY : LIGHT_PRIMARY}`,
+  border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
   [theme.breakpoints.down('sm')]: {
     width: '20px',
     height: '20px',

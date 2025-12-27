@@ -1,22 +1,3 @@
-// Remove these later
-export const APP_BAR_BACKGROUND_COLOR = '#FFFFFF';
-export const DARK_PRIMARY = '#9DB2BF';
-export const DARK_SECONDARY = '#FFFFFF';
-export const LIGHT_PRIMARY = '#0C0D0D';
-export const LIGHT_SECONDARY = '#FFFFFF';
-
-// Add later raidus seciton,
-
-// Add to these
-// src/theme/constants.ts
-
-// src/theme/constants.ts
-
-// src/theme/constants.ts
-
-// src/theme/constants.ts
-
-// 
 export const COLORS = {
   light: {
     primary: '#0C0D0D',
@@ -77,7 +58,7 @@ export const SIZES = {
   },
   maxWidth: {
     appBar: '75rem',               // 1200px
-    screenWidth: '64rem',
+    screenWidth: '64rem',       // 1024px 
   },
   padding: {
     linkGridMobile: '0.25rem 1rem 0.25rem 0rem', // 4px 16px 4px 0px

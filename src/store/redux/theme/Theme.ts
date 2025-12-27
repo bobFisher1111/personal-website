@@ -1,27 +1,21 @@
 import { createTheme } from "@mui/material";
-import {
-  APP_BAR_BACKGROUND_COLOR,
-  DARK_PRIMARY,
-  DARK_SECONDARY,
-  LIGHT_PRIMARY,
-  LIGHT_SECONDARY,
-} from './CONSTANTS';
+import { COLORS } from './CONSTANTS';
 
 export const lightTheme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: LIGHT_PRIMARY,
+      main: COLORS.light.primary,
     },
     secondary: {
-      main: LIGHT_SECONDARY,
+      main: COLORS.light.secondary,
     },
   },
   components: {
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: APP_BAR_BACKGROUND_COLOR
+          backgroundColor: COLORS.light.appBar
         }
       },
     },
@@ -32,10 +26,10 @@ export const darkTheme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: DARK_PRIMARY,
+      main: COLORS.dark.primary,
     },
     secondary: {
-      main: DARK_SECONDARY,
+      main: COLORS.dark.secondary,
     },
     background: {
     },
