@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router';
 import {
@@ -32,20 +32,13 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
   name,
   articleData,
   series,
+  isOnArticlePage = false,
 }) => {
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
   const theme = useTheme();
-  const [articlePage, setArticlePage] = useState<boolean>();
   const articleUrl = `${appBaseURL}/article/${articleData?.author_id}/${articleData?.article_id}`;
   const seriesUrl = `${appBaseURL}/series/${articleData?.series_id}`;
   const authorUrl = `${appBaseURL}/author/${articleData?.author_id}`;
-
-  useEffect(() => {
-    const currentLocation = window.location.href;
-    const getIdFromCurrentLocation = currentLocation.split('/');
-    const checkIfIncludesCurrentArticle = getIdFromCurrentLocation.includes(articleData?.article_id);
-    setArticlePage(checkIfIncludesCurrentArticle);
-  }, []);
 
   return (
     <div style={DivVerticalArticleRoot(theme)}>
@@ -82,7 +75,7 @@ const VerticalArticleCardComponent: React.FC<Props> = ({
           <Box sx={CardFooterStyle}>
             <Grid container>
               <Grid size={{ xs: 10 }}>
-                {!articlePage ? (
+                {!isOnArticlePage ? (
                   <Link to={series ? authorUrl : articleUrl} rel="noreferrer" style={LinkStyles(darkTheme)}>
                     <Typography color="secondary" sx={TypographyVerticalCardNameStyleHover(theme)}>
                       by {name}
@@ -116,6 +109,7 @@ export type Props = {
   name: string | undefined;
   articleData: any;
   series?: boolean;
+  isOnArticlePage?: boolean;
 };
 
 export default VerticalArticleCardComponent;

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   Button,
   CardMedia,
@@ -34,19 +34,6 @@ const Works: React.FC<Props> = ({
   const articleExtraInfoRef = useRef<any>(null);
   const [articlePageExtraInfo, setArticlePageExtraInfo] = useState<number>(0);
   const [infoHeight, setInfoHeight] = useState<string>('');
-
-  useEffect(() => {
-    if (titleHeightRef && titleHeightRef?.current && titleHeightRef?.current.clientHeight) {
-      const titleHeight: number = titleHeightRef && titleHeightRef?.current?.clientHeight;
-      const plotHieght: number = bookPlotHeightRef && bookPlotHeightRef?.current?.clientHeight;
-      const bookHeight = bookImageHeightRef && bookImageHeightRef?.current?.clientHeight;
-      const articleExtraInfo: number = articleExtraInfoRef && articleExtraInfoRef?.current?.clientHeight;
-      setArticlePageExtraInfo(bookHeight - titleHeight - plotHieght - articleExtraInfo);
-      const bottomHeight = articlePageExtraInfo.toString();
-      const bottomHPixel = bottomHeight + 'px';
-      setInfoHeight(bottomHPixel);
-    }
-  }, [infoHeight]);
 
   const noBooks = bookData?.length === 0;
   const articlePageBookExtrainfo = (item: any, bottomHeight: string) => {

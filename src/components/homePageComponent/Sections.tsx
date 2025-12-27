@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useState } from "react";
 import { useSelector } from "react-redux";
 import { Grid, Typography, useTheme } from "@mui/material";
 import {
@@ -21,8 +21,9 @@ const Sections: FC<Props> = ({ data, series, setData, setSeries }) => {
   const codingFilterSeries = series?.filter((item: any) => item.section === "Coding");
   const storiesFilterSeries = series?.filter((item: any) => item.section === "Stories");
 
-  useEffect(() => {
-    switch (sectionSelect) {
+  const handleSectionChange = (id: number) => {
+    setSectionSelect(id);
+    switch (id) {
       case 1:
         setSeries(series);
         setData(data);
@@ -44,7 +45,7 @@ const Sections: FC<Props> = ({ data, series, setData, setSeries }) => {
         setData(storiesFilter);
         break;
     }
-  }, [data, sectionSelect]);
+  };
 
   return (
     <Grid
@@ -64,7 +65,7 @@ const Sections: FC<Props> = ({ data, series, setData, setSeries }) => {
         <Typography
           key={label}
           id={`${label}_Button`}
-          onClick={() => setSectionSelect(id)}
+          onClick={() => handleSectionChange(id)}
           sx={
             sectionSelect === id
               ? SectionSelectedStyles(darkTheme, theme)

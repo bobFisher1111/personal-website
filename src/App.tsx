@@ -1,11 +1,9 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter } from 'react-router';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import { AppDispatch, RootState } from './store/redux/store';
-import GetWebsiteData from './store/redux/webSiteData/GetWebsiteData';
+import { RootState } from './store/redux/store';
 import { darkTheme, lightTheme } from './store/redux/theme/Theme';
-import { setDarkTheme } from './store/redux/theme/ThemeSlice';
 import Layout from './layout/Layout';
 import AppRoutes from './AppRoutes'; // ✅ new import
 import './App.css';
@@ -14,18 +12,7 @@ import './App.css';
 // import UsersAcceptanceComponent from '../src/components/usersAcceptanceComponent/UsersAcceptanceComponent';
 
 const App: React.FC<Props> = () => {
-  const dispatch = useDispatch<AppDispatch>();
   const theme = useSelector((state: RootState) => state.theme);
-
-  useEffect(() => {
-    dispatch(GetWebsiteData());
-  }, [dispatch]);
-
-  useEffect(() => {
-    const stored = localStorage.getItem('darkMode');
-    if (stored === 'true') dispatch(setDarkTheme(true));
-    if (stored === 'false') dispatch(setDarkTheme(false));
-  }, [dispatch]);
 
   return (
     <BrowserRouter>

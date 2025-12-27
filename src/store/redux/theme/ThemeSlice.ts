@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState = {
-  darkTheme: false, // default fallback
+  darkTheme: localStorage.getItem('darkMode') === 'true',
 };
 
 export const ThemeSlice = createSlice({

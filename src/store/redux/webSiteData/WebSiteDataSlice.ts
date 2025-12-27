@@ -1,12 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import GetWebsiteData from './GetWebsiteData';
+import websiteData from '../../../websiteData/websiteData.json';
 
 const WebSiteDataSlice = createSlice({
   name: 'siteData',
   initialState: {
-    data: [],
-    isSuccess: false,
-    message: 'No Data Yet',
+    data: websiteData,
+    isSuccess: true,
+    message: 'Data Loaded',
     loading: false,
   },
   reducers: {},

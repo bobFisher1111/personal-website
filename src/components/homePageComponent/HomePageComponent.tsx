@@ -7,7 +7,7 @@ import {
 import { useSelector } from "react-redux";
 import ArticleList from "../articleList/ArticleList";
 import SeriesComponent from "../seriesList/SeriesComponent";
-// import Sections from "./Sections";
+import Sections from "./Sections";
 import {
   GridRoot,
   SectionTextStyles,

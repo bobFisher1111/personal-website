@@ -1,5 +1,4 @@
-import React, { useState, useEffect, FC, useRef } from 'react';
-import { useSelector } from 'react-redux';
+import React, { FC } from 'react';
 import {
   Grid,
   styled,
@@ -12,28 +11,7 @@ import {
 import SeriesCardComponent from './SeriesCardComponent';
 
 const SeriesComponent: FC<Props> = ({ series }) => {
-  const widthRef = useRef<any>(null);
-  const [count, setCount] = useState<any>(0);
-  const [marginWidth, setMarginWidth] = useState<any>(widthRef);
-  const colorTheme = useSelector((state: any) => state.theme.darkTheme);
   const theme = useTheme();
-  const count1: string = count.toString();
-
-  const updatedLeftMargin = () => {
-    setMarginWidth(widthRef.current?.offsetLeft);
-  };
-
-  useEffect(() => {
-    if (widthRef && widthRef.current) {
-      setMarginWidth(widthRef.current.offsetLeft);
-      window.addEventListener("resize", updatedLeftMargin);
-    }
-    return () => {
-      if (widthRef && widthRef.current) {
-        window.removeEventListener("resize", updatedLeftMargin);
-      }
-    };
-  }, [marginWidth]);
 
   const AlignGrid = styled(Grid)(({ theme }) => ({
     justifyContent: 'center',
@@ -44,22 +22,6 @@ const SeriesComponent: FC<Props> = ({ series }) => {
       padding: '0px',
     },
   }));
-
-  useEffect(() => {
-    if (count === 5) {
-      setCount(1);
-    }
-    if (count === 0) {
-      setCount(4);
-    }
-    if (count || colorTheme) {
-      document.getElementById(count1)?.scrollIntoView({
-        behavior: "auto",
-        block: 'nearest',
-        inline: 'center',
-      });
-    }
-  }, [count, colorTheme]);
 
   return (
     <AlignGrid

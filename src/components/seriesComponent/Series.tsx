@@ -1,4 +1,4 @@
-import React, { useEffect, useId, useState } from 'react';
+import React, { useId } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router';
 import {
@@ -30,7 +30,6 @@ export const Series: React.FC<Props> = ({
   homePage,
   seriesForAuthorsPage,
 }) => {
-  const [filterSeries, setFilterSeries] = useState<any[]>([]);
   const id = useId();
   const theme = useTheme();
   const colorTheme = useSelector((state: any) => state.theme.darkTheme);
@@ -60,20 +59,24 @@ export const Series: React.FC<Props> = ({
   const seriesAuthorFilterArticlePage = sortByDate?.filter((item: any) => item.author_id === getIdFromUrl());
   const seriesAuthorFilterAuthorPage = sortByDate?.filter((item: any) => item.author_id === name);
 
-  useEffect(() => {
+  // Compute filtered series based on props
+  const getFilterSeries = () => {
     if (section !== undefined) {
-      setFilterSeries(seriesFilter || []);
+      return seriesFilter || [];
     } 
     if (articlePage) {
-      setFilterSeries(seriesAuthorFilterArticlePage || []);
+      return seriesAuthorFilterArticlePage || [];
     }
     if (seriesForAuthorsPage) {
-      setFilterSeries(seriesAuthorFilterAuthorPage || []);
+      return seriesAuthorFilterAuthorPage || [];
     }
     if (homePage) {
-      setFilterSeries(sortByDate || []);
+      return sortByDate || [];
     }
-  }, [section, articlePage, seriesForAuthorsPage, homePage]);
+    return [];
+  };
+
+  const filterSeries = getFilterSeries();
 
   const noSeries =
     (seriesAuthorFilterAuthorPage?.length ?? 0) === 0 &&
@@ -134,6 +137,7 @@ export const Series: React.FC<Props> = ({
                 name={item.series_authors}
                 articleData={item}
                 series
+                isOnArticlePage={articlePage}
               />
             </Grid>
             <Grid

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   Grid,
@@ -34,7 +34,6 @@ const CookiesManagementComponent: React.FC<Props> = ({
 }) => {
   const [youtubeToggle, setYouTubeToggle] = useState<boolean>(localStorage.getItem('enableYouTubeVideo') === 'true' ? true : false);
   const [darkModeToggle, setDarkModeToggle] = useState<boolean>(localStorage.getItem('darkMode') === 'true' ? true : false);
-  const [darkModeChecked, setDarkModeChecked] = useState<boolean>(false);
   const [userAgreementsToggle, setUserAgreementsToggle] = useState<boolean>(false);
   const cookiesManagementText: string = "When visiting our website, we will store cookies for functionality. Third party cookies used for viewing YouTube videos, Google will put cookies. In which we have no control over. Without these cookies certain features will be disabled.";
 
@@ -83,20 +82,6 @@ const CookiesManagementComponent: React.FC<Props> = ({
       localStorage.setItem('userAgreement', `${userAgreementValue}`);
     }
   };
-
-  useEffect(() => {
-    if (localStorage.getItem('darkMode') === 'false' || localStorage.getItem('darkMode') === 'true' ) {
-      setDarkModeChecked(true);
-    }
-    if (localStorage.getItem('darkMode') === null) {
-      setDarkModeChecked(false);
-    }
-    const button = document?.getElementById('accept_optional_cookies');
-    button?.addEventListener("click", accpetedCookies);
-    return () => {
-      button?.removeEventListener("click", accpetedCookies);
-    };
-  }, [youtubeToggle, darkModeToggle, darkModeChecked, userAgreementsToggle]);
 
   return (
     <Grid

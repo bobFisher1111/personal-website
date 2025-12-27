@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router';
 import { Chip, Grid, Typography, useTheme, styled } from '@mui/material';
@@ -38,7 +38,7 @@ const ArticleCard: React.FC<Props> = ({
   turOnAuthorForArticle,
 }) => {
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
-  const rejectCookie = useSelector((state: any) => state.rejectCookie);
+  // const rejectCookie = useSelector((state: any) => state.rejectCookie);
   const theme = useTheme();
   const getAuthorData = authorData?.filter((item: any) => item.author_id === authorId);
   const Img = styled('img')({ maxWidth: '100%', maxHeight: '100%' });
@@ -47,12 +47,12 @@ const ArticleCard: React.FC<Props> = ({
   const disableButton = () => {
     return localStorage.getItem('enableYouTubeVideo') !== null;
   };
-
-  useEffect(() => {
-    if (localStorage.getItem('enableYouTubeVideo')) {
-      disableButton();
-    }
-  }, [rejectCookie.enabledYouTubeVideos]);
+  // May need once put back cookies, but try later without useEffect
+  // useEffect(() => {
+  //   if (localStorage.getItem('enableYouTubeVideo')) {
+  //     disableButton();
+  //   }
+  // }, [rejectCookie.enabledYouTubeVideos]);
 
   return (
     <Grid container sx={RootStyles(theme, darkTheme, turOnAuthorForArticle)}>
