@@ -4,9 +4,7 @@ import AuthorComponent from '../../components/authorComponents/AuthorComponent';
 const AuthorPageComponent: React.FC = () => {
   return (
     <>
-      <AuthorComponent
-        turOnArticlePage={false}
-      />
+      <AuthorComponent />
     </>
   );
 };

@@ -25,7 +25,6 @@ import {
 export const Series: React.FC<Props> = ({
   data, 
   name,
-  articlePage,
   section,
   homePage,
   seriesForAuthorsPage,
@@ -35,12 +34,6 @@ export const Series: React.FC<Props> = ({
   const colorTheme = useSelector((state: any) => state.theme.darkTheme);
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const series = getWebsiteData?.series;
-
-  const getIdFromUrl = () => {
-    const currentLocation = window.location.href;
-    const getIdFromCurrentLocation = currentLocation.split('/').reverse()[1];
-    return Number(getIdFromCurrentLocation);
-  };
 
   const sortByDate = series
     ?.map((item: any) => item)
@@ -56,7 +49,6 @@ export const Series: React.FC<Props> = ({
   const filteredSeriesList = createSeriesList?.filter((value: any) => value?.length);
 
   const seriesFilter = sortByDate?.filter((item: any) => item.section === section);
-  const seriesAuthorFilterArticlePage = sortByDate?.filter((item: any) => item.author_id === getIdFromUrl());
   const seriesAuthorFilterAuthorPage = sortByDate?.filter((item: any) => item.author_id === name);
 
   // Compute filtered series based on props
@@ -64,9 +56,6 @@ export const Series: React.FC<Props> = ({
     if (section !== undefined) {
       return seriesFilter || [];
     } 
-    if (articlePage) {
-      return seriesAuthorFilterArticlePage || [];
-    }
     if (seriesForAuthorsPage) {
       return seriesAuthorFilterAuthorPage || [];
     }
@@ -81,8 +70,7 @@ export const Series: React.FC<Props> = ({
   const noSeries =
     (seriesAuthorFilterAuthorPage?.length ?? 0) === 0 &&
     (filteredSeriesList?.length ?? 0) === 0 &&
-    (seriesFilter?.length ?? 0) === 0 &&
-    (seriesAuthorFilterArticlePage?.length ?? 0) === 0;
+    (seriesFilter?.length ?? 0) === 0;
 
   const textLoop = (item: any, index: number) => {
     return filteredSeriesList?.[index]?.slice(0, 4).map((a: any, i: number) => {
@@ -123,13 +111,11 @@ export const Series: React.FC<Props> = ({
           alignItems="flex-start"
           sx={GridSeriesRoot}
         >
-          {!articlePage && (
-            <Grid container size={12} sx={GridMarginLeft(theme)}>
-              <Typography color="primary" sx={TypographySeriesTitle(theme)}>
-                {`${item.section}: ${item.series_title}`}
-              </Typography>
-            </Grid>
-          )}
+          <Grid container size={12} sx={GridMarginLeft(theme)}>
+            <Typography color="primary" sx={TypographySeriesTitle(theme)}>
+              {`${item.section}: ${item.series_title}`}
+            </Typography>
+          </Grid>
           <Grid container>
             <Grid sx={GridMarginLeft(theme)}>
               <VerticalArticleCardComponent
@@ -137,7 +123,7 @@ export const Series: React.FC<Props> = ({
                 name={item.series_authors}
                 articleData={item}
                 series
-                isOnArticlePage={articlePage}
+                isOnArticlePage={false}
               />
             </Grid>
             <Grid
@@ -169,7 +155,6 @@ export const Series: React.FC<Props> = ({
 export type Props = {
   data: any;
   name?: string;
-  articlePage?: boolean;
   section?: string;
   homePage?: boolean;
   seriesForAuthorsPage?: boolean;
