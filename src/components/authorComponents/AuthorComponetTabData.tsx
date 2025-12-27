@@ -22,7 +22,7 @@ const AuthorComponetTabData = (
           <Series 
             data={data}
             name={authorName}
-            seriesForAuthorsPage={seriesForAuthorsPage} // this is next part going to work on
+            seriesForAuthorsPage={seriesForAuthorsPage} // Keep this as I refactor, later remove this comment, this is needed here
           />
       },
       { 
