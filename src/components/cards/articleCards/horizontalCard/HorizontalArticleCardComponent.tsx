@@ -49,14 +49,14 @@ const HorizontalArticleCardComponent = ({
             component="img"
             alt="Article Cover Image"
             src={videoOrImageCover}
-            sx={imageHorizontalArticleStyles(muiTheme, articlePage, mobileImageWidth)}
+            sx={imageHorizontalArticleStyles(muiTheme, articlePage, mobileImageWidth, darkTheme)}
           />
         ) : disableButton() ? (
           <CardMedia
             component="iframe"
             image={videoOrImageCover}
             allowFullScreen
-            sx={cardMediaArticleVideo(muiTheme, articlePage, videoHeight, mobileImageWidth)}
+            sx={cardMediaArticleVideo(muiTheme, articlePage, videoHeight, mobileImageWidth, darkTheme)}
             referrerPolicy="no-referrer"
           />
         ) : (

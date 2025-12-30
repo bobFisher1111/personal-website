@@ -1,4 +1,8 @@
 import { Theme } from '@mui/material/styles';
+import {
+  COLORS,
+  SIZES,
+} from 'src/store/redux/theme/CONSTANTS';
 // Still need to do this file:
 export const articlePageRoot = (theme: Theme) => ({
   padding: '8px 0px 0px 0px',
@@ -31,10 +35,11 @@ export const cardMediaArticleVideo = (
   theme: Theme,
   articlePage: boolean,
   videoHeight: boolean,
-  mobileImageWidth?: string
+  mobileImageWidth: string,
+  darkTheme: boolean,
 ) => ({
   height: articlePage ? '576px' : videoHeight ? '444px' : '181px',
-  border: '0px',
+  border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
   borderRadius: articlePage ? '0px' : '4px',
   aspectRatio: '16/9',
   [theme.breakpoints.down('sm')]: {
@@ -88,8 +93,11 @@ export const gridHorizontalArticleMaxWidth = (
 export const imageHorizontalArticleStyles = (
   theme: Theme,
   articlePage: boolean,
-  imageWidth?: string
+  imageWidth: string,
+  darkTheme: boolean,
 ) => ({
+  border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
+  borderRadius: SIZES.borderRadius,
   height: articlePage ? 'auto' : '181px',
   objectFit: 'cover',
   aspectRatio: '16/9',
