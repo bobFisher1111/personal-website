@@ -1,4 +1,5 @@
 import { Theme } from '@mui/material/styles';
+import { COLORS } from 'src/store/redux/theme/CONSTANTS';
 
 export const RootStyles = (
   darkTheme: boolean,
@@ -6,8 +7,8 @@ export const RootStyles = (
   carousel: boolean
 ) => (theme: Theme) => ({
   borderRadius: '6px',
-  backgroundColor: darkTheme ? '#0C0D0D' : 'white',
-  border: '1px solid #0C0D0D',
+  backgroundColor: darkTheme ? COLORS.dark.secondary : COLORS.light.primary,
+  border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
   width: '100%',
   height: articlePage ? '450px' : 'auto',
 

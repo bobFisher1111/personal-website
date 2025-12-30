@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { RootState } from './store/redux/store';
-import { darkTheme, lightTheme } from './store/redux/theme/Theme';
+import { darkTheme, lightTheme } from './store/redux/theme/CONSTANTS';
 import Layout from './layout/Layout';
 import AppRoutes from './AppRoutes'; // ✅ new import
 import './App.css';

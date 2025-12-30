@@ -1,17 +1,34 @@
-export const COLORS = {
+import { createTheme } from '@mui/material';
+
+// ============================================================================
+// COLOR PALETTE
+// https://coolors.co/palettes/trending
+// ============================================================================
+
+const COLORS = {
   light: {
-    primary: '#0C0D0D',
-    secondary: '#FFFFFF',
-    appBar: '#FFFFFF',
+    primary: '#344e41',      // Green 4 (darkest)
+    secondary: '#dad7cd',    // Beige (background)
+    accent: {
+      green1: '#a3b18a',     // Green 1 (lightest)
+      green2: '#588157',     // Green 2
+      green3: '#3a5a40',     // Green 3
+      green4: '#344e41',     // Green 4 (darkest) - same as primary
+    },
+    appBar: '#dad7cd',
+    code: '#f5f5f5',
+    codeBg: '#f0f0f0',
     text: {
       primary: '#000000',
       secondary: '#555555',
     },
   },
   dark: {
-    primary: '#9DB2BF',
-    secondary: '#FFFFFF',
+    primary: '#dad7cd', // '#588157',
+    secondary: '#1E1E1E',
     appBar: '#1E1E1E',
+    code: '#2a2a2a',
+    codeBg: '#2a2a2a',
     text: {
       primary: '#FFFFFF',
       secondary: '#AAAAAA',
@@ -19,7 +36,11 @@ export const COLORS = {
   },
 };
 
-export const FONT_SIZES = {
+// ============================================================================
+// TYPOGRAPHY
+// ============================================================================
+
+const FONT_SIZES = {
   base: '0.875rem',        // 14px
   h1: '2.5rem',            // 40px
   h2: '2rem',              // 32px
@@ -36,17 +57,47 @@ export const FONT_SIZES = {
   date: '1rem',            // 16px
 };
 
-export const LINE_HEIGHTS = {
+const LINE_HEIGHTS = {
   tight: '1.25rem',        // 20px
   normal: '1.5rem',        // 24px
 };
 
-export const FONT_WEIGHTS = {
+const FONT_WEIGHTS = {
   regular: 400,
   bold: 700,
 };
 
-export const SIZES = {
+// ============================================================================
+// SPACING & SIZING
+// ============================================================================
+
+const SPACING_VALUES = {
+  none: '0rem',
+  xxs: '0.25rem',         // 4px
+  xs: '0.5rem',           // 8px
+  sm: '1rem',             // 16px
+  md: '2rem',             // 32px
+  lg: '3rem',             // 48px
+  xl: '7.5rem',           // 120px
+  xxl: '11.25rem',        // 180px
+  titlePad: '3.125rem',   // 50px
+  contentPad: '9.5rem',   // 152px
+};
+
+const SPACING_NUMERIC = {
+  none: 0,
+  xxs: 0.25,       // 4px
+  xs: 0.5,         // 8px
+  sm: 1,           // 16px
+  md: 2,           // 32px
+  lg: 3,           // 48px
+  xl: 7.5,         // 120px
+  xxl: 11.25,      // 180px
+  titlePad: 3.125, // 50px
+  contentPad: 9.5, // 152px
+};
+
+const SIZES = {
   borderRadius: '0.375rem',        // 6px
   border: '0.0625rem solid',       // 1px
   avatar: {
@@ -58,35 +109,14 @@ export const SIZES = {
   },
   maxWidth: {
     appBar: '75rem',               // 1200px
-    screenWidth: '64rem',       // 1024px 
+    screenWidth: '64rem',          // 1024px 
   },
   padding: {
     linkGridMobile: '0.25rem 1rem 0.25rem 0rem', // 4px 16px 4px 0px
     desktopTitle: '0rem 0rem 0rem 1rem',         // 0px 0px 0px 16px
   },
-  spacing: {
-    none: '0rem',
-    xxs: '0.25rem',         // 4px
-    xs: '0.5rem',           // 8px
-    sm: '1rem',             // 16px
-    md: '2rem',             // 32px
-    lg: '3rem',             // 48px
-    xl: '7.5rem',           // 120px
-    xxl: '11.25rem',        // 180px
-    titlePad: '3.125rem',   // 50px
-    contentPad: '9.5rem',   // 152px
-  },
-  spacingNumeric: {
-    xxs: 0.25,       // 4px
-    xs: 0.5,         // 8px
-    sm: 1,           // 16px
-    md: 2,           // 32px
-    lg: 3,           // 48px
-    xl: 7.5,         // 120px
-    xxl: 11.25,      // 180px
-    titlePad: 3.125, // 50px
-    contentPad: 9.5, // 152px
-  },
+  spacing: SPACING_VALUES,
+  spacingNumeric: SPACING_NUMERIC,
   width: {
     full: '100%',
     imageMin: '15rem',     // 240px
@@ -101,7 +131,7 @@ export const SIZES = {
     rootTall: '14.6875rem',     // 235px
     rootShort: '9.0625rem',     // 145px
     rootSm: '8.75rem',          // 140px
-    socialMediaIcons: '1rem' //// '1.25rem', // '20px'
+    socialMediaIcons: '1rem',
   },
   imageAspectRatio16by9: {
     width: '18.75rem',     // 300px
@@ -131,245 +161,225 @@ export const SIZES = {
   },
 };
 
+// ============================================================================
+// TYPOGRAPHY FAMILIES (internal use only)
+// ============================================================================
+
+const TYPOGRAPHY_FAMILY = {
+  markdown: '"Inter", "Segoe UI", "Helvetica Neue", "Arial", sans-serif',
+  code: '"Source Code Pro", "Roboto Mono", monospace',
+};
+
+// ============================================================================
+// MARKDOWN STYLES FACTORY
+// ============================================================================
+
+const createMarkdownStyles = (mode: 'light' | 'dark') => {
+  const colors = COLORS[mode];
+  const fontFamily = TYPOGRAPHY_FAMILY;
+
+  return {
+    container: {
+      fontFamily: fontFamily.markdown,
+      color: colors.text.primary,
+      backgroundColor: colors.secondary,
+      px: { xs: 2, sm: 3, md: 4 },
+      py: 4,
+    },
+    headings: {
+      h1: {
+        variant: 'h3',
+        sx: { fontWeight: 'bold', color: colors.primary, mt: 2, mb: 1 },
+      },
+      h2: {
+        variant: 'h4',
+        sx: { fontWeight: 600, color: colors.primary, mt: 2, mb: 1 },
+      },
+      h3: {
+        variant: 'h5',
+        sx: { fontWeight: 500, color: colors.text.primary, mt: 1.5, mb: 0.5 },
+      },
+      h4: {
+        variant: 'h6',
+        sx: { fontWeight: 500, color: colors.text.primary, mt: 1.5, mb: 0.5 },
+      },
+      h5: {
+        variant: 'subtitle1',
+        sx: { fontWeight: 500, color: colors.text.primary, mt: 1, mb: 0.5 },
+      },
+      h6: {
+        variant: 'subtitle2',
+        sx: { fontWeight: 500, color: colors.text.primary, mt: 1, mb: 0.5 },
+      },
+    },
+    text: {
+      paragraph: {
+        variant: 'body1',
+        sx: { textIndent: '20px', mb: 2, color: colors.text.primary },
+      },
+      strong: {
+        sx: { fontWeight: 'bold', color: colors.text.primary },
+      },
+      em: {
+        sx: { fontStyle: 'italic', color: colors.text.primary },
+      },
+      del: {
+        sx: { textDecoration: 'line-through', color: colors.text.secondary },
+      },
+    },
+    lists: {
+      ul: {
+        sx: { pl: 4, mb: 2, listStyleType: 'disc', color: colors.text.primary },
+      },
+      ol: {
+        sx: { pl: 4, mb: 2, listStyleType: 'decimal', color: colors.text.primary },
+      },
+      li: {
+        sx: { mb: 1, color: colors.text.primary },
+      },
+    },
+    links: {
+      sx: { underline: 'hover', color: colors.primary },
+    },
+    images: {
+      sx: {
+        display: 'block',
+        maxWidth: '100%',
+        height: 'auto',
+        margin: '0 auto',
+        borderRadius: 2,
+        my: 2,
+        border: `1px solid ${colors.text.secondary}`,
+      },
+    },
+    code: {
+      inline: {
+        sx: { fontFamily: 'monospace', backgroundColor: colors.codeBg, color: colors.text.primary, px: 0.5, borderRadius: 1 },
+      },
+      block: {
+        sx: {
+          fontFamily: fontFamily.code,
+          backgroundColor: colors.code,
+          color: colors.text.primary,
+          p: 2,
+          borderRadius: 2,
+          overflowX: 'auto',
+          fontSize: '0.9rem',
+          my: 2,
+          border: `1px solid ${colors.text.secondary}`,
+        },
+      },
+    },
+    blockquote: {
+      sx: {
+        borderLeft: `4px solid ${colors.primary}`,
+        pl: 2,
+        ml: 0,
+        color: colors.text.secondary,
+        fontStyle: 'italic',
+        my: 2,
+      },
+    },
+    table: {
+      table: {
+        sx: { width: '100%', borderCollapse: 'collapse', my: 3 },
+      },
+      thead: {
+        sx: { backgroundColor: colors.code, color: colors.text.primary },
+      },
+      tr: {
+        sx: { borderBottom: `1px solid ${colors.text.secondary}` },
+      },
+      th: {
+        sx: { textAlign: 'left', p: 1, fontWeight: 'bold', color: colors.text.primary },
+      },
+      td: {
+        sx: { textAlign: 'left', p: 1, color: colors.text.primary },
+      },
+    },
+  };
+};
+
+// ============================================================================
+// THEMES
+// ============================================================================
+
+const lightTheme = createTheme({
+  palette: {
+    mode: "light",
+    primary: {
+      main: COLORS.light.primary,        // #344e41
+      light: COLORS.light.accent.green3, // #3a5a40
+      dark: COLORS.light.accent.green4,  // #344e41
+    },
+    secondary: {
+      main: COLORS.light.secondary,      // #dad7cd
+      light: COLORS.light.accent.green1, // #a3b18a
+    },
+    background: {
+      default: COLORS.light.secondary,   // #dad7cd
+      paper: COLORS.light.secondary,     // #dad7cd
+    },
+  },
+  components: {
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: COLORS.light.appBar
+        }
+      },
+    },
+  }
+});
+
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+    primary: {
+      main: COLORS.dark.primary,
+    },
+    secondary: {
+      main: COLORS.dark.secondary,
+    },
+    background: {
+      default: '#1E1E1E',
+      paper: '#1E1E1E',
+    },
+  },
+  components: {
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: COLORS.dark.appBar,
+          backgroundImage: 'none', // Remove the overlay gradient
+        }
+      },
+    },
+  }
+});
+
+// ============================================================================
+// EXPORTS
+// ============================================================================
+
+// Consolidated THEME object
+export const THEME = {
+  colors: COLORS,
+  typography: {
+    sizes: FONT_SIZES,
+    weights: FONT_WEIGHTS,
+    lineHeights: LINE_HEIGHTS,
+  },
+  sizes: SIZES,
+  light: lightTheme,
+  dark: darkTheme,
+};
+
+// Export individual constants for backward compatibility
+export { COLORS, lightTheme, darkTheme, FONT_SIZES, FONT_WEIGHTS, LINE_HEIGHTS, SIZES };
+
+// Markdown styles generated from colors
 export const MARKDOWN_STYLES = {
-  light: {
-    container: {
-      fontFamily: '"Inter", "Segoe UI", "Helvetica Neue", "Arial", sans-serif',
-      color: COLORS.light.text.primary,
-      backgroundColor: COLORS.light.secondary,
-      px: { xs: 2, sm: 3, md: 4 },
-      py: 4,
-    },
-    headings: {
-      h1: {
-        variant: 'h3',
-        sx: { fontWeight: 'bold', color: COLORS.light.primary, mt: 2, mb: 1 },
-      },
-      h2: {
-        variant: 'h4',
-        sx: { fontWeight: 600, color: COLORS.light.primary, mt: 2, mb: 1 },
-      },
-      h3: {
-        variant: 'h5',
-        sx: { fontWeight: 500, color: COLORS.light.text.primary, mt: 1.5, mb: 0.5 },
-      },
-      h4: {
-        variant: 'h6',
-        sx: { fontWeight: 500, color: COLORS.light.text.primary, mt: 1.5, mb: 0.5 },
-      },
-      h5: {
-        variant: 'subtitle1',
-        sx: { fontWeight: 500, color: COLORS.light.text.primary, mt: 1, mb: 0.5 },
-      },
-      h6: {
-        variant: 'subtitle2',
-        sx: { fontWeight: 500, color: COLORS.light.text.primary, mt: 1, mb: 0.5 },
-      },
-    },
-    text: {
-      paragraph: {
-        variant: 'body1',
-        sx: { textIndent: '20px', mb: 2, color: COLORS.light.text.primary },
-      },
-      strong: {
-        sx: { fontWeight: 'bold', color: COLORS.light.text.primary },
-      },
-      em: {
-        sx: { fontStyle: 'italic', color: COLORS.light.text.primary },
-      },
-      del: {
-        sx: { textDecoration: 'line-through', color: COLORS.light.text.secondary },
-      },
-    },
-    lists: {
-      ul: {
-        sx: { pl: 4, mb: 2, listStyleType: 'disc', color: COLORS.light.text.primary },
-      },
-      ol: {
-        sx: { pl: 4, mb: 2, listStyleType: 'decimal', color: COLORS.light.text.primary },
-      },
-      li: {
-        sx: { mb: 1, color: COLORS.light.text.primary },
-      },
-    },
-    links: {
-      sx: { underline: 'hover', color: COLORS.light.primary },
-    },
-    images: {
-      sx: {
-        display: 'block',
-        maxWidth: '100%',
-        height: 'auto',
-        margin: '0 auto',
-        borderRadius: 2,
-        my: 2,
-        border: `1px solid ${COLORS.light.text.secondary}`,
-      },
-    },
-    code: {
-      inline: {
-        sx: { fontFamily: 'monospace', backgroundColor: '#f0f0f0', color: COLORS.light.text.primary, px: 0.5, borderRadius: 1 },
-      },
-      block: {
-        sx: {
-          fontFamily: '"Source Code Pro", "Roboto Mono", monospace',
-          backgroundColor: '#f5f5f5',
-          color: COLORS.light.text.primary,
-          p: 2,
-          borderRadius: 2,
-          overflowX: 'auto',
-          fontSize: '0.9rem',
-          my: 2,
-          border: `1px solid ${COLORS.light.text.secondary}`,
-        },
-      },
-    },
-    blockquote: {
-      sx: {
-        borderLeft: `4px solid ${COLORS.light.primary}`,
-        pl: 2,
-        ml: 0,
-        color: COLORS.light.text.secondary,
-        fontStyle: 'italic',
-        my: 2,
-      },
-    },
-    table: {
-      table: {
-        sx: { width: '100%', borderCollapse: 'collapse', my: 3 },
-      },
-      thead: {
-        sx: { backgroundColor: '#f0f0f0', color: COLORS.light.text.primary },
-      },
-      tr: {
-        sx: { borderBottom: `1px solid ${COLORS.light.text.secondary}` },
-      },
-      th: {
-        sx: { textAlign: 'left', p: 1, fontWeight: 'bold', color: COLORS.light.text.primary },
-      },
-      td: {
-        sx: { textAlign: 'left', p: 1, color: COLORS.light.text.primary },
-      },
-    },
-  },
-  dark: {
-    container: {
-      fontFamily: '"Inter", "Segoe UI", "Helvetica Neue", "Arial", sans-serif',
-      color: COLORS.dark.text.primary,
-      backgroundColor: COLORS.dark.appBar,
-      px: { xs: 2, sm: 3, md: 4 },
-      py: 4,
-    },
-    headings: {
-      h1: {
-        variant: 'h3',
-        sx: { fontWeight: 'bold', color: COLORS.dark.primary, mt: 2, mb: 1 },
-      },
-      h2: {
-        variant: 'h4',
-        sx: { fontWeight: 600, color: COLORS.dark.primary, mt: 2, mb: 1 },
-      },
-      h3: {
-        variant: 'h5',
-        sx: { fontWeight: 500, color: COLORS.dark.text.primary, mt: 1.5, mb: 0.5 },
-      },
-      h4: {
-        variant: 'h6',
-        sx: { fontWeight: 500, color: COLORS.dark.text.primary, mt: 1.5, mb: 0.5 },
-      },
-      h5: {
-        variant: 'subtitle1',
-        sx: { fontWeight: 500, color: COLORS.dark.text.primary, mt: 1, mb: 0.5 },
-      },
-      h6: {
-        variant: 'subtitle2',
-        sx: { fontWeight: 500, color: COLORS.dark.text.primary, mt: 1, mb: 0.5 },
-      },
-    },
-    text: {
-      paragraph: {
-        variant: 'body1',
-        sx: { textIndent: '20px', mb: 2, color: COLORS.dark.text.primary },
-      },
-      strong: {
-        sx: { fontWeight: 'bold', color: COLORS.dark.text.primary },
-      },
-      em: {
-        sx: { fontStyle: 'italic', color: COLORS.dark.text.primary },
-      },
-      del: {
-        sx: { textDecoration: 'line-through', color: COLORS.dark.text.secondary },
-      },
-    },
-    lists: {
-      ul: {
-        sx: { pl: 4, mb: 2, listStyleType: 'disc', color: COLORS.dark.text.primary },
-      },
-      ol: {
-        sx: { pl: 4, mb: 2, listStyleType: 'decimal', color: COLORS.dark.text.primary },
-      },
-      li: {
-        sx: { mb: 1, color: COLORS.dark.text.primary },
-      },
-    },
-    links: {
-      sx: { underline: 'hover', color: COLORS.dark.primary },
-    },
-    images: {
-      sx: {
-        display: 'block',
-        maxWidth: '100%',
-        height: 'auto',
-        margin: '0 auto',
-        borderRadius: 2,
-        my: 2,
-        border: `1px solid ${COLORS.dark.text.secondary}`,
-      },
-    },
-    code: {
-      inline: {
-        sx: { fontFamily: 'monospace', backgroundColor: '#2a2a2a', color: COLORS.dark.text.primary, px: 0.5, borderRadius: 1 },
-      },
-      block: {
-        sx: {
-          fontFamily: '"Source Code Pro", "Roboto Mono", monospace',
-          backgroundColor: '#2a2a2a',
-          color: COLORS.dark.text.primary,
-          p: 2,
-          borderRadius: 2,
-          overflowX: 'auto',
-          fontSize: '0.9rem',
-          my: 2,
-          border: `1px solid ${COLORS.dark.text.secondary}`,
-        },
-      },
-    },
-    blockquote: {
-      sx: {
-        borderLeft: `4px solid ${COLORS.dark.primary}`,
-        pl: 2,
-        ml: 0,
-        color: COLORS.dark.text.secondary,
-        fontStyle: 'italic',
-        my: 2,
-      },
-    },
-    table: {
-      table: {
-        sx: { width: '100%', borderCollapse: 'collapse', my: 3 },
-      },
-      thead: {
-        sx: { backgroundColor: '#2a2a2a', color: COLORS.dark.text.primary },
-      },
-      tr: {
-        sx: { borderBottom: `1px solid ${COLORS.dark.text.secondary}` },
-      },
-      th: {
-        sx: { textAlign: 'left', p: 1, fontWeight: 'bold', color: COLORS.dark.text.primary },
-      },
-      td: {
-        sx: { textAlign: 'left', p: 1, color: COLORS.dark.text.primary },
-      },
-    },
-  },
+  light: createMarkdownStyles('light'),
+  dark: createMarkdownStyles('dark'),
 };

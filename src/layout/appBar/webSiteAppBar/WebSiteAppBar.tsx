@@ -42,7 +42,7 @@ const WebSiteAppBar = () => {
             color="primary"
             sx={TypographyDesktopTitle(theme)}
           >
-            {"Children of Time"}
+            {"RPG Hound"}
           </Typography>
         </Link>
       </Grid>

@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import ArticleList from "src/components/articleList/ArticleList";
 import SeriesComponent from "src/components/seriesList/SeriesComponent";
 import Sections from "./Sections";
+import Sections2 from "../sections/Sections2";
 import {
   GridRoot,
   SectionTextStyles,
@@ -31,6 +32,9 @@ const HomePageComponent = () => {
           setSeries={setSeries}
         />
       </Grid> */}
+      <Grid size={12}>
+        <Sections2 />
+      </Grid>
 
       <Grid size={12}>
         {/* <Button sx={SeriesButtonStyles()}>

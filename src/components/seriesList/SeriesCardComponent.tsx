@@ -36,7 +36,9 @@ const SeriesCardComponent = ({ articleData }: Props) => {
               referrerPolicy="no-referrer"
             />
           </Link>
-          <Box sx={CardFooterStyle}>
+          <Box 
+            sx={CardFooterStyle(theme,darkTheme)}
+          >
             <Grid container>
               <Grid size={12}>
                 <Link to={serieslUrl} rel="noreferrer" style={LinkStyles(darkTheme)}>
