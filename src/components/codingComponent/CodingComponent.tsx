@@ -1,9 +1,8 @@
-import React from 'react';
 import SectionsComponent from '../sections/SectionsComponent';
 import { useSelector } from 'react-redux';
 import CodingComponentTabData from './CodingComponentTabData';
 
-const CodingComponent: React.FC = () => {
+const CodingComponent = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const articleData = getWebsiteData && getWebsiteData?.websiteData?.articles;
   const authorsData = getWebsiteData && getWebsiteData?.websiteData?.authors;

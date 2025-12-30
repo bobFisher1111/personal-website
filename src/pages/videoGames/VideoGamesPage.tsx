@@ -1,7 +1,6 @@
-import React from 'react';
 import VideoGamesComponent from '../../components/videoGamesComponent/VideoGamesComponent';
 
-const VideoGamesPage: React.FC = () => {
+const VideoGamesPage = () => {
   return (
     <VideoGamesComponent />
   );

@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import { useTheme } from '@mui/material/styles';
 import { Box, Grid } from '@mui/material';
@@ -14,7 +13,7 @@ import {
   emailGridStyle,
 } from './SocialMediaComponentStyles';
 
-const SocialMediaComponent: React.FC<Props> = ({
+const SocialMediaComponent = ({
   widthPadding,
   turnOnStyle,
   turnOnEmail,
@@ -25,7 +24,7 @@ const SocialMediaComponent: React.FC<Props> = ({
   youtube,
   justifyContent,
   alignContent,
-}) => {
+}: Props) => {
   const colorTheme = useSelector((state: any) => state.theme.darkTheme);
   const theme = useTheme();
 

@@ -1,9 +1,7 @@
-/* eslint-disable react/prop-types */
-import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Container, Box, Typography, Link as MuiLink } from '@mui/material';
 // Come back here after next push, and add style to constants file later
-const MarkDownComponent: React.FC = () => {
+const MarkDownComponent = () => {
   const test_1 = {
     article_title: 'Test',
     markdown_data:

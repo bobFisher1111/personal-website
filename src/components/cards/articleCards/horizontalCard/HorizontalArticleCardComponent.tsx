@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Box,
   CardMedia,
@@ -16,7 +15,7 @@ import {
 } from './HorizontalArticleCardComponentStyles';
 import DisabledVideo from '../../../disabledVideo/DisabledVideo';
 
-const HorizontalArticleCardComponent: React.FC<Props> = ({
+const HorizontalArticleCardComponent = ({
   author,
   date,
   imageWidth,
@@ -30,7 +29,7 @@ const HorizontalArticleCardComponent: React.FC<Props> = ({
   articlePageList,
   mobileImageWidth,
   videoHeight,
-}) => {
+}: Props) => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
   const muiTheme = useTheme();

@@ -1,7 +1,6 @@
-import React from 'react';
 import AuthorComponent from '../../components/authorComponents/AuthorComponent';
 
-const AuthorPageComponent: React.FC = () => {
+const AuthorPageComponent = () => {
   return (
     <>
       <AuthorComponent />

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Grid, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { useTheme } from '@mui/material/styles';
@@ -14,7 +13,7 @@ import {
   headerComponentStyles,
 } from './AuthorComponentStyles';
 
-const AuthorComponent: React.FC = () => {
+const AuthorComponent = () => {
   const muiTheme = useTheme();
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const webData = getWebsiteData;

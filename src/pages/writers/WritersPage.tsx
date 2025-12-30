@@ -1,7 +1,6 @@
-import React from 'react';
 import Writers from '../../components/writers/Writers';
 
-const WritersPage: React.FC = () => {
+const WritersPage = () => {
   return (
     <>
       <Writers />

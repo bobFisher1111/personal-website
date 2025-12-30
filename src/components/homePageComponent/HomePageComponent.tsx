@@ -1,6 +1,3 @@
-import React
-//, { useState } 
-from "react";
 import { 
   // Button, 
   Grid, Typography, useTheme } from "@mui/material";
@@ -15,7 +12,7 @@ import {
   // SeriesTextStyles,
 } from "./HomePageComponentStyles";
 //
-const HomePageComponent: React.FC = () => {
+const HomePageComponent = () => {
   const theme = useTheme();
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const articleData = getWebsiteData?.articles;

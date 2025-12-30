@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
@@ -19,7 +18,7 @@ import {
   TypographyVerticalCardNameStyleHover,
 } from './SeriesCardStyles';
 
-const SeriesCardComponent: React.FC<Props> = ({ articleData }) => {
+const SeriesCardComponent = ({ articleData }: Props) => {
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
   const theme = useTheme();
   const serieslUrl = `/series/${articleData?.series_id}`;

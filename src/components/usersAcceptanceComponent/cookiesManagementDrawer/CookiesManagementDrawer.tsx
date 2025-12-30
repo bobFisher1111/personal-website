@@ -12,10 +12,10 @@ import {
 
 type Anchor = 'left';
 
-const CookiesManagementDrawer: React.FC<Props> = ({
+const CookiesManagementDrawer = ({
   closeParentDrawer,
   optionalCookie,
-}) => {
+}: Props) => {
 
   const [state, setState] = React.useState({
     left: false,

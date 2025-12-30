@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import {
@@ -16,13 +15,13 @@ import {
 } from './HeaderComponentStyles';
 import { LinkStyles } from '../../util/styles/LinkStyles';
 
-const HeaderComponent:  React.FC<Props> = ({
+const HeaderComponent = ({
   title,
   authorAvatar,
   avatarImage,
   authorId,
   articlePage
-}) => {
+}: Props) => {
   const theme = useSelector((state: any) => state.theme.darkTheme);
   const titleFunction = (item: any) => {
     return (

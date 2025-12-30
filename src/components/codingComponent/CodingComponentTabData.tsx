@@ -1,4 +1,3 @@
-import React from 'react';
 import ArticleList from '../articleList/ArticleList';
 import Series from '../seriesComponent/Series';
 

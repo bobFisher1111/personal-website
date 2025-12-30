@@ -1,4 +1,3 @@
-import React from 'react';
 import Grid from '@mui/material/Grid';
 import { useTheme } from '@mui/material';
 import HeaderComponent from '../headerComponent/HeaderComponent';
@@ -8,10 +7,10 @@ import {
   SectionComponentGridTabs,
 } from './SectionComponentStyles';
 
-const SectionsComponent: React.FC<Props> = ({
+const SectionsComponent = ({
   headerTitle,
   sectionTabData,
-}) => {
+}: Props) => {
   const theme = useTheme();
 
   return (

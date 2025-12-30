@@ -28,10 +28,10 @@ import {
   ToggleOnOffTitleStyles,
 } from './CookiesManagementComponentStyles';
 
-const CookiesManagementComponent: React.FC<Props> = ({
+const CookiesManagementComponent = ({
   closeDrawer,
   optionalCookies,
-}) => {
+}: Props) => {
   const [youtubeToggle, setYouTubeToggle] = useState<boolean>(localStorage.getItem('enableYouTubeVideo') === 'true' ? true : false);
   const [darkModeToggle, setDarkModeToggle] = useState<boolean>(localStorage.getItem('darkMode') === 'true' ? true : false);
   const [userAgreementsToggle, setUserAgreementsToggle] = useState<boolean>(false);

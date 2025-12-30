@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Grid,
   Typography,
@@ -11,7 +10,7 @@ import {
   TypographyLinkTwoPage,
 } from './AppBarLinksToPagesStyles';
 
-const AppBarLinksToPages: React.FC = () => {
+const AppBarLinksToPages = () => {
   const theme = useTheme();
   const colorTheme = useSelector((state: any) => state.theme.darkTheme);
 

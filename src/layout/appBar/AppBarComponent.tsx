@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   AppBar,
   Box,
@@ -6,7 +5,7 @@ import {
 import WebSiteAppBar from './webSiteAppBar/WebSiteAppBar';
 import { AppBarStyles } from './AppBarComponentStyles';
 
-const AppBarComponent: React.FC = () => {
+const AppBarComponent = () => {
   /*
     deside on color for appbar:
       - green: #667A6E

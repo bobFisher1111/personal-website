@@ -1,7 +1,6 @@
-import React from 'react';
 import SeriesComponent from '../../components/seriesComponent/SeriesComponent';
 
-const SeriesPage: React.FC = () => {
+const SeriesPage = () => {
   return (
     <SeriesComponent />
   );

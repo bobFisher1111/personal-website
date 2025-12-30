@@ -5,10 +5,10 @@ import formatDate from '../../util/formatDate';
 import ArticleCard from '../cards/articleCards/horizontalCard/articleCard/ArticleCard';
 
 
-export const ArticleList: React.FC<Props> = ({
+export const ArticleList = ({
   authorData,
   data,
-}) => {
+}: Props) => {
   const noArticles = data?.length === 0;
   const newNonImmutableArray = data?.map((item: any) => item);
   const sortByDate = newNonImmutableArray?.sort((a: any, b: any) => b.article_id - a.article_id);
@@ -26,12 +26,10 @@ export const ArticleList: React.FC<Props> = ({
               articleId={item.article_id}
               authorData={authorData}
               articleMedia={item.cover_image_or_video}
-              articlePage={false}
               authorId={item.author_id}
               date={formatDate(item.published_date)}
               isMediaVideo={item.use_video_instead_of_image}
               section={item.section}
-              sectionLink={item.section_link}
               series={item.series_id}
               seriesId={item.series_id}
               subtitle={item.article_subtitle}

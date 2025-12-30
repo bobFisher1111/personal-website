@@ -17,9 +17,9 @@ import {
 } from './WorksStyle';
 import ComingSoon from '../comingSoon/ComingSoon';
 // Currently not really being used but may use later for authors page or article page
-const Works: React.FC<Props> = ({
+const Works = ({
   bookData,
-}) => {
+}: Props) => {
   const bookImageHeightRef = useRef<any>(null);
   const titleHeightRef = useRef<any>(null);
   const bookPlotHeightRef = useRef<any>(null);

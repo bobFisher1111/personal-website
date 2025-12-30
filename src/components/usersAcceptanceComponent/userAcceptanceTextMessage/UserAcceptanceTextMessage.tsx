@@ -1,4 +1,3 @@
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   Button,
@@ -23,10 +22,10 @@ import {
   TitleStyles,
 } from './UserAcceptanceTextMessageStyles';
 
-const UserAcceptanceTextMessage: React.FC<Props> = ({
+const UserAcceptanceTextMessage = ({
   closeDrawer,
   setStateStatus,
-}) => {
+}: Props) => {
   const dispatch = useDispatch();
   const rejectCookie = useSelector((state: any) => state.rejectCookie);
   const acceptanceMessage = "Gamers Shrine uses cookies for functionality of the website. Third party cookies from YouTube are required for viewing videos. By accepting cookies you agree to placement of the cookie. Without accepting certain features and functionality will be disabled.";

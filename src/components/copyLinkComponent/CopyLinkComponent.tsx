@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import { useTheme } from '@mui/material';
 import { appBaseURL } from '../../config';
@@ -11,7 +10,7 @@ import {
 } from './CopyLinkComponentStyles';
 
 
-const CopyLinkComponent: React.FC<Props> = ({
+const CopyLinkComponent = ({
   authorsId,
   articleId,
   padding = '0px',
@@ -19,7 +18,7 @@ const CopyLinkComponent: React.FC<Props> = ({
   authorsEmail,
   seriesId,
   turnOnSeries,
-}) => {
+}: Props) => {
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
   const theme = useTheme();
 

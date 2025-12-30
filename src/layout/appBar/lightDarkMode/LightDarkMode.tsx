@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { toggleTheme } from '../../../store/redux/theme/ThemeSlice';
 import {
@@ -8,7 +7,7 @@ import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 
 
-const LightDarkMode: React.FC = () => {
+const LightDarkMode = () => {
   // get theme from store
   const rejectCookie = useSelector((state: any) => state.rejectCookie);
   const theme = useSelector((state: any) => state.theme.darkTheme);

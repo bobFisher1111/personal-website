@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   CardMedia,
   Grid,
@@ -17,7 +16,7 @@ import {
   WritersCardTextAuthorTitle,
 } from './WritersCardStyle';
 
-const WritersCard: React.FC<Props> = ({
+const WritersCard = ({
   authorImage,
   authorName,
   authorsTitle,
@@ -26,7 +25,7 @@ const WritersCard: React.FC<Props> = ({
   twitter,
   youtube,
   email,
-}) => {
+}: Props) => {
   const theme = useTheme();
   const colorTheme = useSelector((state: any) => state.theme.darkTheme);
 

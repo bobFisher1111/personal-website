@@ -26,10 +26,10 @@ const TabPanel = ({ children, value, index, ...other }: TabPanelProps) => (
   </div>
 );
 
-const TabsComponent: React.FC<Props> = ({
+const TabsComponent = ({
   turnonsectiontabspadding,
   tabsData,
-}) => {
+}: Props) => {
   const [value, setValue] = useState(0);
   const id = useId();
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);

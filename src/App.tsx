@@ -11,7 +11,7 @@ import './App.css';
 // Uncomment this component when user acceptance flow is ready
 // import UsersAcceptanceComponent from '../src/components/usersAcceptanceComponent/UsersAcceptanceComponent';
 
-const App: React.FC<Props> = () => {
+const App = () => {
   const theme = useSelector((state: RootState) => state.theme);
 
   return (
@@ -28,15 +28,6 @@ const App: React.FC<Props> = () => {
       </ThemeProvider>
     </BrowserRouter>
   );
-};
-
-export type Props = {
-  position?: {
-    top?: number;
-    right?: number;
-    bottom?: number;
-    left?: number;
-  };
 };
 
 export default App;

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Grid, Typography, useTheme } from '@mui/material';
 import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
 import YoutTubeLogoDark from '../../assets/icons/yt_icon_mono_dark.png';
@@ -11,12 +10,12 @@ export type Props = {
   carousel: boolean;
 };
 // Going to come backlater and change how this how thing works
-const DisabledVideo: React.FC<Props> = ({
+const DisabledVideo = ({
   articlePage,
   authorSectionArticlePage,
   youtubeUrl,
   carousel,
-}) => {
+}: Props) => {
   const theme = useTheme();
   const darkTheme = theme.palette.mode === 'dark';
 

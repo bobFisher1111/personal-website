@@ -99,10 +99,10 @@ export const GridWidthStyle = {
 
 export const LinkGridRootStyles = (
   theme: Theme,
-  articlePage: boolean
+  // articlePage: boolean
 ) => ({
-  maxHeight: articlePage ? SIZES.height.appBar : SIZES.height.articleTall,
-  minHeight: articlePage ? SIZES.height.appBar : SIZES.height.articleTall,
+  maxHeight: SIZES.height.articleTall,
+  minHeight: SIZES.height.articleTall,
   width: SIZES.width.full,
   display: 'flex',
   justifyContent: 'flex-end',

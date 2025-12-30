@@ -1,4 +1,3 @@
-import React from 'react';
 import Grid from '@mui/material/Grid';
 import HorizontalArticleCardComponent from '../cards/articleCards/horizontalCard/HorizontalArticleCardComponent';
 import { useSelector } from 'react-redux';
@@ -11,7 +10,7 @@ import {
 } from './ArticlePageStyles';
 import MarkDownComponent from './MarkDownComponent';
 
-const ArticlePage: React.FC = () => {
+const ArticlePage = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const webData = getWebsiteData;
   const getIdFromUrl = () => {

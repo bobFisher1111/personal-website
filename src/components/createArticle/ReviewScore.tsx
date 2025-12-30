@@ -1,4 +1,3 @@
-import React from 'react';
 import { 
   Grid,
   Typography,
@@ -15,9 +14,9 @@ import {
   TextStyles,
 } from './ReviewScoreStyles';
 
-const ReviewScore: React.FC<Props> = ({
+const ReviewScore = ({
   text,
-}) => {
+}: Props) => {
   const removeReview = text.slice(8);
   const createObjectForReview = removeReview.split(', ');
   const GameplayArray = new Array(createObjectForReview[0]);

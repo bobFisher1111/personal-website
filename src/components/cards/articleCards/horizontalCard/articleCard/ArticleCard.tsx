@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Chip, Grid, Typography, useTheme, styled } from '@mui/material';
@@ -22,10 +21,9 @@ import {
   TitleStyles,
 } from './ArticleCardStyles';
 
-const ArticleCard: React.FC<Props> = ({
+const ArticleCard = ({
   articleId,
   articleMedia,
-  articlePage,
   authorId,
   authorData,
   date,
@@ -35,7 +33,7 @@ const ArticleCard: React.FC<Props> = ({
   seriesId,
   subtitle,
   title,
-}) => {
+}: Props) => {
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
   // const rejectCookie = useSelector((state: any) => state.rejectCookie);
   const theme = useTheme();
@@ -128,7 +126,7 @@ const ArticleCard: React.FC<Props> = ({
               </Grid>
           </Link>
 
-          <Grid container sx={LinkGridRootStyles(theme, articlePage)}>
+          <Grid container sx={LinkGridRootStyles(theme)}>
             <Chip
               color="primary"
               label={section}
@@ -156,13 +154,11 @@ const ArticleCard: React.FC<Props> = ({
 export type Props = {
   articleId: any;
   articleMedia: any;
-  articlePage: boolean;
   authorId: any;
   authorData: any;
   date: any;
   isMediaVideo: boolean;
   section: any;
-  sectionLink: any;
   series: boolean;
   seriesId: any;
   subtitle: any;

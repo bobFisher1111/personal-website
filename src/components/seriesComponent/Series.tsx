@@ -22,13 +22,13 @@ import {
   TypographySeriesTitle,
 } from './SeriesStyle';
 
-export const Series: React.FC<Props> = ({
+export const Series = ({
   data, 
   name,
   section,
   homePage,
   seriesForAuthorsPage,
-}) => {
+}: Props) => {
   const id = useId();
   const theme = useTheme();
   const colorTheme = useSelector((state: any) => state.theme.darkTheme);

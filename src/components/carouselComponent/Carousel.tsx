@@ -39,10 +39,10 @@ import {
 } from './CarouselComponentStyles';
 
 // Come back to this later if use and add styles to constans file
-const Carousel: React.FC<Props> = ({
+const Carousel = ({
   data,
   author,
-}) => {
+}: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const theme = useSelector((state: any) => state.theme.darkTheme);

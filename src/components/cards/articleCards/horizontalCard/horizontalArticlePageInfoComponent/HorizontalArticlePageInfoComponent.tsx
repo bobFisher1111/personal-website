@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Grid, Typography, useTheme, styled } from '@mui/material';
@@ -12,7 +11,7 @@ import {
   separatorStyles,
 } from './HorizontalArticlePageInfoComponentStyles';
 
-const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
+const HorizontalArticlePageInfoComponent = ({
   getAuthorData,
   authorsId,
   author,
@@ -21,7 +20,7 @@ const HorizontalArticlePageInfoComponent: React.FC<Props> = ({
   section,
   articleId,
   series,
-}) => {
+}: Props) => {
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
   const muiTheme = useTheme();
 

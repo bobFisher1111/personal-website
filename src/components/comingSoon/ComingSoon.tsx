@@ -1,8 +1,7 @@
-import React from 'react';
 import { Typography } from '@mui/material';
 import { comingSoonText } from './ComingSoonStyles';
 
-const ComingSoon: React.FC = () => {
+const ComingSoon = () => {
   return (
     <Typography
       color="primary"

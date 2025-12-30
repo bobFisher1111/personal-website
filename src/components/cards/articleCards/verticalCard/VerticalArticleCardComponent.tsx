@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
@@ -28,12 +27,12 @@ import {
 /*
   - issue on writes/series when resizing around 740px mark, update later
 */
-const VerticalArticleCardComponent: React.FC<Props> = ({
+const VerticalArticleCardComponent = ({
   name,
   articleData,
   series,
   isOnArticlePage = false,
-}) => {
+}: Props) => {
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
   const theme = useTheme();
   const articleUrl = `${appBaseURL}/article/${articleData?.author_id}/${articleData?.article_id}`;

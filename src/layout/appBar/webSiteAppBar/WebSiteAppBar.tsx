@@ -1,4 +1,3 @@
-import React from 'react';
 import { Grid, Typography, useTheme } from '@mui/material';
 import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
@@ -16,7 +15,7 @@ import {
 import { LinkStyles } from '../../../util/styles/LinkStyles';
 // import AppConfig from '../../../config';
 
-const WebSiteAppBar: React.FC = () => {
+const WebSiteAppBar = () => {
   const theme = useTheme();
   const isDarkTheme = useSelector((state: any) => state.theme.darkTheme);
   // const { facebookURL, twitterURL, youtubeURL } = AppConfig;
