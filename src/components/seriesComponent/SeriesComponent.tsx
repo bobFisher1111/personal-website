@@ -1,6 +1,6 @@
 import React, { useId } from 'react';
 import { Grid, Typography } from '@mui/material';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useTheme } from '@mui/material/styles';
 import ComingSoon from '../comingSoon/ComingSoon';

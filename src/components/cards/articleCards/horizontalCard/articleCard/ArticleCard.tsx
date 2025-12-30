@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { Chip, Grid, Typography, useTheme, styled } from '@mui/material';
 import DisabledVideo from '../../../../disabledVideo/DisabledVideo';
 import { LinkStyles } from '../../../../../util/styles/LinkStyles';
@@ -101,7 +101,7 @@ const ArticleCard: React.FC<Props> = ({
               />
             )
           ) : (
-            <Link to={`/article/${authorId}/${articleId}`} reloadDocument={false}>
+            <Link to={`/article/${authorId}/${articleId}`}>
               <Img
                 alt="complex"
                 src={articleMedia}
@@ -113,7 +113,7 @@ const ArticleCard: React.FC<Props> = ({
         </Grid>
 
         <Grid size={{ xs: 8, sm: 9, md: 9, lg: 9, xl: 9 }} sx={ArticleDataGridStyles}>
-          <Link to={`/article/${authorId}/${articleId}`} reloadDocument={false} style={LinkStyles(darkTheme)}> 
+          <Link to={`/article/${authorId}/${articleId}`} style={LinkStyles(darkTheme)}> 
             <Typography 
               color="primary" 
               // variant="h6" 

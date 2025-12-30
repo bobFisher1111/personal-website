@@ -2,7 +2,7 @@
 // if have a footer or header here, they will appear with all the children
 //  for routing
 import React from 'react';
-import { Outlet } from 'react-router'; 
+import { Outlet } from 'react-router-dom'; 
 import AppBarComponent from './appBar/AppBarComponent';
 
 const Layout: React.FC = () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useTheme, styled } from '@mui/material/styles';
 import { Grid, Typography } from '@mui/material';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import {
   avatarAuthorLinkStyles,
   avatarImageStyles,

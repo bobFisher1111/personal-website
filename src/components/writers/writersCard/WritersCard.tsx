@@ -6,7 +6,7 @@ import {
 } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { useTheme } from '@mui/material/styles';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import SocialMediaComponent from '../../socialMediaComponent/SocialMediaComponent';
 import { LinkStyles } from '../../../util/styles/LinkStyles';
 import {

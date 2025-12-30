@@ -5,7 +5,7 @@ import {
   useTheme,
 } from '@mui/material';
 import { useSelector } from "react-redux";
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { LinkStyles } from '../../../util/styles/LinkStyles';
 import {
   TypographyLinkTwoPage,
