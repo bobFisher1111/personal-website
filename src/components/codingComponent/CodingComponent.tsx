@@ -28,7 +28,6 @@ const CodingComponent: React.FC = () => {
         articleSectionFilter,
         articleFrontEndFilter,
         articleDataFilter,
-        false,
       )}
     />
   );

@@ -1,4 +1,3 @@
-import React from 'react';
 import ArticleList from '../articleList/ArticleList';
 import Series from '../seriesComponent/Series';
 
@@ -7,21 +6,20 @@ const ReviewsComponentTabData = (
   articleSectionFilter: any,
   articleModernReviewsFilter: any,
   articleRetroReviewsFilter: any,
-  turOnAuthorForArticle: boolean,
 ) => {
   return (
     [
       { 
         name: 'Latest',
-        data: <ArticleList authorData={authorsData} data={articleSectionFilter} turOnAuthorForArticle={turOnAuthorForArticle} />
+        data: <ArticleList authorData={authorsData} data={articleSectionFilter} />
       },
       { 
         name: 'Modern',
-        data: <ArticleList authorData={authorsData} data={articleModernReviewsFilter} turOnAuthorForArticle={turOnAuthorForArticle} />
+        data: <ArticleList authorData={authorsData} data={articleModernReviewsFilter} />
       },
       { 
         name: 'Retro',
-        data: <ArticleList authorData={authorsData} data={articleRetroReviewsFilter} turOnAuthorForArticle={turOnAuthorForArticle} />
+        data: <ArticleList authorData={authorsData} data={articleRetroReviewsFilter} />
       },
       { 
         name: 'Series',

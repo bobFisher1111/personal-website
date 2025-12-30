@@ -30,7 +30,6 @@ const HorizontalArticleCardComponent: React.FC<Props> = ({
   articlePageList,
   mobileImageWidth,
   videoHeight,
-  turOnAuthorForArticle,
 }) => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
@@ -38,13 +37,12 @@ const HorizontalArticleCardComponent: React.FC<Props> = ({
   const getAuthorData = getWebsiteData?.authors?.filter((item: any) => item.author_id === authorsId);
 
   const disableButton = () => localStorage.getItem('enableYouTubeVideo') !== null;
-  console.log('author info component rendered');
   return (
     <Grid
       container
       direction="row"
       justifyContent={!articlePage || articlePageList ? 'left' : 'center'}
-      sx={gridHorizontalArticleContainer(muiTheme, articlePage, darkTheme, turOnAuthorForArticle)}
+      sx={gridHorizontalArticleContainer(muiTheme, articlePage, darkTheme)}
     >
       <Grid sx={gridHorizontalArticleMaxWidth(muiTheme, imageWidth, darkTheme, articlePage)}>
         {!useVideoInsteadOfImage ? (
@@ -104,7 +102,6 @@ export type Props = {
   articlePageList?: any;
   mobileImageWidth: string;
   videoHeight: boolean;
-  turOnAuthorForArticle?: boolean;
 };
 
 export default HorizontalArticleCardComponent;

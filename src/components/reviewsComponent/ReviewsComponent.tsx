@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import SectionsComponent from '../sections/SectionsComponent';
 import ShowsMoviesComponentTabData from './ReviewsComponentTabData';
@@ -28,7 +27,6 @@ const ReviewsComponent = () => {
         articleSectionFilter,
         articleModernReviewsFilter,
         articleRetroReviewsFilter,
-        false,
       )}
     />
   );

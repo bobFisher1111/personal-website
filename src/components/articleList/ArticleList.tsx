@@ -36,7 +36,6 @@ export const ArticleList: React.FC<Props> = ({
               seriesId={item.series_id}
               subtitle={item.article_subtitle}
               title={item.article_title}
-              turOnAuthorForArticle={false}
             />
           </Fragment>
         ))
@@ -48,7 +47,6 @@ export const ArticleList: React.FC<Props> = ({
 export type Props = {
   authorData?: any;
   data: any;
-  turOnAuthorForArticle: boolean;
 };
 
 export default ArticleList;

@@ -1,6 +1,6 @@
 import { Theme } from '@mui/material/styles';
 import { FONT_SIZES } from '../../store/redux/theme/CONSTANTS';
-//
+
 export const authorComponentGridRoot = () => ({
   display: 'flex',
   paddingBottom: '200px',

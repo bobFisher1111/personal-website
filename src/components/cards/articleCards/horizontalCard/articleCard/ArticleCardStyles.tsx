@@ -29,12 +29,11 @@ export const ArticleImageStyles = ( theme: Theme, darkTheme: boolean) => ({
 export const ArticleVideoStyles = (
   theme: Theme,
   darkTheme: boolean,
-  turOnAuthorForArticle: boolean
 ) => ({
   borderRadius: SIZES.borderRadius,
   border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
   width: '100%',
-  height: turOnAuthorForArticle ? SIZES.height.rootSm : SIZES.height.articleTallSm,
+  height: SIZES.height.articleTallSm,
   [theme.breakpoints.up('sm')]: {
     width: SIZES.imageAspectRatio16by9.width,
     height: SIZES.imageAspectRatio16by9.height,
@@ -117,14 +116,13 @@ export const LinkGridRootStyles = (
 export const RootStyles = (
   theme: Theme,
   darkTheme: boolean,
-  turOnAuthorForArticle: boolean
 ) => ({
   margin: 'auto',
   marginBottom: theme.spacing(SIZES.spacingNumeric.md),
   paddingLeft: theme.spacing(SIZES.spacingNumeric.sm),
   paddingRight: theme.spacing(SIZES.spacingNumeric.sm),
   flexGrow: 1,
-  height: turOnAuthorForArticle ? SIZES.height.rootShort : SIZES.height.rootTall,
+  height: SIZES.height.rootTall,
   borderBottom: '1px solid rgba(138, 147, 153, 0.25)',
   [theme.breakpoints.down('sm')]: {
     height: SIZES.height.rootSm,

@@ -35,7 +35,6 @@ const ArticleCard: React.FC<Props> = ({
   seriesId,
   subtitle,
   title,
-  turOnAuthorForArticle,
 }) => {
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
   // const rejectCookie = useSelector((state: any) => state.rejectCookie);
@@ -55,7 +54,7 @@ const ArticleCard: React.FC<Props> = ({
   // }, [rejectCookie.enabledYouTubeVideos]);
 
   return (
-    <Grid container sx={RootStyles(theme, darkTheme, turOnAuthorForArticle)}>
+    <Grid container sx={RootStyles(theme, darkTheme)}>
       <Grid container direction="row" justifyContent="flex-start" alignItems="center" size={12} sx={GridNameDateStyles(theme)}>
         <Grid size={8}>
           <Link to={`/author/${authorId}`} style={AvatarAuthorLinkStyles(theme, darkTheme)}>
@@ -91,7 +90,7 @@ const ArticleCard: React.FC<Props> = ({
               <Video
                 allowFullScreen
                 src={articleMedia}
-                sx={ArticleVideoStyles(theme, darkTheme, turOnAuthorForArticle)}
+                sx={ArticleVideoStyles(theme, darkTheme)}
               />
             ) : (
               <DisabledVideo
@@ -102,7 +101,7 @@ const ArticleCard: React.FC<Props> = ({
               />
             )
           ) : (
-            <Link to={`/article/${authorId}/${articleId}`} reloadDocument={turOnAuthorForArticle}>
+            <Link to={`/article/${authorId}/${articleId}`} reloadDocument={false}>
               <Img
                 alt="complex"
                 src={articleMedia}
@@ -114,7 +113,7 @@ const ArticleCard: React.FC<Props> = ({
         </Grid>
 
         <Grid size={{ xs: 8, sm: 9, md: 9, lg: 9, xl: 9 }} sx={ArticleDataGridStyles}>
-          <Link to={`/article/${authorId}/${articleId}`} reloadDocument={turOnAuthorForArticle} style={LinkStyles(darkTheme)}>
+          <Link to={`/article/${authorId}/${articleId}`} reloadDocument={false} style={LinkStyles(darkTheme)}> 
             <Typography 
               color="primary" 
               // variant="h6" 
@@ -122,13 +121,11 @@ const ArticleCard: React.FC<Props> = ({
             >
               {title}
             </Typography>
-            {!turOnAuthorForArticle && (
               <Grid size={12}>
                 <Typography color="primary" sx={SubTitleStyles(theme)}>
                   {subtitle}
                 </Typography>
               </Grid>
-            )}
           </Link>
 
           <Grid container sx={LinkGridRootStyles(theme, articlePage)}>
@@ -170,7 +167,6 @@ export type Props = {
   seriesId: any;
   subtitle: any;
   title: any;
-  turOnAuthorForArticle: boolean;
 };
 
 export default ArticleCard;

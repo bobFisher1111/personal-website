@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import SectionsComponent from '../../components/sections/SectionsComponent';
 import VideoGamesComponentTabData from './VideoGamesComponentTabData';
@@ -28,7 +27,6 @@ const VideoGamesComponent = () => {
         articleSectionFilter,
         articleModernFilter,
         articleRetroFilter,
-        false,
       )}
     />
   );

@@ -54,7 +54,6 @@ const HomePageComponent: React.FC = () => {
         <ArticleList
           authorData={authorsData}
           data={articleData}
-          turOnAuthorForArticle={false}
         />
       </Grid>
     </Grid>

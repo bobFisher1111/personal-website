@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import SectionsComponent from '../../components/sections/SectionsComponent';
 import StoriesComponentTabData from './StoriesComponentTabData';
@@ -21,7 +20,6 @@ const StoriesComponent = () => {
         authorsData,
         articleSectionFilter,
         articleShortStoriesFilter,
-        false,
       )}
     />
   );

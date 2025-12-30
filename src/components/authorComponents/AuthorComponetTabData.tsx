@@ -14,7 +14,7 @@ const AuthorComponetTabData = (
     [
       { 
         name: 'Uploads',
-        data: <ArticleList authorData={authorsData} data={data} turOnAuthorForArticle={false} />
+        data: <ArticleList authorData={authorsData} data={data} />
       },
       { 
         name: 'Series',

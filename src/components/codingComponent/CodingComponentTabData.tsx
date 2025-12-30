@@ -7,21 +7,20 @@ const CodingComponentTabData = (
   articleSectionFilter: any,
   articleFrontEndFilter: any,
   articleDataFilter: any,
-  turOnAuthorForArticle: boolean,
 ) => {
   return (
     [
       { 
         name: 'Latest',
-        data: <ArticleList authorData={authorsData} data={articleSectionFilter} turOnAuthorForArticle={turOnAuthorForArticle} />
+        data: <ArticleList authorData={authorsData} data={articleSectionFilter} />
       },
       { 
         name: 'Coding',
-        data: <ArticleList authorData={authorsData} data={articleFrontEndFilter} turOnAuthorForArticle={turOnAuthorForArticle} />
+        data: <ArticleList authorData={authorsData} data={articleFrontEndFilter} />
       },
       { 
         name: 'Game Dev',
-        data: <ArticleList authorData={authorsData} data={articleDataFilter} turOnAuthorForArticle={turOnAuthorForArticle} />
+        data: <ArticleList authorData={authorsData} data={articleDataFilter} />
       },
       { 
         name: 'Series',

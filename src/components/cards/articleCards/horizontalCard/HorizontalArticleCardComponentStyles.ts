@@ -58,12 +58,11 @@ export const gridHorizontalArticleContainer = (
   theme: Theme,
   articlePage: boolean,
   darkTheme: boolean,
-  turOnAuthorForArticle?: boolean
 ) => ({
   width: '100%',
   display: 'flex',
   margin: '0px 0px 16px 0px',
-  border: darkTheme || articlePage || turOnAuthorForArticle ? '' : '1px solid #0C0D0D',
+  border: darkTheme || articlePage ? '' : '1px solid #0C0D0D',
   [theme.breakpoints.down('sm')]: {
     border: darkTheme || articlePage ? '' : '1px solid #0C0D0D',
     padding: '6px 0px 0px 0px',
