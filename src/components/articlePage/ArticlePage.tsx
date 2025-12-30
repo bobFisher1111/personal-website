@@ -1,3 +1,4 @@
+import { useLayoutEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import HorizontalArticleCardComponent from '../cards/articleCards/horizontalCard/HorizontalArticleCardComponent';
 import { useSelector } from 'react-redux';
@@ -30,10 +31,10 @@ const ArticlePage = () => {
   const authorData = getAuthor && getAuthor[0];
   const articleData = currentArticle && currentArticle[0];
   // const articleArray = articleData?.article.split("`");
-  // Maybe able to remove later
-  // useLayoutEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, []);
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
