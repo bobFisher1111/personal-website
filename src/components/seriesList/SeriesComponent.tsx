@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import {
   Grid,
   styled,
@@ -10,7 +9,7 @@ import {
 } from './SeriesComponentStyles';
 import SeriesCardComponent from './SeriesCardComponent';
 
-const SeriesComponent: FC<Props> = ({ series }) => {
+const SeriesComponent = ({ series }: Props) => {
   const theme = useTheme();
 
   const AlignGrid = styled(Grid)(({ theme }) => ({

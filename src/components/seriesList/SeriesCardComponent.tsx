@@ -8,7 +8,7 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
-import { LinkStyles } from '../../util/styles/LinkStyles';
+import { LinkStyles } from 'src/util/styles/LinkStyles';
 import {
   CardMediaVerticalCardImage,
   CardRootStyle,

@@ -1,9 +1,9 @@
-import React, { FC, Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import {
   Drawer,
   Grid,
 } from '@mui/material';
-import TermsOfServiceComponent from '../termsOfServiceComponent/TermsOfServiceComponent';
+import TermsOfServiceComponent from 'src/components/usersAcceptanceComponent/termsOfServiceComponent/TermsOfServiceComponent';
 import { 
   // DisclaimerTitleStyles,
   DrawerStyles,
@@ -11,10 +11,10 @@ import {
 
 type Anchor = 'left';
 
-const TermsOfServiceDrawer: FC = () => {
+const TermsOfServiceDrawer = () => {
   // const theme = useSelector((state: any) => state.theme.darkTheme);
 
-  const [state, setState] = React.useState({
+  const [state, setState] = useState({
     left: false,
   });
 

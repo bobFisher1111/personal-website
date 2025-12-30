@@ -1,4 +1,4 @@
-import CodingComponent from '../../components/codingComponent/CodingComponent';
+import CodingComponent from 'src/components/codingComponent/CodingComponent';
 
 const CodingPage = () => {
   return (

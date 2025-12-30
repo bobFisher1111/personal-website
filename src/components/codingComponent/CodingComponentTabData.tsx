@@ -1,5 +1,5 @@
-import ArticleList from '../articleList/ArticleList';
-import Series from '../seriesComponent/Series';
+import ArticleList from 'src/components/articleList/ArticleList';
+import Series from 'src/components/seriesComponent/Series';
 
 const CodingComponentTabData = (
   authorsData: any,

@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import SectionsComponent from '../sections/SectionsComponent';
+import SectionsComponent from 'src/components/sections/SectionsComponent';
 import ShowsMoviesComponentTabData from './ReviewsComponentTabData';
 
 const ReviewsComponent = () => {

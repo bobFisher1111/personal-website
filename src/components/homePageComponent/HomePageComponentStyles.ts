@@ -4,7 +4,7 @@ import {
   FONT_WEIGHTS,
   LINE_HEIGHTS,
   SIZES,
-} from "../../store/redux/theme/CONSTANTS";
+} from "src/store/redux/theme/CONSTANTS";
 
 // ✅ Responsive layout using MUI breakpoints and constants
 export const GridRoot = (theme: Theme) => ({

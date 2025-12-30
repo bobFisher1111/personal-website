@@ -1,4 +1,4 @@
-import VideoGamesComponent from '../../components/videoGamesComponent/VideoGamesComponent';
+import VideoGamesComponent from 'src/components/videoGamesComponent/VideoGamesComponent';
 
 const VideoGamesPage = () => {
   return (

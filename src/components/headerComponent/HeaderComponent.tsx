@@ -13,7 +13,7 @@ import {
   GridPaddingRight,
   TypographyHeaderTitle,
 } from './HeaderComponentStyles';
-import { LinkStyles } from '../../util/styles/LinkStyles';
+import { LinkStyles } from 'src/util/styles/LinkStyles';
 
 const HeaderComponent = ({
   title,

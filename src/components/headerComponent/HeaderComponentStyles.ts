@@ -1,4 +1,4 @@
-import { FONT_SIZES } from "../../store/redux/theme/CONSTANTS";
+import { FONT_SIZES } from "src/store/redux/theme/CONSTANTS";
 
 export const AvatarStyle = {
   width: '100px',

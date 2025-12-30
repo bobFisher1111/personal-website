@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Grid, Typography, useTheme, styled } from '@mui/material';
-import CopyLinkComponent from '../../../../copyLinkComponent/CopyLinkComponent';
-import { LinkStyles } from '../../../../../util/styles/LinkStyles';
+import CopyLinkComponent from 'src/components/copyLinkComponent/CopyLinkComponent';
+import { LinkStyles } from 'src/util/styles/LinkStyles';
 import {
   avatarImageStyles,
   gridArticleInfoComponent,

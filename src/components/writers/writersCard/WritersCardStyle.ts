@@ -1,5 +1,5 @@
 import { Theme } from '@mui/material/styles';
-import { FONT_SIZES } from '../../../store/redux/theme/CONSTANTS';
+import { FONT_SIZES } from 'src/store/redux/theme/CONSTANTS';
 
 export const WritersCardGridRoot = () => ({
   padding: '8px 16px 16px 16px',

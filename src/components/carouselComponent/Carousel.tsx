@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import {
@@ -12,10 +12,10 @@ import {
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { Pause } from '@mui/icons-material';
 import formatDate from '../../util/formatDate';
-import AuthorAvatarComponent from '../authorAvatarComponent/AuthorAvatarComponent';
+import AuthorAvatarComponent from 'src/components/authorAvatarComponent/AuthorAvatarComponent';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { LinkStyles } from '../../util/styles/LinkStyles';
+import { LinkStyles } from 'src/util/styles/LinkStyles';
 import {
   cardStyles,
   controlsStyles,

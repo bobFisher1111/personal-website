@@ -1,5 +1,5 @@
 import { Theme } from '@mui/material';
-import { FONT_SIZES } from '../../store/redux/theme/CONSTANTS';
+import { FONT_SIZES } from 'src/store/redux/theme/CONSTANTS';
 
 export const GridTabsComponent = (theme: Theme, turnonsectiontabspadding: boolean) => ({
   padding: turnonsectiontabspadding ? '16px 0px 16px 0px' : '0px 0px 16px 0px',

@@ -1,6 +1,6 @@
 // src/styles/appBarStyles.ts
 import { Theme } from '@mui/material/styles';
-import { FONT_SIZES, SIZES } from '../../../store/redux/theme/CONSTANTS';
+import { FONT_SIZES, SIZES } from 'src/store/redux/theme/CONSTANTS';
 
 export const AppBarStyle = (theme: Theme) => ({
   display: 'flex',

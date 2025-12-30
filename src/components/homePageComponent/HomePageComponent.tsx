@@ -2,8 +2,8 @@ import {
   // Button, 
   Grid, Typography, useTheme } from "@mui/material";
 import { useSelector } from "react-redux";
-import ArticleList from "../articleList/ArticleList";
-import SeriesComponent from "../seriesList/SeriesComponent";
+import ArticleList from "src/components/articleList/ArticleList";
+import SeriesComponent from "src/components/seriesList/SeriesComponent";
 import Sections from "./Sections";
 import {
   GridRoot,

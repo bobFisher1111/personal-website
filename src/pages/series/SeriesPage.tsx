@@ -1,4 +1,4 @@
-import SeriesComponent from '../../components/seriesComponent/SeriesComponent';
+import SeriesComponent from 'src/components/seriesComponent/SeriesComponent';
 
 const SeriesPage = () => {
   return (

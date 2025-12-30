@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { toggleTheme } from '../../../store/redux/theme/ThemeSlice';
+import { toggleTheme } from 'src/store/redux/theme/ThemeSlice';
 import {
   Button
 } from '@mui/material';

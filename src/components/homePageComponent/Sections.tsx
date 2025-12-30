@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Grid, Typography, useTheme } from "@mui/material";
 import {
@@ -6,7 +6,7 @@ import {
   SectionSelectedStyles,
 } from "./HomePageComponentStyles";
 
-const Sections: FC<Props> = ({ data, series, setData, setSeries }) => {
+const Sections = ({ data, series, setData, setSeries }: Props) => {
   const [sectionSelect, setSectionSelect] = useState<number>(1);
   const theme = useTheme();
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);

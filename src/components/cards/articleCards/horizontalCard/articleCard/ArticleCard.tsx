@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Chip, Grid, Typography, useTheme, styled } from '@mui/material';
-import DisabledVideo from '../../../../disabledVideo/DisabledVideo';
-import { LinkStyles } from '../../../../../util/styles/LinkStyles';
+import DisabledVideo from 'src/components/disabledVideo/DisabledVideo';
+import { LinkStyles } from 'src/util/styles/LinkStyles';
 import {
   ArticleDataGridStyles,
   ArticleImageStyles,

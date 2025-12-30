@@ -1,4 +1,4 @@
-import SectionsComponent from '../sections/SectionsComponent';
+import SectionsComponent from 'src/components/sections/SectionsComponent';
 import { useSelector } from 'react-redux';
 import CodingComponentTabData from './CodingComponentTabData';
 

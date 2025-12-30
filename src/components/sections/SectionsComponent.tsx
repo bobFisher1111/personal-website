@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Grid';
 import { useTheme } from '@mui/material';
-import HeaderComponent from '../headerComponent/HeaderComponent';
-import TabsComponent from '../tabsComponent/TabsComponent';
+import HeaderComponent from 'src/components/headerComponent/HeaderComponent';
+import TabsComponent from 'src/components/tabsComponent/TabsComponent';
 import {
   SectionComponentGridRoot,
   SectionComponentGridTabs,

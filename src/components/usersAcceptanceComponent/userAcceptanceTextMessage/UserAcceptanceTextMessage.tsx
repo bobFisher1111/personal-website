@@ -5,10 +5,10 @@ import {
   Typography,
 } from '@mui/material/';
 import CloseIcon from '@mui/icons-material/Close';
-import { userAgreementValue } from '../../../config';
-import { cookiesOff } from '../../../store/redux/cookies/CookiesSlice';
-import CookiesManagementDrawer from '../cookiesManagementDrawer/CookiesManagementDrawer';
-import TermsOfServiceDrawer from '../termsOfServiceDrawer/TermsOfServiceDrawer';
+import { userAgreementValue } from 'src/config';
+import { cookiesOff } from 'src/store/redux/cookies/CookiesSlice';
+import CookiesManagementDrawer from 'src/components/usersAcceptanceComponent//cookiesManagementDrawer/CookiesManagementDrawer';
+import TermsOfServiceDrawer from 'src/components/usersAcceptanceComponent//termsOfServiceDrawer/TermsOfServiceDrawer';
 import {
   AcceptButtonStyles,
   ButtonGridStyles,

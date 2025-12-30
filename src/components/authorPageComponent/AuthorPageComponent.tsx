@@ -1,4 +1,4 @@
-import AuthorComponent from '../../components/authorComponents/AuthorComponent';
+import AuthorComponent from 'src/components/authorComponents/AuthorComponent';
 
 const AuthorPageComponent = () => {
   return (

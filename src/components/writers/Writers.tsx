@@ -1,8 +1,8 @@
-import React, { useId } from 'react';
+import { useId } from 'react';
 import Grid from '@mui/material/Grid';
 import { useSelector } from 'react-redux';
 import { useTheme } from '@mui/material/styles';
-import HeaderComponent from '../headerComponent/HeaderComponent';
+import HeaderComponent from 'src/components/headerComponent/HeaderComponent';
 import WritersCard from './writersCard/WritersCard';
 import {
   WritersGridRoot,

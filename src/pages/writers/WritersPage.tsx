@@ -1,4 +1,4 @@
-import Writers from '../../components/writers/Writers';
+import Writers from 'src/components/writers/Writers';
 
 const WritersPage = () => {
   return (

@@ -13,7 +13,7 @@ import {
   gridHorizontalArticleMaxWidth,
   imageHorizontalArticleStyles,
 } from './HorizontalArticleCardComponentStyles';
-import DisabledVideo from '../../../disabledVideo/DisabledVideo';
+import DisabledVideo from 'src/components/disabledVideo/DisabledVideo';
 
 const HorizontalArticleCardComponent = ({
   author,

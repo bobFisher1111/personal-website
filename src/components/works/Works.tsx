@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import {
   Button,
   CardMedia,
@@ -15,7 +15,7 @@ import {
   WorksInfoTitle,
   WorksInfoSubTitle,
 } from './WorksStyle';
-import ComingSoon from '../comingSoon/ComingSoon';
+import ComingSoon from 'src/components/comingSoon/ComingSoon';
 // Currently not really being used but may use later for authors page or article page
 const Works = ({
   bookData,

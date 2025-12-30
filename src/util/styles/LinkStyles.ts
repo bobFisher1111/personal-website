@@ -1,6 +1,8 @@
+import { COLORS } from 'src/store/redux/theme/CONSTANTS';
+
 export const LinkStyles = (theme: boolean) => ({
   textDecoration: 'none',
-  color: theme ? '#9DB2BF' : 'rgba(0, 0, 0, 0.6)',
+  color: theme ? COLORS.dark.primary : COLORS.light.primary,
 });
 
 export default [

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Button,
   Grid,
@@ -6,7 +6,7 @@ import {
   Typography,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import { userAgreementValue } from '../../../config';
+import { userAgreementValue } from 'src/config';
 import {
   AcceptButtonStyles,
   AcceptGridButtonStyles,

@@ -1,13 +1,13 @@
-import React, { Fragment} from 'react';
+import { Fragment, useState } from 'react';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import UserAcceptanceTextMessage from './userAcceptanceTextMessage/UserAcceptanceTextMessage';
+import UserAcceptanceTextMessage from 'src/components/usersAcceptanceComponent//userAcceptanceTextMessage/UserAcceptanceTextMessage';
 import Grid from '@mui/material/Grid';
-import { userAgreementValue } from '../../config';
+import { userAgreementValue } from 'src/config';
 
 type Anchor = 'bottom';
 // Come back to this later, and refactor and also constants file sheet
 const UsersAcceptanceComponent = () => {
-  const [state, setState] = React.useState(() =>(
+  const [state, setState] = useState(() =>(
     localStorage.getItem('userAgreement') !== `${userAgreementValue}`) ? { bottom: true} : {bottom: false}
   );
   const toggleDrawer =

@@ -1,4 +1,4 @@
-import StoriesComponent from '../../components/storiesComponent/StoriesComponent';
+import StoriesComponent from 'src/components/storiesComponent/StoriesComponent';
 
 const StoriesPage = () => {
   return (

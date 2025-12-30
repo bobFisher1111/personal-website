@@ -1,5 +1,5 @@
 import { Theme } from '@mui/material/styles';
-import { FONT_SIZES, FONT_WEIGHTS } from '../../store/redux/theme/CONSTANTS';
+import { FONT_SIZES, FONT_WEIGHTS } from 'src/store/redux/theme/CONSTANTS';
 
 export const GridMarginLeft = (theme: Theme) => ({
   margin: '0px 0px 0px 16px',

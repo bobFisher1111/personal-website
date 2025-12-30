@@ -5,7 +5,7 @@ import {
   FONT_WEIGHTS,
   LINE_HEIGHTS,
   SIZES,
-} from '../../store/redux/theme/CONSTANTS';
+} from 'src/store/redux/theme/CONSTANTS';
 
 // export const CardMediaVerticalCardImage = (theme: Theme) => ({
 //   [theme.breakpoints.up('sm')]: {

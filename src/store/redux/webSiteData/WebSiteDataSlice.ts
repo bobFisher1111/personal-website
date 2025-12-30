@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import GetWebsiteData from './GetWebsiteData';
-import websiteData from '../../../websiteData/websiteData.json';
+import websiteData from 'src/websiteData/websiteData.json';
 
 const WebSiteDataSlice = createSlice({
   name: 'siteData',

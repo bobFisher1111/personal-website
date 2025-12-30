@@ -1,7 +1,7 @@
 import { Theme } from '@mui/material/styles';
 import {
   COLORS,
-} from '../../../../../store/redux/theme/CONSTANTS';
+} from 'src/store/redux/theme/CONSTANTS';
 
 export const avatarImageStyles = (theme: Theme, darkTheme: boolean) => ({
   width: '30px',

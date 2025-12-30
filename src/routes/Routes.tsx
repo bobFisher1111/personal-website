@@ -1,17 +1,14 @@
 import { lazy } from 'react';
 
-const HomePage = lazy(() => import('../pages/home/HomePage'));
-const CodingPage = lazy(() => import('../pages/coding/CodingPage'));
-const Logout = lazy(() => import('../pages/logout/Logout'));
-const Profile = lazy(() => import('../pages/profile/Profile'));
-const ArticlePage = lazy(() => import('../components/articlePage/ArticlePage'));
-const AuthorPage = lazy(() => import('../pages/author/AuthorPage'));
-const WritersPage = lazy(() => import('../pages/writers/WritersPage'));
-const StoriesPage = lazy(() => import('../pages/stories/StoriesPage'));
-const ReviewsPage = lazy(() => import('../pages/reviews/ReviewsPage'));
-const VideoGamesPage = lazy(() => import('../pages/videoGames/VideoGamesPage'));
-const SeriesPage = lazy(() => import('../pages/series/SeriesPage'));
-
+const HomePage = lazy(() => import('src/pages/home/HomePage'));
+const CodingPage = lazy(() => import('src/pages/coding/CodingPage'));
+const ArticlePage = lazy(() => import('src/components/articlePage/ArticlePage'));
+const AuthorPage = lazy(() => import('src/pages/author/AuthorPage'));
+const WritersPage = lazy(() => import('src/pages/writers/WritersPage'));
+const StoriesPage = lazy(() => import('src/pages/stories/StoriesPage'));
+const ReviewsPage = lazy(() => import('src/pages/reviews/ReviewsPage'));
+const VideoGamesPage = lazy(() => import('src/pages/videoGames/VideoGamesPage'));
+const SeriesPage = lazy(() => import('src/pages/series/SeriesPage'));
 type Route = {
   path?: string;
   element?: any;
@@ -25,14 +22,6 @@ const routes: Route[] = [
   {
     path: '/',
     element: HomePage,
-  },
-  {
-    path: '/logout',
-    element: Logout,
-  },
-  {
-    path: '/profile',
-    element: Profile,
   },
   {
     path: '/article/:id/:id/',

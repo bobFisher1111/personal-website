@@ -4,7 +4,7 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
-import CookiesManagementComponent from '../cookiesManagementComponent/CookiesManagementComponent';
+import CookiesManagementComponent from 'src/components/usersAcceptanceComponent/cookiesManagementComponent/CookiesManagementComponent';
 import {
   DrawerStyles,
   SettingTitleStyles,

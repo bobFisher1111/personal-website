@@ -1,5 +1,5 @@
 import { Theme } from '@mui/material/styles';
-import { SIZES, FONT_SIZES, FONT_WEIGHTS } from '../../store/redux/theme/CONSTANTS';
+import { SIZES, FONT_SIZES, FONT_WEIGHTS } from 'src/store/redux/theme/CONSTANTS';
 
 export const seriesComponentGridRoot = () => ({
   display: 'flex',

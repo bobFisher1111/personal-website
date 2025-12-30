@@ -1,4 +1,4 @@
-import React, { FC, Fragment, KeyboardEvent, MouseEvent, useState } from 'react';
+import { Fragment, KeyboardEvent, MouseEvent, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useTheme } from '@mui/material/styles';
 import {
@@ -12,10 +12,9 @@ import {
 import { Link } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
-import SocialMediaComponent from '../../../socialMediaComponent/SocialMediaComponent';
-import LightDarkMode from '../../../../layout/appBar/lightDarkMode/LightDarkMode';
-import AppConfig from '../../../../config';
-
+import SocialMediaComponent from 'src/components/socialMediaComponent/SocialMediaComponent';
+import LightDarkMode from 'src/layout/appBar/lightDarkMode/LightDarkMode';
+import AppConfig from 'src/config';
 import {
   MenuIconStyle,
   BoxMobileDrawerStyle,
@@ -25,12 +24,11 @@ import {
   GridSectionsStyle,
   TypographyMobileDrawer,
 } from './MobileDrawerStyle';
-
-import { LinkStyles } from '../../../../util/styles/LinkStyles';
+import { LinkStyles } from 'src/util/styles/LinkStyles';
 
 type Anchor = 'left';
 
-const MobileDrawer: FC = () => {
+const MobileDrawer = () => {
   const [state, setState] = useState({ left: false });
   const theme = useTheme();
   const colorTheme = useSelector((state: any) => state.theme.darkTheme);

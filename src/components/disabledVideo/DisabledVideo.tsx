@@ -1,6 +1,6 @@
 import { Box, Grid, Typography, useTheme } from '@mui/material';
-import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
-import YoutTubeLogoDark from '../../assets/icons/yt_icon_mono_dark.png';
+import YoutTubeLogo from 'src/assets/icons/YoutTubeLogo.png';
+import YoutTubeLogoDark from 'src/assets/icons/yt_icon_mono_dark.png';
 import { RootStyles, YouTubeDisabledStyle } from './DisabledVideoStyles';
 
 export type Props = {

@@ -1,9 +1,9 @@
 import { Grid, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { useTheme } from '@mui/material/styles';
-import HeaderComponent from '../headerComponent/HeaderComponent';
-import SocialMediaComponent from '../socialMediaComponent/SocialMediaComponent';
-import TabsComponent from '../tabsComponent/TabsComponent';
+import HeaderComponent from 'src/components/headerComponent/HeaderComponent';
+import SocialMediaComponent from 'src/components/socialMediaComponent/SocialMediaComponent';
+import TabsComponent from 'src/components/tabsComponent/TabsComponent';
 import AuthorComponetTabData from './AuthorComponetTabData';
 import {
   authorComponentGridRoot,

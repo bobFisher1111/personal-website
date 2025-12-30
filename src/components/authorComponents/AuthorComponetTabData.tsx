@@ -1,6 +1,6 @@
-import ArticleList from '../articleList/ArticleList';
-import Series from '../seriesComponent/Series';
-import Works from '../works/Works';
+import ArticleList from 'src/components/articleList/ArticleList';
+import Series from 'src/components/seriesComponent/Series';
+import Works from 'src/components/works/Works';
 
 const AuthorComponetTabData = (
   authorsData: any,

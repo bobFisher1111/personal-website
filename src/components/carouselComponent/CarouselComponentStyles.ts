@@ -1,6 +1,6 @@
 import {
   COLORS,
-} from '../../store/redux/theme/CONSTANTS';
+} from 'src/store/redux/theme/CONSTANTS';
 
 export const cardStyles = (theme: boolean) => ({
   display: 'flex', 

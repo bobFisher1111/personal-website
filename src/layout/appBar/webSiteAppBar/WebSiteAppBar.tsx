@@ -2,9 +2,9 @@ import { Grid, Typography, useTheme } from '@mui/material';
 import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 // import SocialMediaComponent from '../../../components/socialMediaComponent/SocialMediaComponent';
-import AppBarLinksToPages from '../appBarLinksToPages/AppBarLinksToPages';
-import LightDarkMode from '../lightDarkMode/LightDarkMode';
-import MobileDrawer from '../../../components/writers/writersCard/mobileDrawer/MobileDrawer';
+import AppBarLinksToPages from 'src/layout/appBar/appBarLinksToPages/AppBarLinksToPages';
+import LightDarkMode from 'src/layout/appBar/lightDarkMode/LightDarkMode';
+import MobileDrawer from 'src/components/writers/writersCard/mobileDrawer/MobileDrawer';
 import {
   AppBarStyle,
   // GridDesktopAppBar,
@@ -12,7 +12,7 @@ import {
   TypographyDesktopTitle,
   GridDesktopAppBar2
 } from './WebSiteAppBarStyles';
-import { LinkStyles } from '../../../util/styles/LinkStyles';
+import { LinkStyles } from 'src/util/styles/LinkStyles';
 // import AppConfig from '../../../config';
 
 const WebSiteAppBar = () => {

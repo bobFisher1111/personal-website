@@ -1,5 +1,5 @@
 import { Theme } from '@mui/material';
-import { SIZES } from '../../store/redux/theme/CONSTANTS';
+import { SIZES } from 'src/store/redux/theme/CONSTANTS';
 
 export const SectionComponentGridRoot = (theme: Theme) => ({
   display: 'flex',

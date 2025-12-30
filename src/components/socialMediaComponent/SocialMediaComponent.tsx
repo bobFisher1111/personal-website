@@ -1,12 +1,12 @@
 import { useSelector } from 'react-redux';
 import { useTheme } from '@mui/material/styles';
 import { Box, Grid } from '@mui/material';
-import CopyLinkComponent from '../copyLinkComponent/CopyLinkComponent';
-import TwitterLogo from '../../assets/icons/logo-black.png';
-import TwitterLogoDark from '../../assets/icons/logo-white.png';
-import YoutTubeLogo from '../../assets/icons/YoutTubeLogo.png';
-import YoutTubeLogoDark from '../../assets/icons/yt_icon_mono_dark.png';
-// import FacebookLogo from '../../assets/icons/FacebookLogo.png';
+import CopyLinkComponent from 'src/components/copyLinkComponent/CopyLinkComponent';
+import TwitterLogo from 'src/assets/icons/logo-black.png';
+import TwitterLogoDark from 'src/assets/icons/logo-white.png';
+import YoutTubeLogo from 'src/assets/icons/YoutTubeLogo.png';
+import YoutTubeLogoDark from 'src/assets/icons/yt_icon_mono_dark.png';
+// import FacebookLogo from 'src/assets/icons/FacebookLogo.png';
 import {
   socialMediaIconStyle,
   socialMediaGridItemStyle,

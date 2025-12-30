@@ -8,9 +8,9 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
-import { appBaseURL } from '../../../../config';
-import CopyLinkComponent from '../../../copyLinkComponent/CopyLinkComponent';
-import { LinkStyles } from '../../../../util/styles/LinkStyles';
+import { appBaseURL } from 'src/config';
+import CopyLinkComponent from 'src/components/copyLinkComponent/CopyLinkComponent';
+import { LinkStyles } from 'src/util/styles/LinkStyles';
 import {
   CardMediaVerticalCardImage,
   CardMediaVerticalCardVideo,

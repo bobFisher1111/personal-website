@@ -1,4 +1,3 @@
-import React, { FC } from 'react';
 import {
   Button,
   Grid,
@@ -17,9 +16,9 @@ import {
   UserAgreementTitleStyles,
 } from './TermsOfServiceComponentStyles';
 
-const TermsOfServiceComponent: FC<Props> = ({
+const TermsOfServiceComponent = ({
   closeDrawer,
-}) => {
+}: Props) => {
   const Subtitle: string = "Please read this agreement carefully. It sets forth legally binding terms and conditions for your use of the services, as defined below.";
   const AgreementBetweenUserAndGamersShrine = "By entering our website you agree to not sue for any reason. This is a hobbyist site created by a group of friends. We may get information wrong and it’s always up to the user to do additional research verifying what we are saying is correct. We offer news, reviews, and tutorials. Not responsible if information given causes any damages or wrong. Before taking our information and applying it, it’s up to you to verify it’s correct. We also believe in freedom of speech and if you disagree with anything above. Do not enter the website.";
   const ChildrenUnderThirteen = "Gamers Shrine does not knowingly collect, either online or offline, personal information from persons under the age of thirteen. If you are under 18, you may use https://www.gamersshrine.com/ only with permission of a parent or guardian.";
