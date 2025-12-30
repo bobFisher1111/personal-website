@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 import Grid from '@mui/material/Grid';
-import ComingSoon from '../comingSoon/ComingSoon';
-import formatDate from '../../util/formatDate';
-import ArticleCard from '../cards/articleCards/horizontalCard/articleCard/ArticleCard';
+import ArticleCard from 'src/components/cards/articleCards/horizontalCard/articleCard/ArticleCard';
+import ComingSoon from 'src/components/comingSoon/ComingSoon';
+import formatDate from 'src/util/formatDate';
 
 
 export const ArticleList = ({

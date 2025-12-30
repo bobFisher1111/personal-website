@@ -1,9 +1,9 @@
 import { useLayoutEffect } from 'react';
-import Grid from '@mui/material/Grid';
-import HorizontalArticleCardComponent from '../cards/articleCards/horizontalCard/HorizontalArticleCardComponent';
 import { useSelector } from 'react-redux';
-import formatDate from '../../util/formatDate';
-import getNameFromUrl from '../../util/getNameFromUrl';
+import Grid from '@mui/material/Grid';
+import HorizontalArticleCardComponent from 'src/components/cards/articleCards/horizontalCard/HorizontalArticleCardComponent';
+import formatDate from 'src/util/formatDate';
+import getNameFromUrl from 'src/util/getNameFromUrl';
 import {
   CreateArticleRoot,
   GridRoot,
@@ -73,13 +73,7 @@ const ArticlePage = () => {
               mobileImageWidth={'22px'}
               videoHeight={false}
             />
-            
-            <Grid
-              // sx={CreateArticleStyle}
-            >
-              {/* {articleArray?.map((item: any) => (
-                CreateArticle(item)
-              ))} */}
+            <Grid>
               <MarkDownComponent />
             </Grid>
           </Grid>

@@ -130,3 +130,246 @@ export const SIZES = {
     tooltip: 1500,
   },
 };
+
+export const MARKDOWN_STYLES = {
+  light: {
+    container: {
+      fontFamily: '"Inter", "Segoe UI", "Helvetica Neue", "Arial", sans-serif',
+      color: COLORS.light.text.primary,
+      backgroundColor: COLORS.light.secondary,
+      px: { xs: 2, sm: 3, md: 4 },
+      py: 4,
+    },
+    headings: {
+      h1: {
+        variant: 'h3',
+        sx: { fontWeight: 'bold', color: COLORS.light.primary, mt: 2, mb: 1 },
+      },
+      h2: {
+        variant: 'h4',
+        sx: { fontWeight: 600, color: COLORS.light.primary, mt: 2, mb: 1 },
+      },
+      h3: {
+        variant: 'h5',
+        sx: { fontWeight: 500, color: COLORS.light.text.primary, mt: 1.5, mb: 0.5 },
+      },
+      h4: {
+        variant: 'h6',
+        sx: { fontWeight: 500, color: COLORS.light.text.primary, mt: 1.5, mb: 0.5 },
+      },
+      h5: {
+        variant: 'subtitle1',
+        sx: { fontWeight: 500, color: COLORS.light.text.primary, mt: 1, mb: 0.5 },
+      },
+      h6: {
+        variant: 'subtitle2',
+        sx: { fontWeight: 500, color: COLORS.light.text.primary, mt: 1, mb: 0.5 },
+      },
+    },
+    text: {
+      paragraph: {
+        variant: 'body1',
+        sx: { textIndent: '20px', mb: 2, color: COLORS.light.text.primary },
+      },
+      strong: {
+        sx: { fontWeight: 'bold', color: COLORS.light.text.primary },
+      },
+      em: {
+        sx: { fontStyle: 'italic', color: COLORS.light.text.primary },
+      },
+      del: {
+        sx: { textDecoration: 'line-through', color: COLORS.light.text.secondary },
+      },
+    },
+    lists: {
+      ul: {
+        sx: { pl: 4, mb: 2, listStyleType: 'disc', color: COLORS.light.text.primary },
+      },
+      ol: {
+        sx: { pl: 4, mb: 2, listStyleType: 'decimal', color: COLORS.light.text.primary },
+      },
+      li: {
+        sx: { mb: 1, color: COLORS.light.text.primary },
+      },
+    },
+    links: {
+      sx: { underline: 'hover', color: COLORS.light.primary },
+    },
+    images: {
+      sx: {
+        display: 'block',
+        maxWidth: '100%',
+        height: 'auto',
+        margin: '0 auto',
+        borderRadius: 2,
+        my: 2,
+        border: `1px solid ${COLORS.light.text.secondary}`,
+      },
+    },
+    code: {
+      inline: {
+        sx: { fontFamily: 'monospace', backgroundColor: '#f0f0f0', color: COLORS.light.text.primary, px: 0.5, borderRadius: 1 },
+      },
+      block: {
+        sx: {
+          fontFamily: '"Source Code Pro", "Roboto Mono", monospace',
+          backgroundColor: '#f5f5f5',
+          color: COLORS.light.text.primary,
+          p: 2,
+          borderRadius: 2,
+          overflowX: 'auto',
+          fontSize: '0.9rem',
+          my: 2,
+          border: `1px solid ${COLORS.light.text.secondary}`,
+        },
+      },
+    },
+    blockquote: {
+      sx: {
+        borderLeft: `4px solid ${COLORS.light.primary}`,
+        pl: 2,
+        ml: 0,
+        color: COLORS.light.text.secondary,
+        fontStyle: 'italic',
+        my: 2,
+      },
+    },
+    table: {
+      table: {
+        sx: { width: '100%', borderCollapse: 'collapse', my: 3 },
+      },
+      thead: {
+        sx: { backgroundColor: '#f0f0f0', color: COLORS.light.text.primary },
+      },
+      tr: {
+        sx: { borderBottom: `1px solid ${COLORS.light.text.secondary}` },
+      },
+      th: {
+        sx: { textAlign: 'left', p: 1, fontWeight: 'bold', color: COLORS.light.text.primary },
+      },
+      td: {
+        sx: { textAlign: 'left', p: 1, color: COLORS.light.text.primary },
+      },
+    },
+  },
+  dark: {
+    container: {
+      fontFamily: '"Inter", "Segoe UI", "Helvetica Neue", "Arial", sans-serif',
+      color: COLORS.dark.text.primary,
+      backgroundColor: COLORS.dark.appBar,
+      px: { xs: 2, sm: 3, md: 4 },
+      py: 4,
+    },
+    headings: {
+      h1: {
+        variant: 'h3',
+        sx: { fontWeight: 'bold', color: COLORS.dark.primary, mt: 2, mb: 1 },
+      },
+      h2: {
+        variant: 'h4',
+        sx: { fontWeight: 600, color: COLORS.dark.primary, mt: 2, mb: 1 },
+      },
+      h3: {
+        variant: 'h5',
+        sx: { fontWeight: 500, color: COLORS.dark.text.primary, mt: 1.5, mb: 0.5 },
+      },
+      h4: {
+        variant: 'h6',
+        sx: { fontWeight: 500, color: COLORS.dark.text.primary, mt: 1.5, mb: 0.5 },
+      },
+      h5: {
+        variant: 'subtitle1',
+        sx: { fontWeight: 500, color: COLORS.dark.text.primary, mt: 1, mb: 0.5 },
+      },
+      h6: {
+        variant: 'subtitle2',
+        sx: { fontWeight: 500, color: COLORS.dark.text.primary, mt: 1, mb: 0.5 },
+      },
+    },
+    text: {
+      paragraph: {
+        variant: 'body1',
+        sx: { textIndent: '20px', mb: 2, color: COLORS.dark.text.primary },
+      },
+      strong: {
+        sx: { fontWeight: 'bold', color: COLORS.dark.text.primary },
+      },
+      em: {
+        sx: { fontStyle: 'italic', color: COLORS.dark.text.primary },
+      },
+      del: {
+        sx: { textDecoration: 'line-through', color: COLORS.dark.text.secondary },
+      },
+    },
+    lists: {
+      ul: {
+        sx: { pl: 4, mb: 2, listStyleType: 'disc', color: COLORS.dark.text.primary },
+      },
+      ol: {
+        sx: { pl: 4, mb: 2, listStyleType: 'decimal', color: COLORS.dark.text.primary },
+      },
+      li: {
+        sx: { mb: 1, color: COLORS.dark.text.primary },
+      },
+    },
+    links: {
+      sx: { underline: 'hover', color: COLORS.dark.primary },
+    },
+    images: {
+      sx: {
+        display: 'block',
+        maxWidth: '100%',
+        height: 'auto',
+        margin: '0 auto',
+        borderRadius: 2,
+        my: 2,
+        border: `1px solid ${COLORS.dark.text.secondary}`,
+      },
+    },
+    code: {
+      inline: {
+        sx: { fontFamily: 'monospace', backgroundColor: '#2a2a2a', color: COLORS.dark.text.primary, px: 0.5, borderRadius: 1 },
+      },
+      block: {
+        sx: {
+          fontFamily: '"Source Code Pro", "Roboto Mono", monospace',
+          backgroundColor: '#2a2a2a',
+          color: COLORS.dark.text.primary,
+          p: 2,
+          borderRadius: 2,
+          overflowX: 'auto',
+          fontSize: '0.9rem',
+          my: 2,
+          border: `1px solid ${COLORS.dark.text.secondary}`,
+        },
+      },
+    },
+    blockquote: {
+      sx: {
+        borderLeft: `4px solid ${COLORS.dark.primary}`,
+        pl: 2,
+        ml: 0,
+        color: COLORS.dark.text.secondary,
+        fontStyle: 'italic',
+        my: 2,
+      },
+    },
+    table: {
+      table: {
+        sx: { width: '100%', borderCollapse: 'collapse', my: 3 },
+      },
+      thead: {
+        sx: { backgroundColor: '#2a2a2a', color: COLORS.dark.text.primary },
+      },
+      tr: {
+        sx: { borderBottom: `1px solid ${COLORS.dark.text.secondary}` },
+      },
+      th: {
+        sx: { textAlign: 'left', p: 1, fontWeight: 'bold', color: COLORS.dark.text.primary },
+      },
+      td: {
+        sx: { textAlign: 'left', p: 1, color: COLORS.dark.text.primary },
+      },
+    },
+  },
+};
