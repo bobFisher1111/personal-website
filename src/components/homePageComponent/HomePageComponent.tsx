@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import ArticleList from "src/components/articleList/ArticleList";
 import SeriesComponent from "src/components/seriesList/SeriesComponent";
 import Sections from "./Sections";
-import Sections2 from "../sections/Sections2";
 import {
   GridRoot,
   SectionTextStyles,
@@ -24,16 +23,13 @@ const HomePageComponent = () => {
 
   return (
     <Grid container justifyContent="center" alignItems="center" sx={GridRoot(theme)}>
-      {/* <Grid size={12}>
+      <Grid size={12}>
         <Sections
           data={articleData}
           series={seriesData}
-          setData={setData}
-          setSeries={setSeries}
+          setData={() => {}} // Update this later once state is added and create data
+          setSeries={() => {}} // Update this later once state is added and create data
         />
-      </Grid> */}
-      <Grid size={12}>
-        <Sections2 />
       </Grid>
 
       <Grid size={12}>

@@ -1,89 +1,106 @@
 import { useState } from "react";
+import { Box, Button, Container, useMediaQuery, useTheme } from "@mui/material";
 import { useSelector } from "react-redux";
-import { Grid, Typography, useTheme } from "@mui/material";
 import {
-  SectionNotSelectedStyles,
-  SectionSelectedStyles,
-} from "./HomePageComponentStyles";
+  navContainerStyles,
+  mobileScrollBoxStyles,
+  mobileButtonStyles,
+  desktopScrollBoxStyles,
+  desktopButtonStyles,
+  getColorVariables,
+} from './SectionsStyles';
 
-const Sections = ({ data, series, setData, setSeries }: Props) => {
-  const [sectionSelect, setSectionSelect] = useState<number>(1);
-  const theme = useTheme();
-  const darkTheme = useSelector((state: any) => state.theme.darkTheme);
+interface SectionData {
+  [key: string]: unknown;
+  section: string;
+}
 
-  const reviewsFilter = data?.filter((item: any) => item.section === "Reviews");
-  const gamingFilter = data?.filter((item: any) => item.section === "Video Games");
-  const codingFilter = data?.filter((item: any) => item.section === "Coding");
-  const storiesFilter = data?.filter((item: any) => item.section === "Stories");
+interface SeriesData {
+  [key: string]: unknown;
+  section: string;
+}
 
-  const reviewsFilterSeries = series?.filter((item: any) => item.section === "Reviews");
-  const gamingFilterSeries = series?.filter((item: any) => item.section === "Video Games");
-  const codingFilterSeries = series?.filter((item: any) => item.section === "Coding");
-  const storiesFilterSeries = series?.filter((item: any) => item.section === "Stories");
+interface Props {
+  data: SectionData[];
+  series: SeriesData[];
+  setData: (data: SectionData[]) => void;
+  setSeries: (series: SeriesData[]) => void;
+}
 
-  const handleSectionChange = (id: number) => {
-    setSectionSelect(id);
-    switch (id) {
-      case 1:
-        setSeries(series);
-        setData(data);
-        break;
-      case 2:
-        setSeries(reviewsFilterSeries);
-        setData(reviewsFilter);
-        break;
-      case 3:
-        setSeries(gamingFilterSeries);
-        setData(gamingFilter);
-        break;
-      case 4:
-        setSeries(codingFilterSeries);
-        setData(codingFilter);
-        break;
-      case 5:
-        setSeries(storiesFilterSeries);
-        setData(storiesFilter);
-        break;
-    }
+const SECTION_NAMES = [
+  "Reviews",
+  "Retro RPGs",
+  "Modern RPGs",
+  "Indie RPGs",
+  "Guides & Builds",
+  "Lore & Worldbuilding",
+  "News",
+  "Community",
+] as const;
+
+const filterDataBySection = (
+  data: SectionData[],
+  series: SeriesData[],
+  section: string
+): { filteredData: SectionData[]; filteredSeries: SeriesData[] } => {
+  const filteredData = data?.filter((item) => item.section === section) || [];
+  const filteredSeries = series?.filter((item) => item.section === section) || [];
+  return { filteredData, filteredSeries };
+};
+
+export default function Sections2({ data, series, setData, setSeries }: Props) {
+  const isMobile = useMediaQuery(useTheme().breakpoints.down("sm"));
+  const isDarkTheme = useSelector((state: any) => state.theme.darkTheme);
+  const [activeSection, setActiveSection] = useState<string>(SECTION_NAMES[0]);
+  const { textColor, borderColor, hoverBg, hoverText } = getColorVariables(isDarkTheme);
+
+  const handleSectionChange = (section: string) => {
+    setActiveSection(section);
+    const { filteredData, filteredSeries } = filterDataBySection(data, series, section);
+    setSeries(filteredSeries);
+    setData(filteredData);
   };
 
-  return (
-    <Grid
-      container
-      justifyContent="center"
-      alignItems="center"
-      spacing={2}
-      sx={{ margin: theme.spacing(3, 0) }}
+  const SectionButton = ({ section, isMobileView }: { section: string; isMobileView: boolean }) => (
+    <Button
+      key={section}
+      onClick={() => handleSectionChange(section)}
+      sx={
+        isMobileView
+          ? mobileButtonStyles(activeSection, section, isDarkTheme, borderColor, hoverBg, hoverText, textColor)
+          : desktopButtonStyles(activeSection, section, isDarkTheme)
+      }
     >
-      {[
-        { label: "ALL", id: 1 },
-        { label: "Reviews", id: 2 },
-        { label: "Gaming", id: 3 },
-        { label: "Coding", id: 4 },
-        { label: "Stories", id: 5 },
-      ].map(({ label, id }) => (
-        <Typography
-          key={label}
-          id={`${label}_Button`}
-          onClick={() => handleSectionChange(id)}
-          sx={
-            sectionSelect === id
-              ? SectionSelectedStyles(darkTheme, theme)
-              : SectionNotSelectedStyles(darkTheme, theme)
-          }
-        >
-          {label}
-        </Typography>
-      ))}
-    </Grid>
+      {section}
+    </Button>
   );
-};
 
-export type Props = {
-  data: any;
-  series: any;
-  setData: any;
-  setSeries: any;
-};
-
-export default Sections;
+  return (
+    <Box component="nav" sx={navContainerStyles(isDarkTheme)}>
+      <Container
+        maxWidth="lg"
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          borderRadius: 1,
+          px: isMobile ? 1 : 2,
+        }}
+      >
+        {isMobile ? (
+          <Box sx={mobileScrollBoxStyles}>
+            {SECTION_NAMES.map((section) => (
+              <SectionButton key={section} section={section} isMobileView={true} />
+            ))}
+          </Box>
+        ) : (
+          <Box sx={desktopScrollBoxStyles(isDarkTheme)}>
+            {SECTION_NAMES.map((section) => (
+              <SectionButton key={section} section={section} isMobileView={false} />
+            ))}
+          </Box>
+        )}
+      </Container>
+    </Box>
+  );
+}
