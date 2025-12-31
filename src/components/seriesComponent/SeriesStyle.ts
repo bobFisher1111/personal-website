@@ -94,6 +94,25 @@ export const TypographySeriesTitle = (theme: Theme) => ({
   },
 });
 
+export const GridSeriesContentContainer = (theme: Theme) => ({
+  display: 'flex',
+  flexDirection: { xs: 'column', md: 'row' } as any,
+  gap: '16px',
+  alignItems: 'flex-start',
+});
+
+export const GridSeriesCardWrapper = () => ({
+  flexShrink: 0,
+});
+
+export const GridSeriesTextContent = (theme: Theme) => ({
+  flex: 1,
+  minWidth: 0,
+  [theme.breakpoints.down('md')]: {
+    width: '100%',
+  },
+});
+
 export default [
   GridMarginLeft,
   GridSeriesReadMoreMargin,
@@ -103,4 +122,7 @@ export default [
   TypographySeriesArticleSubTitle,
   TypographySeriesArticleTitle,
   TypographySeriesTitle,
+  GridSeriesContentContainer,
+  GridSeriesCardWrapper,
+  GridSeriesTextContent,
 ];

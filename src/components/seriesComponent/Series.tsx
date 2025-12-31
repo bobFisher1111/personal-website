@@ -20,6 +20,9 @@ import {
   TypographySeriesArticleSubTitle,
   TypographySeriesArticleTitle,
   TypographySeriesTitle,
+  GridSeriesContentContainer,
+  GridSeriesCardWrapper,
+  GridSeriesTextContent,
 } from './SeriesStyle';
 
 export const Series = ({
@@ -106,7 +109,7 @@ export const Series = ({
         <Grid
           container
           key={`${id}-${index}`}
-          direction="row"
+          direction="column"
           justifyContent="flex-start"
           alignItems="flex-start"
           sx={GridSeriesRoot}
@@ -116,8 +119,12 @@ export const Series = ({
               {`${item.section}: ${item.series_title}`}
             </Typography>
           </Grid>
-          <Grid container>
-            <Grid sx={GridMarginLeft(theme)}>
+          <Grid 
+            container 
+            size={12}
+            sx={GridSeriesContentContainer(theme)}
+          >
+            <Grid sx={GridSeriesCardWrapper()}>
               <VerticalArticleCardComponent
                 key={`${id}-${index}`}
                 name={item.series_authors}
@@ -126,16 +133,7 @@ export const Series = ({
                 isOnArticlePage={false}
               />
             </Grid>
-            <Grid
-              size={{
-                xs: 12,
-                sm: 6,
-                md: 7,
-                lg: 7,
-                xl: 7,
-              }}
-              sx={GridMarginLeft(theme)}
-            >
+            <Grid sx={GridSeriesTextContent(theme)}>
               {textLoop(item, index)}
               {(filteredSeriesList?.[index]?.length ?? 0) >= 4 && (
                 <Grid container sx={GridSeriesReadMoreMargin(theme)}>

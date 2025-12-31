@@ -99,7 +99,7 @@ export const imageHorizontalArticleStyles = (
   border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
   borderRadius: SIZES.borderRadius,
   height: articlePage ? 'auto' : SIZES.height.horizontalCardImage,
-  objectFit: 'cover',
+  objectFit: 'cover' as const,
   aspectRatio: '16/9',
   width: articlePage ? '100%' : SIZES.width.horizontalCardSmall,
   maxWidth: articlePage ? SIZES.width.horizontalCardMedium : undefined,
