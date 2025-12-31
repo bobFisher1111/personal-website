@@ -55,11 +55,17 @@ export const mobileButtonStyles = (
   border: `1px solid ${borderColor}`,
   cursor: "pointer",
   transition: 'all 0.2s ease',
+  WebkitTapHighlightColor: 'transparent',
   "&:hover": {
     backgroundColor: hoverBg,
     color: hoverText,
     borderColor: hoverBg,
     transform: "scale(1.05)",
+  },
+  "&:active": {
+    backgroundColor: hoverBg,
+    color: hoverText,
+    borderColor: hoverBg,
   },
 });
 
@@ -99,11 +105,17 @@ export const desktopButtonStyles = (
     : 'transparent',
   border: `1px solid transparent`,
   borderRadius: activeSection === section ? 1 : 0,
+  WebkitTapHighlightColor: 'transparent',
   "&:hover": {
     color: isDarkTheme ? COLORS.dark.primary : COLORS.light.secondary,
     backgroundColor: isDarkTheme ? COLORS.dark.secondary : COLORS.light.accent.green2,
     borderColor: isDarkTheme ? COLORS.dark.primary : COLORS.light.primary,
     borderRadius: 1,
+  },
+  "&:active": {
+    color: isDarkTheme ? COLORS.dark.primary : COLORS.light.secondary,
+    backgroundColor: isDarkTheme ? COLORS.dark.secondary : COLORS.light.accent.green2,
+    borderColor: isDarkTheme ? COLORS.dark.primary : COLORS.light.primary,
   },
 });
 
