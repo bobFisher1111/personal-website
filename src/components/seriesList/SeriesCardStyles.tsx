@@ -11,9 +11,10 @@ export const CardMediaVerticalCardImage = (theme: Theme) => ({
   objectFit: 'cover',
   width: '100%',
   height: 'auto',
+  aspectRatio: '16/9',
   [theme.breakpoints.up('sm')]: {
-    width: SIZES.imageAspectRatio16by9.width,
-    height: SIZES.imageAspectRatio16by9.height,
+    width: SIZES.width.seriesCardImage,
+    height: 'auto',
   },
   [theme.breakpoints.down('sm')]: {
     '&.MuiCardMedia-root': {
@@ -41,7 +42,7 @@ export const CardFooterStyle = (theme: Theme,darkTheme: boolean) => ({
 
 export const CardVerticalCard = (theme: Theme, darkTheme: boolean) => ({
   border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
-  width: 'clamp(240px, 25vw, 292px)',
+  width: SIZES.width.seriesCard,
   borderRadius: SIZES.borderRadius,
   boxShadow: 'none',
   [theme.breakpoints.down('sm')]: {

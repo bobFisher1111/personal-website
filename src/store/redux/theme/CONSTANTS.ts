@@ -127,6 +127,8 @@ const SIZES = {
     full: '100%',
     imageMin: '15rem',     // 240px
     imageMax: '18.75rem',  // 300px
+    seriesCardImage: '12.75rem', // 204px - series card image width
+    seriesCard: '12.75rem', // 204px - series card container width
     horizontalCardContainer: '41.25rem', // 660px - container width
     horizontalCardMedium: '46.875rem', // 750px - medium card width
     horizontalCardSmall: '20.0625rem', // 321px - small card width
