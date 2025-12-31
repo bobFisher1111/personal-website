@@ -144,7 +144,7 @@ const SIZES = {
     horizontalCardImage: '11.3125rem', // 181px - horizontal card image height
     horizontalCardVideoTall: '27.75rem', // 444px - video height
     horizontalCardVideoArticle: '35rem', // 560px - article page video height
-    rootTall: '14.6875rem',     // 235px
+    rootTall: '12rem',        // 200px
     rootShort: '9.0625rem',     // 145px
     rootSm: '8.75rem',          // 140px
     socialMediaIcons: '1rem',
