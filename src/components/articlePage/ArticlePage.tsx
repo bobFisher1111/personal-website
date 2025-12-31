@@ -74,7 +74,7 @@ const ArticlePage = () => {
               videoHeight={false}
             />
             <Grid>
-              <MarkDownComponent />
+              <MarkDownComponent markdownData={articleData?.markdown_data} />
             </Grid>
           </Grid>
         </Grid>
