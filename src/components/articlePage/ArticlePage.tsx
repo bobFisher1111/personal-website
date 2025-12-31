@@ -63,7 +63,7 @@ const ArticlePage = () => {
             <HorizontalArticleCardComponent
               author={authorData?.author_name}
               date={formatDate(articleData?.published_date)}
-              imageWidth={'1000px'}
+              imageWidth={'780px'}
               articlePage={true}
               useVideoInsteadOfImage={articleData?.use_video_instead_of_image}
               authorsId={articleData?.author_id}

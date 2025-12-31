@@ -1,21 +1,21 @@
+import { SIZES } from 'src/store/redux/theme/CONSTANTS';
+
+// WCAG AA optimal reading width: 50-75 characters per line (600-750px)
 export const CreateArticleRoot = {
   '@media only screen and (max-width: 600px)': {
     width: 'calc(100vw - 32px)',
   },
   '@media only screen and (min-width: 600px)': {
-    width: '600px',
+    width: '560px',
   },
   '@media only screen and (min-width: 768px)': {
-    width: '730px',
+    width: '640px',
   },
   '@media only screen and (min-width: 992px)': {
-    width: '960px',
+    width: '700px',
   },
   '@media only screen and (min-width: 1200px)': {
-    width: '900px',
-  },
-  '@media only screen and (min-width: 1280px)': {
-    width: '960px',
+    width: 'calc(' + SIZES.maxWidth.appBar + ' - 32px)',  // Use CONSTANTS for consistency
   },
 };
 
@@ -26,7 +26,7 @@ export const CreateArticleStyle = {
 };
 
 export const GridRoot = {
-  padding: '16px 0px 200px 0px',
+  padding: SIZES.spacing.md + ' 0px 200px 0px',
   '@media only screen and (max-width: 600px)': {
     padding: '0px 0px 200px 0px',
   },
@@ -36,8 +36,9 @@ export const GridRoot = {
 };
 
 export const GridHeader = {
-  width: '1000px',
+  width: '100%',
   paddingTop: '76px',
+  justifyContent: 'center',
 };
 
 export const GridAuthorComponent = {

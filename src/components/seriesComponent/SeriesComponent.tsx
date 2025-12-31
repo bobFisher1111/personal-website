@@ -54,7 +54,7 @@ const SeriesComponent = () => {
         <HorizontalArticleCardComponent
           author={seriesInfo?.series_authors}
           date={formatDate(seriesInfo?.series_start_date)}
-          imageWidth="1000px"
+          imageWidth="780px"
           articlePage={true}
           useVideoInsteadOfImage={seriesInfo?.use_video_instead_of_image}
           authorsId={seriesInfo?.author_id}

@@ -32,33 +32,26 @@ const WritersCard = ({
   return (
     <Grid container sx={WritersCardGridRoot()}>
       <Grid
-        size={{
-          xs: 3,
-          sm: 2,
-          md: 4,
-          lg: 4,
-          xl: 4,
+        sx={{
+          flex: '0 0 auto',
         }}
       >
         <Link to={`/author/${authorId}`} style={LinkStyles(colorTheme)}>
           <CardMedia
             component="img"
             image={authorImage}
-            sx={WritersCardAvatar(theme)}
+            sx={WritersCardAvatar(theme, colorTheme)}
             alt={`${authorName} image`}
             referrerPolicy="no-referrer"
           />
         </Link>
       </Grid>
       <Grid
-        size={{
-          xs: 9,
-          sm: 10,
-          md: 8,
-          lg: 8,
-          xl: 8,
+        sx={{
+          flex: '1 1 auto',
+          minWidth: 0,
         }}
-        sx={WritersCardGridAuthorName(theme)}
+        component="div"
       >
         <Link to={`/author/${authorId}`} style={LinkStyles(colorTheme)}>
           <Typography color="primary" sx={WritersCardTextAuthorName(theme)}>

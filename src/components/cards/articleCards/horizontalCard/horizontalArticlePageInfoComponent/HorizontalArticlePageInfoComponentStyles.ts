@@ -1,6 +1,7 @@
 import { Theme } from '@mui/material/styles';
 import {
   COLORS,
+  SIZES,
 } from 'src/store/redux/theme/CONSTANTS';
 
 export const avatarImageStyles = (theme: Theme, darkTheme: boolean) => ({
@@ -16,7 +17,7 @@ export const avatarImageStyles = (theme: Theme, darkTheme: boolean) => ({
 });
 
 export const gridArticleInfoComponent = (theme: Theme) => ({
-  maxWidth: '1200px',
+  maxWidth: SIZES.maxWidth.appBar,
   margin: 'auto',
   padding: '4px 0px 0px 0px',
   [theme.breakpoints.down('sm')]: {

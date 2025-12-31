@@ -1,14 +1,18 @@
 import { Theme } from '@mui/material/styles';
-import { FONT_SIZES } from 'src/store/redux/theme/CONSTANTS';
+import { FONT_SIZES, COLORS } from 'src/store/redux/theme/CONSTANTS';
 
 export const WritersCardGridRoot = () => ({
   padding: '8px 16px 16px 16px',
+  display: 'flex',
+  gap: '16px',
+  alignItems: 'flex-start',
 });
 
-export const WritersCardAvatar = (theme: Theme) => ({
+export const WritersCardAvatar = (theme: Theme, darkTheme: boolean) => ({
   width: '140px',
   height: '140px',
   borderRadius: '4px',
+  border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
   [theme.breakpoints.down('sm')]: {
     width: '80px',
     height: '110px',

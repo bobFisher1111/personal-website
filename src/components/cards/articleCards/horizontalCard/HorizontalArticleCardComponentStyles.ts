@@ -3,31 +3,31 @@ import {
   COLORS,
   SIZES,
 } from 'src/store/redux/theme/CONSTANTS';
-// Still need to do this file:
+
 export const articlePageRoot = (theme: Theme) => ({
-  padding: '8px 0px 0px 0px',
+  padding: SIZES.padding.articlePageRoot,
   [theme.breakpoints.down('sm')]: {
-    padding: '8px 8px 0px 8px',
+    padding: `${SIZES.spacing.xs} ${SIZES.spacing.xs} 0px ${SIZES.spacing.xs}`,
   },
 });
 
 export const cardGrid = (theme: Theme) => ({
-  height: '180px',
+  height: SIZES.height.horizontalCard,
   [theme.breakpoints.down('sm')]: {
-    padding: '8px',
-    height: '166px',
+    padding: SIZES.spacing.xs,
+    height: SIZES.height.horizontalCardSm,
   },
 });
 
 export const cardHorizontalArticleInfo = (articlePageList: boolean) => ({
-  height: '180px',
+  height: SIZES.height.horizontalCard,
   boxShadow: 'none',
-  padding: !articlePageList ? '0px 0px 0px 24px' : '',
+  padding: !articlePageList ? `0px 0px 0px ${SIZES.padding.cardLarge}` : '',
   '@media (min-width:900px)': {
-    width: '660px',
+    width: SIZES.width.horizontalCardContainer,
   },
   '@media (max-width:600px)': {
-    padding: '8px',
+    padding: SIZES.spacing.xs,
   },
 });
 
@@ -38,7 +38,7 @@ export const cardMediaArticleVideo = (
   mobileImageWidth: string,
   darkTheme: boolean,
 ) => ({
-  height: articlePage ? '576px' : videoHeight ? '444px' : '181px',
+  height: articlePage ? SIZES.height.horizontalCardVideoArticle : videoHeight ? SIZES.height.horizontalCardVideoTall : SIZES.height.horizontalCardImage,
   border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
   borderRadius: articlePage ? '0px' : '4px',
   aspectRatio: '16/9',
@@ -50,12 +50,12 @@ export const cardMediaArticleVideo = (
     minWidth: 'calc(100vw - 48px)',
   },
   '@media (min-width:1024px) and (max-width:1199px)': {
-    minWidth: articlePage ? '800px' : '300px',
-    maxWidth: articlePage ? '800px' : '300px',
+    minWidth: articlePage ? SIZES.width.horizontalCardMedium : SIZES.width.horizontalCardImageMedium,
+    maxWidth: articlePage ? SIZES.width.horizontalCardMedium : SIZES.width.horizontalCardImageMedium,
   },
   [theme.breakpoints.up('lg')]: {
-    minWidth: articlePage ? '960px' : '321px',
-    maxWidth: articlePage ? '960px' : '321px',
+    minWidth: articlePage ? SIZES.maxWidth.appBar : SIZES.width.horizontalCardSmall,
+    maxWidth: articlePage ? SIZES.maxWidth.appBar : SIZES.width.horizontalCardSmall,
   },
 });
 
@@ -66,11 +66,11 @@ export const gridHorizontalArticleContainer = (
 ) => ({
   width: '100%',
   display: 'flex',
-  margin: '0px 0px 16px 0px',
+  margin: `0px 0px ${SIZES.spacing.sm} 0px`,
   border: darkTheme || articlePage ? '' : '1px solid #0C0D0D',
   [theme.breakpoints.down('sm')]: {
     border: darkTheme || articlePage ? '' : '1px solid #0C0D0D',
-    padding: '6px 0px 0px 0px',
+    padding: `${SIZES.padding.cardSmall} 0px 0px 0px`,
   },
 });
 
@@ -81,9 +81,9 @@ export const gridHorizontalArticleMaxWidth = (
   articlePage: boolean
 ) => ({
   maxWidth: imageWidth,
-  height: darkTheme || articlePage ? undefined : '180px',
+  height: darkTheme || articlePage ? undefined : SIZES.height.horizontalCard,
   '@media (min-width:1024px) and (max-width:1199px)': {
-    maxWidth: articlePage ? '800px' : '300px',
+    maxWidth: articlePage ? SIZES.width.horizontalCardMedium : SIZES.width.horizontalCardImageMedium,
   },
   [theme.breakpoints.down('md')]: {
     height: undefined,
@@ -98,10 +98,11 @@ export const imageHorizontalArticleStyles = (
 ) => ({
   border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
   borderRadius: SIZES.borderRadius,
-  height: articlePage ? 'auto' : '181px',
+  height: articlePage ? 'auto' : SIZES.height.horizontalCardImage,
   objectFit: 'cover',
   aspectRatio: '16/9',
-  width: articlePage ? '960px' : '321px',
+  width: articlePage ? '100%' : SIZES.width.horizontalCardSmall,
+  maxWidth: articlePage ? SIZES.width.horizontalCardMedium : undefined,
   [theme.breakpoints.down('sm')]: {
     width: '100%',
     height: 'auto',
@@ -109,12 +110,9 @@ export const imageHorizontalArticleStyles = (
     paddingTop: 0,
   },
   [theme.breakpoints.up('sm')]: {
-    width: `calc(100vw - ${imageWidth || '48px'})`,
-  },
-  '@media (min-width:1024px) and (max-width:1199px)': {
-    width: articlePage ? '800px' : '300px',
+    width: articlePage ? '100%' : `calc(100vw - ${imageWidth || '48px'})`,
   },
   [theme.breakpoints.up('lg')]: {
-    width: articlePage ? '960px' : '321px',
+    width: articlePage ? SIZES.maxWidth.appBar : SIZES.width.horizontalCardSmall,
   },
 });

@@ -13,6 +13,9 @@ export const ArticleDataGridStyles = (theme: Theme) => ({
   justifyContent: 'space-between',
   paddingLeft: theme.spacing(SIZES.spacingNumeric.sm),
   paddingRight: theme.spacing(SIZES.spacingNumeric.sm),
+  [theme.breakpoints.up('sm')]: {
+    height: SIZES.height.articleTallExact,
+  },
 });
 
 export const ArticleImageStyles = ( theme: Theme, darkTheme: boolean) => ({
@@ -20,9 +23,10 @@ export const ArticleImageStyles = ( theme: Theme, darkTheme: boolean) => ({
   border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
   width: '100%',
   height: 'auto',
+  aspectRatio: '16/9',
+  objectFit: 'cover',
   [theme.breakpoints.up('sm')]: {
     width: SIZES.imageAspectRatio16by9.width,
-    height: SIZES.imageAspectRatio16by9.height,
   },
 });
 
@@ -33,10 +37,11 @@ export const ArticleVideoStyles = (
   borderRadius: SIZES.borderRadius,
   border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
   width: '100%',
-  height: SIZES.height.articleTallSm,
+  height: 'auto',
+  aspectRatio: '16/9',
+  objectFit: 'cover',
   [theme.breakpoints.up('sm')]: {
     width: SIZES.imageAspectRatio16by9.width,
-    height: SIZES.imageAspectRatio16by9.height,
   },
 });
 
@@ -69,9 +74,9 @@ export const AuthorNameStyles = (theme: Theme) => ({
 });
 
 export const ChipStyles = (theme: Theme) => ({
-  borderRadius: '0.25rem', // 4px
+  borderRadius: SIZES.chip.borderRadius,
   [theme.breakpoints.down('sm')]: {
-    fontSize: '0.625rem', // 10px
+    fontSize: SIZES.chip.fontSizeSm,
     height: SIZES.chip.heightSm,
   },
 });
@@ -101,15 +106,14 @@ export const LinkGridRootStyles = (
   theme: Theme,
   // articlePage: boolean
 ) => ({
-  maxHeight: SIZES.height.articleTall,
-  minHeight: SIZES.height.articleTall,
+  // maxHeight: SIZES.height.articleTall,
   width: SIZES.width.full,
   display: 'flex',
   justifyContent: 'flex-end',
   alignItems: 'flex-end',
   [theme.breakpoints.down('sm')]: {
-    maxHeight: '1.75rem',
-    minHeight: '1.75rem',
+    maxHeight: SIZES.chip.containerHeightMobile,
+    minHeight: SIZES.chip.containerHeightMobile,
   },
 });
 
@@ -118,7 +122,7 @@ export const RootStyles = (
   darkTheme: boolean,
 ) => ({
   margin: 'auto',
-  marginBottom: theme.spacing(SIZES.spacingNumeric.md),
+  // marginBottom: theme.spacing(SIZES.spacingNumeric.md),
   paddingLeft: theme.spacing(SIZES.spacingNumeric.sm),
   paddingRight: theme.spacing(SIZES.spacingNumeric.sm),
   flexGrow: 1,

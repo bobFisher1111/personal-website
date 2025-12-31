@@ -106,14 +106,20 @@ const SIZES = {
   },
   chip: {
     heightSm: '1.5rem',            // 24px
+    borderRadius: '0.25rem',       // 4px
+    fontSizeSm: '0.625rem',        // 10px
+    containerHeightMobile: '1.75rem',  // 28px - mobile chips container
   },
   maxWidth: {
-    appBar: '75rem',               // 1200px
-    screenWidth: '64rem',          // 1024px 
+    appBar: '54rem',               // 780px (WCAG AA optimal reading width)
+    screenWidth: '54rem',          // 780px (WCAG AA optimal reading width)
   },
   padding: {
     linkGridMobile: '0.25rem 1rem 0.25rem 0rem', // 4px 16px 4px 0px
     desktopTitle: '0rem 0rem 0rem 1rem',         // 0px 0px 0px 16px
+    cardLarge: '1.5rem',                          // 24px
+    cardSmall: '0.375rem',                        // 6px
+    articlePageRoot: '0.5rem 0px 0px 0px',        // 8px 0px 0px 0px
   },
   spacing: SPACING_VALUES,
   spacingNumeric: SPACING_NUMERIC,
@@ -121,13 +127,23 @@ const SIZES = {
     full: '100%',
     imageMin: '15rem',     // 240px
     imageMax: '18.75rem',  // 300px
+    horizontalCardContainer: '41.25rem', // 660px - container width
+    horizontalCardMedium: '46.875rem', // 750px - medium card width
+    horizontalCardSmall: '20.0625rem', // 321px - small card width
+    horizontalCardImageMedium: '18.75rem', // 300px - medium image width
   },
   height: {
     appBar: '2.5rem',           // 40px
     articleShort: '6.25rem',    // 100px
     articleTall: '7rem',        // 112px
+    articleTallExact: '7.172rem',  // 114.75px - matches 16:9 aspect ratio at 300px width
     articleShortSm: '5rem',     // 80px
     articleTallSm: '6.875rem',  // 110px
+    horizontalCard: '11.25rem', // 180px - horizontal card height
+    horizontalCardSm: '10.375rem', // 166px - mobile horizontal card height
+    horizontalCardImage: '11.3125rem', // 181px - horizontal card image height
+    horizontalCardVideoTall: '27.75rem', // 444px - video height
+    horizontalCardVideoArticle: '35rem', // 560px - article page video height
     rootTall: '14.6875rem',     // 235px
     rootShort: '9.0625rem',     // 145px
     rootSm: '8.75rem',          // 140px
@@ -244,7 +260,7 @@ const createMarkdownStyles = (mode: 'light' | 'dark') => {
     images: {
       sx: {
         display: 'block',
-        maxWidth: '100%',
+        maxWidth: '90%',
         height: 'auto',
         margin: '0 auto',
         borderRadius: 2,
