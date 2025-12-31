@@ -56,17 +56,6 @@ export const mobileButtonStyles = (
   cursor: "pointer",
   transition: 'all 0.2s ease',
   WebkitTapHighlightColor: 'transparent',
-  "&:hover": {
-    backgroundColor: hoverBg,
-    color: hoverText,
-    borderColor: hoverBg,
-    transform: "scale(1.05)",
-  },
-  "&:active": {
-    backgroundColor: hoverBg,
-    color: hoverText,
-    borderColor: hoverBg,
-  },
 });
 
 export const desktopScrollBoxStyles = (isDarkTheme: boolean) => ({
