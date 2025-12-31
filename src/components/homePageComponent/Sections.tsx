@@ -52,7 +52,7 @@ export default function Sections2({ data, series, setData, setSeries }: Props) {
   const isMobile = useMediaQuery(useTheme().breakpoints.down("sm"));
   const isDarkTheme = useSelector((state: any) => state.theme.darkTheme);
   const [activeSection, setActiveSection] = useState<string>(SECTION_NAMES[0]);
-  const { textColor, borderColor, hoverBg, hoverText } = getColorVariables(isDarkTheme);
+  const { textColor, borderColor } = getColorVariables(isDarkTheme);
 
   const handleSectionChange = (section: string) => {
     setActiveSection(section);
@@ -67,7 +67,7 @@ export default function Sections2({ data, series, setData, setSeries }: Props) {
       onClick={() => handleSectionChange(section)}
       sx={
         isMobileView
-          ? mobileButtonStyles(activeSection, section, isDarkTheme, borderColor, hoverBg, hoverText, textColor)
+          ? mobileButtonStyles(activeSection, section, isDarkTheme, borderColor, textColor)
           : desktopButtonStyles(activeSection, section, isDarkTheme)
       }
     >

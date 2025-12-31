@@ -3,8 +3,6 @@ import { COLORS, FONT_SIZES, FONT_WEIGHTS } from "src/store/redux/theme/CONSTANT
 export const getColorVariables = (isDarkTheme: boolean) => ({
   textColor: isDarkTheme ? COLORS.dark.text.primary : COLORS.light.text.primary,
   borderColor: isDarkTheme ? COLORS.dark.primary : COLORS.light.accent.green3,
-  hoverBg: isDarkTheme ? COLORS.dark.primary : COLORS.light.accent.green1,
-  hoverText: isDarkTheme ? COLORS.dark.text.primary : COLORS.light.text.primary,
 });
 
 export const navContainerStyles = (isDarkTheme: boolean) => {
@@ -39,8 +37,6 @@ export const mobileButtonStyles = (
   section: string,
   isDarkTheme: boolean,
   borderColor: string,
-  hoverBg: string,
-  hoverText: string,
   textColor: string
 ) => ({
   flexShrink: 0,
@@ -50,8 +46,8 @@ export const mobileButtonStyles = (
   py: 0.75,
   borderRadius: 2,
   textTransform: "none" as const,
-  backgroundColor: activeSection === section ? hoverBg : isDarkTheme ? COLORS.dark.secondary : `${borderColor}20`,
-  color: activeSection === section ? isDarkTheme ? COLORS.dark.secondary : hoverText : textColor,
+  backgroundColor: activeSection === section ? isDarkTheme ? COLORS.dark.primary : COLORS.light.accent.green1 : isDarkTheme ? COLORS.dark.secondary : `${borderColor}20`,
+  color: activeSection === section ? isDarkTheme ? COLORS.dark.secondary : textColor : textColor,
   border: `1px solid ${borderColor}`,
   cursor: "pointer",
   transition: 'all 0.2s ease',
@@ -95,16 +91,13 @@ export const desktopButtonStyles = (
   border: `1px solid transparent`,
   borderRadius: activeSection === section ? 1 : 0,
   WebkitTapHighlightColor: 'transparent',
-  "&:hover": {
-    color: isDarkTheme ? COLORS.dark.primary : COLORS.light.secondary,
-    backgroundColor: isDarkTheme ? COLORS.dark.secondary : COLORS.light.accent.green2,
-    borderColor: isDarkTheme ? COLORS.dark.primary : COLORS.light.primary,
-    borderRadius: 1,
-  },
-  "&:active": {
-    color: isDarkTheme ? COLORS.dark.primary : COLORS.light.secondary,
-    backgroundColor: isDarkTheme ? COLORS.dark.secondary : COLORS.light.accent.green2,
-    borderColor: isDarkTheme ? COLORS.dark.primary : COLORS.light.primary,
+  "@media (hover: hover) and (pointer: fine)": {
+    "&:hover": {
+      color: isDarkTheme ? COLORS.dark.primary : COLORS.light.secondary,
+      backgroundColor: isDarkTheme ? COLORS.dark.secondary : COLORS.light.accent.green2,
+      borderColor: isDarkTheme ? COLORS.dark.primary : COLORS.light.primary,
+      borderRadius: 1,
+    },
   },
 });
 
