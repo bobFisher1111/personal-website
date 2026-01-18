@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Grid, Typography, useTheme, styled } from '@mui/material';
-import CopyLinkComponent from 'src/components/copyLinkComponent/CopyLinkComponent';
 import { LinkStyles } from 'src/util/styles/LinkStyles';
 import {
   avatarImageStyles,
@@ -12,14 +11,11 @@ import {
 } from './HorizontalArticlePageInfoComponentStyles';
 
 const HorizontalArticlePageInfoComponent = ({
-  getAuthorData,
-  authorsId,
   author,
+  authorsId,
   date,
-  justifyContent,
+  getAuthorData,
   section,
-  articleId,
-  series,
 }: Props) => {
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
   const muiTheme = useTheme();
@@ -29,13 +25,8 @@ const HorizontalArticlePageInfoComponent = ({
     maxHeight: '100%',
   });
 
-  const getSeriesIdFromUrl = () => {
-    const currentLocation = window.location.href;
-    return currentLocation.split('/').reverse()[0];
-  };
-
   return (
-    <Grid container direction="row" justifyContent={justifyContent} sx={gridArticleInfoComponent(muiTheme)}>
+    <Grid container direction="row" justifyContent={'center'} sx={gridArticleInfoComponent(muiTheme)}>
       <Link to={`/author/${authorsId}`} style={LinkStyles(darkTheme)}>
         <Img
           alt="Author avatar"
@@ -62,24 +53,6 @@ const HorizontalArticlePageInfoComponent = ({
       <Typography color="primary" sx={authorTextStyles(muiTheme)}>
         {section}
       </Typography>
-
-      <Typography color="primary" sx={separatorStyles}>|</Typography>
-
-      {series ? (
-        <CopyLinkComponent
-          seriesId={getSeriesIdFromUrl()}
-          padding="0px 0px 0px 16px"
-          email={false}
-          turnOnSeries={true}
-        />
-      ) : (
-        <CopyLinkComponent
-          authorsId={authorsId}
-          articleId={articleId}
-          padding="0px 0px 0px 16px"
-          email={false}
-        />
-      )}
     </Grid>
   );
 };
@@ -90,9 +63,6 @@ export type Props = {
   author: string;
   date: string;
   section: string;
-  articleId: string;
-  series?: boolean;
-  justifyContent: string;
 };
 
 export default HorizontalArticlePageInfoComponent;

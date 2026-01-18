@@ -1,0 +1,25 @@
+/*
+  - Things left to do before demo:
+    - Find Name for website
+    - Imporve Article Page:
+      - Markdown sizes
+      - Remove the copy from header // Completed
+      - Responsive, the image for article header gets to small at one point when it shouldnt have changed
+      - Style the divider that is there
+    - Writers Page:
+      - outline for avatar image border missing // completed
+    - desktop:
+    - Mobile
+      - homepage
+        - Series:
+            Make it where it doesnt take up complete width of row maybe 2 per row
+        - Latest Articles: 
+          - Maybe adjust the font size, see what we can do to improve that
+          - Author Page:
+            - Series:
+              - Make smaller, make it same that is found on homepage maybe desktop
+    - Wesite Structure, Move stuff to Pages instead of component like HomePageComponent and rename and stuff where it makes since
+  - After Meeting:
+    - Create about Section, currently clicking it does nothing
+    - Put back in and fix user agreeement
+*/

@@ -67,7 +67,6 @@ const ArticlePage = () => {
               articlePage={true}
               useVideoInsteadOfImage={articleData?.use_video_instead_of_image}
               authorsId={articleData?.author_id}
-              articleId={articleData?.article_id}
               videoOrImageCover={articleData?.cover_image_or_video}
               section={articleData?.section}
               mobileImageWidth={'22px'}

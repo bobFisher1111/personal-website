@@ -14,7 +14,7 @@ import {
   TypographyHeaderTitle,
 } from './HeaderComponentStyles';
 import { LinkStyles } from 'src/util/styles/LinkStyles';
-
+// Refactor this component, might not need like articlePage, stuff anymore
 const HeaderComponent = ({
   title,
   authorAvatar,
@@ -55,14 +55,14 @@ const HeaderComponent = ({
                 <Avatar 
                   alt="Authors Avatar"
                   src={avatarImage}
-                  sx={AvatarStyle}
+                  sx={AvatarStyle(theme)}
                 />
               </Link>
               :
               <Avatar 
                 alt="Authors Avatar"
                 src={avatarImage}
-                sx={AvatarStyle}
+                sx={AvatarStyle(theme)}
               />
             }
           </Grid>

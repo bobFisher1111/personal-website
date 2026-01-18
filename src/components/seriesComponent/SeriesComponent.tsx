@@ -58,10 +58,8 @@ const SeriesComponent = () => {
           articlePage={true}
           useVideoInsteadOfImage={seriesInfo?.use_video_instead_of_image}
           authorsId={seriesInfo?.author_id}
-          articleId="articleData?.articleId"
           videoOrImageCover={seriesInfo?.series_cover_image_or_video}
           section={seriesInfo?.section}
-          series={true}
           mobileImageWidth="30px"
           videoHeight={true}
         />

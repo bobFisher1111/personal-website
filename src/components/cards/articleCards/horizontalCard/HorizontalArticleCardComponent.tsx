@@ -23,9 +23,7 @@ const HorizontalArticleCardComponent = ({
   useVideoInsteadOfImage,
   section,
   authorsId,
-  articleId,
   videoOrImageCover,
-  series,
   articlePageList,
   mobileImageWidth,
   videoHeight,
@@ -71,14 +69,11 @@ const HorizontalArticleCardComponent = ({
         {articlePage && (
           <Grid container justifyContent="flex-start" alignItems="center" sx={articlePageRoot(muiTheme)}>
             <HorizontalArticlePageInfoComponent
-              getAuthorData={getAuthorData}
-              authorsId={authorsId}
               author={author}
+              authorsId={authorsId}
               date={date}
+              getAuthorData={getAuthorData}
               section={section}
-              articleId={articleId}
-              series={series}
-              justifyContent={series ? 'center' : 'flex-start'}
             />
           </Grid>
         )}
@@ -95,9 +90,7 @@ export type Props = {
   useVideoInsteadOfImage: boolean;
   section: string;
   authorsId: string;
-  articleId: string;
   videoOrImageCover: string;
-  series?: boolean;
   articlePageList?: any;
   mobileImageWidth: string;
   videoHeight: boolean;

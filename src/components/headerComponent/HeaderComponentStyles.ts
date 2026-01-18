@@ -1,14 +1,15 @@
-import { FONT_SIZES } from "src/store/redux/theme/CONSTANTS";
+import { COLORS, FONT_SIZES } from "src/store/redux/theme/CONSTANTS";
 
-export const AvatarStyle = {
+export const AvatarStyle = (darkTheme: boolean) => ({
   width: '100px',
   height: '100px',
   borderRadius: '4px',
+  border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
   '@media only screen and (max-width: 600px)': {
     width: '75px',
     height: '75px',
   },
-};
+});
 
 export const GridAvatarPadding = {
   padding: '25px 16px 25px 16px',
