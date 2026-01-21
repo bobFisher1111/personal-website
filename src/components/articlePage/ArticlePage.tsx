@@ -9,7 +9,7 @@ import {
   GridRoot,
   GridHeader,
 } from './ArticlePageStyles';
-import MarkDownComponent from './MarkDownComponent';
+import ArticleBody from './ArticleBody';
 
 const ArticlePage = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
@@ -73,7 +73,7 @@ const ArticlePage = () => {
               videoHeight={false}
             />
             <Grid>
-              <MarkDownComponent markdownData={articleData?.markdown_data} />
+              <ArticleBody html={articleData?.markdown_data} />
             </Grid>
           </Grid>
         </Grid>

@@ -64,11 +64,24 @@
       "series_id": 1,
       "series_chapter": "2",
       "series_type": "Review",
-
       "is_hidden": false,
       "article_id": 4,
       "use_video_instead_of_image": false
-    }
+    },
+    {
+    "article_subtitle": "Test 1",
+    "article_title": "Test 1",
+    "author_id": 1,
+    "cover_image_or_video": "https://images.igdb.com/igdb/image/upload/t_cover_big/co1wyy.jpg",
+    "markdown_data": "<h1 style=\"text-align: center;\">This is HTML</h1><p style=\"text-align: center;\">This is P</p><h2 style=\"text-align: center;\">This H2</h2><h3 style=\"text-align: center;\">This H3</h3><p style=\"text-align: center;\"></p><p style=\"text-align: center;\"><u>This is underline</u></p><p style=\"text-align: center;\"><strong>This is Bold</strong></p><p style=\"text-align: center;\"><em>This isItallic</em></p><p style=\"text-align: center;\"><s>This is Strike through</s></p><p style=\"text-align: center;\"><mark>This is Highlight</mark></p><blockquote style=\"text-align: center;\"><p style=\"text-align: center;\">This is blockquote</p></blockquote><p style=\"text-align: center;\"><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://ign.com\">This is link</a></p><img class=\"tiptap-image\" src=\"\thttps://images.igdb.com/igdb/image/upload/t_cover_big/co1wyy.jpg\" style=\"display: block; margin: 16px auto;\"><p></p>",
+    "published_date": "2026-01-19",
+    "is_hidden": false,
+    "use_video_instead_of_image": false,
+    "series_id": 1,
+    "series_chapter": 2,
+    "series_type": "Part 2",
+    "article_id": 5
+  }
   ],
   "authors": [
     {
