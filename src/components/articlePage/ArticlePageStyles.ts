@@ -15,7 +15,9 @@ export const CreateArticleRoot = {
     width: '700px',
   },
   '@media only screen and (min-width: 1200px)': {
-    width: 'calc(' + SIZES.maxWidth.appBar + ' - 32px)',  // Use CONSTANTS for consistency
+    // On large screens, cap the article text column at the
+    // dedicated article reading width (~780px).
+    width: SIZES.maxWidth.article,
   },
 };
 

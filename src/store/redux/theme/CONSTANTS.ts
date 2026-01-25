@@ -111,8 +111,9 @@ const SIZES = {
     containerHeightMobile: '1.75rem',  // 28px - mobile chips container
   },
   maxWidth: {
-    appBar: '54rem',               // 780px (WCAG AA optimal reading width)
-    screenWidth: '54rem',          // 780px (WCAG AA optimal reading width)
+    appBar: '54rem',               // App bar / shell max width
+    screenWidth: '54rem',          // General page max width
+    article: '50rem',           // ~780px article reading width at 16px root
   },
   padding: {
     linkGridMobile: '0.25rem 1rem 0.25rem 0rem', // 4px 16px 4px 0px

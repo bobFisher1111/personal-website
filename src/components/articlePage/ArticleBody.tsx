@@ -17,8 +17,11 @@ const ArticleBody: React.FC<ArticleBodyProps> = ({ html }) => {
 
   const contentSx = {
     ...markdownStyles.container,
+    // Let the parent (CreateArticleRoot/Grid) control the
+    // overall width. ArticleBody just styles inner elements.
     maxWidth: '100%',
-    mt: '100px',
+    width: 'auto',
+    mt: '20px',
     px: 0,
     pt: 0,
     '& h1': headings.h1.sx,
@@ -27,7 +30,10 @@ const ArticleBody: React.FC<ArticleBodyProps> = ({ html }) => {
     '& h4': headings.h4.sx,
     '& h5': headings.h5.sx,
     '& h6': headings.h6.sx,
-    '& p': text.paragraph.sx,
+    '& p': {
+      ...text.paragraph.sx,
+      maxWidth: 'none',
+    },
     '& strong': text.strong.sx,
     '& em': text.em.sx,
     '& del': text.del.sx,
@@ -35,6 +41,15 @@ const ArticleBody: React.FC<ArticleBodyProps> = ({ html }) => {
     '& ol': lists.ol.sx,
     '& li': lists.li.sx,
     '& li > p': lists.liParagraph.sx,
+    // Mirror list marker sizing in the preview: when a list item
+    // contains a span with a specific font size, apply that size
+    // to the li so the marker matches the text.
+    '& li:has(span[style*="font-size: 0.9rem"])': {
+      fontSize: '0.9rem',
+    },
+    '& li:has(span[style*="font-size: 1.2rem"])': {
+      fontSize: '1.2rem',
+    },
     '& a': links.sx,
     '& img': images.sx,
     '& code': code.inline.sx,

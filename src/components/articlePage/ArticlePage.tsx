@@ -72,9 +72,7 @@ const ArticlePage = () => {
               mobileImageWidth={'22px'}
               videoHeight={false}
             />
-            <Grid>
-              <ArticleBody html={articleData?.markdown_data} />
-            </Grid>
+            <ArticleBody html={articleData?.markdown_data} />
           </Grid>
         </Grid>
       </Grid>
