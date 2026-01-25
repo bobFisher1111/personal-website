@@ -21,7 +21,7 @@ const ArticleBody: React.FC<ArticleBodyProps> = ({ html }) => {
     // overall width. ArticleBody just styles inner elements.
     maxWidth: '100%',
     width: 'auto',
-    mt: '20px',
+    // mt: '20px',
     px: 0,
     pt: 0,
     '& h1': headings.h1.sx,
