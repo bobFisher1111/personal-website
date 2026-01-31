@@ -35,6 +35,7 @@ export const CardFooterStyle = (theme: Theme,darkTheme: boolean) => ({
   left: 0,
   width: '100%',
   bgcolor: darkTheme ? COLORS.dark.secondary : COLORS.light.primary,
+  opacity: 0.9,
   [theme.breakpoints.down('sm')]: {
     opacity: 0.8,
   },

@@ -42,7 +42,7 @@ const SocialMediaComponent = ({
         </a>
       </Grid> */}
 
-      <Grid sx={socialMediaGridItemStyle(theme, widthPadding, turnOnStyle)}>
+      {/* <Grid sx={socialMediaGridItemStyle(theme, widthPadding, turnOnStyle)}>
         <a href={twitter} target="_blank" rel="noreferrer" aria-label="X logo">
           <Box
             component="img"
@@ -62,7 +62,7 @@ const SocialMediaComponent = ({
             sx={socialMediaIconStyle(theme)}
           />
         </a>
-      </Grid>
+      </Grid> */}
 
       {turnOnEmail && (
         <Grid sx={emailGridStyle(turnOnEmailStyle)}>

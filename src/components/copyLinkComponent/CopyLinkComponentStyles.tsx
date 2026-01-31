@@ -1,16 +1,17 @@
 import { Theme } from '@mui/material';
+import { COLORS } from 'src/store/redux/theme/CONSTANTS';
 
 export const ContentCopyIconStyle = (
   theme: Theme,
   darkTheme: boolean,
   padding: string | number
 ) => ({
-  color: darkTheme ? '#9DB2BF' : '#0C0D0D',
+  color: darkTheme ? COLORS.dark.primary : COLORS.light.primary,
   padding,
   cursor: 'pointer',
   width: '40px',
   '&:hover': {
-    color: '#2F4C69',
+    color: darkTheme ? COLORS.dark.text.secondary : COLORS.light.accent.green3,
   },
   [theme.breakpoints.down('sm')]: {
     fontSize: '16px',
@@ -22,9 +23,9 @@ export const ContentCopyIconStyle = (
 export const EmailOutlinedIconStyles = (theme: Theme, darkTheme: boolean) => ({
   height: '30px',
   cursor: 'pointer',
-  color: darkTheme ? '#9DB2BF' : '#0C0D0D',
+  color: darkTheme ? COLORS.dark.primary : COLORS.light.primary,
   '&:hover': {
-    color: '#2F4C69',
+    color: darkTheme ? COLORS.dark.text.secondary : COLORS.light.accent.green2,
   },
   [theme.breakpoints.down('sm')]: {
     padding: 0,

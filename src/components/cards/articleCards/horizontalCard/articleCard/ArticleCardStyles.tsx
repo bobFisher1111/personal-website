@@ -12,7 +12,6 @@ export const ArticleDataGridStyles = (theme: Theme) => ({
   flexDirection: 'column',
   justifyContent: 'space-between',
   paddingLeft: theme.spacing(SIZES.spacingNumeric.sm),
-  paddingRight: theme.spacing(SIZES.spacingNumeric.sm),
   [theme.breakpoints.up('sm')]: {
     height: SIZES.height.articleTallExact,
   },
