@@ -1,104 +1,58 @@
-import { COLORS, FONT_SIZES, FONT_WEIGHTS } from "src/store/redux/theme/CONSTANTS";
-
-export const getColorVariables = (isDarkTheme: boolean) => ({
-  textColor: isDarkTheme ? COLORS.dark.text.primary : COLORS.light.text.primary,
-  borderColor: isDarkTheme ? COLORS.dark.primary : COLORS.light.accent.green3,
-});
+import { COLORS, FONT_SIZES, FONT_WEIGHTS, SIZES } from "src/store/redux/theme/CONSTANTS";
 
 export const navContainerStyles = (isDarkTheme: boolean) => {
-  const { borderColor } = getColorVariables(isDarkTheme);
   return {
     width: "100%",
-    backgroundColor: isDarkTheme ? COLORS.dark.appBar : COLORS.light.secondary,
+    // Light mode: primary green band.
+    // Dark mode: use appBar (very dark) so selected pills can be lighter.
+    backgroundColor: isDarkTheme ? COLORS.dark.appBar : COLORS.light.primary,
     marginBottom: 4,
     borderRadius: 1,
-    border: `1px solid ${borderColor}`,
-    py: 1,
+    border: `1px solid ${isDarkTheme ? COLORS.dark.appBar : COLORS.light.primary}`,
     transition: 'background-color 0.3s ease, border-color 0.3s ease',
   };
 };
-
-export const mobileScrollBoxStyles = {
-  display: "flex",
-  gap: 1,
-  overflowX: "auto" as const,
-  overflowY: "hidden" as const,
-  whiteSpace: "nowrap" as const,
-  width: "100%",
-  py: 0.5,
-  scrollbarWidth: "none",
-  "&::-webkit-scrollbar": {
-    display: "none",
-  },
-};
-
-export const mobileButtonStyles = (
-  activeSection: string,
-  section: string,
-  isDarkTheme: boolean,
-  borderColor: string,
-  textColor: string
-) => ({
-  flexShrink: 0,
-  fontSize: '0.85rem',
-  fontWeight: FONT_WEIGHTS.bold,
-  px: 2,
-  py: 0.75,
-  borderRadius: 2,
-  textTransform: "none" as const,
-  backgroundColor: activeSection === section ? isDarkTheme ? COLORS.dark.primary : COLORS.light.accent.green1 : isDarkTheme ? COLORS.dark.secondary : `${borderColor}20`,
-  color: activeSection === section ? isDarkTheme ? COLORS.dark.secondary : textColor : textColor,
-  border: `1px solid ${borderColor}`,
-  cursor: "pointer",
-  transition: 'all 0.2s ease',
-  WebkitTapHighlightColor: 'transparent',
-});
-
-export const desktopScrollBoxStyles = (isDarkTheme: boolean) => ({
-  display: "flex",
-  gap: 3,
-  overflowX: "auto" as const,
-  whiteSpace: "nowrap" as const,
-  scrollbarWidth: "thin" as const,
-  "&::-webkit-scrollbar": {
-    height: 6,
-  },
-  "&::-webkit-scrollbar-thumb": {
-    backgroundColor: isDarkTheme ? COLORS.dark.primary : COLORS.light.primary,
-    borderRadius: 2,
-  },
-  "&::-webkit-scrollbar-track": {
-    backgroundColor: isDarkTheme ? COLORS.dark.appBar : COLORS.light.secondary,
+export const tabsStyles = (isDarkTheme: boolean) => ({
+  // Make the tab strip compact with a thin indicator
+  minHeight: 28,
+  '& .MuiTabs-indicator': {
+    // Hide the default MUI indicator to avoid a solid green block;
+    // selection is shown via the tab border instead.
+    height: 0,
+    backgroundColor: 'transparent',
   },
 });
 
-export const desktopButtonStyles = (
+export const tabStyles = (
   activeSection: string,
   section: string,
   isDarkTheme: boolean
 ) => ({
-  textTransform: "none" as const,
+  textTransform: 'none' as const,
+  minWidth: 'auto',
+  // Tighten horizontal and vertical padding to reduce visual size
+  paddingInline: 4,
+  paddingBlock: 0,
+  fontSize: FONT_SIZES.body2,
   fontWeight: FONT_WEIGHTS.bold,
-  fontSize: FONT_SIZES.body1,
-  color: activeSection === section 
-    ? isDarkTheme ? COLORS.dark.secondary : COLORS.light.secondary
-    : isDarkTheme ? COLORS.dark.primary : COLORS.light.primary,
-  flexShrink: 0,
-  transition: 'color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease',
-  backgroundColor: activeSection === section
-    ? isDarkTheme ? COLORS.dark.primary : COLORS.light.primary
-    : 'transparent',
-  border: `1px solid transparent`,
-  borderRadius: activeSection === section ? 1 : 0,
-  WebkitTapHighlightColor: 'transparent',
-  "@media (hover: hover) and (pointer: fine)": {
-    "&:hover": {
-      color: isDarkTheme ? COLORS.dark.primary : COLORS.light.secondary,
-      backgroundColor: isDarkTheme ? COLORS.dark.secondary : COLORS.light.accent.green2,
-      borderColor: isDarkTheme ? COLORS.dark.primary : COLORS.light.primary,
-      borderRadius: 1,
-    },
-  },
+  // Small, tight pill around the label (like the "All" chip)
+  // borderRadius: 9999,
+  // Selected tab: pill with page background color (instead of white),
+  // like the "All" button; others sit directly on the green bar.
+  backgroundColor:
+    activeSection === section
+      ? (isDarkTheme ? 'transparent' : COLORS.light.secondary)
+      : 'transparent',
+  border:
+    activeSection === section
+      // In dark mode, use a light/white border around the selected pill;
+      // in light mode, keep the subtle secondary-colored border.
+      ? `1px solid ${isDarkTheme ? COLORS.dark.text.primary : COLORS.light.secondary}`
+      : '1px solid transparent',
+  color:
+    activeSection === section
+      ? (isDarkTheme ? COLORS.dark.text.primary : COLORS.light.primary)
+      : (isDarkTheme ? COLORS.dark.text.secondary : COLORS.light.secondary),
 });
 
-export default [navContainerStyles, mobileScrollBoxStyles, mobileButtonStyles, desktopScrollBoxStyles, desktopButtonStyles, getColorVariables];
+export default [navContainerStyles, tabsStyles, tabStyles];

@@ -1,13 +1,10 @@
 import { useState } from "react";
-import { Box, Button, Container, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Container, Tabs, Tab, useMediaQuery, useTheme } from "@mui/material";
 import { useSelector } from "react-redux";
 import {
   navContainerStyles,
-  mobileScrollBoxStyles,
-  mobileButtonStyles,
-  desktopScrollBoxStyles,
-  desktopButtonStyles,
-  getColorVariables,
+  tabsStyles,
+  tabStyles,
 } from './SectionsStyles';
 
 interface SectionData {
@@ -28,14 +25,11 @@ interface Props {
 }
 
 const SECTION_NAMES = [
+  "All",
   "Reviews",
-  "Retro RPGs",
-  "Modern RPGs",
-  "Indie RPGs",
-  "Guides & Builds",
-  "Lore & Worldbuilding",
-  "News",
-  "Community",
+  "JRPG",
+  "RPGs",
+  "Retro RPG",
 ] as const;
 
 const filterDataBySection = (
@@ -52,7 +46,6 @@ export default function Sections2({ data, series, setData, setSeries }: Props) {
   const isMobile = useMediaQuery(useTheme().breakpoints.down("sm"));
   const isDarkTheme = useSelector((state: any) => state.theme.darkTheme);
   const [activeSection, setActiveSection] = useState<string>(SECTION_NAMES[0]);
-  const { textColor, borderColor } = getColorVariables(isDarkTheme);
 
   const handleSectionChange = (section: string) => {
     setActiveSection(section);
@@ -61,45 +54,34 @@ export default function Sections2({ data, series, setData, setSeries }: Props) {
     setData(filteredData);
   };
 
-  const SectionButton = ({ section, isMobileView }: { section: string; isMobileView: boolean }) => (
-    <Button
-      key={section}
-      onClick={() => handleSectionChange(section)}
-      sx={
-        isMobileView
-          ? mobileButtonStyles(activeSection, section, isDarkTheme, borderColor, textColor)
-          : desktopButtonStyles(activeSection, section, isDarkTheme)
-      }
-    >
-      {section}
-    </Button>
-  );
-
   return (
     <Box component="nav" sx={navContainerStyles(isDarkTheme)}>
       <Container
         maxWidth="lg"
+        disableGutters
         sx={{
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          borderRadius: 1,
-          px: isMobile ? 1 : 2,
+          alignItems: "flex-end",
+          justifyContent: "flex-start",
         }}
       >
-        {isMobile ? (
-          <Box sx={mobileScrollBoxStyles}>
-            {SECTION_NAMES.map((section) => (
-              <SectionButton key={section} section={section} isMobileView={true} />
-            ))}
-          </Box>
-        ) : (
-          <Box sx={desktopScrollBoxStyles(isDarkTheme)}>
-            {SECTION_NAMES.map((section) => (
-              <SectionButton key={section} section={section} isMobileView={false} />
-            ))}
-          </Box>
-        )}
+        <Tabs
+          value={activeSection}
+          onChange={(_, newValue) => handleSectionChange(newValue)}
+          variant={isMobile ? 'scrollable' : 'standard'}
+          scrollButtons={isMobile ? 'auto' : false}
+          sx={tabsStyles(isDarkTheme)}
+        >
+          {SECTION_NAMES.map((section) => (
+            <Tab
+              key={section}
+              value={section}
+              label={section}
+              sx={tabStyles(activeSection, section, isDarkTheme)}
+              disableRipple
+            />
+          ))}
+        </Tabs>
       </Container>
     </Box>
   );
