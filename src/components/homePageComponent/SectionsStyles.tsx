@@ -35,8 +35,12 @@ export const tabStyles = (
   paddingBlock: 0,
   fontSize: FONT_SIZES.body2,
   fontWeight: FONT_WEIGHTS.bold,
-  // Small, tight pill around the label (like the "All" chip)
-  // borderRadius: 9999,
+  // In dark mode, give only the selected tab a rounded "bubble"
+  // using the shared SIZES.borderRadius token.
+  borderRadius:
+    activeSection === section && isDarkTheme
+      ? SIZES.borderRadius
+      : 0,
   // Selected tab: pill with page background color (instead of white),
   // like the "All" button; others sit directly on the green bar.
   backgroundColor:
