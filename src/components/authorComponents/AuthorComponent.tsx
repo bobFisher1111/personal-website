@@ -2,7 +2,6 @@ import { Grid, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { useTheme } from '@mui/material/styles';
 import HeaderComponent from 'src/components/headerComponent/HeaderComponent';
-import SocialMediaComponent from 'src/components/socialMediaComponent/SocialMediaComponent';
 import TabsComponent from 'src/components/tabsComponent/TabsComponent';
 import AuthorComponetTabData from './AuthorComponetTabData';
 import {
@@ -65,20 +64,6 @@ const AuthorComponent = () => {
       </Grid>
 
       <Grid container justifyContent="center">
-        <Grid>
-          <SocialMediaComponent
-            widthPadding="16px 0px 16px 16px"
-            turnOnStyle={true}
-            turnOnEmail={true}
-            email={authorData?.email}
-            facebook={authorData?.facebook}
-            twitter={authorData?.twitter}
-            youtube={authorData?.you_tube}
-            alignContent="center"
-            justifyContent="center"
-          />
-        </Grid>
-
         <TabsComponent
           turnonsectiontabspadding={false}
           tabsData={

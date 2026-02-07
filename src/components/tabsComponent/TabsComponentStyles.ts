@@ -1,5 +1,5 @@
 import { Theme } from '@mui/material';
-import { FONT_SIZES } from 'src/store/redux/theme/CONSTANTS';
+import { COLORS, FONT_SIZES } from 'src/store/redux/theme/CONSTANTS';
 
 export const GridTabsComponent = (theme: Theme, turnonsectiontabspadding: boolean) => ({
   padding: turnonsectiontabspadding ? '16px 0px 16px 0px' : '0px 0px 16px 0px',
@@ -12,7 +12,7 @@ export const GridTabsComponent = (theme: Theme, turnonsectiontabspadding: boolea
 export const TabComponentTextStyles = (theme: Theme, darkTheme: boolean) => ({
   textTransform: 'initial',
   fontSize: FONT_SIZES.sectionTitle,
-  color: darkTheme ? '#9DB2BF' : '#0C0D0D',
+  color: darkTheme ? COLORS.dark.primary : COLORS.light.primary,
 
   [theme.breakpoints.down('sm')]: {
     fontSize: '14px',
