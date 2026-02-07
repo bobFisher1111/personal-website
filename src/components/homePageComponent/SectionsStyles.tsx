@@ -30,33 +30,33 @@ export const tabStyles = (
 ) => ({
   textTransform: 'none' as const,
   minWidth: 'auto',
-  // Tighten horizontal and vertical padding to reduce visual size
+  marginRight: '1px',
   paddingInline: 4,
   paddingBlock: 0,
   fontSize: FONT_SIZES.body2,
   fontWeight: FONT_WEIGHTS.bold,
-  // In dark mode, give only the selected tab a rounded "bubble"
-  // using the shared SIZES.borderRadius token.
   borderRadius:
     activeSection === section && isDarkTheme
       ? SIZES.borderRadius
       : 0,
-  // Selected tab: pill with page background color (instead of white),
-  // like the "All" button; others sit directly on the green bar.
   backgroundColor:
     activeSection === section
       ? (isDarkTheme ? 'transparent' : COLORS.light.secondary)
       : 'transparent',
   border:
     activeSection === section
-      // In dark mode, use a light/white border around the selected pill;
-      // in light mode, keep the subtle secondary-colored border.
       ? `1px solid ${isDarkTheme ? COLORS.dark.text.primary : COLORS.light.secondary}`
       : '1px solid transparent',
   color:
     activeSection === section
       ? (isDarkTheme ? COLORS.dark.text.primary : COLORS.light.primary)
       : (isDarkTheme ? COLORS.dark.text.secondary : COLORS.light.secondary),
+  '&:hover': {
+    backgroundColor: isDarkTheme ? 'transparent' : COLORS.light.secondary,
+    border: `1px solid ${isDarkTheme ? COLORS.dark.text.primary : COLORS.light.secondary}`,
+    color: isDarkTheme ? COLORS.dark.text.primary : COLORS.light.primary,
+    borderRadius: isDarkTheme ? SIZES.borderRadius : 0,
+  },
 });
 
 export default [navContainerStyles, tabsStyles, tabStyles];
