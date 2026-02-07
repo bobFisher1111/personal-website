@@ -9,6 +9,7 @@ import {
   authorComponentGridBiography,
   authorComponentGridBiographyTitle,
   authorComponentGridBiographyText,
+  gridWidth,
   headerComponentStyles,
 } from './AuthorComponentStyles';
 
@@ -33,11 +34,18 @@ const AuthorComponent = () => {
   const getBooks = webData?.books?.filter(
     (item: any) => item.author_id === getIdFromUrl()
   );
+  const getSeries = webData?.series?.filter(
+    (item: any) => item.author_id === getIdFromUrl()
+  );
 
   const authorData = getAuthor?.[0];
 
   return (
-    <Grid container justifyContent="center" sx={authorComponentGridRoot()}>
+    <Grid
+      container
+      justifyContent="center"
+      sx={authorComponentGridRoot()}
+    >
       <Grid
         size={12}
         sx={headerComponentStyles(muiTheme)}
@@ -63,16 +71,18 @@ const AuthorComponent = () => {
         </Typography>
       </Grid>
 
-      <Grid container justifyContent="center">
+      <Grid 
+        container 
+        justifyContent="center"
+        sx={gridWidth()}
+      >
         <TabsComponent
           turnonsectiontabspadding={false}
           tabsData={
             AuthorComponetTabData(
               authorWebData,
               getArticles,
-              getIdFromUrl(),
-              getBooks,
-              true
+              getSeries,
             )
           }
         />

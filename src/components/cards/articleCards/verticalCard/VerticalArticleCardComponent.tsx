@@ -27,6 +27,7 @@ import {
 /*
   - issue on writes/series when resizing around 740px mark, update later
 */
+// ****** NOT BEING USED, Where it is being used isnt being used that component isnt being imported anymore, Will need to do a clean up next
 const VerticalArticleCardComponent = ({
   name,
   articleData,
@@ -40,37 +41,25 @@ const VerticalArticleCardComponent = ({
   const authorUrl = `${appBaseURL}/author/${articleData?.author_id}`;
 
   return (
-    <div style={DivVerticalArticleRoot(theme)}>
-      <Card sx={CardVerticalCard(theme, darkTheme)}>
-        <Box sx={CardRootStyle}>
-          {articleData?.use_video_instead_of_image ? (
+    <Grid
+      style={DivVerticalArticleRoot(theme)}
+    >
+      <Card 
+        sx={CardVerticalCard(theme, darkTheme)}
+      >
+        <Box 
+          sx={CardRootStyle}
+        >
             <Link to={series ? seriesUrl : articleUrl} rel="noreferrer">
-              <Grid
-                container
-                direction="row"
-                justifyContent="center"
-                alignItems="center"
-                sx={GridVeriticalCardVideo(theme)}
-              >
+              <Grid>
                 <CardMedia
-                  component="iframe"
-                  image={articleData?.cover_image_or_video || articleData?.series_cover_image_or_video}
-                  allowFullScreen
-                  sx={CardMediaVerticalCardVideo}
-                  referrerPolicy="no-referrer"
-                />
-              </Grid>
-            </Link>
-          ) : (
-            <Link to={series ? seriesUrl : articleUrl} rel="noreferrer">
-              <CardMedia
                 component="img"
                 image={articleData?.cover_image_or_video || articleData?.series_cover_image_or_video}
-                sx={CardMediaVerticalCardImage(theme)}
+                sx={CardMediaVerticalCardImage(theme, darkTheme)}
                 referrerPolicy="no-referrer"
               />
+              </Grid>
             </Link>
-          )}
           <Box sx={CardFooterStyle}>
             <Grid container>
               <Grid size={{ xs: 10 }}>
@@ -100,7 +89,7 @@ const VerticalArticleCardComponent = ({
           </Box>
         </Box>
       </Card>
-    </div>
+    </Grid>
   );
 };
 

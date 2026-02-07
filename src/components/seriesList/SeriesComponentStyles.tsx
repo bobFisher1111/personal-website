@@ -1,7 +1,9 @@
 import { Theme } from '@mui/material';
 
-export const AlignGridStyles = (theme: Theme) => ({
-  marginBottom: theme.spacing(3.125), // 25px
+export const SeriesOuterBlockStyles = (count: number) => ({
+  px: 0.5,
+  width: count >= 4 ? 'fit-content' : '100%',
+  maxWidth: '100%',
 });
 
 export const ArrowButtonGridStyles = (theme: Theme) => ({

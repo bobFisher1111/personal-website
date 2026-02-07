@@ -1,13 +1,10 @@
 import ArticleList from 'src/components/articleList/ArticleList';
-import Series from 'src/components/seriesComponent/Series';
-import Works from 'src/components/works/Works';
+import SeriesComponent from 'src/components/seriesList/SeriesComponent';
 
 const AuthorComponetTabData = (
   authorsData: any,
   data: any,
-  authorName: any,
-  getBooks?: any,
-  seriesForAuthorsPage?: boolean,
+  getSeries?: any,
 ) => {
   return (
     [
@@ -17,19 +14,7 @@ const AuthorComponetTabData = (
       },
       { 
         name: 'Series',
-        data: 
-          <Series 
-            data={data}
-            name={authorName}
-            seriesForAuthorsPage={seriesForAuthorsPage} // Keep this as I refactor, later remove this comment, this is needed here
-          />
-      },
-      { 
-        name: 'Other',
-        data:   
-          <Works
-            bookData={getBooks}
-          />
+        data: <SeriesComponent series={getSeries} />
       },
     ]
   );

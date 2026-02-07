@@ -5,6 +5,7 @@ import {
   FONT_WEIGHTS,
   LINE_HEIGHTS,
   SIZES,
+  SPACING_VALUES,
 } from "src/store/redux/theme/CONSTANTS";
 
 export const GridRoot = (theme: Theme) => ({
@@ -72,3 +73,9 @@ export const SeriesButtonStyles = () => ({
   },
 });
 
+export const SeriesTitleGridStyles = (theme: Theme) => ({
+  marginBottom: SPACING_VALUES.md,
+  [theme.breakpoints.down("sm")]: {
+    marginBottom: SPACING_VALUES.sm,
+  },
+});

@@ -8,6 +8,7 @@ import Sections from "./Sections";
 import {
   GridRoot,
   SectionTextStyles,
+  SeriesTitleGridStyles,
   // SeriesButtonStyles,
   // SeriesTextStyles,
 } from "./HomePageComponentStyles";
@@ -32,16 +33,11 @@ const HomePageComponent = () => {
         />
       </Grid>
 
-      <Grid size={12}>
-        {/* <Button sx={SeriesButtonStyles()}>
-          <Typography color="primary" sx={SeriesTextStyles(theme)}>
-            Series
-          </Typography>
-        </Button> */}
+      <Grid size={12} sx={SeriesTitleGridStyles(theme)}>
         <Typography color="primary" sx={SectionTextStyles(theme)}>
             Series
           </Typography>
-        <SeriesComponent series={seriesData?.slice(0, 4)} />
+        <SeriesComponent series={seriesData} />
       </Grid>
 
       <Grid size={12}>

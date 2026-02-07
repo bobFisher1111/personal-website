@@ -99,6 +99,20 @@
       "series_type_title": "Part",
       "use_video_instead_of_image": false,
       "series_id": 1
+    },
+    {
+      "author_id": 1,
+      "is_hidden": false,
+      "section": "Video Games",
+      "section_link": "gaming",
+      "series_authors": "Sean R",
+      "series_cover_image_or_video": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e81b84fa-20a2-42e1-b248-2fa44dba42e6/d4yfk9a-e107c5cb-6952-404f-95c9-b7f981516343.jpg/v1/fill/w_1192,h_670,q_70,strp/metal_gear_solid_1_wallpaper_by_quixware_d4yfk9a-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiIvZi9lODFiODRmYS0yMGEyLTQyZTEtYjI0OC0yZmE0NGRiYTQyZTYvZDR5Zms5YS1lMTA3YzVjYi02OTUyLTQwNGYtOTVjOS1iN2Y5ODE1MTYzNDMuanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.eMgZ6yqFlKxbQw4ZHdAnLwuArDVvawTv-HsbYU9uJqY",
+      "series_start_date": "2024-05-16",
+      "series_title": "Top 10",
+      "series_type": "Top 10",
+      "series_type_title": "Part",
+      "use_video_instead_of_image": false,
+      "series_id": 2
     }
   ]
 }

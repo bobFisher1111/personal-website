@@ -46,6 +46,7 @@ export default function Sections2({ data, series, setData, setSeries }: Props) {
   const isMobile = useMediaQuery(useTheme().breakpoints.down("sm"));
   const isDarkTheme = useSelector((state: any) => state.theme.darkTheme);
   const [activeSection, setActiveSection] = useState<string>(SECTION_NAMES[0]);
+  const theme = useTheme();
 
   const handleSectionChange = (section: string) => {
     setActiveSection(section);
@@ -55,7 +56,7 @@ export default function Sections2({ data, series, setData, setSeries }: Props) {
   };
 
   return (
-    <Box component="nav" sx={navContainerStyles(isDarkTheme)}>
+    <Box component="nav" sx={navContainerStyles(theme, isDarkTheme)}>
       <Container
         maxWidth="lg"
         disableGutters

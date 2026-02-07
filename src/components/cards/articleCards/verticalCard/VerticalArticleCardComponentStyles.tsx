@@ -1,14 +1,17 @@
 import { Theme } from '@mui/material';
 import {
+  COLORS,
   FONT_SIZES,
   FONT_WEIGHTS,
   // LINE_HEIGHTS,
   // SIZES,
 } from "src/store/redux/theme/CONSTANTS";
 // 
-export const CardMediaVerticalCardImage = (theme: Theme) => ({
+export const CardMediaVerticalCardImage = (theme: Theme, darkTheme: boolean) => ({
   width: '100%',
+  // width : '345px',
   height: 'auto',
+  border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
 
   [theme.breakpoints.up('sm')]: {
     height: '400px',

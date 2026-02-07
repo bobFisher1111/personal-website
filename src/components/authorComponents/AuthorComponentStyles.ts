@@ -31,6 +31,10 @@ export const authorComponentGridBiographyText = (theme: Theme) => ({
   },
 });
 
+export const gridWidth = () => ({
+  width: '100%',
+})
+
 export const headerComponentStyles = (theme: Theme) => ({
   [theme.breakpoints.down('sm')]: {
     padding: '16px 0px 0px 0px',
