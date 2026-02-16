@@ -8,11 +8,6 @@ export const CloseGridRootStyles = {
   padding: '32px 8px',
 };
 
-export const CloseGridStyles = {
-  justifyContent: 'center',
-  display: 'flex',
-};
-
 export const CloseIconButtonStyles = {
   '&.MuiButtonBase-root': {
     justifyContent: 'flex-end',

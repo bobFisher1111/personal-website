@@ -8,7 +8,6 @@ import { websiteEmail, websiteName, websiteURL } from 'src/config';
 import {
   CloseButtonStyles,
   CloseGridRootStyles,
-  // CloseGridStyles,
   CloseIconButtonStyles,
   GridStyles,
   MarginGridStyles,
@@ -28,7 +27,7 @@ const TermsOfServiceComponent = ({
   const LiabilityDisclaimerPartTwo = `${websiteName.toUpperCase()} AND/OR ITS SUPPLIERS MAKE NO REPRESENTATIONS ABOUT THE SUITABILITY, RELIABILITY, AVAILABILITY, TIMELINESS, AND ACCURACY OF THE INFORMATION, SOFTWARE, PRODUCTS, SERVICES AND RELATED GRAPHICS CONTAINED ON THE SITE FOR ANY PURPOSE. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, ALL SUCH INFORMATION, SOFTWARE, PRODUCTS, SERVICES AND RELATED GRAPHICS ARE PROVIDED "AS IS" WITHOUT WARRANTY OR CONDITION OF ANY KIND. ${websiteName.toUpperCase()} AND/OR ITS SUPPLIERS HEREBY DISCLAIM ALL WARRANTIES AND CONDITIONS WITH REGARD TO THIS INFORMATION, SOFTWARE, PRODUCTS, SERVICES AND RELATED GRAPHICS, INCLUDING ALL IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT.`;
   const InternationalUsers = `The Service is controlled, operated and administered by ${websiteName} from our offices within the USA. If you access the Service from a location outside the USA, you are responsible for compliance with all local laws. You agree that you will not use the ${websiteName} Content accessed through ${websiteURL} in any country or in any manner prohibited by any applicable laws, restrictions or regulations.`;
   const ChangesToTerms = `${websiteName} reserves the right, in its sole discretion, to change the Terms under which ${websiteURL} is offered. The most current version of the Terms will supersede all previous versions. ${websiteName} encourages you to periodically review the Terms to stay informed of our`;
-  const ContactUS = `${websiteName} welcomes your questions or comments regarding the Terms: Email Address: ${websiteEmail}`;
+  const ContactUS = `${websiteName} welcomes your questions or comments regarding the Terms:\nEmail Address: ${websiteEmail}`;
 
   return (
     <Grid
@@ -236,6 +235,7 @@ const TermsOfServiceComponent = ({
       >
         <Typography
           color="primary"
+          sx={{ whiteSpace: 'pre-line' }}
         >
           {ContactUS}
         </Typography>
