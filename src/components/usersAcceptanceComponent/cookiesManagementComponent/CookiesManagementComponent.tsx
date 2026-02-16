@@ -27,15 +27,17 @@ import {
   ToggleOnOffGridStyles,
   ToggleOnOffTitleStyles,
 } from './CookiesManagementComponentStyles';
+import { useSelector } from 'react-redux';
 
 const CookiesManagementComponent = ({
   closeDrawer,
   optionalCookies,
 }: Props) => {
-  const [youtubeToggle, setYouTubeToggle] = useState<boolean>(localStorage.getItem('enableYouTubeVideo') === 'true' ? true : false);
+  const theme = useSelector((state: any) => state.theme.darkTheme);
+  // const [youtubeToggle, setYouTubeToggle] = useState<boolean>(localStorage.getItem('enableYouTubeVideo') === 'true' ? true : false);
   const [darkModeToggle, setDarkModeToggle] = useState<boolean>(localStorage.getItem('darkMode') === 'true' ? true : false);
   const [userAgreementsToggle, setUserAgreementsToggle] = useState<boolean>(false);
-  const cookiesManagementText: string = "When visiting our website, we will store cookies for functionality. Third party cookies used for viewing YouTube videos, Google will put cookies. In which we have no control over. Without these cookies certain features will be disabled.";
+  const cookiesManagementText: string = "When visiting our website, we will store cookies for functionality. Without these cookies certain features will be disabled.";
 
   const darkModeSwtich = (event: any) => {
     if (event.target.checked === true) {
@@ -50,17 +52,17 @@ const CookiesManagementComponent = ({
     }
   };
 
-  const youTubeSwitch = (event: any) => {
-    if (event.target.checked === true) {
-      setYouTubeToggle(true);
-    }
-    if (event.target.checked === false) {
-      setYouTubeToggle(false);
-    }
-    if (event.target.checked === false && localStorage.getItem('enableYouTubeVideo') !== null) {
-      localStorage.removeItem("enableYouTubeVideo");
-    }
-  };
+  // const youTubeSwitch = (event: any) => {
+  //   if (event.target.checked === true) {
+  //     setYouTubeToggle(true);
+  //   }
+  //   if (event.target.checked === false) {
+  //     setYouTubeToggle(false);
+  //   }
+  //   if (event.target.checked === false && localStorage.getItem('enableYouTubeVideo') !== null) {
+  //     localStorage.removeItem("enableYouTubeVideo");
+  //   }
+  // };
 
   const userAgreementSwitch = (event: any) => {
     if (event.target.checked === true) {
@@ -75,12 +77,29 @@ const CookiesManagementComponent = ({
     if (darkModeToggle) {
       localStorage.setItem('darkMode', 'false');
     }
-    if (youtubeToggle) {
-      localStorage.setItem('enableYouTubeVideo', 'true');
-    }
+    // if (youtubeToggle) {
+    //   localStorage.setItem('enableYouTubeVideo', 'true');
+    // }
     if (userAgreementsToggle) {
       localStorage.setItem('userAgreement', `${userAgreementValue}`);
     }
+  };
+
+  const rejectOptionalCookies = () => {
+    if (localStorage.getItem('darkMode') !== null) {
+      localStorage.removeItem('darkMode');
+    }
+    // if (localStorage.getItem('enableYouTubeVideo') !== null) {
+    //   localStorage.removeItem('enableYouTubeVideo');
+    // }
+    if (localStorage.getItem('userAgreement') !== null) {
+      localStorage.removeItem('userAgreement');
+    }
+
+    setDarkModeToggle(false);
+    // setYouTubeToggle(false);
+    setUserAgreementsToggle(false);
+    optionalCookies();
   };
 
   return (
@@ -118,7 +137,10 @@ const CookiesManagementComponent = ({
         >
           <Button
             color="primary"
-            onClick={closeDrawer}
+            onClick={() => {
+              rejectOptionalCookies();
+              closeDrawer();
+            }}
             sx={CloseIconButtonStyles}
           >
             <CloseIcon/>
@@ -199,7 +221,7 @@ const CookiesManagementComponent = ({
           sx={CookieGridSwitchStyles}
         >
           <Switch
-            defaultChecked={localStorage.getItem('darkMode') !== null}
+            checked={darkModeToggle}
             onChange={(e) => darkModeSwtich(e)}
           />
         </Grid>
@@ -209,7 +231,7 @@ const CookiesManagementComponent = ({
           Used for enabling dark mode.
         </Typography>
       </Grid>
-      <Grid
+      {/* <Grid
         container
         size={12}
         sx={ToggleOnRootStyles}
@@ -239,7 +261,7 @@ const CookiesManagementComponent = ({
         >
           Enables third party cookies from youtube, which we have no control over. Without enabling youtube videos will not be viewable on website.
         </Typography>
-      </Grid>
+      </Grid> */}
       <Grid
         container
         justifyContent="center"
@@ -255,14 +277,17 @@ const CookiesManagementComponent = ({
             xl: 6,
           }}
           sx={AcceptGridButtonStyles}
-          onClick={closeDrawer}
         >
           <Button
             id="accept_optional_cookies"
             color="primary"
             variant="contained"
-            disabled={!youtubeToggle && !darkModeToggle && !userAgreementsToggle}
-            onClick={optionalCookies}
+            // disabled={!youtubeToggle && !darkModeToggle && !userAgreementsToggle}
+            disabled={!darkModeToggle && !userAgreementsToggle}
+            onClick={() => {
+              accpetedCookies();
+              closeDrawer();
+            }}
             sx={AcceptButtonStyles}
           >
             Accept Optional Cookies
@@ -277,12 +302,15 @@ const CookiesManagementComponent = ({
             xl: 6,
           }}
           sx={RejectGridButtonStyles}
-          onClick={closeDrawer}
         >
           <Button
             color="primary"
             variant="outlined"
-            onClick={optionalCookies}
+            // onClick={rejectOptionalCookies}
+            onClick={() => {
+              rejectOptionalCookies();
+              closeDrawer();
+            }}
             sx={RejectButtonStyles}
           >
             Reject Cookies
@@ -294,8 +322,8 @@ const CookiesManagementComponent = ({
 };
 
 export type Props = {
-  closeDrawer: any;
-  optionalCookies: any;
+  closeDrawer: () => void;
+  optionalCookies: () => void;
 };
 
 export default CookiesManagementComponent;

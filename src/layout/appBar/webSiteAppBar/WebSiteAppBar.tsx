@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import AppBarLinksToPages from 'src/layout/appBar/appBarLinksToPages/AppBarLinksToPages';
 import LightDarkMode from 'src/layout/appBar/lightDarkMode/LightDarkMode';
 import MobileDrawer from 'src/components/writers/writersCard/mobileDrawer/MobileDrawer';
+import { websiteName } from 'src/config';
 import {
   AppBarStyle,
   // GridDesktopAppBar,
@@ -42,7 +43,7 @@ const WebSiteAppBar = () => {
             color="primary"
             sx={TypographyDesktopTitle(theme)}
           >
-            {"RPG Hound"}
+            {`${websiteName}`}
           </Typography>
         </Link>
       </Grid>

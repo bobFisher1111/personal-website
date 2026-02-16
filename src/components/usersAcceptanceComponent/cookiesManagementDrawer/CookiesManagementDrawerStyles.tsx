@@ -2,6 +2,7 @@ export const DrawerStyles = {
   "& .MuiDrawer-paper": {
     position: 'relative',
     width: 'calc(100vw)',
+    maxWidth: '700px',
     transition: "none !important",
     height: '840px',
     justifContent: 'center',

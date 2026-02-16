@@ -9,7 +9,7 @@ import AppRoutes from './AppRoutes'; // ✅ new import
 import './App.css';
 
 // Uncomment this component when user acceptance flow is ready
-// import UsersAcceptanceComponent from '../src/components/usersAcceptanceComponent/UsersAcceptanceComponent';
+import UsersAcceptanceComponent from '../src/components/usersAcceptanceComponent/UsersAcceptanceComponent';
 
 const App = () => {
   const theme = useSelector((state: RootState) => state.theme);
@@ -19,7 +19,7 @@ const App = () => {
       <ThemeProvider theme={theme?.darkTheme ? darkTheme : lightTheme}>
         <CssBaseline />
         <Suspense fallback={<div>Loading...</div>}>
-          {/* <UsersAcceptanceComponent /> */}
+          <UsersAcceptanceComponent />
           <Layout />
           <div className="app">
             <AppRoutes />

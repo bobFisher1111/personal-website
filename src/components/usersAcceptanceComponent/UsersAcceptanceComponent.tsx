@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import UserAcceptanceTextMessage from 'src/components/usersAcceptanceComponent//userAcceptanceTextMessage/UserAcceptanceTextMessage';
+import UserAcceptanceTextMessage from 'src/components/usersAcceptanceComponent/userAcceptanceTextMessage/UserAcceptanceTextMessage';
 import Grid from '@mui/material/Grid';
 import { userAgreementValue } from 'src/config';
 
@@ -10,6 +10,14 @@ const UsersAcceptanceComponent = () => {
   const [state, setState] = useState(() =>(
     localStorage.getItem('userAgreement') !== `${userAgreementValue}`) ? { bottom: true} : {bottom: false}
   );
+
+	const closeDrawerProgrammatically = (anchor: Anchor) => {
+		if (document.activeElement instanceof HTMLElement) {
+			document.activeElement.blur();
+		}
+		setState({ [anchor]: false });
+	};
+
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
       (event: React.KeyboardEvent | React.MouseEvent) => {
@@ -21,6 +29,9 @@ const UsersAcceptanceComponent = () => {
         ) {
           return;
         }
+			if (!open && document.activeElement instanceof HTMLElement) {
+				document.activeElement.blur();
+			}
         setState({ [anchor]: open });
       };
 
@@ -31,12 +42,16 @@ const UsersAcceptanceComponent = () => {
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}
-            onClose={toggleDrawer(anchor, true)}
+            onClose={() => closeDrawerProgrammatically(anchor)}
             onOpen={toggleDrawer(anchor, true)}
+				ModalProps={{
+					disableAutoFocus: true,
+					disableEnforceFocus: true,
+					disableRestoreFocus: true,
+				}}
           >
             <UserAcceptanceTextMessage
-              closeDrawer={toggleDrawer(anchor, false)}
-              setStateStatus={setState}
+					    closeDrawer={() => closeDrawerProgrammatically(anchor)}
             />
           </SwipeableDrawer>
         </Fragment>

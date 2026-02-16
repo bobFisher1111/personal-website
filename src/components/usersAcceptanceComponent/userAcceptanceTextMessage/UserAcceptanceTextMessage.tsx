@@ -3,12 +3,13 @@ import {
   Button,
   Grid,
   Typography,
-} from '@mui/material/';
+} from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import { userAgreementValue } from 'src/config';
 import { cookiesOff } from 'src/store/redux/cookies/CookiesSlice';
-import CookiesManagementDrawer from 'src/components/usersAcceptanceComponent//cookiesManagementDrawer/CookiesManagementDrawer';
-import TermsOfServiceDrawer from 'src/components/usersAcceptanceComponent//termsOfServiceDrawer/TermsOfServiceDrawer';
+import CookiesManagementDrawer from 'src/components/usersAcceptanceComponent/cookiesManagementDrawer/CookiesManagementDrawer';
+import TermsOfServiceDrawer from 'src/components/usersAcceptanceComponent/termsOfServiceDrawer/TermsOfServiceDrawer';
+import { websiteName } from 'src/config';
 import {
   AcceptButtonStyles,
   ButtonGridStyles,
@@ -24,11 +25,10 @@ import {
 
 const UserAcceptanceTextMessage = ({
   closeDrawer,
-  setStateStatus,
 }: Props) => {
   const dispatch = useDispatch();
   const rejectCookie = useSelector((state: any) => state.rejectCookie);
-  const acceptanceMessage = "Gamers Shrine uses cookies for functionality of the website. Third party cookies from YouTube are required for viewing videos. By accepting cookies you agree to placement of the cookie. Without accepting certain features and functionality will be disabled.";
+  const acceptanceMessage = `${websiteName} uses cookies for functionality of the website. By accepting cookies you agree to placement of the cookie. Without accepting certain features and functionality will be disabled.`;
 
   const setLocalStorage = () => {
     if (localStorage.getItem('darkMode') === null) {
@@ -39,20 +39,19 @@ const UserAcceptanceTextMessage = ({
     }
     localStorage.setItem('userAgreement', `${userAgreementValue}`);
     dispatch(cookiesOff());
-    return setStateStatus({bottom: false});
+    return closeDrawer();
   };
 
   const turnCookiesOff = () => {
     if (rejectCookie.rejectCookies) {
-      return setStateStatus({bottom: false});
+      return closeDrawer();
     }
-    setStateStatus({bottom: false});
+    closeDrawer();
     return dispatch(cookiesOff());
   };
 
   return (
     <Grid
-      container
       sx={RootStyles}
     >
       <Grid
@@ -75,10 +74,7 @@ const UserAcceptanceTextMessage = ({
         >
           <Button
             color="primary"
-            onClick={() => {
-              turnCookiesOff();
-              return closeDrawer;
-            }}
+            onClick={turnCookiesOff}
             sx={CloseIconStyles}
           >
             <CloseIcon/>
@@ -111,8 +107,8 @@ const UserAcceptanceTextMessage = ({
             sx={SettingButtonStyles}
           >
             <CookiesManagementDrawer
-              closeParentDrawer={() => setStateStatus({bottom: false})} 
-              optionalCookie={() => turnCookiesOff()} 
+              closeParentDrawer={closeDrawer} 
+              optionalCookie={turnCookiesOff} 
             />
           </Button>
           <Button
@@ -138,8 +134,7 @@ const UserAcceptanceTextMessage = ({
 };
 
 export type Props = {
-  closeDrawer: any;
-  setStateStatus: any;
+  closeDrawer: () => void;
 };
 
 export default UserAcceptanceTextMessage;

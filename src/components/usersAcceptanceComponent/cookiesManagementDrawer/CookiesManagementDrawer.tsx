@@ -24,14 +24,30 @@ const CookiesManagementDrawer = ({
   const toggleDrawer = (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
-        event.type === 'keydown' &&
+        (event.type === 'keydown') &&
         ((event as React.KeyboardEvent).key === 'Tab' ||
           (event as React.KeyboardEvent).key === 'Shift')
       ) {
         return;
       }
-      setState({ ...state, [anchor]: open });
+
+      setState((prev) => ({ ...prev, [anchor]: open }));
     };
+
+  const closeDrawerProgrammatically = (anchor: Anchor) => {
+    if (document.activeElement instanceof HTMLElement) {
+      // Move focus out of the drawer before it becomes aria-hidden
+      document.activeElement.blur();
+    }
+    setState((prev) => ({ ...prev, [anchor]: false }));
+  };
+
+  const handleDrawerClose = (anchor: Anchor) => (
+    _event: {},
+    _reason: 'backdropClick' | 'escapeKeyDown',
+  ) => {
+    closeDrawerProgrammatically(anchor);
+  };
 
   return (
     <Grid>
@@ -54,11 +70,16 @@ const CookiesManagementDrawer = ({
           <Drawer
             anchor={anchor}
             open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
+				    onClose={handleDrawerClose(anchor)}
+            ModalProps={{
+              disableAutoFocus: true,
+              disableEnforceFocus: true,
+              disableRestoreFocus: true,
+            }}
             sx={DrawerStyles}
           >
             <CookiesManagementComponent
-              closeDrawer={toggleDrawer(anchor, false)}
+					    closeDrawer={() => closeDrawerProgrammatically(anchor)}
               optionalCookies={optionalCookie}
             />
           </Drawer>
@@ -69,8 +90,8 @@ const CookiesManagementDrawer = ({
 };
 
 export type Props = {
-  closeParentDrawer: any,
-  optionalCookie: any,
+  closeParentDrawer: () => void,
+  optionalCookie: () => void,
 };
 
 export default CookiesManagementDrawer;

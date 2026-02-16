@@ -1,15 +1,14 @@
+import { COLORS } from "src/store/redux/theme/CONSTANTS";
+
 export const DisclaimerTitleStyles = (theme: boolean) => ({
-  fontSize: '26px',
-  textDecorationColor: theme ? '#9DB2BF' : 'rgba(0, 0, 0, 0.6)',
-  '@media only screen and (max-device-width: 812px) and (orientation: landscape)': {
-    fontSize: '22px'
-  }
+  textDecoration: 'underline',
+  color: theme ? COLORS.dark.primary : COLORS.light.accent.green2,
 });
 
 export const DrawerStyles = {
   "& .MuiDrawer-paper": {
     position: 'relative',
-    width: 600,
+    width: 700,
     transition: "none !important",
     height: 840,
     justifContent: 'center',

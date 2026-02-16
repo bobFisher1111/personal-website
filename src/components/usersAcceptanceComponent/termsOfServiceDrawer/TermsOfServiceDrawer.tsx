@@ -1,18 +1,21 @@
 import { Fragment, useState } from 'react';
 import {
+  Button,
   Drawer,
   Grid,
+  Typography,
 } from '@mui/material';
+import { useSelector } from 'react-redux';
 import TermsOfServiceComponent from 'src/components/usersAcceptanceComponent/termsOfServiceComponent/TermsOfServiceComponent';
 import { 
-  // DisclaimerTitleStyles,
+  DisclaimerTitleStyles,
   DrawerStyles,
 } from './TermsOfServiceDrawerStyles';
 
 type Anchor = 'left';
 
 const TermsOfServiceDrawer = () => {
-  // const theme = useSelector((state: any) => state.theme.darkTheme);
+  const theme = useSelector((state: any) => state.theme.darkTheme);
 
   const [state, setState] = useState({
     left: false,
@@ -38,14 +41,16 @@ const TermsOfServiceDrawer = () => {
           key={anchor}
         >
           <Grid>
-            {/* <Typography
-              aria-label="Menu for Sections Mobile"
-              onClick={toggleDrawer(anchor, true)}
-              color="primary"
-              sx={DisclaimerTitleStyles(theme)}
-            >
-              Disclaimer1
-            </Typography> */}
+            <Button size="small">
+              <Typography
+                aria-label="User Agreement terms of service"
+                onClick={toggleDrawer(anchor, true)}
+                color="primary"
+                sx={DisclaimerTitleStyles(theme)}
+              >
+                Disclaimer
+              </Typography>
+            </Button>
           </Grid>
           <Drawer
             anchor={anchor}
