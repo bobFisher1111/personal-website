@@ -1,22 +1,18 @@
-import { Fragment } from 'react';
-import Grid from '@mui/material/Grid';
-import ArticleCard from 'src/components/cards/ArticleCard';
-import ComingSoon from 'src/components/comingSoon/ComingSoon';
-import formatDate from 'src/util/formatDate';
+import { Fragment } from "react";
+import Grid from "@mui/material/Grid";
+import ArticleCard from "src/components/cards/ArticleCard";
+import ComingSoon from "src/components/comingSoon/ComingSoon";
+import formatDate from "src/util/formatDate";
 
-
-export const ArticleList = ({
-  authorData,
-  data,
-}: Props) => {
+export const ArticleList = ({ authorData, data }: Props) => {
   const noArticles = data?.length === 0;
   const newNonImmutableArray = data?.map((item: any) => item);
-  const sortByDate = newNonImmutableArray?.sort((a: any, b: any) => b.article_id - a.article_id);
+  const sortByDate = newNonImmutableArray?.sort(
+    (a: any, b: any) => b.article_id - a.article_id,
+  );
 
   return (
-    <Grid
-      container
-    >
+    <Grid container>
       {noArticles ? (
         <ComingSoon />
       ) : (
