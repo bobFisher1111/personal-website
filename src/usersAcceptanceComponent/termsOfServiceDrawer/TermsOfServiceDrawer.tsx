@@ -6,7 +6,7 @@ import {
   Typography,
 } from '@mui/material';
 import { useSelector } from 'react-redux';
-import TermsOfServiceComponent from 'src/components/usersAcceptanceComponent/termsOfServiceComponent/TermsOfServiceComponent';
+import TermsOfServiceComponent from 'src/usersAcceptanceComponent/termsOfServiceComponent/TermsOfServiceComponent';
 import { 
   DisclaimerTitleStyles,
   DrawerStyles,

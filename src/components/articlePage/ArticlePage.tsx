@@ -1,7 +1,7 @@
 import { useLayoutEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Grid from '@mui/material/Grid';
-import HorizontalArticleCardComponent from 'src/components/cards/articleCards/horizontalCard/HorizontalArticleCardComponent';
+import HorizontalArticleCardComponent from 'src/components/cards/HorizontalArticleCardComponent';
 import formatDate from 'src/util/formatDate';
 import getNameFromUrl from 'src/util/getNameFromUrl';
 import {

@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import Grid from '@mui/material/Grid';
-import ArticleCard from 'src/components/cards/articleCards/horizontalCard/articleCard/ArticleCard';
+import ArticleCard from 'src/components/cards/ArticleCard';
 import ComingSoon from 'src/components/comingSoon/ComingSoon';
 import formatDate from 'src/util/formatDate';
 

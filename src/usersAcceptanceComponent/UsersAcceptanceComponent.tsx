@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import UserAcceptanceTextMessage from 'src/components/usersAcceptanceComponent/userAcceptanceTextMessage/UserAcceptanceTextMessage';
+import UserAcceptanceTextMessage from 'src/usersAcceptanceComponent/userAcceptanceTextMessage/UserAcceptanceTextMessage';
 import Grid from '@mui/material/Grid';
 import { userAgreementValue } from 'src/config';
 

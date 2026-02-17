@@ -5,7 +5,7 @@ import {
   useTheme,
 } from '@mui/material';
 import { useSelector } from 'react-redux';
-import HorizontalArticlePageInfoComponent from './horizontalArticlePageInfoComponent/HorizontalArticlePageInfoComponent';
+import HorizontalArticlePageInfoComponent from './HorizontalArticlePageInfoComponent';
 import {
   articlePageRoot,
   cardMediaArticleVideo,

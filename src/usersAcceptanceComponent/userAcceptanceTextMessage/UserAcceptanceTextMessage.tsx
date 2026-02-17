@@ -7,8 +7,8 @@ import {
 import CloseIcon from '@mui/icons-material/Close';
 import { userAgreementValue } from 'src/config';
 import { cookiesOff } from 'src/store/redux/cookies/CookiesSlice';
-import CookiesManagementDrawer from 'src/components/usersAcceptanceComponent/cookiesManagementDrawer/CookiesManagementDrawer';
-import TermsOfServiceDrawer from 'src/components/usersAcceptanceComponent/termsOfServiceDrawer/TermsOfServiceDrawer';
+import CookiesManagementDrawer from 'src/usersAcceptanceComponent/cookiesManagementDrawer/CookiesManagementDrawer';
+import TermsOfServiceDrawer from 'src/usersAcceptanceComponent/termsOfServiceDrawer/TermsOfServiceDrawer';
 import { websiteName } from 'src/config';
 import {
   AcceptButtonStyles,

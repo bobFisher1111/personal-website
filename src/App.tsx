@@ -7,7 +7,7 @@ import { darkTheme, lightTheme } from './store/redux/theme/CONSTANTS';
 import Layout from './layout/Layout';
 import AppRoutes from './AppRoutes'; // ✅ new import
 
-import UsersAcceptanceComponent from '../src/components/usersAcceptanceComponent/UsersAcceptanceComponent';
+import UsersAcceptanceComponent from './usersAcceptanceComponent/UsersAcceptanceComponent';
 
 const App = () => {
   const theme = useSelector((state: RootState) => state.theme);
