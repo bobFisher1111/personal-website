@@ -1,3 +1,5 @@
+import { COLORS } from 'src/store/redux/theme/CONSTANTS';
+
 export const AcceptButtonStyles = {
   boxShadow: 'none',
   textTransform: 'none',
@@ -39,7 +41,7 @@ export const RejectButtonStyles = {
 export const RootStyles = {
   width: '100%',
   height: '22vh',
-  borderTop: '2px solid #0C0D0D',
+  borderTop: `2px solid ${COLORS.common.border}`,
   padding: '36px',
   '@media only screen and (max-width: 1570px)': {
     height: '25vh',

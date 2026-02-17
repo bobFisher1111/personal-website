@@ -1,3 +1,5 @@
+import { COLORS } from 'src/store/redux/theme/CONSTANTS';
+
 export const AcceptButtonStyles = {
   boxShadow: 'none',
   textTransform: 'none',
@@ -90,7 +92,7 @@ export const RootStyles = {
 export const ToggleOnRootStyles = {
   display: 'flex',
   marginBottom: '8px',
-  border: '1px solid #0C0D0D',
+  border: `1px solid ${COLORS.common.border}`,
   borderRadius: '8px',
   padding: '8px',
 };

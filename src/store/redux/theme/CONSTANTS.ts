@@ -6,6 +6,9 @@ import { createTheme } from '@mui/material';
 // ============================================================================
 
 const COLORS = {
+  common: {
+    border: '#0C0D0D',
+  },
   light: {
     primary: '#344e41',      // Green 4 (darkest)
     secondary: '#dad7cd',    // Beige (background)

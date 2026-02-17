@@ -1,3 +1,5 @@
+import { COLORS } from 'src/store/redux/theme/CONSTANTS';
+
 export const DrawerStyles = {
   "& .MuiDrawer-paper": {
     position: 'relative',
@@ -7,7 +9,7 @@ export const DrawerStyles = {
     height: '840px',
     justifContent: 'center',
     borderRadius: '20px',
-    border: '1px solid #0C0D0D',
+    border: `1px solid ${COLORS.common.border}`,
     display: 'flex',
     top: '10%',
     marginLeft: 'auto',
@@ -23,7 +25,7 @@ export const DrawerStyles = {
       height: '100%',
       justifContent: 'center',
       borderRadius: '20px',
-      border: '1px solid #0C0D0D',
+      border: `1px solid ${COLORS.common.border}`,
       display: 'flex',
       top: 0,
       marginLeft: 'auto',
