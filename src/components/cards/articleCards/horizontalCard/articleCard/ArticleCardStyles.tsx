@@ -118,10 +118,8 @@ export const LinkGridRootStyles = (
 
 export const RootStyles = (
   theme: Theme,
-  darkTheme: boolean,
 ) => ({
   margin: 'auto',
-  // marginBottom: theme.spacing(SIZES.spacingNumeric.md),
   paddingLeft: theme.spacing(SIZES.spacingNumeric.sm),
   paddingRight: theme.spacing(SIZES.spacingNumeric.sm),
   flexGrow: 1,

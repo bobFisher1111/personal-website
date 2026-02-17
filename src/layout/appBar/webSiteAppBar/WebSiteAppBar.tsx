@@ -1,25 +1,21 @@
 import { Grid, Typography, useTheme } from '@mui/material';
 import { useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-// import SocialMediaComponent from '../../../components/socialMediaComponent/SocialMediaComponent';
 import AppBarLinksToPages from 'src/layout/appBar/appBarLinksToPages/AppBarLinksToPages';
 import LightDarkMode from 'src/layout/appBar/lightDarkMode/LightDarkMode';
 import MobileDrawer from 'src/components/writers/writersCard/mobileDrawer/MobileDrawer';
 import { websiteName } from 'src/config';
 import {
   AppBarStyle,
-  // GridDesktopAppBar,
   GridMobileAppBarTitle,
   TypographyDesktopTitle,
   GridDesktopAppBar2
 } from './WebSiteAppBarStyles';
 import { LinkStyles } from 'src/util/styles/LinkStyles';
-// import AppConfig from '../../../config';
 
 const WebSiteAppBar = () => {
   const theme = useTheme();
   const isDarkTheme = useSelector((state: any) => state.theme.darkTheme);
-  // const { facebookURL, twitterURL, youtubeURL } = AppConfig;
 
   return (
     <Grid 
@@ -47,28 +43,6 @@ const WebSiteAppBar = () => {
           </Typography>
         </Link>
       </Grid>
-
-      {/* <Grid
-        size={{
-          xs: 0,
-          sm: 4,
-          md: 4,
-          lg: 4,
-          xl: 4,
-        }}
-        sx={GridDesktopAppBar(theme)}
-      >
-        <SocialMediaComponent
-          widthPadding={'8px 0px 0px 16px'}
-          turnOnStyle={true}
-          facebook={facebookURL}
-          twitter={twitterURL}
-          youtube={youtubeURL}
-          alignContent={"center"}
-          justifyContent={"center"}
-        />
-      </Grid> */}
-
       <Grid
         id="2"
         size={{

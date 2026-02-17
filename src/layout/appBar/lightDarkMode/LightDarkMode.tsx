@@ -8,10 +8,8 @@ import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 
 
 const LightDarkMode = () => {
-  // get theme from store
   const rejectCookie = useSelector((state: any) => state.rejectCookie);
   const theme = useSelector((state: any) => state.theme.darkTheme);
-  // initialize dispatch variable
   const dispatch = useDispatch();
 
   const disableButton = () => {

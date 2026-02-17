@@ -23,7 +23,7 @@ export const GridHeader = {
 
 export const GridHeaderTitle = {
   padding: '25px 0px 12px 0px',
-  '@media only screen and (max-width: 667px) and (orientation: landscape)': { // IPHONE SE Landscape ** 
+  '@media only screen and (max-width: 667px) and (orientation: landscape)': { 
     padding: '25px 0px 0px 0px',
   },
 };
@@ -35,7 +35,6 @@ export const GridPaddingRight = {
 export const TypographyHeaderTitle = {
   fontSize: FONT_SIZES.h3,
   lineHeight: '40px',
-  // fontFamily: 'source-serif-pro, Georgia, Cambria, \'Times New Roman\', Times, serif',
   '@media (min-width: 1023px)': {
     padding: '25px 0px 25px 0px',
   },

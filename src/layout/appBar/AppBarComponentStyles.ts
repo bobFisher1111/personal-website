@@ -1,4 +1,3 @@
-// src/styles/AppBarStyles.ts
 import { Theme } from '@mui/material';
 import { COLORS, SIZES } from 'src/store/redux/theme/CONSTANTS';
 

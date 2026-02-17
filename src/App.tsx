@@ -6,9 +6,7 @@ import { RootState } from './store/redux/store';
 import { darkTheme, lightTheme } from './store/redux/theme/CONSTANTS';
 import Layout from './layout/Layout';
 import AppRoutes from './AppRoutes'; // ✅ new import
-import './App.css';
 
-// Uncomment this component when user acceptance flow is ready
 import UsersAcceptanceComponent from '../src/components/usersAcceptanceComponent/UsersAcceptanceComponent';
 
 const App = () => {

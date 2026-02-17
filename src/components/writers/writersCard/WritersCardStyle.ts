@@ -27,13 +27,6 @@ export const WritersCardAvatar = (theme: Theme, darkTheme: boolean) => ({
   },
 });
 
-export const WritersCardGridAuthorName = (theme: Theme) => ({
-  paddingTop: '4px',
-  [theme.breakpoints.down('sm')]: {
-    padding: '0px 0px 0px 16px',
-  },
-});
-
 export const WritersCardTextAuthorName = (theme: Theme) => ({
   fontSize: FONT_SIZES.body1,
   overflow: 'hidden',

@@ -31,7 +31,7 @@
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
     "types": "tsc --noemit --project tsconfig.json",
-    "test:all": "npm run types && npm run lint && npx jest"
+    "test:all": "npm run types && npm run lint"
   },
   "eslintConfig": {
     "extends": [

@@ -12,7 +12,6 @@ import {
   WritersCardGridRoot,
   WritersCardAvatar,
   WritersCardTextAuthorName,
-  WritersCardGridAuthorName,
   WritersCardTextAuthorTitle,
 } from './WritersCardStyle';
 

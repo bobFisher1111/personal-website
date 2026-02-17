@@ -5,7 +5,7 @@ import Grid from '@mui/material/Grid';
 import { userAgreementValue } from 'src/config';
 
 type Anchor = 'bottom';
-// Come back to this later, and refactor and also constants file sheet
+
 const UsersAcceptanceComponent = () => {
   const [state, setState] = useState(() =>(
     localStorage.getItem('userAgreement') !== `${userAgreementValue}`) ? { bottom: true} : {bottom: false}
@@ -44,11 +44,11 @@ const UsersAcceptanceComponent = () => {
             open={state[anchor]}
             onClose={() => closeDrawerProgrammatically(anchor)}
             onOpen={toggleDrawer(anchor, true)}
-				ModalProps={{
-					disableAutoFocus: true,
-					disableEnforceFocus: true,
-					disableRestoreFocus: true,
-				}}
+            ModalProps={{
+              disableAutoFocus: true,
+              disableEnforceFocus: true,
+              disableRestoreFocus: true,
+            }}
           >
             <UserAcceptanceTextMessage
 					    closeDrawer={() => closeDrawerProgrammatically(anchor)}

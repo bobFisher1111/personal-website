@@ -36,7 +36,6 @@ const CookiesManagementDrawer = ({
 
   const closeDrawerProgrammatically = (anchor: Anchor) => {
     if (document.activeElement instanceof HTMLElement) {
-      // Move focus out of the drawer before it becomes aria-hidden
       document.activeElement.blur();
     }
     setState((prev) => ({ ...prev, [anchor]: false }));

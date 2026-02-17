@@ -9,8 +9,6 @@ import {
   GridRoot,
   SectionTextStyles,
   SeriesTitleGridStyles,
-  // SeriesButtonStyles,
-  // SeriesTextStyles,
 } from "./HomePageComponentStyles";
 //
 const HomePageComponent = () => {
@@ -19,8 +17,6 @@ const HomePageComponent = () => {
   const articleData = getWebsiteData?.articles;
   const authorsData = getWebsiteData?.authors;
   const seriesData = getWebsiteData?.series;
-  // const [data] = useState<any>(articleData);  // add setData back later from Sections Component
-  // const [series] = useState<any>(seriesData); // add setSeries back later from the Sections component
 
   return (
     <Grid container justifyContent="center" alignItems="center" sx={GridRoot(theme)}>
@@ -28,8 +24,8 @@ const HomePageComponent = () => {
         <Sections
           data={articleData}
           series={seriesData}
-          setData={() => {}} // Update this later once state is added and create data
-          setSeries={() => {}} // Update this later once state is added and create data
+          setData={() => {}}
+          setSeries={() => {}}
         />
       </Grid>
 

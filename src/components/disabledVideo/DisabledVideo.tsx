@@ -9,7 +9,6 @@ export type Props = {
   youtubeUrl: string;
   carousel: boolean;
 };
-// Going to come backlater and change how this how thing works
 const DisabledVideo = ({
   articlePage,
   authorSectionArticlePage,

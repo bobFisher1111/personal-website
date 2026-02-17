@@ -12,18 +12,12 @@ const MarkDownComponent = ({ markdownData }: MarkDownComponentProps) => {
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
   const styles = darkTheme ? MARKDOWN_STYLES.dark : MARKDOWN_STYLES.light;
 
-  // Fallback to temp data if none provided
-  const test_1 = {
-    markdown_data:
-      "# Markdown Formatting Test\\n\\n## 1. Headings\\n# Heading 1\\n## Heading 2\\n### Heading 3\\n#### Heading 4\\n##### Heading 5\\n###### Heading 6\\n\\n---\\n\\n## 2. Emphasis\\n- *Italic text*\\n- _Italic text (underscore)_\\n- **Bold text**\\n- __Bold text (underscore)__\\n- ***Bold and italic***\\n- ~~Strikethrough~~\\n\\n---\\n\\n## 3. Paragraphs with Emphasis and Indents\\n\\n&nbsp;&nbsp;&nbsp;&nbsp;This is the first paragraph of our sample text. It demonstrates how to use *italic* and **bold** formatting within a standard paragraph. You can also combine them for ***bold and italic emphasis*** when needed. Markdown doesn't support true indentation, but you can simulate it using non-breaking spaces (`&nbsp;`).\\n\\n&nbsp;&nbsp;&nbsp;&nbsp;Here is a second paragraph, indented the same way. Notice how we can continue to use formatting like **highlighting important terms** or *soft emphasis* to guide the reader's attention. This is useful in documentation, notes, or styled content.\\n\\n&nbsp;&nbsp;&nbsp;&nbsp;Finally, this third paragraph wraps up the example. You can also include inline code like `let x = 10;` or links such as [Markdown Guide](https://www.markdownguide.org) to enrich your content.\\n\\n---\\n\\n## 4. Lists\\n\\n### Unordered List\\n- Item A\\n  - Subitem A1\\n    - Sub-subitem A1a\\n- Item B\\n\\n### Ordered List\\n1. First item\\n2. Second item\\n   1. Subitem 2a\\n   2. Subitem 2b\\n3. Third item\\n\\n---\\n\\n## 5. Links\\n- [Inline link to GitHub](https://github.com)\\n- [Reference-style link][github]\\n\\n[github]: https://github.com\\n\\n---\\n\\n## 6. Images\\n![Sample Image](https://oyster.ignimgs.com/mediawiki/apis.ign.com/final-fantasy-viii/9/9a/Ff8_art.jpg)\\n\\n---\\n\\n## 7. Code\\n\\n### Inline Code\\nUse the `printf()` function to display output.\\n\\n### Code Block\\n```python\\ndef greet(name):\\n    return f\"Hello, {name}!\"\\n```",
-  };
-
   const prepMarkdownData = (rawData: string): string => {
     return rawData.replace(/\\\\n/g, '\n').replace(/\\n/g, '\n');
   };
 
   const formattedMarkdown = useMemo(
-    () => prepMarkdownData(markdownData || test_1.markdown_data),
+    () => prepMarkdownData(markdownData || ''),
     [markdownData]
   );
 

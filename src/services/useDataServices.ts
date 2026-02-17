@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { getWebsiteData } from './getdata-services';
 
 
 export const useWebsiteData = () => {

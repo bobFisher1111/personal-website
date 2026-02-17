@@ -24,16 +24,16 @@ export const seriesComponentGridArticleInfo = (theme: Theme) => ({
 });
 
 export const seriesComponentTitle = (theme: Theme) => ({
-  fontSize: FONT_SIZES.title, // 24px for desktop
+  fontSize: FONT_SIZES.title,
   padding: '0px 16px',
   fontWeight: FONT_WEIGHTS.bold,
   [theme.breakpoints.down('sm')]: {
-    fontSize: FONT_SIZES.title, // 20px
+    fontSize: FONT_SIZES.title,
   },
 });
 
 export const seriesComponentSubTitle = (theme: Theme) => ({
-  fontSize: FONT_SIZES.subtitle, // 18px for desktop
+  fontSize: FONT_SIZES.subtitle,
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
@@ -41,19 +41,18 @@ export const seriesComponentSubTitle = (theme: Theme) => ({
   WebkitBoxOrient: 'vertical',
   padding: '0px 16px',
   [theme.breakpoints.down('sm')]: {
-    fontSize: FONT_SIZES.subtitle, // 16px
+    fontSize: FONT_SIZES.subtitle,
   },
 });
 
 export const seriesComponentDate = (theme: Theme) => ({
-  fontSize: FONT_SIZES.body1, // 16px for desktop
+  fontSize: FONT_SIZES.body1,
   padding: '0px 16px',
   [theme.breakpoints.down('sm')]: {
-    fontSize: FONT_SIZES.base, // 14px
+    fontSize: FONT_SIZES.base,
   },
 });
 
-// ✅ NEW: Image style with 16:9 aspect ratio for desktop only
 export const seriesComponentImageStyle = (theme: Theme) => ({
   objectFit: 'cover',
   width: '100%',

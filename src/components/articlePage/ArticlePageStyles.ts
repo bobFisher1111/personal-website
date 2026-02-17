@@ -1,6 +1,5 @@
 import { SIZES } from 'src/store/redux/theme/CONSTANTS';
 
-// WCAG AA optimal reading width: 50-75 characters per line (600-750px)
 export const CreateArticleRoot = {
   '@media only screen and (max-width: 600px)': {
     width: 'calc(100vw - 32px)',
@@ -15,8 +14,6 @@ export const CreateArticleRoot = {
     width: '700px',
   },
   '@media only screen and (min-width: 1200px)': {
-    // On large screens, cap the article text column at the
-    // dedicated article reading width (~780px).
     width: SIZES.maxWidth.article,
   },
 };

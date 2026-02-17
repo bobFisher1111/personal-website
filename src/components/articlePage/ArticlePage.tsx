@@ -30,7 +30,6 @@ const ArticlePage = () => {
   });
   const authorData = getAuthor && getAuthor[0];
   const articleData = currentArticle && currentArticle[0];
-  // const articleArray = articleData?.article.split("`");
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);

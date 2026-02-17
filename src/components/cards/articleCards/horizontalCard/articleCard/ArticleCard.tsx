@@ -35,7 +35,6 @@ const ArticleCard = ({
   title,
 }: Props) => {
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
-  // const rejectCookie = useSelector((state: any) => state.rejectCookie);
   const theme = useTheme();
   const getAuthorData = authorData?.filter((item: any) => item.author_id === authorId);
   const Img = styled('img')({ maxWidth: '100%', maxHeight: '100%' });
@@ -44,15 +43,9 @@ const ArticleCard = ({
   const disableButton = () => {
     return localStorage.getItem('enableYouTubeVideo') !== null;
   };
-  // May need once put back cookies, but try later without useEffect
-  // useEffect(() => {
-  //   if (localStorage.getItem('enableYouTubeVideo')) {
-  //     disableButton();
-  //   }
-  // }, [rejectCookie.enabledYouTubeVideos]);
 
   return (
-    <Grid container sx={RootStyles(theme, darkTheme)}>
+    <Grid container sx={RootStyles(theme)}>
       <Grid container direction="row" justifyContent="flex-start" alignItems="center" size={12} sx={GridNameDateStyles(theme)}>
         <Grid size={8}>
           <Link to={`/author/${authorId}`} style={AvatarAuthorLinkStyles(theme, darkTheme)}>
@@ -114,7 +107,6 @@ const ArticleCard = ({
           <Link to={`/article/${authorId}/${articleId}`} style={LinkStyles(darkTheme)}> 
             <Typography 
               color="primary" 
-              // variant="h6" 
               sx={{ ...TitleStyles(theme), marginBottom: '4px' }}
             >
               {title}
