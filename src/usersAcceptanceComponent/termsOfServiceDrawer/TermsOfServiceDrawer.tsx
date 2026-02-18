@@ -48,7 +48,7 @@ const TermsOfServiceDrawer = () => {
                 color="primary"
                 sx={DisclaimerTitleStyles(theme)}
               >
-                Disclaimer
+                Terms of Service
               </Typography>
             </Button>
           </Grid>

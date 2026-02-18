@@ -50,7 +50,7 @@ const TermsOfServiceComponent = ({
             color="primary"
             sx={TitleStyles}
           >
-            Disclaimer Terms of Service
+            Terms of Service
           </Typography>
         </Grid>
         <Grid
