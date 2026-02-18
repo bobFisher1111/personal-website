@@ -24,7 +24,6 @@ export const ArticleList = ({ authorData, data }: Props) => {
               articleMedia={item.cover_image_or_video}
               authorId={item.author_id}
               date={formatDate(item.published_date)}
-              isMediaVideo={item.use_video_instead_of_image}
               section={item.section}
               series={item.series_id}
               seriesId={item.series_id}

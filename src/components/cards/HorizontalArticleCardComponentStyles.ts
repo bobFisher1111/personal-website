@@ -31,34 +31,6 @@ export const cardHorizontalArticleInfo = (articlePageList: boolean) => ({
   },
 });
 
-export const cardMediaArticleVideo = (
-  theme: Theme,
-  articlePage: boolean,
-  videoHeight: boolean,
-  mobileImageWidth: string,
-  darkTheme: boolean,
-) => ({
-  height: articlePage ? SIZES.height.horizontalCardVideoArticle : videoHeight ? SIZES.height.horizontalCardVideoTall : SIZES.height.horizontalCardImage,
-  border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
-  borderRadius: articlePage ? '0px' : '4px',
-  aspectRatio: '16/9',
-  [theme.breakpoints.down('sm')]: {
-    minWidth: articlePage ? '100vw' : `calc(100vw - ${mobileImageWidth})`,
-  },
-  [theme.breakpoints.up('sm')]: {
-    maxWidth: 'calc(100vw - 48px)',
-    minWidth: 'calc(100vw - 48px)',
-  },
-  '@media (min-width:1024px) and (max-width:1199px)': {
-    minWidth: articlePage ? SIZES.width.horizontalCardMedium : SIZES.width.horizontalCardImageMedium,
-    maxWidth: articlePage ? SIZES.width.horizontalCardMedium : SIZES.width.horizontalCardImageMedium,
-  },
-  [theme.breakpoints.up('lg')]: {
-    minWidth: articlePage ? SIZES.maxWidth.appBar : SIZES.width.horizontalCardSmall,
-    maxWidth: articlePage ? SIZES.maxWidth.appBar : SIZES.width.horizontalCardSmall,
-  },
-});
-
 export const gridHorizontalArticleContainer = (
   theme: Theme,
   articlePage: boolean,

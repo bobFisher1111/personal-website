@@ -56,12 +56,10 @@ const SeriesPage = () => {
           date={formatDate(seriesInfo?.series_start_date)}
           imageWidth="780px"
           articlePage={true}
-          useVideoInsteadOfImage={seriesInfo?.use_video_instead_of_image}
           authorsId={seriesInfo?.author_id}
           videoOrImageCover={seriesInfo?.series_cover_image_or_video}
           section={seriesInfo?.section}
           mobileImageWidth="30px"
-          videoHeight={true}
         />
       </Grid>
 

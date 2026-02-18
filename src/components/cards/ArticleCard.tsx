@@ -1,12 +1,10 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Chip, Grid, Typography, useTheme, styled } from '@mui/material';
-import DisabledVideo from 'src/components/disabledVideo/DisabledVideo';
 import { LinkStyles } from 'src/util/styles/LinkStyles';
 import {
   ArticleDataGridStyles,
   ArticleImageStyles,
-  ArticleVideoStyles,
   AvatarAuthorLinkStyles,
   AvatarImageStyles,
   AuthorNameStyles,
@@ -27,7 +25,6 @@ const ArticleCard = ({
   authorId,
   authorData,
   date,
-  isMediaVideo,
   section,
   series,
   seriesId,
@@ -38,11 +35,6 @@ const ArticleCard = ({
   const theme = useTheme();
   const getAuthorData = authorData?.filter((item: any) => item.author_id === authorId);
   const Img = styled('img')({ maxWidth: '100%', maxHeight: '100%' });
-  const Video = styled('iframe')({ maxWidth: '100%', maxHeight: '100%' });
-
-  const disableButton = () => {
-    return localStorage.getItem('enableYouTubeVideo') !== null;
-  };
 
   return (
     <Grid container sx={RootStyles(theme)}>
@@ -76,31 +68,14 @@ const ArticleCard = ({
         sx={GridWidthStyle}
       >
         <Grid size={{ xs: 4, sm: 3, md: 3, lg: 3, xl: 3 }}>
-          {isMediaVideo ? (
-            disableButton() ? (
-              <Video
-                allowFullScreen
-                src={articleMedia}
-                sx={ArticleVideoStyles(theme, darkTheme)}
-              />
-            ) : (
-              <DisabledVideo
-                articlePage={false}
-                authorSectionArticlePage={true}
-                youtubeUrl={articleMedia}
-                carousel={false}
-              />
-            )
-          ) : (
-            <Link to={`/article/${authorId}/${articleId}`}>
-              <Img
-                alt="complex"
-                src={articleMedia}
-                sx={ArticleImageStyles(theme, darkTheme)}
-                referrerPolicy="no-referrer"
-              />
-            </Link>
-          )}
+          <Link to={`/article/${authorId}/${articleId}`}>
+            <Img
+              alt="complex"
+              src={articleMedia}
+              sx={ArticleImageStyles(theme, darkTheme)}
+              referrerPolicy="no-referrer"
+            />
+          </Link>
         </Grid>
 
         <Grid size={{ xs: 8, sm: 9, md: 9, lg: 9, xl: 9 }} sx={ArticleDataGridStyles}>
@@ -149,7 +124,6 @@ export type Props = {
   authorId: any;
   authorData: any;
   date: any;
-  isMediaVideo: boolean;
   section: any;
   series: boolean;
   seriesId: any;

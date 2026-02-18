@@ -29,22 +29,6 @@ export const ArticleImageStyles = ( theme: Theme, darkTheme: boolean) => ({
   },
 });
 
-export const ArticleVideoStyles = (
-  theme: Theme,
-  darkTheme: boolean,
-) => ({
-  borderRadius: SIZES.borderRadius,
-  border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
-  width: '100%',
-  height: 'auto',
-  aspectRatio: '16/9',
-  objectFit: 'cover',
-  [theme.breakpoints.up('sm')]: {
-    width: SIZES.imageAspectRatio16by9.width,
-  },
-});
-
-
 export const AvatarAuthorLinkStyles = (
   theme: Theme,
   darkTheme: boolean
