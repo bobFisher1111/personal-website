@@ -1,17 +1,18 @@
 import { Grid, Typography, useTheme } from "@mui/material";
 import { useSelector } from "react-redux";
 import ArticleList from "src/components/articleList/ArticleList";
-import SeriesComponent from "src/components/seriesList/SeriesComponent";
 import Sections from "./Sections";
 import {
   GridRoot,
   SectionTextStyles,
   SeriesTitleGridStyles,
 } from "./HomePageComponentStyles";
+import HomePageSeriesScroller from "./HomePageSeriesScroller";
 //
 const HomePage = () => {
   const theme = useTheme();
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
+  const darkTheme = useSelector((state: any) => state.theme.darkTheme);
   const articleData = getWebsiteData?.articles;
   const authorsData = getWebsiteData?.authors;
   const seriesData = getWebsiteData?.series;
@@ -31,7 +32,7 @@ const HomePage = () => {
         <Typography color="primary" sx={SectionTextStyles(theme)}>
             Series
           </Typography>
-        <SeriesComponent series={seriesData} />
+        <HomePageSeriesScroller series={seriesData} darkTheme={darkTheme} />
       </Grid>
 
       <Grid size={12}>
