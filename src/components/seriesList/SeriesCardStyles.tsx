@@ -12,6 +12,7 @@ export const CardMediaVerticalCardImage = (theme: Theme) => ({
   width: '100%',
   height: 'auto',
   aspectRatio: '16/9',
+  display: 'block',
   [theme.breakpoints.up('sm')]: {
     width: SIZES.width.seriesCardImage,
     height: 'auto',
@@ -26,16 +27,21 @@ export const CardMediaVerticalCardImage = (theme: Theme) => ({
 
 
 export const CardRootStyle = {
-  position: 'relative',
+  display: 'flex',
+  flexDirection: 'column',
 };
 
 export const CardFooterStyle = (theme: Theme,darkTheme: boolean) => ({
-  position: 'absolute',
-  bottom: 0,
-  left: 0,
   width: '100%',
+  height: '40px',
   bgcolor: darkTheme ? COLORS.dark.secondary : COLORS.light.primary,
-  opacity: 0.9,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-start',
+  textAlign: 'left',
+  paddingLeft: theme.spacing(SIZES.spacingNumeric.sm),
+  paddingRight: theme.spacing(SIZES.spacingNumeric.sm),
+  boxSizing: 'border-box',
   [theme.breakpoints.down('sm')]: {
     opacity: 0.8,
   },
@@ -46,6 +52,7 @@ export const CardVerticalCard = (theme: Theme, darkTheme: boolean) => ({
   width: SIZES.width.seriesCard,
   borderRadius: SIZES.borderRadius,
   boxShadow: 'none',
+  overflow: 'hidden',
   [theme.breakpoints.down('sm')]: {
     minWidth: 'calc(100vw - 32px)',
     maxWidth: 'calc(100vw - 32px)',
@@ -81,16 +88,17 @@ export const TypographyVerticalCardNameStyleHover = (theme: Theme, darkTheme: bo
   color: darkTheme ? COLORS.dark.primary : COLORS.light.secondary,
   overflow: 'hidden',
   textOverflow: 'ellipsis',
-  display: '-webkit-box',
-  WebkitLineClamp: 1,
-  WebkitBoxOrient: 'vertical',
-  padding: theme.spacing(SIZES.spacingNumeric.sm),
+  display: 'block',
+  whiteSpace: 'nowrap',
+  padding: 0,
   fontWeight: FONT_WEIGHTS.bold,
   fontSize: FONT_SIZES.body1,
   lineHeight: LINE_HEIGHTS.normal,
   textShadow: 'none',
+  width: '100%',
+  textAlign: 'left',
   [theme.breakpoints.down('sm')]: {
     fontSize: FONT_SIZES.base,
-    padding: theme.spacing(SIZES.spacingNumeric.sm),
+    padding: 0,
   },
 });
