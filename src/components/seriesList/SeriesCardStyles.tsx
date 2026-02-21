@@ -39,9 +39,6 @@ export const CardFooterStyle = (theme: Theme,darkTheme: boolean) => ({
   alignItems: 'center',
   justifyContent: 'flex-start',
   textAlign: 'left',
-  paddingLeft: theme.spacing(SIZES.spacingNumeric.sm),
-  paddingRight: theme.spacing(SIZES.spacingNumeric.sm),
-  boxSizing: 'border-box',
   [theme.breakpoints.down('sm')]: {
     opacity: 0.8,
   },
@@ -90,7 +87,9 @@ export const TypographyVerticalCardNameStyleHover = (theme: Theme, darkTheme: bo
   textOverflow: 'ellipsis',
   display: 'block',
   whiteSpace: 'nowrap',
-  padding: 0,
+  paddingLeft: theme.spacing(SIZES.spacingNumeric.sm),
+  paddingRight: theme.spacing(SIZES.spacingNumeric.sm),
+  boxSizing: 'border-box',
   fontWeight: FONT_WEIGHTS.bold,
   fontSize: FONT_SIZES.body1,
   lineHeight: LINE_HEIGHTS.normal,
@@ -99,6 +98,7 @@ export const TypographyVerticalCardNameStyleHover = (theme: Theme, darkTheme: bo
   textAlign: 'left',
   [theme.breakpoints.down('sm')]: {
     fontSize: FONT_SIZES.base,
-    padding: 0,
+    paddingLeft: theme.spacing(SIZES.spacingNumeric.sm),
+    paddingRight: theme.spacing(SIZES.spacingNumeric.sm),
   },
 });

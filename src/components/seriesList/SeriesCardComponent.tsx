@@ -4,7 +4,6 @@ import {
   Box,
   Card,
   CardMedia,
-  Grid,
   Typography,
   useTheme,
 } from '@mui/material';
@@ -39,15 +38,19 @@ const SeriesCardComponent = ({ articleData }: Props) => {
           <Box 
             sx={CardFooterStyle(theme,darkTheme)}
           >
-            <Grid container>
-              <Grid size={12}>
-                <Link to={serieslUrl} rel="noreferrer" style={LinkStyles(darkTheme)}>
-                  <Typography sx={TypographyVerticalCardNameStyleHover(theme, darkTheme)}>
-                    {articleData?.series_title}
-                  </Typography>
-                </Link>
-              </Grid>
-            </Grid>
+            <Link
+              to={serieslUrl}
+              rel="noreferrer"
+              style={{
+                ...LinkStyles(darkTheme),
+                display: 'block',
+                width: '100%',
+              }}
+            >
+              <Typography sx={TypographyVerticalCardNameStyleHover(theme, darkTheme)}>
+                {articleData?.series_title}
+              </Typography>
+            </Link>
           </Box>
         </Box>
       </Card>
