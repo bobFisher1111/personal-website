@@ -10,7 +10,6 @@ import {
   authorComponentGridBiographyTitle,
   authorComponentGridBiographyText,
   gridWidth,
-  headerComponentStyles,
 } from './AuthorComponentStyles';
 
 const AuthorComponent = () => {
@@ -48,7 +47,6 @@ const AuthorComponent = () => {
     >
       <Grid
         size={12}
-        sx={headerComponentStyles(muiTheme)}
       >
         <HeaderComponent
           title={authorData?.author_name}

@@ -45,9 +45,8 @@ export const CardVerticalCard = (theme: Theme, darkTheme: boolean, layout: 'grid
   [theme.breakpoints.down('sm')]: {
     ...(layout === 'grid'
       ? {
-          width: '100%',
-          minWidth: 'unset',
-          maxWidth: 'unset',
+          minWidth: 0,
+          maxWidth: '100%',
         }
       : {
           width: SIZES.width.seriesCardMobile,

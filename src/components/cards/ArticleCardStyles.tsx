@@ -143,6 +143,7 @@ export const TitleStyles = (theme: Theme) => ({
   WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
   [theme.breakpoints.down('sm')]: {
-    fontWeight: 200,
+    fontWeight: FONT_WEIGHTS.regular,
+    fontSize: FONT_SIZES.subtitle,
   },
 });

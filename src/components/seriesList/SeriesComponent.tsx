@@ -1,4 +1,5 @@
 import { Grid, useTheme } from '@mui/material';
+import ComingSoon from "src/components/comingSoon/ComingSoon";
 import { 
   CarouselComponentGridStyles,
   SeriesGridStyles,
@@ -15,6 +16,10 @@ export type Props = {
 const SeriesComponent = ({ series, layout = 'grid', outerSx }: Props) => {
   const theme = useTheme();
   const count = series?.length ?? 0;
+  
+  if (!series || series.length === 0) {
+    return <ComingSoon />;
+  }
 
   return (
     <Grid

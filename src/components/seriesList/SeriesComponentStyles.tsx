@@ -1,7 +1,9 @@
 import { Theme } from '@mui/material';
+import { SPACING_VALUES } from 'src/store/redux/theme/CONSTANTS';
 
 export const SeriesGridStyles = {
   display: 'flex',
+   paddingBottom: SPACING_VALUES.xs,
 };
 
 export const SeriesOuterBlockStyles = (

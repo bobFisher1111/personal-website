@@ -45,6 +45,9 @@ const SeriesCardComponent = ({ articleData, layout = 'grid' }: Props) => {
                 ...LinkStyles(darkTheme),
                 display: 'block',
                 width: '100%',
+                flex: '1 1 0%',
+                minWidth: 0,
+                overflow: 'hidden',
               }}
             >
               <Typography sx={TypographyVerticalCardNameStyleHover(theme, darkTheme)}>
