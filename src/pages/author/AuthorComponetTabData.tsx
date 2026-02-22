@@ -14,7 +14,13 @@ const AuthorComponetTabData = (
       },
       { 
         name: 'Series',
-        data: <SeriesComponent series={getSeries} layout="grid" />
+        data: (
+          <SeriesComponent
+            series={getSeries}
+            layout="grid"
+            outerSx={{ pt: 2 }}
+          />
+        )
       },
     ]
   );

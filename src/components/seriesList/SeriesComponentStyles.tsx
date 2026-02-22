@@ -17,6 +17,16 @@ export const SeriesOuterBlockStyles = (
   },
 });
 
+export const SeriesOuterBlockMergedStyles = (
+  theme: Theme,
+  count: number,
+  layout: 'grid' | 'scroller',
+  outerSx?: Record<string, unknown>
+) => ({
+  ...SeriesOuterBlockStyles(theme, count, layout),
+  ...(outerSx ?? {}),
+});
+
 export const ArrowButtonGridStyles = (theme: Theme) => ({
   [theme.breakpoints.down('sm')]: {
     display: 'none',

@@ -2,16 +2,17 @@ import { Grid, useTheme } from '@mui/material';
 import { 
   CarouselComponentGridStyles,
   SeriesGridStyles,
-  SeriesOuterBlockStyles
+  SeriesOuterBlockMergedStyles
 } from './SeriesComponentStyles';
 import SeriesCardComponent from './SeriesCardComponent';
 
 export type Props = {
   series: any;
   layout?: 'grid' | 'scroller';
+  outerSx?: Record<string, unknown>;
 };
 
-const SeriesComponent = ({ series, layout = 'grid' }: Props) => {
+const SeriesComponent = ({ series, layout = 'grid', outerSx }: Props) => {
   const theme = useTheme();
   const count = series?.length ?? 0;
 
@@ -21,7 +22,7 @@ const SeriesComponent = ({ series, layout = 'grid' }: Props) => {
       justifyContent={layout === 'scroller' ? 'flex-start' : 'center'}
     >
       <Grid
-        sx={SeriesOuterBlockStyles(theme, count, layout)}
+        sx={SeriesOuterBlockMergedStyles(theme, count, layout, outerSx)}
       >
         <Grid
           className="carouselOne1"
