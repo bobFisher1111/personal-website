@@ -26,14 +26,15 @@ export const CardRootStyle = {
   flexDirection: 'column',
 };
 
-export const CardFooterStyle = (darkTheme: boolean) => ({
+export const CardFooterStyle = (theme: Theme, darkTheme: boolean) => ({
   width: '100%',
-  height: SIZES.height.touchTarget,
+  height: SIZES.height.seriesCardFooter,
   bgcolor: darkTheme ? COLORS.dark.secondary : COLORS.light.primary,
   display: 'flex',
-  alignItems: 'center',
+  alignItems: 'flex-start',
   justifyContent: 'flex-start',
   textAlign: 'left',
+  paddingTop: theme.spacing(0.5),
 });
 
 export const CardVerticalCard = (theme: Theme, darkTheme: boolean, layout: 'grid' | 'scroller') => ({
@@ -88,8 +89,10 @@ export const TypographyVerticalCardNameStyleHover = (theme: Theme, darkTheme: bo
   color: darkTheme ? COLORS.dark.primary : COLORS.light.secondary,
   overflow: 'hidden',
   textOverflow: 'ellipsis',
-  display: 'block',
-  whiteSpace: 'nowrap',
+  display: '-webkit-box',
+  WebkitLineClamp: 2,
+  WebkitBoxOrient: 'vertical',
+  whiteSpace: 'normal',
   paddingLeft: theme.spacing(SIZES.spacingNumeric.sm),
   paddingRight: theme.spacing(SIZES.spacingNumeric.sm),
   boxSizing: 'border-box',

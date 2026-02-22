@@ -143,6 +143,7 @@ const SIZES = {
   height: {
     appBar: '2.5rem',           // 40px
     touchTarget: '2.75rem',     // 44px - minimum comfortable touch target
+    seriesCardFooter: '4.5rem', // 72px - series card footer height (supports 2-line titles)
     articleShort: '6.25rem',    // 100px
     articleTall: '7rem',        // 112px
     articleTallExact: '7.172rem',  // 114.75px - matches 16:9 aspect ratio at 300px width
