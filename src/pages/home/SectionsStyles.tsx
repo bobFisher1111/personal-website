@@ -1,6 +1,8 @@
 import { Theme } from "@mui/material";
 import { COLORS, FONT_SIZES, FONT_WEIGHTS, SIZES, SPACING_VALUES } from "src/store/redux/theme/CONSTANTS";
 
+const MOBILE_TAB_HEIGHT = '2.25rem';
+
 export const navContainerStyles = (theme: Theme, isDarkTheme: boolean) => {
   return {
     width: "100%",
@@ -15,7 +17,10 @@ export const navContainerStyles = (theme: Theme, isDarkTheme: boolean) => {
   };
 };
 export const tabsStyles = (isDarkTheme: boolean) => ({
-  minHeight: 28,
+  minHeight: { xs: MOBILE_TAB_HEIGHT, sm: SIZES.height.touchTarget },
+  '& .MuiTab-root': {
+    minHeight: { xs: MOBILE_TAB_HEIGHT, sm: SIZES.height.touchTarget },
+  },
   '& .MuiTabs-indicator': {
     height: 0,
     backgroundColor: 'transparent',
@@ -23,6 +28,7 @@ export const tabsStyles = (isDarkTheme: boolean) => ({
 });
 
 export const tabStyles = (
+  theme: Theme,
   activeSection: string,
   section: string,
   isDarkTheme: boolean
@@ -30,8 +36,9 @@ export const tabStyles = (
   textTransform: 'none' as const,
   minWidth: 'auto',
   marginRight: '1px',
-  paddingInline: 4,
-  paddingBlock: 0,
+  minHeight: { xs: MOBILE_TAB_HEIGHT, sm: SIZES.height.touchTarget },
+  paddingInline: theme.spacing(1.5),
+  paddingBlock: theme.spacing(0.5),
   fontSize: FONT_SIZES.body2,
   fontWeight: FONT_WEIGHTS.bold,
   borderRadius:
@@ -55,6 +62,11 @@ export const tabStyles = (
     border: `1px solid ${isDarkTheme ? COLORS.dark.text.primary : COLORS.light.secondary}`,
     color: isDarkTheme ? COLORS.dark.text.primary : COLORS.light.primary,
     borderRadius: isDarkTheme ? SIZES.borderRadius : 0,
+  },
+  [theme.breakpoints.down("sm")]: {
+    lineHeight: 1.25,
+    paddingInline: theme.spacing(1),
+    paddingBlock: theme.spacing(0.25),
   },
 });
 

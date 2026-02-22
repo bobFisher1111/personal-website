@@ -9,7 +9,14 @@ export const SeriesScrollerStyles = () => ({
   overflowY: "hidden",
   WebkitOverflowScrolling: "touch",
   px: SIZES.spacingNumeric.md,
+  "&::-webkit-scrollbar": {
+    display: "none",
+  },
   "& .MuiGrid-container": {
     flexWrap: "nowrap",
+  },
+  "& .carouselOne1": {
+    flexWrap: "nowrap",
+    width: "fit-content",
   },
 });

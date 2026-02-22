@@ -132,7 +132,9 @@ const SIZES = {
     imageMin: '15rem',     // 240px
     imageMax: '18.75rem',  // 300px
     seriesCardImage: '11.25rem', // 180px - series card image width
+    seriesCardImageMobile: '8.75rem', // 140px - mobile series card image width (16:9)
     seriesCard: '11.25rem', // 180px - series card container width
+    seriesCardMobile: '8.75rem', // 140px - mobile series card container width
     horizontalCardContainer: '41.25rem', // 660px - container width
     horizontalCardMedium: '46.875rem', // 750px - medium card width
     horizontalCardSmall: '20.0625rem', // 321px - small card width
@@ -140,6 +142,7 @@ const SIZES = {
   },
   height: {
     appBar: '2.5rem',           // 40px
+    touchTarget: '2.75rem',     // 44px - minimum comfortable touch target
     articleShort: '6.25rem',    // 100px
     articleTall: '7rem',        // 112px
     articleTallExact: '7.172rem',  // 114.75px - matches 16:9 aspect ratio at 300px width

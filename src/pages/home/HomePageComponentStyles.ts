@@ -60,7 +60,7 @@ export const SectionTextStyles = (theme: Theme) => ({
   fontWeight: FONT_WEIGHTS.regular,
   lineHeight: LINE_HEIGHTS.normal,
   [theme.breakpoints.down("sm")]: {
-    fontSize: FONT_SIZES.sectionTitle,
+    fontSize: FONT_SIZES.body1,
   },
 });
 

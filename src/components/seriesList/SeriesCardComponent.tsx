@@ -17,14 +17,14 @@ import {
   TypographyVerticalCardNameStyleHover,
 } from './SeriesCardStyles';
 
-const SeriesCardComponent = ({ articleData }: Props) => {
+const SeriesCardComponent = ({ articleData, layout = 'grid' }: Props) => {
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
   const theme = useTheme();
   const serieslUrl = `/series/${articleData?.series_id}`;
 
   return (
     <div style={DivVerticalArticleRoot(theme)}>
-      <Card sx={CardVerticalCard(theme, darkTheme)}>
+      <Card sx={CardVerticalCard(theme, darkTheme, layout)}>
         <Box sx={CardRootStyle}>
           <Link to={serieslUrl} rel="noreferrer">
             <CardMedia
@@ -36,7 +36,7 @@ const SeriesCardComponent = ({ articleData }: Props) => {
             />
           </Link>
           <Box 
-            sx={CardFooterStyle(theme,darkTheme)}
+            sx={CardFooterStyle(darkTheme)}
           >
             <Link
               to={serieslUrl}
@@ -60,6 +60,7 @@ const SeriesCardComponent = ({ articleData }: Props) => {
 
 export type Props = {
   articleData: any;
+  layout?: 'grid' | 'scroller';
 };
 
 export default SeriesCardComponent;

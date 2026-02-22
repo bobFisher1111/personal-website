@@ -1,30 +1,48 @@
 import { Grid, useTheme } from '@mui/material';
-import { CarouselComponentGridStyles, SeriesOuterBlockStyles } from './SeriesComponentStyles';
+import { 
+  CarouselComponentGridStyles,
+  SeriesGridStyles,
+  SeriesOuterBlockStyles
+} from './SeriesComponentStyles';
 import SeriesCardComponent from './SeriesCardComponent';
 
 export type Props = {
   series: any;
+  layout?: 'grid' | 'scroller';
 };
 
-const SeriesComponent = ({ series }: Props) => {
+const SeriesComponent = ({ series, layout = 'grid' }: Props) => {
   const theme = useTheme();
   const count = series?.length ?? 0;
 
   return (
     <Grid container justifyContent="center">
       <Grid
-        sx={SeriesOuterBlockStyles(count)}
+        sx={SeriesOuterBlockStyles(theme, count, layout)}
       >
         <Grid
           className="carouselOne1"
           container
           justifyContent="flex-start"
-          columnGap={1}
-          rowGap={1}
+          {...(layout === 'grid'
+            ? {
+                columnSpacing: { xs: 0.5, sm: 1 },
+                rowSpacing: { xs: 0.5, sm: 1 },
+              }
+            : {
+                columnGap: 1,
+                rowGap: 1,
+              })}
           sx={CarouselComponentGridStyles(theme)}
         >
           {series?.map((item: any, index: any) => (
-            <SeriesCardComponent key={index} articleData={item} />
+            <Grid
+              key={index}
+              size={layout === 'grid' ? { xs: 6, sm: 'auto' } : 'auto'}
+              sx={SeriesGridStyles}
+            >
+              <SeriesCardComponent articleData={item} layout={layout} />
+            </Grid>
           ))}
         </Grid>
       </Grid>

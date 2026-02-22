@@ -20,8 +20,8 @@ interface SeriesData {
 interface Props {
   data: SectionData[];
   series: SeriesData[];
-  setData: (data: SectionData[]) => void;
-  setSeries: (series: SeriesData[]) => void;
+  setData?: (data: SectionData[]) => void;
+  setSeries?: (series: SeriesData[]) => void;
 }
 
 const SECTION_NAMES = [
@@ -51,8 +51,8 @@ export default function Sections2({ data, series, setData, setSeries }: Props) {
   const handleSectionChange = (section: string) => {
     setActiveSection(section);
     const { filteredData, filteredSeries } = filterDataBySection(data, series, section);
-    setSeries(filteredSeries);
-    setData(filteredData);
+    setSeries?.(filteredSeries);
+    setData?.(filteredData);
   };
 
   return (
@@ -71,6 +71,7 @@ export default function Sections2({ data, series, setData, setSeries }: Props) {
           onChange={(_, newValue) => handleSectionChange(newValue)}
           variant={isMobile ? 'scrollable' : 'standard'}
           scrollButtons={isMobile ? 'auto' : false}
+          aria-label="Content sections"
           sx={tabsStyles(isDarkTheme)}
         >
           {SECTION_NAMES.map((section) => (
@@ -78,7 +79,7 @@ export default function Sections2({ data, series, setData, setSeries }: Props) {
               key={section}
               value={section}
               label={section}
-              sx={tabStyles(activeSection, section, isDarkTheme)}
+              sx={tabStyles(theme, activeSection, section, isDarkTheme)}
               disableRipple
             />
           ))}

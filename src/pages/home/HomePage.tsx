@@ -8,7 +8,7 @@ import {
   SeriesTitleGridStyles,
 } from "./HomePageComponentStyles";
 import HomePageSeriesScroller from "./HomePageSeriesScroller";
-//
+
 const HomePage = () => {
   const theme = useTheme();
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);

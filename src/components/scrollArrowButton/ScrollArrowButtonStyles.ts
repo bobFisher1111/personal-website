@@ -12,6 +12,8 @@ export const ScrollArrowButtonStyles = (
   top: "50%",
   transform: "translateY(-50%)",
   zIndex: 1,
+  width: SIZES.height.touchTarget,
+  height: SIZES.height.touchTarget,
   bgcolor: isDark ? COLORS.dark.secondary : COLORS.light.secondary,
   border: `1px solid ${isDark ? COLORS.dark.primary : COLORS.light.primary}`,
   borderRadius: SIZES.borderRadius,

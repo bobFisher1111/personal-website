@@ -17,11 +17,6 @@ export const CardMediaVerticalCardImage = (theme: Theme) => ({
     width: SIZES.width.seriesCardImage,
     height: 'auto',
   },
-  [theme.breakpoints.down('sm')]: {
-    '&.MuiCardMedia-root': {
-      maxHeight: '35px',
-    },
-  },
 });
 
 
@@ -31,28 +26,34 @@ export const CardRootStyle = {
   flexDirection: 'column',
 };
 
-export const CardFooterStyle = (theme: Theme,darkTheme: boolean) => ({
+export const CardFooterStyle = (darkTheme: boolean) => ({
   width: '100%',
-  height: '40px',
+  height: SIZES.height.touchTarget,
   bgcolor: darkTheme ? COLORS.dark.secondary : COLORS.light.primary,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-start',
   textAlign: 'left',
-  [theme.breakpoints.down('sm')]: {
-    opacity: 0.8,
-  },
 });
 
-export const CardVerticalCard = (theme: Theme, darkTheme: boolean) => ({
+export const CardVerticalCard = (theme: Theme, darkTheme: boolean, layout: 'grid' | 'scroller') => ({
   border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
   width: SIZES.width.seriesCard,
   borderRadius: SIZES.borderRadius,
   boxShadow: 'none',
   overflow: 'hidden',
   [theme.breakpoints.down('sm')]: {
-    minWidth: 'calc(100vw - 32px)',
-    maxWidth: 'calc(100vw - 32px)',
+    ...(layout === 'grid'
+      ? {
+          width: '100%',
+          minWidth: 'unset',
+          maxWidth: 'unset',
+        }
+      : {
+          width: SIZES.width.seriesCardMobile,
+          minWidth: SIZES.width.seriesCardMobile,
+          maxWidth: SIZES.width.seriesCardMobile,
+        }),
   },
 });
 
@@ -63,6 +64,9 @@ export const DivVerticalArticleRoot = (theme: Theme) => ({
     SIZES.spacingNumeric.sm,
     SIZES.spacingNumeric.sm,
   ),
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(SIZES.spacingNumeric.xs),
+  },
 });
 
 export const GridPadding = (theme: Theme) => ({

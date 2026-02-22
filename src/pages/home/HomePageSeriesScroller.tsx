@@ -19,7 +19,7 @@ const HomePageSeriesScroller = ({ series, darkTheme }: HomePageSeriesScrollerPro
 
   const seriesCount = useMemo(() => series?.length ?? 0, [series]);
 
-  const updateSeriesScrollButtons = () => {
+  const updateScrollButtons = () => {
     const el = seriesScrollerRef.current;
     if (!el) return;
 
@@ -32,7 +32,7 @@ const HomePageSeriesScroller = ({ series, darkTheme }: HomePageSeriesScrollerPro
     setCanScrollRight(scrollable && !atEnd);
   };
 
-  const scrollSeriesBy = (direction: "left" | "right") => {
+  const scrollByAmount = (direction: "left" | "right") => {
     const el = seriesScrollerRef.current;
     if (!el) return;
 
@@ -44,14 +44,14 @@ const HomePageSeriesScroller = ({ series, darkTheme }: HomePageSeriesScrollerPro
   };
 
   useEffect(() => {
-    updateSeriesScrollButtons();
+    updateScrollButtons();
   }, [seriesCount]);
 
   useEffect(() => {
     const el = seriesScrollerRef.current;
     if (!el) return;
 
-    const onScroll = () => updateSeriesScrollButtons();
+    const onScroll = () => updateScrollButtons();
     el.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
 
@@ -68,7 +68,7 @@ const HomePageSeriesScroller = ({ series, darkTheme }: HomePageSeriesScrollerPro
           ariaLabel="Scroll series left"
           direction="left"
           darkTheme={darkTheme}
-          onClick={() => scrollSeriesBy("left")}
+          onClick={() => scrollByAmount("left")}
         />
       )}
 
@@ -77,15 +77,12 @@ const HomePageSeriesScroller = ({ series, darkTheme }: HomePageSeriesScrollerPro
           ariaLabel="Scroll series right"
           direction="right"
           darkTheme={darkTheme}
-          onClick={() => scrollSeriesBy("right")}
+          onClick={() => scrollByAmount("right")}
         />
       )}
 
-      <Grid
-        ref={seriesScrollerRef}
-        sx={SeriesScrollerStyles()}
-      >
-        <SeriesComponent series={series} />
+      <Grid ref={seriesScrollerRef} sx={SeriesScrollerStyles()}>
+        <SeriesComponent series={series} layout="scroller" />
       </Grid>
     </Grid>
   );

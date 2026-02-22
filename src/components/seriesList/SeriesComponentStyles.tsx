@@ -1,9 +1,20 @@
 import { Theme } from '@mui/material';
 
-export const SeriesOuterBlockStyles = (count: number) => ({
+export const SeriesGridStyles = {
+  display: 'flex',
+};
+
+export const SeriesOuterBlockStyles = (
+  theme: Theme,
+  count: number,
+  layout: 'grid' | 'scroller'
+) => ({
   px: 0.5,
-  width: count >= 4 ? 'fit-content' : '100%',
+  width: layout === 'scroller' && count >= 4 ? 'fit-content' : '100%',
   maxWidth: '100%',
+  [theme.breakpoints.down('sm')]: {
+    width: '100%',
+  },
 });
 
 export const ArrowButtonGridStyles = (theme: Theme) => ({
