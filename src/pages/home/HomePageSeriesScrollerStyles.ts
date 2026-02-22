@@ -8,7 +8,8 @@ export const SeriesScrollerStyles = () => ({
   overflowX: "auto",
   overflowY: "hidden",
   WebkitOverflowScrolling: "touch",
-  px: SIZES.spacingNumeric.md,
+  pl: 0,
+  pr: SIZES.spacingNumeric.md,
   "&::-webkit-scrollbar": {
     display: "none",
   },

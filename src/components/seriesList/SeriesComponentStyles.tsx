@@ -9,7 +9,7 @@ export const SeriesOuterBlockStyles = (
   count: number,
   layout: 'grid' | 'scroller'
 ) => ({
-  px: 0.5,
+  px: layout === 'scroller' ? 0 : 0.5,
   width: layout === 'scroller' && count >= 4 ? 'fit-content' : '100%',
   maxWidth: '100%',
   [theme.breakpoints.down('sm')]: {

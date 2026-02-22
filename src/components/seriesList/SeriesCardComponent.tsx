@@ -23,7 +23,7 @@ const SeriesCardComponent = ({ articleData, layout = 'grid' }: Props) => {
   const serieslUrl = `/series/${articleData?.series_id}`;
 
   return (
-    <div style={DivVerticalArticleRoot(theme)}>
+    <Box sx={DivVerticalArticleRoot(theme)}>
       <Card sx={CardVerticalCard(theme, darkTheme, layout)}>
         <Box sx={CardRootStyle}>
           <Link to={serieslUrl} rel="noreferrer">
@@ -54,7 +54,7 @@ const SeriesCardComponent = ({ articleData, layout = 'grid' }: Props) => {
           </Box>
         </Box>
       </Card>
-    </div>
+    </Box>
   );
 };
 

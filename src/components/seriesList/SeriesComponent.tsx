@@ -16,7 +16,10 @@ const SeriesComponent = ({ series, layout = 'grid' }: Props) => {
   const count = series?.length ?? 0;
 
   return (
-    <Grid container justifyContent="center">
+    <Grid
+      container
+      justifyContent={layout === 'scroller' ? 'flex-start' : 'center'}
+    >
       <Grid
         sx={SeriesOuterBlockStyles(theme, count, layout)}
       >
