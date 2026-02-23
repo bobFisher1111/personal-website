@@ -38,6 +38,9 @@ const ArticleBody: React.FC<ArticleBodyProps> = ({ html }) => {
     '& ol': lists.ol.sx,
     '& li': lists.li.sx,
     '& li > p': lists.liParagraph.sx,
+    '& li:has(> p > strong:first-child)::marker': {
+      fontWeight: 700,
+    },
     '& li:has(span[style*="font-size: 0.9rem"])': {
       fontSize: '0.9rem',
     },
