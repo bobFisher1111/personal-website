@@ -21,12 +21,8 @@ export const CloseDrawerGridStyles = {
 export const MenuIconStyle = {};
 
 export const GridMobileDrawerAppBar = (theme: Theme) => ({
-  height: '60px',
+  height: '40px',
   borderBottom: '1px solid #0C0D0D',
-  [theme.breakpoints.down('sm')]: {
-    width: '100vw',
-    padding: '8px',
-  },
 });
 
 export const GridCenterItems = {
@@ -43,20 +39,8 @@ export const GridSectionsStyle = {
 export const TypographyMobileDrawer = (theme: Theme) => ({
   padding: '0px 20px',
   cursor: 'pointer',
-  fontSize: '24px',
-  [theme.breakpoints.down('md')]: {
-    fontSize: '20px',
-  },
+  fontSize: '1.25rem',
 });
-
-export const TypograohyMobileDrawerWebistieName = (theme: Theme) => ({
-  cursor: 'pointer',
-  fontSize: '20px',
-  [theme.breakpoints.down('md')]: {
-    fontSize: '18px',
-  },
-});
-
 
 export default [
   AppBarStyles,
@@ -68,5 +52,4 @@ export default [
   GridMobileDrawerAppBar,
   MenuIconStyle,
   TypographyMobileDrawer,
-  TypograohyMobileDrawerWebistieName,
 ];

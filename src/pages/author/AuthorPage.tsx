@@ -61,7 +61,7 @@ const AuthorComponent = () => {
         size={12}
         sx={authorComponentGridBiography()}
       >
-        <Typography color="primary" variant="h6" sx={authorComponentGridBiographyTitle(muiTheme)}>
+        <Typography color="primary" sx={authorComponentGridBiographyTitle(muiTheme)}>
           Biography
         </Typography>
         <Typography color="primary" sx={authorComponentGridBiographyText(muiTheme)}>

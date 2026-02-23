@@ -27,9 +27,6 @@ export const seriesComponentTitle = (theme: Theme) => ({
   fontSize: FONT_SIZES.title,
   padding: '0px 16px',
   fontWeight: FONT_WEIGHTS.bold,
-  [theme.breakpoints.down('sm')]: {
-    fontSize: FONT_SIZES.subtitle,
-  },
 });
 
 export const seriesComponentSubTitle = (theme: Theme) => ({

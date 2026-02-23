@@ -57,18 +57,12 @@ export const TypographyDesktopTitle = (theme: Theme) => ({
   fontSize: FONT_SIZES.sectionTitle,
   padding: SIZES.padding.desktopTitle,
   [theme.breakpoints.down('sm')]: {
-    fontSize: FONT_SIZES.body1,
     cursor: 'pointer',
   },
   '@media only screen and (max-device-width: 812px) and (orientation: landscape)': {
     fontSize: FONT_SIZES.large,
   },
 });
-
-export const TypographyMobileTitle = {
-  fontSize: FONT_SIZES.body1,
-  cursor: 'pointer',
-};
 
 export default [
   AppBarStyle,
@@ -77,5 +71,4 @@ export default [
   GridMobileAppBarTitle,
   LinkGridMobileStyles,
   TypographyDesktopTitle,
-  TypographyMobileTitle,
 ];

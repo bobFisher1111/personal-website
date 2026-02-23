@@ -33,13 +33,10 @@ export const GridPaddingRight = {
 };
 
 export const TypographyHeaderTitle = {
-  fontSize: FONT_SIZES.h3,
+  fontSize: FONT_SIZES.title,
   lineHeight: '40px',
   '@media (min-width: 1023px)': {
     padding: '25px 0px 25px 0px',
-  },
-  '@media only screen and (max-width: 600px)': {
-    fontSize: FONT_SIZES.h3,
   },
 };
 

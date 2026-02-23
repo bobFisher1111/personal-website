@@ -27,26 +27,20 @@ export const WritersCardAvatar = (theme: Theme, darkTheme: boolean) => ({
   },
 });
 
-export const WritersCardTextAuthorName = (theme: Theme) => ({
-  fontSize: FONT_SIZES.body1,
+export const WritersCardTextAuthorName = {
+  fontSize: FONT_SIZES.title,
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
   WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '20px',
-  },
-});
+};
 
-export const WritersCardTextAuthorTitle = (theme: Theme) => ({
+export const WritersCardTextAuthorTitle = {
   fontSize: FONT_SIZES.body1,
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   display: '-webkit-box',
   WebkitLineClamp: '2',
   WebkitBoxOrient: 'vertical',
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '16px',
-  },
-});
+};

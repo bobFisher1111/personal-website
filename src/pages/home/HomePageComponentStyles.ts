@@ -59,9 +59,6 @@ export const SectionTextStyles = (theme: Theme) => ({
   fontSize: FONT_SIZES.sectionTitle,
   fontWeight: FONT_WEIGHTS.regular,
   lineHeight: LINE_HEIGHTS.normal,
-  [theme.breakpoints.down("sm")]: {
-    fontSize: FONT_SIZES.body1,
-  },
 });
 
 export const SeriesButtonStyles = () => ({
