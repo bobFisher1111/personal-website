@@ -13,7 +13,9 @@ const ArticleBody: React.FC<ArticleBodyProps> = ({ html }) => {
   const markdownStyles = darkTheme ? MARKDOWN_STYLES.dark : MARKDOWN_STYLES.light;
   const { headings, text, lists, links, images, code, blockquote, table } = markdownStyles;
   const contentHtml = html || '<p></p>';
-  const safeHtml = DOMPurify.sanitize(contentHtml);
+  const safeHtml = DOMPurify.sanitize(contentHtml, {
+    FORBID_TAGS: ['svg', 'math'],
+  });
 
   const contentSx = {
     ...markdownStyles.container,
@@ -38,7 +40,7 @@ const ArticleBody: React.FC<ArticleBodyProps> = ({ html }) => {
     '& ol': lists.ol.sx,
     '& li': lists.li.sx,
     '& li > p': lists.liParagraph.sx,
-    '& li:has(> p > strong:first-child)::marker': {
+    '& li:has(> p > strong:first-of-type)::marker': {
       fontWeight: 700,
     },
     '& li:has(span[style*="font-size: 0.9rem"])': {
