@@ -222,7 +222,7 @@ const createMarkdownStyles = (mode: 'light' | 'dark') => {
       },
       h2: {
         variant: 'h4',
-        sx: { fontWeight: 600, color: colors.primary, mt: 2, mb: 1 },
+        sx: { fontWeight: 600, color: colors.primary, fontSize: '1.25rem', textIndent: '20px', mt: 2, mb: 1 },
       },
       h3: {
         variant: 'h5',
