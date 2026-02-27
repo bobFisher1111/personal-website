@@ -33,15 +33,11 @@ export const cardHorizontalArticleInfo = (articlePageList: boolean) => ({
 
 export const gridHorizontalArticleContainer = (
   theme: Theme,
-  articlePage: boolean,
-  darkTheme: boolean,
 ) => ({
   width: '100%',
   display: 'flex',
   margin: `0px 0px ${SIZES.spacing.sm} 0px`,
-  border: darkTheme || articlePage ? '' : '1px solid #0C0D0D',
   [theme.breakpoints.down('sm')]: {
-    border: darkTheme || articlePage ? '' : '1px solid #0C0D0D',
     padding: `${SIZES.padding.cardSmall} 0px 0px 0px`,
   },
 });
@@ -49,13 +45,10 @@ export const gridHorizontalArticleContainer = (
 export const gridHorizontalArticleMaxWidth = (
   theme: Theme,
   imageWidth: string,
-  darkTheme: boolean,
-  articlePage: boolean
 ) => ({
   maxWidth: imageWidth,
-  height: darkTheme || articlePage ? undefined : SIZES.height.horizontalCard,
   '@media (min-width:1024px) and (max-width:1199px)': {
-    maxWidth: articlePage ? SIZES.width.horizontalCardMedium : SIZES.width.horizontalCardImageMedium,
+    maxWidth: SIZES.width.horizontalCardMedium,
   },
   [theme.breakpoints.down('md')]: {
     height: undefined,
@@ -64,17 +57,15 @@ export const gridHorizontalArticleMaxWidth = (
 
 export const imageHorizontalArticleStyles = (
   theme: Theme,
-  articlePage: boolean,
-  imageWidth: string,
   darkTheme: boolean,
 ) => ({
   border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
   borderRadius: SIZES.borderRadius,
-  height: articlePage ? 'auto' : SIZES.height.horizontalCardImage,
+  height: 'auto',
   objectFit: 'cover' as const,
   aspectRatio: '16/9',
-  width: articlePage ? '100%' : SIZES.width.horizontalCardSmall,
-  maxWidth: articlePage ? SIZES.width.horizontalCardMedium : undefined,
+  width: '100%',
+  maxWidth: SIZES.maxWidth.pageContainer,
   [theme.breakpoints.down('sm')]: {
     width: '100%',
     height: 'auto',
@@ -82,9 +73,9 @@ export const imageHorizontalArticleStyles = (
     paddingTop: 0,
   },
   [theme.breakpoints.up('sm')]: {
-    width: articlePage ? '100%' : `calc(100vw - ${imageWidth || '48px'})`,
+    width: '100%',
   },
   [theme.breakpoints.up('lg')]: {
-    width: articlePage ? SIZES.maxWidth.appBar : SIZES.width.horizontalCardSmall,
+    width: SIZES.maxWidth.appBar,
   },
 });

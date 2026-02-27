@@ -1,13 +1,6 @@
 import { Theme } from '@mui/material/styles';
 import { SIZES, FONT_SIZES, FONT_WEIGHTS } from 'src/store/redux/theme/CONSTANTS';
 
-export const seriesComponentGridRoot = () => ({
-  display: 'flex',
-  maxWidth: SIZES.maxWidth.screenWidth,
-  margin: 'auto',
-  padding: '76px 16px 100px 16px',
-});
-
 export const seriesComponentGridHeader = (theme: Theme) => ({
   alignItems: 'center',
   padding: '16px 0px 0px 0px',
@@ -66,7 +59,6 @@ export const seriesComponentImageStyle = (theme: Theme) => ({
 });
 
 export default [
-  seriesComponentGridRoot,
   seriesComponentGridHeader,
   seriesComponentGridArticleInfo,
   seriesComponentTitle,

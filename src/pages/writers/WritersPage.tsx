@@ -1,15 +1,11 @@
 import { useId } from 'react';
 import Grid from '@mui/material/Grid';
 import { useSelector } from 'react-redux';
-import { useTheme } from '@mui/material/styles';
+import PageContainer from 'src/components/pageContainer/PageContainer';
 import WritersCard from './writersCard/WritersCard';
-import {
-  WritersCardGrid,
-} from './WritersStyle';
 
 const Writers = () => {
   const id = useId();
-  const theme = useTheme();
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const authorsData = getWebsiteData?.authors;
 
@@ -18,7 +14,7 @@ const Writers = () => {
   );
 
   return (
-    <Grid container sx={WritersCardGrid(theme)}>
+    <PageContainer>
       {sortAuthorsById?.map((item: any, index: number) => (
         <Grid
           key={`${id}-${index}`}
@@ -42,7 +38,7 @@ const Writers = () => {
           />
         </Grid>
       ))}
-    </Grid>
+    </PageContainer>
   );
 };
 

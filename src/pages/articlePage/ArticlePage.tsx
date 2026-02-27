@@ -1,15 +1,12 @@
 import { useLayoutEffect } from 'react';
 import { useSelector } from 'react-redux';
-import Grid from '@mui/material/Grid';
 import HorizontalArticleCardComponent from 'src/components/cards/HorizontalArticleCardComponent';
+import PageContainer from 'src/components/pageContainer/PageContainer';
 import formatDate from 'src/util/formatDate';
 import getNameFromUrl from 'src/util/getNameFromUrl';
-import {
-  CreateArticleRoot,
-  GridRoot,
-  GridHeader,
-} from './ArticlePageStyles';
 import ArticleBody from './ArticleBody';
+import { ArticleSubtitleTypographyStyles, ArticleTitleTypographyStyles } from './ArticlePageStyles';
+import { Typography } from '@mui/material';
 
 const ArticlePage = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
@@ -36,44 +33,24 @@ const ArticlePage = () => {
   }, []);
 
   return (
-    <>
-      <Grid
-        container
-        justifyContent='center'
-        alignContent='center'
-        sx={GridRoot}
-      >
-        <Grid
-          container
-          justifyContent="center"
-          alignContent='flex-start'
-          size={{
-            xs: 12,
-            sm: 12,
-            md: 12,
-            lg: 12,
-            xl: 9,
-          }}
-          sx={GridHeader}
-        >
-          <Grid
-            sx={CreateArticleRoot}
-          >
-            <HorizontalArticleCardComponent
-              author={authorData?.author_name}
-              date={formatDate(articleData?.published_date)}
-              imageWidth={'780px'}
-              articlePage={true}
-              authorsId={articleData?.author_id}
-              videoOrImageCover={articleData?.cover_image_or_video}
-              section={articleData?.section}
-              mobileImageWidth={'22px'}
-            />
-            <ArticleBody html={articleData?.markdown_data} />
-          </Grid>
-        </Grid>
-      </Grid>
-    </>
+    <PageContainer>
+      <Typography color="primary" variant="h1" sx={ArticleTitleTypographyStyles}>
+        {articleData?.article_title}
+      </Typography>
+      <Typography color="primary" variant="h2" sx={ArticleSubtitleTypographyStyles}>
+        {articleData?.article_subtitle}
+      </Typography>
+      <HorizontalArticleCardComponent
+        author={authorData?.author_name}
+        date={formatDate(articleData?.published_date)}
+        imageWidth={'832px'}
+        authorsId={articleData?.author_id}
+        videoOrImageCover={articleData?.cover_image_or_video}
+        section={articleData?.section}
+        mobileImageWidth={'22px'}
+      />
+      <ArticleBody html={articleData?.markdown_data} />
+    </PageContainer>
   );
 };
 

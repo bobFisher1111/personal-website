@@ -1,9 +1,9 @@
 import { Grid, Typography, useTheme } from "@mui/material";
 import { useSelector } from "react-redux";
 import ArticleList from "src/components/articleList/ArticleList";
+import PageContainer from 'src/components/pageContainer/PageContainer';
 import Sections from "./Sections";
 import {
-  GridRoot,
   SectionTextStyles,
   SeriesTitleGridStyles,
 } from "./HomePageComponentStyles";
@@ -18,16 +18,13 @@ const HomePage = () => {
   const seriesData = getWebsiteData?.series;
 
   return (
-    <Grid container justifyContent="center" alignItems="center" sx={GridRoot(theme)}>
-      <Grid size={12}>
+    <PageContainer>
         <Sections
           data={articleData}
           series={seriesData}
           setData={() => {}}
           setSeries={() => {}}
         />
-      </Grid>
-
       <Grid size={12} sx={SeriesTitleGridStyles(theme)}>
         <Typography color="primary" sx={SectionTextStyles(theme)}>
             Series
@@ -44,7 +41,7 @@ const HomePage = () => {
           data={articleData}
         />
       </Grid>
-    </Grid>
+    </PageContainer>
   );
 };
 

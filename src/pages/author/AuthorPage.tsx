@@ -2,10 +2,10 @@ import { Grid, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { useTheme } from '@mui/material/styles';
 import HeaderComponent from 'src/components/headerComponent/HeaderComponent';
+import PageContainer from 'src/components/pageContainer/PageContainer';
 import TabsComponent from 'src/components/tabsComponent/TabsComponent';
 import AuthorComponetTabData from './AuthorComponetTabData';
 import {
-  authorComponentGridRoot,
   authorComponentGridBiography,
   authorComponentGridBiographyTitle,
   authorComponentGridBiographyText,
@@ -40,23 +40,12 @@ const AuthorComponent = () => {
   const authorData = getAuthor?.[0];
 
   return (
-    <Grid
-      container
-      justifyContent="center"
-      sx={authorComponentGridRoot()}
-    >
-      <Grid
-        size={12}
-      >
+    <PageContainer>
         <HeaderComponent
           title={authorData?.author_name}
-          authorAvatar={true}
           avatarImage={authorData?.avatar_image}
           authorId={authorData?.author_id}
-          articlePage={false}
         />
-      </Grid>
-
       <Grid
         size={12}
         sx={authorComponentGridBiography()}
@@ -85,7 +74,7 @@ const AuthorComponent = () => {
           }
         />
       </Grid>
-    </Grid>
+    </PageContainer>
   );
 };
 

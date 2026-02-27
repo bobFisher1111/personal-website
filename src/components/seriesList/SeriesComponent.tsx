@@ -32,7 +32,7 @@ const SeriesComponent = ({ series, layout = 'grid', outerSx }: Props) => {
         <Grid
           className="carouselOne1"
           container
-          justifyContent="flex-start"
+          justifyContent="space-between"
           {...(layout === 'grid'
             ? {
                 columnSpacing: { xs: 0.5, sm: 1 },

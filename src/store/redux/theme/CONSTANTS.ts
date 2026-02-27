@@ -103,6 +103,10 @@ const SPACING_NUMERIC = {
 const SIZES = {
   borderRadius: '0.375rem',        // 6px
   border: '0.0625rem solid',       // 1px
+  fontSize: {
+    articleTitle: FONT_SIZES.h3, // 28px
+    articleSubtitle: FONT_SIZES.sectionTitle, // 20px
+  },
   avatar: {
     sm: '1.25rem',                 // 20px
     md: '1.875rem',                // 30px
@@ -116,7 +120,8 @@ const SIZES = {
   maxWidth: {
     appBar: '54rem',               // App bar / shell max width
     screenWidth: '54rem',          // General page max width
-    article: '50rem',           // ~780px article reading width at 16px root
+    article: '50rem',
+    pageContainer: '52rem',
   },
   padding: {
     linkGridMobile: '0.25rem 1rem 0.25rem 0rem', // 4px 16px 4px 0px

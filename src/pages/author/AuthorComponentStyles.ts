@@ -1,14 +1,6 @@
 import { Theme } from '@mui/material/styles';
 import { FONT_SIZES, SIZES } from 'src/store/redux/theme/CONSTANTS';
 
-export const authorComponentGridRoot = () => ({
-  display: 'flex',
-  paddingBottom: '200px',
-  maxWidth: SIZES.maxWidth.appBar,
-  margin: 'auto',
-  padding: '76px 16px 100px 16px',
-});
-
 export const authorComponentGridBiography = () => ({
   padding: '8px 16px 16px 16px',
 });

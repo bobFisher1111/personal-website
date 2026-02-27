@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useTheme } from '@mui/material/styles';
 import ComingSoon from 'src/components/comingSoon/ComingSoon';
+import PageContainer from 'src/components/pageContainer/PageContainer';
 import formatDate from '../../util/formatDate';
 import HorizontalArticleCardComponent from 'src/components/cards/HorizontalArticleCardComponent';
 import { LinkStyles } from '../../util/styles/LinkStyles';
 import {
-  seriesComponentGridRoot,
   seriesComponentGridArticleInfo,
   seriesComponentTitle,
   seriesComponentSubTitle,
@@ -44,27 +44,17 @@ const SeriesPage = () => {
   );
 
   return (
-    <Grid
-      container
-      justifyContent="flex-start"
-      alignContent="center"
-      sx={seriesComponentGridRoot()}
-    >
-      <Grid size={12}>
+    <PageContainer>
         <HorizontalArticleCardComponent
           author={seriesInfo?.series_authors}
           date={formatDate(seriesInfo?.series_start_date)}
-          imageWidth="780px"
-          articlePage={true}
+          imageWidth="832px"
           authorsId={seriesInfo?.author_id}
           videoOrImageCover={seriesInfo?.series_cover_image_or_video}
           section={seriesInfo?.section}
           mobileImageWidth="30px"
         />
-      </Grid>
-
       {noArticles && <ComingSoon />}
-
       {sortSeriesList?.map((item: any, index: number) => (
         <Grid
           key={`${id}-${index}`}
@@ -93,7 +83,7 @@ const SeriesPage = () => {
           </Link>
         </Grid>
       ))}
-    </Grid>
+    </PageContainer>
   );
 };
 
