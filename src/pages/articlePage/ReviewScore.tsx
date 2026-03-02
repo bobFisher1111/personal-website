@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import { 
   Grid,
   Typography,
@@ -14,22 +15,25 @@ import {
   TextStyles,
 } from './ReviewScoreStyles';
 
+export type ReviewData = {
+  gameplay: number;
+  visuals: number;
+  audio: number;
+  concept: number;
+  value: number;
+};
+
 const ReviewScore = ({
   text,
 }: Props) => {
-  const removeReview = text.slice(8);
-  const createObjectForReview = removeReview.split(', ');
-  const GameplayArray = new Array(createObjectForReview[0]);
-  const GameplayScore = Number(GameplayArray[0].split(': ')[1]);
-  const VisualsArray = new Array(createObjectForReview[1]);
-  const VisualsScore = Number(VisualsArray[0].split(': ')[1]);
-  const AudioArray = new Array(createObjectForReview[2]);
-  const AuidoScore = Number(AudioArray[0].split(': ')[1]);
-  const ConceptArray = new Array(createObjectForReview[3]);
-  const ConceptScore = Number(ConceptArray[0].split(': ')[1]);
-  const ValueArray = new Array(createObjectForReview[4]);
-  const ValueScore = Number(ValueArray[0].split(': ')[1]);
-  const ReviewScore = GameplayScore + VisualsScore + AuidoScore + ConceptScore + ValueScore;
+  const darkTheme = useSelector((state: any) => state.theme.darkTheme);
+
+  const gameplayScore = text?.gameplay ?? 0;
+  const visualsScore = text?.visuals ?? 0;
+  const audioScore = text?.audio ?? 0;
+  const conceptScore = text?.concept ?? 0;
+  const valueScore = text?.value ?? 0;
+  const totalScore = gameplayScore + visualsScore + audioScore + conceptScore + valueScore;
 
   return (
     <Grid
@@ -37,14 +41,14 @@ const ReviewScore = ({
       direction="row"
       justifyContent="center"
       alignItems="center"
-      sx={RootStyles}
+      sx={RootStyles(darkTheme)}
     >
       <Grid
         size={{
           xs: 7,
         }}
         container
-        sx={LeftRootStyles}
+        sx={LeftRootStyles(darkTheme)}
       >
         <Grid
           container
@@ -59,7 +63,8 @@ const ReviewScore = ({
             }}
           >
             <Typography
-              sx={TextStyles}
+              color="primary"
+              sx={TextStyles(darkTheme)}
             >
               GAMEPLAY
             </Typography>
@@ -70,9 +75,10 @@ const ReviewScore = ({
             }}
           >
             <Typography
-              sx={TextScoreStyles}
+              color="primary"
+              sx={TextScoreStyles(darkTheme)}
             >
-              {GameplayScore}
+              {gameplayScore}
             </Typography>
           </Grid>
         </Grid>
@@ -89,7 +95,8 @@ const ReviewScore = ({
             }}
           >
             <Typography
-              sx={TextStyles}
+              color="primary"
+              sx={TextStyles(darkTheme)}
             >
               VISUALS
             </Typography>
@@ -100,9 +107,10 @@ const ReviewScore = ({
             }}
           >
             <Typography
-              sx={TextScoreStyles}
+              color="primary"
+              sx={TextScoreStyles(darkTheme)}
             >
-              {VisualsScore}
+              {visualsScore}
             </Typography>
           </Grid>
         </Grid>
@@ -119,7 +127,8 @@ const ReviewScore = ({
             }}
           >
             <Typography
-              sx={TextStyles}
+              color="primary"
+              sx={TextStyles(darkTheme)}
             >
               AUDIO
             </Typography>
@@ -130,9 +139,10 @@ const ReviewScore = ({
             }}
           >
             <Typography
-              sx={TextScoreStyles}
+              color="primary"
+              sx={TextScoreStyles(darkTheme)}
             >
-              {AuidoScore}
+              {audioScore}
             </Typography>
           </Grid>
         </Grid>
@@ -149,7 +159,8 @@ const ReviewScore = ({
             }}
           >
             <Typography
-              sx={TextStyles}
+              color="primary"
+              sx={TextStyles(darkTheme)}
             >
               CONCEPT
             </Typography>
@@ -160,9 +171,10 @@ const ReviewScore = ({
             }}
           >
             <Typography
-              sx={TextScoreStyles}
+              color="primary"
+              sx={TextScoreStyles(darkTheme)}
             >
-              {ConceptScore}
+              {conceptScore}
             </Typography>
           </Grid>
         </Grid>
@@ -179,7 +191,8 @@ const ReviewScore = ({
             }}
           >
             <Typography
-              sx={TextStyles}
+              color="primary"
+              sx={TextStyles(darkTheme)}
             >
               VALUE
             </Typography>
@@ -190,9 +203,10 @@ const ReviewScore = ({
             }}
           >
             <Typography
-              sx={TextScoreStyles}
+              color="primary"
+              sx={TextScoreStyles(darkTheme)}
             >
-              {ValueScore}
+              {valueScore}
             </Typography>
           </Grid>
         </Grid>
@@ -209,9 +223,10 @@ const ReviewScore = ({
           }}
         >
           <Typography
-            sx={FinalScoreStyle}
+            color="primary"
+            sx={FinalScoreStyle(darkTheme)}
           >
-            {ReviewScore}
+            {totalScore}
           </Typography>   
         </Grid>
         <Grid
@@ -220,7 +235,7 @@ const ReviewScore = ({
           }}
         >
           <Typography
-            sx={AlignTextStyle}
+            sx={AlignTextStyle(darkTheme)}
           >
             OUT OF 25
           </Typography>
@@ -231,7 +246,7 @@ const ReviewScore = ({
 };
 
 export type Props = {
-  text: string;
+  text: ReviewData;
 };
 
 export default ReviewScore;

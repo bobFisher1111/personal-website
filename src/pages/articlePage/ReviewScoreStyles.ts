@@ -1,55 +1,89 @@
-export const AlignTextStyle = {
-  "textAlign": "center",
-  "color": "white",
+import { COLORS, FONT_SIZES, FONT_WEIGHTS, SIZES } from 'src/store/redux/theme/CONSTANTS';
+
+const getMode = (darkTheme: boolean) => (darkTheme ? 'dark' : 'light');
+
+export const AlignTextStyle = (darkTheme: boolean) => {
+  const mode = getMode(darkTheme);
+  return {
+    textAlign: 'center',
+    color: COLORS[mode].text.secondary,
+    fontSize: FONT_SIZES.small,
+    fontWeight: FONT_WEIGHTS.regular,
+  };
 };
 
-export const FinalScoreStyle = {
-  "fontSize": "60px",
-  "lineHeight": 1.0,
-  "color": "#9EC8B9",
-  "textAlign": "center",
+export const ReviewScoreWrapperStyles = {
+  width: '100%',
+};
+
+export const FinalScoreStyle = (darkTheme: boolean) => {
+  const mode = getMode(darkTheme);
+  return {
+    fontSize: FONT_SIZES.h1,
+    lineHeight: 1,
+    color: COLORS[mode].primary,
+    textAlign: 'center',
+    fontWeight: FONT_WEIGHTS.bold,
+  };
 };
 
 export const LeftRootItemBottomStyles = {
-  "padding": "0px 0px 16px 16px",
+  padding: `0px 0px ${SIZES.spacing.sm} ${SIZES.spacing.sm}`,
 };
 
 export const LeftRootItemStyles = {
-  "padding": "0px 0px 0px 16px",
+  padding: `0px 0px 0px ${SIZES.spacing.sm}`,
 };
 
 export const LeftRootItemTopStyles = {
-  "padding": "16px 0px 0px 16px"
+  padding: `${SIZES.spacing.sm} 0px 0px ${SIZES.spacing.sm}`,
 };
 
-export const LeftRootStyles = {
-  "borderRight": "1px solid #9EC8B9",
+export const LeftRootStyles = (darkTheme: boolean) => {
+  const mode = getMode(darkTheme);
+  return {
+    borderRight: `${SIZES.border} ${COLORS[mode].primary}`,
+  };
 };
 
-export const RootStyles = {
-  "max-width": "300px",
-  "min-width": "300px",
-  "border": "2px solid #9EC8B9",
-  "margin": "16px",
-  "borderRadius": "8px",
-  "background": "#092635",
+export const RootStyles = (darkTheme: boolean) => {
+  const mode = getMode(darkTheme);
+  return {
+    maxWidth: SIZES.width.imageMax,
+    minWidth: SIZES.width.imageMax,
+    border: `${SIZES.border} ${COLORS[mode].primary}`,
+    margin: `${SIZES.spacing.sm}`,
+    borderRadius: SIZES.borderRadius,
+    backgroundColor: COLORS[mode].secondary,
+  };
 };
 
-export const TextScoreStyles = {
-  "textAlign": "left",
-  "fontWeight": "600",
-  "color": "#9EC8B9",
-  "text-align": "center",
-  "padding": '0px 16px 0px 0px',
+export const TextScoreStyles = (darkTheme: boolean) => {
+  const mode = getMode(darkTheme);
+  return {
+    textAlign: 'center',
+    fontWeight: FONT_WEIGHTS.bold,
+    color: COLORS[mode].primary,
+    padding: `0px ${SIZES.spacing.sm} 0px 0px`,
+    fontSize: FONT_SIZES.base,
+  };
 };
 
-export const TextStyles = {
-  "textAlign": "left",
-  "color": "white",
+export const TextStyles = (darkTheme: boolean) => {
+  const mode = getMode(darkTheme);
+  return {
+    textAlign: 'left',
+    color: COLORS[mode].primary,
+    fontSize: FONT_SIZES.small,
+    fontWeight: FONT_WEIGHTS.bold,
+  };
 };
 
-export const WhiteStyles = {
-  "color": "white",
+export const WhiteStyles = (darkTheme: boolean) => {
+  const mode = getMode(darkTheme);
+  return {
+    color: COLORS[mode].primary,
+  };
 };
 
 export default [

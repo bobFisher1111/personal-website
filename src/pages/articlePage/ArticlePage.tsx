@@ -1,12 +1,14 @@
 import { useLayoutEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { Grid, Typography } from '@mui/material';
 import HorizontalArticleCardComponent from 'src/components/cards/HorizontalArticleCardComponent';
 import PageContainer from 'src/components/pageContainer/PageContainer';
 import formatDate from 'src/util/formatDate';
 import getNameFromUrl from 'src/util/getNameFromUrl';
 import ArticleBody from './ArticleBody';
 import { ArticleSubtitleTypographyStyles, ArticleTitleTypographyStyles } from './ArticlePageStyles';
-import { Typography } from '@mui/material';
+import ReviewScore from './ReviewScore';
+import { ReviewScoreWrapperStyles } from './ReviewScoreStyles';
 
 const ArticlePage = () => {
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
@@ -50,6 +52,15 @@ const ArticlePage = () => {
         mobileImageWidth={'22px'}
       />
       <ArticleBody html={articleData?.markdown_data} />
+      {articleData?.is_review && (
+        <Grid
+          container
+          justifyContent="center"
+          sx={ReviewScoreWrapperStyles}
+        >
+          <ReviewScore text={articleData?.review} />
+        </Grid>
+      )}
     </PageContainer>
   );
 };
