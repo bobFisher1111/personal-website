@@ -6,7 +6,7 @@ export const AlignTextStyle = (darkTheme: boolean) => {
   const mode = getMode(darkTheme);
   return {
     textAlign: 'center',
-    color: COLORS[mode].text.secondary,
+    color: darkTheme ? COLORS.dark.primary : COLORS.light.primary,
     fontSize: FONT_SIZES.small,
     fontWeight: FONT_WEIGHTS.regular,
   };

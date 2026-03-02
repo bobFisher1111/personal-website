@@ -21,10 +21,6 @@ const COLORS = {
     appBar: '#dad7cd',
     code: '#f5f5f5',
     codeBg: '#f0f0f0',
-    text: {
-      primary: '#000000',
-      secondary: '#555555',
-    },
   },
   dark: {
     primary: '#dad7cd', // '#588157',

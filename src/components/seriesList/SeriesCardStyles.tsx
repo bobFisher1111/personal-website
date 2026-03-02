@@ -31,9 +31,7 @@ export const CardFooterStyle = (theme: Theme, darkTheme: boolean) => ({
   height: SIZES.height.seriesCardFooter,
   bgcolor: darkTheme ? COLORS.dark.secondary : COLORS.light.primary,
   display: 'flex',
-  alignItems: 'flex-start',
-  justifyContent: 'flex-start',
-  textAlign: 'left',
+  alignItems: 'center',
   paddingTop: theme.spacing(0.5),
 });
 
