@@ -1,7 +1,7 @@
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { Chip, Grid, Typography, useTheme, styled } from '@mui/material';
-import { LinkStyles } from 'src/util/styles/LinkStyles';
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { Chip, Grid, Typography, useTheme, styled } from "@mui/material";
+import { LinkStyles } from "src/util/styles/LinkStyles";
 import {
   ArticleDataGridStyles,
   ArticleImageStyles,
@@ -17,7 +17,7 @@ import {
   SeriesChipStyles,
   SubTitleStyles,
   TitleStyles,
-} from './ArticleCardStyles';
+} from "./ArticleCardStyles";
 
 const ArticleCard = ({
   articleId,
@@ -33,14 +33,26 @@ const ArticleCard = ({
 }: Props) => {
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
   const theme = useTheme();
-  const getAuthorData = authorData?.filter((item: any) => item.author_id === authorId);
-  const Img = styled('img')({ maxWidth: '100%', maxHeight: '100%' });
+  const getAuthorData = authorData?.filter(
+    (item: any) => item.author_id === authorId,
+  );
+  const Img = styled("img")({ maxWidth: "100%", maxHeight: "100%" });
 
   return (
     <Grid container sx={RootStyles(theme)}>
-      <Grid container direction="row" justifyContent="flex-start" alignItems="center" size={12} sx={GridNameDateStyles(theme)}>
+      <Grid
+        container
+        direction="row"
+        justifyContent="flex-start"
+        alignItems="center"
+        size={12}
+        sx={GridNameDateStyles(theme)}
+      >
         <Grid size={8}>
-          <Link to={`/author/${authorId}`} style={AvatarAuthorLinkStyles(theme, darkTheme)}>
+          <Link
+            to={`/author/${authorId}`}
+            style={AvatarAuthorLinkStyles(theme, darkTheme)}
+          >
             <Img
               alt="complex"
               src={getAuthorData?.[0]?.avatar_image}
@@ -59,12 +71,12 @@ const ArticleCard = ({
         </Grid>
       </Grid>
 
-      <Grid 
-        container 
-        direction="row" 
-        justifyContent="center" 
-        alignItems="flex-start" 
-        wrap="nowrap" 
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="flex-start"
+        wrap="nowrap"
         sx={GridWidthStyle}
       >
         <Grid size={{ xs: 4, sm: 3, md: 3, lg: 3, xl: 3 }}>
@@ -78,19 +90,25 @@ const ArticleCard = ({
           </Link>
         </Grid>
 
-        <Grid size={{ xs: 8, sm: 9, md: 9, lg: 9, xl: 9 }} sx={ArticleDataGridStyles}>
-          <Link to={`/article/${authorId}/${articleId}`} style={LinkStyles(darkTheme)}> 
-            <Typography 
-              color="primary" 
-              sx={{ ...TitleStyles(theme), marginBottom: '4px' }}
+        <Grid
+          size={{ xs: 8, sm: 9, md: 9, lg: 9, xl: 9 }}
+          sx={ArticleDataGridStyles}
+        >
+          <Link
+            to={`/article/${authorId}/${articleId}`}
+            style={LinkStyles(darkTheme)}
+          >
+            <Typography
+              color="primary"
+              sx={{ ...TitleStyles(theme), marginBottom: "4px" }}
             >
               {title}
             </Typography>
-              <Grid size={12}>
-                <Typography color="primary" sx={SubTitleStyles(theme)}>
-                  {subtitle}
-                </Typography>
-              </Grid>
+            <Grid size={12}>
+              <Typography color="primary" sx={SubTitleStyles(theme)}>
+                {subtitle}
+              </Typography>
+            </Grid>
           </Link>
 
           <Grid container sx={LinkGridRootStyles(theme)}>

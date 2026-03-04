@@ -1,14 +1,14 @@
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { Grid, Typography, useTheme, styled } from '@mui/material';
-import { LinkStyles } from 'src/util/styles/LinkStyles';
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { Grid, Typography, useTheme, styled } from "@mui/material";
+import { LinkStyles } from "src/util/styles/LinkStyles";
 import {
   avatarImageStyles,
   gridArticleInfoComponent,
   authorTextStyles,
   dateTextStyles,
   separatorStyles,
-} from './HorizontalArticlePageInfoComponentStyles';
+} from "./HorizontalArticlePageInfoComponentStyles";
 
 const HorizontalArticlePageInfoComponent = ({
   author,
@@ -20,13 +20,18 @@ const HorizontalArticlePageInfoComponent = ({
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
   const muiTheme = useTheme();
 
-  const Img = styled('img')({
-    maxWidth: '100%',
-    maxHeight: '100%',
+  const Img = styled("img")({
+    maxWidth: "100%",
+    maxHeight: "100%",
   });
 
   return (
-    <Grid container direction="row" justifyContent={'center'} sx={gridArticleInfoComponent(muiTheme)}>
+    <Grid
+      container
+      direction="row"
+      justifyContent={"center"}
+      sx={gridArticleInfoComponent(muiTheme)}
+    >
       <Link to={`/author/${authorsId}`} style={LinkStyles(darkTheme)}>
         <Img
           alt="Author avatar"
@@ -42,13 +47,17 @@ const HorizontalArticlePageInfoComponent = ({
         </Typography>
       </Link>
 
-      <Typography color="primary" sx={separatorStyles}>|</Typography>
+      <Typography color="primary" sx={separatorStyles}>
+        |
+      </Typography>
 
       <Typography color="primary" sx={dateTextStyles(muiTheme)}>
         {date}
       </Typography>
 
-      <Typography color="primary" sx={separatorStyles}>|</Typography>
+      <Typography color="primary" sx={separatorStyles}>
+        |
+      </Typography>
 
       <Typography color="primary" sx={authorTextStyles(muiTheme)}>
         {section}

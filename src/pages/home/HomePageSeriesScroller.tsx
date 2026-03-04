@@ -12,7 +12,10 @@ type HomePageSeriesScrollerProps = {
   darkTheme: boolean;
 };
 
-const HomePageSeriesScroller = ({ series, darkTheme }: HomePageSeriesScrollerProps) => {
+const HomePageSeriesScroller = ({
+  series,
+  darkTheme,
+}: HomePageSeriesScrollerProps) => {
   const seriesScrollerRef = useRef<HTMLDivElement | null>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);

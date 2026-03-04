@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const convertToString = () => {
-  if (localStorage.getItem('enableYouTubeVideo') === 'true') {
+  if (localStorage.getItem("enableYouTubeVideo") === "true") {
     return true;
   }
-  if (localStorage.getItem('enableYouTubeVideo') === null) {
+  if (localStorage.getItem("enableYouTubeVideo") === null) {
     return false;
   }
 };

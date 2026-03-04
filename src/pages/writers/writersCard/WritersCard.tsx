@@ -1,19 +1,15 @@
-import {
-  CardMedia,
-  Grid,
-  Typography,
-} from '@mui/material';
-import { useSelector } from 'react-redux';
-import { useTheme } from '@mui/material/styles';
-import { Link } from 'react-router-dom';
-import SocialMediaComponent from 'src/components/socialMediaComponent/SocialMediaComponent';
-import { LinkStyles } from 'src/util/styles/LinkStyles';
+import { CardMedia, Grid, Typography } from "@mui/material";
+import { useSelector } from "react-redux";
+import { useTheme } from "@mui/material/styles";
+import { Link } from "react-router-dom";
+import SocialMediaComponent from "src/components/socialMediaComponent/SocialMediaComponent";
+import { LinkStyles } from "src/util/styles/LinkStyles";
 import {
   WritersCardGridRoot,
   WritersCardAvatar,
   WritersCardTextAuthorName,
   WritersCardTextAuthorTitle,
-} from './WritersCardStyle';
+} from "./WritersCardStyle";
 
 const WritersCard = ({
   authorImage,
@@ -32,7 +28,7 @@ const WritersCard = ({
     <Grid container sx={WritersCardGridRoot()}>
       <Grid
         sx={{
-          flex: '0 0 auto',
+          flex: "0 0 auto",
         }}
       >
         <Link to={`/author/${authorId}`} style={LinkStyles(colorTheme)}>
@@ -47,7 +43,7 @@ const WritersCard = ({
       </Grid>
       <Grid
         sx={{
-          flex: '1 1 auto',
+          flex: "1 1 auto",
           minWidth: 0,
         }}
         component="div"

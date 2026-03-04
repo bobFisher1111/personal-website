@@ -1,43 +1,45 @@
-import { Fragment, useState } from 'react';
-import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import UserAcceptanceTextMessage from 'src/usersAcceptanceComponent/userAcceptanceTextMessage/UserAcceptanceTextMessage';
-import Grid from '@mui/material/Grid';
-import { userAgreementValue } from 'src/config';
+import { Fragment, useState } from "react";
+import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import UserAcceptanceTextMessage from "src/usersAcceptanceComponent/userAcceptanceTextMessage/UserAcceptanceTextMessage";
+import Grid from "@mui/material/Grid";
+import { userAgreementValue } from "src/config";
 
-type Anchor = 'bottom';
+type Anchor = "bottom";
 
 const UsersAcceptanceComponent = () => {
-  const [state, setState] = useState(() =>(
-    localStorage.getItem('userAgreement') !== `${userAgreementValue}`) ? { bottom: true} : {bottom: false}
+  const [state, setState] = useState(() =>
+    localStorage.getItem("userAgreement") !== `${userAgreementValue}`
+      ? { bottom: true }
+      : { bottom: false },
   );
 
-	const closeDrawerProgrammatically = (anchor: Anchor) => {
-		if (document.activeElement instanceof HTMLElement) {
-			document.activeElement.blur();
-		}
-		setState({ [anchor]: false });
-	};
+  const closeDrawerProgrammatically = (anchor: Anchor) => {
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
+    setState({ [anchor]: false });
+  };
 
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
-      (event: React.KeyboardEvent | React.MouseEvent) => {
-        if (
-          event &&
-          event.type === 'keydown' &&
-          ((event as React.KeyboardEvent).key === 'Tab' ||
-            (event as React.KeyboardEvent).key === 'Shift')
-        ) {
-          return;
-        }
-			if (!open && document.activeElement instanceof HTMLElement) {
-				document.activeElement.blur();
-			}
-        setState({ [anchor]: open });
-      };
+    (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event &&
+        event.type === "keydown" &&
+        ((event as React.KeyboardEvent).key === "Tab" ||
+          (event as React.KeyboardEvent).key === "Shift")
+      ) {
+        return;
+      }
+      if (!open && document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
+      setState({ [anchor]: open });
+    };
 
   return (
     <Grid>
-      {(['bottom'] as const).map((anchor) => (
+      {(["bottom"] as const).map((anchor) => (
         <Fragment key={anchor}>
           <SwipeableDrawer
             anchor={anchor}
@@ -51,7 +53,7 @@ const UsersAcceptanceComponent = () => {
             }}
           >
             <UserAcceptanceTextMessage
-					    closeDrawer={() => closeDrawerProgrammatically(anchor)}
+              closeDrawer={() => closeDrawerProgrammatically(anchor)}
             />
           </SwipeableDrawer>
         </Fragment>

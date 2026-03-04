@@ -1,11 +1,11 @@
-import { Grid } from '@mui/material';
-import CopyLinkComponent from 'src/components/copyLinkComponent/CopyLinkComponent';
+import { Grid } from "@mui/material";
+import CopyLinkComponent from "src/components/copyLinkComponent/CopyLinkComponent";
 
 import {
   socialMediaIconStyle,
   socialMediaGridItemStyle,
   emailGridStyle,
-} from './SocialMediaComponentStyles';
+} from "./SocialMediaComponentStyles";
 
 const SocialMediaComponent = ({
   turnOnEmail,
@@ -14,7 +14,6 @@ const SocialMediaComponent = ({
   justifyContent,
   alignContent,
 }: Props) => {
-
   return (
     <Grid container justifyContent={justifyContent} alignContent={alignContent}>
       {turnOnEmail && (

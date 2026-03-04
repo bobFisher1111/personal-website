@@ -20,7 +20,8 @@ const ScrollArrowButton = ({
   onClick,
   ariaLabel,
 }: ScrollArrowButtonProps) => {
-  const label = ariaLabel ?? (direction === "left" ? "Scroll left" : "Scroll right");
+  const label =
+    ariaLabel ?? (direction === "left" ? "Scroll left" : "Scroll right");
 
   return (
     <IconButton
@@ -29,9 +30,15 @@ const ScrollArrowButton = ({
       sx={ScrollArrowButtonStyles(darkTheme, direction)}
     >
       {direction === "left" ? (
-        <ArrowBackIosNewIcon fontSize="small" sx={ScrollArrowIconStyles(darkTheme)} />
+        <ArrowBackIosNewIcon
+          fontSize="small"
+          sx={ScrollArrowIconStyles(darkTheme)}
+        />
       ) : (
-        <ArrowForwardIosIcon fontSize="small" sx={ScrollArrowIconStyles(darkTheme)} />
+        <ArrowForwardIosIcon
+          fontSize="small"
+          sx={ScrollArrowIconStyles(darkTheme)}
+        />
       )}
     </IconButton>
   );

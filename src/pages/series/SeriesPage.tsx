@@ -1,19 +1,19 @@
-import { useId } from 'react';
-import { Grid, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { useTheme } from '@mui/material/styles';
-import ComingSoon from 'src/components/comingSoon/ComingSoon';
-import PageContainer from 'src/components/pageContainer/PageContainer';
-import formatDate from '../../util/formatDate';
-import HorizontalArticleCardComponent from 'src/components/cards/HorizontalArticleCardComponent';
-import { LinkStyles } from '../../util/styles/LinkStyles';
+import { useId } from "react";
+import { Grid, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useTheme } from "@mui/material/styles";
+import ComingSoon from "src/components/comingSoon/ComingSoon";
+import PageContainer from "src/components/pageContainer/PageContainer";
+import formatDate from "../../util/formatDate";
+import HorizontalArticleCardComponent from "src/components/cards/HorizontalArticleCardComponent";
+import { LinkStyles } from "../../util/styles/LinkStyles";
 import {
   seriesComponentGridArticleInfo,
   seriesComponentTitle,
   seriesComponentSubTitle,
   seriesComponentDate,
-} from './SeriesComponentStyles';
+} from "./SeriesComponentStyles";
 
 const SeriesPage = () => {
   const id = useId();
@@ -24,36 +24,36 @@ const SeriesPage = () => {
 
   const getSeriesIdFromUrl = () => {
     const currentLocation = window.location.href;
-    const seriesId = currentLocation.split('/').reverse()[0];
+    const seriesId = currentLocation.split("/").reverse()[0];
     return Number(seriesId);
   };
 
   const getSeriesFromId = seriesData?.series?.filter(
-    (item: any) => item.series_id === getSeriesIdFromUrl()
+    (item: any) => item.series_id === getSeriesIdFromUrl(),
   );
 
   const getSeriesArticles = seriesData?.articles?.filter(
-    (item: any) => item.series_id === getSeriesIdFromUrl()
+    (item: any) => item.series_id === getSeriesIdFromUrl(),
   );
 
   const seriesInfo = getSeriesFromId?.[0];
   const noArticles = getSeriesArticles?.length === 0;
 
   const sortSeriesList = getSeriesArticles?.sort(
-    (a: any, b: any) => a.article_id - b.article_id
+    (a: any, b: any) => a.article_id - b.article_id,
   );
 
   return (
     <PageContainer>
-        <HorizontalArticleCardComponent
-          author={seriesInfo?.series_authors}
-          date={formatDate(seriesInfo?.series_start_date)}
-          imageWidth="832px"
-          authorsId={seriesInfo?.author_id}
-          videoOrImageCover={seriesInfo?.series_cover_image_or_video}
-          section={seriesInfo?.section}
-          mobileImageWidth="30px"
-        />
+      <HorizontalArticleCardComponent
+        author={seriesInfo?.series_authors}
+        date={formatDate(seriesInfo?.series_start_date)}
+        imageWidth="832px"
+        authorsId={seriesInfo?.author_id}
+        videoOrImageCover={seriesInfo?.series_cover_image_or_video}
+        section={seriesInfo?.section}
+        mobileImageWidth="30px"
+      />
       {noArticles && <ComingSoon />}
       {sortSeriesList?.map((item: any, index: number) => (
         <Grid

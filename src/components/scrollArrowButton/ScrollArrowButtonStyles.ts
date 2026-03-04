@@ -5,7 +5,7 @@ export type ScrollArrowDirection = "left" | "right";
 
 export const ScrollArrowButtonStyles = (
   isDark: boolean,
-  direction: ScrollArrowDirection
+  direction: ScrollArrowDirection,
 ): SxProps<Theme> => ({
   position: "absolute",
   ...(direction === "left" ? { left: 0 } : { right: 0 }),

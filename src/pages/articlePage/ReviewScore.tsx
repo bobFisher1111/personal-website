@@ -1,8 +1,5 @@
-import { useSelector } from 'react-redux';
-import { 
-  Grid,
-  Typography,
-} from '@mui/material';
+import { useSelector } from "react-redux";
+import { Grid, Typography } from "@mui/material";
 import {
   AlignTextStyle,
   FinalScoreStyle,
@@ -13,7 +10,7 @@ import {
   RootStyles,
   TextScoreStyles,
   TextStyles,
-} from './ReviewScoreStyles';
+} from "./ReviewScoreStyles";
 
 export type ReviewData = {
   gameplay: number;
@@ -23,9 +20,7 @@ export type ReviewData = {
   value: number;
 };
 
-const ReviewScore = ({
-  text,
-}: Props) => {
+const ReviewScore = ({ text }: Props) => {
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
 
   const gameplayScore = text?.gameplay ?? 0;
@@ -33,7 +28,8 @@ const ReviewScore = ({
   const audioScore = text?.audio ?? 0;
   const conceptScore = text?.concept ?? 0;
   const valueScore = text?.value ?? 0;
-  const totalScore = gameplayScore + visualsScore + audioScore + conceptScore + valueScore;
+  const totalScore =
+    gameplayScore + visualsScore + audioScore + conceptScore + valueScore;
 
   return (
     <Grid
@@ -62,10 +58,7 @@ const ReviewScore = ({
               xs: 8,
             }}
           >
-            <Typography
-              color="primary"
-              sx={TextStyles(darkTheme)}
-            >
+            <Typography color="primary" sx={TextStyles(darkTheme)}>
               GAMEPLAY
             </Typography>
           </Grid>
@@ -74,10 +67,7 @@ const ReviewScore = ({
               xs: 4,
             }}
           >
-            <Typography
-              color="primary"
-              sx={TextScoreStyles(darkTheme)}
-            >
+            <Typography color="primary" sx={TextScoreStyles(darkTheme)}>
               {gameplayScore}
             </Typography>
           </Grid>
@@ -94,10 +84,7 @@ const ReviewScore = ({
               xs: 8,
             }}
           >
-            <Typography
-              color="primary"
-              sx={TextStyles(darkTheme)}
-            >
+            <Typography color="primary" sx={TextStyles(darkTheme)}>
               VISUALS
             </Typography>
           </Grid>
@@ -106,10 +93,7 @@ const ReviewScore = ({
               xs: 4,
             }}
           >
-            <Typography
-              color="primary"
-              sx={TextScoreStyles(darkTheme)}
-            >
+            <Typography color="primary" sx={TextScoreStyles(darkTheme)}>
               {visualsScore}
             </Typography>
           </Grid>
@@ -126,10 +110,7 @@ const ReviewScore = ({
               xs: 8,
             }}
           >
-            <Typography
-              color="primary"
-              sx={TextStyles(darkTheme)}
-            >
+            <Typography color="primary" sx={TextStyles(darkTheme)}>
               AUDIO
             </Typography>
           </Grid>
@@ -138,10 +119,7 @@ const ReviewScore = ({
               xs: 4,
             }}
           >
-            <Typography
-              color="primary"
-              sx={TextScoreStyles(darkTheme)}
-            >
+            <Typography color="primary" sx={TextScoreStyles(darkTheme)}>
               {audioScore}
             </Typography>
           </Grid>
@@ -158,10 +136,7 @@ const ReviewScore = ({
               xs: 8,
             }}
           >
-            <Typography
-              color="primary"
-              sx={TextStyles(darkTheme)}
-            >
+            <Typography color="primary" sx={TextStyles(darkTheme)}>
               CONCEPT
             </Typography>
           </Grid>
@@ -170,10 +145,7 @@ const ReviewScore = ({
               xs: 4,
             }}
           >
-            <Typography
-              color="primary"
-              sx={TextScoreStyles(darkTheme)}
-            >
+            <Typography color="primary" sx={TextScoreStyles(darkTheme)}>
               {conceptScore}
             </Typography>
           </Grid>
@@ -190,10 +162,7 @@ const ReviewScore = ({
               xs: 8,
             }}
           >
-            <Typography
-              color="primary"
-              sx={TextStyles(darkTheme)}
-            >
+            <Typography color="primary" sx={TextStyles(darkTheme)}>
               VALUE
             </Typography>
           </Grid>
@@ -202,10 +171,7 @@ const ReviewScore = ({
               xs: 4,
             }}
           >
-            <Typography
-              color="primary"
-              sx={TextScoreStyles(darkTheme)}
-            >
+            <Typography color="primary" sx={TextScoreStyles(darkTheme)}>
               {valueScore}
             </Typography>
           </Grid>
@@ -222,23 +188,16 @@ const ReviewScore = ({
             xs: 12,
           }}
         >
-          <Typography
-            color="primary"
-            sx={FinalScoreStyle(darkTheme)}
-          >
+          <Typography color="primary" sx={FinalScoreStyle(darkTheme)}>
             {totalScore}
-          </Typography>   
+          </Typography>
         </Grid>
         <Grid
           size={{
             xs: 12,
           }}
         >
-          <Typography
-            sx={AlignTextStyle(darkTheme)}
-          >
-            OUT OF 25
-          </Typography>
+          <Typography sx={AlignTextStyle(darkTheme)}>OUT OF 25</Typography>
         </Grid>
       </Grid>
     </Grid>

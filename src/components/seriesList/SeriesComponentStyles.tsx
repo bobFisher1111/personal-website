@@ -1,37 +1,37 @@
-import { Theme } from '@mui/material';
-import { SPACING_VALUES } from 'src/store/redux/theme/CONSTANTS';
+import { Theme } from "@mui/material";
+import { SPACING_VALUES } from "src/store/redux/theme/CONSTANTS";
 
 export const SeriesGridStyles = {
-  display: 'flex',
+  display: "flex",
   paddingBottom: SPACING_VALUES.xs,
 };
 
 export const SeriesOuterBlockStyles = (
   theme: Theme,
   count: number,
-  layout: 'grid' | 'scroller'
+  layout: "grid" | "scroller",
 ) => ({
-  px: layout === 'scroller' ? 0 : 0.5,
-  width: layout === 'scroller' && count >= 4 ? 'fit-content' : '100%',
-  maxWidth: '100%',
-  [theme.breakpoints.down('sm')]: {
-    width: '100%',
+  px: layout === "scroller" ? 0 : 0.5,
+  width: layout === "scroller" && count >= 4 ? "fit-content" : "100%",
+  maxWidth: "100%",
+  [theme.breakpoints.down("sm")]: {
+    width: "100%",
   },
 });
 
 export const SeriesOuterBlockMergedStyles = (
   theme: Theme,
   count: number,
-  layout: 'grid' | 'scroller',
-  outerSx?: Record<string, unknown>
+  layout: "grid" | "scroller",
+  outerSx?: Record<string, unknown>,
 ) => ({
   ...SeriesOuterBlockStyles(theme, count, layout),
   ...(outerSx ?? {}),
 });
 
 export const ArrowButtonGridStyles = (theme: Theme) => ({
-  [theme.breakpoints.down('sm')]: {
-    display: 'none',
+  [theme.breakpoints.down("sm")]: {
+    display: "none",
   },
 });
 
@@ -41,10 +41,10 @@ export const ArrowButtonIconStyles = {
 };
 
 export const CarouselComponentGridStyles = (theme: Theme) => ({
-  [theme.breakpoints.down('sm')]: {
-    borderBottom: 'none',
+  [theme.breakpoints.down("sm")]: {
+    borderBottom: "none",
   },
-  '&::-webkit-scrollbar': {
-    display: 'none',
+  "&::-webkit-scrollbar": {
+    display: "none",
   },
 });

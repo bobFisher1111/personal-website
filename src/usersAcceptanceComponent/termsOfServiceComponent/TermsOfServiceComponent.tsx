@@ -1,10 +1,6 @@
-import {
-  Button,
-  Grid,
-  Typography,
-} from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
-import { websiteEmail, websiteName, websiteURL } from 'src/config';
+import { Button, Grid, Typography } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import { websiteEmail, websiteName, websiteURL } from "src/config";
 import {
   CloseButtonStyles,
   CloseGridRootStyles,
@@ -14,12 +10,11 @@ import {
   RootStyles,
   TitleStyles,
   UserAgreementTitleStyles,
-} from './TermsOfServiceComponentStyles';
+} from "./TermsOfServiceComponentStyles";
 
-const TermsOfServiceComponent = ({
-  closeDrawer,
-}: Props) => {
-  const Subtitle: string = "Please read this agreement carefully. It sets forth legally binding terms and conditions for your use of the services, as defined below.";
+const TermsOfServiceComponent = ({ closeDrawer }: Props) => {
+  const Subtitle: string =
+    "Please read this agreement carefully. It sets forth legally binding terms and conditions for your use of the services, as defined below.";
   const AgreementBetweenUserAndSite = `By entering our website you agree to not sue for any reason. This is a hobbyist site created by a group of friends. We may get information wrong and it’s always up to the user to do additional research verifying what we are saying is correct. We offer news, reviews, and tutorials. Not responsible if information given causes any damages or wrong. Before taking our information and applying it, it’s up to you to verify it’s correct. We also believe in freedom of speech and if you disagree with anything above. Do not enter the website.`;
   const ChildrenUnderThirteen = `${websiteName} does not knowingly collect, either online or offline, personal information from persons under the age of thirteen. If you are under 18, you may use ${websiteURL} only with permission of a parent or guardian.`;
   const LinksThirdPartySites = `${websiteURL} may contain links to other websites ("Linked Sites"). The Linked Sites are not under the control of ${websiteName} and ${websiteName} is not responsible for the contents of any Linked Site, including without limitation any link contained in a Linked Site, or any changes or updates to a Linked Site. ${websiteName} is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement by ${websiteName} of the site or any association with it.`;
@@ -37,206 +32,84 @@ const TermsOfServiceComponent = ({
       alignItems="center"
       sx={RootStyles}
     >
-      <Grid
-        container
-        size={12}
-        sx={MarginGridStyles}
-      >
-        <Grid
-          size={10}
-          sx={GridStyles}
-        >
-          <Typography
-            color="primary"
-            sx={TitleStyles}
-          >
+      <Grid container size={12} sx={MarginGridStyles}>
+        <Grid size={10} sx={GridStyles}>
+          <Typography color="primary" sx={TitleStyles}>
             Terms of Service
           </Typography>
         </Grid>
-        <Grid
-          size={2}
-        >
+        <Grid size={2}>
           <Button
             color="primary"
             onClick={closeDrawer}
             sx={CloseIconButtonStyles}
           >
-            <CloseIcon
-              color="primary"
-            />
+            <CloseIcon color="primary" />
           </Button>
         </Grid>
-        <Typography
-          color="primary"
-        >
-          Effective Date: June 13, 2024
-        </Typography>
+        <Typography color="primary">Effective Date: June 13, 2024</Typography>
       </Grid>
-      <Grid
-        size={12}
-        sx={MarginGridStyles}
-      >
-        <Typography
-          color="primary"
-        >
-          {Subtitle}
-        </Typography>
+      <Grid size={12} sx={MarginGridStyles}>
+        <Typography color="primary">{Subtitle}</Typography>
       </Grid>
-      <Grid
-        size={12}
-        sx={GridStyles}
-      >
-        <Typography
-          color="primary"
-          sx={UserAgreementTitleStyles}
-        >
+      <Grid size={12} sx={GridStyles}>
+        <Typography color="primary" sx={UserAgreementTitleStyles}>
           Agreement between User and {websiteName}
         </Typography>
       </Grid>
-      <Grid
-        size={12}
-        sx={MarginGridStyles}
-      >
-        <Typography
-          color="primary"
-        >
-          {AgreementBetweenUserAndSite}
-        </Typography>
+      <Grid size={12} sx={MarginGridStyles}>
+        <Typography color="primary">{AgreementBetweenUserAndSite}</Typography>
       </Grid>
-      <Grid
-        size={12}
-        sx={GridStyles}
-      >
-        <Typography
-          color="primary"
-          sx={TitleStyles}
-        >
+      <Grid size={12} sx={GridStyles}>
+        <Typography color="primary" sx={TitleStyles}>
           Children Under Thirteen
         </Typography>
       </Grid>
-      <Grid
-        size={12}
-        sx={MarginGridStyles}
-      >
-        <Typography
-          color="primary"
-        >
-          {ChildrenUnderThirteen}
-        </Typography>
+      <Grid size={12} sx={MarginGridStyles}>
+        <Typography color="primary">{ChildrenUnderThirteen}</Typography>
       </Grid>
-      <Grid
-        size={12}
-        sx={GridStyles}
-      >
-        <Typography
-          color="primary"
-          sx={TitleStyles}
-        >
+      <Grid size={12} sx={GridStyles}>
+        <Typography color="primary" sx={TitleStyles}>
           Links to Third Party Sites/Third Party Services
         </Typography>
       </Grid>
-      <Grid
-        size={12}
-        sx={MarginGridStyles}
-      >
-        <Typography
-          color="primary"
-        >
-          {LinksThirdPartySites}
-        </Typography>
+      <Grid size={12} sx={MarginGridStyles}>
+        <Typography color="primary">{LinksThirdPartySites}</Typography>
       </Grid>
-      <Grid
-        size={12}
-        sx={GridStyles}
-      >
-        <Typography
-          color="primary"
-          sx={TitleStyles}
-        >
+      <Grid size={12} sx={GridStyles}>
+        <Typography color="primary" sx={TitleStyles}>
           Liability Disclaimer
         </Typography>
       </Grid>
-      <Grid
-        size={12}
-        sx={MarginGridStyles}
-      >
-        <Typography
-          color="primary"
-        >
-          {LiabilityDisclaimerPartOne}
-        </Typography>
+      <Grid size={12} sx={MarginGridStyles}>
+        <Typography color="primary">{LiabilityDisclaimerPartOne}</Typography>
       </Grid>
-      <Grid
-        size={12}
-        sx={MarginGridStyles}
-      >
-        <Typography
-          color="primary"
-        >
-          {LiabilityDisclaimerPartTwo}
-        </Typography>
+      <Grid size={12} sx={MarginGridStyles}>
+        <Typography color="primary">{LiabilityDisclaimerPartTwo}</Typography>
       </Grid>
-      <Grid
-        size={12}
-        sx={GridStyles}
-      >
-        <Typography
-          color="primary"
-          sx={TitleStyles}
-        >
+      <Grid size={12} sx={GridStyles}>
+        <Typography color="primary" sx={TitleStyles}>
           International Users
         </Typography>
       </Grid>
-      <Grid
-        size={12}
-        sx={MarginGridStyles}
-      >
-        <Typography
-          color="primary"
-        >
-          {InternationalUsers}
-        </Typography>
+      <Grid size={12} sx={MarginGridStyles}>
+        <Typography color="primary">{InternationalUsers}</Typography>
       </Grid>
-      <Grid
-        size={12}
-        sx={GridStyles}
-      >
-        <Typography
-          color="primary"
-          sx={TitleStyles}
-        >
+      <Grid size={12} sx={GridStyles}>
+        <Typography color="primary" sx={TitleStyles}>
           Changes to Terms
         </Typography>
       </Grid>
-      <Grid
-        size={12}
-        sx={MarginGridStyles}
-      >
-        <Typography
-          color="primary"
-        >
-          {ChangesToTerms}
-        </Typography>
+      <Grid size={12} sx={MarginGridStyles}>
+        <Typography color="primary">{ChangesToTerms}</Typography>
       </Grid>
-      <Grid
-        size={12}
-        sx={GridStyles}
-      >
-        <Typography
-          color="primary"
-          sx={TitleStyles}
-        >
+      <Grid size={12} sx={GridStyles}>
+        <Typography color="primary" sx={TitleStyles}>
           Contact US
         </Typography>
       </Grid>
-      <Grid
-        size={12}
-        sx={MarginGridStyles}
-      >
-        <Typography
-          color="primary"
-          sx={{ whiteSpace: 'pre-line' }}
-        >
+      <Grid size={12} sx={MarginGridStyles}>
+        <Typography color="primary" sx={{ whiteSpace: "pre-line" }}>
           {ContactUS}
         </Typography>
       </Grid>

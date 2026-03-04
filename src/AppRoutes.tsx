@@ -1,6 +1,6 @@
-import { Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import routes from './routes/Routes';
+import { Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
+import routes from "./routes/Routes";
 
 const AppRoutes = () => (
   <Suspense fallback={<div>Loading...</div>}>

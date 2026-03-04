@@ -1,13 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit';
-import GetWebsiteData from './GetWebsiteData';
-import websiteData from 'src/websiteData/websiteData.json';
+import { createSlice } from "@reduxjs/toolkit";
+import GetWebsiteData from "./GetWebsiteData";
+import websiteData from "src/websiteData/websiteData.json";
 
 const WebSiteDataSlice = createSlice({
-  name: 'siteData',
+  name: "siteData",
   initialState: {
     data: websiteData,
     isSuccess: true,
-    message: 'Data Loaded',
+    message: "Data Loaded",
     loading: false,
   },
   reducers: {},
@@ -25,7 +25,7 @@ const WebSiteDataSlice = createSlice({
       state.loading = false;
       state.isSuccess = false;
     });
-  }
+  },
 });
 
 export default WebSiteDataSlice;

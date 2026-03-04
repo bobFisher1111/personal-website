@@ -1,7 +1,7 @@
 export type QuestionaireData = {
   name: string;
   link: string;
-}
+};
 
 export type Questionaire = {
   FavoriteVideoGameConsole: QuestionaireData[];
@@ -29,4 +29,4 @@ export type Questionaire = {
   FavoriteFood: QuestionaireData[];
   FavoriteCardGame: QuestionaireData[];
   FavoriteBoardGame: QuestionaireData[];
-}
+};

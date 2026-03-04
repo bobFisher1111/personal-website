@@ -12,7 +12,7 @@ export const ArticleList = ({ authorData, data }: Props) => {
 
   if (!data || data.length === 0) {
     return <ComingSoon />;
-  };
+  }
 
   return (
     <Grid container>
@@ -31,8 +31,7 @@ export const ArticleList = ({ authorData, data }: Props) => {
             title={item.article_title}
           />
         </Fragment>
-      ))
-    }
+      ))}
     </Grid>
   );
 };

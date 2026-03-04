@@ -1,12 +1,12 @@
-import React, { useId, useState, SyntheticEvent } from 'react';
-import { useSelector } from 'react-redux';
-import { useTheme, Box, Grid, Tab, Tabs } from '@mui/material';
+import React, { useId, useState, SyntheticEvent } from "react";
+import { useSelector } from "react-redux";
+import { useTheme, Box, Grid, Tab, Tabs } from "@mui/material";
 import {
   GridTabsComponent,
   TabComponentTextStyles,
   TabPanelStyle,
   TabsChangeStyle,
-} from './TabsComponentStyles';
+} from "./TabsComponentStyles";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -26,10 +26,7 @@ const TabPanel = ({ children, value, index, ...other }: TabPanelProps) => (
   </div>
 );
 
-const TabsComponent = ({
-  turnonsectiontabspadding,
-  tabsData,
-}: Props) => {
+const TabsComponent = ({ turnonsectiontabspadding, tabsData }: Props) => {
   const [value, setValue] = useState(0);
   const id = useId();
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
@@ -37,7 +34,7 @@ const TabsComponent = ({
 
   const tabProps = (index: number) => ({
     id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
   });
 
   const handleChange = (_event: SyntheticEvent, newValue: number) => {

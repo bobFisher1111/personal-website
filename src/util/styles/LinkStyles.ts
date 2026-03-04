@@ -1,10 +1,8 @@
-import { COLORS } from 'src/store/redux/theme/CONSTANTS';
+import { COLORS } from "src/store/redux/theme/CONSTANTS";
 
 export const LinkStyles = (theme: boolean) => ({
-  textDecoration: 'none',
+  textDecoration: "none",
   color: theme ? COLORS.dark.primary : COLORS.light.primary,
 });
 
-export default [
-  LinkStyles,
-];
+export default [LinkStyles];

@@ -1,11 +1,16 @@
-import { COLORS, FONT_SIZES, FONT_WEIGHTS, SIZES } from 'src/store/redux/theme/CONSTANTS';
+import {
+  COLORS,
+  FONT_SIZES,
+  FONT_WEIGHTS,
+  SIZES,
+} from "src/store/redux/theme/CONSTANTS";
 
-const getMode = (darkTheme: boolean) => (darkTheme ? 'dark' : 'light');
+const getMode = (darkTheme: boolean) => (darkTheme ? "dark" : "light");
 
 export const AlignTextStyle = (darkTheme: boolean) => {
   const mode = getMode(darkTheme);
   return {
-    textAlign: 'center',
+    textAlign: "center",
     color: darkTheme ? COLORS.dark.primary : COLORS.light.primary,
     fontSize: FONT_SIZES.small,
     fontWeight: FONT_WEIGHTS.regular,
@@ -13,7 +18,7 @@ export const AlignTextStyle = (darkTheme: boolean) => {
 };
 
 export const ReviewScoreWrapperStyles = {
-  width: '100%',
+  width: "100%",
 };
 
 export const FinalScoreStyle = (darkTheme: boolean) => {
@@ -22,7 +27,7 @@ export const FinalScoreStyle = (darkTheme: boolean) => {
     fontSize: FONT_SIZES.h1,
     lineHeight: 1,
     color: COLORS[mode].primary,
-    textAlign: 'center',
+    textAlign: "center",
     fontWeight: FONT_WEIGHTS.bold,
   };
 };
@@ -61,7 +66,7 @@ export const RootStyles = (darkTheme: boolean) => {
 export const TextScoreStyles = (darkTheme: boolean) => {
   const mode = getMode(darkTheme);
   return {
-    textAlign: 'center',
+    textAlign: "center",
     fontWeight: FONT_WEIGHTS.bold,
     color: COLORS[mode].primary,
     padding: `0px ${SIZES.spacing.sm} 0px 0px`,
@@ -72,7 +77,7 @@ export const TextScoreStyles = (darkTheme: boolean) => {
 export const TextStyles = (darkTheme: boolean) => {
   const mode = getMode(darkTheme);
   return {
-    textAlign: 'left',
+    textAlign: "left",
     color: COLORS[mode].primary,
     fontSize: FONT_SIZES.small,
     fontWeight: FONT_WEIGHTS.bold,

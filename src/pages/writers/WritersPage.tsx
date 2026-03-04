@@ -1,17 +1,17 @@
-import { useId } from 'react';
-import Grid from '@mui/material/Grid';
-import { useSelector } from 'react-redux';
-import PageContainer from 'src/components/pageContainer/PageContainer';
-import WritersCard from './writersCard/WritersCard';
+import { useId } from "react";
+import Grid from "@mui/material/Grid";
+import { useSelector } from "react-redux";
+import PageContainer from "src/components/pageContainer/PageContainer";
+import WritersCard from "./writersCard/WritersCard";
 
 const Writers = () => {
   const id = useId();
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const authorsData = getWebsiteData?.authors;
 
-  const sortAuthorsById = authorsData?.slice().sort(
-    (a: any, b: any) => a.author_id - b.author_id
-  );
+  const sortAuthorsById = authorsData
+    ?.slice()
+    .sort((a: any, b: any) => a.author_id - b.author_id);
 
   return (
     <PageContainer>

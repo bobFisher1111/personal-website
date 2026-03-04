@@ -1,18 +1,18 @@
 export const CloseButtonStyles = {
-  boxShadow: 'none',
-  width: '200px',
+  boxShadow: "none",
+  width: "200px",
 };
 
 export const CloseGridRootStyles = {
-  margin: 'auto',
-  padding: '32px 8px',
+  margin: "auto",
+  padding: "32px 8px",
 };
 
 export const CloseIconButtonStyles = {
-  '&.MuiButtonBase-root': {
-    justifyContent: 'flex-end',
-    '&.MuiButton-root': {
-      justifyContent: 'flex-end',
+  "&.MuiButtonBase-root": {
+    justifyContent: "flex-end",
+    "&.MuiButton-root": {
+      justifyContent: "flex-end",
     },
   },
 };
@@ -23,19 +23,19 @@ export const GridStyles = {
 };
 
 export const MarginGridStyles = {
-  marginBottom: '16px',
+  marginBottom: "16px",
 };
 
 export const RootStyles = {
-  padding: '36px',
+  padding: "36px",
 };
 
 export const TitleStyles = {
-  fontSize: '20px',
-  fontWeight: 'bold',
+  fontSize: "20px",
+  fontWeight: "bold",
 };
 
 export const UserAgreementTitleStyles = {
-  fontSize: '20px',
-  fontWeight: 'bold',
+  fontSize: "20px",
+  fontWeight: "bold",
 };

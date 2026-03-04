@@ -1,24 +1,24 @@
-import { Grid, Typography, useTheme } from '@mui/material';
+import { Grid, Typography, useTheme } from "@mui/material";
 import { useSelector } from "react-redux";
-import { Link } from 'react-router-dom';
-import AppBarLinksToPages from 'src/layout/appBar/appBarLinksToPages/AppBarLinksToPages';
-import LightDarkMode from 'src/layout/appBar/lightDarkMode/LightDarkMode';
-import MobileDrawer from 'src/layout/mobileDrawer/MobileDrawer';
-import { websiteName } from 'src/config';
+import { Link } from "react-router-dom";
+import AppBarLinksToPages from "src/layout/appBar/appBarLinksToPages/AppBarLinksToPages";
+import LightDarkMode from "src/layout/appBar/lightDarkMode/LightDarkMode";
+import MobileDrawer from "src/layout/mobileDrawer/MobileDrawer";
+import { websiteName } from "src/config";
 import {
   AppBarStyle,
   GridMobileAppBarTitle,
   TypographyDesktopTitle,
-  GridDesktopAppBar2
-} from './WebSiteAppBarStyles';
-import { LinkStyles } from 'src/util/styles/LinkStyles';
+  GridDesktopAppBar2,
+} from "./WebSiteAppBarStyles";
+import { LinkStyles } from "src/util/styles/LinkStyles";
 
 const WebSiteAppBar = () => {
   const theme = useTheme();
   const isDarkTheme = useSelector((state: any) => state.theme.darkTheme);
 
   return (
-    <Grid 
+    <Grid
       container
       direction="row"
       alignItems="center"
@@ -35,10 +35,7 @@ const WebSiteAppBar = () => {
         }}
       >
         <Link to="/" style={LinkStyles(isDarkTheme)}>
-          <Typography
-            color="primary"
-            sx={TypographyDesktopTitle(theme)}
-          >
+          <Typography color="primary" sx={TypographyDesktopTitle(theme)}>
             {`${websiteName}`}
           </Typography>
         </Link>

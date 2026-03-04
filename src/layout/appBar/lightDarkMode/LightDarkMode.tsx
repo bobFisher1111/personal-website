@@ -1,11 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
-import { toggleTheme } from 'src/store/redux/theme/ThemeSlice';
-import {
-  Button
-} from '@mui/material';
-import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
-import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
-
+import { toggleTheme } from "src/store/redux/theme/ThemeSlice";
+import { Button } from "@mui/material";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 
 const LightDarkMode = () => {
   const rejectCookie = useSelector((state: any) => state.rejectCookie);
@@ -13,7 +10,7 @@ const LightDarkMode = () => {
   const dispatch = useDispatch();
 
   const disableButton = () => {
-    if (localStorage.getItem('darkMode') === null) {
+    if (localStorage.getItem("darkMode") === null) {
       return rejectCookie.rejectCookies;
     } else {
       return false;

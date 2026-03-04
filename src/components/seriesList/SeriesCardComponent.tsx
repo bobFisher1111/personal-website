@@ -1,13 +1,7 @@
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import {
-  Box,
-  Card,
-  CardMedia,
-  Typography,
-  useTheme,
-} from '@mui/material';
-import { LinkStyles } from 'src/util/styles/LinkStyles';
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { Box, Card, CardMedia, Typography, useTheme } from "@mui/material";
+import { LinkStyles } from "src/util/styles/LinkStyles";
 import {
   CardMediaVerticalCardImage,
   CardRootStyle,
@@ -15,9 +9,9 @@ import {
   CardVerticalCard,
   DivVerticalArticleRoot,
   TypographyVerticalCardNameStyleHover,
-} from './SeriesCardStyles';
+} from "./SeriesCardStyles";
 
-const SeriesCardComponent = ({ articleData, layout = 'grid' }: Props) => {
+const SeriesCardComponent = ({ articleData, layout = "grid" }: Props) => {
   const darkTheme = useSelector((state: any) => state.theme.darkTheme);
   const theme = useTheme();
   const serieslUrl = `/series/${articleData?.series_id}`;
@@ -30,24 +24,27 @@ const SeriesCardComponent = ({ articleData, layout = 'grid' }: Props) => {
             <CardMedia
               aria-label={`Series ${articleData?.series_title} Image`}
               component="img"
-              image={articleData?.series_cover_image_or_video || articleData?.series_cover_image_or_video}
+              image={
+                articleData?.series_cover_image_or_video ||
+                articleData?.series_cover_image_or_video
+              }
               sx={CardMediaVerticalCardImage(theme)}
               referrerPolicy="no-referrer"
             />
           </Link>
-          <Box 
-            sx={CardFooterStyle(theme, darkTheme)}
-          >
+          <Box sx={CardFooterStyle(theme, darkTheme)}>
             <Link
               to={serieslUrl}
               rel="noreferrer"
               style={{
                 ...LinkStyles(darkTheme),
-                display: 'block',
-                width: '100%',
+                display: "block",
+                width: "100%",
               }}
             >
-              <Typography sx={TypographyVerticalCardNameStyleHover(theme, darkTheme)}>
+              <Typography
+                sx={TypographyVerticalCardNameStyleHover(theme, darkTheme)}
+              >
                 {articleData?.series_title}
               </Typography>
             </Link>
@@ -60,7 +57,7 @@ const SeriesCardComponent = ({ articleData, layout = 'grid' }: Props) => {
 
 export type Props = {
   articleData: any;
-  layout?: 'grid' | 'scroller';
+  layout?: "grid" | "scroller";
 };
 
 export default SeriesCardComponent;

@@ -1,17 +1,12 @@
-import {
-  AppBar,
-  Box,
-} from '@mui/material';
-import WebSiteAppBar from './webSiteAppBar/WebSiteAppBar';
-import { AppBarStyles } from './AppBarComponentStyles';
+import { AppBar, Box } from "@mui/material";
+import WebSiteAppBar from "./webSiteAppBar/WebSiteAppBar";
+import { AppBarStyles } from "./AppBarComponentStyles";
 
 const AppBarComponent = () => {
   return (
     <Box>
-      <AppBar
-        sx={AppBarStyles}
-      >
-        <WebSiteAppBar />      
+      <AppBar sx={AppBarStyles}>
+        <WebSiteAppBar />
       </AppBar>
     </Box>
   );

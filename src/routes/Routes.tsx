@@ -1,10 +1,10 @@
-import { lazy } from 'react';
+import { lazy } from "react";
 
-const HomePage = lazy(() => import('src/pages/home/HomePage'));
-const ArticlePage = lazy(() => import('src/pages/articlePage/ArticlePage'));
-const AuthorPage = lazy(() => import('src/pages/author/AuthorPage'));
-const WritersPage = lazy(() => import('src/pages/writers/WritersPage'));
-const SeriesPage = lazy(() => import('src/pages/series/SeriesPage'));
+const HomePage = lazy(() => import("src/pages/home/HomePage"));
+const ArticlePage = lazy(() => import("src/pages/articlePage/ArticlePage"));
+const AuthorPage = lazy(() => import("src/pages/author/AuthorPage"));
+const WritersPage = lazy(() => import("src/pages/writers/WritersPage"));
+const SeriesPage = lazy(() => import("src/pages/series/SeriesPage"));
 type Route = {
   path?: string;
   element?: any;
@@ -12,23 +12,23 @@ type Route = {
 
 const routes: Route[] = [
   {
-    path: '/',
+    path: "/",
     element: HomePage,
   },
   {
-    path: '/article/:id/:id/',
+    path: "/article/:id/:id/",
     element: ArticlePage,
   },
   {
-    path: '/author/:id',
+    path: "/author/:id",
     element: AuthorPage,
   },
   {
-    path:'/writers',
+    path: "/writers",
     element: WritersPage,
   },
   {
-    path: '/series/:id',
+    path: "/series/:id",
     element: SeriesPage,
   },
 ];

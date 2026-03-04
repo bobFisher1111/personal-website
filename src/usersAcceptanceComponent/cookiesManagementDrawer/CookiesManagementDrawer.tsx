@@ -1,32 +1,28 @@
-import React, { Fragment} from 'react';
-import {
-  Drawer,
-  Grid,
-  Typography,
-} from '@mui/material';
-import CookiesManagementComponent from 'src/usersAcceptanceComponent/cookiesManagementComponent/CookiesManagementComponent';
+import React, { Fragment } from "react";
+import { Drawer, Grid, Typography } from "@mui/material";
+import CookiesManagementComponent from "src/usersAcceptanceComponent/cookiesManagementComponent/CookiesManagementComponent";
 import {
   DrawerStyles,
   SettingTitleStyles,
-} from './CookiesManagementDrawerStyles';
+} from "./CookiesManagementDrawerStyles";
 
-type Anchor = 'left';
+type Anchor = "left";
 
 const CookiesManagementDrawer = ({
   closeParentDrawer,
   optionalCookie,
 }: Props) => {
-
   const [state, setState] = React.useState({
     left: false,
   });
 
-  const toggleDrawer = (anchor: Anchor, open: boolean) =>
+  const toggleDrawer =
+    (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
-        (event.type === 'keydown') &&
-        ((event as React.KeyboardEvent).key === 'Tab' ||
-          (event as React.KeyboardEvent).key === 'Shift')
+        event.type === "keydown" &&
+        ((event as React.KeyboardEvent).key === "Tab" ||
+          (event as React.KeyboardEvent).key === "Shift")
       ) {
         return;
       }
@@ -41,22 +37,17 @@ const CookiesManagementDrawer = ({
     setState((prev) => ({ ...prev, [anchor]: false }));
   };
 
-  const handleDrawerClose = (anchor: Anchor) => (
-    _event: {},
-    _reason: 'backdropClick' | 'escapeKeyDown',
-  ) => {
-    closeDrawerProgrammatically(anchor);
-  };
+  const handleDrawerClose =
+    (anchor: Anchor) =>
+    (_event: {}, _reason: "backdropClick" | "escapeKeyDown") => {
+      closeDrawerProgrammatically(anchor);
+    };
 
   return (
     <Grid>
-      {(['left'] as const).map((anchor) => (
-        <Fragment 
-          key={anchor}
-        >
-          <Grid
-            onClick={closeParentDrawer}
-          >
+      {(["left"] as const).map((anchor) => (
+        <Fragment key={anchor}>
+          <Grid onClick={closeParentDrawer}>
             <Typography
               aria-label="Menu for Sections Mobile"
               color="primary"
@@ -69,7 +60,7 @@ const CookiesManagementDrawer = ({
           <Drawer
             anchor={anchor}
             open={state[anchor]}
-				    onClose={handleDrawerClose(anchor)}
+            onClose={handleDrawerClose(anchor)}
             ModalProps={{
               disableAutoFocus: true,
               disableEnforceFocus: true,
@@ -78,7 +69,7 @@ const CookiesManagementDrawer = ({
             sx={DrawerStyles}
           >
             <CookiesManagementComponent
-					    closeDrawer={() => closeDrawerProgrammatically(anchor)}
+              closeDrawer={() => closeDrawerProgrammatically(anchor)}
               optionalCookies={optionalCookie}
             />
           </Drawer>
@@ -89,8 +80,8 @@ const CookiesManagementDrawer = ({
 };
 
 export type Props = {
-  closeParentDrawer: () => void,
-  optionalCookie: () => void,
+  closeParentDrawer: () => void;
+  optionalCookie: () => void;
 };
 
 export default CookiesManagementDrawer;

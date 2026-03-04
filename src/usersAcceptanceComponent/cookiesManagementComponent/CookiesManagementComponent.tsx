@@ -1,12 +1,7 @@
-import { useState } from 'react';
-import {
-  Button,
-  Grid,
-  Switch,
-  Typography,
-} from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
-import { userAgreementValue } from 'src/config';
+import { useState } from "react";
+import { Button, Grid, Switch, Typography } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import { userAgreementValue } from "src/config";
 import {
   AcceptButtonStyles,
   AcceptGridButtonStyles,
@@ -26,17 +21,21 @@ import {
   ToggleOnGridStyles,
   ToggleOnOffGridStyles,
   ToggleOnOffTitleStyles,
-} from './CookiesManagementComponentStyles';
-import { useSelector } from 'react-redux';
+} from "./CookiesManagementComponentStyles";
+import { useSelector } from "react-redux";
 
 const CookiesManagementComponent = ({
   closeDrawer,
   optionalCookies,
 }: Props) => {
   const theme = useSelector((state: any) => state.theme.darkTheme);
-  const [darkModeToggle, setDarkModeToggle] = useState<boolean>(localStorage.getItem('darkMode') === 'true' ? true : false);
-  const [userAgreementsToggle, setUserAgreementsToggle] = useState<boolean>(false);
-  const cookiesManagementText: string = "When visiting our website, we will store cookies for functionality. Without these cookies certain features will be disabled.";
+  const [darkModeToggle, setDarkModeToggle] = useState<boolean>(
+    localStorage.getItem("darkMode") === "true" ? true : false,
+  );
+  const [userAgreementsToggle, setUserAgreementsToggle] =
+    useState<boolean>(false);
+  const cookiesManagementText: string =
+    "When visiting our website, we will store cookies for functionality. Without these cookies certain features will be disabled.";
 
   const darkModeSwtich = (event: any) => {
     if (event.target.checked === true) {
@@ -45,7 +44,10 @@ const CookiesManagementComponent = ({
     if (event.target.checked === false) {
       setDarkModeToggle(false);
     }
-    if (event.target.checked === false && localStorage.getItem('darkMode') !== null) {
+    if (
+      event.target.checked === false &&
+      localStorage.getItem("darkMode") !== null
+    ) {
       localStorage.removeItem("darkMode");
       setDarkModeToggle(false);
     }
@@ -62,19 +64,19 @@ const CookiesManagementComponent = ({
 
   const accpetedCookies = () => {
     if (darkModeToggle) {
-      localStorage.setItem('darkMode', 'false');
+      localStorage.setItem("darkMode", "false");
     }
     if (userAgreementsToggle) {
-      localStorage.setItem('userAgreement', `${userAgreementValue}`);
+      localStorage.setItem("userAgreement", `${userAgreementValue}`);
     }
   };
 
   const rejectOptionalCookies = () => {
-    if (localStorage.getItem('darkMode') !== null) {
-      localStorage.removeItem('darkMode');
+    if (localStorage.getItem("darkMode") !== null) {
+      localStorage.removeItem("darkMode");
     }
-    if (localStorage.getItem('userAgreement') !== null) {
-      localStorage.removeItem('userAgreement');
+    if (localStorage.getItem("userAgreement") !== null) {
+      localStorage.removeItem("userAgreement");
     }
 
     setDarkModeToggle(false);
@@ -90,22 +92,14 @@ const CookiesManagementComponent = ({
       alignItems="center"
       sx={RootStyles}
     >
-      <Grid
-        container
-        size={12}
-        sx={CookiesTitleAndCloseStyles}
-      >
+      <Grid container size={12} sx={CookiesTitleAndCloseStyles}>
         <Grid
           size={{
             xs: 6,
           }}
-
           sx={CookieSettingGridStyles}
         >
-          <Typography
-            color="primary"
-            sx={CookieSettingsTitleStyles}
-          >
+          <Typography color="primary" sx={CookieSettingsTitleStyles}>
             Cookies Settings
           </Typography>
         </Grid>
@@ -123,93 +117,48 @@ const CookiesManagementComponent = ({
             }}
             sx={CloseIconButtonStyles}
           >
-            <CloseIcon/>
+            <CloseIcon />
           </Button>
         </Grid>
       </Grid>
-      <Grid
-        size={12}
-        sx={CookiesManagementTextStyles}
-      >
-        <Typography
-          color="primary"
-        >
-          {cookiesManagementText}
-        </Typography>
+      <Grid size={12} sx={CookiesManagementTextStyles}>
+        <Typography color="primary">{cookiesManagementText}</Typography>
       </Grid>
-      <Grid
-        size={12}
-        sx={ToggleOnOffGridStyles}
-      >
-        <Typography
-          color="primary"
-          sx={ToggleOnOffTitleStyles}
-        >
+      <Grid size={12} sx={ToggleOnOffGridStyles}>
+        <Typography color="primary" sx={ToggleOnOffTitleStyles}>
           Toggle on and off Cookies
         </Typography>
       </Grid>
-      <Grid
-        container
-        size={12}
-        sx={ToggleOnRootStyles}
-      >
-        <Grid
-          size={6}
-          sx={ToggleOnGridStyles}
-        >
-          <Typography
-            color="primary"
-            sx={CookieTextStyles}
-          >
+      <Grid container size={12} sx={ToggleOnRootStyles}>
+        <Grid size={6} sx={ToggleOnGridStyles}>
+          <Typography color="primary" sx={CookieTextStyles}>
             User Agreement Cookie
           </Typography>
         </Grid>
-        <Grid
-          size={6}
-          sx={CookieGridSwitchStyles}
-        >
+        <Grid size={6} sx={CookieGridSwitchStyles}>
           <Switch
             checked={userAgreementsToggle}
             onChange={(e) => userAgreementSwitch(e)}
           />
         </Grid>
-        <Typography
-          color="primary"
-        >
-          Used for accepting agreement and will only be seen again if an update has been made for cookies.
+        <Typography color="primary">
+          Used for accepting agreement and will only be seen again if an update
+          has been made for cookies.
         </Typography>
       </Grid>
-      <Grid
-        container
-        size={12}
-
-        sx={ToggleOnRootStyles}
-      >
-        <Grid
-          size={6}
-          sx={ToggleOnGridStyles}
-        >
-          <Typography
-            color="primary"
-            sx={CookieTextStyles}
-          >
+      <Grid container size={12} sx={ToggleOnRootStyles}>
+        <Grid size={6} sx={ToggleOnGridStyles}>
+          <Typography color="primary" sx={CookieTextStyles}>
             Toggle on dark mode
           </Typography>
         </Grid>
-        <Grid
-          size={6}
-          sx={CookieGridSwitchStyles}
-        >
+        <Grid size={6} sx={CookieGridSwitchStyles}>
           <Switch
             checked={darkModeToggle}
             onChange={(e) => darkModeSwtich(e)}
           />
         </Grid>
-        <Typography
-          color="primary"
-        >
-          Used for enabling dark mode.
-        </Typography>
+        <Typography color="primary">Used for enabling dark mode.</Typography>
       </Grid>
       <Grid
         container

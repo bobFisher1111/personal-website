@@ -1,15 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  Button,
-  Grid,
-  Typography,
-} from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
-import { userAgreementValue } from 'src/config';
-import { cookiesOff } from 'src/store/redux/cookies/CookiesSlice';
-import CookiesManagementDrawer from 'src/usersAcceptanceComponent/cookiesManagementDrawer/CookiesManagementDrawer';
-import TermsOfServiceDrawer from 'src/usersAcceptanceComponent/termsOfServiceDrawer/TermsOfServiceDrawer';
-import { websiteName } from 'src/config';
+import { useDispatch, useSelector } from "react-redux";
+import { Button, Grid, Typography } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import { userAgreementValue } from "src/config";
+import { cookiesOff } from "src/store/redux/cookies/CookiesSlice";
+import CookiesManagementDrawer from "src/usersAcceptanceComponent/cookiesManagementDrawer/CookiesManagementDrawer";
+import TermsOfServiceDrawer from "src/usersAcceptanceComponent/termsOfServiceDrawer/TermsOfServiceDrawer";
+import { websiteName } from "src/config";
 import {
   AcceptButtonStyles,
   ButtonGridStyles,
@@ -21,23 +17,21 @@ import {
   SettingButtonStyles,
   TitleGridStyles,
   TitleStyles,
-} from './UserAcceptanceTextMessageStyles';
+} from "./UserAcceptanceTextMessageStyles";
 
-const UserAcceptanceTextMessage = ({
-  closeDrawer,
-}: Props) => {
+const UserAcceptanceTextMessage = ({ closeDrawer }: Props) => {
   const dispatch = useDispatch();
   const rejectCookie = useSelector((state: any) => state.rejectCookie);
   const acceptanceMessage = `${websiteName} uses cookies for functionality of the website. By accepting cookies you agree to placement of the cookie. Without accepting certain features and functionality will be disabled.`;
 
   const setLocalStorage = () => {
-    if (localStorage.getItem('darkMode') === null) {
-      localStorage.setItem('darkMode', 'false');
+    if (localStorage.getItem("darkMode") === null) {
+      localStorage.setItem("darkMode", "false");
     }
-    if (localStorage.getItem('enableYouTubeVideo') === null) {
-      localStorage.setItem('enableYouTubeVideo', 'true');
+    if (localStorage.getItem("enableYouTubeVideo") === null) {
+      localStorage.setItem("enableYouTubeVideo", "true");
     }
-    localStorage.setItem('userAgreement', `${userAgreementValue}`);
+    localStorage.setItem("userAgreement", `${userAgreementValue}`);
     dispatch(cookiesOff());
     return closeDrawer();
   };
@@ -51,64 +45,34 @@ const UserAcceptanceTextMessage = ({
   };
 
   return (
-    <Grid
-      sx={RootStyles}
-    >
-      <Grid
-        container
-      >
-        <Grid
-          size={10}
-          sx={TitleGridStyles}
-        >
-          <Typography
-            color="primary"
-            sx={TitleStyles}
-          >
+    <Grid sx={RootStyles}>
+      <Grid container>
+        <Grid size={10} sx={TitleGridStyles}>
+          <Typography color="primary" sx={TitleStyles}>
             Site uses cookies
           </Typography>
         </Grid>
-        <Grid
-          size={2}
-          sx={CloseIconGridStyles}
-        >
-          <Button
-            color="primary"
-            onClick={turnCookiesOff}
-            sx={CloseIconStyles}
-          >
-            <CloseIcon/>
+        <Grid size={2} sx={CloseIconGridStyles}>
+          <Button color="primary" onClick={turnCookiesOff} sx={CloseIconStyles}>
+            <CloseIcon />
           </Button>
         </Grid>
-        <Grid
-          size={12}
-          sx={AcceptanceMessageGrid}
-        >
-          <Typography
-            color="primary"
-          >
-            {acceptanceMessage}
-          </Typography>
+        <Grid size={12} sx={AcceptanceMessageGrid}>
+          <Typography color="primary">{acceptanceMessage}</Typography>
         </Grid>
-        <Grid
-          size={12}
-        >
+        <Grid size={12}>
           <TermsOfServiceDrawer />
         </Grid>
         <Grid
           container
-          justifyContent={'flex-end'}
+          justifyContent={"flex-end"}
           alignItems="center"
           sx={ButtonGridStyles}
         >
-          <Button
-            color="primary"
-            variant="outlined"
-            sx={SettingButtonStyles}
-          >
+          <Button color="primary" variant="outlined" sx={SettingButtonStyles}>
             <CookiesManagementDrawer
-              closeParentDrawer={closeDrawer} 
-              optionalCookie={turnCookiesOff} 
+              closeParentDrawer={closeDrawer}
+              optionalCookie={turnCookiesOff}
             />
           </Button>
           <Button

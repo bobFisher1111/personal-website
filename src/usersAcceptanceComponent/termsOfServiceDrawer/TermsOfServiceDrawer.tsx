@@ -1,18 +1,13 @@
-import { Fragment, useState } from 'react';
+import { Fragment, useState } from "react";
+import { Button, Drawer, Grid, Typography } from "@mui/material";
+import { useSelector } from "react-redux";
+import TermsOfServiceComponent from "src/usersAcceptanceComponent/termsOfServiceComponent/TermsOfServiceComponent";
 import {
-  Button,
-  Drawer,
-  Grid,
-  Typography,
-} from '@mui/material';
-import { useSelector } from 'react-redux';
-import TermsOfServiceComponent from 'src/usersAcceptanceComponent/termsOfServiceComponent/TermsOfServiceComponent';
-import { 
   DisclaimerTitleStyles,
   DrawerStyles,
-} from './TermsOfServiceDrawerStyles';
+} from "./TermsOfServiceDrawerStyles";
 
-type Anchor = 'left';
+type Anchor = "left";
 
 const TermsOfServiceDrawer = () => {
   const theme = useSelector((state: any) => state.theme.darkTheme);
@@ -21,12 +16,13 @@ const TermsOfServiceDrawer = () => {
     left: false,
   });
 
-  const toggleDrawer = (anchor: Anchor, open: boolean) =>
+  const toggleDrawer =
+    (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
-        event.type === 'keydown' &&
-        ((event as React.KeyboardEvent).key === 'Tab' ||
-          (event as React.KeyboardEvent).key === 'Shift')
+        event.type === "keydown" &&
+        ((event as React.KeyboardEvent).key === "Tab" ||
+          (event as React.KeyboardEvent).key === "Shift")
       ) {
         return;
       }
@@ -36,10 +32,8 @@ const TermsOfServiceDrawer = () => {
 
   return (
     <Grid>
-      {(['left'] as const).map((anchor) => (
-        <Fragment 
-          key={anchor}
-        >
+      {(["left"] as const).map((anchor) => (
+        <Fragment key={anchor}>
           <Grid>
             <Button size="small">
               <Typography

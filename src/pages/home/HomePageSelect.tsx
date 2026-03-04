@@ -1,11 +1,11 @@
-import { FormControl, MenuItem, Select } from '@mui/material';
-import type { SelectChangeEvent } from '@mui/material/Select';
-import type { PopoverOrigin } from '@mui/material/Popover';
+import { FormControl, MenuItem, Select } from "@mui/material";
+import type { SelectChangeEvent } from "@mui/material/Select";
+import type { PopoverOrigin } from "@mui/material/Popover";
 import {
   HomePageSelectFormControlSx,
   HomePageSelectMenuPaperSx,
   HomePageSelectSx,
-} from 'src/pages/home/HomePageSelectStyles';
+} from "src/pages/home/HomePageSelectStyles";
 
 export type HomePageSelectOption = {
   value: string;
@@ -31,10 +31,16 @@ const HomePageSelect = ({
   darkTheme,
   minWidth = 120,
 }: HomePageSelectProps) => {
-  const mode = darkTheme ? 'dark' : 'light';
+  const mode = darkTheme ? "dark" : "light";
 
-  const anchorOrigin: PopoverOrigin = { vertical: 'bottom', horizontal: 'left' };
-  const transformOrigin: PopoverOrigin = { vertical: 'top', horizontal: 'left' };
+  const anchorOrigin: PopoverOrigin = {
+    vertical: "bottom",
+    horizontal: "left",
+  };
+  const transformOrigin: PopoverOrigin = {
+    vertical: "top",
+    horizontal: "left",
+  };
 
   const selectMenuProps = {
     anchorOrigin,
@@ -58,11 +64,13 @@ const HomePageSelect = ({
         displayEmpty
         renderValue={(selected) => {
           if (!selected) return label;
-          return options.find((option) => option.value === selected)?.label ?? label;
+          return (
+            options.find((option) => option.value === selected)?.label ?? label
+          );
         }}
         onChange={handleChange}
         MenuProps={selectMenuProps}
-        inputProps={{ 'aria-label': label }}
+        inputProps={{ "aria-label": label }}
         sx={HomePageSelectSx(mode)}
       >
         {options.map((option) => (

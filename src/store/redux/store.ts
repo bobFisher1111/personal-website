@@ -1,7 +1,7 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import CookiesSlice from './cookies/CookiesSlice';
-import WebSiteDataSlice from './webSiteData/WebSiteDataSlice';
-import ThemeSlice from './theme/ThemeSlice';
+import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import CookiesSlice from "./cookies/CookiesSlice";
+import WebSiteDataSlice from "./webSiteData/WebSiteDataSlice";
+import ThemeSlice from "./theme/ThemeSlice";
 
 export const store = configureStore({
   reducer: {

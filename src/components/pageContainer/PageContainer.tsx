@@ -1,6 +1,6 @@
-import type { ReactNode } from 'react';
-import { Grid, useTheme } from '@mui/material';
-import { PageContainerRootStyles } from './PageContainerStyles';
+import type { ReactNode } from "react";
+import { Grid, useTheme } from "@mui/material";
+import { PageContainerRootStyles } from "./PageContainerStyles";
 
 export type PageContainerProps = {
   children: ReactNode;

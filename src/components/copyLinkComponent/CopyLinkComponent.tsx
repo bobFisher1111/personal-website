@@ -1,19 +1,18 @@
-import { useSelector } from 'react-redux';
-import { useTheme } from '@mui/material';
-import { appBaseURL } from 'src/config';
-import copyLink from 'src/util/copyLink';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import { useSelector } from "react-redux";
+import { useTheme } from "@mui/material";
+import { appBaseURL } from "src/config";
+import copyLink from "src/util/copyLink";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import {
   ContentCopyIconStyle,
   EmailOutlinedIconStyles,
-} from './CopyLinkComponentStyles';
-
+} from "./CopyLinkComponentStyles";
 
 const CopyLinkComponent = ({
   authorsId,
   articleId,
-  padding = '0px',
+  padding = "0px",
   email,
   authorsEmail,
   seriesId,
