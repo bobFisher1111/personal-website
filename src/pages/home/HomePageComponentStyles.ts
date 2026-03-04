@@ -2,9 +2,6 @@ import { Theme } from "@mui/material";
 import {
   COLORS,
   FONT_SIZES,
-  FONT_WEIGHTS,
-  LINE_HEIGHTS,
-  SIZES,
   SPACING_VALUES,
 } from "src/store/redux/theme/CONSTANTS";
 
@@ -30,21 +27,6 @@ export const SectionSelectedStyles = (isDark: boolean, theme: Theme) => ({
   cursor: "pointer",
   [theme.breakpoints.down("sm")]: {
     fontSize: "16px",
-  },
-});
-
-export const SectionTextStyles = (theme: Theme) => ({
-  fontSize: FONT_SIZES.sectionTitle,
-  fontWeight: FONT_WEIGHTS.regular,
-  lineHeight: LINE_HEIGHTS.normal,
-});
-
-export const SeriesButtonStyles = () => ({
-  textTransform: "initial",
-  "&.MuiButtonBase-root": {
-    "&.MuiButton-root": {
-      padding: 0,
-    },
   },
 });
 

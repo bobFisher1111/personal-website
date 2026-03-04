@@ -1,22 +1,21 @@
-import { Theme } from "@mui/material/styles";
-import { FONT_SIZES, SIZES } from "src/store/redux/theme/CONSTANTS";
+import { FONT_SIZES } from "src/store/redux/theme/CONSTANTS";
 
-export const authorComponentGridBiography = () => ({
+export const authorComponentGridBiography = {
   padding: "8px 16px 16px 16px",
-});
+};
 
-export const authorComponentGridBiographyTitle = (theme: Theme) => ({
+export const authorComponentGridBiographyTitle = {
   textAlign: "flex-start",
   fontSize: FONT_SIZES.sectionTitle,
   padding: "16px 0px",
-});
+};
 
-export const authorComponentGridBiographyText = (theme: Theme) => ({
+export const authorComponentGridBiographyText = {
   textAlign: "flex-start",
   fontSize: FONT_SIZES.body1,
   textIndent: "15px",
-});
+};
 
-export const gridWidth = () => ({
+export const gridWidth = {
   width: "100%",
-});
+};

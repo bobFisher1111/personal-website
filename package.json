@@ -24,13 +24,13 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run types && vite build",
     "preview": "vite preview",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/*.ts{,x}",
-    "lint": "tsc --noEmit && eslint src/**/*.ts{,x}",
-    "types": "tsc --noemit --project tsconfig.json",
+    "lint": "eslint . --max-warnings=0",
+    "types": "tsc --noEmit -p tsconfig.json",
     "test:all": "npm run types && npm run lint"
   },
   "eslintConfig": {
@@ -60,6 +60,8 @@
     "@typescript-eslint/parser": "^8.49.0",
     "@vitejs/plugin-react": "^4.7.0",
     "eslint": "^9.39.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
     "typescript": "^5.4.5",
     "vite": "^6.4.1"
   }

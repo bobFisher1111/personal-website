@@ -2,8 +2,6 @@ import { Grid } from "@mui/material";
 import CopyLinkComponent from "src/components/copyLinkComponent/CopyLinkComponent";
 
 import {
-  socialMediaIconStyle,
-  socialMediaGridItemStyle,
   emailGridStyle,
 } from "./SocialMediaComponentStyles";
 

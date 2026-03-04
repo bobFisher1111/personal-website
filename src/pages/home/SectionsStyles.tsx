@@ -22,7 +22,7 @@ export const navContainerStyles = (theme: Theme, isDarkTheme: boolean) => {
     },
   };
 };
-export const tabsStyles = (isDarkTheme: boolean) => ({
+export const tabsStyles = {
   minHeight: { xs: MOBILE_TAB_HEIGHT, sm: SIZES.height.touchTarget },
   "& .MuiTab-root": {
     minHeight: { xs: MOBILE_TAB_HEIGHT, sm: SIZES.height.touchTarget },
@@ -31,7 +31,7 @@ export const tabsStyles = (isDarkTheme: boolean) => ({
     height: 0,
     backgroundColor: "transparent",
   },
-});
+};
 
 export const sectionsContainerStyles = {
   display: "flex",

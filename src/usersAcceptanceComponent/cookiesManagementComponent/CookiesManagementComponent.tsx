@@ -22,13 +22,11 @@ import {
   ToggleOnOffGridStyles,
   ToggleOnOffTitleStyles,
 } from "./CookiesManagementComponentStyles";
-import { useSelector } from "react-redux";
 
 const CookiesManagementComponent = ({
   closeDrawer,
   optionalCookies,
 }: Props) => {
-  const theme = useSelector((state: any) => state.theme.darkTheme);
   const [darkModeToggle, setDarkModeToggle] = useState<boolean>(
     localStorage.getItem("darkMode") === "true" ? true : false,
   );

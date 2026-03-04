@@ -71,7 +71,7 @@ const SeriesPage = () => {
             to={`/article/${item?.author_id}/${item?.article_id}`}
             style={LinkStyles(colorTheme)}
           >
-            <Typography color="primary" sx={seriesComponentTitle(theme)}>
+            <Typography color="primary" sx={seriesComponentTitle}>
               {`${item?.series_type}: ${item?.article_title}`}
             </Typography>
             <Typography color="primary" sx={seriesComponentSubTitle(theme)}>

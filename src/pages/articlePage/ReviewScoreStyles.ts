@@ -8,7 +8,6 @@ import {
 const getMode = (darkTheme: boolean) => (darkTheme ? "dark" : "light");
 
 export const AlignTextStyle = (darkTheme: boolean) => {
-  const mode = getMode(darkTheme);
   return {
     textAlign: "center",
     color: darkTheme ? COLORS.dark.primary : COLORS.light.primary,

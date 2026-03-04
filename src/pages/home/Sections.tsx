@@ -46,7 +46,7 @@ export default function Sections({ activeSection, onSectionChange }: Props) {
           variant={isMobile ? "scrollable" : "standard"}
           scrollButtons={isMobile ? "auto" : false}
           aria-label="Content sections"
-          sx={tabsStyles(isDarkTheme)}
+          sx={tabsStyles}
         >
           {SECTION_NAMES.map((section) => (
             <Tab

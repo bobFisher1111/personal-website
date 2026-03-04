@@ -49,7 +49,7 @@ const MobileDrawer = () => {
           container
           justifyContent="center"
           alignItems="center"
-          sx={GridMobileDrawerAppBar(theme)}
+          sx={GridMobileDrawerAppBar}
         >
           <Grid size={2}>
             <LightDarkMode />
@@ -75,7 +75,7 @@ const MobileDrawer = () => {
           </Grid>
           <Grid size={12} sx={GridSectionsStyle}>
             <Link to="/" style={LinkStyles(colorTheme)}>
-              <Typography color="primary" sx={TypographyMobileDrawer(theme)}>
+              <Typography color="primary" sx={TypographyMobileDrawer}>
                 About
               </Typography>
             </Link>
@@ -84,7 +84,7 @@ const MobileDrawer = () => {
             <Link to="/writers" style={LinkStyles(colorTheme)}>
               <Typography
                 color="primary"
-                sx={TypographyMobileDrawer(theme)}
+                sx={TypographyMobileDrawer}
                 onClick={toggleDrawer(anchor, false)}
               >
                 Writers

@@ -1,6 +1,5 @@
 import { Grid, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import { useTheme } from "@mui/material/styles";
 import HeaderComponent from "src/components/headerComponent/HeaderComponent";
 import PageContainer from "src/components/pageContainer/PageContainer";
 import TabsComponent from "src/components/tabsComponent/TabsComponent";
@@ -13,7 +12,6 @@ import {
 } from "./AuthorComponentStyles";
 
 const AuthorComponent = () => {
-  const muiTheme = useTheme();
   const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
   const webData = getWebsiteData;
   const authorWebData = getWebsiteData?.authors;
@@ -30,9 +28,6 @@ const AuthorComponent = () => {
   const getArticles = webData?.articles?.filter(
     (item: any) => item.author_id === getIdFromUrl(),
   );
-  const getBooks = webData?.books?.filter(
-    (item: any) => item.author_id === getIdFromUrl(),
-  );
   const getSeries = webData?.series?.filter(
     (item: any) => item.author_id === getIdFromUrl(),
   );
@@ -46,22 +41,22 @@ const AuthorComponent = () => {
         avatarImage={authorData?.avatar_image}
         authorId={authorData?.author_id}
       />
-      <Grid size={12} sx={authorComponentGridBiography()}>
+      <Grid size={12} sx={authorComponentGridBiography}>
         <Typography
           color="primary"
-          sx={authorComponentGridBiographyTitle(muiTheme)}
+          sx={authorComponentGridBiographyTitle}
         >
           Biography
         </Typography>
         <Typography
           color="primary"
-          sx={authorComponentGridBiographyText(muiTheme)}
-        >
+          sx={authorComponentGridBiographyText}
+        > 
           {authorData?.biography}
         </Typography>
       </Grid>
 
-      <Grid container justifyContent="center" sx={gridWidth()}>
+      <Grid container justifyContent="center" sx={gridWidth}>
         <TabsComponent
           turnonsectiontabspadding={false}
           tabsData={AuthorComponetTabData(

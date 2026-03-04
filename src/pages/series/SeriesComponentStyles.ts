@@ -20,11 +20,11 @@ export const seriesComponentGridArticleInfo = (theme: Theme) => ({
   },
 });
 
-export const seriesComponentTitle = (theme: Theme) => ({
+export const seriesComponentTitle = {
   fontSize: FONT_SIZES.title,
   padding: "0px 16px",
   fontWeight: FONT_WEIGHTS.bold,
-});
+};
 
 export const seriesComponentSubTitle = (theme: Theme) => ({
   fontSize: FONT_SIZES.subtitle,

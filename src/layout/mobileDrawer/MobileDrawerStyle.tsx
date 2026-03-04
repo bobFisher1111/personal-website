@@ -20,10 +20,10 @@ export const CloseDrawerGridStyles = {
 
 export const MenuIconStyle = {};
 
-export const GridMobileDrawerAppBar = (theme: Theme) => ({
+export const GridMobileDrawerAppBar = {
   height: "40px",
   borderBottom: "1px solid #0C0D0D",
-});
+};
 
 export const GridCenterItems = {
   display: "flex",
@@ -36,11 +36,11 @@ export const GridSectionsStyle = {
   margin: "32px 0px 0px 0px",
 };
 
-export const TypographyMobileDrawer = (theme: Theme) => ({
+export const TypographyMobileDrawer = {
   padding: "0px 20px",
   cursor: "pointer",
   fontSize: "1.25rem",
-});
+};
 
 export default [
   AppBarStyles,
