@@ -3,35 +3,82 @@ import { Link } from "react-router-dom";
 import { Box, Card, CardMedia, Typography, useTheme } from "@mui/material";
 import { LinkStyles } from "src/util/styles/LinkStyles";
 import {
+  AuthorAvatarOverlayImageStyles,
+  AuthorAvatarOverlayLinkStyles,
   CardMediaVerticalCardImage,
   CardRootStyle,
   CardFooterStyle,
   CardVerticalCard,
   DivVerticalArticleRoot,
+  SeriesImageContainerStyles,
   TypographyVerticalCardNameStyleHover,
 } from "./SeriesCardStyles";
+import type { AuthorItem, SeriesItem } from "./SeriesComponent";
 
-const SeriesCardComponent = ({ articleData, layout = "grid" }: Props) => {
-  const darkTheme = useSelector((state: any) => state.theme.darkTheme);
+const SeriesCardComponent = ({
+  articleData,
+  layout = "grid",
+  authors,
+  showAuthorAvatarOverlay,
+}: Props) => {
+  const darkTheme = useSelector(
+    (state: { theme: { darkTheme: boolean } }) => state.theme.darkTheme,
+  );
   const theme = useTheme();
   const serieslUrl = `/series/${articleData?.series_id}`;
+
+  const seriesAuthorId =
+    typeof articleData?.author_id === "number" ? articleData.author_id : null;
+
+  let authorAvatar: string | null = null;
+  if (seriesAuthorId !== null && Array.isArray(authors)) {
+    for (const author of authors) {
+      if (author.author_id !== seriesAuthorId) continue;
+      if (typeof author.avatar_image === "string" && author.avatar_image) {
+        authorAvatar = author.avatar_image;
+      }
+      break;
+    }
+  }
 
   return (
     <Box sx={DivVerticalArticleRoot(theme)}>
       <Card sx={CardVerticalCard(theme, darkTheme, layout)}>
         <Box sx={CardRootStyle}>
-          <Link to={serieslUrl} rel="noreferrer">
-            <CardMedia
-              aria-label={`Series ${articleData?.series_title} Image`}
-              component="img"
-              image={
-                articleData?.series_cover_image_or_video ||
-                articleData?.series_cover_image_or_video
-              }
-              sx={CardMediaVerticalCardImage(theme)}
-              referrerPolicy="no-referrer"
-            />
-          </Link>
+          <Box style={SeriesImageContainerStyles}>
+            <Link to={serieslUrl} rel="noreferrer">
+              <CardMedia
+                aria-label={`Series ${articleData?.series_title} Image`}
+                component="img"
+                image={
+                  articleData?.series_cover_image_or_video ||
+                  articleData?.series_cover_image_or_video
+                }
+                sx={CardMediaVerticalCardImage(theme)}
+                referrerPolicy="no-referrer"
+              />
+            </Link>
+
+            {showAuthorAvatarOverlay &&
+              seriesAuthorId !== null &&
+              typeof authorAvatar === "string" &&
+              authorAvatar.length > 0 && (
+                <Link
+                  to={`/author/${seriesAuthorId}`}
+                  rel="noreferrer"
+                  style={AuthorAvatarOverlayLinkStyles}
+                  aria-label="View author"
+                >
+                  <Box
+                    component="img"
+                    alt="Author avatar"
+                    src={authorAvatar}
+                    style={AuthorAvatarOverlayImageStyles(darkTheme)}
+                    referrerPolicy="no-referrer"
+                  />
+                </Link>
+              )}
+          </Box>
           <Box sx={CardFooterStyle(theme, darkTheme)}>
             <Link
               to={serieslUrl}
@@ -56,8 +103,10 @@ const SeriesCardComponent = ({ articleData, layout = "grid" }: Props) => {
 };
 
 export type Props = {
-  articleData: any;
+  articleData: SeriesItem;
   layout?: "grid" | "scroller";
+  authors?: readonly AuthorItem[];
+  showAuthorAvatarOverlay?: boolean;
 };
 
 export default SeriesCardComponent;

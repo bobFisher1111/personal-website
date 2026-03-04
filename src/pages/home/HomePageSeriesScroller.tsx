@@ -1,26 +1,32 @@
 import { Grid } from "@mui/material";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ScrollArrowButton from "src/components/scrollArrowButton/ScrollArrowButton";
 import SeriesComponent from "src/components/seriesList/SeriesComponent";
+import type {
+  AuthorItem,
+  SeriesItem,
+} from "src/components/seriesList/SeriesComponent";
 import {
   SeriesScrollerRootStyles,
   SeriesScrollerStyles,
 } from "./HomePageSeriesScrollerStyles";
 
 type HomePageSeriesScrollerProps = {
-  series: any;
+  series: readonly SeriesItem[];
+  authors: readonly AuthorItem[];
   darkTheme: boolean;
+  showAuthorAvatarOverlay?: boolean;
 };
 
 const HomePageSeriesScroller = ({
   series,
+  authors,
   darkTheme,
+  showAuthorAvatarOverlay,
 }: HomePageSeriesScrollerProps) => {
   const seriesScrollerRef = useRef<HTMLDivElement | null>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
-
-  const seriesCount = useMemo(() => series?.length ?? 0, [series]);
 
   const updateScrollButtons = () => {
     const el = seriesScrollerRef.current;
@@ -48,7 +54,7 @@ const HomePageSeriesScroller = ({
 
   useEffect(() => {
     updateScrollButtons();
-  }, [seriesCount]);
+  }, [series.length]);
 
   useEffect(() => {
     const el = seriesScrollerRef.current;
@@ -85,7 +91,12 @@ const HomePageSeriesScroller = ({
       )}
 
       <Grid ref={seriesScrollerRef} sx={SeriesScrollerStyles()}>
-        <SeriesComponent series={series} layout="scroller" />
+        <SeriesComponent
+          series={series}
+          layout="scroller"
+          authors={authors}
+          showAuthorAvatarOverlay={showAuthorAvatarOverlay}
+        />
       </Grid>
     </Grid>
   );

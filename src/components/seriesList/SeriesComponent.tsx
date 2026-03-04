@@ -7,17 +7,42 @@ import {
 } from "./SeriesComponentStyles";
 import SeriesCardComponent from "./SeriesCardComponent";
 
-export type Props = {
-  series: any;
-  layout?: "grid" | "scroller";
-  outerSx?: Record<string, unknown>;
+export type SeriesItem = {
+  series_id: number;
+  series_title: string;
+  series_cover_image_or_video: string;
+  author_id?: number;
+  section: string;
+  [key: string]: string | number | boolean | null | undefined;
 };
 
-const SeriesComponent = ({ series, layout = "grid", outerSx }: Props) => {
-  const theme = useTheme();
-  const count = series?.length ?? 0;
+export type AuthorItem = {
+  author_id: number;
+  avatar_image?: string | null;
+  [key: string]: string | number | boolean | null | undefined;
+};
 
-  if (!series || series.length === 0) {
+type OuterSx = Record<string, string | number | boolean | null | undefined>;
+
+export type Props = {
+  series: readonly SeriesItem[];
+  layout?: "grid" | "scroller";
+  outerSx?: OuterSx;
+  authors?: readonly AuthorItem[];
+  showAuthorAvatarOverlay?: boolean;
+};
+
+const SeriesComponent = ({
+  series,
+  layout = "grid",
+  outerSx,
+  authors,
+  showAuthorAvatarOverlay,
+}: Props) => {
+  const theme = useTheme();
+  const count = series.length;
+
+  if (series.length === 0) {
     return <ComingSoon />;
   }
 
@@ -42,13 +67,18 @@ const SeriesComponent = ({ series, layout = "grid", outerSx }: Props) => {
               })}
           sx={CarouselComponentGridStyles(theme)}
         >
-          {series?.map((item: any, index: any) => (
+          {series.map((item, index) => (
             <Grid
-              key={index}
+              key={typeof item.series_id === "number" ? item.series_id : index}
               size={layout === "grid" ? { xs: 6, sm: "auto" } : "auto"}
               sx={SeriesGridStyles}
             >
-              <SeriesCardComponent articleData={item} layout={layout} />
+              <SeriesCardComponent
+                articleData={item}
+                layout={layout}
+                authors={authors}
+                showAuthorAvatarOverlay={showAuthorAvatarOverlay}
+              />
             </Grid>
           ))}
         </Grid>

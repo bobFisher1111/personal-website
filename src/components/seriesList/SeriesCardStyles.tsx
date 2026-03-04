@@ -1,11 +1,41 @@
 import { Theme } from "@mui/material";
+import type { CSSProperties } from "react";
 import {
   COLORS,
   FONT_SIZES,
   FONT_WEIGHTS,
   LINE_HEIGHTS,
+  SPACING_VALUES,
   SIZES,
 } from "src/store/redux/theme/CONSTANTS";
+
+export const SeriesImageContainerStyles: CSSProperties = {
+  position: "relative",
+  width: "100%",
+};
+
+export const AuthorAvatarOverlayLinkStyles: CSSProperties = {
+  position: "absolute",
+  top: SPACING_VALUES.xxs,
+  right: SPACING_VALUES.xxs,
+  zIndex: 1,
+  display: "inline-flex",
+  borderRadius: "50%",
+  textDecoration: "none",
+  WebkitTapHighlightColor: "transparent",
+  outline: "none",
+};
+
+export const AuthorAvatarOverlayImageStyles = (
+  darkTheme: boolean,
+): CSSProperties => ({
+  width: SIZES.avatar.sm,
+  height: SIZES.avatar.sm,
+  borderRadius: "50%",
+  border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
+  objectFit: "cover",
+  backgroundColor: darkTheme ? COLORS.dark.appBar : COLORS.light.secondary,
+});
 
 export const CardMediaVerticalCardImage = (theme: Theme) => ({
   objectFit: "cover",

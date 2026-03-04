@@ -19,12 +19,20 @@ type Article = {
 };
 
 type Series = {
-  series_id?: number;
-  series_title?: string;
-  section?: string;
+  series_id: number;
+  series_title: string;
+  series_cover_image_or_video: string;
+  section: string;
+  author_id?: number;
+  [key: string]: string | number | boolean | null | undefined;
 };
 
-type Author = Record<string, never>;
+type Author = {
+  author_id: number;
+  avatar_image?: string | null;
+  author_name?: string;
+  [key: string]: string | number | boolean | null | undefined;
+};
 
 type WebsiteData = {
   articles: Article[];
@@ -148,7 +156,9 @@ const HomePage = () => {
         />
         <HomePageSeriesScroller
           series={filteredSeriesData}
+          authors={allAuthorsData ?? []}
           darkTheme={darkTheme}
+          showAuthorAvatarOverlay
         />
       </Grid>
       <Grid size={12}>
