@@ -27,6 +27,12 @@ export const tabsStyles = (isDarkTheme: boolean) => ({
   },
 });
 
+export const sectionsContainerStyles = {
+  display: "flex",
+  alignItems: "flex-end",
+  justifyContent: "flex-start",
+};
+
 export const tabStyles = (
   theme: Theme,
   activeSection: string,

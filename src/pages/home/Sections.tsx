@@ -1,74 +1,45 @@
-import { useState } from "react";
 import { Box, Container, Tabs, Tab, useMediaQuery, useTheme } from "@mui/material";
 import { useSelector } from "react-redux";
 import {
   navContainerStyles,
+  sectionsContainerStyles,
   tabsStyles,
   tabStyles,
 } from './SectionsStyles';
 
-interface SectionData {
-  [key: string]: unknown;
-  section: string;
-}
-
-interface SeriesData {
-  [key: string]: unknown;
-  section: string;
-}
-
 interface Props {
-  data: SectionData[];
-  series: SeriesData[];
-  setData?: (data: SectionData[]) => void;
-  setSeries?: (series: SeriesData[]) => void;
+  activeSection: string;
+  onSectionChange: (section: string) => void;
 }
 
-const SECTION_NAMES = [
+const SECTION_NAMES: ReadonlyArray<string> = [
   "All",
   "Reviews",
-  "JRPG",
   "RPGs",
-  "Retro RPG",
-] as const;
+  "Action",
+  "Fighting",
+  "Platformers",
+];
 
-const filterDataBySection = (
-  data: SectionData[],
-  series: SeriesData[],
-  section: string
-): { filteredData: SectionData[]; filteredSeries: SeriesData[] } => {
-  const filteredData = data?.filter((item) => item.section === section) || [];
-  const filteredSeries = series?.filter((item) => item.section === section) || [];
-  return { filteredData, filteredSeries };
-};
-
-export default function Sections2({ data, series, setData, setSeries }: Props) {
+export default function Sections({ activeSection, onSectionChange }: Props) {
   const isMobile = useMediaQuery(useTheme().breakpoints.down("sm"));
-  const isDarkTheme = useSelector((state: any) => state.theme.darkTheme);
-  const [activeSection, setActiveSection] = useState<string>(SECTION_NAMES[0]);
+  const isDarkTheme = useSelector(
+    (state: { theme: { darkTheme: boolean } }) => state.theme.darkTheme
+  );
   const theme = useTheme();
-
-  const handleSectionChange = (section: string) => {
-    setActiveSection(section);
-    const { filteredData, filteredSeries } = filterDataBySection(data, series, section);
-    setSeries?.(filteredSeries);
-    setData?.(filteredData);
-  };
 
   return (
     <Box component="nav" sx={navContainerStyles(theme, isDarkTheme)}>
       <Container
         maxWidth="lg"
         disableGutters
-        sx={{
-          display: "flex",
-          alignItems: "flex-end",
-          justifyContent: "flex-start",
-        }}
+        sx={sectionsContainerStyles}
       >
         <Tabs
           value={activeSection}
-          onChange={(_, newValue) => handleSectionChange(newValue)}
+          onChange={(_, newValue) => {
+            if (typeof newValue === 'string') onSectionChange(newValue);
+          }}
           variant={isMobile ? 'scrollable' : 'standard'}
           scrollButtons={isMobile ? 'auto' : false}
           aria-label="Content sections"

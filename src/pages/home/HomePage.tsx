@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Grid, useTheme } from "@mui/material";
 import { useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
@@ -11,51 +11,117 @@ import {
 import HomePageSeriesScroller from "./HomePageSeriesScroller";
 import HomePageSelect from './HomePageSelect';
 
+type Article = {
+  article_id: number;
+  author_id: number;
+  article_title: string;
+  published_date: string;
+  section: string;
+  is_review: boolean;
+};
+
+type Series = {
+  series_id?: number;
+  series_title?: string;
+  section?: string;
+};
+
+type Author = Record<string, never>;
+
+type WebsiteData = {
+  articles: Article[];
+  authors: Author[];
+  series: Series[];
+};
+
+type RootState = {
+  webSiteData: {
+    data: WebsiteData;
+  };
+  theme: {
+    darkTheme: boolean;
+  };
+};
+
+const getPublishedTime = (publishedDate: string): number => {
+  if (!publishedDate) return 0;
+  const time = new Date(publishedDate).getTime();
+  return Number.isFinite(time) ? time : 0;
+};
+
 const HomePage = () => {
   const [selectedSeriesPath, setSelectedSeriesPath] = useState('');
   const [selectedArticlePath, setSelectedArticlePath] = useState('');
+  const [activeSection, setActiveSection] = useState('All');
   const theme = useTheme();
   const navigate = useNavigate();
-  const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const darkTheme = useSelector((state: any) => state.theme.darkTheme);
-  const articleData = getWebsiteData?.articles;
-  const authorsData = getWebsiteData?.authors;
-  const seriesData = getWebsiteData?.series;
+  const websiteData = useSelector((state: RootState) => state.webSiteData.data);
+  const darkTheme = useSelector((state: RootState) => state.theme.darkTheme);
+  const articleData = websiteData?.articles;
+  const authorsData = websiteData?.authors;
+  const seriesData = websiteData?.series;
+
+  const allArticleData = Array.isArray(articleData) ? articleData : [];
+  const allSeriesData = Array.isArray(seriesData) ? seriesData : [];
+  const allAuthorsData = Array.isArray(authorsData) ? authorsData : undefined;
+
+  const filteredArticleData =
+    activeSection === 'All'
+      ? allArticleData
+      : activeSection === 'Reviews'
+        ? allArticleData.filter(
+            (item) => item.is_review === true || item.section === 'Reviews'
+          )
+        : allArticleData.filter((item) => item.section === activeSection);
+
+  const filteredSeriesData =
+    activeSection === 'All'
+      ? allSeriesData
+      : activeSection === 'Reviews'
+        ? allSeriesData.filter((item) => item.section === 'Reviews')
+        : allSeriesData.filter((item) => item.section === activeSection);
 
 
-  const seriesOptions = useMemo(() => {
-    if (!Array.isArray(seriesData)) return [];
-    const byId = new Map<string, { series_id: unknown; series_title: unknown }>();
-    for (const series of seriesData) {
-      const seriesId = series?.series_id;
-      if (seriesId == null) continue;
-      byId.set(String(seriesId), series);
+  const seriesOptions = (() => {
+    const byId = new Map<number, Series>();
+    for (const series of filteredSeriesData) {
+      if (typeof series.series_id !== 'number') continue;
+      byId.set(series.series_id, series);
     }
-    return Array.from(byId.values()).map((series: any) => ({
-      value: `/series/${String(series.series_id)}`,
-      label: String(series.series_title ?? ''),
-    }));
-  }, [seriesData]);
+
+    return Array.from(byId.entries()).map(([seriesId, series]) => {
+      const seriesTitle = typeof series.series_title === 'string' ? series.series_title : '';
+      return {
+        value: `/series/${String(seriesId)}`,
+        label: seriesTitle,
+      };
+    });
+  })();
 
   const handleSeriesChange = (nextPath: string) => {
     setSelectedSeriesPath(nextPath);
     if (nextPath) navigate(nextPath);
   };
 
-  const articleOptions = useMemo(() => {
-    if (!Array.isArray(articleData)) return [];
-    return [...articleData]
-      .filter((a: any) => a?.article_id != null)
-      .sort((a: any, b: any) => {
-        const aTime = a?.published_date ? new Date(a.published_date).getTime() : 0;
-        const bTime = b?.published_date ? new Date(b.published_date).getTime() : 0;
-        return bTime - aTime;
-      })
-      .map((article: any) => ({
-        value: `/article/${String(article.author_id)}/${String(article.article_id)}`,
-        label: String(article.article_title ?? ''),
-      }));
-  }, [articleData]);
+  const articleOptions = [...filteredArticleData]
+    .filter((a) => typeof a.article_id === 'number')
+    .sort(
+      (a, b) => getPublishedTime(b.published_date) - getPublishedTime(a.published_date)
+    )
+    .map((article) => {
+      const authorId = typeof article.author_id === 'number' ? article.author_id : undefined;
+      const articleId = typeof article.article_id === 'number' ? article.article_id : undefined;
+      const articleTitle = typeof article.article_title === 'string' ? article.article_title : '';
+
+      return {
+        value:
+          authorId === undefined || articleId === undefined
+            ? ''
+            : `/article/${String(authorId)}/${String(articleId)}`,
+        label: articleTitle,
+      };
+    })
+    .filter((option) => option.value.length > 0);
 
   const handleLatestArticleChange = (nextPath: string) => {
     setSelectedArticlePath(nextPath);
@@ -64,12 +130,7 @@ const HomePage = () => {
 
   return (
     <PageContainer>
-        <Sections
-          data={articleData}
-          series={seriesData}
-          setData={() => {}}
-          setSeries={() => {}}
-        />
+      <Sections activeSection={activeSection} onSectionChange={setActiveSection} />
       <Grid size={12} sx={SeriesTitleGridStyles(theme)}>
           <HomePageSelect
             id="series-select"
@@ -80,7 +141,7 @@ const HomePage = () => {
             darkTheme={darkTheme}
             minWidth={80}
           />
-        <HomePageSeriesScroller series={seriesData} darkTheme={darkTheme} />
+        <HomePageSeriesScroller series={filteredSeriesData} darkTheme={darkTheme} />
       </Grid>
       <Grid size={12}>
         <HomePageSelect
@@ -93,8 +154,8 @@ const HomePage = () => {
           minWidth={80}
         />
         <ArticleList
-          authorData={authorsData}
-          data={articleData}
+          authorData={allAuthorsData}
+          data={filteredArticleData}
         />
       </Grid>
     </PageContainer>
