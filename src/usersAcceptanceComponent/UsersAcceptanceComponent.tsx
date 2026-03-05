@@ -6,6 +6,8 @@ import { userAgreementValue } from "src/config";
 
 type Anchor = "bottom";
 
+const anchors: readonly Anchor[] = ["bottom"];
+
 const UsersAcceptanceComponent = () => {
   const [state, setState] = useState(() =>
     localStorage.getItem("userAgreement") !== `${userAgreementValue}`
@@ -23,13 +25,10 @@ const UsersAcceptanceComponent = () => {
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event &&
-        event.type === "keydown" &&
-        ((event as React.KeyboardEvent).key === "Tab" ||
-          (event as React.KeyboardEvent).key === "Shift")
-      ) {
-        return;
+      if (event.type === "keydown" && "key" in event) {
+        if (event.key === "Tab" || event.key === "Shift") {
+          return;
+        }
       }
       if (!open && document.activeElement instanceof HTMLElement) {
         document.activeElement.blur();
@@ -39,7 +38,7 @@ const UsersAcceptanceComponent = () => {
 
   return (
     <Grid>
-      {(["bottom"] as const).map((anchor) => (
+      {anchors.map((anchor) => (
         <Fragment key={anchor}>
           <SwipeableDrawer
             anchor={anchor}

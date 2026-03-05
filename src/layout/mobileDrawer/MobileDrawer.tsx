@@ -21,6 +21,8 @@ import { LinkStyles } from "src/util/styles/LinkStyles";
 
 type Anchor = "left";
 
+const anchors: readonly Anchor[] = ["left"];
+
 const MobileDrawer = () => {
   const [state, setState] = useState({ left: false });
   const theme = useTheme();
@@ -32,14 +34,12 @@ const MobileDrawer = () => {
 
   const toggleDrawer =
     (anchor: Anchor, open: boolean) => (event: KeyboardEvent | MouseEvent) => {
-      if (
-        event.type === "keydown" &&
-        ((event as KeyboardEvent).key === "Tab" ||
-          (event as KeyboardEvent).key === "Shift")
-      ) {
-        return;
+      if (event.type === "keydown" && "key" in event) {
+        if (event.key === "Tab" || event.key === "Shift") {
+          return;
+        }
       }
-      setState({ ...state, [anchor]: open });
+      setState((prevState) => ({ ...prevState, [anchor]: open }));
     };
 
   const list = (anchor: Anchor) => (
@@ -98,7 +98,7 @@ const MobileDrawer = () => {
 
   return (
     <Grid>
-      {(["left"] as const).map((anchor) => (
+      {anchors.map((anchor) => (
         <Fragment key={anchor}>
           <Button
             aria-label="Menu for Sections Mobile"

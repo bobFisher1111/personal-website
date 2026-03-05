@@ -12,20 +12,28 @@ type AppConfig = {
   websiteURL: string;
 };
 
+const requireStringEnv = (key: string): string => {
+  const value = import.meta.env[key];
+  if (typeof value !== "string" || value.length === 0) {
+    throw new Error(`Missing required env var: ${key}`);
+  }
+  return value;
+};
+
 export const appBaseURL =
   import.meta.env.VITE_APP_BASE_URL || window.location.origin;
-export const apiBaseURL = import.meta.env.VITE_API_BASE_URL;
-export const facebookURL = import.meta.env.VITE_FACEBOOK_URL;
-export const youtubeURL = import.meta.env.VITE_YOUTUBE_URL;
-export const twitterURL = import.meta.env.VITE_TWITTER_URL;
-export const userAgreementValue = import.meta.env.VITE_USER_AGREEMENT_VALUE;
-export const websiteAPI = import.meta.env.VITE_WEBSITE_API_URL;
-export const websiteEmail = import.meta.env.VITE_WEBSTIE_EMAIL;
-export const websiteHomePageImage = import.meta.env.VITE_HOMEPAGE_IMAGE;
-export const websiteName = import.meta.env.VITE_SITE_NAME;
-export const websiteURL = import.meta.env.VITE_WEBSITE_URL;
+export const apiBaseURL = requireStringEnv("VITE_API_BASE_URL");
+export const facebookURL = requireStringEnv("VITE_FACEBOOK_URL");
+export const youtubeURL = requireStringEnv("VITE_YOUTUBE_URL");
+export const twitterURL = requireStringEnv("VITE_TWITTER_URL");
+export const userAgreementValue = requireStringEnv("VITE_USER_AGREEMENT_VALUE");
+export const websiteAPI = requireStringEnv("VITE_WEBSITE_API_URL");
+export const websiteEmail = requireStringEnv("VITE_WEBSTIE_EMAIL");
+export const websiteHomePageImage = requireStringEnv("VITE_HOMEPAGE_IMAGE");
+export const websiteName = requireStringEnv("VITE_SITE_NAME");
+export const websiteURL = requireStringEnv("VITE_WEBSITE_URL");
 
-export default {
+const appConfig = {
   appBaseURL,
   apiBaseURL,
   facebookURL,
@@ -37,4 +45,6 @@ export default {
   websiteHomePageImage,
   websiteName,
   websiteURL,
-} as AppConfig;
+} satisfies AppConfig;
+
+export default appConfig;

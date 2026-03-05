@@ -57,7 +57,7 @@ export const imageHorizontalArticleStyles = (
   border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
   borderRadius: SIZES.borderRadius,
   height: "auto",
-  objectFit: "cover" as const,
+  objectFit: "cover",
   aspectRatio: "16/9",
   width: "100%",
   maxWidth: SIZES.maxWidth.pageContainer,

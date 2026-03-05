@@ -45,7 +45,7 @@ export const tabStyles = (
   section: string,
   isDarkTheme: boolean,
 ) => ({
-  textTransform: "none" as const,
+  textTransform: "none",
   minWidth: "auto",
   marginRight: "1px",
   minHeight: { xs: MOBILE_TAB_HEIGHT, sm: SIZES.height.touchTarget },
