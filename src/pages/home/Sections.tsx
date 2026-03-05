@@ -22,7 +22,7 @@ interface Props {
 const SECTION_NAMES: ReadonlyArray<string> = [
   "All",
   "Reviews",
-  "RPGs",
+  "RPG",
   "Action",
   "Fighting",
   "Platformers",

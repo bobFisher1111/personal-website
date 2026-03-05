@@ -75,9 +75,7 @@ const HomePage = () => {
     activeSection === "All"
       ? allArticleData
       : activeSection === "Reviews"
-        ? allArticleData.filter(
-            (item) => item.is_review === true || item.section === "Reviews",
-          )
+        ? allArticleData.filter((item) => item.section === "Reviews")
         : allArticleData.filter((item) => item.section === activeSection);
 
   const filteredSeriesData =
