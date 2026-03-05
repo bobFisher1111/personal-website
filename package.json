@@ -19,14 +19,19 @@
   },
   "scripts": {
     "dev": "vite",
+    "start": "vite",
     "build": "npm run types && vite build",
     "preview": "vite preview",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "test": "npm run test:all",
     "format": "prettier --write src/**/*.ts{,x}",
     "lint": "eslint . --max-warnings=0",
     "types": "tsc --noEmit -p tsconfig.json",
     "test:all": "npm run types && npm run lint"
+  },
+  "depcheck": {
+    "ignores": [
+      "src"
+    ]
   },
   "browserslist": {
     "production": [
