@@ -76,8 +76,8 @@ const SeriesComponent = ({
               <SeriesCardComponent
                 articleData={item}
                 layout={layout}
-                authors={authors}
-                showAuthorAvatarOverlay={showAuthorAvatarOverlay}
+                authors={authors ?? []}
+                showAuthorAvatarOverlay={showAuthorAvatarOverlay ?? false}
               />
             </Grid>
           ))}

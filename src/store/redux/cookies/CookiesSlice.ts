@@ -1,17 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const convertToString = () => {
-  if (localStorage.getItem("enableYouTubeVideo") === "true") {
-    return true;
-  }
-  if (localStorage.getItem("enableYouTubeVideo") === null) {
-    return false;
-  }
-};
+const getEnableYouTubeVideoFromStorage = (): boolean =>
+  localStorage.getItem("enableYouTubeVideo") === "true";
 
 const initialState = {
   rejectCookies: false,
-  enableYouTubeVideo: convertToString(),
+  enableYouTubeVideo: getEnableYouTubeVideoFromStorage(),
 };
 
 export const CookiesSlice = createSlice({

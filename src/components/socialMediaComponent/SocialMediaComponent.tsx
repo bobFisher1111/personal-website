@@ -16,7 +16,7 @@ const SocialMediaComponent = ({
     <Grid container justifyContent={justifyContent} alignContent={alignContent}>
       {turnOnEmail && (
         <Grid sx={emailGridStyle(turnOnEmailStyle)}>
-          <CopyLinkComponent email authorsEmail={email} />
+          <CopyLinkComponent email {...(email ? { authorsEmail: email } : {})} />
         </Grid>
       )}
     </Grid>

@@ -66,7 +66,7 @@ const ArticlePage = () => {
           mobileImageWidth={"22px"}
         />
       )}
-      <ArticleBody html={articleData?.markdown_data} />
+      <ArticleBody html={articleData?.markdown_data ?? ""} />
       {articleData?.is_review && (
         <Grid container justifyContent="center" sx={ReviewScoreWrapperStyles}>
           <ReviewScore text={articleData?.review} />

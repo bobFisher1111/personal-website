@@ -95,7 +95,7 @@ const HomePageSeriesScroller = ({
           series={series}
           layout="scroller"
           authors={authors}
-          showAuthorAvatarOverlay={showAuthorAvatarOverlay}
+          showAuthorAvatarOverlay={showAuthorAvatarOverlay ?? false}
         />
       </Grid>
     </Grid>
