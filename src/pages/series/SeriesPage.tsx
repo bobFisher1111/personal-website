@@ -72,7 +72,7 @@ const SeriesPage = () => {
             style={LinkStyles(colorTheme)}
           >
             <Typography color="primary" sx={seriesComponentTitle}>
-              {`${item?.series_type}: ${item?.article_title}`}
+              {`${seriesInfo?.series_type}: ${item?.article_title}`}
             </Typography>
             <Typography color="primary" sx={seriesComponentSubTitle(theme)}>
               {item.article_subtitle}
