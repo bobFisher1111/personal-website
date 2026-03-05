@@ -1,53 +1,14 @@
 import { useState } from "react";
 import { Grid, useTheme } from "@mui/material";
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import ArticleList from "src/components/articleList/ArticleList";
 import PageContainer from "src/components/pageContainer/PageContainer";
+import { useAppSelector } from "src/store/redux/hooks";
 import Sections from "./Sections";
 import { SeriesTitleGridStyles } from "./HomePageComponentStyles";
 import HomePageSeriesScroller from "./HomePageSeriesScroller";
 import HomePageSelect from "./HomePageSelect";
-
-type Article = {
-  article_id: number;
-  author_id: number;
-  article_title: string;
-  published_date: string;
-  section: string;
-  is_review: boolean;
-};
-
-type Series = {
-  series_id: number;
-  series_title: string;
-  series_cover_image_or_video: string;
-  section: string;
-  author_id?: number;
-  [key: string]: string | number | boolean | null | undefined;
-};
-
-type Author = {
-  author_id: number;
-  avatar_image?: string | null;
-  author_name?: string;
-  [key: string]: string | number | boolean | null | undefined;
-};
-
-type WebsiteData = {
-  articles: Article[];
-  authors: Author[];
-  series: Series[];
-};
-
-type RootState = {
-  webSiteData: {
-    data: WebsiteData;
-  };
-  theme: {
-    darkTheme: boolean;
-  };
-};
+import type { Series } from "src/types/series";
 
 const getPublishedTime = (publishedDate: string): number => {
   if (!publishedDate) return 0;
@@ -61,15 +22,11 @@ const HomePage = () => {
   const [activeSection, setActiveSection] = useState("All");
   const theme = useTheme();
   const navigate = useNavigate();
-  const websiteData = useSelector((state: RootState) => state.webSiteData.data);
-  const darkTheme = useSelector((state: RootState) => state.theme.darkTheme);
-  const articleData = websiteData?.articles;
-  const authorsData = websiteData?.authors;
-  const seriesData = websiteData?.series;
-
-  const allArticleData = Array.isArray(articleData) ? articleData : [];
-  const allSeriesData = Array.isArray(seriesData) ? seriesData : [];
-  const allAuthorsData = Array.isArray(authorsData) ? authorsData : undefined;
+  const websiteData = useAppSelector((state) => state.webSiteData.data);
+  const darkTheme = useAppSelector((state) => state.theme.darkTheme);
+  const allArticleData = websiteData.articles;
+  const allSeriesData = websiteData.series;
+  const allAuthorsData = websiteData.authors;
 
   const filteredArticleData =
     activeSection === "All"
@@ -154,7 +111,7 @@ const HomePage = () => {
         />
         <HomePageSeriesScroller
           series={filteredSeriesData}
-          authors={allAuthorsData ?? []}
+          authors={allAuthorsData}
           darkTheme={darkTheme}
           showAuthorAvatarOverlay
         />

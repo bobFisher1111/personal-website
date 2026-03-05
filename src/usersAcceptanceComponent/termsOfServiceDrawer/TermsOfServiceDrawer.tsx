@@ -9,6 +9,8 @@ import {
 
 type Anchor = "left";
 
+const anchors: readonly Anchor[] = ["left"];
+
 const TermsOfServiceDrawer = () => {
   const theme = useAppSelector((state) => state.theme.darkTheme);
 
@@ -19,20 +21,18 @@ const TermsOfServiceDrawer = () => {
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event.type === "keydown" &&
-        ((event as React.KeyboardEvent).key === "Tab" ||
-          (event as React.KeyboardEvent).key === "Shift")
-      ) {
-        return;
+      if (event.type === "keydown" && "key" in event) {
+        if (event.key === "Tab" || event.key === "Shift") {
+          return;
+        }
       }
 
-      setState({ ...state, [anchor]: open });
+      setState((prevState) => ({ ...prevState, [anchor]: open }));
     };
 
   return (
     <Grid>
-      {(["left"] as const).map((anchor) => (
+      {anchors.map((anchor) => (
         <Fragment key={anchor}>
           <Grid>
             <Button size="small">

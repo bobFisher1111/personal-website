@@ -1,12 +1,15 @@
 import ArticleList from "src/components/articleList/ArticleList";
 import SeriesComponent from "src/components/seriesList/SeriesComponent";
+import type { Article } from "src/types/articals";
+import type { Author } from "src/types/authors";
+import type { Series } from "src/types/series";
+import type { TabsDataItem } from "src/components/tabsComponent/TabsComponent";
 
 const AuthorComponetTabData = (
-  authorsData: any,
-  data: any,
-  getSeries?: any,
-) => {
-  return [
+  authorsData: readonly Author[],
+  data: readonly Article[],
+  getSeries: readonly Series[],
+): TabsDataItem[] => [
     {
       name: "Uploads",
       data: <ArticleList authorData={authorsData} data={data} />,
@@ -18,6 +21,5 @@ const AuthorComponetTabData = (
       ),
     },
   ];
-};
 
 export default AuthorComponetTabData;

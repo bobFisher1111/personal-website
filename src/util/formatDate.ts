@@ -1,4 +1,7 @@
-export const formatDate = (dateData: any) => {
+export const formatDate = (dateData: string | number | Date | null) => {
+  if (dateData == null || dateData === "") {
+    return "";
+  }
   const date = new Date(dateData);
   const formatDateToUTC = date.toUTCString().split(" ");
   const dateDay = formatDateToUTC[1];

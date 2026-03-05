@@ -2,6 +2,7 @@ import { useAppSelector } from "src/store/redux/hooks";
 import { Link } from "react-router-dom";
 import { Chip, Grid, Typography, useTheme, styled } from "@mui/material";
 import { LinkStyles } from "src/util/styles/LinkStyles";
+import type { Author } from "src/types/authors";
 import {
   ArticleDataGridStyles,
   ArticleImageStyles,
@@ -26,16 +27,13 @@ const ArticleCard = ({
   authorData,
   date,
   section,
-  series,
   seriesId,
   subtitle,
   title,
 }: Props) => {
   const darkTheme = useAppSelector((state) => state.theme.darkTheme);
   const theme = useTheme();
-  const getAuthorData = authorData?.filter(
-    (item: any) => item.author_id === authorId,
-  );
+  const getAuthorData = authorData.filter((item) => item.author_id === authorId);
   const Img = styled("img")({ maxWidth: "100%", maxHeight: "100%" });
 
   return (
@@ -119,7 +117,7 @@ const ArticleCard = ({
               size="small"
               sx={ChipStyles(theme)}
             />
-            {series && (
+            {seriesId != null && (
               <Link to={`/series/${seriesId}`} style={SeriesChipStyles}>
                 <Chip
                   color="primary"
@@ -137,16 +135,15 @@ const ArticleCard = ({
 };
 
 export type Props = {
-  articleId: any;
-  articleMedia: any;
-  authorId: any;
-  authorData: any;
-  date: any;
-  section: any;
-  series: boolean;
-  seriesId: any;
-  subtitle: any;
-  title: any;
+  articleId: number;
+  articleMedia: string;
+  authorId: number;
+  authorData: readonly Author[];
+  date: string;
+  section: string;
+  seriesId: number | null;
+  subtitle: string;
+  title: string;
 };
 
 export default ArticleCard;

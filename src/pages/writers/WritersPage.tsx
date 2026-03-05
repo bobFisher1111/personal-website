@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid";
 import { useAppSelector } from "src/store/redux/hooks";
 import PageContainer from "src/components/pageContainer/PageContainer";
 import WritersCard from "./writersCard/WritersCard";
+import type { Author } from "src/types/authors";
 
 const Writers = () => {
   const id = useId();
@@ -11,11 +12,11 @@ const Writers = () => {
 
   const sortAuthorsById = authorsData
     ?.slice()
-    .sort((a: any, b: any) => a.author_id - b.author_id);
+    .sort((a: Author, b: Author) => a.author_id - b.author_id);
 
   return (
     <PageContainer>
-      {sortAuthorsById?.map((item: any, index: number) => (
+      {sortAuthorsById?.map((item, index) => (
         <Grid
           key={`${id}-${index}`}
           size={{
@@ -31,7 +32,7 @@ const Writers = () => {
             authorName={item.author_name}
             authorsTitle={item.titles}
             authorId={item.author_id}
-            facebook={item.facebook}
+            facebook={""}
             twitter={item.twitter}
             youtube={item.you_tube}
             email={item.email}

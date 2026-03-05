@@ -42,10 +42,11 @@ export default [
       "react/react-in-jsx-scope": "off",
 
       // Keep linting useful without forcing a repo-wide refactor.
-      "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-empty-object-type": "off",
       "@typescript-eslint/consistent-type-definitions": "off",
       "@typescript-eslint/array-type": "off",
+
+      "@typescript-eslint/no-explicit-any": "error",
 
       "@typescript-eslint/no-unused-vars": [
         "error",

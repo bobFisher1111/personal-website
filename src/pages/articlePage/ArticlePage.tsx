@@ -12,6 +12,8 @@ import {
 } from "./ArticlePageStyles";
 import ReviewScore from "./ReviewScore";
 import { ReviewScoreWrapperStyles } from "./ReviewScoreStyles";
+import type { Article } from "src/types/articals";
+import type { Author } from "src/types/authors";
 
 const ArticlePage = () => {
   const getWebsiteData = useAppSelector((state) => state.webSiteData.data);
@@ -21,15 +23,15 @@ const ArticlePage = () => {
     const getIdFromCurrentLocation = currentLocation.split("/").reverse()[1];
     return Number(getIdFromCurrentLocation);
   };
-  const getAuthor = webData?.authors?.filter((item: any) => {
-    return item.author_id === getIdFromUrl();
-  });
-  const getArticles = webData?.articles?.filter((item: any) => {
-    return item.author_id === getIdFromUrl();
-  });
-  const currentArticle = getArticles?.filter((item: any) => {
-    return item.article_id === getNameFromUrl();
-  });
+  const getAuthor = webData?.authors?.filter(
+    (item: Author) => item.author_id === getIdFromUrl(),
+  );
+  const getArticles = webData?.articles?.filter(
+    (item: Article) => item.author_id === getIdFromUrl(),
+  );
+  const currentArticle = getArticles?.filter(
+    (item: Article) => item.article_id === getNameFromUrl(),
+  );
   const authorData = getAuthor && getAuthor[0];
   const articleData = currentArticle && currentArticle[0];
 

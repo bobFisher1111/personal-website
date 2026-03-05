@@ -133,7 +133,7 @@ const TermsOfServiceComponent = ({ closeDrawer }: Props) => {
 };
 
 export type Props = {
-  closeDrawer: any;
+  closeDrawer: (event: React.KeyboardEvent | React.MouseEvent) => void;
 };
 
 export default TermsOfServiceComponent;

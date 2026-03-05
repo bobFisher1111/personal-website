@@ -85,7 +85,7 @@ export type Props = {
   authorImage: string;
   authorName: string;
   authorsTitle: string;
-  authorId: string;
+  authorId: number;
   facebook: string;
   twitter: string;
   youtube: string;

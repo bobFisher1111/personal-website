@@ -14,6 +14,11 @@ interface TabPanelProps {
   value: number;
 }
 
+export type TabsDataItem = {
+  name: string;
+  data: React.ReactNode;
+};
+
 const TabPanel = ({ children, value, index, ...other }: TabPanelProps) => (
   <div
     role="tabpanel"
@@ -54,7 +59,7 @@ const TabsComponent = ({ turnonsectiontabspadding, tabsData }: Props) => {
           aria-label="section tabs"
           textColor="inherit"
         >
-          {tabsData?.map((item: any, index: number) => (
+          {tabsData?.map((item, index) => (
             <Tab
               key={`${id}-${index}`}
               label={item.name}
@@ -64,7 +69,7 @@ const TabsComponent = ({ turnonsectiontabspadding, tabsData }: Props) => {
           ))}
         </Tabs>
       </Grid>
-      {tabsData?.map((item: any, index: number) => (
+      {tabsData?.map((item, index) => (
         <TabPanel key={`${id}-panel-${index}`} value={value} index={index}>
           {item.data}
         </TabPanel>
@@ -75,7 +80,7 @@ const TabsComponent = ({ turnonsectiontabspadding, tabsData }: Props) => {
 
 export type Props = {
   turnonsectiontabspadding: boolean;
-  tabsData?: any;
+  tabsData: readonly TabsDataItem[];
 };
 
 export default TabsComponent;

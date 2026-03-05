@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { ChangeEvent } from "react";
 import { Button, Grid, Switch, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { userAgreementValue } from "src/config";
@@ -35,7 +36,7 @@ const CookiesManagementComponent = ({
   const cookiesManagementText: string =
     "When visiting our website, we will store cookies for functionality. Without these cookies certain features will be disabled.";
 
-  const darkModeSwtich = (event: any) => {
+  const darkModeSwtich = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked === true) {
       setDarkModeToggle(true);
     }
@@ -51,7 +52,7 @@ const CookiesManagementComponent = ({
     }
   };
 
-  const userAgreementSwitch = (event: any) => {
+  const userAgreementSwitch = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked === true) {
       setUserAgreementsToggle(true);
     }

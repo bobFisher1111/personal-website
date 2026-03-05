@@ -10,7 +10,7 @@ import {
 
 const HeaderComponent = ({ title, avatarImage }: Props) => {
   const theme = useAppSelector((state) => state.theme.darkTheme);
-  const titleFunction = (item: any) => {
+  const titleFunction = (item: string) => {
     return (
       <Typography color="primary" sx={TypographyHeaderTitle}>
         {item}
@@ -33,9 +33,9 @@ const HeaderComponent = ({ title, avatarImage }: Props) => {
 };
 
 export type Props = {
-  title?: string;
-  avatarImage?: string;
-  authorId?: number | string;
+  title: string;
+  avatarImage: string;
+  authorId: number | string;
 };
 
 export default HeaderComponent;

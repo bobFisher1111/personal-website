@@ -14,6 +14,8 @@ import {
   seriesComponentSubTitle,
   seriesComponentDate,
 } from "./SeriesComponentStyles";
+import type { Article } from "src/types/articals";
+import type { Series } from "src/types/series";
 
 const SeriesPage = () => {
   const id = useId();
@@ -29,19 +31,17 @@ const SeriesPage = () => {
   };
 
   const getSeriesFromId = seriesData?.series?.filter(
-    (item: any) => item.series_id === getSeriesIdFromUrl(),
+    (item: Series) => item.series_id === getSeriesIdFromUrl(),
   );
 
   const getSeriesArticles = seriesData?.articles?.filter(
-    (item: any) => item.series_id === getSeriesIdFromUrl(),
+    (item: Article) => item.series_id === getSeriesIdFromUrl(),
   );
 
   const seriesInfo = getSeriesFromId?.[0];
   const noArticles = getSeriesArticles?.length === 0;
 
-  const sortSeriesList = getSeriesArticles?.sort(
-    (a: any, b: any) => a.article_id - b.article_id,
-  );
+  const sortSeriesList = getSeriesArticles?.slice().sort((a, b) => a.article_id - b.article_id);
 
   return (
     <PageContainer>
@@ -57,7 +57,7 @@ const SeriesPage = () => {
         />
       )}
       {noArticles && <ComingSoon />}
-      {sortSeriesList?.map((item: any, index: number) => (
+      {sortSeriesList?.map((item, index) => (
         <Grid
           key={`${id}-${index}`}
           size={{
@@ -70,7 +70,7 @@ const SeriesPage = () => {
           sx={seriesComponentGridArticleInfo(theme)}
         >
           <Link
-            to={`/article/${item?.author_id}/${item?.article_id}`}
+            to={`/article/${item.author_id}/${item.article_id}`}
             style={LinkStyles(colorTheme)}
           >
             <Typography color="primary" sx={seriesComponentTitle}>

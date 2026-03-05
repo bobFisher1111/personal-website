@@ -10,6 +10,9 @@ import {
   authorComponentGridBiographyText,
   gridWidth,
 } from "./AuthorComponentStyles";
+import type { Article } from "src/types/articals";
+import type { Author } from "src/types/authors";
+import type { Series } from "src/types/series";
 
 const AuthorComponent = () => {
   const getWebsiteData = useAppSelector((state) => state.webSiteData.data);
@@ -23,13 +26,13 @@ const AuthorComponent = () => {
   };
 
   const getAuthor = webData?.authors?.filter(
-    (item: any) => item.author_id === getIdFromUrl(),
+    (item: Author) => item.author_id === getIdFromUrl(),
   );
   const getArticles = webData?.articles?.filter(
-    (item: any) => item.author_id === getIdFromUrl(),
+    (item: Article) => item.author_id === getIdFromUrl(),
   );
   const getSeries = webData?.series?.filter(
-    (item: any) => item.author_id === getIdFromUrl(),
+    (item: Series) => item.author_id === getIdFromUrl(),
   );
 
   const authorData = getAuthor?.[0];
