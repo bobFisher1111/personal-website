@@ -1,6 +1,5 @@
 type AppConfig = {
   appBaseURL: string;
-  apiBaseURL: string;
   facebookURL: string;
   youtubeURL: string;
   twitterURL: string;
@@ -46,7 +45,6 @@ const requireAnyStringEnv = (keys: readonly string[]): string => {
 
 export const appBaseURL =
   import.meta.env.VITE_APP_BASE_URL || window.location.origin;
-export const apiBaseURL = requireStringEnv("VITE_API_BASE_URL");
 export const facebookURL = requireStringEnv("VITE_FACEBOOK_URL");
 export const youtubeURL = requireStringEnv("VITE_YOUTUBE_URL");
 export const twitterURL = requireStringEnv("VITE_TWITTER_URL");
@@ -62,7 +60,6 @@ export const websiteURL = requireStringEnv("VITE_WEBSITE_URL");
 
 const appConfig = {
   appBaseURL,
-  apiBaseURL,
   facebookURL,
   youtubeURL,
   twitterURL,
