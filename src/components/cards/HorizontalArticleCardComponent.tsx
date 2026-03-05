@@ -21,13 +21,9 @@ const HorizontalArticleCardComponent = ({
   const getWebsiteData = useAppSelector((state) => state.webSiteData.data);
   const darkTheme = useAppSelector((state) => state.theme.darkTheme);
   const muiTheme = useTheme();
-  const authorIdNumber =
-    typeof authorsId === "number" ? authorsId : Number(authorsId);
-  const getAuthorData = Number.isFinite(authorIdNumber)
-    ? getWebsiteData?.authors?.filter(
-        (item: Author) => item.author_id === authorIdNumber,
-      )
-    : [];
+  const getAuthorData =
+    getWebsiteData?.authors?.filter((item: Author) => item.author_id === authorsId) ??
+    [];
 
   return (
     <Grid
@@ -68,7 +64,7 @@ export type Props = {
   date: string;
   imageWidth: string;
   section: string;
-  authorsId?: number | string;
+  authorsId: number;
   videoOrImageCover: string;
   articlePageList?: boolean;
   mobileImageWidth: string;

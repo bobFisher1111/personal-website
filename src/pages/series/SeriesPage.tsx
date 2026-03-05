@@ -45,15 +45,17 @@ const SeriesPage = () => {
 
   return (
     <PageContainer>
-      <HorizontalArticleCardComponent
-        author={seriesInfo?.series_authors}
-        date={formatDate(seriesInfo?.series_start_date)}
-        imageWidth="832px"
-        authorsId={seriesInfo?.author_id}
-        videoOrImageCover={seriesInfo?.series_cover_image_or_video}
-        section={seriesInfo?.section}
-        mobileImageWidth="30px"
-      />
+      {seriesInfo && (
+        <HorizontalArticleCardComponent
+          author={seriesInfo.series_authors}
+          date={formatDate(seriesInfo.series_start_date)}
+          imageWidth="832px"
+          authorsId={seriesInfo.author_id}
+          videoOrImageCover={seriesInfo.series_cover_image_or_video}
+          section={seriesInfo.section}
+          mobileImageWidth="30px"
+        />
+      )}
       {noArticles && <ComingSoon />}
       {sortSeriesList?.map((item: any, index: number) => (
         <Grid

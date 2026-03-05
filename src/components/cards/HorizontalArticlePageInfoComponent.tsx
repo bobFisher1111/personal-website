@@ -20,7 +20,7 @@ const HorizontalArticlePageInfoComponent = ({
 }: Props) => {
   const darkTheme = useAppSelector((state) => state.theme.darkTheme);
   const muiTheme = useTheme();
-  const authorLink = authorsId == null ? "/" : `/author/${authorsId}`;
+  const authorLink = `/author/${authorsId}`;
 
   const Img = styled("img")({
     maxWidth: "100%",
@@ -70,7 +70,7 @@ const HorizontalArticlePageInfoComponent = ({
 
 export type Props = {
   getAuthorData?: Author[];
-  authorsId?: number | string;
+  authorsId: number;
   author: string;
   date: string;
   section: string;

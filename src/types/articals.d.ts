@@ -26,6 +26,3 @@ export type Article = {
   review: ArticleReview | null;
   read: ArticleReadInfo;
 };
-
-// Back-compat alias (older code referenced `Articles`)
-export type Articles = Article;

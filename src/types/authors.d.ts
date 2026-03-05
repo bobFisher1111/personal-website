@@ -4,7 +4,7 @@ export type Author = {
   avatar_image: string;
   biography: string;
   blue_sky: string;
-  date: string | null;
+  date: string;
   email: string;
   is_hidden: boolean;
   personal_site: string;
@@ -12,6 +12,3 @@ export type Author = {
   twitter: string;
   you_tube: string;
 };
-
-// Back-compat alias
-export type Authors = Author;

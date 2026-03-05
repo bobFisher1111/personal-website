@@ -9,6 +9,3 @@ export type Series = {
   series_type: string;
   is_hidden: boolean;
 };
-
-// Back-compat alias
-export type SeriesInfo = Series;

@@ -53,15 +53,17 @@ const ArticlePage = () => {
       >
         {articleData?.article_subtitle}
       </Typography>
-      <HorizontalArticleCardComponent
-        author={authorData?.author_name}
-        date={formatDate(articleData?.published_date)}
-        imageWidth={"832px"}
-        authorsId={articleData?.author_id}
-        videoOrImageCover={articleData?.cover_image_or_video}
-        section={articleData?.section}
-        mobileImageWidth={"22px"}
-      />
+      {articleData && authorData && (
+        <HorizontalArticleCardComponent
+          author={authorData.author_name}
+          date={formatDate(articleData.published_date)}
+          imageWidth={"832px"}
+          authorsId={articleData.author_id}
+          videoOrImageCover={articleData.cover_image_or_video}
+          section={articleData.section}
+          mobileImageWidth={"22px"}
+        />
+      )}
       <ArticleBody html={articleData?.markdown_data} />
       {articleData?.is_review && (
         <Grid container justifyContent="center" sx={ReviewScoreWrapperStyles}>

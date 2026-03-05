@@ -205,7 +205,7 @@ const ReviewScore = ({ text }: Props) => {
 };
 
 export type Props = {
-  text?: ReviewData | null;
+  text: ReviewData | null;
 };
 
 export default ReviewScore;
