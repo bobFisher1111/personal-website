@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Drawer, Grid, Typography } from "@mui/material";
+import type { DrawerProps } from "@mui/material/Drawer";
 import CookiesManagementComponent from "src/usersAcceptanceComponent/cookiesManagementComponent/CookiesManagementComponent";
 import {
   DrawerStyles,
@@ -7,6 +8,10 @@ import {
 } from "./CookiesManagementDrawerStyles";
 
 type Anchor = "left";
+
+const anchors: readonly Anchor[] = ["left"];
+
+type DrawerOnClose = Required<DrawerProps>["onClose"];
 
 const CookiesManagementDrawer = ({
   closeParentDrawer,
@@ -19,12 +24,10 @@ const CookiesManagementDrawer = ({
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event.type === "keydown" &&
-        ((event as React.KeyboardEvent).key === "Tab" ||
-          (event as React.KeyboardEvent).key === "Shift")
-      ) {
-        return;
+      if (event.type === "keydown" && "key" in event) {
+        if (event.key === "Tab" || event.key === "Shift") {
+          return;
+        }
       }
 
       setState((prev) => ({ ...prev, [anchor]: open }));
@@ -37,15 +40,14 @@ const CookiesManagementDrawer = ({
     setState((prev) => ({ ...prev, [anchor]: false }));
   };
 
-  const handleDrawerClose =
-    (anchor: Anchor) =>
-    (_event: {}, _reason: "backdropClick" | "escapeKeyDown") => {
+  const handleDrawerClose = (anchor: Anchor): DrawerOnClose =>
+    (_event, _reason) => {
       closeDrawerProgrammatically(anchor);
     };
 
   return (
     <Grid>
-      {(["left"] as const).map((anchor) => (
+      {anchors.map((anchor) => (
         <Fragment key={anchor}>
           <Grid onClick={closeParentDrawer}>
             <Typography
