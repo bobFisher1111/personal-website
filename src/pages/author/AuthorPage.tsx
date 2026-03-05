@@ -1,5 +1,5 @@
 import { Grid, Typography } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "src/store/redux/hooks";
 import HeaderComponent from "src/components/headerComponent/HeaderComponent";
 import PageContainer from "src/components/pageContainer/PageContainer";
 import TabsComponent from "src/components/tabsComponent/TabsComponent";
@@ -12,7 +12,7 @@ import {
 } from "./AuthorComponentStyles";
 
 const AuthorComponent = () => {
-  const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
+  const getWebsiteData = useAppSelector((state) => state.webSiteData.data);
   const webData = getWebsiteData;
   const authorWebData = getWebsiteData?.authors;
 

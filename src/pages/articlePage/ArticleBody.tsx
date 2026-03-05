@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 import DOMPurify from "dompurify";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "src/store/redux/hooks";
 import { MARKDOWN_STYLES } from "src/store/redux/theme/CONSTANTS";
 
 interface ArticleBodyProps {
@@ -9,7 +9,7 @@ interface ArticleBodyProps {
 }
 
 const ArticleBody: React.FC<ArticleBodyProps> = ({ html }) => {
-  const darkTheme = useSelector((state: any) => state.theme.darkTheme);
+  const darkTheme = useAppSelector((state) => state.theme.darkTheme);
   const markdownStyles = darkTheme
     ? MARKDOWN_STYLES.dark
     : MARKDOWN_STYLES.light;

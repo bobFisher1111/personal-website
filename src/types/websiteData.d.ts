@@ -1,11 +1,9 @@
-import { Books } from "./books";
-import { Articles } from "./articals";
-import { Authors } from "./authors";
-import { Series } from "./series";
+import type { Article } from "./articals";
+import type { Author } from "./authors";
+import type { Series } from "./series";
 
 export type WebsiteData = {
-  articals: Articles[];
-  authors: Authors[];
-  books: Books[];
+  articles: Article[];
+  authors: Author[];
   series: Series[];
 };

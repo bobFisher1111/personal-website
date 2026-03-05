@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import { Button, Drawer, Grid, Typography } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "src/store/redux/hooks";
 import TermsOfServiceComponent from "src/usersAcceptanceComponent/termsOfServiceComponent/TermsOfServiceComponent";
 import {
   DisclaimerTitleStyles,
@@ -10,7 +10,7 @@ import {
 type Anchor = "left";
 
 const TermsOfServiceDrawer = () => {
-  const theme = useSelector((state: any) => state.theme.darkTheme);
+  const theme = useAppSelector((state) => state.theme.darkTheme);
 
   const [state, setState] = useState({
     left: false,

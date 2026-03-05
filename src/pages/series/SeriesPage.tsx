@@ -1,7 +1,7 @@
 import { useId } from "react";
 import { Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "src/store/redux/hooks";
 import { useTheme } from "@mui/material/styles";
 import ComingSoon from "src/components/comingSoon/ComingSoon";
 import PageContainer from "src/components/pageContainer/PageContainer";
@@ -18,8 +18,8 @@ import {
 const SeriesPage = () => {
   const id = useId();
   const theme = useTheme();
-  const colorTheme = useSelector((state: any) => state.theme.darkTheme);
-  const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
+  const colorTheme = useAppSelector((state) => state.theme.darkTheme);
+  const getWebsiteData = useAppSelector((state) => state.webSiteData.data);
   const seriesData = getWebsiteData;
 
   const getSeriesIdFromUrl = () => {

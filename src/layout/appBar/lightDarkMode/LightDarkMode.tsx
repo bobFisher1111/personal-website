@@ -1,13 +1,13 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useAppDispatch, useAppSelector } from "src/store/redux/hooks";
 import { toggleTheme } from "src/store/redux/theme/ThemeSlice";
 import { Button } from "@mui/material";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 
 const LightDarkMode = () => {
-  const rejectCookie = useSelector((state: any) => state.rejectCookie);
-  const theme = useSelector((state: any) => state.theme.darkTheme);
-  const dispatch = useDispatch();
+  const rejectCookie = useAppSelector((state) => state.rejectCookie);
+  const theme = useAppSelector((state) => state.theme.darkTheme);
+  const dispatch = useAppDispatch();
 
   const disableButton = () => {
     if (localStorage.getItem("darkMode") === null) {

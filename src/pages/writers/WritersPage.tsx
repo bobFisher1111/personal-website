@@ -1,12 +1,12 @@
 import { useId } from "react";
 import Grid from "@mui/material/Grid";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "src/store/redux/hooks";
 import PageContainer from "src/components/pageContainer/PageContainer";
 import WritersCard from "./writersCard/WritersCard";
 
 const Writers = () => {
   const id = useId();
-  const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
+  const getWebsiteData = useAppSelector((state) => state.webSiteData.data);
   const authorsData = getWebsiteData?.authors;
 
   const sortAuthorsById = authorsData

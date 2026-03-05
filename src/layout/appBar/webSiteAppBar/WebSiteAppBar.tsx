@@ -1,5 +1,5 @@
 import { Grid, Typography, useTheme } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "src/store/redux/hooks";
 import { Link } from "react-router-dom";
 import AppBarLinksToPages from "src/layout/appBar/appBarLinksToPages/AppBarLinksToPages";
 import LightDarkMode from "src/layout/appBar/lightDarkMode/LightDarkMode";
@@ -15,7 +15,7 @@ import { LinkStyles } from "src/util/styles/LinkStyles";
 
 const WebSiteAppBar = () => {
   const theme = useTheme();
-  const isDarkTheme = useSelector((state: any) => state.theme.darkTheme);
+  const isDarkTheme = useAppSelector((state) => state.theme.darkTheme);
 
   return (
     <Grid

@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "src/store/redux/hooks";
 import { Button, Grid, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { userAgreementValue } from "src/config";
@@ -20,8 +20,8 @@ import {
 } from "./UserAcceptanceTextMessageStyles";
 
 const UserAcceptanceTextMessage = ({ closeDrawer }: Props) => {
-  const dispatch = useDispatch();
-  const rejectCookie = useSelector((state: any) => state.rejectCookie);
+  const dispatch = useAppDispatch();
+  const rejectCookie = useAppSelector((state) => state.rejectCookie);
   const acceptanceMessage = `${websiteName} uses cookies for functionality of the website. By accepting cookies you agree to placement of the cookie. Without accepting certain features and functionality will be disabled.`;
 
   const setLocalStorage = () => {

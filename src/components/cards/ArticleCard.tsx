@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useAppSelector } from "src/store/redux/hooks";
 import { Link } from "react-router-dom";
 import { Chip, Grid, Typography, useTheme, styled } from "@mui/material";
 import { LinkStyles } from "src/util/styles/LinkStyles";
@@ -31,7 +31,7 @@ const ArticleCard = ({
   subtitle,
   title,
 }: Props) => {
-  const darkTheme = useSelector((state: any) => state.theme.darkTheme);
+  const darkTheme = useAppSelector((state) => state.theme.darkTheme);
   const theme = useTheme();
   const getAuthorData = authorData?.filter(
     (item: any) => item.author_id === authorId,

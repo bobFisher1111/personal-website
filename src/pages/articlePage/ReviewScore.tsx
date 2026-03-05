@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useAppSelector } from "src/store/redux/hooks";
 import { Grid, Typography } from "@mui/material";
 import {
   AlignTextStyle,
@@ -21,7 +21,7 @@ export type ReviewData = {
 };
 
 const ReviewScore = ({ text }: Props) => {
-  const darkTheme = useSelector((state: any) => state.theme.darkTheme);
+  const darkTheme = useAppSelector((state) => state.theme.darkTheme);
 
   const gameplayScore = text?.gameplay ?? 0;
   const visualsScore = text?.visuals ?? 0;
@@ -205,7 +205,7 @@ const ReviewScore = ({ text }: Props) => {
 };
 
 export type Props = {
-  text: ReviewData;
+  text?: ReviewData | null;
 };
 
 export default ReviewScore;

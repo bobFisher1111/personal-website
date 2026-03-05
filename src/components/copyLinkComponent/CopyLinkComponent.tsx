@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useAppSelector } from "src/store/redux/hooks";
 import { useTheme } from "@mui/material";
 import { appBaseURL } from "src/config";
 import copyLink from "src/util/copyLink";
@@ -18,7 +18,7 @@ const CopyLinkComponent = ({
   seriesId,
   turnOnSeries,
 }: Props) => {
-  const darkTheme = useSelector((state: any) => state.theme.darkTheme);
+  const darkTheme = useAppSelector((state) => state.theme.darkTheme);
   const theme = useTheme();
 
   const articleUrl = `${appBaseURL}/article/${authorsId}/${articleId}`;

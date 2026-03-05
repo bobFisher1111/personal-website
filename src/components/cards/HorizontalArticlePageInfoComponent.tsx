@@ -1,7 +1,8 @@
-import { useSelector } from "react-redux";
+import { useAppSelector } from "src/store/redux/hooks";
 import { Link } from "react-router-dom";
 import { Grid, Typography, useTheme, styled } from "@mui/material";
 import { LinkStyles } from "src/util/styles/LinkStyles";
+import type { Author } from "src/types/authors";
 import {
   avatarImageStyles,
   gridArticleInfoComponent,
@@ -17,8 +18,9 @@ const HorizontalArticlePageInfoComponent = ({
   getAuthorData,
   section,
 }: Props) => {
-  const darkTheme = useSelector((state: any) => state.theme.darkTheme);
+  const darkTheme = useAppSelector((state) => state.theme.darkTheme);
   const muiTheme = useTheme();
+  const authorLink = authorsId == null ? "/" : `/author/${authorsId}`;
 
   const Img = styled("img")({
     maxWidth: "100%",
@@ -32,7 +34,7 @@ const HorizontalArticlePageInfoComponent = ({
       justifyContent={"center"}
       sx={gridArticleInfoComponent(muiTheme)}
     >
-      <Link to={`/author/${authorsId}`} style={LinkStyles(darkTheme)}>
+      <Link to={authorLink} style={LinkStyles(darkTheme)}>
         <Img
           alt="Author avatar"
           src={getAuthorData?.[0]?.avatar_image}
@@ -41,7 +43,7 @@ const HorizontalArticlePageInfoComponent = ({
         />
       </Link>
 
-      <Link to={`/author/${authorsId}`} style={LinkStyles(darkTheme)}>
+      <Link to={authorLink} style={LinkStyles(darkTheme)}>
         <Typography color="primary" sx={authorTextStyles(muiTheme)}>
           {author}
         </Typography>
@@ -67,8 +69,8 @@ const HorizontalArticlePageInfoComponent = ({
 };
 
 export type Props = {
-  getAuthorData: any;
-  authorsId: string;
+  getAuthorData?: Author[];
+  authorsId?: number | string;
   author: string;
   date: string;
   section: string;

@@ -1,5 +1,5 @@
 import React, { useId, useState, SyntheticEvent } from "react";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "src/store/redux/hooks";
 import { useTheme, Box, Grid, Tab, Tabs } from "@mui/material";
 import {
   GridTabsComponent,
@@ -29,7 +29,7 @@ const TabPanel = ({ children, value, index, ...other }: TabPanelProps) => (
 const TabsComponent = ({ turnonsectiontabspadding, tabsData }: Props) => {
   const [value, setValue] = useState(0);
   const id = useId();
-  const darkTheme = useSelector((state: any) => state.theme.darkTheme);
+  const darkTheme = useAppSelector((state) => state.theme.darkTheme);
   const theme = useTheme();
 
   const tabProps = (index: number) => ({

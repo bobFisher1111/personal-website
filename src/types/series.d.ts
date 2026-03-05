@@ -1,20 +1,14 @@
-export interface SeriesInfo {
-  seriesTitle: string;
-  seriesId: string;
-  seriesChapter: number;
-  seriesPublishDate: string;
-}
-
-export interface SeriesInfo2 {
-  seriesId: number;
-  seriesTitle: string;
-  seriesCoverImageOrVideo: string;
-  seriesAuthors: string;
-  useVideoInsteadOfImage: boolean;
-  seriesType: string;
-  seriesTypeTitle: string;
-  seriesStartDate: date;
+export type Series = {
+  series_id: number;
+  author_id: number;
   section: string;
-  authorid: number;
-  sectionLink: string;
-}
+  series_authors: string;
+  series_cover_image_or_video: string;
+  series_start_date: string;
+  series_title: string;
+  series_type: string;
+  is_hidden: boolean;
+};
+
+// Back-compat alias
+export type SeriesInfo = Series;

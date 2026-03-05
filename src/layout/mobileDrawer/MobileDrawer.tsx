@@ -1,5 +1,5 @@
 import { Fragment, KeyboardEvent, MouseEvent, useState } from "react";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "src/store/redux/hooks";
 import { useTheme } from "@mui/material/styles";
 import { AppBar, Box, Button, Drawer, Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -24,7 +24,7 @@ type Anchor = "left";
 const MobileDrawer = () => {
   const [state, setState] = useState({ left: false });
   const theme = useTheme();
-  const colorTheme = useSelector((state: any) => state.theme.darkTheme);
+  const colorTheme = useAppSelector((state) => state.theme.darkTheme);
 
   const facebook = AppConfig.facebookURL;
   const twitter = AppConfig.twitterURL;

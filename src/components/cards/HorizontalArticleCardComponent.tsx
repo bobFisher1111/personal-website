@@ -1,5 +1,6 @@
 import { Box, Grid, useTheme } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "src/store/redux/hooks";
+import type { Author } from "src/types/authors";
 import HorizontalArticlePageInfoComponent from "./HorizontalArticlePageInfoComponent";
 import {
   articlePageRoot,
@@ -17,12 +18,16 @@ const HorizontalArticleCardComponent = ({
   videoOrImageCover,
   articlePageList,
 }: Props) => {
-  const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
-  const darkTheme = useSelector((state: any) => state.theme.darkTheme);
+  const getWebsiteData = useAppSelector((state) => state.webSiteData.data);
+  const darkTheme = useAppSelector((state) => state.theme.darkTheme);
   const muiTheme = useTheme();
-  const getAuthorData = getWebsiteData?.authors?.filter(
-    (item: any) => item.author_id === authorsId,
-  );
+  const authorIdNumber =
+    typeof authorsId === "number" ? authorsId : Number(authorsId);
+  const getAuthorData = Number.isFinite(authorIdNumber)
+    ? getWebsiteData?.authors?.filter(
+        (item: Author) => item.author_id === authorIdNumber,
+      )
+    : [];
 
   return (
     <Grid
@@ -63,9 +68,9 @@ export type Props = {
   date: string;
   imageWidth: string;
   section: string;
-  authorsId: string;
+  authorsId?: number | string;
   videoOrImageCover: string;
-  articlePageList?: any;
+  articlePageList?: boolean;
   mobileImageWidth: string;
 };
 

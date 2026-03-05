@@ -1,5 +1,5 @@
 import { useLayoutEffect } from "react";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "src/store/redux/hooks";
 import { Grid, Typography } from "@mui/material";
 import HorizontalArticleCardComponent from "src/components/cards/HorizontalArticleCardComponent";
 import PageContainer from "src/components/pageContainer/PageContainer";
@@ -14,7 +14,7 @@ import ReviewScore from "./ReviewScore";
 import { ReviewScoreWrapperStyles } from "./ReviewScoreStyles";
 
 const ArticlePage = () => {
-  const getWebsiteData = useSelector((state: any) => state.webSiteData.data);
+  const getWebsiteData = useAppSelector((state) => state.webSiteData.data);
   const webData = getWebsiteData;
   const getIdFromUrl = () => {
     const currentLocation = window.location.href;

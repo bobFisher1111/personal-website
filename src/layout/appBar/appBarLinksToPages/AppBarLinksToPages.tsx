@@ -1,12 +1,12 @@
 import { Grid, Typography, useTheme } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "src/store/redux/hooks";
 import { Link } from "react-router-dom";
 import { LinkStyles } from "src/util/styles/LinkStyles";
 import { TypographyLinkTwoPage } from "./AppBarLinksToPagesStyles";
 
 const AppBarLinksToPages = () => {
   const theme = useTheme();
-  const colorTheme = useSelector((state: any) => state.theme.darkTheme);
+  const colorTheme = useAppSelector((state) => state.theme.darkTheme);
 
   return (
     <Grid container spacing={2}>

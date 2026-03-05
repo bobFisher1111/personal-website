@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useAppSelector } from "src/store/redux/hooks";
 import { Avatar, Grid, Typography } from "@mui/material";
 import {
   AvatarStyle,
@@ -9,7 +9,7 @@ import {
 } from "./HeaderComponentStyles";
 
 const HeaderComponent = ({ title, avatarImage }: Props) => {
-  const theme = useSelector((state: any) => state.theme.darkTheme);
+  const theme = useAppSelector((state) => state.theme.darkTheme);
   const titleFunction = (item: any) => {
     return (
       <Typography color="primary" sx={TypographyHeaderTitle}>
@@ -35,7 +35,7 @@ const HeaderComponent = ({ title, avatarImage }: Props) => {
 export type Props = {
   title?: string;
   avatarImage?: string;
-  authorId?: string;
+  authorId?: number | string;
 };
 
 export default HeaderComponent;

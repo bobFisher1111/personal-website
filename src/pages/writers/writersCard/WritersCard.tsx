@@ -1,5 +1,5 @@
 import { CardMedia, Grid, Typography } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useAppSelector } from "src/store/redux/hooks";
 import { useTheme } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import SocialMediaComponent from "src/components/socialMediaComponent/SocialMediaComponent";
@@ -22,7 +22,7 @@ const WritersCard = ({
   email,
 }: Props) => {
   const theme = useTheme();
-  const colorTheme = useSelector((state: any) => state.theme.darkTheme);
+  const colorTheme = useAppSelector((state) => state.theme.darkTheme);
 
   return (
     <Grid container sx={WritersCardGridRoot()}>
