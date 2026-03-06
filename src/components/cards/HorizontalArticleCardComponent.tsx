@@ -67,7 +67,6 @@ export type Props = {
   authorsId: number;
   videoOrImageCover: string;
   articlePageList?: boolean;
-  mobileImageWidth: string;
 };
 
 export default HorizontalArticleCardComponent;

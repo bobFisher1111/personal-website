@@ -53,7 +53,6 @@ const SeriesPage = () => {
           authorsId={seriesInfo.author_id}
           videoOrImageCover={seriesInfo.series_cover_image_or_video}
           section={seriesInfo.section}
-          mobileImageWidth="30px"
         />
       )}
       {noArticles && <ComingSoon />}

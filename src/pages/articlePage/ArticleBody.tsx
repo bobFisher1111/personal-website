@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import DOMPurify from "dompurify";
 import { useAppSelector } from "src/store/redux/hooks";
 import { MARKDOWN_STYLES } from "src/store/redux/theme/CONSTANTS";
@@ -10,6 +10,7 @@ interface ArticleBodyProps {
 
 const ArticleBody: React.FC<ArticleBodyProps> = ({ html }) => {
   const darkTheme = useAppSelector((state) => state.theme.darkTheme);
+  const theme = useTheme();
   const markdownStyles = darkTheme
     ? MARKDOWN_STYLES.dark
     : MARKDOWN_STYLES.light;
@@ -53,7 +54,16 @@ const ArticleBody: React.FC<ArticleBodyProps> = ({ html }) => {
       fontSize: "1.2rem",
     },
     "& a": links.sx,
-    "& img": images.sx,
+    "& img": {
+      ...images.sx,
+      [theme.breakpoints.down("sm")]: {
+        maxWidth: "calc(100% - 72px) !important",
+        width: "auto !important",
+        height: "auto !important",
+        maxHeight: "50vh !important",
+        margin: "16px auto !important",
+      },
+    },
     "& code": code.inline.sx,
     "& pre, & pre code": code.block.sx,
     "& blockquote": blockquote.sx,

@@ -63,7 +63,6 @@ const ArticlePage = () => {
           authorsId={articleData.author_id}
           videoOrImageCover={articleData.cover_image_or_video}
           section={articleData.section}
-          mobileImageWidth={"22px"}
         />
       )}
       <ArticleBody html={articleData?.markdown_data ?? ""} />
