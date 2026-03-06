@@ -49,14 +49,14 @@ export const facebookURL = requireStringEnv("VITE_FACEBOOK_URL");
 export const youtubeURL = requireStringEnv("VITE_YOUTUBE_URL");
 export const twitterURL = requireStringEnv("VITE_TWITTER_URL");
 export const userAgreementValue = requireStringEnv("VITE_USER_AGREEMENT_VALUE");
-export const websiteAPI = requireStringEnv("VITE_WEBSITE_API_URL");
+export const websiteAPI = requireStringEnv("VITE_API_BASE_URL");
 export const websiteEmail = requireAnyStringEnv([
   "VITE_WEBSITE_EMAIL",
   "VITE_WEBSTIE_EMAIL",
 ]);
 export const websiteHomePageImage = requireStringEnv("VITE_HOMEPAGE_IMAGE");
 export const websiteName = requireStringEnv("VITE_SITE_NAME");
-export const websiteURL = requireStringEnv("VITE_WEBSITE_URL");
+export const websiteURL = requireStringEnv("VITE_APP_BASE_URL");
 
 const appConfig = {
   appBaseURL,
