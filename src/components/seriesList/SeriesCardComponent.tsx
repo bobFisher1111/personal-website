@@ -42,7 +42,7 @@ const SeriesCardComponent = ({
   }
 
   return (
-    <Box sx={DivVerticalArticleRoot(theme)}>
+    <Box sx={DivVerticalArticleRoot(theme, layout)}>
       <Card sx={CardVerticalCard(theme, darkTheme, layout)}>
         <Box sx={CardRootStyle}>
           <Box style={SeriesImageContainerStyles}>

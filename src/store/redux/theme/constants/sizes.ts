@@ -48,7 +48,6 @@ export const SIZES = {
   width: {
     full: "100%",
     imageMax: "18.75rem",
-    seriesCardImage: "11.25rem",
     seriesCard: "11.25rem",
     seriesCardMobile: "8.75rem",
     horizontalCardContainer: "41.25rem",

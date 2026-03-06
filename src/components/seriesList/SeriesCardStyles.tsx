@@ -36,16 +36,12 @@ export const AuthorAvatarOverlayImageStyles = (
   backgroundColor: darkTheme ? COLORS.dark.appBar : COLORS.light.secondary,
 });
 
-export const CardMediaVerticalCardImage = (theme: Theme) => ({
+export const CardMediaVerticalCardImage = (_theme: Theme) => ({
   objectFit: "cover",
   width: "100%",
   height: "auto",
   aspectRatio: "16/9",
   display: "block",
-  [theme.breakpoints.up("sm")]: {
-    width: SIZES.width.seriesCardImage,
-    height: "auto",
-  },
 });
 
 export const CardRootStyle = {
@@ -68,7 +64,8 @@ export const CardVerticalCard = (
   layout: "grid" | "scroller",
 ) => ({
   border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.light.primary}`,
-  width: SIZES.width.seriesCard,
+  width: layout === "grid" ? "100%" : SIZES.width.seriesCard,
+  ...(layout === "grid" ? { maxWidth: SIZES.width.imageMax } : {}),
   borderRadius: SIZES.borderRadius,
   boxShadow: "none",
   overflow: "hidden",
@@ -86,13 +83,14 @@ export const CardVerticalCard = (
   },
 });
 
-export const DivVerticalArticleRoot = (theme: Theme) => ({
-  padding: theme.spacing(
-    SIZES.spacingNumeric.sm,
-    SIZES.spacingNumeric.sm,
-    SIZES.spacingNumeric.sm,
-    SIZES.spacingNumeric.sm,
-  ),
+export const DivVerticalArticleRoot = (
+  theme: Theme,
+  layout: "grid" | "scroller",
+) => ({
+  padding:
+    layout === "scroller"
+      ? theme.spacing(SIZES.spacingNumeric.xs)
+      : theme.spacing(SIZES.spacingNumeric.sm),
   [theme.breakpoints.down("sm")]: {
     padding: theme.spacing(SIZES.spacingNumeric.xs),
   },

@@ -47,15 +47,12 @@ const SeriesComponent = ({
   }
 
   return (
-    <Grid
-      container
-      justifyContent={layout === "scroller" ? "flex-start" : "center"}
-    >
+    <Grid container justifyContent="flex-start">
       <Grid sx={SeriesOuterBlockMergedStyles(theme, count, layout, outerSx)}>
         <Grid
           className="carouselOne1"
           container
-          justifyContent="space-between"
+          justifyContent={layout === "grid" ? "flex-start" : "space-between"}
           {...(layout === "grid"
             ? {
                 columnSpacing: { xs: 0.5, sm: 1 },
@@ -70,7 +67,11 @@ const SeriesComponent = ({
           {series.map((item, index) => (
             <Grid
               key={typeof item.series_id === "number" ? item.series_id : index}
-              size={layout === "grid" ? { xs: 6, sm: "auto" } : "auto"}
+              size={
+                layout === "grid"
+                  ? { xs: 6, sm: 6, md: 4 }
+                  : "auto"
+              }
               sx={SeriesGridStyles}
             >
               <SeriesCardComponent
