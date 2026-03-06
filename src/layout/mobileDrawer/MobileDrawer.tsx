@@ -7,7 +7,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
 import SocialMediaComponent from "src/components/socialMediaComponent/SocialMediaComponent";
 import LightDarkMode from "src/layout/appBar/lightDarkMode/LightDarkMode";
-import AppConfig from "src/config";
+import { facebookURL, twitterURL, youtubeURL } from "src/config";
 import {
   MenuIconStyle,
   BoxMobileDrawerStyle,
@@ -28,9 +28,9 @@ const MobileDrawer = () => {
   const theme = useTheme();
   const colorTheme = useAppSelector((state) => state.theme.darkTheme);
 
-  const facebook = AppConfig.facebookURL;
-  const twitter = AppConfig.twitterURL;
-  const youtube = AppConfig.youtubeURL;
+  const facebook = facebookURL;
+  const twitter = twitterURL;
+  const youtube = youtubeURL;
 
   const toggleDrawer =
     (anchor: Anchor, open: boolean) => (event: KeyboardEvent | MouseEvent) => {
