@@ -43,6 +43,25 @@ export default [
 
       "@typescript-eslint/no-explicit-any": "error",
 
+      "no-restricted-syntax": [
+        "error",
+        {
+          selector: "TSUnknownKeyword",
+          message:
+            "Do not use `unknown`. Prefer a specific type or `undefined`/`never` as appropriate.",
+        },
+        {
+          selector: "TSAsExpression",
+          message:
+            "Do not use type assertions (`as`). Prefer proper typing (generics, overloads, or `satisfies`).",
+        },
+        {
+          selector: "TSTypeAssertion",
+          message:
+            "Do not use type assertions (`<Type>value`). Prefer proper typing (generics, overloads, or `satisfies`).",
+        },
+      ],
+
       "@typescript-eslint/no-unused-vars": [
         "error",
         {

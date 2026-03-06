@@ -1,4 +1,4 @@
-import { COLORS, SPACING_VALUES } from "src/store/redux/theme/CONSTANTS";
+import { COLORS, SIZES } from "src/store/redux/theme/CONSTANTS";
 
 export type ThemeMode = "light" | "dark";
 
@@ -27,7 +27,7 @@ export const HomePageSelectSx = (mode: ThemeMode) => ({
     whiteSpace: "nowrap",
     overflow: "hidden",
     textOverflow: "ellipsis",
-    paddingRight: SPACING_VALUES.md,
+    paddingRight: SIZES.spacing.md,
   },
   "& .MuiSelect-select:focus": {
     backgroundColor: "transparent",

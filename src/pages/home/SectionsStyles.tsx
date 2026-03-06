@@ -4,7 +4,6 @@ import {
   FONT_SIZES,
   FONT_WEIGHTS,
   SIZES,
-  SPACING_VALUES,
 } from "src/store/redux/theme/CONSTANTS";
 
 const MOBILE_TAB_HEIGHT = "2.25rem";
@@ -13,12 +12,12 @@ export const navContainerStyles = (theme: Theme, isDarkTheme: boolean) => {
   return {
     width: "100%",
     backgroundColor: isDarkTheme ? COLORS.dark.appBar : COLORS.light.primary,
-    marginBottom: SPACING_VALUES.md,
+    marginBottom: SIZES.spacing.md,
     borderRadius: 1,
     border: `1px solid ${isDarkTheme ? COLORS.dark.appBar : COLORS.light.primary}`,
     transition: "background-color 0.3s ease, border-color 0.3s ease",
     [theme.breakpoints.down("sm")]: {
-      marginBottom: SPACING_VALUES.sm,
+      marginBottom: SIZES.spacing.sm,
     },
   };
 };

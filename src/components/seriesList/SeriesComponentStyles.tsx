@@ -1,9 +1,9 @@
-import { Theme } from "@mui/material";
-import { SPACING_VALUES } from "src/store/redux/theme/CONSTANTS";
+import { SxProps, Theme } from "@mui/material";
+import { SIZES } from "src/store/redux/theme/CONSTANTS";
 
 export const SeriesGridStyles = {
   display: "flex",
-  paddingBottom: SPACING_VALUES.xs,
+  paddingBottom: SIZES.spacing.xs,
 };
 
 export const SeriesOuterBlockStyles = (
@@ -23,7 +23,7 @@ export const SeriesOuterBlockMergedStyles = (
   theme: Theme,
   count: number,
   layout: "grid" | "scroller",
-  outerSx?: Record<string, unknown>,
+  outerSx?: SxProps<Theme>,
 ) => ({
   ...SeriesOuterBlockStyles(theme, count, layout),
   ...(outerSx ?? {}),

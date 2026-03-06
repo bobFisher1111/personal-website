@@ -5,7 +5,6 @@ import {
   FONT_SIZES,
   FONT_WEIGHTS,
   LINE_HEIGHTS,
-  SPACING_VALUES,
   SIZES,
 } from "src/store/redux/theme/CONSTANTS";
 
@@ -16,8 +15,8 @@ export const SeriesImageContainerStyles: CSSProperties = {
 
 export const AuthorAvatarOverlayLinkStyles: CSSProperties = {
   position: "absolute",
-  top: SPACING_VALUES.xxs,
-  right: SPACING_VALUES.xxs,
+  top: SIZES.spacing.xxs,
+  right: SIZES.spacing.xxs,
   zIndex: 1,
   display: "inline-flex",
   borderRadius: "50%",

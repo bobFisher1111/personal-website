@@ -2,7 +2,7 @@ import { Theme } from "@mui/material";
 import {
   COLORS,
   FONT_SIZES,
-  SPACING_VALUES,
+  SIZES,
 } from "src/store/redux/theme/CONSTANTS";
 
 export const SectionNotSelectedStyles = (isDark: boolean, theme: Theme) => ({
@@ -31,8 +31,8 @@ export const SectionSelectedStyles = (isDark: boolean, theme: Theme) => ({
 });
 
 export const SeriesTitleGridStyles = (theme: Theme) => ({
-  marginBottom: SPACING_VALUES.md,
+  marginBottom: SIZES.spacing.md,
   [theme.breakpoints.down("sm")]: {
-    marginBottom: SPACING_VALUES.sm,
+    marginBottom: SIZES.spacing.sm,
   },
 });
