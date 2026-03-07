@@ -5,7 +5,8 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { RootState } from "./store/redux/store";
 import { darkTheme, lightTheme } from "./store/redux/theme/CONSTANTS";
 import Layout from "./layout/Layout";
-import AppRoutes from "./AppRoutes"; // ✅ new import
+import AppRoutes from "./AppRoutes";
+import ScrollToTop from "./util/ScrollToTop";
 
 import UsersAcceptanceComponent from "./usersAcceptanceComponent/UsersAcceptanceComponent";
 
@@ -14,6 +15,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <ThemeProvider theme={theme?.darkTheme ? darkTheme : lightTheme}>
         <CssBaseline />
         <Suspense fallback={<div>Loading...</div>}>

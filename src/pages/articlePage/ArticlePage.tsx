@@ -1,4 +1,3 @@
-import { useLayoutEffect } from "react";
 import { useAppSelector } from "src/store/redux/hooks";
 import { Grid, Typography } from "@mui/material";
 import HorizontalArticleCardComponent from "src/components/cards/HorizontalArticleCardComponent";
@@ -34,10 +33,6 @@ const ArticlePage = () => {
   );
   const authorData = getAuthor && getAuthor[0];
   const articleData = currentArticle && currentArticle[0];
-
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <PageContainer>
