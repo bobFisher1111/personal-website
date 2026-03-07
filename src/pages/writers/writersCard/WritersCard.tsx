@@ -49,7 +49,7 @@ const WritersCard = ({
         component="div"
       >
         <Link to={`/author/${authorId}`} style={LinkStyles(colorTheme)}>
-          <Typography color="primary" sx={WritersCardTextAuthorName}>
+          <Typography component="h2" color="primary" sx={WritersCardTextAuthorName}>
             {authorName}
           </Typography>
         </Link>
@@ -57,6 +57,7 @@ const WritersCard = ({
           <Typography
             color="primary"
             variant="subtitle1"
+            component="p"
             sx={WritersCardTextAuthorTitle}
           >
             {authorsTitle}

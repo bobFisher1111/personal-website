@@ -48,7 +48,7 @@ const TabsComponent = ({ turnonsectiontabspadding, tabsData }: Props) => {
   };
 
   return (
-    <Box sx={TabsChangeStyle(theme)}>
+    <Box sx={TabsChangeStyle(theme, darkTheme)}>
       <Grid
         container
         justifyContent="center"

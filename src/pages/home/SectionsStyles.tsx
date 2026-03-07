@@ -6,7 +6,7 @@ import {
   SIZES,
 } from "src/store/redux/theme/CONSTANTS";
 
-const MOBILE_TAB_HEIGHT = "2.25rem";
+const MOBILE_TAB_HEIGHT = SIZES.height.touchTarget;
 
 export const navContainerStyles = (theme: Theme, isDarkTheme: boolean) => {
   return {
@@ -25,6 +25,10 @@ export const tabsStyles = {
   minHeight: { xs: MOBILE_TAB_HEIGHT, sm: SIZES.height.touchTarget },
   "& .MuiTab-root": {
     minHeight: { xs: MOBILE_TAB_HEIGHT, sm: SIZES.height.touchTarget },
+  },
+  "& .MuiTabs-scrollButtons": {
+    width: SIZES.height.touchTarget,
+    height: SIZES.height.touchTarget,
   },
   "& .MuiTabs-indicator": {
     height: 0,

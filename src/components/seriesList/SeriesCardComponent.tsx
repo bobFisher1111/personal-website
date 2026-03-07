@@ -27,6 +27,14 @@ const SeriesCardComponent = ({
   const theme = useTheme();
   const serieslUrl = `/series/${articleData?.series_id}`;
 
+  const seriesTitle =
+    typeof articleData?.series_title === "string" &&
+    articleData.series_title.trim().length > 0
+      ? articleData.series_title
+      : "Series";
+
+  const seriesLinkLabel = `View series: ${seriesTitle}`;
+
   const seriesAuthorId =
     typeof articleData?.author_id === "number" ? articleData.author_id : null;
 
@@ -46,19 +54,17 @@ const SeriesCardComponent = ({
       <Card sx={CardVerticalCard(theme, darkTheme, layout)}>
         <Box sx={CardRootStyle}>
           <Box style={SeriesImageContainerStyles}>
-            <Link to={serieslUrl} rel="noreferrer">
-              <CardMedia
-                component="img"
-                alt={`Cover image for series ${articleData?.series_title}`}
-                image={
-                  articleData?.series_cover_image_or_video ||
-                  articleData?.series_cover_image_or_video
-                }
-                sx={CardMediaVerticalCardImage(theme)}
-                referrerPolicy="no-referrer"
-                loading="lazy"
-              />
-            </Link>
+            <CardMedia
+              component="img"
+              alt={`Cover image for series ${seriesTitle}`}
+              image={
+                articleData?.series_cover_image_or_video ||
+                articleData?.series_cover_image_or_video
+              }
+              sx={CardMediaVerticalCardImage(theme)}
+              referrerPolicy="no-referrer"
+              loading="lazy"
+            />
 
             {showAuthorAvatarOverlay &&
               seriesAuthorId !== null &&
@@ -84,16 +90,19 @@ const SeriesCardComponent = ({
             <Link
               to={serieslUrl}
               rel="noreferrer"
+              aria-label={seriesLinkLabel}
               style={{
                 ...LinkStyles(darkTheme),
-                display: "block",
+                display: "flex",
+                alignItems: "center",
                 width: "100%",
+                height: "100%",
               }}
             >
               <Typography
                 sx={TypographyVerticalCardNameStyleHover(theme, darkTheme)}
               >
-                {articleData?.series_title}
+                {seriesTitle}
               </Typography>
             </Link>
           </Box>

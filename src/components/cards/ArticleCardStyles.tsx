@@ -33,6 +33,10 @@ export const AvatarAuthorLinkStyles = (theme: Theme, darkTheme: boolean) => ({
   textDecoration: "none",
   display: "flex",
   color: darkTheme ? COLORS.dark.primary : theme.palette.text.secondary,
+  [theme.breakpoints.down("sm")]: {
+    minHeight: SIZES.height.touchTarget,
+    alignItems: "center",
+  },
 });
 
 export const AvatarImageStyles = (darkTheme: boolean) => ({
@@ -92,8 +96,8 @@ export const LinkGridRootStyles = (
   justifyContent: "flex-end",
   alignItems: "flex-end",
   [theme.breakpoints.down("sm")]: {
-    maxHeight: SIZES.chip.containerHeightMobile,
-    minHeight: SIZES.chip.containerHeightMobile,
+    maxHeight: SIZES.height.touchTarget,
+    minHeight: SIZES.height.touchTarget,
   },
 });
 
@@ -109,10 +113,15 @@ export const RootStyles = (theme: Theme) => ({
   },
 });
 
-export const SeriesChipStyles = {
+export const SeriesChipStyles = (theme: Theme) => ({
   paddingLeft: SIZES.spacing.sm,
   textDecoration: "none",
-};
+  display: "inline-flex",
+  alignItems: "center",
+  [theme.breakpoints.down("sm")]: {
+    minHeight: SIZES.height.touchTarget,
+  },
+});
 
 export const SubTitleStyles = (theme: Theme) => ({
   fontSize: FONT_SIZES.subtitle,

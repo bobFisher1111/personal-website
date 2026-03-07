@@ -8,6 +8,29 @@ interface ArticleBodyProps {
   html: string;
 }
 
+const ensureAccessibleImages = (safeHtml: string): string => {
+  if (typeof DOMParser === "undefined") return safeHtml;
+
+  const document = new DOMParser().parseFromString(safeHtml, "text/html");
+
+  for (const img of document.querySelectorAll("img")) {
+    if (!img.hasAttribute("alt")) {
+      const captionText =
+        img.closest("figure")?.querySelector("figcaption")?.textContent ?? "";
+      const derivedAlt = captionText
+        .replace(/\s+/g, " ")
+        .trim()
+        .slice(0, 160);
+      img.setAttribute("alt", derivedAlt);
+    }
+
+    if (!img.hasAttribute("loading")) img.setAttribute("loading", "lazy");
+    if (!img.hasAttribute("decoding")) img.setAttribute("decoding", "async");
+  }
+
+  return document.body.innerHTML;
+};
+
 const ArticleBody: React.FC<ArticleBodyProps> = ({ html }) => {
   const darkTheme = useAppSelector((state) => state.theme.darkTheme);
   const theme = useTheme();
@@ -20,6 +43,7 @@ const ArticleBody: React.FC<ArticleBodyProps> = ({ html }) => {
   const safeHtml = DOMPurify.sanitize(contentHtml, {
     FORBID_TAGS: ["svg", "math"],
   });
+  const enhancedHtml = ensureAccessibleImages(safeHtml);
 
   const contentSx = {
     ...markdownStyles.container,
@@ -74,7 +98,9 @@ const ArticleBody: React.FC<ArticleBodyProps> = ({ html }) => {
     "& td": table.td.sx,
   };
 
-  return <Box sx={contentSx} dangerouslySetInnerHTML={{ __html: safeHtml }} />;
+  return (
+    <Box sx={contentSx} dangerouslySetInnerHTML={{ __html: enhancedHtml }} />
+  );
 };
 
 export default ArticleBody;

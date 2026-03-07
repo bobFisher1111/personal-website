@@ -16,6 +16,7 @@ export const TabComponentTextStyles = (theme: Theme, darkTheme: boolean) => ({
   textTransform: "initial",
   fontSize: FONT_SIZES.sectionTitle,
   color: darkTheme ? COLORS.dark.primary : COLORS.light.primary,
+  opacity: 1,
 
   [theme.breakpoints.down("sm")]: {
     fontSize: "14px",
@@ -30,10 +31,13 @@ export const TabPanelStyle = {
   p: 3,
 };
 
-export const TabsChangeStyle = (theme: Theme) => ({
+export const TabsChangeStyle = (theme: Theme, darkTheme: boolean) => ({
   width: "100%",
   "& .MuiBox-root": {
     padding: "0px",
+  },
+  "& .MuiTab-root": {
+    opacity: 1,
   },
   "& .MuiTabs-flexContainer": {
     padding: "0px 0px 0px 8px",
@@ -42,7 +46,7 @@ export const TabsChangeStyle = (theme: Theme) => ({
     border: "1px",
   },
   "& button[aria-selected='true']": {
-    borderBottom: "3px solid #0C0D0D",
+    borderBottom: `3px solid ${darkTheme ? COLORS.dark.primary : COLORS.common.border}`,
   },
 
   [theme.breakpoints.down("sm")]: {

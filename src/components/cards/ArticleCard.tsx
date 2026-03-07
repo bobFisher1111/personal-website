@@ -1,6 +1,6 @@
 import { useAppSelector } from "src/store/redux/hooks";
 import { Link } from "react-router-dom";
-import { Chip, Grid, Typography, useTheme, styled } from "@mui/material";
+import { Box, Chip, Grid, Typography, useTheme, styled } from "@mui/material";
 import { LinkStyles } from "src/util/styles/LinkStyles";
 import type { Author } from "src/types/authors";
 import {
@@ -42,6 +42,9 @@ const ArticleCard = ({
       ? getAuthorData[0].author_name
       : "Author";
 
+  const articleUrl = `/article/${authorId}/${articleId}`;
+  const articleLinkLabel = `Open article: ${title}`;
+
   return (
     <Grid container sx={RootStyles(theme)}>
       <Grid
@@ -53,9 +56,10 @@ const ArticleCard = ({
         sx={GridNameDateStyles(theme)}
       >
         <Grid size={8}>
-          <Link
+          <Box
+            component={Link}
             to={`/author/${authorId}`}
-            style={AvatarAuthorLinkStyles(theme, darkTheme)}
+            sx={AvatarAuthorLinkStyles(theme, darkTheme)}
           >
             <Img
               alt={`${authorName} avatar`}
@@ -68,7 +72,7 @@ const ArticleCard = ({
             <Typography color="primary" sx={AuthorNameStyles(theme)}>
               {getAuthorData?.[0]?.author_name}
             </Typography>
-          </Link>
+          </Box>
         </Grid>
         <Grid size={4}>
           <Typography color="primary" sx={DateStyles(theme)}>
@@ -86,7 +90,7 @@ const ArticleCard = ({
         sx={GridWidthStyle}
       >
         <Grid size={{ xs: 4, sm: 3, md: 3, lg: 3, xl: 3 }}>
-          <Link to={`/article/${authorId}/${articleId}`}>
+          <Link to={articleUrl} aria-label={articleLinkLabel}>
             <Img
               alt={`Cover image for ${title}`}
               src={articleMedia}
@@ -103,7 +107,8 @@ const ArticleCard = ({
           sx={ArticleDataGridStyles}
         >
           <Link
-            to={`/article/${authorId}/${articleId}`}
+            to={articleUrl}
+            aria-label={articleLinkLabel}
             style={LinkStyles(darkTheme)}
           >
             <Typography
@@ -128,14 +133,18 @@ const ArticleCard = ({
               sx={ChipStyles(theme)}
             />
             {seriesId != null && (
-              <Link to={`/series/${seriesId}`} style={SeriesChipStyles}>
+              <Box
+                component={Link}
+                to={`/series/${seriesId}`}
+                sx={SeriesChipStyles(theme)}
+              >
                 <Chip
                   color="primary"
                   label="Series"
                   size="small"
                   sx={ChipStyles(theme)}
                 />
-              </Link>
+              </Box>
             )}
           </Grid>
         </Grid>
