@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import type { ChangeEvent } from "react";
 import { Button, Grid, Switch, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import { useAppSelector } from "src/store/redux/hooks";
 import { userAgreementValue } from "src/config";
 import {
   AcceptButtonStyles,
@@ -28,6 +29,8 @@ const CookiesManagementComponent = ({
   closeDrawer,
   optionalCookies,
 }: Props) => {
+  const idBase = useId();
+  const isDarkTheme = useAppSelector((state) => state.theme.darkTheme);
   const [darkModeToggle, setDarkModeToggle] = useState<boolean>(
     localStorage.getItem("darkMode") === "true" ? true : false,
   );
@@ -110,6 +113,8 @@ const CookiesManagementComponent = ({
         >
           <Button
             color="primary"
+            aria-label="Close cookie settings"
+            type="button"
             onClick={() => {
               rejectOptionalCookies();
               closeDrawer();
@@ -128,9 +133,13 @@ const CookiesManagementComponent = ({
           Toggle on and off Cookies
         </Typography>
       </Grid>
-      <Grid container size={12} sx={ToggleOnRootStyles}>
+      <Grid container size={12} sx={ToggleOnRootStyles(isDarkTheme)}>
         <Grid size={6} sx={ToggleOnGridStyles}>
-          <Typography color="primary" sx={CookieTextStyles}>
+          <Typography
+            id={`${idBase}-user-agreement-cookie-label`}
+            color="primary"
+            sx={CookieTextStyles}
+          >
             User Agreement Cookie
           </Typography>
         </Grid>
@@ -138,6 +147,11 @@ const CookiesManagementComponent = ({
           <Switch
             checked={userAgreementsToggle}
             onChange={(e) => userAgreementSwitch(e)}
+            slotProps={{
+              input: {
+                "aria-labelledby": `${idBase}-user-agreement-cookie-label`,
+              },
+            }}
           />
         </Grid>
         <Typography color="primary">
@@ -145,9 +159,13 @@ const CookiesManagementComponent = ({
           has been made for cookies.
         </Typography>
       </Grid>
-      <Grid container size={12} sx={ToggleOnRootStyles}>
+      <Grid container size={12} sx={ToggleOnRootStyles(isDarkTheme)}>
         <Grid size={6} sx={ToggleOnGridStyles}>
-          <Typography color="primary" sx={CookieTextStyles}>
+          <Typography
+            id={`${idBase}-dark-mode-label`}
+            color="primary"
+            sx={CookieTextStyles}
+          >
             Toggle on dark mode
           </Typography>
         </Grid>
@@ -155,6 +173,9 @@ const CookiesManagementComponent = ({
           <Switch
             checked={darkModeToggle}
             onChange={(e) => darkModeSwtich(e)}
+            slotProps={{
+              input: { "aria-labelledby": `${idBase}-dark-mode-label` },
+            }}
           />
         </Grid>
         <Typography color="primary">Used for enabling dark mode.</Typography>

@@ -38,10 +38,10 @@ export const RejectButtonStyles = {
   textTransform: "none",
 };
 
-export const RootStyles = {
+export const RootStyles = (darkTheme: boolean) => ({
   width: "100%",
   height: "22vh",
-  borderTop: `2px solid ${COLORS.common.border}`,
+  borderTop: `2px solid ${darkTheme ? COLORS.dark.primary : COLORS.common.border}`,
   padding: "36px",
   "@media only screen and (max-width: 1570px)": {
     height: "25vh",
@@ -53,7 +53,7 @@ export const RootStyles = {
     height: "40vh",
     padding: "16px",
   },
-};
+});
 
 export const SettingButtonStyles = {
   marginRight: "16px",

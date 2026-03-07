@@ -1,5 +1,7 @@
 import { useId } from "react";
+import { Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
+import { visuallyHidden } from "@mui/utils";
 import { useAppSelector } from "src/store/redux/hooks";
 import PageContainer from "src/components/pageContainer/PageContainer";
 import WritersCard from "./writersCard/WritersCard";
@@ -16,6 +18,9 @@ const Writers = () => {
 
   return (
     <PageContainer>
+      <Typography component="h1" style={visuallyHidden}>
+        Writers
+      </Typography>
       {sortAuthorsById?.map((item, index) => (
         <Grid
           key={`${id}-${index}`}

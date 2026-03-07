@@ -36,7 +36,7 @@ const HorizontalArticlePageInfoComponent = ({
     >
       <Link to={authorLink} style={LinkStyles(darkTheme)}>
         <Img
-          alt="Author avatar"
+          alt={author ? `${author} avatar` : "Author avatar"}
           src={getAuthorData?.[0]?.avatar_image}
           sx={avatarImageStyles(muiTheme, darkTheme)}
           referrerPolicy="no-referrer"

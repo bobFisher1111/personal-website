@@ -12,7 +12,7 @@ type Anchor = "left";
 const anchors: readonly Anchor[] = ["left"];
 
 const TermsOfServiceDrawer = () => {
-  const theme = useAppSelector((state) => state.theme.darkTheme);
+  const darkTheme = useAppSelector((state) => state.theme.darkTheme);
 
   const [state, setState] = useState({
     left: false,
@@ -35,12 +35,15 @@ const TermsOfServiceDrawer = () => {
       {anchors.map((anchor) => (
         <Fragment key={anchor}>
           <Grid>
-            <Button size="small">
+            <Button
+              size="small"
+              type="button"
+              aria-label="Open terms of service"
+              onClick={toggleDrawer(anchor, true)}
+            >
               <Typography
-                aria-label="User Agreement terms of service"
-                onClick={toggleDrawer(anchor, true)}
                 color="primary"
-                sx={DisclaimerTitleStyles(theme)}
+                sx={DisclaimerTitleStyles(darkTheme)}
               >
                 Terms of Service
               </Typography>
@@ -50,7 +53,7 @@ const TermsOfServiceDrawer = () => {
             anchor={anchor}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
-            sx={DrawerStyles}
+            sx={DrawerStyles(darkTheme)}
           >
             <TermsOfServiceComponent
               closeDrawer={toggleDrawer(anchor, false)}

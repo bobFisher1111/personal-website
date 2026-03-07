@@ -48,14 +48,15 @@ const SeriesCardComponent = ({
           <Box style={SeriesImageContainerStyles}>
             <Link to={serieslUrl} rel="noreferrer">
               <CardMedia
-                aria-label={`Series ${articleData?.series_title} Image`}
                 component="img"
+                alt={`Cover image for series ${articleData?.series_title}`}
                 image={
                   articleData?.series_cover_image_or_video ||
                   articleData?.series_cover_image_or_video
                 }
                 sx={CardMediaVerticalCardImage(theme)}
                 referrerPolicy="no-referrer"
+                loading="lazy"
               />
             </Link>
 

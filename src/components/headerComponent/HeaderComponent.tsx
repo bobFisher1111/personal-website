@@ -12,7 +12,7 @@ const HeaderComponent = ({ title, avatarImage }: Props) => {
   const theme = useAppSelector((state) => state.theme.darkTheme);
   const titleFunction = (item: string) => {
     return (
-      <Typography color="primary" sx={TypographyHeaderTitle}>
+      <Typography component="h1" color="primary" sx={TypographyHeaderTitle}>
         {item}
       </Typography>
     );
@@ -22,7 +22,7 @@ const HeaderComponent = ({ title, avatarImage }: Props) => {
     <Grid container direction="row" justifyContent="flex-start" sx={GridHeader}>
       <Grid sx={GridPaddingRight}>
         <Avatar
-          alt="Authors Avatar"
+          alt={title ? `${title} avatar` : "Author avatar"}
           src={avatarImage}
           sx={AvatarStyle(theme)}
         />

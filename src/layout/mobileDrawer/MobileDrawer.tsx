@@ -67,6 +67,8 @@ const MobileDrawer = () => {
           </Grid>
           <Grid container size={2} sx={{ justifyContent: "flex-end" }}>
             <Button
+              aria-label="Close menu"
+              type="button"
               sx={CloseDrawerIconStyle}
               onClick={toggleDrawer(anchor, false)}
             >

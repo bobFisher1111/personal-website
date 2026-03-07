@@ -89,13 +89,13 @@ export const RootStyles = {
   padding: "36px",
 };
 
-export const ToggleOnRootStyles = {
+export const ToggleOnRootStyles = (darkTheme: boolean) => ({
   display: "flex",
   marginBottom: "8px",
-  border: `1px solid ${COLORS.common.border}`,
+  border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.common.border}`,
   borderRadius: "8px",
   padding: "8px",
-};
+});
 
 export const ToggleOnGridStyles = {
   alignItems: "center",

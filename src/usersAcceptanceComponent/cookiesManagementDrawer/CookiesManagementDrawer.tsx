@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
-import { Drawer, Grid, Typography } from "@mui/material";
+import { Button, Drawer, Grid, Typography } from "@mui/material";
 import type { DrawerProps } from "@mui/material/Drawer";
+import type { SxProps, Theme } from "@mui/material/styles";
+import { useAppSelector } from "src/store/redux/hooks";
 import CookiesManagementComponent from "src/usersAcceptanceComponent/cookiesManagementComponent/CookiesManagementComponent";
 import {
   DrawerStyles,
@@ -16,22 +18,12 @@ type DrawerOnClose = Required<DrawerProps>["onClose"];
 const CookiesManagementDrawer = ({
   closeParentDrawer,
   optionalCookie,
+  triggerButtonSx,
 }: Props) => {
+  const darkTheme = useAppSelector((state) => state.theme.darkTheme);
   const [state, setState] = React.useState({
     left: false,
   });
-
-  const toggleDrawer =
-    (anchor: Anchor, open: boolean) =>
-    (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (event.type === "keydown" && "key" in event) {
-        if (event.key === "Tab" || event.key === "Shift") {
-          return;
-        }
-      }
-
-      setState((prev) => ({ ...prev, [anchor]: open }));
-    };
 
   const closeDrawerProgrammatically = (anchor: Anchor) => {
     if (document.activeElement instanceof HTMLElement) {
@@ -49,16 +41,21 @@ const CookiesManagementDrawer = ({
     <Grid>
       {anchors.map((anchor) => (
         <Fragment key={anchor}>
-          <Grid onClick={closeParentDrawer}>
-            <Typography
-              aria-label="Menu for Sections Mobile"
-              color="primary"
-              onClick={toggleDrawer(anchor, true)}
-              sx={SettingTitleStyles}
-            >
+          <Button
+            type="button"
+            aria-label="Open cookie settings"
+            variant="outlined"
+            color="primary"
+            onClick={() => {
+              closeParentDrawer();
+              setState((prev) => ({ ...prev, [anchor]: true }));
+            }}
+            sx={triggerButtonSx ?? {}}
+          >
+            <Typography color="primary" sx={SettingTitleStyles}>
               Settings
             </Typography>
-          </Grid>
+          </Button>
           <Drawer
             anchor={anchor}
             open={state[anchor]}
@@ -68,7 +65,7 @@ const CookiesManagementDrawer = ({
               disableEnforceFocus: true,
               disableRestoreFocus: true,
             }}
-            sx={DrawerStyles}
+            sx={DrawerStyles(darkTheme)}
           >
             <CookiesManagementComponent
               closeDrawer={() => closeDrawerProgrammatically(anchor)}
@@ -84,6 +81,7 @@ const CookiesManagementDrawer = ({
 export type Props = {
   closeParentDrawer: () => void;
   optionalCookie: () => void;
+  triggerButtonSx?: SxProps<Theme>;
 };
 
 export default CookiesManagementDrawer;

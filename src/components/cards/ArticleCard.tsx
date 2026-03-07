@@ -36,6 +36,12 @@ const ArticleCard = ({
   const getAuthorData = authorData.filter((item) => item.author_id === authorId);
   const Img = styled("img")({ maxWidth: "100%", maxHeight: "100%" });
 
+  const authorName =
+    typeof getAuthorData?.[0]?.author_name === "string" &&
+    getAuthorData[0].author_name.trim().length > 0
+      ? getAuthorData[0].author_name
+      : "Author";
+
   return (
     <Grid container sx={RootStyles(theme)}>
       <Grid
@@ -52,10 +58,12 @@ const ArticleCard = ({
             style={AvatarAuthorLinkStyles(theme, darkTheme)}
           >
             <Img
-              alt="complex"
+              alt={`${authorName} avatar`}
               src={getAuthorData?.[0]?.avatar_image}
               sx={AvatarImageStyles(darkTheme)}
               referrerPolicy="no-referrer"
+              loading="lazy"
+              decoding="async"
             />
             <Typography color="primary" sx={AuthorNameStyles(theme)}>
               {getAuthorData?.[0]?.author_name}
@@ -80,10 +88,12 @@ const ArticleCard = ({
         <Grid size={{ xs: 4, sm: 3, md: 3, lg: 3, xl: 3 }}>
           <Link to={`/article/${authorId}/${articleId}`}>
             <Img
-              alt="complex"
+              alt={`Cover image for ${title}`}
               src={articleMedia}
               sx={ArticleImageStyles(theme, darkTheme)}
               referrerPolicy="no-referrer"
+              loading="lazy"
+              decoding="async"
             />
           </Link>
         </Grid>

@@ -1,5 +1,5 @@
 import { useAppSelector } from "src/store/redux/hooks";
-import { useTheme } from "@mui/material";
+import { IconButton, useTheme } from "@mui/material";
 import { appBaseURL } from "src/config";
 import copyLink from "src/util/copyLink";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
@@ -25,17 +25,36 @@ const CopyLinkComponent = ({
   const seriesUrl = `${appBaseURL}/series/${seriesId}`;
   const copyUrl = turnOnSeries ? seriesUrl : articleUrl;
 
+  const canCopyEmail =
+    typeof authorsEmail === "string" && authorsEmail.trim().length > 0;
+  const canCopyUrl = typeof copyUrl === "string" && copyUrl.trim().length > 0;
+
   return email ? (
-    <EmailOutlinedIcon
+    <IconButton
+      aria-label="Copy email address"
+      type="button"
+      disabled={!canCopyEmail}
+      onClick={() => {
+        if (!canCopyEmail) return;
+        copyLink(authorsEmail);
+      }}
       sx={EmailOutlinedIconStyles(theme, darkTheme)}
-      id="copyEmail"
-      onClick={() => copyLink(authorsEmail)}
-    />
+    >
+      <EmailOutlinedIcon fontSize="inherit" />
+    </IconButton>
   ) : (
-    <ContentCopyIcon
+    <IconButton
+      aria-label="Copy link"
+      type="button"
+      disabled={!canCopyUrl}
+      onClick={() => {
+        if (!canCopyUrl) return;
+        copyLink(copyUrl);
+      }}
       sx={ContentCopyIconStyle(theme, darkTheme, padding)}
-      onClick={() => copyLink(copyUrl)}
-    />
+    >
+      <ContentCopyIcon fontSize="inherit" />
+    </IconButton>
   );
 };
 

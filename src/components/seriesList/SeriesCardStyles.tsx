@@ -22,7 +22,6 @@ export const AuthorAvatarOverlayLinkStyles: CSSProperties = {
   borderRadius: "50%",
   textDecoration: "none",
   WebkitTapHighlightColor: "transparent",
-  outline: "none",
 };
 
 export const AuthorAvatarOverlayImageStyles = (

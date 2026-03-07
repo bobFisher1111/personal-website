@@ -10,6 +10,7 @@ import {
 
 interface TabPanelProps {
   children?: React.ReactNode;
+  idBase: string;
   index: number;
   value: number;
 }
@@ -19,12 +20,12 @@ export type TabsDataItem = {
   data: React.ReactNode;
 };
 
-const TabPanel = ({ children, value, index, ...other }: TabPanelProps) => (
+const TabPanel = ({ children, value, index, idBase, ...other }: TabPanelProps) => (
   <div
     role="tabpanel"
     hidden={value !== index}
-    id={`simple-tabpanel-${index}`}
-    aria-labelledby={`simple-tab-${index}`}
+    id={`${idBase}-tabpanel-${index}`}
+    aria-labelledby={`${idBase}-tab-${index}`}
     {...other}
   >
     {value === index && <Box sx={TabPanelStyle}>{children}</Box>}
@@ -38,8 +39,8 @@ const TabsComponent = ({ turnonsectiontabspadding, tabsData }: Props) => {
   const theme = useTheme();
 
   const tabProps = (index: number) => ({
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
+    id: `${id}-tab-${index}`,
+    "aria-controls": `${id}-tabpanel-${index}`,
   });
 
   const handleChange = (_event: SyntheticEvent, newValue: number) => {
@@ -70,7 +71,12 @@ const TabsComponent = ({ turnonsectiontabspadding, tabsData }: Props) => {
         </Tabs>
       </Grid>
       {tabsData?.map((item, index) => (
-        <TabPanel key={`${id}-panel-${index}`} value={value} index={index}>
+        <TabPanel
+          key={`${id}-panel-${index}`}
+          idBase={id}
+          value={value}
+          index={index}
+        >
           {item.data}
         </TabPanel>
       ))}

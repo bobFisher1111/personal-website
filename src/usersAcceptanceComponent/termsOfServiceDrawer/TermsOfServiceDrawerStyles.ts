@@ -5,7 +5,7 @@ export const DisclaimerTitleStyles = (theme: boolean) => ({
   color: theme ? COLORS.dark.primary : COLORS.light.accent.green2,
 });
 
-export const DrawerStyles = {
+export const DrawerStyles = (darkTheme: boolean) => ({
   "& .MuiDrawer-paper": {
     position: "relative",
     width: 700,
@@ -13,7 +13,7 @@ export const DrawerStyles = {
     height: 840,
     justifContent: "center",
     borderRadius: "20px",
-    border: `1px solid ${COLORS.common.border}`,
+    border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.common.border}`,
     display: "flex",
     top: "10%",
     marginLeft: "auto",
@@ -29,7 +29,7 @@ export const DrawerStyles = {
       height: "100%",
       justifContent: "center",
       borderRadius: "20px",
-      border: `1px solid ${COLORS.common.border}`,
+      border: `1px solid ${darkTheme ? COLORS.dark.primary : COLORS.common.border}`,
       display: "flex",
       top: 0,
       marginLeft: "auto",
@@ -48,4 +48,4 @@ export const DrawerStyles = {
         height: "700px",
       },
     },
-};
+});

@@ -48,6 +48,7 @@ const AuthorComponent = () => {
       <Grid size={12} sx={authorComponentGridBiography}>
         <Typography
           color="primary"
+          component="h2"
           sx={authorComponentGridBiographyTitle}
         >
           Biography

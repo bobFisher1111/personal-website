@@ -41,6 +41,8 @@ const TermsOfServiceComponent = ({ closeDrawer }: Props) => {
         <Grid size={2}>
           <Button
             color="primary"
+            aria-label="Close terms of service"
+            type="button"
             onClick={closeDrawer}
             sx={CloseIconButtonStyles}
           >

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Grid, useTheme } from "@mui/material";
+import { Grid, Typography, useTheme } from "@mui/material";
+import { visuallyHidden } from "@mui/utils";
 import { useNavigate } from "react-router-dom";
 import ArticleList from "src/components/articleList/ArticleList";
 import PageContainer from "src/components/pageContainer/PageContainer";
@@ -95,6 +96,9 @@ const HomePage = () => {
 
   return (
     <PageContainer>
+      <Typography component="h1" style={visuallyHidden}>
+        Home
+      </Typography>
       <Sections
         activeSection={activeSection}
         onSectionChange={setActiveSection}

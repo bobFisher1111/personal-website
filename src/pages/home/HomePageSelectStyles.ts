@@ -8,7 +8,7 @@ export const HomePageSelectFormControlSx = (minWidth: number) => ({
 });
 
 export const HomePageSelectMenuPaperSx = (mode: ThemeMode) => ({
-  border: `1px solid ${COLORS.common.border}`,
+  border: `1px solid ${mode === "dark" ? COLORS.dark.primary : COLORS.common.border}`,
   "& .MuiMenuItem-root": {
     justifyContent: "flex-start",
     textAlign: "left",

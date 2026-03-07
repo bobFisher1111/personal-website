@@ -73,7 +73,7 @@ const createMarkdownStyles = (mode: "light" | "dark") => {
         sx: { fontStyle: "italic", color: colors.primary },
       },
       del: {
-        sx: { textDecoration: "line-through", color: colors.secondary },
+        sx: { textDecoration: "line-through", color: colors.primary },
       },
     },
     lists: {

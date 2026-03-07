@@ -1,5 +1,6 @@
 import { useId } from "react";
 import { Grid, Typography } from "@mui/material";
+import { visuallyHidden } from "@mui/utils";
 import { Link } from "react-router-dom";
 import { useAppSelector } from "src/store/redux/hooks";
 import { useTheme } from "@mui/material/styles";
@@ -45,6 +46,12 @@ const SeriesPage = () => {
 
   return (
     <PageContainer>
+      <Typography component="h1" style={visuallyHidden}>
+        {typeof seriesInfo?.series_title === "string" &&
+        seriesInfo.series_title.length > 0
+          ? seriesInfo.series_title
+          : "Series"}
+      </Typography>
       {seriesInfo && (
         <HorizontalArticleCardComponent
           author={seriesInfo.series_authors}

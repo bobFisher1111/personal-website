@@ -9,10 +9,12 @@ const AppBarLinksToPages = () => {
   const colorTheme = useAppSelector((state) => state.theme.darkTheme);
 
   return (
-    <Grid container spacing={2}>
-      <Typography color="primary" sx={TypographyLinkTwoPage(theme)}>
-        About
-      </Typography>
+    <Grid container spacing={2} component="nav" aria-label="Primary">
+      <Link to="/" style={LinkStyles(colorTheme)}>
+        <Typography color="primary" sx={TypographyLinkTwoPage(theme)}>
+          About
+        </Typography>
+      </Link>
       <Link to="/writers" style={LinkStyles(colorTheme)}>
         <Typography color="primary" sx={TypographyLinkTwoPage(theme)}>
           Writers

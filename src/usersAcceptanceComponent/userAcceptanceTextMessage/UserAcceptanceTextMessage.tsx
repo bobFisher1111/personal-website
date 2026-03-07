@@ -22,6 +22,7 @@ import {
 const UserAcceptanceTextMessage = ({ closeDrawer }: Props) => {
   const dispatch = useAppDispatch();
   const rejectCookie = useAppSelector((state) => state.rejectCookie);
+  const darkTheme = useAppSelector((state) => state.theme.darkTheme);
   const acceptanceMessage = `${websiteName} uses cookies for functionality of the website. By accepting cookies you agree to placement of the cookie. Without accepting certain features and functionality will be disabled.`;
 
   const setLocalStorage = () => {
@@ -45,7 +46,7 @@ const UserAcceptanceTextMessage = ({ closeDrawer }: Props) => {
   };
 
   return (
-    <Grid sx={RootStyles}>
+    <Grid sx={RootStyles(darkTheme)}>
       <Grid container>
         <Grid size={10} sx={TitleGridStyles}>
           <Typography color="primary" sx={TitleStyles}>
@@ -53,7 +54,13 @@ const UserAcceptanceTextMessage = ({ closeDrawer }: Props) => {
           </Typography>
         </Grid>
         <Grid size={2} sx={CloseIconGridStyles}>
-          <Button color="primary" onClick={turnCookiesOff} sx={CloseIconStyles}>
+          <Button
+            color="primary"
+            aria-label="Close cookie notice"
+            type="button"
+            onClick={turnCookiesOff}
+            sx={CloseIconStyles}
+          >
             <CloseIcon />
           </Button>
         </Grid>
@@ -69,12 +76,11 @@ const UserAcceptanceTextMessage = ({ closeDrawer }: Props) => {
           alignItems="center"
           sx={ButtonGridStyles}
         >
-          <Button color="primary" variant="outlined" sx={SettingButtonStyles}>
-            <CookiesManagementDrawer
-              closeParentDrawer={closeDrawer}
-              optionalCookie={turnCookiesOff}
-            />
-          </Button>
+          <CookiesManagementDrawer
+            closeParentDrawer={closeDrawer}
+            optionalCookie={turnCookiesOff}
+            triggerButtonSx={SettingButtonStyles}
+          />
           <Button
             color="primary"
             variant="outlined"
