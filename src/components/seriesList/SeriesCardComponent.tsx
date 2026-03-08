@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { Box, Card, CardMedia, Typography, useTheme } from "@mui/material";
 import { LinkStyles } from "src/util/styles/LinkStyles";
 import {
+  getOptimizedExternalImageSrc,
+  getOptimizedExternalImageSrcSet,
+} from "src/util/optimizeExternalImages";
+import {
   AuthorAvatarOverlayImageStyles,
   AuthorAvatarOverlayLinkStyles,
   CardMediaVerticalCardImage,
@@ -35,6 +39,32 @@ const SeriesCardComponent = ({
 
   const seriesLinkLabel = `View series: ${seriesTitle}`;
 
+  const rawCoverSrc =
+    typeof articleData?.series_cover_image_or_video === "string"
+      ? articleData.series_cover_image_or_video
+      : "";
+
+  const coverSrc =
+    getOptimizedExternalImageSrc(rawCoverSrc, {
+      width: 600,
+      height: 338,
+      quality: 70,
+    }) ?? rawCoverSrc;
+
+  const coverSrcSet = getOptimizedExternalImageSrcSet(
+    rawCoverSrc,
+    {
+      widths: [140, 204, 300, 408, 600],
+      aspectRatio: 16 / 9,
+      quality: 70,
+    },
+  );
+
+  const coverSizes =
+    layout === "scroller"
+      ? `(max-width:600px) 8.75rem, 12.75rem`
+      : `(max-width:600px) 100vw, 18.75rem`;
+
   const seriesAuthorId =
     typeof articleData?.author_id === "number" ? articleData.author_id : null;
 
@@ -57,10 +87,9 @@ const SeriesCardComponent = ({
             <CardMedia
               component="img"
               alt={`Cover image for series ${seriesTitle}`}
-              image={
-                articleData?.series_cover_image_or_video ||
-                articleData?.series_cover_image_or_video
-              }
+              image={coverSrc}
+              srcSet={coverSrcSet}
+              sizes={coverSizes}
               sx={CardMediaVerticalCardImage(theme)}
               referrerPolicy="no-referrer"
               loading="lazy"
@@ -79,7 +108,11 @@ const SeriesCardComponent = ({
                   <Box
                     component="img"
                     alt="Author avatar"
-                    src={authorAvatar}
+                    src={getOptimizedExternalImageSrc(authorAvatar, { width: 64 })}
+                    srcSet={getOptimizedExternalImageSrcSet(authorAvatar, {
+                      widths: [32, 64, 96],
+                    })}
+                    sizes="1.25rem"
                     style={AuthorAvatarOverlayImageStyles(darkTheme)}
                     referrerPolicy="no-referrer"
                   />

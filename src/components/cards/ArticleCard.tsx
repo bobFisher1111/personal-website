@@ -2,6 +2,10 @@ import { useAppSelector } from "src/store/redux/hooks";
 import { Link } from "react-router-dom";
 import { Box, Chip, Grid, Typography, useTheme, styled } from "@mui/material";
 import { LinkStyles } from "src/util/styles/LinkStyles";
+import {
+  getOptimizedExternalImageSrc,
+  getOptimizedExternalImageSrcSet,
+} from "src/util/optimizeExternalImages";
 import type { Author } from "src/types/authors";
 import {
   ArticleDataGridStyles,
@@ -42,6 +46,16 @@ const ArticleCard = ({
       ? getAuthorData[0].author_name
       : "Author";
 
+  const authorAvatarSrc = getOptimizedExternalImageSrc(
+    getAuthorData?.[0]?.avatar_image,
+    { width: 64 },
+  );
+
+  const authorAvatarSrcSet = getOptimizedExternalImageSrcSet(
+    getAuthorData?.[0]?.avatar_image,
+    { widths: [32, 64, 96] },
+  );
+
   const articleUrl = `/article/${authorId}/${articleId}`;
   const articleLinkLabel = `Open article: ${title}`;
 
@@ -63,7 +77,9 @@ const ArticleCard = ({
           >
             <Img
               alt={`${authorName} avatar`}
-              src={getAuthorData?.[0]?.avatar_image}
+              src={authorAvatarSrc}
+              srcSet={authorAvatarSrcSet}
+              sizes="1.25rem"
               sx={AvatarImageStyles(darkTheme)}
               referrerPolicy="no-referrer"
               loading="lazy"
